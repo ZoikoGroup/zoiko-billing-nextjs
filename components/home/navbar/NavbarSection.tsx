@@ -1,0 +1,5 @@
+export function NavbarSection() {
+  const links = ["Product", "Solutions", "Global Billing", "Integrations", "Pricing", "Resources", "Company"];
+
+  return <header className="navbar"><a className="logo" href="#"><span>Z</span>OIKO<small>BILLING</small></a><nav aria-label="Main navigation">{links.map((link, index) => <a href={index === 4 ? "#contact" : index === 6 ? "#company" : "#features"} key={link}>{link}{index !== 4 && <i>⌄</i>}</a>)}</nav><div className="nav-actions"><a href="#contact">Sign In</a><a className="button nav-outline" href="#contact">Book a Demo</a><a className="button primary" href="#contact">Create Account</a></div><details className="mobile-menu"><summary aria-label="Open navigation"><span /><span /><span /></summary><div className="mobile-menu-panel">{links.map(link => <a href="#features" key={link}>{link}</a>)}<div><a href="#contact">Sign In</a><a className="button nav-outline" href="#contact">Book a Demo</a><a className="button primary" href="#contact">Create Account</a></div></div></details></header>;
+}
