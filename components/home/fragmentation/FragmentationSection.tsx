@@ -18,8 +18,8 @@ export function FragmentationSection() {
         <h2>Billing breaks when the record is fragmented.</h2>
         <p className="fragmentation-intro">Invoices in one system, payment updates in another, reminders in email, and corrections in spreadsheets create uncertainty across the billing cycle.</p>
 
-        <div className="fragmentation-demo" aria-label="Fragmented billing demo image placeholder">
-          <Image src="/images/zoiko-billing-hero-team.png" alt="Demo image for fragmented billing operations" fill sizes="(max-width: 800px) 100vw, 1200px" />
+        <div className="fragmentation-demo">
+          <Image src="/images/fragmentation/div.png" alt="Billing operations system interface" fill sizes="(max-width: 800px) 100vw, 1200px" />
         </div>
 
         <div className="fragmentation-problems">
@@ -38,7 +38,7 @@ export function FragmentationSection() {
           </div>
           <div className="record-content">
             <div><h3>One customer record, one set of terms</h3><p>Contacts, currency, terms, and entity are set once, then applied to everything issued afterwards.</p></div>
-            <div className="record-demo" aria-label="Connected customer record demo image placeholder"><Image src="/images/zoiko-billing-hero-team.png" alt="Demo image for a connected billing record" fill sizes="(max-width: 800px) 100vw, 520px" /></div>
+            <div className="record-demo"><Image src="/images/fragmentation/div-rec.png" alt="Connected customer billing record" fill sizes="(max-width: 800px) 100vw, 520px" /></div>
           </div>
         </div>
 

@@ -21,7 +21,7 @@ export function BusinessMarketsSection() {
           <div className="business-capabilities">{capabilities.map(item => <div key={item}>{item}</div>)}</div>
           <div className="business-actions"><a className="button primary" href="#contact">Explore Global Billing</a><a className="button business-secondary" href="#contact">Contact Global Sales</a></div>
         </div>
-        <div className="business-demo-image"><Image src="/images/zoiko-billing-hero-team.png" alt="Demo image for global billing operations" fill sizes="(max-width: 800px) 100vw, 50vw" /></div>
+        <div className="business-demo-image"><Image src="/images/business-markets/div5.png" alt="Global billing operations dashboard" fill sizes="(max-width: 800px) 100vw, 50vw" /></div>
       </div>
     </section>
   );

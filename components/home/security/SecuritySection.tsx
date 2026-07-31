@@ -14,7 +14,7 @@ export function SecuritySection() {
         <p className="commercial-label">Commercial model</p>
         <h2>Independent when you need focus.<br />Connected when you need more.</h2>
         <div className="commercial-switch"><button className="active" type="button">Standalone</button><button type="button">Connected to Zoiko One</button></div>
-        <div className="commercial-demo-image"><Image src="/images/zoiko-billing-hero-team.png" alt="Demo image for standalone and connected billing" fill sizes="(max-width: 800px) 100vw, 1400px" /></div>
+        <div className="commercial-demo-image"><Image src="/images/security/div-arch-diagram.png" alt="Standalone and connected billing architecture" fill sizes="(max-width: 800px) 100vw, 1400px" /></div>
         <h3 className="pricing-heading">Choose the level of billing control your business needs.</h3>
         <div className="pricing-grid">{plans.map(([name, description, price], index) => <article className={index === 1 ? "active" : ""} key={name}><h3>{name}</h3><p>{description}</p><strong>{price}</strong></article>)}</div>
         <a className="pricing-link" href="#contact">View Full Pricing <span>→</span></a>

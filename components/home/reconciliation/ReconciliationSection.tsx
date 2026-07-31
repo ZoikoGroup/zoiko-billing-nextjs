@@ -23,7 +23,7 @@ export function ReconciliationSection() {
             <div className="visibility-metrics">{metrics.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>
             <a className="button reporting-button" href="#features">See Reporting</a>
           </div>
-          <div className="visibility-demo-image"><Image src="/images/zoiko-billing-hero-team.png" alt="Demo reporting view for billing teams" fill sizes="(max-width: 800px) 100vw, 600px" /></div>
+          <div className="visibility-demo-image"><Image src="/images/reconciliation/div6.png" alt="Reporting view for billing teams" fill sizes="(max-width: 800px) 100vw, 600px" /></div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
-import { ProductVisual, SectionLabel } from "../shared";
+import Image from "next/image";
+import { SectionLabel } from "../shared";
 
 const proofCards = [
   "Multi-currency and entity-aware billing",
@@ -30,9 +31,8 @@ export function TrustControlSection() {
               </article>
             ))}
           </div>
-          <div className="proof-demo-image" aria-label="Demo billing workspace image placeholder">
-            <ProductVisual compact />
-            <span>Demo image</span>
+          <div className="proof-demo-image">
+            <Image src="/images/trust-control/frame-1.png" alt="Zoiko Billing platform workspace" fill sizes="(max-width: 1000px) 100vw, 45vw" />
           </div>
         </div>
 
