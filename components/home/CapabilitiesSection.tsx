@@ -194,7 +194,7 @@ export default function CapabilitiesSection() {
                 <img
                   src={feature.imageSrc}
                   alt={feature.title}
-                  className={`w-full h-auto rounded-2xl border border-zinc-200 shadow-xl object-cover ${feature.imageHeightClass}`}
+                  className={`w-full h-auto rounded-2xl object-cover ${feature.imageHeightClass}`}
                 />
               </div>
             </div>
