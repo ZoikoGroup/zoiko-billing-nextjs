@@ -1,35 +1,33 @@
 import {
-  BusinessMarketsSection,
-  DemoSection,
-  FeaturesSection,
-  FooterSection,
-  FragmentationSection,
-  FrequentlyAskedQuestionsSection,
+  
+  BothSidesSection,
+  CapabilitiesSection,
+  CommercialModelSection,
+  EvidenceDemoSection,
+  FaqAnswersSection,
+  GetStartedCtaSection,
+  GlobalMultiEntitySection,
   HeroSection,
   IntegrationsSection,
-  NavbarSection,
-  ReconciliationSection,
-  SecuritySection,
-  TrustControlSection,
-  WorkflowCallToActionSection,
-} from "@/components/home";
+  OperatingProblemSection,
+  PlatformProofSection,
+ 
+} from "@/components/Home";
 
 export default function Home() {
   return (
     <main>
-      <NavbarSection />
-      <HeroSection />
-      <TrustControlSection />
-      <FragmentationSection />
-      <FeaturesSection />
-      <BusinessMarketsSection />
-      <ReconciliationSection />
-      <IntegrationsSection />
-      <DemoSection />
-      <SecuritySection />
-      <FrequentlyAskedQuestionsSection />
-      <WorkflowCallToActionSection />
-      <FooterSection />
+      <HeroSection/>
+      <PlatformProofSection/>
+      <OperatingProblemSection/>
+      <CapabilitiesSection/>
+      <GlobalMultiEntitySection/>
+      <BothSidesSection/>
+      <IntegrationsSection/>
+      <EvidenceDemoSection/>
+      <CommercialModelSection/>  
+      <FaqAnswersSection/>
+      <GetStartedCtaSection/>    
     </main>
   );
 }
