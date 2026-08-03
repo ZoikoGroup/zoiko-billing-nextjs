@@ -1,10 +1,14 @@
-import { OperatingPrinciplesSection } from "@/components/about";
 import {
   
   BothSidesSection,
   CapabilitiesSection,
+  CommercialModelSection,
+  EvidenceDemoSection,
+  FaqAnswersSection,
+  GetStartedCtaSection,
   GlobalMultiEntitySection,
   HeroSection,
+  IntegrationsSection,
   OperatingProblemSection,
   PlatformProofSection,
  
@@ -19,7 +23,11 @@ export default function Home() {
       <CapabilitiesSection/>
       <GlobalMultiEntitySection/>
       <BothSidesSection/>
-      
+      <IntegrationsSection/>
+      <EvidenceDemoSection/>
+      <CommercialModelSection/>  
+      <FaqAnswersSection/>
+      <GetStartedCtaSection/>    
     </main>
   );
 }

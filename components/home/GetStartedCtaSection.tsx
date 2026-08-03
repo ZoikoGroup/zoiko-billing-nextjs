@@ -1,9 +1,9 @@
-"use client";
-
-import React from "react";
+"use client"
+import React, { useState } from 'react';
 
 interface WorkflowStep {
-  number: string;
+  id: string;
+  stepNumber: string;
   title: string;
   subtitle: string;
   status: string;
@@ -11,141 +11,162 @@ interface WorkflowStep {
 
 const workflowSteps: WorkflowStep[] = [
   {
-    number: "01",
-    title: "Customer",
-    subtitle: "Account and terms",
-    status: "Set",
+    id: 'step-1',
+    stepNumber: '01',
+    title: 'Customer',
+    subtitle: 'Account and terms',
+    status: 'Set',
   },
   {
-    number: "02",
-    title: "Charge",
-    subtitle: "Released price and version",
-    status: "Applied",
+    id: 'step-2',
+    stepNumber: '02',
+    title: 'Charge',
+    subtitle: 'Released price and version',
+    status: 'Applied',
   },
   {
-    number: "03",
-    title: "Invoice",
-    subtitle: "Approved and issued",
-    status: "Issued",
+    id: 'step-3',
+    stepNumber: '03',
+    title: 'Invoice',
+    subtitle: 'Approved and issued',
+    status: 'Issued',
   },
   {
-    number: "04",
-    title: "Delivery",
-    subtitle: "Sent, delivered, viewed",
-    status: "Confirmed",
+    id: 'step-4',
+    stepNumber: '04',
+    title: 'Delivery',
+    subtitle: 'Sent, delivered, viewed',
+    status: 'Confirmed',
   },
   {
-    number: "05",
-    title: "Payment",
-    subtitle: "Outcome and reference",
-    status: "Tracked",
+    id: 'step-5',
+    stepNumber: '05',
+    title: 'Payment',
+    subtitle: 'Outcome and reference',
+    status: 'Tracked',
   },
   {
-    number: "06",
-    title: "Reconciliation",
-    subtitle: "Matched, exceptions raised",
-    status: "Reviewed",
+    id: 'step-6',
+    stepNumber: '06',
+    title: 'Reconciliation',
+    subtitle: 'Matched, exceptions raised',
+    status: 'Reviewed',
   },
   {
-    number: "07",
-    title: "Record",
-    subtitle: "Preserved for audit",
-    status: "Retained",
+    id: 'step-7',
+    stepNumber: '07',
+    title: 'Record',
+    subtitle: 'Preserved for audit',
+    status: 'Retained',
   },
 ];
 
-interface GetStartedCtaSectionProps {
-  onCreateAccount?: () => void;
-  onBookDemo?: () => void;
-}
+export default function GetStartedSection() {
+  const [activeStep, setActiveStep] = useState<string>('step-1');
 
-export function GetStartedCtaSection({
-  onCreateAccount,
-  onBookDemo,
-}: GetStartedCtaSectionProps) {
   return (
-    <section className="mx-auto w-full max-w-[1440px] overflow-hidden bg-white px-4 py-16 font-['Segoe_UI',sans-serif] text-white transition-colors duration-200 dark:bg-slate-950 sm:px-8 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto w-full max-w-[1116px] overflow-hidden rounded-3xl border border-slate-800 bg-sky-950 p-6 shadow-2xl dark:bg-slate-900 sm:p-10 lg:p-16">
-        <div className="mx-auto grid w-full max-w-[944px] grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col items-start gap-5 lg:col-span-6">
+    <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-12 font-sans">
+      <div className="max-w-7xl mx-auto bg-sky-950 rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-2xl overflow-hidden border border-sky-900/50">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Value Proposition & Call to Action */}
+          <div className="lg:col-span-6 space-y-8">
+            {/* Tag Badge */}
             <div className="flex items-center gap-3">
-              <div className="h-[2px] w-4 shrink-0 rounded-xs bg-blue-500" />
-              <span className="font-['IBM_Plex_Mono',monospace] text-xs font-medium uppercase tracking-wider text-blue-400">
+              <span className="w-4 h-0.5 bg-blue-600 rounded-full" />
+              <span className="text-blue-500 text-xs font-mono font-medium uppercase tracking-wider">
                 Get started
               </span>
             </div>
 
-            <h2 className="text-3xl font-medium leading-[1.12] tracking-tight text-white font-['Plus_Jakarta_Sans',sans-serif] sm:text-4xl lg:text-5xl">
+            {/* Main Headline */}
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
               Bring every invoice, payment, and outstanding balance into focus.
             </h2>
 
-            <p className="max-w-[530px] text-base font-normal leading-8 text-slate-400">
-              Run billing through one controlled platform built for clear financial records, global
-              operations, and growing commercial complexity.
+            {/* Body Description */}
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+              Run billing through one controlled platform built for clear
+              financial records, global operations, and growing commercial
+              complexity.
             </p>
 
-            <div className="flex w-full flex-wrap items-center gap-4 pt-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 type="button"
-                onClick={onCreateAccount}
-                className="cursor-pointer rounded-md border border-blue-600 bg-blue-600 px-5 py-2.5 text-base font-normal text-white shadow-md transition-colors hover:bg-blue-500"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium text-base rounded-md transition-all shadow-md focus:outline-hidden"
               >
                 Create Your Account
               </button>
               <button
                 type="button"
-                onClick={onBookDemo}
-                className="cursor-pointer rounded-md border border-white/35 px-5 py-2.5 text-base font-normal text-white transition-colors hover:bg-white/10"
+                className="px-6 py-3 border border-white/36 hover:border-white text-white font-medium text-base rounded-md transition-all hover:bg-white/10 focus:outline-hidden"
               >
                 Book a Demo
               </button>
             </div>
           </div>
 
-          <div className="w-full rounded-2xl border border-white/15 bg-white/5 p-6 shadow-inner lg:col-span-6">
-            <div className="flex flex-col divide-y divide-white/10">
-              {workflowSteps.map((step) => (
-                <div key={step.number} className="flex items-center justify-between gap-3 py-2.5 text-left">
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-blue-600">
-                    <span className="font-['IBM_Plex_Mono',monospace] text-[9px] font-normal text-white">
-                      {step.number}
-                    </span>
-                  </div>
+          {/* Right Column: Workflow Steps Card */}
+          <div className="lg:col-span-6 bg-white/5 backdrop-blur-xs rounded-2xl border border-white/16 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            
+            {/* Workflow List */}
+            <div className="divide-y divide-white/12">
+              {workflowSteps.map((step) => {
+                const isActive = activeStep === step.id;
+                return (
+                  <div
+                    key={step.id}
+                    onClick={() => setActiveStep(step.id)}
+                    className={`py-3 flex items-center justify-between gap-4 cursor-pointer transition-colors ${
+                      isActive ? 'bg-white/5 rounded-lg px-2 -mx-2' : 'hover:bg-white/5 rounded-lg px-2 -mx-2'
+                    }`}
+                  >
+                    {/* Number Badge */}
+                    <div className="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center shrink-0">
+                      <span className="text-white text-[10px] font-mono font-medium">
+                        {step.stepNumber}
+                      </span>
+                    </div>
 
-                  <div className="flex min-w-0 flex-1 flex-col">
-                    <span className="truncate font-['Segoe_UI'] text-sm font-normal text-slate-100">
-                      {step.title}
-                    </span>
-                    <span className="truncate font-['IBM_Plex_Mono',monospace] text-[10px] font-normal text-emerald-400">
-                      {step.subtitle}
-                    </span>
-                  </div>
+                    {/* Step Title & Subtitle */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-slate-100 text-sm font-medium truncate">
+                        {step.title}
+                      </h3>
+                      <p className="text-emerald-400 text-[10px] font-mono truncate">
+                        {step.subtitle}
+                      </p>
+                    </div>
 
-                  <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-zinc-700/80 bg-zinc-800/80 px-2.5 py-1">
-                    <span className="font-['IBM_Plex_Mono',monospace] text-xs font-medium text-stone-400">
-                      -
-                    </span>
-                    <span className="font-['IBM_Plex_Mono',monospace] text-[10px] font-medium uppercase tracking-wide text-stone-300">
-                      {step.status}
-                    </span>
+                    {/* Status Badge */}
+                    <div className="px-3 py-1 bg-neutral-100 rounded-full border border-zinc-200 flex items-center gap-1.5 shrink-0">
+                      <span className="text-gray-500 text-xs font-mono font-bold">
+                        –
+                      </span>
+                      <span className="text-gray-700 text-[10px] font-mono uppercase tracking-wider font-medium">
+                        {step.status}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
-            <div className="mt-3.5 flex items-center gap-3 border-t border-white/15 pt-3.5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white shadow-xs">
-                <div className="flex w-3 flex-col gap-0.5">
-                  <div className="h-[2px] w-full rounded-xs bg-blue-600" />
-                  <div className="h-[2px] w-full rounded-xs bg-blue-600" />
-                  <div className="h-[2px] w-full rounded-xs bg-blue-600" />
-                </div>
+            {/* Card Footer Banner */}
+            <div className="pt-4 border-t border-white/16 flex items-center gap-3">
+              <div className="w-7 h-7 bg-white rounded-lg flex flex-col justify-center items-center gap-0.5 shrink-0">
+                <span className="w-3 h-0.5 bg-blue-600 rounded-xs" />
+                <span className="w-3 h-0.5 bg-blue-600 rounded-xs" />
+                <span className="w-3 h-0.5 bg-blue-600 rounded-xs" />
               </div>
-              <span className="font-['Plus_Jakarta_Sans',sans-serif] text-sm font-semibold leading-6 text-white">
+              <p className="text-white text-sm font-semibold">
                 Billing clarity from invoice to payment.
-              </span>
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>

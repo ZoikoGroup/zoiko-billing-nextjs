@@ -1,6 +1,5 @@
-"use client";
-
-import React, { useState } from "react";
+"use client"
+import React, { useState } from 'react';
 
 interface FaqItem {
   id: string;
@@ -8,126 +7,108 @@ interface FaqItem {
   answer: string;
 }
 
-const faqData: FaqItem[] = [
+const faqs: FaqItem[] = [
   {
-    id: "faq-1",
-    question: "What is Zoiko Billing?",
+    id: 'faq-1',
+    question: 'What is Zoiko Billing?',
     answer:
-      "Zoiko Billing is a global billing and invoicing platform that helps businesses create invoices, manage charges, track payments, monitor outstanding balances, and maintain clear financial records.",
+      'Zoiko Billing is a global billing and invoicing platform that helps businesses create invoices, manage charges, track payments, monitor outstanding balances, and maintain clear financial records.',
   },
   {
-    id: "faq-2",
-    question: "Who is Zoiko Billing for?",
+    id: 'faq-2',
+    question: 'Who is Zoiko Billing for?',
     answer:
-      "It is designed for businesses of all sizes - from solo operators and growing teams to multi-entity enterprises - needing scalable, accurate billing and recurring invoice automation.",
+      'Zoiko Billing is built for solo operators, growing companies, multi-entity enterprises, and global finance teams looking for complete billing workflow control.',
   },
   {
-    id: "faq-3",
-    question: "Can Zoiko Billing be used without Zoiko One?",
+    id: 'faq-3',
+    question: 'Can Zoiko Billing be used without Zoiko One?',
     answer:
-      "Yes. Zoiko Billing operates as a standalone solution with complete functionality. When connected to Zoiko One, it seamlessly shares identity, permissions, audit trails, and unified reporting.",
+      'Yes. Zoiko Billing operates as a fully independent standalone billing engine, or it can seamlessly connect to Zoiko One for shared identity, permissions, and audit logs.',
   },
   {
-    id: "faq-4",
-    question: "Does Zoiko Billing process payments?",
+    id: 'faq-4',
+    question: 'Does Zoiko Billing process payments?',
     answer:
-      "Zoiko Billing integrates with leading payment gateways to track and reconcile incoming payments against issued invoices and balances.",
+      'Zoiko Billing integrates with major payment gateways and processors using webhooks and approved connectors to track payment status and automate receivables.',
   },
   {
-    id: "faq-5",
-    question: "Is Zoiko Billing available globally?",
+    id: 'faq-5',
+    question: 'Is Zoiko Billing available globally?',
     answer:
-      "Yes, it supports multi-currency, regional tax modes, and jurisdiction configurations for international operations.",
+      'Yes, it supports multi-entity operators, regional jurisdiction configurations, and multi-currency billing requirements.',
   },
   {
-    id: "faq-6",
-    question: "How do I get started?",
+    id: 'faq-6',
+    question: 'How do I get started?',
     answer:
-      "You can sign up directly for a standalone account or reach out to our team for guided onboarding and migration support.",
+      'You can sign up for a plan directly or reach out to our sales team for custom enterprise onboarding and migration support.',
   },
 ];
 
-interface FaqAnswersSectionProps {
-  onViewAllFaqs?: () => void;
-  onVisitHelpCenter?: () => void;
-  onCopyLink?: (faqId: string) => void;
-}
-
-export function FaqAnswersSection({
-  onViewAllFaqs,
-  onVisitHelpCenter,
-  onCopyLink,
-}: FaqAnswersSectionProps) {
-  const [openFaqId, setOpenFaqId] = useState<string | null>("faq-1");
-  const [copiedId, setCopiedId] = useState<string | null>(null);
+export default function QuestionsSection() {
+  const [openFaqId, setOpenFaqId] = useState<string | null>('faq-1');
 
   const toggleFaq = (id: string) => {
     setOpenFaqId((prev) => (prev === id ? null : id));
   };
 
-  const handleCopyLink = (e: React.MouseEvent, id: string) => {
-    e.stopPropagation();
-    setCopiedId(id);
-    onCopyLink?.(id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
-
   return (
-    <section className="mx-auto w-full max-w-[1440px] overflow-hidden bg-slate-50 px-4 py-16 font-['Segoe_UI',sans-serif] text-zinc-900 transition-colors duration-200 dark:bg-slate-950 dark:text-white sm:px-8 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-12 lg:gap-16">
-        <div className="flex flex-col items-center gap-5 text-center">
+    <section className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-12 font-sans">
+      <div className="max-w-7xl mx-auto space-y-12">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center space-y-3 max-w-2xl mx-auto">
           <div className="flex items-center gap-3">
-            <div className="h-[2px] w-4 shrink-0 rounded-full bg-blue-600 dark:bg-blue-400" />
-            <span className="font-['IBM_Plex_Mono',monospace] text-xs font-medium uppercase tracking-wider text-blue-600 dark:text-blue-400">
+            <span className="w-4 h-0.5 bg-blue-600 rounded-full" />
+            <span className="text-blue-600 text-xs font-mono font-medium uppercase tracking-wider">
               Answers
             </span>
           </div>
-
-          <h2 className="max-w-[640px] text-3xl font-medium leading-tight text-zinc-900 dark:text-white sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif]">
+          <h2 className="text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
             Questions about Zoiko Billing
           </h2>
         </div>
 
-        <div className="grid w-full grid-cols-1 items-start gap-8 lg:grid-cols-12">
-          <div className="flex flex-col divide-y divide-zinc-200 border-t border-zinc-200 dark:divide-slate-800 dark:border-slate-800 lg:col-span-7">
-            {faqData.map((faq) => {
+        {/* Main Grid: FAQ Accordion + Query Sidebar */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* FAQ Accordion List (8 Cols) */}
+          <div className="lg:col-span-8 bg-slate-50 border-t border-b border-zinc-200 divide-y divide-zinc-200">
+            {faqs.map((faq) => {
               const isOpen = openFaqId === faq.id;
-
               return (
-                <div key={faq.id} className="flex w-full flex-col">
+                <div key={faq.id} className="py-2">
                   <button
                     type="button"
                     onClick={() => toggleFaq(faq.id)}
-                    aria-expanded={isOpen}
-                    className="group flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left transition-colors hover:text-blue-600"
+                    className="w-full py-4 flex items-center justify-between text-left transition-colors focus:outline-hidden group"
                   >
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-base font-semibold leading-7 text-zinc-900 group-hover:text-blue-600 dark:text-slate-100 dark:group-hover:text-blue-400">
+                    <span className="text-zinc-900 text-base font-semibold pr-4 group-hover:text-blue-600 transition-colors">
                       {faq.question}
                     </span>
-                    <div
-                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl border transition-colors ${
+                    <span
+                      className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                         isOpen
-                          ? "border-blue-600 bg-blue-600 text-white"
-                          : "border-zinc-200 text-stone-600 dark:border-slate-800 dark:text-slate-300"
+                          ? 'bg-blue-600 border-blue-600 text-white'
+                          : 'border-zinc-300 text-zinc-600 hover:border-zinc-400'
                       }`}
                     >
-                      <span className="font-['IBM_Plex_Mono',monospace] text-sm font-semibold leading-none">
-                        {isOpen ? "-" : "+"}
+                      <span className="text-sm font-mono font-semibold">
+                        {isOpen ? '−' : '+'}
                       </span>
-                    </div>
+                    </span>
                   </button>
 
+                  {/* Expanded Answer Content */}
                   {isOpen && (
-                    <div className="flex flex-col gap-3 pb-6 pr-6">
-                      <p className="text-sm leading-6 text-stone-600 dark:text-slate-300">
+                    <div className="pb-5 pr-8 space-y-3 transition-all animate-fadeIn">
+                      <p className="text-zinc-600 text-sm leading-relaxed">
                         {faq.answer}
                       </p>
                       <button
                         type="button"
-                        onClick={(e) => handleCopyLink(e, faq.id)}
-                        className="self-start cursor-pointer py-1 font-['IBM_Plex_Mono',monospace] text-[10px] uppercase tracking-wide text-blue-600 transition-colors hover:underline dark:text-blue-400"
+                        className="text-blue-600 text-[10px] font-mono uppercase tracking-wide hover:underline focus:outline-hidden"
                       >
-                        {copiedId === faq.id ? "Link copied!" : "Copy link to answer"}
+                        Copy link to answer
                       </button>
                     </div>
                   )}
@@ -135,68 +116,64 @@ export function FaqAnswersSection({
               );
             })}
 
-            <div className="flex flex-wrap items-center gap-3 border-t-0 pt-8">
+            {/* Bottom FAQ CTA Buttons */}
+            <div className="pt-8 pb-4 flex flex-wrap items-center gap-3">
               <button
                 type="button"
-                onClick={onViewAllFaqs}
-                className="cursor-pointer rounded-md border border-blue-600 bg-blue-600 px-5 py-2.5 text-base font-normal text-white transition-colors hover:bg-blue-500"
+                className="px-5 py-2.5 bg-blue-600 text-white text-base rounded-md hover:bg-blue-700 transition-colors shadow-2xs"
               >
                 View All FAQs
               </button>
               <button
                 type="button"
-                onClick={onVisitHelpCenter}
-                className="cursor-pointer rounded-md border border-zinc-200 px-5 py-2.5 text-base font-normal text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-slate-800 dark:text-slate-100 dark:hover:bg-slate-800"
+                className="px-5 py-2.5 bg-white text-zinc-900 text-base rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors"
               >
                 Visit the Help Center
               </button>
             </div>
           </div>
 
-          <div className="w-full lg:col-span-5">
-            <div className="flex w-full flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <div className="flex items-center gap-2.5 border-b border-zinc-200 bg-zinc-50 px-4 py-3.5 dark:border-slate-800 dark:bg-slate-800/60">
-                <div className="h-3.5 w-3.5 shrink-0 rounded-sm border border-stone-500 dark:border-slate-400" />
-                <span className="truncate text-sm font-normal leading-6 text-zinc-900 dark:text-slate-200">
-                  How do I bill one customer from two legal entities?
-                </span>
-                <div className="h-4 w-[2px] shrink-0 animate-pulse bg-blue-600" />
-              </div>
+          {/* Featured Specific Query Sidebar Card (4 Cols) */}
+          <div className="lg:col-span-4 bg-white rounded-3xl border border-zinc-200 shadow-sm overflow-hidden flex flex-col">
+            {/* Question Bar */}
+            <div className="px-4 py-3.5 bg-gray-50 border-b border-zinc-200 flex items-center gap-2.5">
+              <div className="w-3.5 h-3.5 rounded-sm border border-zinc-400 shrink-0" />
+              <p className="text-zinc-900 text-sm font-normal truncate">
+                How do I bill one customer from two legal entities?
+              </p>
+              <div className="w-0.5 h-4 bg-blue-600 ml-auto shrink-0 animate-pulse" />
+            </div>
 
-              <div className="flex flex-col gap-4 p-5">
-                <span className="font-['IBM_Plex_Mono',monospace] text-[10px] uppercase tracking-wide text-blue-600 dark:text-blue-400">
-                  Answer
-                </span>
+            {/* Answer & Related Links */}
+            <div className="p-5 space-y-4">
+              <span className="text-blue-600 text-[10px] font-mono uppercase tracking-wide block">
+                Answer
+              </span>
+              <p className="text-zinc-900 text-sm leading-relaxed">
+                Hold one customer with entity-scoped billing accounts. Each
+                invoice carries the identity, numbering, and tax mode of the
+                entity that issued it, and group reporting consolidates across
+                both.
+              </p>
 
-                <p className="text-sm leading-6 text-zinc-900 dark:text-slate-200">
-                  Hold one customer with entity-scoped billing accounts. Each invoice carries the
-                  identity, numbering, and tax mode of the entity that issued it, and group
-                  reporting consolidates across both.
-                </p>
-
-                <div className="flex flex-col gap-2 border-t border-zinc-100 pt-4 dark:border-slate-800">
+              {/* Topic Links */}
+              <div className="pt-4 border-t border-zinc-100 space-y-2">
+                {[
+                  'Multi-entity billing',
+                  'Jurisdiction configuration',
+                  'Multi-entity reporting',
+                ].map((topic) => (
                   <a
-                    href="#multi-entity-billing"
-                    className="inline-flex items-center gap-2 font-['IBM_Plex_Mono',monospace] text-xs font-normal text-stone-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                    key={topic}
+                    href={`#${topic.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="flex items-center gap-2 text-zinc-600 hover:text-blue-600 text-xs font-mono transition-colors group"
                   >
-                    <span>{'->'}</span>
-                    <span>Multi-entity billing</span>
+                    <span className="text-zinc-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-0.5">
+                      →
+                    </span>
+                    <span>{topic}</span>
                   </a>
-                  <a
-                    href="#jurisdiction-configuration"
-                    className="inline-flex items-center gap-2 font-['IBM_Plex_Mono',monospace] text-xs font-normal text-stone-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
-                  >
-                    <span>{'->'}</span>
-                    <span>Jurisdiction configuration</span>
-                  </a>
-                  <a
-                    href="#multi-entity-reporting"
-                    className="inline-flex items-center gap-2 font-['IBM_Plex_Mono',monospace] text-xs font-normal text-stone-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
-                  >
-                    <span>{'->'}</span>
-                    <span>Multi-entity reporting</span>
-                  </a>
-                </div>
+                ))}
               </div>
             </div>
           </div>

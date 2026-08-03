@@ -1,9 +1,5 @@
-"use client";
-
-import React, { useState } from "react";
-import Image from "next/image";
-
-type OperationalMode = "standalone" | "connected";
+"use client"
+import React, { useState } from 'react';
 
 interface PricingTier {
   id: string;
@@ -15,77 +11,79 @@ interface PricingTier {
 
 const pricingTiers: PricingTier[] = [
   {
-    id: "essentials",
-    name: "Essentials",
-    description: "Solo operators and small teams getting invoicing under control",
-    price: "From $29/mo",
+    id: 'tier-essentials',
+    name: 'Essentials',
+    description:
+      'Solo operators and small teams getting invoicing under control',
+    price: 'From $29/mo',
   },
   {
-    id: "professional",
-    name: "Professional",
-    description: "Growing teams with recurring and usage-based billing",
-    price: "From $89/mo",
+    id: 'tier-professional',
+    name: 'Professional',
+    description: 'Growing teams with recurring and usage-based billing',
+    price: 'From $89/mo',
     isPopular: true,
   },
   {
-    id: "business",
-    name: "Business",
-    description: "Multi-entity operators needing approvals and reporting",
-    price: "From $249/mo",
+    id: 'tier-business',
+    name: 'Business',
+    description:
+      'Multi-entity operators needing approvals and reporting',
+    price: 'From $249/mo',
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
-    description: "Global finance teams with jurisdiction and integration needs",
-    price: "Contact sales",
+    id: 'tier-enterprise',
+    name: 'Enterprise',
+    description:
+      'Global finance teams with jurisdiction and integration needs',
+    price: 'Contact sales',
   },
 ];
 
-interface CommercialModelSectionProps {
-  onTierSelect?: (tierId: string, mode: OperationalMode) => void;
-  onViewFullPricing?: () => void;
-}
-
-export function CommercialModelSection({
-  onTierSelect,
-  onViewFullPricing,
-}: CommercialModelSectionProps) {
-  const [activeMode, setActiveMode] = useState<OperationalMode>("standalone");
+export default function CommercialModelSection() {
+  const [deploymentMode, setDeploymentMode] = useState<
+    'standalone' | 'connected'
+  >('standalone');
+  const [selectedTier, setSelectedTier] = useState<string>('tier-professional');
 
   return (
-    <section className="mx-auto w-full max-w-[1440px] overflow-hidden bg-white px-4 py-16 font-['Segoe_UI',sans-serif] text-zinc-900 transition-colors duration-200 dark:bg-slate-950 dark:text-white sm:px-8 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-6">
-        <div className="mx-auto flex max-w-[640px] flex-col items-center gap-3.5 text-center">
-          <span className="font-['JetBrains_Mono',monospace] text-xs font-normal uppercase tracking-widest text-blue-600 dark:text-blue-400">
+    <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-12 font-sans">
+      <div className="max-w-7xl mx-auto space-y-12">
+        {/* Header Block */}
+        <div className="flex flex-col items-center text-center space-y-3 max-w-2xl mx-auto">
+          {/* Category Tag */}
+          <span className="text-blue-600 text-xs font-mono uppercase tracking-widest font-normal">
             Commercial Model
           </span>
-          <h2 className="font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
+
+          {/* Section Title */}
+          <h2 className="text-slate-900 text-3xl sm:text-3xl lg:text-3xl font-bold leading-tight">
             Independent when you need focus.
-            <br />
-            Connected when you need more.
+             Connected when you need more.
           </h2>
         </div>
 
-        <div className="flex justify-center pt-4">
-          <div className="flex items-center rounded-3xl border border-zinc-200 bg-white p-1 shadow-xs dark:border-slate-800 dark:bg-slate-900">
+        {/* Mode Toggle Switch */}
+        <div className="flex justify-center">
+          <div className="p-1 bg-white rounded-full border border-gray-200 inline-flex items-center shadow-xs">
             <button
               type="button"
-              onClick={() => setActiveMode("standalone")}
-              className={`cursor-pointer rounded-[20px] px-5 py-2 text-sm font-semibold transition-colors ${
-                activeMode === "standalone"
-                  ? "bg-blue-600 text-white shadow-xs"
-                  : "text-stone-500 hover:text-zinc-900 dark:text-slate-400 dark:hover:text-white"
+              onClick={() => setDeploymentMode('standalone')}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors focus:outline-hidden ${
+                deploymentMode === 'standalone'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-gray-500 hover:text-slate-900'
               }`}
             >
               Standalone
             </button>
             <button
               type="button"
-              onClick={() => setActiveMode("connected")}
-              className={`cursor-pointer rounded-[20px] px-5 py-2 text-sm font-semibold transition-colors ${
-                activeMode === "connected"
-                  ? "bg-blue-600 text-white shadow-xs"
-                  : "text-stone-500 hover:text-zinc-900 dark:text-slate-400 dark:hover:text-white"
+              onClick={() => setDeploymentMode('connected')}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors focus:outline-hidden ${
+                deploymentMode === 'connected'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-gray-500 hover:text-slate-900'
               }`}
             >
               Connected to Zoiko One
@@ -93,72 +91,81 @@ export function CommercialModelSection({
           </div>
         </div>
 
-        <div className="relative flex h-[320px] w-full flex-col items-center justify-between overflow-hidden rounded-2xl border border-zinc-200 bg-slate-50/50 p-6 dark:border-slate-800 dark:bg-slate-900/40 sm:h-[420px] sm:p-10 lg:h-[520px] lg:p-10">
+        {/* Visualizer Container */}
+        <div className="w-full min-h-[320px] sm:min-h-[420px] rounded-2xl border border-gray-200 p-6 sm:p-10 flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-gray-50 to-white shadow-2xs">
+          {/* Shared Services Banner */}
           <div
-            className={`w-full max-w-[1150px] rounded-[20px] border border-blue-600 bg-blue-50/80 p-4 text-center transition-opacity duration-300 dark:bg-blue-950/40 sm:p-5 ${
-              activeMode === "connected" ? "opacity-100" : "pointer-events-none opacity-0"
+            className={`w-full max-w-4xl py-3 px-6 rounded-2xl border border-blue-600 text-center transition-all duration-300 ${
+              deploymentMode === 'connected'
+                ? 'opacity-100 bg-blue-50/60 shadow-xs'
+                : 'opacity-0 scale-95 pointer-events-none'
             }`}
           >
-            <span className="font-['Inter',sans-serif] text-xs font-normal text-blue-600 dark:text-blue-400 sm:text-sm">
-              Zoiko One shared services - identity, permissions, audit, reporting
+            <span className="text-blue-600 text-xs font-medium">
+              Zoiko One shared services — identity · permissions · audit · reporting
             </span>
           </div>
 
-          <div className="relative my-auto h-[200px] w-full max-w-[900px] overflow-hidden rounded-xl border border-zinc-200 shadow-md dark:border-slate-800 sm:h-[280px] lg:h-[340px]">
-            <Image
+          {/* Architecture Image Placeholder */}
+          <div className="mt-6 w-full flex justify-center">
+            <img
               src="/images/home/div-arch-diagram.png"
-              alt="Zoiko Billing Commercial Model Architecture Preview"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 900px"
+              alt="Commercial Architecture Diagram"
+              className="w-full max-w-4xl h-auto rounded-xl border border-gray-200 object-cover shadow-xs"
             />
           </div>
         </div>
 
-        <div className="pt-8 text-center">
-          <h3 className="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-slate-900 dark:text-white">
+        {/* Pricing Subheading */}
+        <div className="text-center pt-4">
+          <h3 className="text-slate-900 text-2xl font-bold">
             Choose the level of billing control your business needs.
           </h3>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-3.5 pt-1 sm:grid-cols-2 lg:grid-cols-4">
-          {pricingTiers.map((tier) => (
-            <div
-              key={tier.id}
-              onClick={() => onTierSelect?.(tier.id, activeMode)}
-              className={`flex cursor-pointer flex-col items-center justify-between gap-3 rounded-[10px] p-5 text-center transition-colors ${
-                tier.isPopular
-                  ? "border-2 border-blue-600 bg-white shadow-md dark:bg-slate-800"
-                  : "border border-zinc-200 bg-white hover:border-zinc-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700"
-              }`}
-            >
-              <div className="flex w-full flex-col items-center gap-1.5">
-                <span className="font-['Inter',sans-serif] text-base font-bold text-slate-900 dark:text-white">
-                  {tier.name}
-                </span>
-                <p className="flex min-h-[40px] items-center justify-center text-xs font-normal leading-5 text-stone-500 dark:text-slate-400">
-                  {tier.description}
-                </p>
+        {/* Pricing Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+          {pricingTiers.map((tier) => {
+            const isSelected = selectedTier === tier.id;
+            return (
+              <div
+                key={tier.id}
+                onClick={() => setSelectedTier(tier.id)}
+                className={`p-5 bg-white rounded-xl border cursor-pointer transition-all flex flex-col justify-between text-center space-y-4 ${
+                  isSelected || tier.isPopular
+                    ? 'border-blue-600 shadow-sm ring-1 ring-blue-600'
+                    : 'border-gray-200 hover:border-gray-300 shadow-2xs'
+                }`}
+              >
+                <div className="space-y-2">
+                  <h4 className="text-slate-900 text-base font-bold">
+                    {tier.name}
+                  </h4>
+                  <p className="text-gray-500 text-xs font-normal leading-relaxed">
+                    {tier.description}
+                  </p>
+                </div>
+                <div className="pt-2">
+                  <span className="text-slate-900 text-lg font-bold font-mono">
+                    {tier.price}
+                  </span>
+                </div>
               </div>
-
-              <div className="w-full border-t border-zinc-100 pt-2 dark:border-slate-800">
-                <span className="font-['JetBrains_Mono',monospace] text-lg font-bold text-slate-900 dark:text-white">
-                  {tier.price}
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="pt-4">
-          <button
-            type="button"
-            onClick={onViewFullPricing}
-            className="inline-flex cursor-pointer items-center gap-1.5 font-['Inter',sans-serif] text-base font-semibold text-blue-600 hover:underline dark:text-blue-400"
+        {/* CTA Link */}
+        <div className="text-center pt-2">
+          <a
+            href="#pricing"
+            className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 text-base font-semibold transition-colors group"
           >
             <span>View Full Pricing</span>
-            <span>→</span>
-          </button>
+            <span className="font-mono transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </a>
         </div>
       </div>
     </section>
