@@ -184,7 +184,7 @@ export default function ZoikoBillingPage() {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="button"
-                className="px-8 py-3.5 bg-white hover:bg-slate-100 text-blue-600 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
+                className="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 Create Account
               </button>
@@ -225,12 +225,21 @@ export default function ZoikoBillingPage() {
               <ul className="space-y-2">
                 {group.links.map((link) => (
                   <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-slate-300 hover:text-white text-sm font-normal leading-relaxed transition-colors block py-0.5"
-                    >
-                      {link}
-                    </a>
+                    {link === 'Platform Overview' ? (
+                      <a
+                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block py-0.5 text-sm font-normal leading-relaxed text-white transition-colors hover:text-cyan-300"
+                      >
+                        {link}
+                      </a>
+                    ) : (
+                      <a
+                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block py-0.5 text-sm font-normal leading-relaxed text-slate-300 transition-colors hover:text-white"
+                      >
+                        {link}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
