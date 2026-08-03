@@ -1,35 +1,25 @@
+import { OperatingPrinciplesSection } from "@/components/about";
 import {
-  BusinessMarketsSection,
-  DemoSection,
-  FeaturesSection,
-  FooterSection,
-  FragmentationSection,
-  FrequentlyAskedQuestionsSection,
+  
+  BothSidesSection,
+  CapabilitiesSection,
+  GlobalMultiEntitySection,
   HeroSection,
-  IntegrationsSection,
-  NavbarSection,
-  ReconciliationSection,
-  SecuritySection,
-  TrustControlSection,
-  WorkflowCallToActionSection,
-} from "@/components/home";
+  OperatingProblemSection,
+  PlatformProofSection,
+ 
+} from "@/components/Home";
 
 export default function Home() {
   return (
     <main>
-      <NavbarSection />
-      <HeroSection />
-      <TrustControlSection />
-      <FragmentationSection />
-      <FeaturesSection />
-      <BusinessMarketsSection />
-      <ReconciliationSection />
-      <IntegrationsSection />
-      <DemoSection />
-      <SecuritySection />
-      <FrequentlyAskedQuestionsSection />
-      <WorkflowCallToActionSection />
-      <FooterSection />
+      <HeroSection/>
+      <PlatformProofSection/>
+      <OperatingProblemSection/>
+      <CapabilitiesSection/>
+      <GlobalMultiEntitySection/>
+      <BothSidesSection/>
+      
     </main>
   );
 }

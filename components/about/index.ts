@@ -1,0 +1,14 @@
+export { default as AboutSection } from "./AboutSection";
+export { default as BringClaritySection } from "./BringClaritySection";
+export { default as CompanyEcosystemSection } from "./CompanyEcosystemSection";
+export { default as ArchitecturalDifferencesSection } from "./ArchitecturalDifferencesSection";
+export { default as BillingModalSection } from "./BillingModalSection";
+export { default as CommercialModelSection } from "./CommercialModelSection";
+export { default as AtAGlanceSection } from "./AtAGlanceSection";
+export { default as DirectionSection } from "./DirectionSection";
+export { default as ResponsibleAutomationSection } from "./ResponsibleAutomationSection";
+export { default as QuestionsSection } from "./QuestionsSection";
+export { default as WhyZoikoBillingSection } from "./WhyZoikoBillingSection";
+export { default as TrustworthyRecordsSection } from "./TrustworthyRecordsSection";
+export { default as WhoZoikoBillingServesSection } from "./WhoZoikoBillingServesSection";
+export { default as OperatingPrinciplesSection } from "./OperatingPrinciplesSection";
