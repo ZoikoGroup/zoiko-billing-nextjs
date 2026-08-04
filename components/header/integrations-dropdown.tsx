@@ -59,7 +59,7 @@ const PARTNER_ITEMS: MenuItem[] = [
 
 export default function IntegrationsDropdown() {
   return (
-    <div className="mx-auto w-full max-w-[1080px] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-gray-700 dark:bg-gray-900 dark:shadow-[0_22px_70px_rgba(0,0,0,0.5)]">
+    <div className="mx-auto flex max-h-[calc(100vh-132px)] w-full max-w-[1080px] flex-col overflow-y-auto no-scrollbar rounded-2xl border border-gray-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-gray-700 dark:bg-gray-900 dark:shadow-[0_22px_70px_rgba(0,0,0,0.5)]">
       <div className="px-5 pt-5 sm:px-6">
         <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
           Integrations
@@ -74,17 +74,18 @@ export default function IntegrationsDropdown() {
 
       <div className="mx-5 mb-5 flex flex-col gap-3 rounded-xl bg-slate-50 p-4 sm:mx-6 sm:flex-row sm:items-center sm:gap-5 dark:bg-gray-800/60">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white dark:border-gray-700 dark:bg-gray-900">
-          <Puzzle className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+           <img src="/images/dropdown/Plug Icon.png"></img>
         </div>
         <div className="flex-1">
           <h3 className="text-[15px] font-semibold text-slate-900 dark:text-white">
             Connect Zoiko Billing to the systems your business already uses.
           </h3>
-        </div>
-        <div className="flex shrink-0 items-center gap-4 sm:border-l sm:border-slate-200 sm:pl-5 dark:sm:border-gray-700">
+        
+        <div className="flex shrink-0 mt-4 items-center gap-4 sm:border-l sm:border-slate-200 sm:pl-5 dark:sm:border-gray-700">
           <Link
             href="/integrations"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            style={{ color: '#2563EB' }}
           >
             Explore integrations
             <ArrowRight className="h-3.5 w-3.5" />
@@ -92,10 +93,12 @@ export default function IntegrationsDropdown() {
           <Link
             href="/developers/docs"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            style={{ color: '#2563EB' }}
           >
             Read the API documentation
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
+        </div>
         </div>
       </div>
     </div>

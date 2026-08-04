@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/roles-and-approvals/page.tss"  ],
   "exclude": ["node_modules"]
 }

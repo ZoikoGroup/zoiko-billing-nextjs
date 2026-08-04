@@ -1,158 +1,163 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages */
 // Shared Interface for Footer Link Sections
 interface FooterLinkGroup {
   title: string;
-  links: string[];
+  links: FooterLinkItem[];
 }
 
-const productLinks: FooterLinkGroup[] = [
+interface FooterLinkItem {
+  label: string;
+  href: string;
+}
+
+const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Product',
     links: [
-      'Platform Overview',
-      'Customer Records',
-      'Automation & Workflows',
-      'Roles & Approvals',
-      'Reporting & Analytics',
-      'Pricing & Plans',
-      'Zoiko Billing + Zoiko One',
+      { label: 'Platform Overview', href: '/platform-overview' },
+      { label: 'Customer Records', href: '#' },
+      { label: 'Automation & Workflows', href: '/automation' },
+      { label: 'Roles & Approvals', href: '/roles-and-approvals' },
+      { label: 'Reporting & Analytics', href: '#' },
+      { label: 'Pricing & Plans', href: '#' },
+      { label: 'Zoiko Billing + Zoiko One', href: '#' },
     ],
   },
   {
     title: 'Billing operations',
     links: [
-      'Invoices & Credit Notes',
-      'Charges & Adjustments',
-      'Billing Schedules',
-      'Documents & Delivery',
-      'Accounts Receivable',
-      'Payments & Reconciliation',
-      'Outstanding Balances',
+      { label: 'Invoices & Credit Notes', href: '#' },
+      { label: 'Charges & Adjustments', href: '#' },
+      { label: 'Billing Schedules', href: '#' },
+      { label: 'Documents & Delivery', href: '#' },
+      { label: 'Accounts Receivable', href: '#' },
+      { label: 'Payments & Reconciliation', href: '#' },
+      { label: 'Outstanding Balances', href: '#' },
     ],
   },
   {
     title: 'Solutions',
     links: [
-      'Finance & Accounts Receivable',
-      'Revenue Operations',
-      'Small Businesses',
-      'Professional Services',
-      'Agencies',
-      'SaaS & Digital Services',
-      'Enterprise Organizations',
+      { label: 'Finance & Accounts Receivable', href: '#' },
+      { label: 'Revenue Operations', href: '#' },
+      { label: 'Small Businesses', href: '#' },
+      { label: 'Professional Services', href: '#' },
+      { label: 'Agencies', href: '#' },
+      { label: 'SaaS & Digital Services', href: '#' },
+      { label: 'Enterprise Organizations', href: '#' },
     ],
   },
   {
     title: 'Global billing',
     links: [
-      'Global Billing Overview',
-      'Multi-Currency Billing',
-      'Multi-Entity Billing',
-      'Localized Documents',
-      'Entity-Level Controls',
-      'Jurisdiction Availability',
-      'Supported Languages',
+      { label: 'Global Billing Overview', href: '#' },
+      { label: 'Multi-Currency Billing', href: '#' },
+      { label: 'Multi-Entity Billing', href: '#' },
+      { label: 'Localized Documents', href: '#' },
+      { label: 'Entity-Level Controls', href: '#' },
+      { label: 'Jurisdiction Availability', href: '#' },
+      { label: 'Supported Languages', href: '#' },
     ],
   },
   {
     title: 'Integrations',
     links: [
-      'Integrations Directory',
-      'Payment Providers',
-      'Accounting & ERP',
-      'CRM Platforms',
-      'Banking & Reconciliation',
-      'Zoiko Ecosystem',
-      'Integration Availability',
+      { label: 'Integrations Directory', href: '#' },
+      { label: 'Payment Providers', href: '#' },
+      { label: 'Accounting & ERP', href: '#' },
+      { label: 'CRM Platforms', href: '#' },
+      { label: 'Banking & Reconciliation', href: '#' },
+      { label: 'Zoiko Ecosystem', href: '#' },
+      { label: 'Integration Availability', href: '#' },
     ],
   },
   {
     title: 'Developers',
     links: [
-      'API Overview',
-      'API Documentation',
-      'Authentication',
-      'Webhooks',
-      'Developer Sandbox',
-      'SDKs & Examples',
-      'Build an Integration',
+      { label: 'API Overview', href: '#' },
+      { label: 'API Documentation', href: '#' },
+      { label: 'Authentication', href: '#' },
+      { label: 'Webhooks', href: '#' },
+      { label: 'Developer Sandbox', href: '#' },
+      { label: 'SDKs & Examples', href: '#' },
+      { label: 'Build an Integration', href: '#' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      'Resource Center',
-      'Billing Guides',
-      'Templates',
-      'Billing Glossary',
-      'Reports & insights',
-      'Customer Stories',
-      'Webinar & Events',
-      'Product Updates',
+      { label: 'Resource Center', href: '#' },
+      { label: 'Billing Guides', href: '#' },
+      { label: 'Templates', href: '#' },
+      { label: 'Billing Glossary', href: '#' },
+      { label: 'Reports & insights', href: '#' },
+      { label: 'Customer Stories', href: '#' },
+      { label: 'Webinar & Events', href: '#' },
+      { label: 'Product Updates', href: '#' },
     ],
   },
   {
     title: 'Customer support',
     links: [
-      'Help Center',
-      'Documentation',
-      'Contact Support',
-      'Implementation Guidance',
-      'Account Access',
-      'Billing Support',
-      'Integration Support',
-      'Support Policy',
+      { label: 'Help Center', href: '#' },
+      { label: 'Documentation', href: '#' },
+      { label: 'Contact Support', href: '#' },
+      { label: 'Implementation Guidance', href: '#' },
+      { label: 'Account Access', href: '#' },
+      { label: 'Billing Support', href: '#' },
+      { label: 'Integration Support', href: '#' },
+      { label: 'Support Policy', href: '#' },
     ],
   },
   {
     title: 'Trust & Security',
     links: [
-      'Security Overview',
-      'Trust Center',
-      'System Status',
-      'Privacy & Data Governance',
-      'Business Continuity',
-      'Responsible Disclosure',
-      'Security Advisories',
-      'Accessibility',
+      { label: 'Security Overview', href: '#' },
+      { label: 'Trust Center', href: '#' },
+      { label: 'System Status', href: '#' },
+      { label: 'Privacy & Data Governance', href: '#' },
+      { label: 'Business Continuity', href: '#' },
+      { label: 'Responsible Disclosure', href: '#' },
+      { label: 'Security Advisories', href: '#' },
+      { label: 'Accessibility', href: '#' },
     ],
   },
   {
     title: 'Company',
     links: [
-      'About',
-      'Why Zoiko Billing',
-      'Zoiko Group',
-      'Leadership',
-      'Careers',
-      'Newsroom',
-      'Contact',
+      { label: 'About', href: '/about' },
+      { label: 'Why Zoiko Billing', href: '#' },
+      { label: 'Zoiko Group', href: '#' },
+      { label: 'Leadership', href: '#' },
+      { label: 'Careers', href: '#' },
+      { label: 'Newsroom', href: '#' },
+      { label: 'Contact', href: '#' },
     ],
   },
   {
     title: 'Partners & Connect',
     links: [
-      'Partner Program',
-      'Technology Partners',
-      'Become a Partner',
-      'Submit an Integrations',
-      'Partner Portal',
-      'Sales Enquiries',
+      { label: 'Partner Program', href: '#' },
+      { label: 'Technology Partners', href: '#' },
+      { label: 'Become a Partner', href: '#' },
+      { label: 'Submit an Integrations', href: '#' },
+      { label: 'Partner Portal', href: '#' },
+      { label: 'Sales Enquiries', href: '#' },
     ],
   },
   {
     title: 'Legal Corporate',
     links: [
-      'Terms of User',
-      'Privacy Policy',
-      'Cookie Policy',
-      'Acceptable Use Policy',
-      'Data Processing Addendum',
-      'Subprocessors',
-      'Legal Notices',
-      'Sitemap',
+      { label: 'Terms of User', href: '#' },
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Cookie Policy', href: '#' },
+      { label: 'Acceptable Use Policy', href: '#' },
+      { label: 'Data Processing Addendum', href: '#' },
+      { label: 'Subprocessors', href: '#' },
+      { label: 'Legal Notices', href: '#' },
+      { label: 'Sitemap', href: '#' },
     ],
   },
 ];
@@ -217,29 +222,24 @@ export default function ZoikoBillingPage() {
       {/* Navigation Directory Links */}
       <section className="max-w-7xl mx-auto px-6 lg:px-16 py-16 space-y-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {productLinks.map((group) => (
+          {footerLinkGroups.map((group) => (
             <div key={group.title} className="space-y-4">
               <h3 className="text-sky-300 text-sm font-semibold font-mono uppercase tracking-wider border-b border-sky-800/60 pb-2">
                 {group.title}
               </h3>
               <ul className="space-y-2">
                 {group.links.map((link) => (
-                  <li key={link}>
-                    {link === 'Platform Overview' ? (
-                      <a
-                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block py-0.5 text-sm font-normal leading-relaxed text-white transition-colors hover:text-cyan-300"
-                      >
-                        {link}
-                      </a>
-                    ) : (
-                      <a
-                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block py-0.5 text-sm font-normal leading-relaxed text-slate-300 transition-colors hover:text-white"
-                      >
-                        {link}
-                      </a>
-                    )}
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className={`block py-0.5 text-sm font-normal leading-relaxed transition-colors ${
+                        link.label === 'Platform Overview'
+                          ? 'text-white hover:text-cyan-300'
+                          : 'text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      {link.label}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -253,7 +253,7 @@ export default function ZoikoBillingPage() {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="w-36 h-20 bg-white rounded-2xl flex items-center justify-center p-3 shadow-md">
-                <Link href="/" className="shrink-0" aria-label="Zoiko Billing Home">
+                <a href="/" className="shrink-0" aria-label="Zoiko Billing Home">
           <Image
             src="/images/zoikobilling-logo-svg 1.png"
             alt="Zoiko Billing"
@@ -262,7 +262,7 @@ export default function ZoikoBillingPage() {
             priority
             className="h-auto w-[112px] sm:w-[122px]"
           />
-        </Link>
+        </a>
             </div>
             <p className="text-white/60 text-base leading-relaxed max-w-sm">
               Governed billing operations for invoices, charges, payments,

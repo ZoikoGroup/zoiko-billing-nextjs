@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import ProductDropdown from './product-dropdown';
 import SolutionsDropdown from './solutions-dropdown';
 import GlobalBillingDropdown from './global-billing-dropdown';
@@ -39,12 +40,33 @@ export default function HeaderNavigation({
   onBookDemo,
   onCreateAccount,
 }: HeaderNavigationProps) {
+  const pathname = usePathname();
+
+  return (
+    <HeaderNavigationInner
+      key={pathname}
+      onSignIn={onSignIn}
+      onBookDemo={onBookDemo}
+      onCreateAccount={onCreateAccount}
+    />
+  );
+}
+
+function HeaderNavigationInner({
+  onSignIn,
+  onBookDemo,
+  onCreateAccount,
+}: HeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedDropdown, setMobileExpandedDropdown] = useState<DropdownKey | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
   const [mountedDropdown, setMountedDropdown] = useState<DropdownKey | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownShellWidth =
+    mountedDropdown === 'global-billing'
+      ? 'w-[min(80rem,calc(100vw-24px))]'
+      : 'w-[min(64rem,calc(100vw-24px))]';
 
   const openDropdown = (menu: DropdownKey) => {
     if (closeTimerRef.current) {
@@ -60,18 +82,24 @@ export default function HeaderNavigation({
     setActiveDropdown(menu);
   };
 
-  const closeDropdown = () => {
+  const clearDropdownTimers = () => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
     }
+
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+      hideTimerRef.current = null;
+    }
+  };
+
+  const closeDropdown = () => {
+    clearDropdownTimers();
 
     closeTimerRef.current = setTimeout(() => {
       setActiveDropdown(null);
       closeTimerRef.current = null;
-
-      if (hideTimerRef.current) {
-        clearTimeout(hideTimerRef.current);
-      }
 
       hideTimerRef.current = setTimeout(() => {
         setMountedDropdown(null);
@@ -80,14 +108,31 @@ export default function HeaderNavigation({
     }, 120);
   };
 
+  const closeDropdownImmediately = () => {
+    clearDropdownTimers();
+    setActiveDropdown(null);
+    setMountedDropdown(null);
+  };
+
+  const handleLinkSelection = (event: MouseEvent<HTMLElement>) => {
+    const target = event.target;
+
+    if (!(target instanceof Element) || !target.closest('a')) {
+      return;
+    }
+
+    closeDropdownImmediately();
+    setMobileMenuOpen(false);
+    setMobileExpandedDropdown(null);
+  };
+
   const toggleMobileDropdown = (menu: DropdownKey) => {
     setMobileExpandedDropdown((current) => (current === menu ? null : menu));
   };
 
   useEffect(() => {
     return () => {
-      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+      clearDropdownTimers();
     };
   }, []);
 
@@ -125,6 +170,7 @@ export default function HeaderNavigation({
         <nav
           className="hidden flex-1 items-center justify-center gap-5 lg:flex"
           aria-label="Main Navigation"
+          onClickCapture={handleLinkSelection}
         >
           {navItems.map((item) => {
             if (item.dropdown) {
@@ -238,9 +284,21 @@ export default function HeaderNavigation({
 
         {mountedDropdown && (
           <div
-            className="absolute left-1/2 top-full z-50 hidden w-[min(1080px,calc(100%-14px))] -translate-x-1/2 -translate-y-2 px-0 lg:block"
+            className={`fixed inset-x-0 top-20 bottom-0 z-40 hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-200 lg:block ${
+              activeDropdown === mountedDropdown ? 'opacity-100' : 'opacity-0'
+            }`}
+            onMouseEnter={closeDropdown}
+            onClick={closeDropdownImmediately}
+            aria-hidden="true"
+          />
+        )}
+
+        {mountedDropdown && (
+          <div
+            className={`absolute left-1/2 top-full z-50 hidden ${dropdownShellWidth} -translate-x-1/2 -translate-y-2 px-0 lg:block`}
             onMouseEnter={() => openDropdown(mountedDropdown)}
             onMouseLeave={closeDropdown}
+            onClickCapture={handleLinkSelection}
           >
             <div className="pt-2">
               <div
@@ -258,14 +316,16 @@ export default function HeaderNavigation({
       </div>
 
       {mobileMenuOpen && (
-        <div className="max-h-[calc(100vh-80px)] overflow-y-auto border-t border-slate-200 bg-white px-4 py-6 shadow-xl sm:px-6 dark:border-gray-800 dark:bg-gray-900 lg:hidden">
+        <div
+          className="max-h-[calc(100vh-80px)] overflow-y-auto border-t border-slate-200 bg-white px-4 py-6 shadow-xl sm:px-6 dark:border-gray-800 dark:bg-gray-900 lg:hidden"
+          onClickCapture={handleLinkSelection}
+        >
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
               <div key={item.label} className="border-b border-slate-100 dark:border-gray-800">
                 <div className="flex items-center justify-between py-3">
                   <Link
                     href={item.href}
-                    onClick={() => !item.dropdown && setMobileMenuOpen(false)}
                     className="text-[15px] font-medium text-slate-800 transition-colors hover:text-blue-600 dark:text-gray-200"
                   >
                     {item.label}
