@@ -117,7 +117,8 @@ export default function DeploymentBoundarySection() {
         <div className="flex justify-center pt-2">
           <a
             href="#compare-deployment"
-            className="inline-flex items-center justify-center rounded-lg bg-sky-950 px-6 py-3 text-base font-medium text-white shadow-xs transition-colors duration-150 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+            className="inline-flex items-center justify-center rounded-lg bg-sky-950 px-6 py-3 "
+            style={{color:'white'}}
           >
             Compare deployment options
           </a>
