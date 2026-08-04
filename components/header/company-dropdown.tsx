@@ -20,30 +20,29 @@ import {
 
 type MenuItem = {
   title: string;
-  description: string;
   href: string;
   icon: LucideIcon;
 };
 
 const ABOUT_ITEMS: MenuItem[] = [
-  { title: 'About', description: '/about', href: '/about', icon: Building2 },
-  { title: 'Why Zoiko Billing', description: '/why-zoiko-billing', href: '/why-zoiko-billing', icon: Star },
-  { title: 'Zoiko Group', description: '/zoiko-group', href: '/zoiko-group', icon: Users },
-  { title: 'Leadership', description: '/leadership', href: '/leadership', icon: UserCheck },
+  { title: 'About', href: '/about', icon: Building2 },
+  { title: 'Why Zoiko Billing', href: '/why-zoiko-billing', icon: Star },
+  { title: 'Zoiko Group',  href: '/zoiko-group', icon: Users },
+  { title: 'Leadership', href: '/leadership', icon: UserCheck },
 ];
 
 const WORK_ITEMS: MenuItem[] = [
-  { title: 'Partners', description: '/partners', href: '/partners', icon: Handshake },
-  { title: 'Partner Programme', description: '/partner-programme', href: '/partner-programme', icon: Users },
-  { title: 'Careers', description: '/careers', href: '/careers', icon: Briefcase },
-  { title: 'Become a Partner', description: '/become-a-partner', href: '/become-a-partner', icon: Send },
+  { title: 'Partners',  href: '/partners', icon: Handshake },
+  { title: 'Partner Programme', href: '/partner-programme', icon: Users },
+  { title: 'Careers', href: '/careers', icon: Briefcase },
+  { title: 'Become a Partner',  href: '/become-a-partner', icon: Send },
 ];
 
 const CONNECT_ITEMS: MenuItem[] = [
-  { title: 'Contact', description: '/contact', href: '/contact', icon: Headphones },
-  { title: 'Newsroom', description: '/newsroom', href: '/newsroom', icon: Newspaper },
-  { title: 'Media Enquiries', description: '/media-enquiries', href: '/media-enquiries', icon: Mic },
-  { title: 'Sales Enquiries', description: '/sales-enquiries', href: '/sales-enquiries', icon: Mail },
+  { title: 'Contact',  href: '/contact', icon: Headphones },
+  { title: 'Newsroom',  href: '/newsroom', icon: Newspaper },
+  { title: 'Media Enquiries',  href: '/media-enquiries', icon: Mic },
+  { title: 'Sales Enquiries',  href: '/sales-enquiries', icon: Mail },
 ];
 
 export default function CompanyDropdown() {
@@ -114,7 +113,6 @@ function MenuColumn({
                 <p className="text-[13px] font-semibold text-slate-800 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                   {item.title}
                 </p>
-                <p className="mt-0.5 text-[12px] leading-snug text-slate-500 dark:text-gray-400">{item.description}</p>
               </div>
             </Link>
           );

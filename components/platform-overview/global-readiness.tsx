@@ -75,7 +75,8 @@ export default function IntegrationsAndGlobalReadiness() {
             <div className="pt-4 flex flex-wrap items-center gap-4 w-full">
               <a
                 href="#explore-integrations"
-                className="px-5 py-2.5 bg-white text-slate-950 hover:bg-slate-200 text-base font-medium rounded-lg transition-colors"
+                className="px-5 py-2.5 bg-white"
+                style={{color:'black'}}
               >
                 Explore integrations
               </a>

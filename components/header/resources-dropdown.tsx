@@ -22,33 +22,32 @@ import {
 
 type MenuItem = {
   title: string;
-  description: string;
   href: string;
   icon: LucideIcon;
 };
 
 const LEARN_ITEMS: MenuItem[] = [
-  { title: 'Resource Centre', description: '/resources', href: '/resources', icon: BookOpen },
-  { title: 'Billing Guides', description: '/resources/guides', href: '/resources/guides', icon: FileText },
-  { title: 'Templates', description: '/resources/templates', href: '/resources/templates', icon: LayoutGrid },
-  { title: 'Billing Glossary', description: '/resources/glossary', href: '/resources/glossary', icon: Type },
-  { title: 'Reports & Insights', description: '/resources/insights', href: '/resources/insights', icon: BarChart3 },
+  { title: 'Resource Centre', href: '/resources', icon: BookOpen },
+  { title: 'Billing Guides',  href: '/resources/guides', icon: FileText },
+  { title: 'Templates',  href: '/resources/templates', icon: LayoutGrid },
+  { title: 'Billing Glossary',  href: '/resources/glossary', icon: Type },
+  { title: 'Reports & Insights',  href: '/resources/insights', icon: BarChart3 },
 ];
 
 const EVALUATE_ITEMS: MenuItem[] = [
-  { title: 'Customer Stories', description: '/customers', href: '/customers', icon: Users },
-  { title: 'Product Tour', description: '/product-tour', href: '/product-tour', icon: PlaySquare },
-  { title: 'Demo Library', description: '/resources/demos', href: '/resources/demos', icon: Video },
-  { title: 'Webinars & Events', description: '/resources/events', href: '/resources/events', icon: Calendar },
-  { title: 'Security Overview', description: '/security', href: '/security', icon: ShieldCheck },
+  { title: 'Customer Stories', href: '/customers', icon: Users },
+  { title: 'Product Tour', href: '/product-tour', icon: PlaySquare },
+  { title: 'Demo Library',  href: '/resources/demos', icon: Video },
+  { title: 'Webinars & Events',  href: '/resources/events', icon: Calendar },
+  { title: 'Security Overview',  href: '/security', icon: ShieldCheck },
 ];
 
 const HELP_ITEMS: MenuItem[] = [
-  { title: 'Help Centre', description: '/help', href: '/help', icon: HelpCircle },
-  { title: 'Documentation', description: '/docs', href: '/docs', icon: BookOpen },
-  { title: 'Release Notes', description: '/releases', href: '/releases', icon: Bell },
-  { title: 'System Status', description: 'External or approved status subdomain', href: '/status', icon: Activity },
-  { title: 'Contact Support', description: '/support/contact', href: '/support/contact', icon: Headphones },
+  { title: 'Help Centre',  href: '/help', icon: HelpCircle },
+  { title: 'Documentation', href: '/docs', icon: BookOpen },
+  { title: 'Release Notes',  href: '/releases', icon: Bell },
+  { title: 'System Status',  href: '/status', icon: Activity },
+  { title: 'Contact Support',  href: '/support/contact', icon: Headphones },
 ];
 
 export default function ResourcesDropdown() {
@@ -132,7 +131,6 @@ function MenuColumn({
                 <p className="text-[13px] font-semibold text-slate-800 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                   {item.title}
                 </p>
-                <p className="mt-0.5 text-[12px] leading-snug text-slate-500 dark:text-gray-400">{item.description}</p>
               </div>
             </Link>
           );

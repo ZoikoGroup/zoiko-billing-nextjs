@@ -83,6 +83,7 @@ export default function TrustAndControlSection() {
           <a
             href="#security-trust"
             className="inline-flex w-full items-center justify-center rounded-lg bg-sky-950 px-6 py-3  font-medium text-white shadow-xs transition-colors duration-150 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
+            style={{color:"white"}}
           >
             Review security and trust
           </a>

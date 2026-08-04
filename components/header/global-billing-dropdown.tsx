@@ -67,11 +67,14 @@ const RELATED_RESOURCES = [
 
 export default function GlobalBillingDropdown() {
   return (
-    <div className="mx-auto flex max-h-[calc(100vh-132px)] w-full max-w-7xl flex-col overflow-y-auto no-scrollbar rounded-2xl border border-slate-100 bg-white p-8 shadow-2xl dark:border-gray-800 dark:bg-gray-900">
-      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-6 lg:items-start">
+    <div className="mx-auto flex max-h-[calc(100vh-132px)] w-full max-w-6xl flex-col overflow-y-auto no-scrollbar rounded-2xl border border-slate-100 bg-white p-8 shadow-2xl dark:border-gray-800 dark:bg-gray-900">
+      {/* items-stretch (not items-start) so every column shares the same height,
+          which is what lets Column 1's Quick Links and Column 6's CTA/image
+          sit flush at the bottom, matching the Figma. */}
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-6 lg:items-stretch">
 
         {/* Column 1: Overview & Quick Links */}
-        <div className="flex flex-col justify-between border-b border-slate-100 pb-6 pr-4 lg:border-b-0 lg:border-r lg:pb-0 dark:border-gray-800">
+        <div className="flex h-full flex-col justify-between border-b border-slate-100 pb-6 pr-4 lg:border-b-0 lg:border-r lg:pb-0 dark:border-gray-800">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
               Overview
@@ -80,22 +83,22 @@ export default function GlobalBillingDropdown() {
               Bill globally.<br />
               Operate locally.
             </h3>
-            <p className="mt-7 text-sm leading-relaxed text-slate-600 dark:text-gray-400">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-400">
               Zoiko Billing helps you manage complex global billing with confidence—from multi-currency transactions to localised invoices and tax compliance.
             </p>
-            <img src="/images/dropdown/image (17).png" alt="Overview graphic" className="mt-4" />
+            <img src="/images/dropdown/image (17).png" alt="Overview graphic" className="mt-6" />
           </div>
 
           <div className="mt-8">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
               Quick Links
             </span>
-            <ul className="mt-3 divide-y divide-slate-100 dark:divide-gray-800">
+            <ul className="mt-3">
               {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center justify-between py-2.5 text-sm font-normal text-slate-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                    className="group flex items-center justify-between py-2 text-sm font-normal text-slate-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
                   >
                     <span>{link.label}</span>
                     <ChevronRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-blue-600 dark:text-gray-500" />
@@ -119,13 +122,13 @@ export default function GlobalBillingDropdown() {
         <MenuColumn title="Tax & Compliance" items={TAX_COMPLIANCE_ITEMS} />
 
         {/* Column 6: Highlight Card / Call to Action */}
-        <div className="flex flex-col justify-between rounded-xl bg-slate-50 p-6 dark:bg-gray-800/60">
+        <div className="flex h-full flex-col justify-between rounded-xl bg-slate-50 p-6 dark:bg-gray-800/60">
           <div>
-            <h3 className="mt-5 text-lg font-bold leading-snug text-slate-900 dark:text-white">
+            <h3 className="text-lg font-bold leading-snug text-slate-900 dark:text-white">
               Global scale.<br />
               Local precision.
             </h3>
-            <p className="mt-10 text-sm leading-relaxed text-slate-600 dark:text-gray-400">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-400">
               Zoiko Billing gives you the flexibility to grow anywhere while staying compliant everywhere.
             </p>
             <Link
@@ -135,14 +138,14 @@ export default function GlobalBillingDropdown() {
               <span>Explore Global Capabilities</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <img className="mt-10" src="/images/dropdown/image (31).png" alt="Capabilities graphic" />
           </div>
+          <img className="mt-6" src="/images/dropdown/image (31).png" alt="Capabilities graphic" />
         </div>
 
       </div>
 
       {/* Bottom Banner Section */}
-      <div className="mt-8 grid grid-cols-1 gap-4 rounded-xl border border-slate-100 bg-[#F7F9FC] p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] dark:border-gray-800 dark:bg-gray-800/50">
+      <div className="mt-6 grid grid-cols-1 gap-4 rounded-xl border border-slate-100 bg-[#F7F9FC] p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] dark:border-gray-800 dark:bg-gray-800/50">
 
         {/* Not sure where to start? */}
         <div className="flex gap-4">
@@ -198,7 +201,7 @@ function MenuColumn({
   items: MenuItem[];
 }) {
   return (
-    <div className="flex flex-col border-b border-slate-100 pb-6 pr-2 lg:border-b-0 lg:border-r lg:pb-0 dark:border-gray-800">
+    <div className="flex h-full flex-col border-b border-slate-100 pb-6 pr-2 lg:border-b-0 lg:border-r lg:pb-0 dark:border-gray-800">
       <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
         {title}
       </span>
