@@ -48,7 +48,7 @@ const CONNECT_ITEMS: MenuItem[] = [
 
 export default function CompanyDropdown() {
   return (
-    <div className="mx-auto w-full max-w-[1080px] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-gray-700 dark:bg-gray-900 dark:shadow-[0_22px_70px_rgba(0,0,0,0.5)]">
+    <div className="mx-auto flex max-h-[calc(100vh-132px)] w-full max-w-[1080px] flex-col overflow-y-auto no-scrollbar rounded-2xl border border-gray-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-gray-700 dark:bg-gray-900 dark:shadow-[0_22px_70px_rgba(0,0,0,0.5)]">
       <div className="px-5 pt-5 sm:px-6">
         <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
           Company
@@ -63,7 +63,7 @@ export default function CompanyDropdown() {
 
       <div className="mx-5 mb-5 flex flex-col gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 sm:mx-6 sm:flex-row sm:items-center sm:gap-5 dark:border-gray-800 dark:bg-gray-800/60">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
-          <Boxes className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+         <img src="/images/dropdown/Ecosystem Mark.png"></img>
         </div>
         <div className="flex-1">
           <h3 className="text-[15px] font-semibold text-slate-900 dark:text-white">
@@ -72,14 +72,16 @@ export default function CompanyDropdown() {
           <p className="mt-1 text-sm leading-snug text-gray-500 dark:text-gray-400">
             Zoiko Billing operates independently and can also connect with the Zoiko One suite.
           </p>
-        </div>
-        <Link
+          <div><Link
           href="/zoiko-one"
           className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          style={{ color: '#2563EB' }}
         >
           Explore Zoiko One
           <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
+        </Link></div>
+        </div>
+        
       </div>
     </div>
   );

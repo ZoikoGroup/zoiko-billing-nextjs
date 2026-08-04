@@ -45,6 +45,10 @@ export default function HeaderNavigation({
   const [mountedDropdown, setMountedDropdown] = useState<DropdownKey | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownShellWidth =
+    mountedDropdown === 'global-billing'
+      ? 'w-[min(80rem,calc(100vw-24px))]'
+      : 'w-[min(64rem,calc(100vw-24px))]';
 
   const openDropdown = (menu: DropdownKey) => {
     if (closeTimerRef.current) {
@@ -238,7 +242,7 @@ export default function HeaderNavigation({
 
         {mountedDropdown && (
           <div
-            className="absolute left-1/2 top-full z-50 hidden w-[min(1080px,calc(100%-14px))] -translate-x-1/2 -translate-y-2 px-0 lg:block"
+            className={`absolute left-1/2 top-full z-50 hidden ${dropdownShellWidth} -translate-x-1/2 -translate-y-2 px-0 lg:block`}
             onMouseEnter={() => openDropdown(mountedDropdown)}
             onMouseLeave={closeDropdown}
           >
