@@ -33,14 +33,14 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Billing Schedules', href: '#' },
       { label: 'Documents & Delivery', href: '#' },
       { label: 'Accounts Receivable', href: '#' },
-      { label: 'Payments & Reconciliation', href: '#' },
-      { label: 'Outstanding Balances', href: '#' },
+      { label: 'Payments & Reconciliation', href: '/payments-and-reconcilliation' },
+      { label: 'Outstanding Balances', href: '/outstanding-balances' },
     ],
   },
   {
     title: 'Solutions',
     links: [
-      { label: 'Finance & Accounts Receivable', href: '#' },
+      { label: 'Finance & Accounts Receivable', href: '/accounts-receivable' },
       { label: 'Revenue Operations', href: '#' },
       { label: 'Small Businesses', href: '#' },
       { label: 'Professional Services', href: '#' },
