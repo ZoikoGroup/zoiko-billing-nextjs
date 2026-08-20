@@ -1,21 +1,37 @@
+import {
+  ARHandoff,
+  BillingReadiness,
+  BillingSchedules,
+  ChangeControl,
+  ContextHandoff,
+  DeployBoundaries,
+  InvoiceDelivery,
+  OpReporting,
+  RevenueCta,
+  RevenueCycleOperatingModel,
+  RevenueOpsHero,
+  RevOpsFaq,
+  RoleHandoff,
+  WorkQueue,
+} from "@/components/revenue-operations";
 
-import BillingReadiness from '@/components/revenue-operations/BillingReadiness'
-import BillingSchedules from '@/components/revenue-operations/BillingSchedules'
-import ContextHandoff from '@/components/revenue-operations/ContextHandoff'
-import InvoiceDelivery from '@/components/revenue-operations/InvoiceDelivery'
-import RevenueCycleOperatingModel from '@/components/revenue-operations/RevenueCycleOperatingModel'
-import RevenueOpsHero from '@/components/revenue-operations/RevenueOpsHero'
-import React from 'react'
-
-export default function page() {
+export default function Page() {
   return (
     <main>
-        <RevenueOpsHero />
-        <RevenueCycleOperatingModel />
-         <ContextHandoff />
-         <BillingReadiness />
-         <BillingSchedules />
-         <InvoiceDelivery />
+      <RevenueOpsHero />
+      <RevenueCycleOperatingModel />
+      <ContextHandoff />
+      <BillingReadiness />
+      <BillingSchedules />
+      <InvoiceDelivery />
+      <ChangeControl />
+      <ARHandoff />
+      <WorkQueue />
+      <RoleHandoff />
+      <OpReporting />
+      <DeployBoundaries />
+      <RevOpsFaq />
+      <RevenueCta />
     </main>
-  )
+  );
 }
