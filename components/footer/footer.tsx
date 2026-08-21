@@ -46,13 +46,13 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Professional Services', href: '/professional-services' },
       { label: 'Agencies', href: '/agencies' },
       { label: 'SaaS & Digital Services', href: '/saas-and-digital-services' },
-      { label: 'Enterprise Organizations', href: '#' },
+      { label: 'Enterprise Organizations', href: '/enterprise-organizations' },
     ],
   },
   {
     title: 'Global billing',
     links: [
-      { label: 'Global Billing Overview', href: '#' },
+      { label: 'Global Billing Overview', href: '/global-billing' },
       { label: 'Multi-Currency Billing', href: '#' },
       { label: 'Multi-Entity Billing', href: '#' },
       { label: 'Localized Documents', href: '#' },

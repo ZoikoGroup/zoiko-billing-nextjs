@@ -86,41 +86,108 @@ export default function RoleMatrix() {
   return (
     <section className="w-full bg-[#f7f7f7] px-4 py-12 sm:px-6 sm:py-16 lg:px-14 lg:py-20">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8">
-        {/* Heading */}
-        <div className="w-full max-w-[680px] pt-2 text-center">
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-4 bg-blue-600/40" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
+        {/* ================= HEADER ================= */}
+        <div className="flex w-full max-w-[900px] flex-col items-center pt-2 text-center">
+
+          {/* Eyebrow */}
+          <div className="mb-4 flex w-full items-center justify-center gap-3">
+            <span className="h-px w-4 shrink-0 bg-blue-600/40" />
+
+            <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-blue-600 sm:text-[11px] sm:tracking-[0.14em] lg:text-xs lg:tracking-widest">
               Roles, approvals, change control &amp; audit
             </span>
 
-            <span className="h-px w-4 bg-blue-600/40" />
+            <span className="h-px w-4 shrink-0 bg-blue-600/40" />
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.14]">
-            Owning the product does not mean
-            <br className="hidden sm:block" />
-            approving the invoice.
+          {/* Heading */}
+          <h2
+            className="
+              mx-auto
+              w-full
+              max-w-[900px]
+              text-center
+              text-[30px]
+              font-extrabold
+              leading-[1.15]
+              tracking-[-0.02em]
+              text-gray-900
+              sm:text-[38px]
+              sm:leading-[1.15]
+              lg:text-5xl
+              lg:leading-[1.14]
+            "
+          >
+            <span className="block">
+              Owning the product does not mean
+            </span>
+
+            <span className="block">
+              approving the invoice.
+            </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[687px] text-sm font-normal leading-6 text-slate-600 sm:text-base sm:leading-7">
+          {/* Description */}
+          <p
+            className="
+              mx-auto
+              mt-4
+              w-full
+              max-w-[687px]
+              text-center
+              text-sm
+              font-normal
+              leading-6
+              text-slate-600
+              sm:mt-5
+              sm:text-base
+              sm:leading-7
+            "
+          >
             Product, RevOps and Customer Success provide the service and change
             context. That is a different authority from billing approval,
             credit, payment, reconciliation and reminder policy.
           </p>
         </div>
 
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-          <div className="overflow-x-auto">
+        {/* ================= TABLE ================= */}
+        <div
+          className="
+            w-full
+            overflow-hidden
+            rounded-xl
+            border
+            border-slate-200
+            bg-white
+            shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)]
+            shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)]
+            sm:rounded-2xl
+          "
+        >
+          {/* Mobile horizontal scroll */}
+          <div className="w-full overflow-x-auto">
             <table className="w-full min-w-[1000px] border-collapse">
+
+              {/* Header */}
               <thead>
                 <tr className="bg-slate-50">
                   {columns.map((column) => (
                     <th
                       key={column.key}
-                      className="border-b border-slate-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600"
+                      className="
+                        border-b
+                        border-slate-200
+                        px-4
+                        py-3
+                        text-left
+                        text-xs
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-blue-600
+                      "
                     >
                       {column.label}
                     </th>
@@ -128,35 +195,111 @@ export default function RoleMatrix() {
                 </tr>
               </thead>
 
+              {/* Body */}
               <tbody>
                 {rows.map((row) => (
                   <tr key={row.decision}>
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm font-semibold leading-5 text-gray-900">
+
+                    {/* Decision */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-gray-900
+                      "
+                    >
                       {row.decision}
                     </td>
 
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm leading-5 text-slate-600">
+                    {/* Product */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-slate-600
+                      "
+                    >
                       {row.product}
                     </td>
 
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm leading-5 text-slate-600">
+                    {/* Billing */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-slate-600
+                      "
+                    >
                       {row.billing}
                     </td>
 
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm leading-5 text-slate-600">
+                    {/* Finance */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-slate-600
+                      "
+                    >
                       {row.finance}
                     </td>
 
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm leading-5 text-slate-600">
+                    {/* IT */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-slate-600
+                      "
+                    >
                       {row.it}
                     </td>
 
-                    <td className="border-b border-slate-100 px-4 py-3.5 text-sm leading-5 text-slate-600">
+                    {/* Commercial */}
+                    <td
+                      className="
+                        border-b
+                        border-slate-100
+                        px-4
+                        py-3.5
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-slate-600
+                      "
+                    >
                       {row.commercial}
                     </td>
+
                   </tr>
                 ))}
               </tbody>
+
             </table>
           </div>
         </div>
