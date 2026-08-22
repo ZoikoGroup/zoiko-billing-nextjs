@@ -53,12 +53,12 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Global billing',
     links: [
       { label: 'Global Billing Overview', href: '/global-billing' },
-      { label: 'Multi-Currency Billing', href: '#' },
-      { label: 'Multi-Entity Billing', href: '#' },
-      { label: 'Localized Documents', href: '#' },
+      { label: 'Multi-Currency Billing', href: '/multi-currency' },
+      { label: 'Multi-Entity Billing', href: '/multi-entity-billing' },
+      { label: 'Localized Documents', href: '/localized-documents' },
       { label: 'Entity-Level Controls', href: '#' },
-      { label: 'Jurisdiction Availability', href: '#' },
-      { label: 'Supported Languages', href: '#' },
+      { label: 'Jurisdiction Availability', href: '/jurisdiction-availability' },
+      { label: 'Supported Languages', href: '/supported-languages' },
     ],
   },
   {
