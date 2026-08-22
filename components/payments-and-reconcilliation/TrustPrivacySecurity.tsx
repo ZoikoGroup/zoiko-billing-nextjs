@@ -44,7 +44,7 @@ export default function TrustPrivacySecurity() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
 
             {/* SECTION LABEL */}
             <div className="flex items-center gap-2.5">
@@ -160,24 +160,21 @@ export default function TrustPrivacySecurity() {
             href="/trust"
             className="
               inline-flex
-              min-h-11
+              min-h-12
               w-full
               items-center
               justify-center
               rounded-lg
               bg-slate-950
-              px-5
-              py-2.5
+              px-6
+              py-3
               text-base
               font-normal
               leading-6
-              text-white
-              transition
+              !text-white
+              transition-colors
               hover:bg-slate-800
               sm:w-auto
-              dark:bg-white
-              dark:text-slate-950
-              dark:hover:bg-slate-200
             "
           >
             Review security and trust
@@ -197,11 +194,11 @@ export default function TrustPrivacySecurity() {
               text-base
               font-normal
               leading-6
-              text-blue-500
-              transition
-              hover:text-blue-600
-              dark:text-blue-400
-              dark:hover:text-blue-300
+              !text-blue-500
+              transition-colors
+              hover:!text-blue-600
+              dark:!text-blue-400
+              dark:hover:!text-blue-300
             "
           >
             Read the privacy notice
@@ -211,6 +208,7 @@ export default function TrustPrivacySecurity() {
             </span>
           </Link>
         </div>
+
       </div>
     </section>
   );

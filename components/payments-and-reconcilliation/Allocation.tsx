@@ -63,9 +63,9 @@ export default function Allocation() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
 
-            {/* Label */}
+            {/* LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
@@ -74,7 +74,7 @@ export default function Allocation() {
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
               Apply funds without
               <br className="hidden sm:block" />
@@ -113,12 +113,12 @@ export default function Allocation() {
           {/* RIGHT CONTENT */}
           <div className="flex w-full flex-col items-start gap-1.5">
 
-            {/* Title */}
+            {/* TITLE */}
             <h3 className="text-lg font-semibold leading-6 text-slate-900 dark:text-white">
               What allocation supports
             </h3>
 
-            {/* Items */}
+            {/* ITEMS */}
             <div className="w-full pb-4">
               {allocationItems.map((item, index) => (
                 <div
@@ -129,12 +129,12 @@ export default function Allocation() {
                       : ""
                   }`}
                 >
-                  {/* Item title */}
+                  {/* ITEM TITLE */}
                   <div className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
                     {item.title}
                   </div>
 
-                  {/* Item description */}
+                  {/* ITEM DESCRIPTION */}
                   <div className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
                     {item.description}
                   </div>
@@ -160,7 +160,7 @@ export default function Allocation() {
             <div className="pt-5">
               <Link
                 href="/accounts-receivable"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-base font-normal leading-6 text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
               >
                 Explore Accounts Receivable
               </Link>
@@ -178,6 +178,7 @@ export default function Allocation() {
             className="h-auto w-full object-contain"
           />
         </div>
+
       </div>
     </section>
   );

@@ -144,8 +144,9 @@ export default function CorrectiveEvents() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
 
+            {/* LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
@@ -154,6 +155,7 @@ export default function CorrectiveEvents() {
               </span>
             </div>
 
+            {/* HEADING */}
             <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
               Correct payment
               <br className="hidden sm:block" />
@@ -192,7 +194,7 @@ export default function CorrectiveEvents() {
         </div>
 
         {/* EVENT RECORDS + IMAGE */}
-        <div className="grid w-full gap-10 pt-4 pb-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid w-full gap-10 pb-10 pt-4 lg:grid-cols-2 lg:gap-16">
 
           {/* LEFT */}
           <div className="flex w-full flex-col items-start gap-1.5">
@@ -207,7 +209,7 @@ export default function CorrectiveEvents() {
           {/* RIGHT */}
           <div className="flex w-full flex-col items-start gap-10">
 
-            {/* Image */}
+            {/* IMAGE */}
             <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
               <Image
                 src="/images/payments-and-reconcilliation/corrective-events.png"
@@ -219,7 +221,7 @@ export default function CorrectiveEvents() {
               />
             </div>
 
-            {/* Funds Movement Boundary */}
+            {/* FUNDS MOVEMENT BOUNDARY */}
             <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-blue-500 bg-white px-6 py-7 dark:bg-slate-900">
 
               <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
@@ -252,7 +254,6 @@ export default function CorrectiveEvents() {
 
         {/* ACCOUNTING / BANK RECONCILIATION CARDS */}
         <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200 pt-2 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-
           {accountingItems.map((item) => (
             <div
               key={item.title}
@@ -287,11 +288,12 @@ export default function CorrectiveEvents() {
         <div className="flex w-full justify-center pt-1">
           <Link
             href="/roles-and-approvals"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-base font-normal leading-6 text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
           >
             Explore Roles &amp; Approvals
           </Link>
         </div>
+
       </div>
     </section>
   );

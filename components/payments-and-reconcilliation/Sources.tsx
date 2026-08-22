@@ -83,10 +83,11 @@ export default function Sources() {
 
         {/* HEADER */}
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          
-          {/* Left */}
+
+          {/* LEFT */}
           <div className="flex flex-1 flex-col items-start gap-5">
-            {/* Label */}
+
+            {/* LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
@@ -95,7 +96,7 @@ export default function Sources() {
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
               Preserve the original
               <br className="hidden sm:block" />
@@ -105,7 +106,7 @@ export default function Sources() {
             </h2>
           </div>
 
-          {/* Right */}
+          {/* RIGHT */}
           <div className="w-full max-w-[530px] flex-1">
             <p className="text-base font-normal leading-7 text-slate-600 sm:leading-8 dark:text-slate-300">
               Normalization makes provider states comparable. It never discards
@@ -119,8 +120,8 @@ export default function Sources() {
 
           {/* PRODUCT VIEW */}
           <div className="flex w-full flex-col items-start gap-3">
-            
-            {/* Badge */}
+
+            {/* BADGE */}
             <div className="flex items-center">
               <div className="flex h-7 items-center rounded-full border border-emerald-500/10 bg-white/70 px-3 dark:border-emerald-400/10 dark:bg-slate-900/70">
                 <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-blue-500" />
@@ -131,10 +132,10 @@ export default function Sources() {
               </div>
             </div>
 
-            {/* Product Card */}
+            {/* PRODUCT CARD */}
             <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
 
-              {/* Header */}
+              {/* CARD HEADER */}
               <div className="flex flex-wrap items-center gap-2.5 border-b border-zinc-200 bg-[#f7f7f7] px-4 py-3.5 dark:border-slate-700 dark:bg-slate-800">
                 <span className="h-2 w-2 rounded-sm bg-blue-500" />
 
@@ -147,7 +148,7 @@ export default function Sources() {
                 </span>
               </div>
 
-              {/* Evidence rows */}
+              {/* EVIDENCE ROWS */}
               {evidenceRows.map((row, index) => (
                 <div
                   key={row.number}
@@ -157,14 +158,14 @@ export default function Sources() {
                       : ""
                   }`}
                 >
-                  {/* Number */}
+                  {/* NUMBER */}
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-blue-500/20 bg-[#f7f7f7] dark:border-blue-400/20 dark:bg-slate-800">
                     <span className="text-[9px] font-semibold leading-4 text-blue-500 dark:text-blue-400">
                       {row.number}
                     </span>
                   </div>
 
-                  {/* Content */}
+                  {/* CONTENT */}
                   <div className="min-w-0 flex-1">
                     <div className="text-[9px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
                       {row.label}
@@ -172,9 +173,7 @@ export default function Sources() {
 
                     <div
                       className={`mt-1.5 break-words text-sm leading-5 text-slate-900 dark:text-slate-200 ${
-                        row.mono
-                          ? "font-mono"
-                          : "font-normal"
+                        row.mono ? "font-mono" : "font-normal"
                       }`}
                     >
                       {row.value}
@@ -184,7 +183,7 @@ export default function Sources() {
               ))}
             </div>
 
-            {/* Product note */}
+            {/* PRODUCT NOTE */}
             <p className="text-[10px] font-normal uppercase leading-5 tracking-wider text-blue-500 dark:text-blue-400">
               Support for a specific provider, bank, country, network or
               payment method is published only where it has been verified.
@@ -193,7 +192,7 @@ export default function Sources() {
 
           {/* WHERE EVIDENCE COMES FROM */}
           <div className="flex w-full flex-col items-start gap-1.5">
-            
+
             <h3 className="text-lg font-semibold leading-6 text-slate-900 dark:text-white">
               Where evidence comes from
             </h3>
@@ -223,7 +222,7 @@ export default function Sources() {
 
         {/* SOURCE BOUNDARY */}
         <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-blue-500 bg-[#f7f7f7] px-6 py-7 sm:px-7 dark:bg-slate-900">
-          
+
           <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
             Source boundary
           </span>
@@ -236,14 +235,15 @@ export default function Sources() {
         </div>
 
         {/* CTA */}
-        <div className="flex w-full items-center">
+        <div className="flex w-full items-center pt-1">
           <Link
             href="/verified-payment-sources"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-base font-normal leading-6 text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
           >
             See verified payment sources
           </Link>
         </div>
+
       </div>
     </section>
   );

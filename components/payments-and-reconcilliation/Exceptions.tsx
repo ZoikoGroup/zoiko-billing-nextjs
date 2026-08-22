@@ -79,9 +79,9 @@ export default function Exceptions() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
 
-            {/* Label */}
+            {/* LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
@@ -90,7 +90,7 @@ export default function Exceptions() {
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
               Keep unmatched,
               <br className="hidden sm:block" />
@@ -114,7 +114,6 @@ export default function Exceptions() {
 
           {/* LEFT - EXCEPTION LIST */}
           <div className="flex w-full flex-col items-start">
-
             {exceptionRows.map((item, index) => (
               <div
                 key={index}
@@ -124,12 +123,12 @@ export default function Exceptions() {
                     : ""
                 }`}
               >
-                {/* Title */}
+                {/* TITLE */}
                 <div className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
                   {item.title}
                 </div>
 
-                {/* Description */}
+                {/* DESCRIPTION */}
                 <div className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
                   {item.description}
                 </div>
@@ -140,7 +139,7 @@ export default function Exceptions() {
           {/* RIGHT */}
           <div className="flex w-full flex-col items-start gap-10">
 
-            {/* Exception Image */}
+            {/* EXCEPTION IMAGE */}
             <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
               <Image
                 src="/images/payments-and-reconcilliation/exceptions.png"
@@ -169,14 +168,15 @@ export default function Exceptions() {
         </div>
 
         {/* CTA */}
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center pt-1">
           <Link
             href="/outstanding-balances"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-base font-normal leading-6 text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
           >
             Explore Outstanding Balances
           </Link>
         </div>
+
       </div>
     </section>
   );

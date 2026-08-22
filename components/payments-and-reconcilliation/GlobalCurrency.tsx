@@ -46,6 +46,7 @@ const contextItems = [
 export default function GlobalCurrency() {
   return (
     <section className="relative w-full overflow-hidden bg-slate-950 transition-colors duration-300 dark:bg-black">
+
       {/* OUTER RADIAL GLOW */}
       <div
         className="
@@ -70,19 +71,19 @@ export default function GlobalCurrency() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT CONTENT */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-6">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-6 pt-2.5">
 
             {/* SECTION LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
-              <span className="text-xs font-medium uppercase leading-4 tracking-wider text-cyan-400">
+              <span className="text-xs font-medium uppercase leading-4 tracking-wider !text-cyan-400">
                 Global and currency context
               </span>
             </div>
 
             {/* HEADING */}
-            <h2 className="max-w-[638px] text-[40px] font-medium leading-[1.1] tracking-tight text-white sm:text-5xl sm:leading-[53.82px]">
+            <h2 className="max-w-[638px] text-[40px] font-medium leading-[1.1] tracking-tight !text-white sm:text-5xl sm:leading-[53.82px]">
               Three currencies can
               <br className="hidden sm:block" />
               be involved in one
@@ -93,7 +94,7 @@ export default function GlobalCurrency() {
 
           {/* RIGHT DESCRIPTION */}
           <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-7 text-slate-300 sm:leading-8">
+            <p className="text-base font-normal leading-7 !text-slate-300 sm:leading-8">
               Payment currency, document currency and settlement currency are
               separate facts, and so are the provider, bank account and legal
               entity behind them.
@@ -135,12 +136,12 @@ export default function GlobalCurrency() {
               "
             >
               <div className="flex w-full flex-col items-start">
-                <h3 className="pb-1 text-sm font-semibold leading-5 text-white">
+                <h3 className="pb-1 text-sm font-semibold leading-5 !text-white">
                   {item.title}
                 </h3>
               </div>
 
-              <p className="text-sm font-normal leading-5 text-slate-300">
+              <p className="text-sm font-normal leading-5 !text-slate-300">
                 {item.description}
               </p>
             </div>
@@ -165,13 +166,13 @@ export default function GlobalCurrency() {
           "
         >
           <div className="flex w-full flex-col items-start">
-            <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-cyan-400">
+            <span className="text-[10px] font-normal uppercase leading-4 tracking-wider !text-cyan-400">
               Settlement boundary
             </span>
           </div>
 
           <div className="w-full max-w-[900px]">
-            <p className="text-base font-normal leading-7 text-slate-200">
+            <p className="text-base font-normal leading-7 !text-slate-200">
               Locale does not determine banking or legal entity, and instant
               or same-day settlement is never claimed without provider- and
               market-specific evidence. Regional availability, partner support
@@ -183,23 +184,24 @@ export default function GlobalCurrency() {
         {/* BUTTONS */}
         <div className="flex w-full flex-col items-center justify-center gap-3 pt-1 sm:flex-row">
 
+          {/* PRIMARY BUTTON */}
           <Link
             href="/global-billing"
             className="
               inline-flex
-              min-h-11
+              min-h-12
               w-full
               items-center
               justify-center
               rounded-lg
               bg-white
-              px-5
-              py-2.5
+              px-6
+              py-3
               text-base
               font-normal
               leading-6
-              text-slate-950
-              transition
+              !text-slate-950
+              transition-colors
               hover:bg-slate-100
               sm:w-auto
             "
@@ -207,24 +209,25 @@ export default function GlobalCurrency() {
             Explore global billing
           </Link>
 
+          {/* SECONDARY BUTTON */}
           <Link
             href="/availability"
             className="
               inline-flex
-              min-h-11
+              min-h-12
               w-full
               items-center
               justify-center
               rounded-lg
               border
               border-white/30
-              px-5
-              py-2.5
+              px-6
+              py-3
               text-base
               font-normal
               leading-6
-              text-white
-              transition
+              !text-white
+              transition-colors
               hover:bg-white/10
               sm:w-auto
             "

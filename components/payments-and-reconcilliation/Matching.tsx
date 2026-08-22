@@ -196,9 +196,9 @@ export default function Matching() {
         <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
 
           {/* LEFT HEADER */}
-          <div className="flex flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
+          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
 
-            {/* Section label */}
+            {/* SECTION LABEL */}
             <div className="flex items-center gap-2.5">
               <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
 
@@ -207,7 +207,7 @@ export default function Matching() {
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
               Use clear evidence and
               <br className="hidden sm:block" />
@@ -233,7 +233,7 @@ export default function Matching() {
           {/* LEFT - PRODUCT VIEW */}
           <div className="flex w-full flex-col items-start gap-3">
 
-            {/* Product badge */}
+            {/* PRODUCT BADGE */}
             <div className="flex h-7 items-center rounded-full border border-emerald-500/10 bg-white/70 px-3 dark:border-emerald-400/10 dark:bg-slate-900/70">
               <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-blue-500" />
 
@@ -242,10 +242,10 @@ export default function Matching() {
               </span>
             </div>
 
-            {/* Product card */}
+            {/* PRODUCT CARD */}
             <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
 
-              {/* Product header */}
+              {/* PRODUCT HEADER */}
               <div className="flex flex-wrap items-center gap-2.5 border-b border-zinc-200 bg-[#f7f7f7] px-4 py-3.5 dark:border-slate-700 dark:bg-slate-800">
                 <div className="h-2 w-2 shrink-0 rounded-sm bg-blue-500" />
 
@@ -258,7 +258,7 @@ export default function Matching() {
                 </StatusBadge>
               </div>
 
-              {/* Candidates */}
+              {/* CANDIDATES */}
               {candidates.map((candidate, index) => (
                 <div
                   key={candidate.invoice}
@@ -268,7 +268,7 @@ export default function Matching() {
                       : ""
                   }`}
                 >
-                  {/* Invoice row */}
+                  {/* INVOICE ROW */}
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="font-mono text-sm font-medium text-slate-900 dark:text-white">
                       {candidate.invoice}
@@ -287,7 +287,7 @@ export default function Matching() {
                     </span>
                   </div>
 
-                  {/* Confidence */}
+                  {/* CONFIDENCE */}
                   <ConfidenceBar
                     value={candidate.confidence}
                     type={
@@ -295,14 +295,14 @@ export default function Matching() {
                     }
                   />
 
-                  {/* Description */}
+                  {/* DESCRIPTION */}
                   <p className="text-xs font-normal leading-5 text-slate-600 sm:text-sm dark:text-slate-300">
                     {candidate.description}
                   </p>
                 </div>
               ))}
 
-              {/* Review notice */}
+              {/* REVIEW NOTICE */}
               <div className="border-t border-zinc-200 bg-orange-50 px-4 py-3.5 dark:border-slate-700 dark:bg-orange-950/20">
                 <p className="text-sm font-normal leading-5 text-orange-700 dark:text-orange-300">
                   Two candidates share the same amount. Threshold not met, so
@@ -316,14 +316,14 @@ export default function Matching() {
           {/* RIGHT - CANDIDATE PATTERNS */}
           <div className="flex w-full flex-col items-start gap-1.5">
 
-            {/* Candidate patterns */}
+            {/* CANDIDATE PATTERNS */}
             <h3 className="text-lg font-semibold leading-6 text-slate-900 dark:text-white">
               Candidate patterns
             </h3>
 
             <InfoRows rows={candidatePatterns} />
 
-            {/* Result treatment */}
+            {/* RESULT TREATMENT */}
             <h3 className="pt-6 text-lg font-semibold leading-6 text-slate-900 dark:text-white">
               How the result is treated
             </h3>
@@ -359,14 +359,15 @@ export default function Matching() {
         </div>
 
         {/* CTA */}
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center pt-1">
           <Link
             href="/automation-and-workflows"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-950 px-5 py-2.5 text-base font-normal leading-6 text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
           >
             Explore Automation &amp; Workflows
           </Link>
         </div>
+
       </div>
     </section>
   );
