@@ -1,194 +1,171 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OutstandingBalances() {
   return (
-    <section
-      className="
-        w-full
-        border-b
-        border-zinc-200
-        bg-gradient-to-b
-        from-white
-        to-[#F8FAFD]
-
-        dark:border-zinc-800
-        dark:from-[#0B1220]
-        dark:to-[#111827]
-      "
-    >
+    <section className="w-full overflow-hidden border-b border-slate-200 bg-white">
       <div
         className="
           mx-auto
+          flex
           w-full
           max-w-[1440px]
-          px-6
-          pt-6
+          flex-col
+          px-5
           pb-14
+          pt-10
 
           sm:px-8
-          md:px-12
-          lg:px-20
-          xl:px-32
+          sm:pb-16
+          sm:pt-12
+
+          md:px-10
+          md:pb-20
+          md:pt-16
+
+          lg:flex-row
+          lg:items-center
+          lg:justify-between
+          lg:gap-10
+          lg:px-14
+          lg:py-20
+
+          xl:gap-14
+          xl:px-20
         "
       >
+        {/* LEFT CONTENT */}
         <div
           className="
-            flex
-            min-h-[320px]
             w-full
-            flex-col
-            justify-between
-            gap-10
+            min-w-0
 
-            lg:flex-row
-            lg:items-center
-            lg:gap-12
+            lg:w-[52%]
+            lg:max-w-[620px]
           "
         >
-          {/* =====================================================
-              LEFT CONTENT
-          ===================================================== */}
-          <div
-            className="
-              flex
-              w-full
-              flex-col
-              items-start
+          {/* EYEBROW */}
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-70" />
 
-              lg:w-[52%]
-              lg:max-w-[620px]
-            "
-          >
-            {/* LABEL */}
-            <div className="relative flex h-4 items-center">
-              <div
-                className="
-                  h-px
-                  w-5
-                  bg-slate-400
-                  opacity-60
+            <span
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
 
-                  dark:bg-slate-500
-                "
-              />
-
-              <span
-                className="
-                  ml-3
-                  whitespace-nowrap
-                  text-[10px]
-                  font-semibold
-                  uppercase
-                  leading-4
-                  tracking-[0.16em]
-                  text-[#7C8DA5]
-
-                  dark:text-[#8FA3BD]
-                "
-              >
-                Receivables · Detailed view
-              </span>
-            </div>
-
-            {/* HEADING */}
-            <div className="mt-4 w-full max-w-[620px]">
-              <h1
-                className="
-                  text-[34px]
-                  font-extrabold
-                  leading-[1.08]
-                  tracking-[-0.7px]
-                  text-[#111A2E]
-
-                  sm:text-[36px]
-                  md:text-[38px]
-                  lg:text-[40px]
-
-                  dark:text-white
-                "
-              >
-                <span className="block">
-                  Every outstanding
-                </span>
-
-                <span className="block">
-                  balance, traced to{" "}
-                  <span className="text-blue-600 dark:text-blue-400">
-                    its
-                  </span>
-                </span>
-
-                <span className="block text-blue-600 dark:text-blue-400">
-                  invoice.
-                </span>
-              </h1>
-            </div>
-
-            {/* DESCRIPTION */}
-            <div className="mt-4 w-full max-w-[606px]">
-              <p
-                className="
-                  text-[14px]
-                  font-normal
-                  leading-6
-                  text-[#667085]
-
-                  sm:text-[15px]
-                  md:text-base
-
-                  dark:text-[#AAB7C8]
-                "
-              >
-                One record per account, aged to the day. Open a balance to see
-                the invoices behind it, the payments applied, and every
-                reminder that has already gone out.
-              </p>
-            </div>
-
-            {/* BUTTON */}
-            <div className="mt-3">
-              <button
-                type="button"
-                className="
-                  h-10
-                  rounded-full
-                  bg-blue-600
-                  px-5
-                  text-sm
-                  font-semibold
-                  leading-6
-                  text-white
-                  shadow-[0px_6px_16px_rgba(31,111,235,0.24)]
-                  transition
-                  hover:bg-blue-700
-
-                  dark:bg-blue-500
-                  dark:hover:bg-blue-600
-                "
-              >
-                Get Demo
-              </button>
-            </div>
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
+              Receivables · Detailed view
+            </span>
           </div>
 
-          {/* =====================================================
-              RIGHT IMAGE
-          ===================================================== */}
-          <div
+          {/* HEADING */}
+          <h1
             className="
-              flex
-              w-full
-              items-center
-              justify-center
+              !m-0
+              !block
+              !max-w-[620px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
 
-              lg:w-[408px]
-              lg:flex-none
-              lg:justify-end
+              sm:!text-[46px]
+
+              md:!text-[50px]
+
+              lg:!text-[44px]
+              lg:!leading-[1.08]
+
+              xl:!text-[50px]
             "
           >
+            Every outstanding balance, traced to{" "}
+            <span className="text-blue-600">its invoice.</span>
+          </h1>
+
+          {/* DESCRIPTION */}
+          <p
+            className="
+              mt-8
+              w-full
+              max-w-[606px]
+              text-[15px]
+              font-normal
+              leading-7
+              text-[#5d7192]
+
+              sm:mt-9
+              sm:text-base
+
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
+            "
+          >
+            One record per account, aged to the day. Open a balance to see the
+            invoices behind it, the payments applied, and every reminder that
+            has already gone out.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-7 sm:mt-8">
+            <Link
+              href="/request-demo"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                bg-blue-600
+                px-7
+                text-sm
+                font-semibold
+                leading-6
+                text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
+                transition
+                hover:bg-blue-700
+
+                sm:w-auto
+              "
+            >
+              Get Demo
+            </Link>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div
+          className="
+            mt-10
+            flex
+            w-full
+            justify-center
+
+            sm:mt-12
+
+            md:mt-14
+
+            lg:mt-0
+            lg:w-[44%]
+            lg:justify-end
+
+            xl:w-[43%]
+          "
+        >
+          <div className="w-full max-w-[408px]">
             <Image
               src="/images/outstanding-balances/image.png"
               alt="Outstanding balances detailed receivables view"
@@ -197,13 +174,16 @@ export default function OutstandingBalances() {
               priority
               className="
                 h-auto
-                w-[280px]
+                w-full
                 rounded-2xl
                 object-contain
-
-                sm:w-[320px]
-                md:w-[360px]
-                lg:w-[408px]
+              "
+              sizes="
+                (max-width: 639px) 100vw,
+                (max-width: 767px) 90vw,
+                (max-width: 1023px) 80vw,
+                (max-width: 1279px) 44vw,
+                408px
               "
             />
           </div>

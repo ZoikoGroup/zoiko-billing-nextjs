@@ -64,13 +64,13 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Integrations',
     links: [
-      { label: 'Integrations Directory', href: '#' },
-      { label: 'Payment Providers', href: '#' },
-      { label: 'Accounting & ERP', href: '#' },
+      { label: 'Integrations Directory', href: '/integrations-directory' },
+      { label: 'Payment Providers', href: '/payment-providers' },
+      { label: 'Accounting & ERP', href: '/accounting-and-erp' },
       { label: 'CRM Platforms', href: '#' },
       { label: 'Banking & Reconciliation', href: '#' },
-      { label: 'Zoiko Ecosystem', href: '#' },
-      { label: 'Integration Availability', href: '#' },
+      { label: 'Zoiko Ecosystem', href: '/ecosystem' },
+      { label: 'Integration Availability', href: '/integration-availability' },
     ],
   },
   {

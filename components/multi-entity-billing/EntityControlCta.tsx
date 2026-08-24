@@ -39,9 +39,16 @@ export default function EntityControlCta() {
 
             md:p-10
 
-            lg:p-12
+            lg:grid
+            lg:min-h-[418px]
+            lg:grid-cols-[1fr_42%]
+            lg:items-center
+            lg:gap-8
+            lg:p-10
 
-            xl:p-14
+            xl:grid-cols-[1fr_43%]
+            xl:gap-10
+            xl:p-12
           "
         >
           {/* RADIAL GLOW */}
@@ -53,7 +60,7 @@ export default function EntityControlCta() {
               -top-[110px]
               h-96
               w-96
-              rounded-[190px]
+              rounded-full
               bg-[radial-gradient(circle,rgba(31,111,235,0.55)_0%,rgba(31,111,235,0)_70%)]
             "
           />
@@ -68,13 +75,15 @@ export default function EntityControlCta() {
               flex-col
               items-start
               gap-3.5
+
+              lg:max-w-[610px]
             "
           >
             {/* HEADING */}
             <h2
               className="
                 !m-0
-                w-full
+                max-w-full
                 text-3xl
                 font-extrabold
                 leading-[1.12]
@@ -85,6 +94,11 @@ export default function EntityControlCta() {
 
                 md:text-4xl
                 md:leading-10
+
+                lg:max-w-[600px]
+
+                xl:text-[48px]
+                xl:leading-[1.08]
               "
             >
               Separate the entities.
@@ -97,13 +111,15 @@ export default function EntityControlCta() {
               className="
                 !m-0
                 w-full
-                max-w-[511px]
+                max-w-[520px]
                 text-sm
                 font-normal
                 leading-6
                 !text-white/70
 
                 sm:text-base
+
+                lg:max-w-[510px]
               "
             >
               Keep issuer context, customer ownership, currency scope,
@@ -195,18 +211,17 @@ export default function EntityControlCta() {
               border
               border-white/15
               bg-white/5
-              p-5
+              p-3
 
               sm:mt-8
+              sm:p-4
 
               md:mt-9
 
-              lg:absolute
-              lg:bottom-14
-              lg:right-14
               lg:mt-0
-              lg:w-[40%]
-              lg:max-w-[478px]
+              lg:w-full
+              lg:self-center
+              lg:p-4
             "
           >
             <div className="relative aspect-[478/340] w-full">

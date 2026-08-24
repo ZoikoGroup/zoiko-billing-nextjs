@@ -140,7 +140,7 @@ export default function ProcurementFaq() {
     <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 xl:px-16 xl:py-20">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-5">
         {/* Header */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-1 sm:pt-2">
+        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-1 sm:pt-2">
           {/* Eyebrow */}
           <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
             <span className="h-px w-4 shrink-0 bg-blue-600 opacity-40 sm:w-5" />

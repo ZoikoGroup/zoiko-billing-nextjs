@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 type Account = {
   initials: string;
@@ -181,27 +181,18 @@ const accounts: Account[] = [
 ];
 
 const statusStyles: Record<Account["status"], string> = {
-  Overdue:
-    "bg-red-50 text-red-600 dark:bg-red-500/15 dark:text-red-400",
-
-  "In dispute":
-    "bg-blue-50 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400",
-
-  "Due soon":
-    "bg-orange-50 text-orange-600 dark:bg-orange-500/15 dark:text-orange-400",
-
-  "Payment plan":
-    "bg-slate-100 text-slate-600 dark:bg-slate-700/70 dark:text-slate-300",
-
-  Current:
-    "bg-green-50 text-green-600 dark:bg-green-500/15 dark:text-green-400",
+  Overdue: "bg-red-50 text-red-600",
+  "In dispute": "bg-blue-50 text-blue-600",
+  "Due soon": "bg-orange-50 text-orange-600",
+  "Payment plan": "bg-slate-100 text-slate-600",
+  Current: "bg-green-50 text-green-600",
 };
 
 const avatarStyles = [
-  "bg-slate-100 dark:bg-slate-700",
-  "bg-blue-50 dark:bg-blue-500/15",
-  "bg-violet-50 dark:bg-violet-500/15",
-  "bg-orange-50 dark:bg-orange-500/15",
+  "bg-slate-100",
+  "bg-blue-50",
+  "bg-violet-50",
+  "bg-orange-50",
 ];
 
 function AgingBar({ values }: { values: number[] }) {
@@ -222,12 +213,11 @@ function AgingBar({ values }: { values: number[] }) {
         overflow-hidden
         rounded-full
         bg-slate-100
-        dark:bg-slate-700
       "
     >
       {values.map((value, index) => (
         <div
-          key={index}
+          key={`${value}-${index}`}
           className={`${agingColors[index] ?? "bg-slate-400"} h-full`}
           style={{ width: `${value}%` }}
         />
@@ -276,8 +266,7 @@ export default function NextStep() {
 
     const matchesFilter =
       activeFilter === "All" ||
-      (activeFilter === "Disputed" &&
-        account.status === "In dispute") ||
+      (activeFilter === "Disputed" && account.status === "In dispute") ||
       (activeFilter === "On payment plan" &&
         account.status === "Payment plan") ||
       account.status === activeFilter;
@@ -285,1013 +274,650 @@ export default function NextStep() {
     return matchesSearch && matchesFilter;
   });
 
+  const clearFilters = () => {
+    setActiveFilter("All");
+    setSearch("");
+  };
+
   return (
-    <section
-      className="
-        w-full
-        bg-[#f7f8fa]
-        px-4
-        py-12
-        transition-colors
-        sm:px-6
-        lg:px-12
-        xl:px-24
-        dark:bg-[#0B1220]
-      "
-    >
-      <div className="mx-auto w-full max-w-[1240px]">
+    <section className="w-full overflow-hidden bg-white">
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[1440px]
+          px-5
+          py-12
 
-        {/* =========================================================
-            HEADING
-        ========================================================= */}
+          sm:px-8
+          sm:py-16
 
-        <div className="mb-8">
-          <div className="mb-4 flex items-center gap-3">
-            <span
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div className="mx-auto w-full max-w-[1240px]">
+          {/* SECTION HEADER */}
+          <div className="mb-8">
+            <div className="mb-5 flex items-center gap-3 sm:mb-6">
+              <span className="h-px w-6 shrink-0 bg-blue-600 opacity-70" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-semibold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Account detail
+              </span>
+            </div>
+
+            <h2
               className="
-                h-px
-                w-5
-                bg-[#6b8ba8]
-                dark:bg-slate-500
-              "
-            />
+                !m-0
+                !text-[32px]
+                !font-extrabold
+                !leading-[1.1]
+                !tracking-[-0.03em]
+                !text-slate-900
 
-            <span
-              className="
-                text-[11px]
-                font-semibold
-                uppercase
-                tracking-[0.16em]
-                text-[#6b8ba8]
-                dark:text-slate-400
+                sm:!text-[40px]
+
+                md:!text-[46px]
+
+                lg:!text-[50px]
               "
             >
-              Account detail
-            </span>
+              Balances by account.
+            </h2>
+
+            <p
+              className="
+                mt-5
+                w-full
+                max-w-[605px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:mt-6
+                sm:text-base
+              "
+            >
+              Open a row for the invoice-level breakdown, applied payments,
+              and the reminder history.
+            </p>
           </div>
 
-          <h2
-            className="
-              text-3xl
-              font-bold
-              leading-tight
-              tracking-[-0.03em]
-              text-[#10182d]
-              sm:text-4xl
-              dark:text-white
-            "
-          >
-            Balances by account.
-          </h2>
+          {/* FILTERS */}
+          <div className="mb-6 flex flex-col gap-4">
+            {/* FILTER PILLS */}
+            <div
+              className="
+                flex
+                w-full
+                flex-wrap
+                items-center
+                gap-1
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-1
 
-          <p
-            className="
-              mt-3
-              max-w-[605px]
-              text-sm
-              leading-6
-              text-[#61738a]
-              sm:text-base
-              dark:text-slate-400
-            "
-          >
-            Open a row for the invoice-level breakdown, applied payments,
-            and the reminder history.
-          </p>
-        </div>
+                sm:w-fit
+                sm:rounded-full
+              "
+            >
+              {filters.map((filter) => {
+                const active = activeFilter === filter.label;
 
-        {/* =========================================================
-            FILTERS
-        ========================================================= */}
-
-        <div className="mb-6 flex flex-col gap-4">
-
-          {/* Filter pills */}
-
-          <div
-            className="
-              flex
-              w-full
-              flex-wrap
-              items-center
-              gap-1
-              rounded-full
-              border
-              border-slate-200
-              bg-white
-              p-1
-              transition-colors
-              sm:w-fit
-              dark:border-slate-700
-              dark:bg-[#111827]
-            "
-          >
-            {filters.map((filter) => {
-              const active = activeFilter === filter.label;
-
-              return (
-                <button
-                  key={filter.label}
-                  type="button"
-                  onClick={() => setActiveFilter(filter.label)}
-                  className={`
-                    rounded-full
-                    px-4
-                    py-2
-                    text-sm
-                    font-semibold
-                    transition
-                    ${
-                      active
-                        ? "bg-[#18233b] text-white dark:bg-blue-600"
-                        : "text-[#53657b] hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"
-                    }
-                  `}
-                >
-                  {filter.label}
-
-                  <span
+                return (
+                  <button
+                    key={filter.label}
+                    type="button"
+                    onClick={() => setActiveFilter(filter.label)}
                     className={`
-                      ml-1.5
+                      rounded-full
+                      px-4
+                      py-2
+                      text-sm
+                      font-semibold
+                      transition
+
                       ${
                         active
-                          ? "text-white/60"
-                          : "text-[#7c8da0] dark:text-slate-500"
+                          ? "bg-[#18233b] text-white"
+                          : "text-[#53657b] hover:bg-slate-50"
                       }
                     `}
                   >
-                    {filter.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+                    {filter.label}
 
-          {/* Search + dropdowns */}
-
-          <div
-            className="
-              flex
-              flex-col
-              gap-3
-              lg:flex-row
-              lg:items-center
-              lg:justify-between
-            "
-          >
-            {/* Search */}
-
-            <div className="relative w-full lg:max-w-[320px]">
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search account, ID or invoice"
-                className="
-                  h-10
-                  w-full
-                  rounded-full
-                  border
-                  border-slate-200
-                  bg-white
-                  px-4
-                  pl-10
-                  text-sm
-                  text-[#18233b]
-                  outline-none
-                  placeholder:text-[#8492a3]
-                  focus:border-blue-400
-                  transition-colors
-
-                  dark:border-slate-700
-                  dark:bg-[#111827]
-                  dark:text-white
-                  dark:placeholder:text-slate-500
-                  dark:focus:border-blue-500
-                "
-              />
-
-              <svg
-                className="
-                  absolute
-                  left-4
-                  top-1/2
-                  h-4
-                  w-4
-                  -translate-y-1/2
-                  text-slate-400
-                  dark:text-slate-500
-                "
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle
-                  cx="11"
-                  cy="11"
-                  r="6.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-
-                <path
-                  d="M16 16L21 21"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-
-            {/* Dropdowns */}
-
-            <div className="flex flex-wrap gap-3">
-              <button
-                type="button"
-                className="
-                  h-10
-                  rounded-full
-                  border
-                  border-slate-200
-                  bg-white
-                  px-4
-                  text-sm
-                  text-[#18233b]
-                  transition-colors
-
-                  dark:border-slate-700
-                  dark:bg-[#111827]
-                  dark:text-slate-200
-                "
-              >
-                All currencies
-                <span className="ml-3 text-slate-400">⌄</span>
-              </button>
-
-              <button
-                type="button"
-                className="
-                  h-10
-                  rounded-full
-                  border
-                  border-slate-200
-                  bg-white
-                  px-4
-                  text-sm
-                  text-[#18233b]
-                  transition-colors
-
-                  dark:border-slate-700
-                  dark:bg-[#111827]
-                  dark:text-slate-200
-                "
-              >
-                All owners
-                <span className="ml-3 text-slate-400">⌄</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveFilter("All");
-                  setSearch("");
-                }}
-                className="
-                  h-10
-                  rounded-full
-                  border
-                  border-slate-200
-                  bg-white
-                  px-4
-                  text-xs
-                  font-semibold
-                  text-[#18233b]
-                  transition-colors
-                  hover:bg-slate-50
-
-                  dark:border-slate-700
-                  dark:bg-[#111827]
-                  dark:text-slate-200
-                  dark:hover:bg-slate-800
-                "
-              >
-                Clear filters
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* =========================================================
-            DESKTOP / TABLET TABLE
-        ========================================================= */}
-
-        <div
-          className="
-            hidden
-            overflow-hidden
-            rounded-2xl
-            border
-            border-slate-200
-            bg-white
-            shadow-[0_8px_24px_rgba(15,23,42,0.05)]
-            transition-colors
-            md:block
-            dark:border-slate-700
-            dark:bg-[#111827]
-            dark:shadow-[0_8px_24px_rgba(0,0,0,0.25)]
-          "
-        >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[1020px] border-collapse">
-              <thead>
-                <tr
-                  className="
-                    bg-[#fafbfc]
-                    dark:bg-[#151E2E]
-                  "
-                >
-                  <th
-                    className="
-                      w-14
-                      border-b
-                      border-slate-200
-                      px-5
-                      py-4
-                      dark:border-slate-700
-                    "
-                  >
-                    <div
-                      className="
-                        h-4
-                        w-4
-                        rounded-sm
-                        border
-                        border-slate-400
-                        bg-white
-                        dark:border-slate-500
-                        dark:bg-slate-800
-                      "
-                    />
-                  </th>
-
-                  {[
-                    "Account",
-                    "Open invoices",
-                    "Oldest due",
-                    "Aging",
-                    "Outstanding",
-                    "Status",
-                    "Owner",
-                    "",
-                  ].map((heading, index) => (
-                    <th
-                      key={index}
+                    <span
                       className={`
-                        border-b
-                        border-slate-200
-                        px-4
-                        py-4
-                        text-left
-                        text-[11px]
-                        font-bold
-                        uppercase
-                        tracking-wide
-                        text-[#708096]
-                        dark:border-slate-700
-                        dark:text-slate-400
+                        ml-1.5
                         ${
-                          heading === "Outstanding"
-                            ? "text-right"
-                            : ""
+                          active
+                            ? "text-white/60"
+                            : "text-[#7c8da0]"
                         }
                       `}
                     >
-                      {heading}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
+                      {filter.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
 
-              <tbody>
-                {filteredAccounts.map((account, index) => (
-                  <tr
-                    key={account.id}
-                    className="
-                      transition
-                      hover:bg-slate-50
-                      dark:hover:bg-slate-800/50
-                    "
-                  >
-                    {/* Checkbox */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-5
-                        py-9
-                        dark:border-slate-800
-                      "
-                    >
-                      <div
-                        className="
-                          h-4
-                          w-4
-                          rounded-sm
-                          border
-                          border-slate-400
-                          bg-white
-                          dark:border-slate-500
-                          dark:bg-slate-800
-                        "
-                      />
-                    </td>
-
-                    {/* Account */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-3.5
-                        dark:border-slate-800
-                      "
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`
-                            flex
-                            h-8
-                            w-8
-                            shrink-0
-                            items-center
-                            justify-center
-                            rounded-lg
-                            ${
-                              avatarStyles[
-                                index % avatarStyles.length
-                              ]
-                            }
-                          `}
-                        >
-                          <span
-                            className="
-                              text-xs
-                              font-bold
-                              text-[#273753]
-                              dark:text-slate-200
-                            "
-                          >
-                            {account.initials}
-                          </span>
-                        </div>
-
-                        <div className="min-w-0">
-                          <div
-                            className="
-                              text-sm
-                              font-semibold
-                              leading-6
-                              text-[#18233b]
-                              dark:text-white
-                            "
-                          >
-                            {account.name}
-                          </div>
-
-                          <div
-                            className="
-                              text-xs
-                              leading-5
-                              text-[#728298]
-                              dark:text-slate-500
-                            "
-                          >
-                            {account.id} · {account.currency}
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-
-                    {/* Open invoices */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-9
-                        text-sm
-                        text-[#18233b]
-                        dark:border-slate-800
-                        dark:text-slate-200
-                      "
-                    >
-                      {account.invoices}
-                    </td>
-
-                    {/* Oldest due */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-6
-                        dark:border-slate-800
-                      "
-                    >
-                      <div
-                        className="
-                          text-sm
-                          leading-6
-                          text-[#18233b]
-                          dark:text-slate-200
-                        "
-                      >
-                        {account.due}
-                      </div>
-
-                      <div
-                        className="
-                          text-xs
-                          leading-5
-                          text-[#728298]
-                          dark:text-slate-500
-                        "
-                      >
-                        {account.days}
-                      </div>
-                    </td>
-
-                    {/* Aging */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-11
-                        dark:border-slate-800
-                      "
-                    >
-                      <AgingBar values={account.aging} />
-                    </td>
-
-                    {/* Outstanding */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-9
-                        text-right
-                        dark:border-slate-800
-                      "
-                    >
-                      <span
-                        className="
-                          text-sm
-                          font-semibold
-                          text-[#18233b]
-                          dark:text-white
-                        "
-                      >
-                        {account.amount}
-                      </span>
-                    </td>
-
-                    {/* Status */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-9
-                        dark:border-slate-800
-                      "
-                    >
-                      <StatusBadge status={account.status} />
-                    </td>
-
-                    {/* Owner */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-6
-                        dark:border-slate-800
-                      "
-                    >
-                      <span
-                        className="
-                          whitespace-nowrap
-                          text-sm
-                          text-[#18233b]
-                          dark:text-slate-200
-                        "
-                      >
-                        {account.owner}
-                      </span>
-                    </td>
-
-                    {/* Action */}
-
-                    <td
-                      className="
-                        border-b
-                        border-slate-100
-                        px-4
-                        py-8
-                        dark:border-slate-800
-                      "
-                    >
-                      <button
-                        type="button"
-                        className="
-                          h-7
-                          rounded-lg
-                          border
-                          border-slate-200
-                          bg-white
-                          px-2.5
-                          text-xs
-                          font-semibold
-                          text-[#53657b]
-                          transition
-                          hover:bg-slate-50
-
-                          dark:border-slate-700
-                          dark:bg-slate-800
-                          dark:text-slate-300
-                          dark:hover:bg-slate-700
-                        "
-                      >
-                        Open
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Footer */}
-
-          <div
-            className="
-              border-t
-              border-slate-200
-              bg-[#fafbfc]
-              px-5
-              py-4
-              dark:border-slate-700
-              dark:bg-[#151E2E]
-            "
-          >
+            {/* SEARCH + CONTROLS */}
             <div
               className="
                 flex
                 flex-col
-                gap-2
-                text-xs
-                text-[#728298]
-                sm:flex-row
-                sm:items-center
-                sm:justify-between
-                dark:text-slate-500
+                gap-3
+
+                lg:flex-row
+                lg:items-center
+                lg:justify-between
               "
             >
-              <span>
-                Showing {filteredAccounts.length} of {accounts.length}{" "}
-                accounts
-              </span>
+              {/* SEARCH */}
+              <div className="relative w-full lg:max-w-[320px]">
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(event) => setSearch(event.target.value)}
+                  placeholder="Search account, ID or invoice"
+                  className="
+                    h-11
+                    w-full
+                    rounded-full
+                    border
+                    border-slate-200
+                    bg-white
+                    px-4
+                    pl-10
+                    text-sm
+                    text-[#18233b]
+                    outline-none
+                    placeholder:text-[#8492a3]
+                    transition
+                    focus:border-blue-400
+                    focus:ring-2
+                    focus:ring-blue-100
+                  "
+                />
 
-              <span>
-                Total outstanding:{" "}
-                <strong className="text-[#18233b] dark:text-white">
-                  £2,486,310
-                </strong>
-              </span>
-            </div>
-          </div>
-        </div>
+                <svg
+                  className="
+                    absolute
+                    left-4
+                    top-1/2
+                    h-4
+                    w-4
+                    -translate-y-1/2
+                    text-slate-400
+                  "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="6.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
 
-        {/* =========================================================
-            MOBILE CARDS
-        ========================================================= */}
-
-        <div className="space-y-3 md:hidden">
-          {filteredAccounts.map((account, index) => (
-            <div
-              key={account.id}
-              className="
-                overflow-hidden
-                rounded-2xl
-                border
-                border-slate-200
-                bg-white
-                shadow-[0_4px_16px_rgba(15,23,42,0.04)]
-                transition-colors
-
-                dark:border-slate-700
-                dark:bg-[#111827]
-                dark:shadow-[0_4px_16px_rgba(0,0,0,0.2)]
-              "
-            >
-              {/* Card header */}
-
-              <div className="flex items-start justify-between gap-3 p-4">
-                <div className="flex min-w-0 items-center gap-3">
-                  <div
-                    className={`
-                      flex
-                      h-9
-                      w-9
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-lg
-                      ${
-                        avatarStyles[
-                          index % avatarStyles.length
-                        ]
-                      }
-                    `}
-                  >
-                    <span
-                      className="
-                        text-xs
-                        font-bold
-                        text-[#273753]
-                        dark:text-slate-200
-                      "
-                    >
-                      {account.initials}
-                    </span>
-                  </div>
-
-                  <div className="min-w-0">
-                    <h3
-                      className="
-                        truncate
-                        text-sm
-                        font-semibold
-                        text-[#18233b]
-                        dark:text-white
-                      "
-                    >
-                      {account.name}
-                    </h3>
-
-                    <p
-                      className="
-                        text-xs
-                        text-[#728298]
-                        dark:text-slate-500
-                      "
-                    >
-                      {account.id} · {account.currency}
-                    </p>
-                  </div>
-                </div>
-
-                <StatusBadge status={account.status} />
+                  <path
+                    d="M16 16L21 21"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </div>
 
-              {/* Card details */}
-
-              <div
-                className="
-                  grid
-                  grid-cols-2
-                  border-t
-                  border-slate-100
-                  dark:border-slate-800
-                "
-              >
-                <div
+              {/* CONTROLS */}
+              <div className="flex flex-wrap gap-3">
+                <button
+                  type="button"
                   className="
-                    border-r
-                    border-slate-100
-                    p-4
-                    dark:border-slate-800
+                    h-11
+                    rounded-full
+                    border
+                    border-slate-200
+                    bg-white
+                    px-4
+                    text-sm
+                    text-[#18233b]
+                    transition
+                    hover:bg-slate-50
                   "
                 >
-                  <p
-                    className="
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-wide
-                      text-[#8190a3]
-                      dark:text-slate-500
-                    "
-                  >
-                    Open invoices
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      text-[#18233b]
-                      dark:text-slate-200
-                    "
-                  >
-                    {account.invoices}
-                  </p>
-                </div>
-
-                <div className="p-4">
-                  <p
-                    className="
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-wide
-                      text-[#8190a3]
-                      dark:text-slate-500
-                    "
-                  >
-                    Outstanding
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      font-semibold
-                      text-[#18233b]
-                      dark:text-white
-                    "
-                  >
-                    {account.amount}
-                  </p>
-                </div>
-
-                <div
-                  className="
-                    border-r
-                    border-t
-                    border-slate-100
-                    p-4
-                    dark:border-slate-800
-                  "
-                >
-                  <p
-                    className="
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-wide
-                      text-[#8190a3]
-                      dark:text-slate-500
-                    "
-                  >
-                    Oldest due
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      text-[#18233b]
-                      dark:text-slate-200
-                    "
-                  >
-                    {account.due}
-                  </p>
-
-                  <p
-                    className="
-                      text-xs
-                      text-[#728298]
-                      dark:text-slate-500
-                    "
-                  >
-                    {account.days}
-                  </p>
-                </div>
-
-                <div
-                  className="
-                    border-t
-                    border-slate-100
-                    p-4
-                    dark:border-slate-800
-                  "
-                >
-                  <p
-                    className="
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-wide
-                      text-[#8190a3]
-                      dark:text-slate-500
-                    "
-                  >
-                    Owner
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      text-[#18233b]
-                      dark:text-slate-200
-                    "
-                  >
-                    {account.owner}
-                  </p>
-                </div>
-              </div>
-
-              {/* Card footer */}
-
-              <div
-                className="
-                  flex
-                  items-center
-                  justify-between
-                  border-t
-                  border-slate-100
-                  px-4
-                  py-3
-                  dark:border-slate-800
-                "
-              >
-                <div>
-                  <p
-                    className="
-                      mb-1
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-wide
-                      text-[#8190a3]
-                      dark:text-slate-500
-                    "
-                  >
-                    Aging
-                  </p>
-
-                  <AgingBar values={account.aging} />
-                </div>
+                  All currencies
+                  <span className="ml-3 text-slate-400">⌄</span>
+                </button>
 
                 <button
                   type="button"
                   className="
-                    h-8
-                    rounded-lg
+                    h-11
+                    rounded-full
                     border
                     border-slate-200
                     bg-white
-                    px-3
-                    text-xs
-                    font-semibold
-                    text-[#53657b]
+                    px-4
+                    text-sm
+                    text-[#18233b]
                     transition
-
-                    dark:border-slate-700
-                    dark:bg-slate-800
-                    dark:text-slate-300
-                    dark:hover:bg-slate-700
+                    hover:bg-slate-50
                   "
                 >
-                  Open
+                  All owners
+                  <span className="ml-3 text-slate-400">⌄</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  className="
+                    h-11
+                    rounded-full
+                    border
+                    border-slate-200
+                    bg-white
+                    px-4
+                    text-xs
+                    font-semibold
+                    text-[#18233b]
+                    transition
+                    hover:bg-slate-50
+                  "
+                >
+                  Clear filters
                 </button>
               </div>
             </div>
-          ))}
+          </div>
 
-          {/* No results */}
+          {/* DESKTOP / TABLET TABLE */}
+          <div
+            className="
+              hidden
+              overflow-hidden
+              rounded-2xl
+              border
+              border-slate-200
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05)]
 
-          {filteredAccounts.length === 0 && (
+              md:block
+            "
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[1020px] border-collapse">
+                <thead>
+                  <tr className="bg-[#fafbfc]">
+                    <th className="w-14 border-b border-slate-200 px-5 py-4">
+                      <div className="h-4 w-4 rounded-sm border border-slate-400 bg-white" />
+                    </th>
+
+                    {[
+                      "Account",
+                      "Open invoices",
+                      "Oldest due",
+                      "Aging",
+                      "Outstanding",
+                      "Status",
+                      "Owner",
+                      "",
+                    ].map((heading, index) => (
+                      <th
+                        key={`${heading}-${index}`}
+                        className={`
+                          border-b
+                          border-slate-200
+                          px-4
+                          py-4
+                          text-left
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-wide
+                          text-[#708096]
+
+                          ${
+                            heading === "Outstanding"
+                              ? "text-right"
+                              : ""
+                          }
+                        `}
+                      >
+                        {heading}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {filteredAccounts.map((account, index) => (
+                    <tr
+                      key={account.id}
+                      className="transition hover:bg-slate-50"
+                    >
+                      {/* Checkbox */}
+                      <td className="border-b border-slate-100 px-5 py-5">
+                        <div className="h-4 w-4 rounded-sm border border-slate-400 bg-white" />
+                      </td>
+
+                      {/* Account */}
+                      <td className="border-b border-slate-100 px-4 py-3.5">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className={`
+                              flex
+                              h-8
+                              w-8
+                              shrink-0
+                              items-center
+                              justify-center
+                              rounded-lg
+                              ${avatarStyles[index % avatarStyles.length]}
+                            `}
+                          >
+                            <span className="text-xs font-bold text-[#273753]">
+                              {account.initials}
+                            </span>
+                          </div>
+
+                          <div className="min-w-0">
+                            <div className="text-sm font-semibold leading-6 text-[#18233b]">
+                              {account.name}
+                            </div>
+
+                            <div className="text-xs leading-5 text-[#728298]">
+                              {account.id} · {account.currency}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* Open invoices */}
+                      <td className="border-b border-slate-100 px-4 py-5 text-sm text-[#18233b]">
+                        {account.invoices}
+                      </td>
+
+                      {/* Oldest due */}
+                      <td className="border-b border-slate-100 px-4 py-5">
+                        <div className="text-sm leading-6 text-[#18233b]">
+                          {account.due}
+                        </div>
+
+                        <div className="text-xs leading-5 text-[#728298]">
+                          {account.days}
+                        </div>
+                      </td>
+
+                      {/* Aging */}
+                      <td className="border-b border-slate-100 px-4 py-5">
+                        <AgingBar values={account.aging} />
+                      </td>
+
+                      {/* Outstanding */}
+                      <td className="border-b border-slate-100 px-4 py-5 text-right">
+                        <span className="text-sm font-semibold text-[#18233b]">
+                          {account.amount}
+                        </span>
+                      </td>
+
+                      {/* Status */}
+                      <td className="border-b border-slate-100 px-4 py-5">
+                        <StatusBadge status={account.status} />
+                      </td>
+
+                      {/* Owner */}
+                      <td className="border-b border-slate-100 px-4 py-5">
+                        <span className="whitespace-nowrap text-sm text-[#18233b]">
+                          {account.owner}
+                        </span>
+                      </td>
+
+                      {/* Action */}
+                      <td className="border-b border-slate-100 px-4 py-5">
+                        <button
+                          type="button"
+                          className="
+                            h-8
+                            rounded-lg
+                            border
+                            border-slate-200
+                            bg-white
+                            px-2.5
+                            text-xs
+                            font-semibold
+                            text-[#53657b]
+                            transition
+                            hover:bg-slate-50
+                          "
+                        >
+                          Open
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* TABLE FOOTER */}
             <div
               className="
-                rounded-2xl
-                border
+                border-t
                 border-slate-200
-                bg-white
-                p-8
-                text-center
-                text-sm
-                text-[#728298]
-
-                dark:border-slate-700
-                dark:bg-[#111827]
-                dark:text-slate-500
+                bg-[#fafbfc]
+                px-5
+                py-4
               "
             >
-              No accounts found.
+              <div
+                className="
+                  flex
+                  flex-col
+                  gap-2
+                  text-xs
+                  text-[#728298]
+
+                  sm:flex-row
+                  sm:items-center
+                  sm:justify-between
+                "
+              >
+                <span>
+                  Showing {filteredAccounts.length} of {accounts.length}{" "}
+                  accounts
+                </span>
+
+                <span>
+                  Total outstanding:{" "}
+                  <strong className="text-[#18233b]">
+                    £2,486,310
+                  </strong>
+                </span>
+              </div>
             </div>
-          )}
+          </div>
+
+          {/* MOBILE CARDS */}
+          <div className="space-y-3 md:hidden">
+            {filteredAccounts.map((account, index) => (
+              <div
+                key={account.id}
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  shadow-[0_4px_16px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* Card Header */}
+                <div className="flex items-start justify-between gap-3 p-4">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <div
+                      className={`
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-lg
+                        ${avatarStyles[index % avatarStyles.length]}
+                      `}
+                    >
+                      <span className="text-xs font-bold text-[#273753]">
+                        {account.initials}
+                      </span>
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="truncate text-sm font-semibold text-[#18233b]">
+                        {account.name}
+                      </h3>
+
+                      <p className="text-xs text-[#728298]">
+                        {account.id} · {account.currency}
+                      </p>
+                    </div>
+                  </div>
+
+                  <StatusBadge status={account.status} />
+                </div>
+
+                {/* Card Details */}
+                <div className="grid grid-cols-2 border-t border-slate-100">
+                  <div className="border-r border-slate-100 p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                      Open invoices
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#18233b]">
+                      {account.invoices}
+                    </p>
+                  </div>
+
+                  <div className="p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                      Outstanding
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-[#18233b]">
+                      {account.amount}
+                    </p>
+                  </div>
+
+                  <div className="border-r border-t border-slate-100 p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                      Oldest due
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#18233b]">
+                      {account.due}
+                    </p>
+
+                    <p className="text-xs text-[#728298]">
+                      {account.days}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-slate-100 p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                      Owner
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#18233b]">
+                      {account.owner}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card Footer */}
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    border-t
+                    border-slate-100
+                    px-4
+                    py-3
+                  "
+                >
+                  <div>
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                      Aging
+                    </p>
+
+                    <AgingBar values={account.aging} />
+                  </div>
+
+                  <button
+                    type="button"
+                    className="
+                      h-8
+                      rounded-lg
+                      border
+                      border-slate-200
+                      bg-white
+                      px-3
+                      text-xs
+                      font-semibold
+                      text-[#53657b]
+                      transition
+                      hover:bg-slate-50
+                    "
+                  >
+                    Open
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            {/* NO RESULTS */}
+            {filteredAccounts.length === 0 && (
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  p-8
+                  text-center
+                  text-sm
+                  text-[#728298]
+                "
+              >
+                No accounts found.
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
