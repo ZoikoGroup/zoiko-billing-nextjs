@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import Link from "next/link";
 
 const reconciliationRows = [
   {
@@ -27,175 +25,241 @@ const reconciliationRows = [
 
 export default function ClosingBalance() {
   return (
-    <section
-      className="
-        w-full
-        bg-white
-        px-4
-        py-8
-        transition-colors
-        sm:px-6
-        lg:px-8
-        dark:bg-[#0B1728]
-      "
-    >
-      <div className="relative mx-auto w-full max-w-[1184px] overflow-hidden rounded-3xl bg-[#142f4a] p-6 sm:p-8 md:p-10 lg:p-14">
-
-        {/* Background glow */}
+    <section className="w-full overflow-hidden bg-white">
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[1440px]
+          px-5
+          py-10
+          sm:px-8
+          sm:py-12
+          md:px-10
+          md:py-16
+          lg:px-14
+          lg:py-20
+          xl:px-20
+        "
+      >
         <div
           className="
-            pointer-events-none
-            absolute
-            -right-20
-            -top-20
-            h-64
-            w-64
-            rounded-full
-            bg-[radial-gradient(circle,rgba(72,177,255,0.5)_0%,rgba(72,177,255,0)_70%)]
-            sm:-right-16
-            sm:-top-16
-            sm:h-72
-            sm:w-72
-            lg:-right-14
-            lg:-top-20
-            lg:h-80
-            lg:w-80
+            relative
+            mx-auto
+            w-full
+            max-w-[1184px]
+            overflow-hidden
+            rounded-3xl
+            bg-[#142F4A]
+            px-5
+            py-8
+            sm:px-8
+            sm:py-10
+            md:px-10
+            md:py-12
+            lg:px-14
+            lg:py-14
           "
-        />
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col gap-6">
-
-          {/* Heading + description + buttons */}
-          <div className="flex flex-col items-start gap-3.5">
-
-            <h2
-              className="
-                max-w-full
-                text-2xl
-                font-bold
-                leading-tight
-                text-white
-                sm:text-3xl
-                sm:leading-10
-                lg:text-4xl
-                lg:leading-10
-              "
-            >
-              Close the month with nothing
-              <br className="hidden sm:block" />
-              left to reconcile.
-            </h2>
-
-            <p
-              className="
-                max-w-full
-                text-sm
-                font-normal
-                leading-6
-                text-white/70
-                sm:max-w-[520px]
-                sm:text-base
-              "
-            >
-              Balances, payments and credit notes sit on one record, so the
-              number you report is the number in the ledger.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-
-              <button
-                type="button"
-                className="
-                  h-10
-                  rounded-full
-                  bg-white
-                  px-5
-                  py-2
-                  text-sm
-                  font-semibold
-                  leading-6
-                  text-[#142f4a]
-                  outline
-                  outline-1
-                  outline-offset-[-1px]
-                  outline-white
-                  transition
-                  hover:bg-slate-100
-                "
-              >
-                Create account
-              </button>
-
-              <button
-                type="button"
-                className="
-                  h-10
-                  rounded-full
-                  border
-                  border-white/35
-                  px-5
-                  py-2
-                  text-sm
-                  font-semibold
-                  leading-6
-                  text-white
-                  transition
-                  hover:bg-white/10
-                "
-              >
-                Talk to sales
-              </button>
-
-            </div>
-          </div>
-
-          {/* Reconciliation card */}
+        >
+          {/* Background Glow */}
           <div
             className="
-              w-full
-              rounded-2xl
-              border
-              border-white/15
-              bg-white/[0.06]
-              p-4
-              sm:p-5
+              pointer-events-none
+              absolute
+              -right-24
+              -top-24
+              h-64
+              w-64
+              rounded-full
+              bg-[radial-gradient(circle,_rgba(72,177,255,0.5)_0%,_rgba(72,177,255,0)_70%)]
+              sm:-right-20
+              sm:-top-20
+              sm:h-72
+              sm:w-72
+              lg:-right-16
+              lg:-top-20
+              lg:h-80
+              lg:w-80
+            "
+          />
+
+          {/* Content */}
+          <div
+            className="
+              relative
+              z-10
+              flex
+              flex-col
+              gap-7
+              sm:gap-8
             "
           >
-            {reconciliationRows.map((row, index) => (
-              <div
-                key={row.label}
-                className={`
-                  flex
-                  items-center
-                  justify-between
-                  gap-4
-                  py-2.5
-                  ${index !== 0 ? "border-t border-white/10" : ""}
-                `}
+            {/* Top Content */}
+            <div className="flex flex-col items-start">
+              {/* Heading */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[700px]
+                  !text-white
+                  text-[30px]
+                  font-extrabold
+                  leading-[1.12]
+                  tracking-[-0.025em]
+                  sm:text-[36px]
+                  sm:leading-[1.1]
+                  md:text-[40px]
+                  lg:text-[44px]
+                "
               >
-                <span className="text-sm font-normal leading-5 text-white/60">
-                  {row.label}
-                </span>
+                Close the month with nothing left to reconcile.
+              </h2>
 
-                <span
+              {/* Description */}
+              <p
+                className="
+                  !m-0
+                  mt-4
+                  w-full
+                  max-w-[600px]
+                  !text-white/70
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  sm:mt-5
+                  sm:text-base
+                "
+              >
+                Balances, payments and credit notes sit on one record, so the
+                number you report is the number in the ledger.
+              </p>
+
+              {/* CTA Buttons */}
+              <div
+                className="
+                  mt-6
+                  flex
+                  w-full
+                  flex-col
+                  gap-3
+                  sm:mt-7
+                  sm:w-auto
+                  sm:flex-row
+                "
+              >
+                <Link
+                  href="/create-account"
                   className="
-                    shrink-0
-                    text-right
+                    inline-flex
+                    min-h-11
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white
+                    px-7
+                    py-2.5
                     text-sm
                     font-semibold
-                    leading-5
-                    text-white
-                    sm:text-base
+                    leading-6
+                    !text-[#142F4A]
+                    no-underline
+                    transition
+                    hover:bg-slate-100
+                    sm:w-auto
                   "
                 >
-                  {row.value}
-                </span>
-              </div>
-            ))}
-          </div>
+                  Create account
+                </Link>
 
+                <Link
+                  href="/talk-to-sales"
+                  className="
+                    inline-flex
+                    min-h-11
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-white/35
+                    bg-transparent
+                    px-7
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-white
+                    no-underline
+                    transition
+                    hover:bg-white/10
+                    sm:w-auto
+                  "
+                >
+                  Talk to sales
+                </Link>
+              </div>
+            </div>
+
+            {/* Reconciliation Card */}
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-white/15
+                bg-white/[0.06]
+                p-4
+                sm:p-5
+                md:p-6
+              "
+            >
+              {reconciliationRows.map((row, index) => (
+                <div
+                  key={row.label}
+                  className={`
+                    flex
+                    items-center
+                    justify-between
+                    gap-4
+                    py-3
+                    ${
+                      index !== 0
+                        ? "border-t border-white/10"
+                        : ""
+                    }
+                  `}
+                >
+                  <span
+                    className="
+                      min-w-0
+                      !text-white/60
+                      text-sm
+                      font-normal
+                      leading-5
+                    "
+                  >
+                    {row.label}
+                  </span>
+
+                  <span
+                    className="
+                      shrink-0
+                      !text-white
+                      text-right
+                      text-sm
+                      font-semibold
+                      leading-5
+                      sm:text-base
+                    "
+                  >
+                    {row.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

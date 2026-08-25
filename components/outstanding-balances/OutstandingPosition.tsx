@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-
 const summaryCards = [
   {
     label: "Total outstanding",
@@ -95,83 +91,84 @@ const agingData = [
 
 export default function OutstandingPosition() {
   return (
-    <section
-      className="
-        w-full
-        bg-white
-        py-16
-        sm:py-20
-        lg:py-24
-        dark:bg-slate-950
-      "
-    >
+    <section className="w-full overflow-hidden bg-white">
       <div
         className="
           mx-auto
           w-full
-          max-w-[1240px]
+          max-w-[1440px]
           px-5
+          py-12
+
           sm:px-8
-          lg:px-7
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+          lg:py-24
+
+          xl:px-20
         "
       >
-        {/* Section Header */}
-        <div className="flex flex-col items-start gap-3.5">
-          {/* Eyebrow */}
-          <div className="relative flex h-4 items-center">
-            <div
-              className="
-                h-px
-                w-5
-                bg-slate-400
-                opacity-60
-                dark:bg-slate-500
-              "
-            />
+        {/* SECTION HEADER */}
+        <div className="flex w-full flex-col items-start">
+          {/* EYEBROW */}
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-70" />
 
             <span
               className="
-                ml-3
-                whitespace-nowrap
-                text-xs
+                text-[10px]
                 font-semibold
                 uppercase
+                leading-4
                 tracking-[0.16em]
-                text-slate-500
-                dark:text-slate-400
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
               "
             >
               What is outstanding
             </span>
           </div>
 
-          {/* Heading */}
+          {/* HEADING */}
           <h2
             className="
-              max-w-[900px]
-              pt-px
-              text-3xl
-              font-bold
-              leading-tight
-              tracking-[-0.02em]
-              text-slate-950
-              sm:text-4xl
-              dark:text-white
+              !m-0
+              !max-w-[900px]
+              !text-[32px]
+              !font-extrabold
+              !leading-[1.1]
+              !tracking-[-0.03em]
+              !text-slate-900
+
+              sm:!text-[40px]
+
+              md:!text-[46px]
+
+              lg:!text-[50px]
             "
           >
             The position, before you open a single account.
           </h2>
 
-          {/* Description */}
+          {/* DESCRIPTION */}
           <p
             className="
+              mt-5
+              w-full
               max-w-[606px]
-              text-sm
+              text-[15px]
               font-normal
-              leading-6
-              text-slate-500
+              leading-7
+              text-[#5d7192]
+
+              sm:mt-6
               sm:text-base
-              dark:text-slate-400
             "
           >
             Figures update as payments post. Nothing here is estimated or
@@ -179,15 +176,19 @@ export default function OutstandingPosition() {
           </p>
         </div>
 
-        {/* Summary Cards */}
+        {/* SUMMARY CARDS */}
         <div
           className="
-            mt-7
+            mt-8
             grid
             grid-cols-1
             gap-4
+
             sm:grid-cols-2
-            lg:grid-cols-5
+
+            lg:grid-cols-3
+
+            xl:grid-cols-5
           "
         >
           {summaryCards.map((card) => (
@@ -202,13 +203,10 @@ export default function OutstandingPosition() {
                 border-slate-200
                 bg-white
                 p-5
-                shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)]
-                dark:border-slate-800
-                dark:bg-slate-900
-                dark:shadow-none
+                shadow-[0_8px_24px_rgba(15,23,42,0.05)]
               "
             >
-              {/* Accent */}
+              {/* ACCENT */}
               <div
                 className={`
                   absolute
@@ -220,9 +218,9 @@ export default function OutstandingPosition() {
                 `}
               />
 
-              <div className="flex flex-col gap-1">
-                {/* Label */}
-                <div
+              <div className="flex flex-col">
+                {/* LABEL */}
+                <span
                   className="
                     text-xs
                     font-semibold
@@ -230,46 +228,45 @@ export default function OutstandingPosition() {
                     leading-5
                     tracking-wide
                     text-slate-500
-                    dark:text-slate-400
                   "
                 >
                   {card.label}
-                </div>
+                </span>
 
-                {/* Value */}
-                <div className="pt-1 text-right">
-                  <div
-                    className="
-                      text-xl
-                      font-extrabold
-                      leading-9
-                      tracking-tight
-                      text-slate-950
-                      sm:text-2xl
-                      dark:text-white
-                    "
-                  >
-                    {card.value}
-                  </div>
-                </div>
-
-                {/* Detail */}
-                <div
+                {/* VALUE */}
+                <span
                   className="
+                    mt-1
+                    text-xl
+                    font-extrabold
+                    leading-9
+                    tracking-tight
+                    text-slate-950
+
+                    sm:text-2xl
+                  "
+                >
+                  {card.value}
+                </span>
+
+                {/* DETAIL */}
+                <span
+                  className="
+                    mt-0.5
                     text-xs
+                    font-normal
                     leading-5
                     text-slate-500
-                    dark:text-slate-400
                   "
                 >
                   {card.detail}
-                </div>
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Aging Distribution */}
+        {/* AGING DISTRIBUTION */}
         <div
           className="
             mt-6
@@ -278,13 +275,10 @@ export default function OutstandingPosition() {
             border
             border-slate-200
             bg-white
-            shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)]
-            dark:border-slate-800
-            dark:bg-slate-900
-            dark:shadow-none
+            shadow-[0_8px_24px_rgba(15,23,42,0.05)]
           "
         >
-          {/* Aging Header */}
+          {/* HEADER */}
           <div
             className="
               flex
@@ -294,20 +288,23 @@ export default function OutstandingPosition() {
               border-slate-200
               px-5
               py-4
-              sm:flex-row
-              sm:items-center
-              sm:justify-between
-              dark:border-slate-800
+
+              sm:px-6
+              sm:py-5
+
+              md:flex-row
+              md:items-center
+              md:justify-between
             "
           >
             <div>
               <h3
                 className="
+                  !m-0
                   text-base
                   font-bold
                   leading-6
                   text-slate-950
-                  dark:text-white
                 "
               >
                 Aging distribution
@@ -315,10 +312,11 @@ export default function OutstandingPosition() {
 
               <p
                 className="
+                  mt-0.5
                   text-xs
+                  font-normal
                   leading-5
                   text-slate-500
-                  dark:text-slate-400
                 "
               >
                 Select a band to filter the table below.
@@ -328,17 +326,18 @@ export default function OutstandingPosition() {
             <p
               className="
                 text-xs
+                font-normal
                 leading-5
                 text-slate-500
-                sm:text-right
-                dark:text-slate-400
+
+                md:text-right
               "
             >
               Buckets counted from invoice due date, not issue date.
             </p>
           </div>
 
-          {/* Aging Bar */}
+          {/* AGING BAR */}
           <div className="px-5 pt-8 sm:px-6">
             <div
               className="
@@ -348,26 +347,29 @@ export default function OutstandingPosition() {
                 overflow-hidden
                 rounded-full
                 bg-slate-100
-                dark:bg-slate-800
               "
             >
               {agingData.map((item) => (
                 <div
                   key={item.label}
-                  className={`${item.color} h-full`}
+                  className={`h-full ${item.color}`}
                   style={{ width: item.width }}
                 />
               ))}
             </div>
           </div>
 
-          {/* Aging Details */}
+          {/* AGING DETAILS */}
           <div
             className="
               grid
               grid-cols-1
+
               sm:grid-cols-2
-              lg:grid-cols-5
+
+              lg:grid-cols-3
+
+              xl:grid-cols-5
             "
           >
             {agingData.map((item, index) => (
@@ -376,15 +378,19 @@ export default function OutstandingPosition() {
                 className={`
                   px-5
                   py-5
-                  lg:px-4
+
+                  sm:px-6
+
+                  xl:px-4
+
                   ${
                     index > 0
-                      ? "border-t border-slate-200 lg:border-l lg:border-t-0 dark:border-slate-800"
+                      ? "border-t border-slate-200 sm:border-l-0 lg:border-l lg:border-t-0"
                       : ""
                   }
                 `}
               >
-                {/* Label */}
+                {/* LABEL */}
                 <div className="flex items-center gap-2">
                   <span
                     className={`
@@ -403,41 +409,40 @@ export default function OutstandingPosition() {
                       leading-5
                       tracking-tight
                       text-slate-600
-                      dark:text-slate-300
                     "
                   >
                     {item.label}
                   </span>
                 </div>
 
-                {/* Value */}
+                {/* VALUE */}
                 <div className="pt-1.5">
-                  <div
+                  <span
                     className="
                       text-lg
                       font-bold
                       leading-8
                       tracking-tight
                       text-slate-950
+
                       sm:text-xl
-                      dark:text-white
                     "
                   >
                     {item.value}
-                  </div>
+                  </span>
                 </div>
 
-                {/* Percentage */}
-                <div
+                {/* DETAIL */}
+                <p
                   className="
                     text-xs
+                    font-normal
                     leading-5
                     text-slate-500
-                    dark:text-slate-400
                   "
                 >
                   {item.detail}
-                </div>
+                </p>
               </div>
             ))}
           </div>
