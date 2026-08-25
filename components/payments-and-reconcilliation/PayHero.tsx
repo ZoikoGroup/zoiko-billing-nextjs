@@ -1,85 +1,264 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
 export default function PayHero() {
   return (
-    <section className="w-full bg-white transition-colors duration-300 dark:bg-slate-950">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
-        <div className="mx-auto grid w-full max-w-[1220px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          
-          {/* LEFT CONTENT */}
-          <div className="flex w-full flex-col items-start gap-4">
-            
-            {/* Eyebrow */}
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+    <section className="w-full overflow-hidden bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          px-5
+          pb-14
+          pt-10
 
-              <span className="text-xs font-medium uppercase tracking-wider text-blue-500 dark:text-blue-400">
-                Payments &amp; Reconciliation
-              </span>
-            </div>
+          sm:px-8
+          sm:pb-16
+          sm:pt-12
 
-            {/* Heading */}
-            <h1 className="max-w-[560px] text-[42px] font-medium leading-[1.08] tracking-tight text-slate-900 sm:text-[50px] lg:text-[56px] lg:leading-[1.08] dark:text-white">
-              Connect every
-              <br />
-              payment to the
-              <br />
-              right billing record
-              <br />
-              <span className="text-blue-500 dark:text-blue-400">
-                — with exceptions
-                <br />
-                visible.
-              </span>
-            </h1>
+          md:px-10
+          md:pb-20
+          md:pt-16
 
-            {/* Description */}
-            <p className="max-w-[540px] text-base font-normal leading-7 text-slate-600 sm:text-[17px] sm:leading-8 dark:text-slate-300">
-              Zoiko Billing captures payment evidence, normalizes provider
-              states, matches and allocates funds, manages exceptions and
-              reversals, and updates receivable positions with explicit
-              source, currency, timing and audit context.
-            </p>
+          lg:flex-row
+          lg:items-center
+          lg:justify-between
+          lg:gap-10
+          lg:px-14
+          lg:py-20
 
-            {/* Buttons */}
-            <div className="flex w-full flex-col gap-3 pt-4 sm:w-auto sm:flex-row">
-              <Link
-                href="/create-account"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-blue-500 px-5 py-2.5 text-base font-normal text-white transition hover:bg-blue-600"
-              >
-                Create Account
-              </Link>
+          xl:gap-14
+          xl:px-20
+        "
+      >
+        {/* LEFT CONTENT */}
+        <div
+          className="
+            w-full
+            min-w-0
 
-              <Link
-                href="/book-a-demo"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-base font-normal text-slate-900 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-              >
-                Book a Demo
-              </Link>
-            </div>
+            lg:w-[48%]
+            lg:max-w-[620px]
+          "
+        >
+          {/* EYEBROW */}
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
+
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
+              Payments &amp; Reconciliation
+            </span>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="relative flex w-full items-center justify-center lg:justify-end">
-            
-            {/* Glow */}
-            <div className="pointer-events-none absolute -right-10 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full bg-cyan-400/10 blur-3xl dark:bg-blue-500/10" />
+          {/* HEADING */}
+          <h1
+            className="
+              !m-0
+              !block
+              !max-w-[620px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
 
-            <div className="relative z-10 w-full max-w-[680px]">
-              <Image
-                src="/images/payments-and-reconcilliation/image.png"
-                alt="Payments and reconciliation"
-                width={1200}
-                height={800}
-                priority
-                className="h-auto w-full object-contain"
-              />
-            </div>
+              sm:!text-[46px]
+
+              md:!text-[50px]
+
+              lg:!text-[44px]
+              lg:!leading-[1.08]
+
+              xl:!text-[50px]
+            "
+          >
+            Connect every payment to the right billing record{" "}
+            <span className="text-blue-600">
+              — with exceptions visible.
+            </span>
+          </h1>
+
+          {/* DESCRIPTION */}
+          <p
+            className="
+              mt-8
+              w-full
+              max-w-[600px]
+              text-[15px]
+              font-normal
+              leading-7
+              text-[#5d7192]
+
+              sm:mt-9
+              sm:text-base
+
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
+            "
+          >
+            Zoiko Billing captures payment evidence, normalizes provider
+            states, matches and allocates funds, manages exceptions and
+            reversals, and updates receivable positions with explicit source,
+            currency, timing and audit context.
+          </p>
+
+          {/* CTA BUTTONS */}
+          <div
+            className="
+              mt-7
+              flex
+              w-full
+              flex-col
+              gap-3
+
+              sm:mt-8
+              sm:w-auto
+              sm:flex-row
+              sm:flex-wrap
+            "
+          >
+            <Link
+              href="/create-account"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                bg-blue-600
+                px-7
+                text-sm
+                font-semibold
+                leading-6
+                text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
+                transition
+                hover:bg-blue-700
+
+                sm:w-auto
+              "
+            >
+              Create Account
+            </Link>
+
+            <Link
+              href="/book-a-demo"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-7
+                text-sm
+                font-semibold
+                leading-6
+                text-[#091127]
+                transition
+                hover:bg-[#f8faff]
+
+                sm:w-auto
+              "
+            >
+              Book a Demo
+            </Link>
           </div>
+        </div>
 
+        {/* RIGHT IMAGE */}
+        <div
+          className="
+            mt-10
+            flex
+            w-full
+            items-center
+            justify-center
+
+            sm:mt-12
+
+            md:mt-14
+
+            lg:mt-0
+            lg:w-[48%]
+            lg:justify-end
+
+            xl:w-[47%]
+          "
+        >
+          <div
+            className="
+              relative
+              w-full
+              max-w-[680px]
+            "
+          >
+            {/* GLOW */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-10
+                top-1/2
+                h-64
+                w-64
+                -translate-y-1/2
+                rounded-full
+                bg-cyan-400/10
+                blur-3xl
+
+                sm:h-80
+                sm:w-80
+
+                lg:h-[380px]
+                lg:w-[380px]
+              "
+            />
+
+            <Image
+              src="/images/payments-and-reconcilliation/image.png"
+              alt="Payments and reconciliation"
+              width={1200}
+              height={800}
+              priority
+              className="
+                relative
+                z-10
+                h-auto
+                w-full
+                object-contain
+              "
+              sizes="
+                (max-width: 639px) 100vw,
+                (max-width: 767px) 90vw,
+                (max-width: 1023px) 85vw,
+                (max-width: 1279px) 48vw,
+                680px
+              "
+            />
+          </div>
         </div>
       </div>
     </section>

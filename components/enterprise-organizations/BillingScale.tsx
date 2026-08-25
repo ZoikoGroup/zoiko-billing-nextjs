@@ -47,7 +47,7 @@ export default function BillingScale() {
     <section className="w-full bg-[#F7F8FA] px-5 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 lg:gap-11">
         {/* Header */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2">
+        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-4 shrink-0 bg-blue-600 opacity-40" />
