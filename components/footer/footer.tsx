@@ -30,8 +30,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Invoices & Credit Notes', href: '/invoices' },
       { label: 'Charges & Adjustments', href: '/charges-and-adjustments' },
-      { label: 'Billing Schedules', href: '#' },
-      { label: 'Documents & Delivery', href: '#' },
+      { label: 'Billing Schedules', href: '/billing-schedules' },
+      { label: 'Documents & Delivery', href: '/documents-and-delivery' },
       { label: 'Accounts Receivable', href: '/accounts-receivable' },
       { label: 'Payments & Reconciliation', href: '/payments-and-reconcilliation' },
       { label: 'Outstanding Balances', href: '/outstanding-balances' },
