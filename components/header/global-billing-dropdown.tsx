@@ -27,27 +27,27 @@ type MenuItem = {
 };
 
 const MULTI_CURRENCY_ITEMS: MenuItem[] = [
-  { title: 'Multi-Currency', description: 'Price, bill and collect in multiple currencies with real-time exchange rates.', href: '/global-billing/multi-currency', icon: DollarSign },
-  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/global-billing/fx', icon: RefreshCw },
-  { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '/global-billing/currency-controls', icon: Sliders },
+  { title: 'Multi-Currency', description: 'Price, bill and collect in multiple currencies with real-time exchange rates.', href: '/multi-currency', icon: DollarSign },
+  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/multi-currency#fx-management', icon: RefreshCw },
+  { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '#', icon: Sliders },
 ];
 
 const MULTI_ENTITY_ITEMS: MenuItem[] = [
-  { title: 'Multi-Entity', description: 'Manage multiple legal entities, subsidiaries and business units.', href: '/global-billing/multi-entity', icon: Building2 },
-  { title: 'Entity Configuration', description: 'Separate branding, tax profiles, bank accounts and documents.', href: '/global-billing/entity-config', icon: Settings },
-  { title: 'Inter-Entity Billing', description: 'Bill between entities with automated intercompany workflows.', href: '/global-billing/inter-entity', icon: ArrowLeftRight },
+  { title: 'Multi-Entity', description: 'Manage multiple legal entities, subsidiaries and business units.', href: '/multi-entity-billing', icon: Building2 },
+  { title: 'Entity Configuration', description: 'Separate branding, tax profiles, bank accounts and documents.', href: '#', icon: Settings },
+  { title: 'Inter-Entity Billing', description: 'Bill between entities with automated intercompany workflows.', href: '#', icon: ArrowLeftRight },
 ];
 
 const LOCALISATION_ITEMS: MenuItem[] = [
-  { title: 'Localised Invoicing', description: 'Generate invoices in local languages with region-specific formats.', href: '/global-billing/localised-invoicing', icon: FileText },
-  { title: 'Local Payment Methods', description: 'Offer preferred payment methods for each region to improve conversion.', href: '/global-billing/local-payments', icon: CreditCard },
-  { title: 'Local Compliance', description: 'Adhere to local invoicing rules, legal requirements and business practices.', href: '/global-billing/local-compliance', icon: ShieldCheck },
+  { title: 'Localised Invoicing', description: 'Generate invoices in local languages with region-specific formats.', href: '/localized-documents', icon: FileText },
+  { title: 'Local Payment Methods', description: 'Offer preferred payment methods for each region to improve conversion.', href: '#', icon: CreditCard },
+  { title: 'Local Compliance', description: 'Adhere to local invoicing rules, legal requirements and business practices.', href: '#', icon: ShieldCheck },
 ];
 
 const TAX_COMPLIANCE_ITEMS: MenuItem[] = [
-  { title: 'Tax Configuration', description: 'Configure tax rules, rates and exemptions by country or region.', href: '/global-billing/tax-config', icon: FileText },
-  { title: 'Indirect Tax', description: 'Handle VAT, GST, sales tax and other indirect taxes with accuracy.', href: '/global-billing/indirect-tax', icon: Landmark },
-  { title: 'Jurisdiction Availability', description: 'View supported countries, coverage status and compliance readiness.', href: '/global-billing/jurisdictions', icon: Globe2 },
+  { title: 'Tax Configuration', description: 'Configure tax rules, rates and exemptions by country or region.', href: '#', icon: FileText },
+  { title: 'Indirect Tax', description: 'Handle VAT, GST, sales tax and other indirect taxes with accuracy.', href: '#', icon: Landmark },
+  { title: 'Jurisdiction Availability', description: 'View supported countries, coverage status and compliance readiness.', href: '/jurisdiction-availability', icon: Globe2 },
 ];
 
 const QUICK_LINKS = [

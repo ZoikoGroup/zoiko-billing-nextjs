@@ -27,23 +27,23 @@ type MenuItem = {
 
 const PLATFORM_ITEMS: MenuItem[] = [
   { title: 'Platform Overview', description: 'Complete billing control', href: '/platform-overview', icon: LayoutGrid },
-  { title: 'Customer Records', description: 'Central billing profiles', href: '/platform/customers', icon: User },
-  { title: 'Automation & Workflows', description: 'Reduce repetitive work', href: '/platform/automation', icon: Workflow },
+  { title: 'Customer Records', description: 'Central billing profiles', href: '/customer-records', icon: User },
+  { title: 'Automation & Workflows', description: 'Reduce repetitive work', href: '/automation', icon: Workflow },
   { title: 'Roles & Approvals', description: 'Govern sensitive actions', href: '/roles-and-approvals', icon: ShieldCheck },
 ];
 
 const BILLING_OPERATIONS_ITEMS: MenuItem[] = [
-  { title: 'Invoices & Credit Notes', description: 'Create and manage billing', href: '/platform/invoices', icon: FileText },
-  { title: 'Charges & Adjustments', description: 'Control line items, fees', href: '/platform/charges', icon: Tag },
-  { title: 'Billing Schedules', description: 'Manage billing timing', href: '/platform/schedules', icon: Calendar },
-  { title: 'Documents & Delivery', description: 'Issue professional records', href: '/platform/documents', icon: FileCheck2 },
+  { title: 'Invoices & Credit Notes', description: 'Create and manage billing', href: '/invoices', icon: FileText },
+  { title: 'Charges & Adjustments', description: 'Control line items, fees', href: '#', icon: Tag },
+  { title: 'Billing Schedules', description: 'Manage billing timing', href: '#', icon: Calendar },
+  { title: 'Documents & Delivery', description: 'Issue professional records', href:'/documents-and-delivery', icon: FileCheck2 },
 ];
 
 const REVENUE_CONTROL_ITEMS: MenuItem[] = [
-  { title: 'Accounts Receivable', description: 'Track what is owed', href: '/platform/receivable', icon: DollarSign },
-  { title: 'Payments & Reconciliation', description: 'Record and reconcile payments', href: '/platform/payments', icon: CreditCard },
-  { title: 'Outstanding Balances', description: 'Prioritise collection activity', href: '/platform/balances', icon: BarChart3 },
-  { title: 'Reporting & Analytics', description: 'Monitor billing performance', href: '/platform/analytics', icon: LineChart },
+  { title: 'Accounts Receivable', description: 'Track what is owed', href: '/accounts-receivable', icon: DollarSign },
+  { title: 'Payments & Reconciliation', description: 'Record and reconcile payments', href: '/payments-and-reconcilliation', icon: CreditCard },
+  { title: 'Outstanding Balances', description: 'Prioritise collection activity', href: '/outstanding-balances', icon: BarChart3 },
+  { title: 'Reporting & Analytics', description: 'Monitor billing performance', href: '/reporting-and-analytics', icon: LineChart },
 ];
 
 export default function ProductDropdown() {
@@ -80,7 +80,7 @@ export default function ProductDropdown() {
             </p>
             <div>
               <Link
-                href="/deployment-options"
+                href="/zoiko-billing-plus-zoiko-one"
                 className="inline-flex items-center gap-1.5 pt-1 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                 style={{ color: '#2563EB' }}
               >
@@ -95,7 +95,7 @@ export default function ProductDropdown() {
       {/* Bottom Footer Link */}
       <div className="mt-5 pt-1">
         <Link
-          href="/platform"
+          href="/platform-overview"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >

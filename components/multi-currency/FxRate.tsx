@@ -2,7 +2,9 @@
 
 export default function FxRate() {
   return (
-    <section className="w-full bg-slate-950 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section
+    id="fx-management" 
+    className="w-full bg-slate-950 px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8">
         {/* Heading */}
         <div className="flex w-full max-w-[900px] flex-col items-center gap-3 text-center">
