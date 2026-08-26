@@ -67,7 +67,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Integrations Directory', href: '/integrations-directory' },
       { label: 'Payment Providers', href: '/payment-providers' },
       { label: 'Accounting & ERP', href: '/accounting-and-erp' },
-      { label: 'CRM Platforms', href: '#' },
+      { label: 'CRM Platforms', href: '/crm-platforms' },
       { label: 'Banking & Reconciliation', href: '/banking-and-reconciliation' },
       { label: 'Zoiko Ecosystem', href: '/ecosystem' },
       { label: 'Integration Availability', href: '/integration-availability' },
@@ -76,13 +76,13 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Developers',
     links: [
-      { label: 'API Overview', href: '#' },
-      { label: 'API Documentation', href: '#' },
-      { label: 'Authentication', href: '#' },
-      { label: 'Webhooks', href: '#' },
+      { label: 'API Overview', href: '/developers-api-overview' },
+      { label: 'API Documentation', href: '/developers-api-documentation' },
+      { label: 'Authentication', href: '/developers-authentication' },
+      { label: 'Webhooks', href: '/developers-webhooks' },
       { label: 'Developer Sandbox', href: '/developer-sandbox' },
       { label: 'SDKs & Examples', href: '/sdks-and-examples' },
-      { label: 'Build an Integration', href: '#' },
+      { label: 'Build an Integration', href: '/developers-build-an-integration' },
     ],
   },
   {
