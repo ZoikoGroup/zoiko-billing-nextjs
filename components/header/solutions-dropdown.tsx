@@ -29,29 +29,29 @@ type MenuItem = {
 };
 
 const BUSINESS_NEED_ITEMS: MenuItem[] = [
-  { title: 'Create invoices faster', href: '/solutions/invoices', icon: Zap },
-  { title: 'Improve payment visibility', href: '/solutions/visibility', icon: Eye },
-  { title: 'Reduce outstanding balances', href: '/solutions/balances', icon: BarChart3 },
-  { title: 'Standardise billing control', href: '/solutions/control', icon: ShieldCheck },
-  { title: 'Consolidate multiple entities', href: '/solutions/entities', icon: Building2 },
-  { title: 'Strengthen auditability', href: '/solutions/audit', icon: FileText },
+  { title: 'Create invoices faster', href: '#', icon: Zap },
+  { title: 'Improve payment visibility', href: '#', icon: Eye },
+  { title: 'Reduce outstanding balances', href: '#', icon: BarChart3 },
+  { title: 'Standardise billing control', href: '#', icon: ShieldCheck },
+  { title: 'Consolidate multiple entities', href: '/multi-entity-billing', icon: Building2 },
+  { title: 'Strengthen auditability', href: '#', icon: FileText },
 ];
 
 const TEAM_ITEMS: MenuItem[] = [
-  { title: 'Finance & AR', href: '/solutions/finance', icon: UserCircle },
-  { title: 'Revenue Operations', href: '/solutions/revops', icon: LineChart },
-  { title: 'Business Operations', href: '/solutions/bizops', icon: Users },
-  { title: 'Founders & Owners', href: '/solutions/founders', icon: Award },
-  { title: 'Developers & IT', href: '/solutions/developers', icon: Code2 },
+  { title: 'Finance & AR', href: '/finance-and-account-receivable', icon: UserCircle },
+  { title: 'Revenue Operations', href: '/revenue-operations', icon: LineChart },
+  { title: 'Business Operations', href: '/small-businesses', icon: Users },
+  { title: 'Founders & Owners', href: '#', icon: Award },
+  { title: 'Developers & IT', href: '#', icon: Code2 },
 ];
 
 const ORGANISATION_ITEMS: MenuItem[] = [
-  { title: 'Small Businesses', href: '/solutions/small-business', icon: Building },
-  { title: 'Professional Services', href: '/solutions/professional-services', icon: Briefcase },
-  { title: 'Agencies', href: '/solutions/agencies', icon: Users },
-  { title: 'SaaS & Digital Services', href: '/solutions/saas', icon: Cloud },
-  { title: 'Multi-Entity Groups', href: '/solutions/multi-entity', icon: Network },
-  { title: 'Enterprise Organisations', href: '/solutions/enterprise', icon: Building2 },
+  { title: 'Small Businesses', href: '/small-businesses', icon: Building },
+  { title: 'Professional Services', href: '/professional-services', icon: Briefcase },
+  { title: 'Agencies', href: '/agencies', icon: Users },
+  { title: 'SaaS & Digital Services', href: '/saas-and-digital-services', icon: Cloud },
+  { title: 'Multi-Entity Groups', href: '/multi-entity-billing', icon: Network },
+  { title: 'Enterprise Organisations', href: '/enterprise-organizations', icon: Building2 },
 ];
 
 export default function SolutionsDropdown() {

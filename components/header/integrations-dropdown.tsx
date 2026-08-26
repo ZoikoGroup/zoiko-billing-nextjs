@@ -31,21 +31,21 @@ type MenuItem = {
 };
 
 const CATEGORY_ITEMS: MenuItem[] = [
-  { title: 'Payment Providers', description: 'Connect with leading payment gateways.', href: '/integrations/payments', icon: CreditCard },
-  { title: 'Accounting & ERP', description: 'Sync with accounting and ERP systems.', href: '/integrations/accounting', icon: Calculator },
-  { title: 'CRM Platforms', description: 'Integrate with popular CRM platforms.', href: '/integrations/crm', icon: Users },
-  { title: 'Banking & Reconciliation', description: 'Automate bank feeds and reconciliation.', href: '/integrations/banking', icon: Landmark },
-  { title: 'Zoiko Ecosystem', description: 'Connect with Zoiko products and services.', href: '/integrations/zoiko', icon: Boxes },
-  { title: 'View All Integrations', description: 'Browse our full integration catalogue.', href: '/integrations', icon: Grid },
+  { title: 'Payment Providers', description: 'Connect with leading payment gateways.', href: '/payment-providers', icon: CreditCard },
+  { title: 'Accounting & ERP', description: 'Sync with accounting and ERP systems.', href: '/accounting-and-erp', icon: Calculator },
+  { title: 'CRM Platforms', description: 'Integrate with popular CRM platforms.', href: '#', icon: Users },
+  { title: 'Banking & Reconciliation', description: 'Automate bank feeds and reconciliation.', href: '/banking-and-reconciliation', icon: Landmark },
+  { title: 'Zoiko Ecosystem', description: 'Connect with Zoiko products and services.', href: '/ecosystem', icon: Boxes },
+  { title: 'View All Integrations', description: 'Browse our full integration catalogue.', href: '/integration-availability', icon: Grid },
 ];
 
 const DEVELOPER_ITEMS: MenuItem[] = [
   { title: 'API Overview', description: 'Learn how the Zoiko Billing API works.', href: '/developers', icon: Code2 },
-  { title: 'API Documentation', description: 'Complete technical reference and guides.', href: '/developers/docs', icon: BookOpen },
-  { title: 'Webhooks', description: 'Real-time event notifications.', href: '/developers/webhooks', icon: Webhook },
-  { title: 'Developer Sandbox', description: 'Test and build in a safe environment.', href: '/developers/sandbox', icon: Box },
-  { title: 'Authentication', description: 'Secure access with OAuth and API keys.', href: '/developers/authentication', icon: Lock },
-  { title: 'SDKs & Examples', description: 'Libraries and sample code to get started.', href: '/developers/sdks', icon: Terminal },
+  { title: 'API Documentation', description: 'Complete technical reference and guides.', href: '#', icon: BookOpen },
+  { title: 'Webhooks', description: 'Real-time event notifications.', href: '#', icon: Webhook },
+  { title: 'Developer Sandbox', description: 'Test and build in a safe environment.', href: '/developer-sandbox', icon: Box },
+  { title: 'Authentication', description: 'Secure access with OAuth and API keys.', href: '#', icon: Lock },
+  { title: 'SDKs & Examples', description: 'Libraries and sample code to get started.', href: '#', icon: Terminal },
 ];
 
 const PARTNER_ITEMS: MenuItem[] = [

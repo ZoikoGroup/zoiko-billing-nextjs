@@ -28,8 +28,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Billing operations',
     links: [
-      { label: 'Invoices & Credit Notes', href: '#' },
-      { label: 'Charges & Adjustments', href: '#' },
+      { label: 'Invoices & Credit Notes', href: '/invoices' },
+      { label: 'Charges & Adjustments', href: '/charges-and-adjustments' },
       { label: 'Billing Schedules', href: '#' },
       { label: 'Documents & Delivery', href: '#' },
       { label: 'Accounts Receivable', href: '/accounts-receivable' },
@@ -68,7 +68,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Payment Providers', href: '/payment-providers' },
       { label: 'Accounting & ERP', href: '/accounting-and-erp' },
       { label: 'CRM Platforms', href: '#' },
-      { label: 'Banking & Reconciliation', href: '#' },
+      { label: 'Banking & Reconciliation', href: '/banking-and-reconciliation' },
       { label: 'Zoiko Ecosystem', href: '/ecosystem' },
       { label: 'Integration Availability', href: '/integration-availability' },
     ],
@@ -80,15 +80,15 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'API Documentation', href: '#' },
       { label: 'Authentication', href: '#' },
       { label: 'Webhooks', href: '#' },
-      { label: 'Developer Sandbox', href: '#' },
-      { label: 'SDKs & Examples', href: '#' },
+      { label: 'Developer Sandbox', href: '/developer-sandbox' },
+      { label: 'SDKs & Examples', href: '/sdks-and-examples' },
       { label: 'Build an Integration', href: '#' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { label: 'Resource Center', href: '#' },
+      { label: 'Resource Center', href: '/resource-center' },
       { label: 'Billing Guides', href: '#' },
       { label: 'Templates', href: '#' },
       { label: 'Billing Glossary', href: '#' },
