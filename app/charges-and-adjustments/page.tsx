@@ -1,14 +1,35 @@
-import AmountControlPrinciples from '@/components/charges-and-adjustments/AmountControlPrinciples'
-import AmountModelIntro from '@/components/charges-and-adjustments/AmountModelIntro'
-import ChargesAndAdjustments from '@/components/charges-and-adjustments/ChargesAndAdjustments'
-import React from 'react'
+import {
+  AmountControlPrinciples,
+  AmountModel,
+  Application,
+  Calculation,
+  ChargesAdjustmentsFAQ,
+  ChargesAdjustmentsNextStep,
+  ChargesAndAdjustments,
+  Corrections,
+  GlobalTaxContext,
+  Permissions,
+  RepeatBilling,
+  SourcesAndHandoffs,
+  TrustPrivacySecurity,
+} from "@/components/charges-and-adjustments";
 
-export default function page() {
+export default function ChargesAndAdjustmentsPage() {
   return (
-    <main>
-        <ChargesAndAdjustments />
-        <AmountControlPrinciples />
-        <AmountModelIntro />
+    <main className="w-full">
+      <ChargesAndAdjustments />
+      <AmountControlPrinciples />
+      <AmountModel />
+      <Calculation />
+      <Permissions />
+      <Application />
+      <Corrections />
+      <RepeatBilling />
+      <GlobalTaxContext />
+      <SourcesAndHandoffs />
+      <TrustPrivacySecurity />
+      <ChargesAdjustmentsFAQ />
+      <ChargesAdjustmentsNextStep />
     </main>
-  )
+  );
 }
