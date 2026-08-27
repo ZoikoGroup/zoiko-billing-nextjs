@@ -1,3 +1,5 @@
+"use client";
+
 const evidenceItems = [
   {
     number: "01",
@@ -49,41 +51,41 @@ const evidenceItems = [
   },
 ];
 
-const calculationRows = [
+const calculationSteps = [
   {
     number: "1",
-    label: "Source",
+    title: "Source",
     value:
       "Approved integration · usage record UR-4471 · event 02 Aug 06:04 UTC",
     mono: false,
   },
   {
     number: "2",
-    label: "Inputs",
+    title: "Inputs",
     value: "quantity 32 hours · rate £120.00 · entity Zoiko Ltd · GBP",
     mono: true,
   },
   {
     number: "3",
-    label: "Rule version",
+    title: "Rule version",
     value: "PR-IMP-01 · v2 · effective 01 Jan 2026",
     mono: true,
   },
   {
     number: "4",
-    label: "Effective context",
+    title: "Effective context",
     value: "Service period 01–31 Jul 2026",
     mono: false,
   },
   {
     number: "5",
-    label: "Precision and rounding",
+    title: "Precision and rounding",
     value: "calculate 6 dp · round half up · output 2 dp",
     mono: true,
   },
   {
     number: "6",
-    label: "Override",
+    title: "Override",
     value: "None applied",
     mono: false,
   },
@@ -91,7 +93,7 @@ const calculationRows = [
 
 export default function Calculation() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section className="w-full bg-[#f5f7f9]">
       <div
         className="
           mx-auto
@@ -101,15 +103,16 @@ export default function Calculation() {
           flex-col
           items-start
           px-5
-          py-16
+          py-14
 
           sm:px-8
-          sm:py-20
+          sm:py-16
 
           md:px-10
-          md:py-24
+          md:py-20
 
           lg:px-14
+          lg:py-24
 
           xl:px-20
         "
@@ -125,11 +128,6 @@ export default function Calculation() {
             gap-8
 
             sm:gap-9
-
-            md:px-0
-            md:gap-9
-
-            xl:px-12
           "
         >
           {/* SECTION INTRO */}
@@ -138,27 +136,25 @@ export default function Calculation() {
               flex
               w-full
               flex-col
-              items-end
-              justify-center
               gap-8
 
               md:flex-row
+              md:items-end
               md:gap-12
 
               lg:gap-16
             "
           >
-            {/* LEFT */}
             <div
               className="
                 flex
-                w-full
+                min-w-0
                 flex-1
                 flex-col
                 items-start
                 gap-5
                 pt-2.5
-                pb-4
+                pb-2
 
                 md:pb-6
               "
@@ -167,25 +163,25 @@ export default function Calculation() {
               <div className="flex h-4 items-center">
                 <span
                   className="
+                    mr-2.5
                     h-0.5
                     w-5
                     shrink-0
                     rounded-sm
                     bg-gradient-to-r
-                    from-[#4bb9c7]
-                    to-[#5b8fc4]
+                    from-cyan-400
+                    to-blue-500
                   "
                 />
 
                 <span
                   className="
-                    ml-2
                     text-xs
                     font-medium
                     uppercase
                     leading-4
-                    tracking-[0.12em]
-                    text-[#5b8fc4]
+                    tracking-wider
+                    text-[#456b9c]
                   "
                 >
                   Calculation
@@ -195,56 +191,56 @@ export default function Calculation() {
               {/* HEADING */}
               <h2
                 className="
-                  m-0
+                  !m-0
                   w-full
                   max-w-[638px]
-                  text-[34px]
+                  text-[30px]
                   font-medium
-                  leading-[1.2]
-                  tracking-[-0.03em]
-                  text-[#08233f]
+                  leading-[1.18]
+                  tracking-[-0.035em]
+                  text-[#08254a]
 
-                  sm:text-[40px]
+                  sm:text-[36px]
 
-                  md:text-[44px]
+                  md:text-[42px]
 
                   lg:text-5xl
                   lg:leading-[53.82px]
                 "
               >
-                Make calculations reviewable without exposing sensitive
+                Make calculations
+                <br className="hidden sm:block" />
+                reviewable without
+                <br className="hidden sm:block" />
+                exposing sensitive
+                <br className="hidden sm:block" />
                 formulas.
               </h2>
             </div>
 
-            {/* RIGHT */}
+            {/* INTRO DESCRIPTION */}
             <div
               className="
-                flex
                 w-full
-                flex-1
-                flex-col
-                items-start
-
-                md:max-w-[528.77px]
+                max-w-[529px]
+                shrink-0
+                md:pb-2
               "
             >
               <p
                 className="
-                  m-0
-                  w-full
-                  text-[15px]
+                  !m-0
+                  text-sm
                   font-normal
                   leading-7
-                  text-[#4f6687]
+                  text-[#45617f]
 
                   sm:text-base
                   sm:leading-8
                 "
               >
-                Enough evidence to reproduce and challenge a number —
-                without publishing proprietary pricing logic or contract
-                terms.
+                Enough evidence to reproduce and challenge a number — without
+                publishing proprietary pricing logic or contract terms.
               </p>
             </div>
           </div>
@@ -252,61 +248,43 @@ export default function Calculation() {
           {/* MAIN CONTENT */}
           <div
             className="
-              flex
+              grid
               w-full
-              flex-col
-              items-start
-              gap-8
+              grid-cols-1
+              gap-10
               pt-2
 
-              lg:flex-row
+              lg:grid-cols-2
               lg:gap-16
+              lg:pt-6
             "
           >
-            {/* LEFT: PRODUCT VIEW */}
-            <div
-              className="
-                flex
-                w-full
-                flex-col
-                items-start
-                gap-3
-
-                lg:w-1/2
-              "
-            >
+            {/* LEFT — ILLUSTRATIVE CALCULATION */}
+            <div className="flex w-full flex-col gap-3">
               {/* BADGE */}
-              <div className="flex flex-wrap items-center">
+              <div className="flex items-center">
                 <div
                   className="
-                    flex
+                    inline-flex
                     h-7
                     items-center
                     rounded-full
                     border
-                    border-[#d7eadf]
+                    border-[#cfe8dc]
                     bg-white/70
                     px-3
                   "
                 >
-                  <span
-                    className="
-                      mr-2
-                      h-[5px]
-                      w-[5px]
-                      rounded-sm
-                      bg-[#5b8fc4]
-                    "
-                  />
+                  <span className="mr-2 size-[5px] rounded-sm bg-[#456b9c]" />
 
                   <span
                     className="
-                      text-[9.9px]
+                      text-[10px]
                       font-normal
                       uppercase
                       leading-4
-                      tracking-[0.08em]
-                      text-[#5b8fc4]
+                      tracking-wide
+                      text-[#55718f]
                     "
                   >
                     Illustrative product view
@@ -321,7 +299,7 @@ export default function Calculation() {
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-[#dfe5ee]
+                  border-[#dfe3e8]
                   bg-white
                   shadow-[0_4px_14px_rgba(14,33,27,0.04),0_1px_2px_rgba(14,33,27,0.05)]
                 "
@@ -334,13 +312,13 @@ export default function Calculation() {
                     items-center
                     gap-2.5
                     border-b
-                    border-[#dfe5ee]
-                    bg-[#f7f8fa]
+                    border-[#dfe3e8]
+                    bg-[#f5f7f9]
                     px-4
                     py-3.5
                   "
                 >
-                  <span className="h-2 w-2 rounded-sm bg-[#5b8fc4]" />
+                  <span className="size-2 shrink-0 rounded-sm bg-[#456b9c]" />
 
                   <span
                     className="
@@ -348,8 +326,8 @@ export default function Calculation() {
                       font-normal
                       uppercase
                       leading-4
-                      tracking-[0.08em]
-                      text-[#4f6687]
+                      tracking-wide
+                      text-[#45617f]
                     "
                   >
                     Calculation event CE-9920
@@ -358,187 +336,183 @@ export default function Calculation() {
                   <div className="ml-auto">
                     <div
                       className="
-                        flex
+                        inline-flex
                         h-7
                         items-center
                         rounded-full
                         border
-                        border-[#cfd9e5]
-                        bg-[#f7f8fa]
+                        border-[#c8d7e6]
+                        bg-[#f5f7f9]
                         px-2.5
                       "
                     >
-                      <span className="mr-1.5 text-xs text-[#5b8fc4]">
+                      <span className="mr-1.5 text-xs font-medium text-[#456b9c]">
                         ✓
                       </span>
 
-                      <span
-                        className="
-                          text-[10.2px]
-                          font-medium
-                          uppercase
-                          leading-4
-                          tracking-[0.08em]
-                          text-[#5b8fc4]
-                        "
-                      >
+                      <span className="text-[10px] font-medium uppercase leading-4 tracking-wide text-[#456b9c]">
                         Final
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* EVIDENCE ROWS */}
-                {calculationRows.map((row) => (
+                {/* EVIDENCE STEPS */}
+                {calculationSteps.map((step, index) => (
                   <div
-                    key={row.number}
-                    className="
+                    key={step.number}
+                    className={`
                       flex
                       items-start
                       gap-3.5
-                      border-b
-                      border-[#e5e8ed]
                       px-4
                       py-3.5
-                    "
+                      ${index !== calculationSteps.length - 1
+                        ? "border-b border-[#e2e6eb]"
+                        : "border-b border-[#e2e6eb]"}
+                    `}
                   >
                     <div
                       className="
                         flex
-                        h-6
-                        w-6
+                        size-6
                         shrink-0
                         items-center
                         justify-center
                         rounded-md
                         border
-                        border-[#d4dce7]
-                        bg-[#f7f8fa]
+                        border-[#cdd9e5]
+                        bg-[#f5f7f9]
                       "
                     >
-                      <span
-                        className="
-                          text-[9.3px]
-                          font-semibold
-                          leading-4
-                          text-[#5b8fc4]
-                        "
-                      >
-                        {row.number}
+                      <span className="text-[9px] font-semibold leading-4 text-[#456b9c]">
+                        {step.number}
                       </span>
                     </div>
 
                     <div className="min-w-0 flex-1">
-                      <span
+                      <p
                         className="
-                          block
-                          text-[9.4px]
+                          !m-0
+                          text-[9px]
                           font-normal
                           uppercase
                           leading-4
-                          tracking-[0.08em]
-                          text-[#5b8fc4]
+                          tracking-wide
+                          text-[#55718f]
                         "
                       >
-                        {row.label}
-                      </span>
+                        {step.title}
+                      </p>
 
-                      <span
+                      <p
                         className={`
+                          !m-0
                           mt-1.5
-                          block
+                          break-words
                           text-sm
                           leading-6
-                          text-[#08233f]
-                          ${row.mono ? "font-mono" : "font-normal"}
+                          text-[#08254a]
+                          ${step.mono ? "font-mono" : "font-normal"}
                         `}
                       >
-                        {row.value}
-                      </span>
+                        {step.value}
+                      </p>
                     </div>
                   </div>
                 ))}
 
                 {/* TOTALS */}
-                <div className="flex flex-col gap-1.5 bg-[#fafbfc] px-4 py-4">
-                  <CalculationTotal label="Base" value="£3,840.00" />
+                <div className="border-t border-[#dfe3e8] bg-[#fafbfc] px-4 py-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-sm leading-6 text-[#08254a]">
+                      Base
+                    </span>
 
-                  <CalculationTotal
-                    label="Discount · contract −5%"
-                    value="−£192.00"
-                  />
+                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                      £3,840.00
+                    </span>
+                  </div>
 
-                  <CalculationTotal
-                    label="Tax component · VAT 20%"
-                    value="£729.60"
-                  />
+                  <div className="mt-1.5 flex items-start justify-between gap-4">
+                    <span className="text-sm leading-6 text-[#08254a]">
+                      Discount · contract −5%
+                    </span>
 
-                  <div
-                    className="
-                      mt-1
-                      flex
-                      items-center
-                      justify-between
-                      gap-4
-                      border-t-2
-                      border-[#08233f]
-                      pt-2
-                    "
-                  >
-                    <span className="text-base leading-6 text-[#08233f]">
+                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                      −£192.00
+                    </span>
+                  </div>
+
+                  <div className="mt-1.5 flex items-start justify-between gap-4">
+                    <span className="text-sm leading-6 text-[#08254a]">
+                      Tax component · VAT 20%
+                    </span>
+
+                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                      £729.60
+                    </span>
+                  </div>
+
+                  <div className="mt-2 flex items-start justify-between gap-4 border-t-2 border-[#08254a] pt-2">
+                    <span className="text-base leading-6 text-[#08254a]">
                       Net component total
                     </span>
 
-                    <span
-                      className="
-                        font-mono
-                        text-base
-                        font-semibold
-                        leading-6
-                        text-[#08233f]
-                      "
-                    >
+                    <span className="font-mono text-base font-semibold leading-6 text-[#08254a]">
                       £4,377.60
                     </span>
                   </div>
                 </div>
 
-                {/* FOOTER TAGS */}
-                <div
-                  className="
-                    flex
-                    flex-wrap
-                    gap-2
-                    border-t
-                    border-[#dfe5ee]
-                    px-6
-                    py-3.5
-                  "
-                >
-                  <CalculationTag>Draft line: ZB-UK-2026-0419</CalculationTag>
-                  <CalculationTag>Not yet issued</CalculationTag>
+                {/* STATUS TAGS */}
+                <div className="flex flex-wrap gap-2 border-t border-[#dfe3e8] px-6 py-3.5">
+                  <span
+                    className="
+                      rounded-full
+                      border
+                      border-[#dfe3e8]
+                      bg-[#f5f7f9]
+                      px-2.5
+                      py-1.5
+                      font-mono
+                      text-[10px]
+                      leading-4
+                      text-[#45617f]
+                    "
+                  >
+                    Draft line: ZB-UK-2026-0419
+                  </span>
+
+                  <span
+                    className="
+                      rounded-full
+                      border
+                      border-[#dfe3e8]
+                      bg-[#f5f7f9]
+                      px-2.5
+                      py-1.5
+                      font-mono
+                      text-[10px]
+                      leading-4
+                      text-[#45617f]
+                    "
+                  >
+                    Not yet issued
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT: EVIDENCE LIST */}
-            <div
-              className="
-                flex
-                w-full
-                flex-col
-                items-start
-
-                lg:w-1/2
-              "
-            >
+            {/* RIGHT — EVIDENCE REQUIREMENTS */}
+            <div className="flex w-full flex-col">
               <h3
                 className="
-                  m-0
+                  !m-0
                   text-lg
                   font-semibold
                   leading-6
-                  text-[#08233f]
+                  text-[#08254a]
                 "
               >
                 What the evidence has to contain
@@ -546,13 +520,13 @@ export default function Calculation() {
 
               <p
                 className="
-                  m-0
+                  !m-0
                   mt-1.5
                   max-w-[480px]
                   text-sm
                   font-normal
                   leading-7
-                  text-[#4f6687]
+                  text-[#45617f]
                 "
               >
                 Eight elements make an amount reproducible. Anything missing
@@ -560,8 +534,8 @@ export default function Calculation() {
                 presented as final.
               </p>
 
-              {/* EVIDENCE ITEMS */}
-              <div className="mt-3.5 w-full">
+              {/* EVIDENCE LIST */}
+              <div className="mt-3.5">
                 {evidenceItems.map((item, index) => (
                   <div
                     key={item.number}
@@ -570,11 +544,9 @@ export default function Calculation() {
                       items-start
                       gap-4
                       py-3
-                      ${
-                        index !== evidenceItems.length - 1
-                          ? "border-b border-[#e5e8ed]"
-                          : ""
-                      }
+                      ${index !== evidenceItems.length - 1
+                        ? "border-b border-[#dfe3e8]"
+                        : ""}
                     `}
                   >
                     <span
@@ -583,10 +555,10 @@ export default function Calculation() {
                         shrink-0
                         pt-0.5
                         font-mono
-                        text-[9.8px]
+                        text-[10px]
                         font-semibold
                         leading-4
-                        text-[#5b8fc4]
+                        text-[#456b9c]
                       "
                     >
                       {item.number}
@@ -595,11 +567,11 @@ export default function Calculation() {
                     <div className="min-w-0 flex-1">
                       <h4
                         className="
-                          m-0
+                          !m-0
                           text-sm
                           font-semibold
                           leading-6
-                          text-[#08233f]
+                          text-[#08254a]
                         "
                       >
                         {item.title}
@@ -607,12 +579,12 @@ export default function Calculation() {
 
                       <p
                         className="
-                          m-0
+                          !m-0
                           mt-1
                           text-sm
                           font-normal
                           leading-5
-                          text-[#4f6687]
+                          text-[#45617f]
                         "
                       >
                         {item.description}
@@ -630,26 +602,24 @@ export default function Calculation() {
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-[#5b8fc4]
-              bg-[#f7f8fa]
-              px-5
+              border-[#456b9c]
+              bg-[#f5f7f9]
+              px-6
               py-7
 
-              sm:px-6
-
-              md:px-7
-              md:pt-9
-              md:pb-8
+              sm:px-7
+              sm:py-8
             "
           >
             <span
               className="
-                text-[9.9px]
+                block
+                text-[10px]
                 font-normal
                 uppercase
                 leading-4
-                tracking-[0.08em]
-                text-[#5b8fc4]
+                tracking-wide
+                text-[#456b9c]
               "
             >
               Calculation boundary
@@ -657,14 +627,15 @@ export default function Calculation() {
 
             <p
               className="
-                m-0
+                !m-0
                 mt-2
-                w-full
-                max-w-[761px]
-                text-base
+                max-w-[900px]
+                text-sm
                 font-normal
                 leading-7
-                text-[#08233f]
+                text-[#08254a]
+
+                sm:text-base
               "
             >
               Proprietary formulas and sensitive contract data are never
@@ -675,7 +646,7 @@ export default function Calculation() {
           </div>
 
           {/* CTA */}
-          <div className="flex w-full flex-wrap items-center">
+          <div className="flex w-full items-center">
             <button
               type="button"
               className="
@@ -684,11 +655,9 @@ export default function Calculation() {
                 items-center
                 justify-center
                 rounded-lg
-                border
-                border-[#08233f]
-                bg-[#08233f]
+                bg-[#08254a]
                 px-5
-                py-2
+                py-2.5
                 text-center
                 text-base
                 font-normal
@@ -704,44 +673,5 @@ export default function Calculation() {
         </div>
       </div>
     </section>
-  );
-}
-
-function CalculationTotal({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="flex items-start justify-between gap-4">
-      <span className="text-sm leading-6 text-[#08233f]">{label}</span>
-
-      <span className="font-mono text-sm leading-6 text-[#08233f]">
-        {value}
-      </span>
-    </div>
-  );
-}
-
-function CalculationTag({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="
-        rounded-full
-        border
-        border-[#dfe5ee]
-        bg-[#f7f8fa]
-        px-2.5
-        py-1.5
-        font-mono
-        text-[10.4px]
-        leading-4
-        text-[#4f6687]
-      "
-    >
-      {children}
-    </span>
   );
 }

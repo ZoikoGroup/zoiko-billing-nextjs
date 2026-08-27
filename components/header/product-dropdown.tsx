@@ -34,8 +34,8 @@ const PLATFORM_ITEMS: MenuItem[] = [
 
 const BILLING_OPERATIONS_ITEMS: MenuItem[] = [
   { title: 'Invoices & Credit Notes', description: 'Create and manage billing', href: '/invoices', icon: FileText },
-  { title: 'Charges & Adjustments', description: 'Control line items, fees', href: '#', icon: Tag },
-  { title: 'Billing Schedules', description: 'Manage billing timing', href: '#', icon: Calendar },
+  { title: 'Charges & Adjustments', description: 'Control line items, fees', href: '/charges-and-adjustments', icon: Tag },
+  { title: 'Billing Schedules', description: 'Manage billing timing', href: '/billing-schedules', icon: Calendar },
   { title: 'Documents & Delivery', description: 'Issue professional records', href:'/documents-and-delivery', icon: FileCheck2 },
 ];
 

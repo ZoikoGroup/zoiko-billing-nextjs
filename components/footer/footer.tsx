@@ -30,8 +30,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Invoices & Credit Notes', href: '/invoices' },
       { label: 'Charges & Adjustments', href: '/charges-and-adjustments' },
-      { label: 'Billing Schedules', href: '#' },
-      { label: 'Documents & Delivery', href: '#' },
+      { label: 'Billing Schedules', href: '/billing-schedules' },
+      { label: 'Documents & Delivery', href: '/documents-and-delivery' },
       { label: 'Accounts Receivable', href: '/accounts-receivable' },
       { label: 'Payments & Reconciliation', href: '/payments-and-reconcilliation' },
       { label: 'Outstanding Balances', href: '/outstanding-balances' },
@@ -89,7 +89,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Resources',
     links: [
       { label: 'Resource Center', href: '/resource-center' },
-      { label: 'Billing Guides', href: '#' },
+      { label: 'Billing Guides', href: '/billing-guides' },
       { label: 'Templates', href: '#' },
       { label: 'Billing Glossary', href: '#' },
       { label: 'Reports & insights', href: '#' },
