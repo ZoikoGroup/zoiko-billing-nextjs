@@ -1,0 +1,9 @@
+export { default as DocumentationHeroSection } from "./DocumentationHeroSection";
+export { default as DocVsHelpVsApiSection } from "./DocVsHelpVsApiSection";
+export { default as StartByTaskSection } from "./StartByTaskSection";
+export { default as BrowseByProductAreaRoleSection } from "./BrowseByProductAreaRoleSection";
+export { default as ProcedureArticleTemplateSection } from "./ProcedureArticleTemplateSection";
+export { default as ReferenceTableContractSection } from "./ReferenceTableContractSection";
+export { default as AssetGovernanceSection } from "./AssetGovernanceSection";
+export { default as DocStatesChangeImpactSection } from "./DocStatesChangeImpactSection";
+export { default as DocumentationFaqSection } from "./DocumentationFaqSection";
