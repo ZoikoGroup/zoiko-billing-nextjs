@@ -101,20 +101,20 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Customer support',
     links: [
-      { label: 'Help Center', href: '#' },
+      { label: 'Help Center', href: '/help-center' },
       { label: 'Documentation', href: '#' },
       { label: 'Contact Support', href: '/contact-support' },
-      { label: 'Implementation Guidance', href: '#' },
+      { label: 'Implementation Guidance', href: '/implementation-guidance' },
       { label: 'Account Access', href: '/account-access' },
       { label: 'Billing Support', href: '/billing-support' },
-      { label: 'Integration Support', href: '#' },
+      { label: 'Integration Support', href: '/integration-support' },
       { label: 'Support Policy', href: '#' },
     ],
   },
   {
     title: 'Trust & Security',
     links: [
-      { label: 'Security Overview', href: '#' },
+      { label: 'Security Overview', href: '/security-overview' },
       { label: 'Trust Center', href: '#' },
       { label: 'System Status', href: '#' },
       { label: 'Privacy & Data Governance', href: '/privacy-and-data-governance' },
