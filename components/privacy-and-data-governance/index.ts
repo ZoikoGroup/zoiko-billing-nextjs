@@ -1,0 +1,10 @@
+export { default as DataCategories } from "./DataCategories";
+export { default as DataLifecycle } from "./DataLifecycle";
+export { default as DataLocationTransfers } from "./DataLocationTransfers";
+export { default as DownstreamCopies } from "./DownstreamCopies";
+export { default as GovernancePrinciples } from "./GovernancePrinciples";
+export { default as PrivacyFAQ } from "./PrivacyFAQ";
+export { default as PrivacyHero } from "./PrivacyHero";
+export { default as PrivacyRightsRouting } from "./PrivacyRightsRouting";
+export { default as RetentionDeletionHolds } from "./RetentionDeletionHolds";
+export { default as SecurityTrustHandoffs } from "./SecurityTrustHandoffs";
