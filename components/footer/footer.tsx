@@ -102,13 +102,13 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Customer support',
     links: [
       { label: 'Help Center', href: '#' },
-      { label: 'Documentation', href: '#' },
+      { label: 'Documentation', href: '/documentation' },
       { label: 'Contact Support', href: '#' },
       { label: 'Implementation Guidance', href: '#' },
       { label: 'Account Access', href: '#' },
       { label: 'Billing Support', href: '#' },
       { label: 'Integration Support', href: '#' },
-      { label: 'Support Policy', href: '#' },
+      { label: 'Support Policy', href: '/support-policy' },
     ],
   },
   {
@@ -118,10 +118,10 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Trust Center', href: '#' },
       { label: 'System Status', href: '#' },
       { label: 'Privacy & Data Governance', href: '#' },
-      { label: 'Business Continuity', href: '#' },
+      { label: 'Business Continuity', href: '/business-continuity' },
       { label: 'Responsible Disclosure', href: '#' },
       { label: 'Security Advisories', href: '#' },
-      { label: 'Accessibility', href: '#' },
+      { label: 'Accessibility', href: '/accessibility' },
     ],
   },
   {

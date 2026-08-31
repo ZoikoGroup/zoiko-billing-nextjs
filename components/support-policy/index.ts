@@ -1,0 +1,13 @@
+export { default as SupportPolicyHeroSection } from "./SupportPolicyHeroSection";
+export { default as DirectPolicySummarySection } from "./DirectPolicySummarySection";
+export { default as CoverageEligibilitySection } from "./CoverageEligibilitySection";
+export { default as SupportCommitmentsSection } from "./SupportCommitmentsSection";
+export { default as ApprovedChannelsAvailabilitySection } from "./ApprovedChannelsAvailabilitySection";
+export { default as PriorityDefinitionsSection } from "./PriorityDefinitionsSection";
+export { default as ResponseMeasurementContractSection } from "./ResponseMeasurementContractSection";
+export { default as SupportedRequestCategoriesSection } from "./SupportedRequestCategoriesSection";
+export { default as ResponsibilitiesSection } from "./ResponsibilitiesSection";
+export { default as EscalationIncidentsVulnerabilitiesSection } from "./EscalationIncidentsVulnerabilitiesSection";
+export { default as VersioningChangeNoticesSection } from "./VersioningChangeNoticesSection";
+export { default as SupportPolicyFaqSection } from "./SupportPolicyFaqSection";
+export { default as SupportPolicyFinalCtaSection } from "./SupportPolicyFinalCtaSection";
