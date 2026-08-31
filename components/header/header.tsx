@@ -225,27 +225,27 @@ function HeaderNavigationInner({
         </nav>
 
         <div className="ml-auto hidden items-center gap-2 lg:flex">
-          <button
-            type="button"
+          <Link
+            href="/sign-in"
             onClick={onSignIn}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-normal text-slate-700 transition-colors hover:text-sky-600 dark:text-gray-300 dark:hover:text-blue-400"
+            className="min-h-10 shrink-0 whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-normal !text-slate-700 transition-colors hover:!text-sky-600 dark:!text-gray-300 dark:hover:!text-blue-400"
           >
             Sign In
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/book-demo"
             onClick={onBookDemo}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-slate-900 px-3 py-2 text-[13px] font-normal text-slate-900 transition-colors hover:bg-slate-50 dark:border-gray-300 dark:text-gray-100 dark:hover:bg-gray-800"
+            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-slate-900 px-3 py-2 text-[13px] font-normal !text-slate-900 transition-colors hover:bg-slate-50 dark:border-gray-300 dark:!text-gray-100 dark:hover:bg-gray-800"
           >
             Book a Demo
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/create-account"
             onClick={onCreateAccount}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-blue-600 bg-blue-600 px-3 py-2 text-[13px] font-normal text-white transition-colors hover:bg-blue-500"
+            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-blue-600 bg-blue-600 px-3 py-2 text-[13px] font-normal !text-white transition-colors hover:bg-blue-500"
           >
             Create Account
-          </button>
+          </Link>
         </div>
 
         <div className="ml-auto flex items-center lg:hidden">
@@ -367,27 +367,27 @@ function HeaderNavigationInner({
           </nav>
 
           <div className="mt-4 flex flex-col gap-2.5 border-t border-slate-200 pt-4 dark:border-gray-800">
-            <button
-              type="button"
+            <Link
+              href="/sign-in"
               onClick={onSignIn}
-              className="w-full rounded-md border border-slate-300 py-2.5 text-center font-medium text-slate-900 transition-colors dark:border-gray-700 dark:text-gray-100"
+              className="block w-full rounded-md border border-slate-300 py-2.5 text-center font-medium !text-slate-900 transition-colors dark:border-gray-700 dark:!text-gray-100"
             >
               Sign In
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/book-demo"
               onClick={onBookDemo}
-              className="w-full rounded-md border border-slate-900 py-2.5 text-center font-medium text-slate-900 transition-colors dark:border-gray-300 dark:text-gray-100"
+              className="block w-full rounded-md border border-slate-900 py-2.5 text-center font-medium !text-slate-900 transition-colors dark:border-gray-300 dark:!text-gray-100"
             >
               Book a Demo
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/create-account"
               onClick={onCreateAccount}
-              className="w-full rounded-md bg-blue-600 py-2.5 text-center font-medium text-white transition-colors hover:bg-blue-500"
+              className="block w-full rounded-md bg-blue-600 py-2.5 text-center font-medium !text-white transition-colors hover:bg-blue-500"
             >
               Create Account
-            </button>
+            </Link>
           </div>
         </div>
       )}

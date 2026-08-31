@@ -117,10 +117,10 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Security Overview', href: '#' },
       { label: 'Trust Center', href: '#' },
       { label: 'System Status', href: '#' },
-      { label: 'Privacy & Data Governance', href: '#' },
+      { label: 'Privacy & Data Governance', href: '/privacy-and-data-governance' },
       { label: 'Business Continuity', href: '#' },
-      { label: 'Responsible Disclosure', href: '#' },
-      { label: 'Security Advisories', href: '#' },
+      { label: 'Responsible Disclosure', href: '/responsible-disclosure' },
+      { label: 'Security Advisories', href: '/security-advisories' },
       { label: 'Accessibility', href: '#' },
     ],
   },
@@ -187,18 +187,18 @@ export default function ZoikoBillingPage() {
             
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
-                type="button"
-                className="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
+              <a
+                href="/create-account"
+                className="px-8 py-3.5 bg-white hover:bg-slate-100 !text-slate-950 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 Create Account
-              </button>
-              <button
-                type="button"
-                className="px-6 py-3.5 border border-white hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
+              </a>
+              <a
+                href="/book-demo"
+                className="px-6 py-3.5 border border-white hover:bg-white/10 !text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 Book Demo
-              </button>
+              </a>
               <button
                 type="button"
                 className="px-6 py-3.5 border border-white/50 hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
