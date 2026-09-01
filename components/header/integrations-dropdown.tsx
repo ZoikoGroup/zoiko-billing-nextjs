@@ -33,28 +33,28 @@ type MenuItem = {
 const CATEGORY_ITEMS: MenuItem[] = [
   { title: 'Payment Providers', description: 'Connect with leading payment gateways.', href: '/payment-providers', icon: CreditCard },
   { title: 'Accounting & ERP', description: 'Sync with accounting and ERP systems.', href: '/accounting-and-erp', icon: Calculator },
-  { title: 'CRM Platforms', description: 'Integrate with popular CRM platforms.', href: '#', icon: Users },
+  { title: 'CRM Platforms', description: 'Integrate with popular CRM platforms.', href: '/crm-platforms', icon: Users },
   { title: 'Banking & Reconciliation', description: 'Automate bank feeds and reconciliation.', href: '/banking-and-reconciliation', icon: Landmark },
   { title: 'Zoiko Ecosystem', description: 'Connect with Zoiko products and services.', href: '/ecosystem', icon: Boxes },
   { title: 'View All Integrations', description: 'Browse our full integration catalogue.', href: '/integration-availability', icon: Grid },
 ];
 
 const DEVELOPER_ITEMS: MenuItem[] = [
-  { title: 'API Overview', description: 'Learn how the Zoiko Billing API works.', href: '/developers', icon: Code2 },
-  { title: 'API Documentation', description: 'Complete technical reference and guides.', href: '#', icon: BookOpen },
-  { title: 'Webhooks', description: 'Real-time event notifications.', href: '#', icon: Webhook },
+  { title: 'API Overview', description: 'Learn how the Zoiko Billing API works.', href: '/developers-api-overview', icon: Code2 },
+  { title: 'API Documentation', description: 'Complete technical reference and guides.', href: '/developers-api-documentation', icon: BookOpen },
+  { title: 'Webhooks', description: 'Real-time event notifications.', href: '/developers-webhooks', icon: Webhook },
   { title: 'Developer Sandbox', description: 'Test and build in a safe environment.', href: '/developer-sandbox', icon: Box },
-  { title: 'Authentication', description: 'Secure access with OAuth and API keys.', href: '#', icon: Lock },
-  { title: 'SDKs & Examples', description: 'Libraries and sample code to get started.', href: '#', icon: Terminal },
+  { title: 'Authentication', description: 'Secure access with OAuth and API keys.', href: '/developers-authentication', icon: Lock },
+  { title: 'SDKs & Examples', description: 'Libraries and sample code to get started.', href: '/sdks-and-examples', icon: Terminal },
 ];
 
 const PARTNER_ITEMS: MenuItem[] = [
-  { title: 'Build an Integration', description: 'Create a custom integration with Zoiko.', href: '/integrations/build', icon: Puzzle },
-  { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '/partners/technology', icon: Share2 },
-  { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '/integrations/standards', icon: ShieldCheck },
-  { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '/partners', icon: Users },
-  { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '/integrations/submit', icon: Send },
-  { title: 'Integration Support', description: 'Get help for integration-related queries.', href: '/support/integrations', icon: HelpCircle },
+  { title: 'Build an Integration', description: 'Create a custom integration with Zoiko.', href: '/developers-build-an-integration', icon: Puzzle },
+  { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '#', icon: Share2 },
+  { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '#', icon: ShieldCheck },
+  { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '#', icon: Users },
+  { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '#', icon: Send },
+  { title: 'Integration Support', description: 'Get help for integration-related queries.', href: '#', icon: HelpCircle },
 ];
 
 export default function IntegrationsDropdown() {

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface LinkItem {
   label: string;
@@ -27,9 +28,9 @@ const capabilityBlocks: CapabilityBlock[] = [
     description:
       'Central profiles, controlled workflow routing and explicit authority over sensitive actions. Every automated step exposes its owner, trigger, status and exception path.',
     links: [
-      { label: 'Customer Records', href: '#customer-records' },
-      { label: 'Automation & Workflows', href: '#automation-workflows' },
-      { label: 'Roles & Approvals', href: '#roles-approvals' },
+      { label: 'Customer Records', href: '/customer-records' },
+      { label: 'Automation & Workflows', href: '/automation' },
+      { label: 'Roles & Approvals', href: '/roles-and-approvals' },
     ],
     imageUrl: '/images/platform-overview/div (3).png',
     imageAlt: 'Customer and operational control dashboard',
@@ -43,10 +44,10 @@ const capabilityBlocks: CapabilityBlock[] = [
     description:
       'Create invoices and credit notes, control charges and corrections, manage repeat timing, and keep a record of how each document was generated, sent and received.',
     links: [
-      { label: 'Invoices & Credit Notes', href: '#invoices-credit-notes' },
-      { label: 'Charges & Adjustments', href: '#charges-adjustments' },
-      { label: 'Billing Schedules', href: '#billing-schedules' },
-      { label: 'Documents & Delivery', href: '#documents-delivery' },
+      { label: 'Invoices & Credit Notes', href: '/invoices' },
+      { label: 'Charges & Adjustments', href: '/charges-and-adjustments' },
+      { label: 'Billing Schedules', href: '/billing-schedules' },
+      { label: 'Documents & Delivery', href: '/documents-and-delivery' },
     ],
     imageUrl: '/images/platform-overview/div (6).png',
     imageAlt: 'Billing operations and delivery management',
@@ -60,10 +61,10 @@ const capabilityBlocks: CapabilityBlock[] = [
     description:
       'Receivables queues and prioritisation, recorded payment allocation, ageing on outstanding balances, and reporting that always states its source, period, currency and entity.',
     links: [
-      { label: 'Accounts Receivable', href: '#accounts-receivable' },
-      { label: 'Payments & Reconciliation', href: '#payments-reconciliation' },
-      { label: 'Outstanding Balances', href: '#outstanding-balances' },
-      { label: 'Reporting & Analytics', href: '#reporting-analytics' },
+      { label: 'Accounts Receivable', href: '/accounts-receivable' },
+      { label: 'Payments & Reconciliation', href: '/payments-and-reconcilliation' },
+      { label: 'Outstanding Balances', href: '/outstanding-balances' },
+      { label: 'Reporting & Analytics', href: '/reporting-and-analytics' },
     ],
     imageUrl: '/images/platform-overview/div (7).png',
     imageAlt: 'Revenue control and analytics preview',
@@ -137,7 +138,7 @@ export default function CapabilityBlocksSection() {
 
                 <div className="w-full divide-y divide-slate-100 border-y border-slate-100 pt-2">
                   {block.links.map((link) => (
-                    <a
+                    <Link
                       key={link.label}
                       href={link.href || '#'}
                       className="group flex items-center justify-between rounded-lg px-2 py-3.5 text-sky-950 transition-colors duration-150 hover:bg-slate-50 hover:text-sky-600"
@@ -146,7 +147,7 @@ export default function CapabilityBlocksSection() {
                       <span className="font-mono text-base text-slate-400 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-sky-600">
                         →
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>

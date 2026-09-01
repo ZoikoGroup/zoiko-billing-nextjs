@@ -27,27 +27,27 @@ type MenuItem = {
 };
 
 const LEARN_ITEMS: MenuItem[] = [
-  { title: 'Resource Centre', href: '/resources', icon: BookOpen },
-  { title: 'Billing Guides',  href: '/resources/guides', icon: FileText },
-  { title: 'Templates',  href: '/resources/templates', icon: LayoutGrid },
-  { title: 'Billing Glossary',  href: '/resources/glossary', icon: Type },
-  { title: 'Reports & Insights',  href: '/resources/insights', icon: BarChart3 },
+  { title: 'Resource Centre', href: '/resource-center', icon: BookOpen },
+  { title: 'Billing Guides',  href: '/billing-guides', icon: FileText },
+  { title: 'Templates',  href: '/templates', icon: LayoutGrid },
+  { title: 'Billing Glossary',  href: '/billing-glossary', icon: Type },
+  { title: 'Reports & Insights',  href: '#', icon: BarChart3 },
 ];
 
 const EVALUATE_ITEMS: MenuItem[] = [
-  { title: 'Customer Stories', href: '/customers', icon: Users },
-  { title: 'Product Tour', href: '/product-tour', icon: PlaySquare },
-  { title: 'Demo Library',  href: '/resources/demos', icon: Video },
-  { title: 'Webinars & Events',  href: '/resources/events', icon: Calendar },
-  { title: 'Security Overview',  href: '/security', icon: ShieldCheck },
+  { title: 'Customer Stories', href: '#', icon: Users },
+  { title: 'Product Tour', href: '#', icon: PlaySquare },
+  { title: 'Demo Library',  href: '#', icon: Video },
+  { title: 'Webinars & Events',  href: '#', icon: Calendar },
+  { title: 'Security Overview',  href: '/security-overview', icon: ShieldCheck },
 ];
 
 const HELP_ITEMS: MenuItem[] = [
-  { title: 'Help Centre',  href: '/help', icon: HelpCircle },
+  { title: 'Help Centre',  href: '/help-center', icon: HelpCircle },
   { title: 'Documentation', href: '/docs', icon: BookOpen },
   { title: 'Release Notes',  href: '/releases', icon: Bell },
-  { title: 'System Status',  href: '/status', icon: Activity },
-  { title: 'Contact Support',  href: '/support/contact', icon: Headphones },
+  { title: 'System Status',  href: '/system-status', icon: Activity },
+  { title: 'Contact Support',  href: '/contact-support', icon: Headphones },
 ];
 
 export default function ResourcesDropdown() {

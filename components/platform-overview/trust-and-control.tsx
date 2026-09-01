@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 interface TrustCard {
   title: string;
@@ -80,23 +81,23 @@ export default function TrustAndControlSection() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
-          <a
-            href="#security-trust"
+          <Link
+            href="/trust-center"
             className="inline-flex w-full items-center justify-center rounded-lg bg-sky-950 px-6 py-3  font-medium text-white shadow-xs transition-colors duration-150 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
             style={{color:"white"}}
           >
             Review security and trust
-          </a>
+          </Link>
 
-          <a
-            href="#product-availability"
+          <Link
+            href="/jurisdiction-availability"
             className="group inline-flex items-center gap-2 px-2 py-3 font-sans text-base font-medium text-sky-700 transition-colors focus:outline-none hover:text-sky-900"
           >
             <span>Check product availability</span>
             <span className="font-mono transition-transform duration-150 group-hover:translate-x-1">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

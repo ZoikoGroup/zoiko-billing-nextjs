@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const integrationTags = [
   'Payment Providers',
@@ -73,20 +74,20 @@ export default function IntegrationsAndGlobalReadiness() {
 
             {/* Actions */}
             <div className="pt-4 flex flex-wrap items-center gap-4 w-full">
-              <a
-                href="#explore-integrations"
+              <Link
+                href="/integrations-directory"
                 className="px-5 py-2.5 bg-white"
                 style={{color:'black'}}
               >
                 Explore integrations
-              </a>
-              <a
-                href="#api-overview"
+              </Link>
+              <Link
+                href="/developers-api-overview"
                 className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-base font-medium transition-colors"
               >
                 <span>API overview</span>
                 <span className="font-mono font-bold">→</span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -115,12 +116,12 @@ export default function IntegrationsAndGlobalReadiness() {
 
             {/* Action */}
             <div className="pt-4 w-full">
-              <a
-                href="#explore-global-billing"
+              <Link
+                href="/global-billing"
                 className="inline-block px-5 py-2.5 border border-white/30 hover:border-white text-white text-base font-medium rounded-lg transition-colors"
               >
                 Explore global billing
-              </a>
+              </Link>
             </div>
           </div>
 
