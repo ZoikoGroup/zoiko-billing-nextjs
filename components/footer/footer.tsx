@@ -115,8 +115,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Trust & Security',
     links: [
       { label: 'Security Overview', href: '/security-overview' },
-      { label: 'Trust Center', href: '#' },
-      { label: 'System Status', href: '#' },
+      { label: 'Trust Center', href: '/trust-center' },
+      { label: 'System Status', href: 'system-status' },
       { label: 'Privacy & Data Governance', href: '/privacy-and-data-governance' },
       { label: 'Business Continuity', href: '#' },
       { label: 'Responsible Disclosure', href: '/responsible-disclosure' },
@@ -131,9 +131,9 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Why Zoiko Billing', href: '#' },
       { label: 'Zoiko Group', href: '#' },
       { label: 'Leadership', href: '#' },
-      { label: 'Careers', href: '#' },
+      { label: 'Careers', href: '/careers' },
       { label: 'Newsroom', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {

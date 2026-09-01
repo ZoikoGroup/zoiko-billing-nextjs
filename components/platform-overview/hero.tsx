@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -26,18 +27,18 @@ export default function HeroSection() {
           </p>
 
           <div className="flex w-full flex-wrap items-center gap-4 pt-2 sm:w-auto">
-            <button
-              type="button"
+            <Link
+              href="/create-account"
               className="min-h-11 rounded-lg bg-sky-600 px-6 py-2.5 text-base font-normal text-white shadow-sm transition-colors duration-150 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
             >
               Create Account
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/book-demo"
               className="min-h-11 rounded-lg border border-slate-200 bg-white px-6 py-2.5 text-base font-normal text-slate-950 transition-colors duration-150 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
             >
               Book a Demo
-            </button>
+            </Link>
           </div>
         </div>
 
