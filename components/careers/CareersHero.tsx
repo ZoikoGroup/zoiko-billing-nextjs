@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function DevelopersHeroSection() {
+export default function CareersHero() {
   return (
     <section className="w-full overflow-hidden bg-white">
       <div
@@ -52,14 +52,15 @@ export default function DevelopersHeroSection() {
                 sm:tracking-[0.18em]
               "
             >
-              Developers - API Overview
+              Careers
             </span>
           </div>
 
-          {/* HEADING */}
+          {/* MOBILE + TABLET HEADING */}
           <h1
             className="
               !m-0
+              !block
               !max-w-[700px]
               !text-[40px]
               !font-extrabold
@@ -71,21 +72,41 @@ export default function DevelopersHeroSection() {
 
               md:!text-[50px]
 
+              lg:!hidden
+            "
+          >
+            Work on billing systems{" "}
+            <span className="text-blue-600">
+              that have to be right.
+            </span>
+          </h1>
+
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
               lg:!text-[44px]
 
               xl:!text-[50px]
             "
           >
-            Build billing workflows{" "}
-            <span className="text-blue-600">
-              on governed records.
+            <span className="block">Work on billing systems</span>
+            <span className="block text-blue-600">
+              that have to be right.
             </span>
           </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              !mt-8
+              mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -103,10 +124,10 @@ export default function DevelopersHeroSection() {
               xl:mt-9
             "
           >
-            Use Zoiko Billing APIs to connect billing operations with the
-            systems that create, review, issue, collect, reconcile and report
-            on financial records — while preserving the controls that
-            determine who can change what and when.
+            Zoiko Billing is a Zoiko Group product for invoice-to-payment
+            operations. This page lists current open roles, explains how our
+            hiring information is governed, and shows how to verify that a
+            role or a recruiter contact is genuine.
           </p>
 
           {/* CTA BUTTONS */}
@@ -125,7 +146,7 @@ export default function DevelopersHeroSection() {
             "
           >
             <Link
-              href="#api-docs"
+              href="#open-roles"
               className="
                 inline-flex
                 min-h-11
@@ -134,9 +155,11 @@ export default function DevelopersHeroSection() {
                 justify-center
                 rounded-full
                 bg-blue-600
-                px-7
+                px-6
+                text-center
                 text-sm
                 font-semibold
+                leading-6
                 text-white
                 shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
@@ -145,11 +168,11 @@ export default function DevelopersHeroSection() {
                 sm:w-auto
               "
             >
-              API Documentation
+              View open roles
             </Link>
 
             <Link
-              href="#developer-sandbox"
+              href="#hiring-information"
               className="
                 inline-flex
                 min-h-11
@@ -160,9 +183,11 @@ export default function DevelopersHeroSection() {
                 border
                 border-[#dfe5ee]
                 bg-white
-                px-7
+                px-6
+                text-center
                 text-sm
                 font-semibold
+                leading-6
                 text-[#091127]
                 transition
                 hover:bg-[#f8faff]
@@ -170,8 +195,41 @@ export default function DevelopersHeroSection() {
                 sm:w-auto
               "
             >
-              Developer Sandbox
+              How hiring information is governed
             </Link>
+          </div>
+
+          {/* NOTICE */}
+          <div
+            className="
+              mt-6
+              w-full
+              max-w-[562px]
+              rounded-r-[10px]
+              border
+              border-[#dfe5ee]
+              border-l-[3px]
+              border-l-blue-600
+              bg-white
+              px-4
+              py-3.5
+
+              sm:mt-7
+            "
+          >
+            <p
+              className="
+                !m-0
+                text-sm
+                font-normal
+                leading-5
+                text-[#5d7192]
+              "
+            >
+              Legal employer, work location, work model, compensation and
+              eligibility are source-governed per role — none is stated
+              generically on this page.
+            </p>
           </div>
         </div>
 
@@ -195,25 +253,25 @@ export default function DevelopersHeroSection() {
             className="
               relative
               mx-auto
+              aspect-[557/519]
               w-full
-              max-w-[547px]
+              max-w-[557px]
               overflow-hidden
               rounded-2xl
             "
           >
             <Image
-              src="/images/developers/dao1.png"
-              alt="Build billing workflows on governed records"
-              width={547}
-              height={547}
+              src="/images/careers/careers.png"
+              alt="Careers at Zoiko Billing"
+              fill
               priority
-              className="block h-auto w-full object-cover"
+              className="object-cover"
               sizes="
                 (max-width: 639px) 100vw,
                 (max-width: 767px) 90vw,
                 (max-width: 1023px) 85vw,
                 (max-width: 1279px) 44vw,
-                547px
+                557px
               "
             />
           </div>

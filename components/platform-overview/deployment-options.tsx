@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface FeatureCardProps {
   category: string;
@@ -23,7 +24,7 @@ const featureData: FeatureCardProps[] = [
     description:
       'Connect approved workflows, shared identity and cross-product navigation where enabled.',
     actionText: 'Compare deployment options',
-    href: '#compare-options',
+    href: '/zoiko-billing-plus-zoiko-one',
   },
   {
     category: 'Availability',
@@ -31,7 +32,7 @@ const featureData: FeatureCardProps[] = [
     description:
       'Currency, payment provider, tax service and jurisdiction all affect what is available to you.',
     actionText: 'Check product availability',
-    href: '#check-availability',
+    href: '/jurisdiction-availability',
   },
 ];
 
@@ -59,7 +60,7 @@ export default function DeploymentOptionsSection() {
             </div>
 
             <div className="mt-auto pt-6">
-              <a
+              <Link
                 href={card.href || '#'}
                 className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-sky-600 transition-colors group-hover:text-sky-700 focus:outline-none font-mono"
               >
@@ -67,7 +68,7 @@ export default function DeploymentOptionsSection() {
                 <span className="transition-transform duration-200 group-hover:translate-x-1">
                   →
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         ))}

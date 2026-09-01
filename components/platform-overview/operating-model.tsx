@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function BringClaritySection() {
   const steps = [
@@ -49,28 +50,28 @@ and jurisdiction requirements.
           {/* Action Buttons & Link */}
           <div className="w-full flex flex-col justify-start items-start gap-4 pt-2">
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                type="button"
+              <Link
+                href="/create-account"
                 className="min-h-11 px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-base font-normal rounded-lg border border-blue-600 transition-colors cursor-pointer"
               >
                 Create Account
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              <Link
+                href="/book-demo"
                 className="min-h-11 px-5 py-2 bg-transparent hover:bg-white/10 text-white text-base font-normal rounded-lg border border-white/35 transition-colors cursor-pointer"
               >
                 Book a Demo
-              </button>
-              <a
-              href="#pricing"
-              className="inline-flex items-center gap-2 min-h-11 py-2 text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer"
-            >
-              <span className="text-base font-normal">View Pricing</span>
-              <span className="text-base font-bold font-['IBM_Plex_Mono',monospace] leading-6 group-hover:translate-x-1 transition-transform">
-                →
-              </span>
-            </a>
+              </Link>
+              <Link
+                href="/pricing-and-plans"
+                className="inline-flex items-center gap-2 min-h-11 py-2 text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer"
+              >
+                <span className="text-base font-normal">View Pricing</span>
+                <span className="text-base font-bold font-['IBM_Plex_Mono',monospace] leading-6 group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </Link>
             </div>
 
             {/* View Pricing Link */}
