@@ -30,8 +30,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: 'Invoices & Credit Notes', href: '/invoices' },
       { label: 'Charges & Adjustments', href: '/charges-and-adjustments' },
-      { label: 'Billing Schedules', href: '#' },
-      { label: 'Documents & Delivery', href: '#' },
+      { label: 'Billing Schedules', href: '/billing-schedules' },
+      { label: 'Documents & Delivery', href: '/documents-and-delivery' },
       { label: 'Accounts Receivable', href: '/accounts-receivable' },
       { label: 'Payments & Reconciliation', href: '/payments-and-reconcilliation' },
       { label: 'Outstanding Balances', href: '/outstanding-balances' },
@@ -89,6 +89,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Resources',
     links: [
       { label: 'Resource Center', href: '/resource-center' },
+<<<<<<< HEAD
       { label: 'Billing Guides', href: '#' },
       { label: 'Templates', href: '#' },
       { label: 'Billing Glossary', href: '#' },
@@ -96,11 +97,21 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Customer Stories', href: '/customer-stories' },
       { label: 'Webinar & Events', href: '/webinar-and-events' },
       { label: 'Product Updates', href: '/product-updates' },
+=======
+      { label: 'Billing Guides', href: '/billing-guides' },
+      { label: 'Templates', href: '/templates' },
+      { label: 'Billing Glossary', href: '/billing-glossary' },
+      { label: 'Reports & insights', href: '#' },
+      { label: 'Customer Stories', href: '#' },
+      { label: 'Webinar & Events', href: '#' },
+      { label: 'Product Updates', href: '#' },
+>>>>>>> origin/dev
     ],
   },
   {
     title: 'Customer support',
     links: [
+<<<<<<< HEAD
       { label: 'Help Center', href: '#' },
       { label: 'Documentation', href: '/documentation' },
       { label: 'Contact Support', href: '#' },
@@ -109,19 +120,37 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Billing Support', href: '#' },
       { label: 'Integration Support', href: '#' },
       { label: 'Support Policy', href: '/support-policy' },
+=======
+      { label: 'Help Center', href: '/help-center' },
+      { label: 'Documentation', href: '#' },
+      { label: 'Contact Support', href: '/contact-support' },
+      { label: 'Implementation Guidance', href: '/implementation-guidance' },
+      { label: 'Account Access', href: '/account-access' },
+      { label: 'Billing Support', href: '/billing-support' },
+      { label: 'Integration Support', href: '/integration-support' },
+      { label: 'Support Policy', href: '#' },
+>>>>>>> origin/dev
     ],
   },
   {
     title: 'Trust & Security',
     links: [
-      { label: 'Security Overview', href: '#' },
+      { label: 'Security Overview', href: '/security-overview' },
       { label: 'Trust Center', href: '#' },
       { label: 'System Status', href: '#' },
+<<<<<<< HEAD
       { label: 'Privacy & Data Governance', href: '#' },
       { label: 'Business Continuity', href: '/business-continuity' },
       { label: 'Responsible Disclosure', href: '#' },
       { label: 'Security Advisories', href: '#' },
       { label: 'Accessibility', href: '/accessibility' },
+=======
+      { label: 'Privacy & Data Governance', href: '/privacy-and-data-governance' },
+      { label: 'Business Continuity', href: '#' },
+      { label: 'Responsible Disclosure', href: '/responsible-disclosure' },
+      { label: 'Security Advisories', href: '/security-advisories' },
+      { label: 'Accessibility', href: '#' },
+>>>>>>> origin/dev
     ],
   },
   {
@@ -187,18 +216,18 @@ export default function ZoikoBillingPage() {
             
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
-                type="button"
-                className="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
+              <a
+                href="/create-account"
+                className="px-8 py-3.5 bg-white hover:bg-slate-100 !text-slate-950 font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 Create Account
-              </button>
-              <button
-                type="button"
-                className="px-6 py-3.5 border border-white hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
+              </a>
+              <a
+                href="/book-demo"
+                className="px-6 py-3.5 border border-white hover:bg-white/10 !text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 Book Demo
-              </button>
+              </a>
               <button
                 type="button"
                 className="px-6 py-3.5 border border-white/50 hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
