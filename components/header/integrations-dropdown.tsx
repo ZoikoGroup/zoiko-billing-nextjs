@@ -50,7 +50,7 @@ const DEVELOPER_ITEMS: MenuItem[] = [
 
 const PARTNER_ITEMS: MenuItem[] = [
   { title: 'Build an Integration', description: 'Create a custom integration with Zoiko.', href: '/developers-build-an-integration', icon: Puzzle },
-  { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '#', icon: Share2 },
+  { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '/technology-partners', icon: Share2 },
   { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '#', icon: ShieldCheck },
   { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '#', icon: Users },
   { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '#', icon: Send },

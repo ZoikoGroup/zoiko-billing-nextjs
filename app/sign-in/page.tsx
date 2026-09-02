@@ -13,7 +13,7 @@ const FOOTER_LINKS = [
   { label: "Privacy", href: "/privacy-and-data-governance" },
   { label: "Terms", href: "#" },
   { label: "Security", href: "/security-advisories" },
-  { label: "Help", href: "#" },
+  { label: "Help", href: "/help-center" },
 ];
 
 const STEPS = ["email", "password", "otp", "done"] as const;

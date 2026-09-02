@@ -56,7 +56,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Multi-Currency Billing', href: '/multi-currency' },
       { label: 'Multi-Entity Billing', href: '/multi-entity-billing' },
       { label: 'Localized Documents', href: '/localized-documents' },
-      { label: 'Entity-Level Controls', href: '#' },
+      { label: 'Entity-Level Controls', href: '/entity-level-controls' },
       { label: 'Jurisdiction Availability', href: '/jurisdiction-availability' },
       { label: 'Supported Languages', href: '/supported-languages' },
     ],
@@ -128,8 +128,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Why Zoiko Billing', href: '#' },
-      { label: 'Zoiko Group', href: '#' },
+      { label: 'Why Zoiko Billing', href: '/why-zoiko-billing' },
+      { label: 'Zoiko Group', href: '/zoiko-group' },
       { label: 'Leadership', href: '#' },
       { label: 'Careers', href: '/careers' },
       { label: 'Newsroom', href: '#' },
@@ -140,7 +140,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Partners & Connect',
     links: [
       { label: 'Partner Program', href: '#' },
-      { label: 'Technology Partners', href: '#' },
+      { label: 'Technology Partners', href: '/technology-partners' },
       { label: 'Become a Partner', href: '#' },
       { label: 'Submit an Integrations', href: '#' },
       { label: 'Partner Portal', href: '#' },

@@ -39,7 +39,7 @@ const LEFT: FAQ[] = [
         No. The product is designed to keep records attributable and explainable,
         which supports a compliance programme — but compliance is a determination
         about your organization.{" "}
-        <Link href="#" className={linkClass}>
+        <Link href="/trust-center" className={linkClass}>
           Trust Center
         </Link>{" "}
         carries assurance evidence with its scope and date.

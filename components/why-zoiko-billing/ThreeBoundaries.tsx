@@ -27,7 +27,7 @@ export default function ThreeBoundaries() {
               a provider&apos;s assurance posture is never restated as ours
             </b>{" "}
             — the same rule{" "}
-            <Link href="#" className={linkClass}>
+            <Link href="/security-overview" className={linkClass}>
               Security Overview
             </Link>{" "}
             applies.
@@ -63,7 +63,7 @@ export default function ThreeBoundaries() {
 
           <p className="!mb-0 text-sm !leading-5 !text-[#5D7192]">
             Assurance evidence lives in{" "}
-            <Link href="#" className={linkClass}>
+            <Link href="/trust-center" className={linkClass}>
               Trust Center
             </Link>{" "}
             with its scope, status and date.{" "}

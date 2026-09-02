@@ -14,7 +14,7 @@ const PATHWAYS: Pathway[] = [
   {
     need: "What the product actually does today",
     destination: (
-      <Link href="#" className={linkClass}>
+      <Link href="/documentation" className={linkClass}>
         Documentation
       </Link>
     ),
@@ -33,11 +33,11 @@ const PATHWAYS: Pathway[] = [
     need: "Security and assurance evidence",
     destination: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/trust-center" className={linkClass}>
           Trust Center
         </Link>
         <span className="!text-[#5D7192]"> · </span>
-        <Link href="#" className={linkClass}>
+        <Link href="/security-overview" className={linkClass}>
           Security
         </Link>
       </>
@@ -47,7 +47,7 @@ const PATHWAYS: Pathway[] = [
   {
     need: "Customer results",
     destination: (
-      <Link href="#" className={linkClass}>
+      <Link href="/customer-stories" className={linkClass}>
         Customer Stories
       </Link>
     ),
@@ -61,7 +61,7 @@ const PATHWAYS: Pathway[] = [
   {
     need: "Research findings",
     destination: (
-      <Link href="#" className={linkClass}>
+      <Link href="/reports-and-insights" className={linkClass}>
         Reports &amp; Insights
       </Link>
     ),
@@ -79,7 +79,7 @@ const PATHWAYS: Pathway[] = [
   {
     need: "Implementation effort and sequence",
     destination: (
-      <Link href="#" className={linkClass}>
+      <Link href="/implementation-guidance" className={linkClass}>
         Implementation Guidance
       </Link>
     ),

@@ -9,64 +9,69 @@ type FAQ = { question: string; answer: React.ReactNode };
 
 const LEFT: FAQ[] = [
   {
-    question: "Is Zoiko Billing the same as Zoiko Group?",
-    answer:
-      "No. Zoiko Billing is a product within the group — not the group itself, and not a separately incorporated company. Group-level information is published by the group's own destination.",
-  },
-  {
-    question: "Which entity will we contract with?",
-    answer:
-      "The contracting entity is stated in your agreement, not inferred from the group name. Group membership establishes corporate context and nothing about who signs with you.",
-  },
-  {
-    question: "Does a group certification cover Zoiko Billing?",
+    question: "Why are no partners listed?",
     answer: (
       <>
-        Not automatically. Assurance evidence carries its own scope, status and
-        date, and a certification held elsewhere in the group does not extend to
-        this product by default.{" "}
-        <Link href="/trust-center" className={linkClass}>
-          Trust Center
-        </Link>{" "}
-        is where that scope is stated.
+        No approved partner records with publication rights back this wireframe.
+        Fabricating partner companies would publish claims about real
+        organizations&apos; relationships with Zoiko.{" "}
+        <Link href="#relationship-states" className={linkClass}>
+          See the states
+        </Link>
       </>
     ),
   },
   {
-    question: "What other companies or brands are in the group?",
+    question: "Does a listing mean Zoiko recommends them?",
     answer:
-      "That list belongs to the group destination. This page does not publish a second copy of it, because a duplicated corporate fact is a second thing to go out of date.",
+      "No. A listing states that an approved relationship exists and what its scope is. It is not an endorsement, a recommendation or a ranking.",
+  },
+  {
+    question: "Is a listed integration certified?",
+    answer:
+      "No. A listing is not a certification. Whether an integration is available is a separate technical record, and no certification claim is published here.",
+  },
+  {
+    question: "We have an integration but are not listed here. Why?",
+    answer:
+      "A relationship and an integration are separate records. An integration can exist without an approved, publishable partner relationship behind it — and this page only publishes the latter.",
   },
 ];
 
 const RIGHT: FAQ[] = [
   {
-    question: "Who leads Zoiko Group?",
-    answer:
-      "Leadership is group-level information and is published by the group's own destination. It is not restated here.",
-  },
-  {
-    question: "Where is the group based?",
-    answer:
-      "Group headquarters and registered addresses are owned by the group destination. Jurisdiction of the group also does not determine the entity you contract with.",
-  },
-  {
-    question: "Is this the group's official page?",
-    answer:
-      "No. This is the Zoiko Billing page explaining the relationship. The group's official page is its own destination, and this page routes to it rather than standing in for it.",
-  },
-  {
-    question: "Does being part of a group change what I get?",
+    question: "Will the integration work with our setup?",
     answer: (
       <>
-        No. Capability, pricing, entitlement and availability are established by
-        the product, not by group membership.{" "}
-        <Link href="/why-zoiko-billing" className={linkClass}>
-          Why Zoiko Billing
-        </Link>{" "}
-        holds the design reasoning.
+        This page cannot answer that. Availability varies by provider,
+        jurisdiction and configuration.{" "}
+        <Link href="/integrations-directory" className={linkClass}>
+          Check the Integrations directory
+        </Link>
       </>
     ),
+  },
+  {
+    question: "Who supports the integration if it breaks?",
+    answer: (
+      <>
+        It depends on the issue type — three of the six belong to Zoiko and three
+        do not.{" "}
+        <Link href="#support-ownership" className={linkClass}>
+          See support ownership
+        </Link>
+      </>
+    ),
+  },
+  {
+    question: "A company claims to be a Zoiko partner — can I check?",
+    answer:
+      "This directory is the published record of approved relationships. If an organization is not listed here, that absence is not itself a statement about them — but no relationship is confirmed by this page unless it appears on it.",
+  },
+  {
+    question: "Can we use each other's logos?",
+    answer:
+      "Only within the terms of an approved agreement. Nothing on this page grants brand or logo rights in either direction.",
   },
 ];
 
@@ -129,25 +134,25 @@ function FAQColumn({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
-export default function GroupFAQ() {
+export default function PartnersFAQ() {
   return (
     <section
-      id="zoiko-group-faq"
+      id="technology-partners-faq"
       className="w-full bg-white px-4 py-16 sm:px-6 lg:px-12 lg:py-20 xl:px-24"
     >
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-11 lg:px-7">
         <div className="flex w-full max-w-[664px] flex-col items-center gap-3 pt-2">
-          <Eyebrow centered>Zoiko Group FAQ</Eyebrow>
+          <Eyebrow centered>Technology Partners FAQ</Eyebrow>
 
           <h2
             className={`${heading} !mb-0 text-center !text-[28px] !leading-9 !tracking-[-0.02em] !text-[#0F172A] sm:!text-[32px] sm:!leading-10 lg:!text-4xl`}
           >
-            Direct answers about the relationship.
+            Direct answers about the directory.
           </h2>
 
           <p className="!mb-0 text-center text-base !leading-7 !text-[#5B6B85]">
-            Most answers here explain what the relationship does not establish,
-            which is the more common misreading.
+            Most answers clarify what a listing does not establish, which is the
+            common misreading.
           </p>
         </div>
 

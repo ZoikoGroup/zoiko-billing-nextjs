@@ -32,7 +32,7 @@ const ROUTES: { title: string; body: React.ReactNode }[] = [
     title: "Checking credibility",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/trust-center" className={linkClass}>
           Trust Center
         </Link>{" "}
         catalogs assurance evidence with its scope, state and access — which is
@@ -55,7 +55,7 @@ const ROUTES: { title: string; body: React.ReactNode }[] = [
     title: "Looking for a role",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/careers" className={linkClass}>
           Careers
         </Link>{" "}
         lists open roles with the legal employer stated per role.
@@ -66,7 +66,7 @@ const ROUTES: { title: string; body: React.ReactNode }[] = [
     title: "Need to reach someone",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/contact" className={linkClass}>
           Contact
         </Link>{" "}
         routes by inquiry type rather than into a general corporate queue.
