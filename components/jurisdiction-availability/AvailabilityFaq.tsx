@@ -82,30 +82,77 @@ function FaqItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-b border-[#EEF0F2] last:border-b-0">
+    <div
+      className="
+        border-b
+        border-[#edf0f4]
+        last:border-b-0
+      "
+    >
       <button
         type="button"
         onClick={onClick}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left sm:px-5"
+        className="
+          flex
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-5
+          text-left
+
+          sm:py-6
+        "
       >
-        <span className="min-w-0 text-sm font-semibold leading-6 text-[#102A43]">
+        <span
+          className="
+            min-w-0
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+          "
+        >
           {question}
         </span>
 
         <span
           aria-hidden="true"
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[#F3F5F7] text-sm font-semibold leading-5 text-[#60758A] transition-transform duration-200 ${
-            open ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-5
+            text-[#7890b2]
+            transition-transform
+            duration-200
+            ${open ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
       </button>
 
       {open && (
-        <div className="px-4 pb-4 sm:px-5 sm:pb-5">
-          <p className="text-sm font-normal leading-6 text-[#60758A]">
+        <div className="px-5 pb-5 sm:pb-6">
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {answer}
           </p>
         </div>
@@ -124,7 +171,17 @@ function FaqColumn({
   setOpenIndex: (index: number | null) => void;
 }) {
   return (
-    <div className="w-full overflow-hidden rounded-xl border border-[#E1E5E9] bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] sm:rounded-2xl">
+    <div
+      className="
+        w-full
+        overflow-hidden
+        rounded-2xl
+        border
+        border-[#dfe5ee]
+        bg-white
+        shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+      "
+    >
       {items.map((item, index) => {
         const isOpen = openIndex === index;
 
@@ -147,52 +204,152 @@ export default function AvailabilityFaq() {
   const [rightOpen, setRightOpen] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-[#F7F8FA] px-4 py-12 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-7 sm:gap-10">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-1 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#4387A8]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[9px] font-bold uppercase leading-4 tracking-[0.12em] text-[#4387A8] sm:text-xs sm:tracking-[0.2em]">
-              Decision guide &amp; FAQ
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-[#4387A8]/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Decision guide &amp; FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about availability.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              You can read current public status without giving an email,
+              company name, employee count, budget, tax identifier, customer
+              data or confidential expansion plans.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-[28px] font-extrabold leading-[1.15] tracking-[-0.02em] text-[#102A43] sm:text-[36px] lg:text-[42px]">
-            Direct answers about availability.
-          </h2>
+          {/* FAQ COLUMNS */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-5
+              pt-1
 
-          {/* Description */}
-          <p className="w-full max-w-[720px] text-center text-sm font-normal leading-6 text-[#60758A] sm:text-base sm:leading-7">
-            You can read current public status without giving an email,
-            company name, employee count, budget, tax identifier, customer data
-            or confidential expansion plans.
-          </p>
-        </div>
+              lg:flex-row
+              lg:items-start
+            "
+          >
+            {/* LEFT */}
+            <div className="w-full min-w-0 flex-1">
+              <FaqColumn
+                items={leftFaqs}
+                openIndex={leftOpen}
+                setOpenIndex={setLeftOpen}
+              />
+            </div>
 
-        {/* FAQ Columns */}
-        <div className="flex w-full flex-col gap-4 pt-1 lg:flex-row lg:items-start lg:gap-5">
-          {/* Left */}
-          <div className="w-full min-w-0 lg:flex-1">
-            <FaqColumn
-              items={leftFaqs}
-              openIndex={leftOpen}
-              setOpenIndex={setLeftOpen}
-            />
-          </div>
-
-          {/* Right */}
-          <div className="w-full min-w-0 lg:flex-1">
-            <FaqColumn
-              items={rightFaqs}
-              openIndex={rightOpen}
-              setOpenIndex={setRightOpen}
-            />
+            {/* RIGHT */}
+            <div className="w-full min-w-0 flex-1">
+              <FaqColumn
+                items={rightFaqs}
+                openIndex={rightOpen}
+                setOpenIndex={setRightOpen}
+              />
+            </div>
           </div>
         </div>
       </div>

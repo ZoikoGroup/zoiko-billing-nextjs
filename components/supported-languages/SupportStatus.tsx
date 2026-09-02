@@ -2,43 +2,142 @@ import Image from "next/image";
 
 export default function SupportStatus() {
   return (
-    <section className="w-full bg-[#F7F7F6] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-5">
-        {/* Heading */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.14em] text-[#3B82F6] sm:text-xs sm:tracking-[0.16em]">
-              Current support status &amp; publication rules
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Current support status &amp; publication rules
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Planned never inflates the inventory.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              This destination is a current-support directory. A roadmap entry
+              is not a capability.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-3xl font-extrabold leading-9 text-[#172033] sm:text-4xl sm:leading-10">
-            Planned never inflates the inventory.
-          </h2>
-
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-[#5B6577] sm:text-base sm:leading-7">
-            This destination is a current-support directory. A roadmap entry
-            is not a capability.
-          </p>
-        </div>
-
-        {/* Support Status Image */}
-        <div className="w-full overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
-          <div className="relative aspect-[1184/553] w-full">
-            <Image
-              src="/images/supported-languages/support-status.png"
-              alt="Current support status and publication rules"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 1184px"
-            />
+          {/* SUPPORT STATUS IMAGE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <div className="relative aspect-[1184/553] w-full">
+              <Image
+                src="/images/supported-languages/support-status.png"
+                alt="Current support status and publication rules"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1184px"
+              />
+            </div>
           </div>
         </div>
       </div>

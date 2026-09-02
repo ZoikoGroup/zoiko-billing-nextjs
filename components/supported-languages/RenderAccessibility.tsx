@@ -40,51 +40,171 @@ const accessibilityItems = [
 
 export default function RenderAccessibility() {
   return (
-    <section className="w-full bg-[#F7F7F6] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto w-full max-w-[1240px]">
-        {/* Desktop / Tablet */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
-          {/* LEFT */}
-          <div className="w-full min-w-0 lg:w-[565px] lg:max-w-[565px] lg:flex-none">
-            {/* Eyebrow */}
-            <div className="mb-3.5 flex items-center gap-2 pt-2">
-              <span className="h-px w-6 shrink-0 bg-[#3B82F6]/75" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="text-xs font-bold uppercase leading-4 tracking-[0.16em] text-[#3B82F6]">
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+
+            lg:flex-row
+            lg:items-start
+            lg:gap-14
+          "
+        >
+          {/* LEFT CONTENT */}
+          <div
+            className="
+              w-full
+              min-w-0
+
+              lg:w-[565px]
+              lg:max-w-[565px]
+              lg:flex-none
+            "
+          >
+            {/* EYEBROW */}
+            <div className="mb-3.5 flex items-center gap-3 pt-2">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Scripts, right-to-left, rendering &amp; accessibility
               </span>
             </div>
 
-            {/* Heading */}
-            <h2 className="!m-0 !w-full !max-w-[565px] !text-[30px] !font-extrabold !leading-9 !tracking-normal !text-[#172033] sm:!text-[30px] sm:!leading-9">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                !w-full
+                !max-w-[565px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               A translated bundle is not support.
             </h2>
 
-            {/* Description */}
-            <p className="mt-4 w-full max-w-[565px] text-base font-normal leading-7 text-[#5B6577]">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                mt-4
+                w-full
+                max-w-[565px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               If the claimed surface cannot render and read the language
               accessibly and reliably, the language is not currently supported
               for that surface. Accessibility is capability evidence, not a
               later enhancement.
             </p>
 
-            {/* Items */}
+            {/* ACCESSIBILITY ITEMS */}
             <div className="mt-4 flex w-full max-w-[565px] flex-col">
               {accessibilityItems.map((item) => (
                 <div
                   key={item.title}
                   className="flex w-full items-start gap-3 py-3"
                 >
-                  {/* Bullet */}
-                  <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-[2px] bg-[#3B82F6]" />
+                  {/* BULLET */}
+                  <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-[2px] bg-[#7890b2]" />
 
-                  {/* Content */}
-                  <div className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-start sm:gap-3">
-                    <span className="w-full shrink-0 text-sm font-bold leading-6 text-[#5B6577] sm:w-[105px]">
+                  {/* CONTENT */}
+                  <div
+                    className="
+                      flex
+                      min-w-0
+                      flex-1
+                      flex-col
+
+                      sm:flex-row
+                      sm:items-start
+                      sm:gap-3
+                    "
+                  >
+                    <span
+                      className="
+                        w-full
+                        shrink-0
+                        text-sm
+                        font-bold
+                        leading-6
+                        text-[#091127]
+
+                        sm:w-[105px]
+                      "
+                    >
                       {item.title}
                     </span>
 
-                    <span className="min-w-0 flex-1 text-sm font-normal leading-6 text-[#5B6577]">
+                    <span
+                      className="
+                        min-w-0
+                        flex-1
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
                       {item.description}
                     </span>
                   </div>
@@ -94,8 +214,29 @@ export default function RenderAccessibility() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-full min-w-0 lg:w-[565px] lg:max-w-[565px] lg:flex-none lg:pt-[48px]">
-            <div className="relative w-full overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
+          <div
+            className="
+              w-full
+              min-w-0
+
+              lg:w-[565px]
+              lg:max-w-[565px]
+              lg:flex-none
+              lg:pt-[48px]
+            "
+          >
+            <div
+              className="
+                relative
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
               <div className="relative aspect-[565/547] w-full">
                 <Image
                   src="/images/supported-languages/render-accessibility.png"

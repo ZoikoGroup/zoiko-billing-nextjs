@@ -13,8 +13,7 @@ const rows = [
   },
   {
     relationship: "Payer relationship",
-    meaning:
-      "Payment responsibility mapped separately if supported.",
+    meaning: "Payment responsibility mapped separately if supported.",
     control: "Does not change customer ownership automatically",
   },
   {
@@ -44,7 +43,7 @@ const rows = [
 
 export default function CustomerOwnership() {
   return (
-    <section className="w-full overflow-hidden bg-[#f7f8fa]">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -52,57 +51,61 @@ export default function CustomerOwnership() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
-          sm:py-14
+          sm:py-16
 
           md:px-10
-          md:py-16
+          md:py-20
 
           lg:px-14
-          lg:py-20
 
-          xl:px-24
+          xl:px-20
         "
       >
         <div
           className="
+            mx-auto
             flex
             w-full
             max-w-[1240px]
             flex-col
             items-center
-            gap-5
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* HEADER */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
-              max-w-[1000px]
+              max-w-[662px]
               flex-col
               items-center
               gap-3
               pt-2
+              text-center
             "
           >
             {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-4 shrink-0 bg-blue-600 opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
-                  text-center
                   text-[10px]
                   font-bold
                   uppercase
                   leading-4
                   tracking-[0.16em]
-                  text-blue-600
+                  text-[#7890b2]
 
                   sm:text-xs
                   sm:tracking-[0.18em]
@@ -111,7 +114,7 @@ export default function CustomerOwnership() {
                 Entity ownership of customers, profiles &amp; context
               </span>
 
-              <span className="h-px w-4 shrink-0 bg-blue-600 opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
@@ -119,23 +122,21 @@ export default function CustomerOwnership() {
               className="
                 !m-0
                 w-full
-                max-w-[1000px]
-                text-center
-                text-[30px]
-                font-extrabold
-                leading-[1.12]
-                tracking-[-0.035em]
-                text-slate-900
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-[36px]
-                md:text-[40px]
+                sm:!text-[34px]
 
-                lg:text-4xl
-                lg:leading-10
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              A shared customer reference is not a
-              shared balance.
+              A shared customer reference is not a shared balance.
             </h2>
 
             {/* DESCRIPTION */}
@@ -144,16 +145,12 @@ export default function CustomerOwnership() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-center
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
+                leading-7
                 text-[#5d7192]
 
-                sm:text-[15px]
-                sm:leading-7
-
-                md:text-base
+                sm:text-base
               "
             >
               A common identifier can reduce duplication while preserving
@@ -169,62 +166,60 @@ export default function CustomerOwnership() {
               overflow-hidden
               rounded-2xl
               border
-              border-[#e1e5eb]
+              border-[#dfe5ee]
               bg-white
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            {/* DESKTOP */}
+            {/* DESKTOP TABLE */}
             <div className="hidden md:block">
               {/* HEADER */}
               <div
                 className="
                   grid
                   grid-cols-[208px_minmax(0,536px)_minmax(0,1fr)]
-                  border-b
-                  border-[#e1e5eb]
-                  bg-[#fbfbfc]
+                  bg-[#fafbfc]
                 "
               >
-                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                <div className="border-b border-r border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
                       font-bold
                       uppercase
                       leading-4
-                      tracking-[0.08em]
-                      text-blue-600
+                      tracking-wide
+                      text-[#7890b2]
                     "
                   >
                     Relationship
                   </span>
                 </div>
 
-                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                <div className="border-b border-r border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
                       font-bold
                       uppercase
                       leading-4
-                      tracking-[0.08em]
-                      text-blue-600
+                      tracking-wide
+                      text-[#7890b2]
                     "
                   >
                     Meaning
                   </span>
                 </div>
 
-                <div className="px-4 py-3.5">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
                       font-bold
                       uppercase
                       leading-4
-                      tracking-[0.08em]
-                      text-blue-600
+                      tracking-wide
+                      text-[#7890b2]
                     "
                   >
                     Control
@@ -241,45 +236,29 @@ export default function CustomerOwnership() {
                     grid-cols-[208px_minmax(0,536px)_minmax(0,1fr)]
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#edf0f3]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
                 >
                   {/* RELATIONSHIP */}
-                  <div
-                    className="
-                      border-r
-                      border-[#edf0f3]
-                      px-4
-                      py-3.5
-                    "
-                  >
-                    <p
+                  <div className="border-r border-[#edf0f4] px-4 py-3.5">
+                    <span
                       className="
-                        !m-0
                         text-sm
                         font-semibold
                         leading-5
-                        text-slate-900
+                        text-[#091127]
                       "
                     >
                       {row.relationship}
-                    </p>
+                    </span>
                   </div>
 
                   {/* MEANING */}
-                  <div
-                    className="
-                      border-r
-                      border-[#edf0f3]
-                      px-4
-                      py-3.5
-                    "
-                  >
-                    <p
+                  <div className="border-r border-[#edf0f4] px-4 py-3.5">
+                    <span
                       className="
-                        !m-0
                         text-sm
                         font-normal
                         leading-5
@@ -287,90 +266,68 @@ export default function CustomerOwnership() {
                       "
                     >
                       {row.meaning}
-                    </p>
+                    </span>
                   </div>
 
                   {/* CONTROL */}
                   <div className="px-4 py-3.5">
-                    <p
+                    <span
                       className={`
-                        !m-0
                         text-sm
                         leading-5
+                        text-[#5d7192]
                         ${
                           row.relationship === "Needs review / conflict"
-                            ? "font-bold text-[#5d7192]"
-                            : "font-normal text-[#5d7192]"
+                            ? "font-bold"
+                            : "font-normal"
                         }
                       `}
                     >
                       {row.control}
-                    </p>
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* MOBILE */}
-            <div className="md:hidden">
-              <div
-                className="
-                  border-b
-                  border-[#e1e5eb]
-                  bg-[#fbfbfc]
-                  px-4
-                  py-3
-
-                  sm:px-5
-                "
-              >
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    leading-4
-                    tracking-[0.1em]
-                    text-blue-600
-
-                    sm:text-xs
-                  "
-                >
-                  Customer ownership relationships
-                </span>
-              </div>
-
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
               {rows.map((row, index) => (
                 <div
                   key={row.relationship}
                   className={`
-                    flex
-                    flex-col
-                    gap-4
-                    px-4
-                    py-5
-
-                    sm:px-5
-                    sm:py-6
+                    p-5
 
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#edf0f3]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
                 >
                   {/* RELATIONSHIP */}
-                  <div>
+                  <div className="mb-4">
                     <p
                       className="
                         !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Relationship
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
                         text-sm
                         font-semibold
                         leading-5
-                        text-slate-900
-
-                        sm:text-base
+                        text-[#091127]
                       "
                     >
                       {row.relationship}
@@ -378,25 +335,25 @@ export default function CustomerOwnership() {
                   </div>
 
                   {/* MEANING */}
-                  <div className="flex flex-col gap-1">
-                    <span
+                  <div className="mb-4">
+                    <p
                       className="
-                        text-[10px]
+                        !m-0
+                        text-[11px]
                         font-bold
                         uppercase
-                        leading-4
-                        tracking-[0.08em]
-                        text-blue-600
+                        tracking-[0.12em]
+                        text-[#7890b2]
                       "
                     >
                       Meaning
-                    </span>
+                    </p>
 
                     <p
                       className="
                         !m-0
+                        mt-1.5
                         text-sm
-                        font-normal
                         leading-6
                         text-[#5d7192]
                       "
@@ -406,29 +363,31 @@ export default function CustomerOwnership() {
                   </div>
 
                   {/* CONTROL */}
-                  <div className="flex flex-col gap-1">
-                    <span
+                  <div>
+                    <p
                       className="
-                        text-[10px]
+                        !m-0
+                        text-[11px]
                         font-bold
                         uppercase
-                        leading-4
-                        tracking-[0.08em]
-                        text-blue-600
+                        tracking-[0.12em]
+                        text-[#7890b2]
                       "
                     >
                       Control
-                    </span>
+                    </p>
 
                     <p
                       className={`
                         !m-0
+                        mt-1.5
                         text-sm
                         leading-6
+                        text-[#5d7192]
                         ${
                           row.relationship === "Needs review / conflict"
-                            ? "font-bold text-[#5d7192]"
-                            : "font-normal text-[#5d7192]"
+                            ? "font-bold"
+                            : "font-normal"
                         }
                       `}
                     >

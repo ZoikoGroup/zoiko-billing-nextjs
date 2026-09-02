@@ -126,7 +126,7 @@ export default function MultiEntity() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -166,7 +166,7 @@ export default function MultiEntity() {
             "
           >
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

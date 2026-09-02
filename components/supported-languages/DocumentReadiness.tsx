@@ -53,118 +53,240 @@ const dependencies = [
 
 export default function DocumentReadiness() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-7 sm:gap-10 lg:gap-11">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-1 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[9px] font-bold uppercase leading-4 tracking-[0.1em] text-[#3B82F6] sm:text-xs sm:tracking-[0.16em]">
-              Localized documents &amp; template readiness
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <h2 className="w-full max-w-[1000px] text-center text-[28px] font-extrabold leading-[1.12] tracking-tight text-[#172033] sm:text-[36px] sm:leading-[1.08] lg:text-[40px]">
-            <span className="block sm:whitespace-nowrap">
-              Ten dependencies before a document
-            </span>
+          lg:px-14
 
-            <span className="block sm:whitespace-nowrap">
-              language is current.
-            </span>
-          </h2>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-[#5B6577] sm:text-base sm:leading-7">
-            A translated string bundle is one of ten. Any single failure keeps
-            the language-surface combination out of current support.
-          </p>
-        </div>
+            sm:gap-10
 
-        {/* Desktop Table */}
-        <div className="hidden w-full overflow-hidden rounded-xl bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] ring-1 ring-[#E5E7EB] sm:rounded-2xl md:block">
-          <div className="grid grid-cols-[240px_minmax(0,1fr)] lg:grid-cols-[288px_minmax(0,1fr)]">
-            {/* Header */}
-            <div className="border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-3">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                Dependency
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[1000px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Localized documents &amp; template readiness
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <div className="border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-3">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                Requirement
-              </span>
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[1000px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-            {/* Rows */}
-            {dependencies.map((item, index) => {
-              const isLast = index === dependencies.length - 1;
+                sm:!text-[34px]
 
-              return (
-                <div key={item.dependency} className="contents">
-                  {/* Dependency */}
-                  <div
-                    className={`px-4 py-4 ${
-                      !isLast ? "border-b border-[#F0F1F3]" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-semibold leading-5 text-[#172033]">
-                      {item.dependency}
-                    </span>
-                  </div>
+                md:!text-[36px]
 
-                  {/* Requirement */}
-                  <div
-                    className={`px-4 py-4 ${
-                      !isLast ? "border-b border-[#F0F1F3]" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-normal leading-6 text-[#5B6577]">
-                      {item.requirement}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="flex w-full flex-col gap-4 md:hidden">
-          {dependencies.map((item) => (
-            <div
-              key={item.dependency}
-              className="w-full rounded-xl bg-white p-4 shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] ring-1 ring-[#E5E7EB] sm:rounded-2xl sm:p-5"
+                lg:!text-[40px]
+              "
             >
-              {/* Dependency */}
-              <div>
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-[#3B82F6]">
+              <span className="block sm:whitespace-nowrap">
+                Ten dependencies before a document
+              </span>
+
+              <span className="block sm:whitespace-nowrap">
+                language is current.
+              </span>
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A translated string bundle is one of ten. Any single failure
+              keeps the language-surface combination out of current support.
+            </p>
+          </div>
+
+          {/* DESKTOP TABLE */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              md:block
+            "
+          >
+            <div className="grid grid-cols-[240px_minmax(0,1fr)] lg:grid-cols-[288px_minmax(0,1fr)]">
+              {/* HEADER */}
+              <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-4 py-3.5">
+                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
                   Dependency
-                </p>
-
-                <h3 className="mt-1 text-sm font-semibold leading-6 text-[#172033]">
-                  {item.dependency}
-                </h3>
+                </span>
               </div>
 
-              {/* Requirement */}
-              <div className="mt-4 border-t border-[#F0F1F3] pt-4">
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-[#3B82F6]">
+              <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-4 py-3.5">
+                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
                   Requirement
-                </p>
-
-                <p className="mt-1.5 text-sm font-normal leading-6 text-[#5B6577]">
-                  {item.requirement}
-                </p>
+                </span>
               </div>
+
+              {/* ROWS */}
+              {dependencies.map((item, index) => {
+                const isLast = index === dependencies.length - 1;
+
+                return (
+                  <div key={item.dependency} className="contents">
+                    {/* DEPENDENCY */}
+                    <div
+                      className={`
+                        px-4
+                        py-3.5
+                        ${
+                          !isLast
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      <span className="text-sm font-semibold leading-5 text-[#091127]">
+                        {item.dependency}
+                      </span>
+                    </div>
+
+                    {/* REQUIREMENT */}
+                    <div
+                      className={`
+                        px-4
+                        py-3.5
+                        ${
+                          !isLast
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      <span className="text-sm font-normal leading-6 text-[#5d7192]">
+                        {item.requirement}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          </div>
+
+          {/* MOBILE CARDS */}
+          <div className="flex w-full flex-col gap-3 md:hidden">
+            {dependencies.map((item) => (
+              <div
+                key={item.dependency}
+                className="
+                  w-full
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* DEPENDENCY */}
+                <div>
+                  <p className="!m-0 text-[11px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                    Dependency
+                  </p>
+
+                  <h3 className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                    {item.dependency}
+                  </h3>
+                </div>
+
+                {/* REQUIREMENT */}
+                <div className="mt-4 border-t border-[#edf0f4] pt-4">
+                  <p className="!m-0 text-[11px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                    Requirement
+                  </p>
+
+                  <p className="!m-0 mt-1.5 text-sm font-normal leading-6 text-[#5d7192]">
+                    {item.requirement}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
