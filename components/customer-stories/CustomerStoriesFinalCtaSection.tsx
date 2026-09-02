@@ -62,7 +62,7 @@ export default function CustomerStoriesFinalCtaSection() {
           {/* Right Side Image Container defc9d30beecb739276f65412a2589f6db79ce48.png */}
           <div className="relative z-10 w-full max-w-[540px] shrink-0">
             <img
-              src="/images/customer-stories/defc9d30beecb739276f65412a2589f6db79ce48.png"
+              src="/images/customer-stories/cs5.png"
               alt="Proof you can check for yourself"
               className="w-full h-auto object-cover rounded-2xl block border border-slate-800/80 shadow-xl"
             />

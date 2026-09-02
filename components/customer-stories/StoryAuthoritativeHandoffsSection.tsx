@@ -89,7 +89,7 @@ export default function StoryAuthoritativeHandoffsSection() {
         {/* ========================================================================= */}
         <div className="hidden lg:block mt-14 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-xl border border-slate-200/80 bg-slate-50">
           <img
-            src="/images/customer-stories/d4bfbf4a13383c794aa248b72211a43a5d16e850.png"
+            src="/images/customer-stories/cs4.png"
             alt="A testimonial is not assurance evidence"
             className="w-full h-auto object-cover rounded-3xl block"
           />
