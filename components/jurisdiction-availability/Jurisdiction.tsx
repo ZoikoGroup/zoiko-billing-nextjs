@@ -120,7 +120,7 @@ export default function Jurisdiction() {
             {/* DESCRIPTION */}
             <p
               className="
-                mt-8
+                !mt-8
                 w-full
                 max-w-[687px]
                 text-[15px]

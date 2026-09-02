@@ -31,69 +31,187 @@ const points = [
 
 export default function InvoiceIntegrity() {
   return (
-    <section className="w-full px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1184px] flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-14">
-        {/* Image */}
-        <div className="w-full shrink-0 rounded-3xl bg-gray-100 p-4 lg:w-[calc(50%-28px)]">
-          <div className="overflow-hidden rounded-2xl bg-white">
-            <img
-              src="/images/multi-currency/invoice-currency.png"
-              alt="Invoice and document currency integrity"
-              className="block h-auto w-full object-cover"
-            />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+
+            lg:flex-row
+            lg:items-start
+            lg:gap-14
+          "
+        >
+          {/* IMAGE CARD */}
+          <div
+            className="
+              w-full
+              shrink-0
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              p-4
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              lg:w-[calc(50%-28px)]
+            "
+          >
+            <div className="overflow-hidden rounded-xl bg-white">
+              <img
+                src="/images/multi-currency/invoice-currency.png"
+                alt="Invoice and document currency integrity"
+                className="block h-auto w-full object-cover"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="flex w-full flex-col items-start gap-3.5 lg:w-[calc(50%-28px)] lg:pt-2">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-6 bg-sky-700/70" />
+          {/* CONTENT */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-3.5
 
-            <span className="text-xs font-bold uppercase leading-4 tracking-[0.18em] text-slate-500">
-              Invoice &amp; document currency integrity
-            </span>
-          </div>
+              lg:w-[calc(50%-28px)]
+              lg:pt-2
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-          {/* Heading */}
-          <h2 className="w-full text-2xl font-extrabold leading-8 tracking-tight text-slate-900 sm:text-3xl sm:leading-9">
-            Changing a default cannot turn a GBP invoice into a EUR invoice.
-          </h2>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-          {/* Description */}
-          <p className="w-full text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-            A future currency change affects eligible future documents from
-            its effective date. It never rewrites what was already issued,
-            and any converted view stays visibly secondary unless a new
-            authoritative document is issued.
-          </p>
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Invoice &amp; document currency integrity
+              </span>
+            </div>
 
-          {/* Points */}
-          <div className="mt-1 w-full space-y-4">
-            {points.map((point) => (
-              <div key={point.title} className="flex items-start gap-3">
-                {/* Bullet */}
-                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-sm bg-sky-700" />
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                {/* Text */}
-                <div className="min-w-0 flex-1 text-sm leading-6 text-slate-600">
-                  <span className="font-bold text-slate-700">
-                    {point.title}
-                  </span>{" "}
-                  {point.text}
+                sm:!text-[34px]
 
-                  {point.extra && (
-                    <>
-                      {" "}
-                      <span className="font-semibold text-sky-700">
-                        {point.extra}
-                      </span>{" "}
-                      {point.extraText}
-                    </>
-                  )}
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Changing a default cannot turn a GBP invoice into a EUR invoice.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A future currency change affects eligible future documents from
+              its effective date. It never rewrites what was already issued,
+              and any converted view stays visibly secondary unless a new
+              authoritative document is issued.
+            </p>
+
+            {/* POINTS */}
+            <div className="mt-1 w-full space-y-4">
+              {points.map((point) => (
+                <div
+                  key={point.title}
+                  className="flex items-start gap-3"
+                >
+                  {/* BULLET */}
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-sm bg-[#7890b2]" />
+
+                  {/* TEXT */}
+                  <div
+                    className="
+                      min-w-0
+                      flex-1
+                      text-[15px]
+                      leading-6
+                      text-[#5d7192]
+
+                      sm:text-base
+                    "
+                  >
+                    <span className="font-bold text-[#091127]">
+                      {point.title}
+                    </span>{" "}
+                    {point.text}
+
+                    {point.extra && (
+                      <>
+                        {" "}
+                        <span className="font-semibold text-[#7890b2]">
+                          {point.extra}
+                        </span>{" "}
+                        {point.extraText}
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

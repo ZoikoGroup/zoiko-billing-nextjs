@@ -117,7 +117,7 @@ export default function MultiCurrency() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[690px]
               text-[15px]
@@ -156,7 +156,7 @@ export default function MultiCurrency() {
             "
           >
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

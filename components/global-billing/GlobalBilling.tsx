@@ -181,7 +181,7 @@ export default function GlobalBilling() {
             </Link>
 
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

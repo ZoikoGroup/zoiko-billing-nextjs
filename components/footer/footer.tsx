@@ -56,7 +56,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Multi-Currency Billing', href: '/multi-currency' },
       { label: 'Multi-Entity Billing', href: '/multi-entity-billing' },
       { label: 'Localized Documents', href: '/localized-documents' },
-      { label: 'Entity-Level Controls', href: '#' },
+      { label: 'Entity-Level Controls', href: '/entity-level-controls' },
       { label: 'Jurisdiction Availability', href: '/jurisdiction-availability' },
       { label: 'Supported Languages', href: '/supported-languages' },
     ],

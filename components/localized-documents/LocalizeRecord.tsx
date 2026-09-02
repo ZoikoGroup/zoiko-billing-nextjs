@@ -1,28 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LocalizeRecord() {
   return (
-    <section className="w-full bg-white px-5 py-10 sm:px-8 lg:px-10">
+    <section className="w-full overflow-hidden bg-white px-5 py-12 sm:px-8 lg:px-12">
       <div
         className="
           relative
           mx-auto
           flex
-          h-auto
           min-h-[324px]
           w-full
           max-w-[1184px]
           overflow-hidden
-          rounded-[24px]
-          bg-[#0B2147]
+          rounded-3xl
+          bg-[#0B1B3C]
           px-7
-          py-7
-          sm:px-9
-          sm:py-7
+          py-8
+
+          sm:px-10
+          sm:py-9
+
           lg:h-[324px]
           lg:min-h-0
-          lg:px-[46px]
-          lg:py-[28px]
+          lg:px-10
+          lg:py-8
         "
       >
         {/* Background glow */}
@@ -35,7 +37,7 @@ export default function LocalizeRecord() {
             h-[380px]
             w-[380px]
             rounded-full
-            bg-[radial-gradient(circle,rgba(40,120,255,0.55)_0%,rgba(40,120,255,0)_68%)]
+            bg-[radial-gradient(circle,#1F5FBF_0%,rgba(31,95,191,0.35)_40%,transparent_70%)]
           "
         />
 
@@ -47,54 +49,66 @@ export default function LocalizeRecord() {
             flex
             w-full
             flex-col
-            lg:h-full
+            justify-center
+
             lg:flex-row
             lg:items-center
             lg:justify-between
             lg:gap-8
           "
         >
-          {/* ================= LEFT ================= */}
+          {/* LEFT CONTENT */}
           <div
             className="
+              relative
+              z-10
               flex
               w-full
               min-w-0
               flex-col
-              lg:max-w-[610px]
+              items-start
+
+              lg:w-[57%]
+              lg:pr-4
             "
           >
             {/* Heading */}
-            <h2
+            <div
               className="
                 !m-0
-                !max-w-[570px]
-                !text-[30px]
-                !font-extrabold
-                !leading-[34px]
-                !tracking-[-0.5px]
+                !p-0
+                text-[30px]
+                font-extrabold
+                leading-[35px]
+                tracking-[-0.6px]
                 !text-white
-                sm:!text-[32px]
-                sm:!leading-[36px]
+
+                sm:text-[34px]
+                sm:leading-[39px]
+
+                lg:text-[36px]
+                lg:leading-[42px]
               "
             >
               Localize the presentation,
               <br />
               preserve the record.
-            </h2>
+            </div>
 
             {/* Description */}
             <p
               className="
                 !m-0
-                mt-3
-                !max-w-[510px]
-                !text-[14px]
-                !font-normal
-                !leading-[21px]
+                !mt-5
+                max-w-[510px]
+                !p-0
+                text-[13px]
+                font-normal
+                leading-[20px]
                 !text-white/70
-                sm:!text-[15px]
-                sm:!leading-[22px]
+
+                sm:text-[14px]
+                sm:leading-[21px]
               "
             >
               Approved language, locale, template and formatting controls for
@@ -107,127 +121,121 @@ export default function LocalizeRecord() {
               className="
                 mt-5
                 flex
-                w-full
-                max-w-[510px]
                 flex-wrap
                 items-center
-                gap-x-2
-                gap-y-2
+                gap-2.5
               "
             >
-              {/* Primary button */}
-              <a
-                href="#supported-languages"
+              {/* Primary */}
+              <Link
+                href="/supported-languages"
                 className="
                   inline-flex
-                  h-9
-                  shrink-0
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   bg-white
                   px-5
-                  !text-[12px]
-                  !font-semibold
-                  !leading-none
-                  !text-[#0B2147]
+                  text-xs
+                  font-semibold
+                  leading-none
+                  !text-[#0B1B3C]
                   no-underline
                   transition-opacity
                   hover:opacity-90
-                  sm:h-10
                 "
               >
                 Review Supported Languages
-              </a>
+              </Link>
 
-              {/* Secondary button */}
-              <a
-                href="#jurisdiction-availability"
+              {/* Secondary */}
+              <Link
+                href="/jurisdiction-availability"
                 className="
                   inline-flex
-                  h-9
-                  shrink-0
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   border
                   border-white/35
+                  bg-transparent
                   px-5
-                  !text-[12px]
-                  !font-semibold
-                  !leading-none
+                  text-xs
+                  font-semibold
+                  leading-none
                   !text-white
                   no-underline
                   transition-colors
                   hover:bg-white/10
-                  sm:h-10
                 "
               >
                 Check jurisdiction availability
-              </a>
+              </Link>
 
-              {/* Third button */}
-              <a
-                href="#pricing"
+              {/* Secondary */}
+              <Link
+                href="/pricing-and-plans"
                 className="
                   inline-flex
-                  h-9
-                  shrink-0
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   border
                   border-white/35
+                  bg-transparent
                   px-5
-                  !text-[12px]
-                  !font-semibold
-                  !leading-none
+                  text-xs
+                  font-semibold
+                  leading-none
                   !text-white
                   no-underline
                   transition-colors
                   hover:bg-white/10
-                  sm:h-10
                 "
               >
                 View pricing
-              </a>
+              </Link>
             </div>
           </div>
 
-          {/* ================= RIGHT IMAGE ================= */}
+          {/* RIGHT IMAGE */}
           <div
             className="
               relative
               z-10
               mt-7
+              flex
               w-full
-              shrink-0
-              sm:mt-8
+              items-center
+              justify-center
+
               lg:mt-0
-              lg:w-[370px]
-              xl:w-[370px]
+              lg:w-[43%]
+              lg:justify-end
             "
           >
             <div
               className="
                 relative
-                aspect-[478/345]
                 w-full
+                max-w-[430px]
                 overflow-hidden
-                rounded-[14px]
-                border
-                border-white/20
+                rounded-2xl
               "
             >
               <Image
                 src="/images/localized-documents/localize-record.png"
                 alt="Localized billing document"
-                fill
+                width={478}
+                height={345}
                 priority
-                className="object-cover"
+                className="block h-auto w-full object-cover"
                 sizes="
                   (max-width: 1023px) 100vw,
-                  370px
+                  430px
                 "
               />
             </div>

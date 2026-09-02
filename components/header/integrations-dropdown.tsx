@@ -51,10 +51,10 @@ const DEVELOPER_ITEMS: MenuItem[] = [
 const PARTNER_ITEMS: MenuItem[] = [
   { title: 'Build an Integration', description: 'Create a custom integration with Zoiko.', href: '/developers-build-an-integration', icon: Puzzle },
   { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '#', icon: Share2 },
-  { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '#', icon: ShieldCheck },
-  { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '#', icon: Users },
+  { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '/integrations-support', icon: ShieldCheck },
+  { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '/partner-programme', icon: Users },
   { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '#', icon: Send },
-  { title: 'Integration Support', description: 'Get help for integration-related queries.', href: '#', icon: HelpCircle },
+  { title: 'Integration Support', description: 'Get help for integration-related queries.', href: '/integration-support', icon: HelpCircle },
 ];
 
 export default function IntegrationsDropdown() {
@@ -83,7 +83,7 @@ export default function IntegrationsDropdown() {
         
         <div className="flex shrink-0 mt-4 items-center gap-4 sm:border-l sm:border-slate-200 sm:pl-5 dark:sm:border-gray-700">
           <Link
-            href="/integrations"
+            href="/integration-availability"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             style={{ color: '#2563EB' }}
           >
@@ -91,7 +91,7 @@ export default function IntegrationsDropdown() {
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link
-            href="/developers/docs"
+            href="/developers-api-documentation"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             style={{ color: '#2563EB' }}
           >
