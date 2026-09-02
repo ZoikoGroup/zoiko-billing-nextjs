@@ -72,7 +72,7 @@ export default function MetricClaimPresentationSection() {
         {/* ========================================================================= */}
         <div className="hidden lg:block mt-14 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-xl border border-slate-700/80 bg-[#060D20]">
           <img
-            src="/images/customer-stories/77d1b5fd1890ffe259ffc3536ee74b80c6313f7d.png"
+            src="/images/customer-stories/cs3.png"
             alt="Six claim types, each with mandatory adjacent metadata"
             className="w-full h-auto object-cover rounded-3xl block"
           />
