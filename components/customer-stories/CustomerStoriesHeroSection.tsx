@@ -103,7 +103,7 @@ export default function CustomerStoriesHeroSection() {
           <div className="relative flex w-1/2 justify-end">
             <div className="relative w-full max-w-[580px]">
               <img
-                src="/images/customer-stories/13a7da7e52fcd1a862ca103a117399439d642c76.png"
+                src="/images/customer-stories/cs1.png"
                 alt="See how better billing operations take shape in practice"
                 className="w-full h-auto object-cover rounded-2xl block shadow-sm border border-slate-100"
               />

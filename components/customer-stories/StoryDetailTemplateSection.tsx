@@ -26,7 +26,7 @@ export default function StoryDetailTemplateSection() {
         {/* ========================================================================= */}
         <div className="hidden lg:block mt-14 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-xl border border-slate-200/80 bg-slate-50">
           <img
-            src="/images/customer-stories/3773aa678f8a56fac4aedba516506e11399d5008.png"
+            src="/images/customer-stories/cs2.png"
             alt="Ten narrative blocks, ending with what the story does not prove"
             className="w-full h-auto object-cover rounded-3xl block"
           />
