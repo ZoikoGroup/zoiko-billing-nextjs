@@ -88,6 +88,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
  {
   title: 'Resources',
   links: [
+    { label: 'Resource Center', href: '/resource-center' },
     { label: 'Billing Guides', href: '/billing-guides' },
     { label: 'Templates', href: '/templates' },
     { label: 'Billing Glossary', href: '/billing-glossary' },
