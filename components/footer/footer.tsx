@@ -89,7 +89,6 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Resources',
     links: [
       { label: 'Resource Center', href: '/resource-center' },
-<<<<<<< HEAD
       { label: 'Billing Guides', href: '#' },
       { label: 'Templates', href: '#' },
       { label: 'Billing Glossary', href: '#' },
@@ -97,21 +96,11 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Customer Stories', href: '/customer-stories' },
       { label: 'Webinar & Events', href: '/webinar-and-events' },
       { label: 'Product Updates', href: '/product-updates' },
-=======
-      { label: 'Billing Guides', href: '/billing-guides' },
-      { label: 'Templates', href: '/templates' },
-      { label: 'Billing Glossary', href: '/billing-glossary' },
-      { label: 'Reports & insights', href: '#' },
-      { label: 'Customer Stories', href: '#' },
-      { label: 'Webinar & Events', href: '#' },
-      { label: 'Product Updates', href: '#' },
->>>>>>> origin/dev
     ],
   },
   {
     title: 'Customer support',
     links: [
-<<<<<<< HEAD
       { label: 'Help Center', href: '#' },
       { label: 'Documentation', href: '/documentation' },
       { label: 'Contact Support', href: '#' },
@@ -120,37 +109,19 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Billing Support', href: '#' },
       { label: 'Integration Support', href: '#' },
       { label: 'Support Policy', href: '/support-policy' },
-=======
-      { label: 'Help Center', href: '/help-center' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Contact Support', href: '/contact-support' },
-      { label: 'Implementation Guidance', href: '/implementation-guidance' },
-      { label: 'Account Access', href: '/account-access' },
-      { label: 'Billing Support', href: '/billing-support' },
-      { label: 'Integration Support', href: '/integration-support' },
-      { label: 'Support Policy', href: '#' },
->>>>>>> origin/dev
     ],
   },
   {
     title: 'Trust & Security',
     links: [
       { label: 'Security Overview', href: '/security-overview' },
-      { label: 'Trust Center', href: '#' },
-      { label: 'System Status', href: '#' },
-<<<<<<< HEAD
-      { label: 'Privacy & Data Governance', href: '#' },
-      { label: 'Business Continuity', href: '/business-continuity' },
-      { label: 'Responsible Disclosure', href: '#' },
-      { label: 'Security Advisories', href: '#' },
-      { label: 'Accessibility', href: '/accessibility' },
-=======
+      { label: 'Trust Center', href: '/trust-center' },
+      { label: 'System Status', href: 'system-status' },
       { label: 'Privacy & Data Governance', href: '/privacy-and-data-governance' },
       { label: 'Business Continuity', href: '#' },
       { label: 'Responsible Disclosure', href: '/responsible-disclosure' },
       { label: 'Security Advisories', href: '/security-advisories' },
       { label: 'Accessibility', href: '#' },
->>>>>>> origin/dev
     ],
   },
   {
@@ -160,9 +131,9 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Why Zoiko Billing', href: '#' },
       { label: 'Zoiko Group', href: '#' },
       { label: 'Leadership', href: '#' },
-      { label: 'Careers', href: '#' },
+      { label: 'Careers', href: '/careers' },
       { label: 'Newsroom', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {

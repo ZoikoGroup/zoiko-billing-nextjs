@@ -46,7 +46,7 @@ const HELP_ITEMS: MenuItem[] = [
   { title: 'Help Centre',  href: '/help-center', icon: HelpCircle },
   { title: 'Documentation', href: '/docs', icon: BookOpen },
   { title: 'Release Notes',  href: '/releases', icon: Bell },
-  { title: 'System Status',  href: '/status', icon: Activity },
+  { title: 'System Status',  href: '/system-status', icon: Activity },
   { title: 'Contact Support',  href: '/contact-support', icon: Headphones },
 ];
 
