@@ -128,8 +128,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Why Zoiko Billing', href: '#' },
-      { label: 'Zoiko Group', href: '#' },
+      { label: 'Why Zoiko Billing', href: '/why-zoiko-billing' },
+      { label: 'Zoiko Group', href: '/zoiko-group' },
       { label: 'Leadership', href: '#' },
       { label: 'Careers', href: '/careers' },
       { label: 'Newsroom', href: '#' },
@@ -139,11 +139,11 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Partners & Connect',
     links: [
-      { label: 'Partner Program', href: '#' },
+      { label: 'Partner Program', href: '/partner-programme' },
       { label: 'Technology Partners', href: '#' },
-      { label: 'Become a Partner', href: '#' },
+      { label: 'Become a Partner', href: '/become-a-partner' },
       { label: 'Submit an Integrations', href: '#' },
-      { label: 'Partner Portal', href: '#' },
+      { label: 'Partner Portal', href: '/partner-portal' },
       { label: 'Sales Enquiries', href: '#' },
     ],
   },
