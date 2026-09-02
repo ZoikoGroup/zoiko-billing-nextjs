@@ -1,0 +1,11 @@
+export { default as ProductUpdatesHeroSection } from "./ProductUpdatesHeroSection";
+export { default as AvailabilityStateContractSection } from "./AvailabilityStateContractSection";
+export { default as ActionRequirementContractSection } from "./ActionRequirementContractSection";
+export { default as BrowseByImpactProductAreaSection } from "./BrowseByImpactProductAreaSection";
+export { default as ReleaseCommunicationStandardSection } from "./ReleaseCommunicationStandardSection";
+export { default as UpdateDetailTemplateSection } from "./UpdateDetailTemplateSection";
+export { default as DeprecationMigrationContractSection } from "./DeprecationMigrationContractSection";
+export { default as CorrectionsHistoricalTruthSection } from "./CorrectionsHistoricalTruthSection";
+export { default as ProductUpdatesAuthoritativeHandoffsSection } from "./ProductUpdatesAuthoritativeHandoffsSection";
+export { default as ProductUpdatesFaqSection } from "./ProductUpdatesFaqSection";
+export { default as ProductUpdatesFinalCtaSection } from "./ProductUpdatesFinalCtaSection";
