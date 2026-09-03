@@ -98,7 +98,7 @@ export default function RevenueOpsHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -138,7 +138,7 @@ export default function RevenueOpsHero() {
             "
           >
             <Link
-              href="#"
+              href="/pricing-and-plans"
               className="
                 inline-flex
                 min-h-11
@@ -163,7 +163,7 @@ export default function RevenueOpsHero() {
             </Link>
 
             <Link
-              href="#"
+              href="create-account"
               className="
                 inline-flex
                 min-h-11

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SaasIntegrations() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full !bg-white">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:gap-8 lg:px-7 lg:py-16">
         {/* ================= HEADER ================= */}
         <div className="mx-auto flex w-full max-w-[900px] flex-col items-center gap-4 text-center">
@@ -10,7 +11,21 @@ export default function SaasIntegrations() {
           <div className="flex w-full items-center justify-center gap-3">
             <span className="h-px w-4 shrink-0 bg-blue-600/40" />
 
-            <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-blue-600 sm:text-[11px] sm:tracking-[0.16em] lg:text-xs lg:tracking-widest">
+            <span
+              className="
+                text-center
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.12em]
+                !text-blue-600
+                sm:text-[11px]
+                sm:tracking-[0.16em]
+                lg:text-xs
+                lg:tracking-widest
+              "
+            >
               Reporting, integrations, developers &amp; growth
             </span>
 
@@ -24,24 +39,21 @@ export default function SaasIntegrations() {
               w-full
               max-w-[900px]
               text-center
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.02em]
-              text-gray-900
-              sm:text-[38px]
-              sm:leading-[1.14]
-              lg:text-[48px]
-              lg:leading-[1.12]
+              !text-[30px]
+              !font-extrabold
+              !leading-[1.15]
+              !tracking-[-0.02em]
+              !text-gray-900
+              sm:!text-[38px]
+              sm:!leading-[1.14]
+              lg:!text-[48px]
+              lg:!leading-[1.12]
             "
           >
-            <span className="block">
+            
               Operational evidence, and approved
-            </span>
-
-            <span className="block">
               technical handoffs.
-            </span>
+          
           </h2>
 
           {/* Description */}
@@ -55,7 +67,7 @@ export default function SaasIntegrations() {
               text-sm
               font-normal
               leading-6
-              text-gray-500
+              !text-gray-500
               sm:pt-2
               sm:text-base
               sm:leading-7
@@ -75,7 +87,7 @@ export default function SaasIntegrations() {
             flex-col
             overflow-hidden
             rounded-2xl
-            bg-slate-900
+            !bg-slate-900
             px-5
             py-8
             sm:rounded-3xl
@@ -113,6 +125,7 @@ export default function SaasIntegrations() {
               w-full
               flex-col
               items-start
+              justify-center
               gap-4
               lg:max-w-[540px]
               lg:gap-3.5
@@ -123,14 +136,14 @@ export default function SaasIntegrations() {
               className="
                 w-full
                 max-w-[520px]
-                text-2xl
-                font-extrabold
-                leading-[1.2]
-                text-white
-                sm:text-3xl
-                sm:leading-tight
-                lg:text-4xl
-                lg:leading-10
+                !text-2xl
+                !font-extrabold
+                !leading-[1.2]
+                !text-white
+                sm:!text-3xl
+                sm:!leading-tight
+                lg:!text-4xl
+                lg:!leading-10
               "
             >
               <span className="block">
@@ -150,7 +163,7 @@ export default function SaasIntegrations() {
                 text-sm
                 font-normal
                 leading-6
-                text-white/70
+                !text-white/70
                 sm:text-base
                 sm:leading-7
               "
@@ -161,7 +174,7 @@ export default function SaasIntegrations() {
               rather than a whole-job green.
             </p>
 
-            {/* Buttons */}
+            {/* ================= BUTTONS ================= */}
             <div
               className="
                 flex
@@ -175,46 +188,60 @@ export default function SaasIntegrations() {
                 sm:pt-3
               "
             >
-              <button
-                type="button"
+              {/* EXPLORE INTEGRATIONS */}
+              <Link
+                href="/integration-availability"
                 className="
+                  inline-flex
                   min-h-11
                   w-full
+                  items-center
+                  justify-center
                   rounded-full
-                  bg-white
+                  !border-0
+                  !bg-white
                   px-6
                   text-sm
                   font-semibold
                   leading-6
-                  text-slate-900
+                  !text-slate-900
+                  opacity-100
                   transition
-                  hover:bg-gray-100
+                  hover:!bg-gray-100
+                  hover:!text-slate-900
                   sm:w-auto
                 "
               >
                 Explore Integrations
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              {/* DEVELOPER DOCUMENTATION */}
+              <Link
+                href="/documentation"
                 className="
+                  inline-flex
                   min-h-11
                   w-full
+                  items-center
+                  justify-center
                   rounded-full
-                  border
-                  border-white/30
+                  !border
+                  !border-white/30
+                  !bg-transparent
                   px-6
                   text-sm
                   font-semibold
                   leading-6
-                  text-white
+                  !text-white
+                  opacity-100
                   transition
-                  hover:bg-white/10
+                  hover:!bg-white/10
+                  hover:!text-white
                   sm:w-auto
                 "
               >
                 Developer documentation
-              </button>
+              </Link>
             </div>
 
             {/* Note */}
@@ -226,7 +253,7 @@ export default function SaasIntegrations() {
                 text-xs
                 font-normal
                 leading-5
-                text-white/60
+                !text-white/60
                 sm:pt-2
               "
             >

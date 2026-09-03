@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 const candidates = [
   {
@@ -13,10 +12,8 @@ const candidates = [
     description: (
       <>
         Exact payment reference,{" "}
-        <span className="font-medium text-slate-900 dark:text-white">
-          amount equal
-        </span>
-        , value date within 2 days, customer matches payer identifier.
+        <span className="font-medium text-[#091127]">amount equal</span>,
+        value date within 2 days, customer matches payer identifier.
       </>
     ),
   },
@@ -29,10 +26,8 @@ const candidates = [
     description: (
       <>
         Same amount and customer, but{" "}
-        <span className="font-medium text-slate-900 dark:text-white">
-          no reference
-        </span>{" "}
-        and the value date sits outside the approved proximity window.
+        <span className="font-medium text-[#091127]">no reference</span> and
+        the value date sits outside the approved proximity window.
       </>
     ),
   },
@@ -45,7 +40,7 @@ const candidates = [
     description: (
       <>
         Amount matches but the document is{" "}
-        <span className="font-medium text-slate-900 dark:text-white">
+        <span className="font-medium text-[#091127]">
           already fully allocated
         </span>
         , so it is not eligible.
@@ -98,12 +93,9 @@ function StatusBadge({
   children: React.ReactNode;
 }) {
   const styles = {
-    success:
-      "border-blue-500/20 bg-slate-50 text-blue-500 dark:border-blue-400/20 dark:bg-slate-800 dark:text-blue-400",
-    warning:
-      "border-orange-400/20 bg-orange-50 text-orange-500 dark:border-orange-400/20 dark:bg-orange-950/30 dark:text-orange-400",
-    neutral:
-      "border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400",
+    success: "border-[#dce7f5] bg-[#f7f9fc] text-[#4b6f9f]",
+    warning: "border-[#f3dfc8] bg-[#fff8ef] text-[#b87532]",
+    neutral: "border-[#dfe5ee] bg-[#f7f8fa] text-[#7890b2]",
   };
 
   const symbols = {
@@ -130,25 +122,25 @@ function ConfidenceBar({
   type: "success" | "warning" | "neutral";
 }) {
   const barStyles = {
-    success: "bg-cyan-400",
-    warning: "bg-orange-400",
-    neutral: "bg-slate-400",
+    success: "bg-[#7890b2]",
+    warning: "bg-[#c9965b]",
+    neutral: "bg-[#aeb9c9]",
   };
 
   return (
     <div className="flex w-full items-center gap-2.5">
-      <span className="w-16 shrink-0 text-[9px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
+      <span className="w-16 shrink-0 text-[9px] font-bold uppercase leading-4 tracking-wider text-[#7890b2]">
         Confidence
       </span>
 
-      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#e7ebf1]">
         <div
           className={`h-full rounded-full ${barStyles[type]}`}
           style={{ width: `${value}%` }}
         />
       </div>
 
-      <span className="w-7 shrink-0 font-mono text-xs text-slate-900 dark:text-white">
+      <span className="w-7 shrink-0 font-mono text-xs text-[#091127]">
         {value}
       </span>
     </div>
@@ -168,17 +160,25 @@ function InfoRows({
       {rows.map((row, index) => (
         <div
           key={row.title}
-          className={`grid gap-4 py-3.5 sm:grid-cols-[145px_1fr] ${
-            index !== rows.length - 1
-              ? "border-b border-zinc-200 dark:border-slate-700"
-              : ""
-          }`}
+          className={`
+            grid
+            gap-4
+            py-3.5
+
+            sm:grid-cols-[145px_1fr]
+
+            ${
+              index !== rows.length - 1
+                ? "border-b border-[#edf0f4]"
+                : ""
+            }
+          `}
         >
-          <div className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
+          <div className="text-sm font-semibold leading-6 text-[#091127]">
             {row.title}
           </div>
 
-          <div className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
+          <div className="text-sm font-normal leading-6 text-[#5d7192]">
             {row.description}
           </div>
         </div>
@@ -189,185 +189,353 @@ function InfoRows({
 
 export default function Matching() {
   return (
-    <section className="w-full bg-white transition-colors duration-300 dark:bg-slate-950">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-9 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* HEADER */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
+          sm:px-8
+          sm:py-16
 
-          {/* LEFT HEADER */}
-          <div className="flex flex-1 flex-col items-start gap-5 pb-5 pt-2.5">
+          md:px-10
+          md:py-20
 
-            {/* SECTION LABEL */}
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+          lg:px-14
 
-              <span className="text-xs font-medium uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-4
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Matching
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
-            <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
-              Use clear evidence and
-              <br className="hidden sm:block" />
-              review when a match is
-              <br className="hidden sm:block" />
-              uncertain.
-            </h2>
-          </div>
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-          {/* RIGHT HEADER */}
-          <div className="w-full max-w-[530px] flex-1">
-            <p className="text-base font-normal leading-7 text-slate-600 sm:leading-8 dark:text-slate-300">
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Use clear evidence and review when a match is uncertain.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Ambiguity is shown, not resolved quietly. Automatic application
               happens only inside approved thresholds; everything else waits
               for a person.
             </p>
           </div>
-        </div>
 
-        {/* MAIN CONTENT */}
-        <div className="grid w-full gap-12 pt-4 lg:grid-cols-2 lg:gap-16">
+          {/* MAIN CONTENT */}
+          <div
+            className="
+              grid
+              w-full
+              items-start
+              gap-8
 
-          {/* LEFT - PRODUCT VIEW */}
-          <div className="flex w-full flex-col items-start gap-3">
+              lg:grid-cols-2
+              lg:gap-10
 
-            {/* PRODUCT BADGE */}
-            <div className="flex h-7 items-center rounded-full border border-emerald-500/10 bg-white/70 px-3 dark:border-emerald-400/10 dark:bg-slate-900/70">
-              <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-blue-500" />
+              xl:gap-12
+            "
+          >
+            {/* LEFT - PRODUCT VIEW */}
+            <div className="flex w-full flex-col items-start gap-3">
+              {/* PRODUCT BADGE */}
+              <div
+                className="
+                  flex
+                  h-7
+                  items-center
+                  rounded-full
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-3
+                "
+              >
+                <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-[#7890b2]" />
 
-              <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
-                Illustrative product view
-              </span>
-            </div>
-
-            {/* PRODUCT CARD */}
-            <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
-
-              {/* PRODUCT HEADER */}
-              <div className="flex flex-wrap items-center gap-2.5 border-b border-zinc-200 bg-[#f7f7f7] px-4 py-3.5 dark:border-slate-700 dark:bg-slate-800">
-                <div className="h-2 w-2 shrink-0 rounded-sm bg-blue-500" />
-
-                <span className="min-w-0 flex-1 text-xs font-normal uppercase leading-4 tracking-wider text-slate-600 dark:text-slate-300">
-                  Match candidates · PMT-99C08 · £6,120.00
+                <span className="text-[10px] font-bold uppercase leading-4 tracking-wider text-[#7890b2]">
+                  Illustrative product view
                 </span>
-
-                <StatusBadge type="warning">
-                  Review required
-                </StatusBadge>
               </div>
 
-              {/* CANDIDATES */}
-              {candidates.map((candidate, index) => (
+              {/* PRODUCT CARD */}
+              <div
+                className="
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* PRODUCT HEADER */}
                 <div
-                  key={candidate.invoice}
-                  className={`flex flex-col gap-3 px-4 py-4 ${
-                    index !== candidates.length - 1
-                      ? "border-b border-zinc-200 dark:border-slate-700"
-                      : ""
-                  }`}
+                  className="
+                    flex
+                    flex-wrap
+                    items-center
+                    gap-2.5
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-4
+                    py-3.5
+                  "
                 >
-                  {/* INVOICE ROW */}
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-sm font-medium text-slate-900 dark:text-white">
-                      {candidate.invoice}
-                    </span>
+                  <div className="h-2 w-2 shrink-0 rounded-sm bg-[#7890b2]" />
 
-                    <StatusBadge
-                      type={
-                        candidate.type as "success" | "warning" | "neutral"
+                  <span className="min-w-0 flex-1 text-xs font-normal uppercase leading-4 tracking-wider text-[#5d7192]">
+                    Match candidates · PMT-99C08 · £6,120.00
+                  </span>
+
+                  <StatusBadge type="warning">
+                    Review required
+                  </StatusBadge>
+                </div>
+
+                {/* CANDIDATES */}
+                {candidates.map((candidate, index) => (
+                  <div
+                    key={candidate.invoice}
+                    className={`
+                      flex
+                      flex-col
+                      gap-3
+                      px-4
+                      py-4
+
+                      ${
+                        index !== candidates.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
                       }
-                    >
-                      {candidate.status}
-                    </StatusBadge>
+                    `}
+                  >
+                    {/* INVOICE ROW */}
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-mono text-sm font-medium text-[#091127]">
+                        {candidate.invoice}
+                      </span>
 
-                    <span className="ml-auto font-mono text-sm text-slate-600 dark:text-slate-300">
-                      {candidate.amount}
-                    </span>
+                      <StatusBadge
+                        type={
+                          candidate.type as
+                            | "success"
+                            | "warning"
+                            | "neutral"
+                        }
+                      >
+                        {candidate.status}
+                      </StatusBadge>
+
+                      <span className="ml-auto font-mono text-sm text-[#5d7192]">
+                        {candidate.amount}
+                      </span>
+                    </div>
+
+                    {/* CONFIDENCE */}
+                    <ConfidenceBar
+                      value={candidate.confidence}
+                      type={
+                        candidate.type as
+                          | "success"
+                          | "warning"
+                          | "neutral"
+                      }
+                    />
+
+                    {/* DESCRIPTION */}
+                    <p className="!m-0 text-xs font-normal leading-5 text-[#5d7192] sm:text-sm">
+                      {candidate.description}
+                    </p>
                   </div>
+                ))}
 
-                  {/* CONFIDENCE */}
-                  <ConfidenceBar
-                    value={candidate.confidence}
-                    type={
-                      candidate.type as "success" | "warning" | "neutral"
-                    }
-                  />
-
-                  {/* DESCRIPTION */}
-                  <p className="text-xs font-normal leading-5 text-slate-600 sm:text-sm dark:text-slate-300">
-                    {candidate.description}
+                {/* REVIEW NOTICE */}
+                <div className="border-t border-[#dfe5ee] bg-[#fff8ef] px-4 py-3.5">
+                  <p className="!m-0 text-sm font-normal leading-5 text-[#9a642f]">
+                    Two candidates share the same amount. Threshold not met,
+                    so no automatic allocation. Routed to a reviewer with all
+                    candidates visible.
                   </p>
                 </div>
-              ))}
-
-              {/* REVIEW NOTICE */}
-              <div className="border-t border-zinc-200 bg-orange-50 px-4 py-3.5 dark:border-slate-700 dark:bg-orange-950/20">
-                <p className="text-sm font-normal leading-5 text-orange-700 dark:text-orange-300">
-                  Two candidates share the same amount. Threshold not met, so
-                  no automatic allocation. Routed to a reviewer with all
-                  candidates visible.
-                </p>
               </div>
+            </div>
+
+            {/* RIGHT - CANDIDATE PATTERNS */}
+            <div className="flex w-full flex-col items-start gap-1.5">
+              {/* CANDIDATE PATTERNS */}
+              <h3 className="text-lg font-semibold leading-6 text-[#091127]">
+                Candidate patterns
+              </h3>
+
+              <InfoRows rows={candidatePatterns} />
+
+              {/* RESULT TREATMENT */}
+              <h3 className="pt-6 text-lg font-semibold leading-6 text-[#091127]">
+                How the result is treated
+              </h3>
+
+              <InfoRows rows={resultTreatment} />
             </div>
           </div>
 
-          {/* RIGHT - CANDIDATE PATTERNS */}
-          <div className="flex w-full flex-col items-start gap-1.5">
+          {/* MATCHING IMAGE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <Image
+              src="/images/payments-and-reconcilliation/matching.png"
+              alt="Payment matching workflow"
+              width={1116}
+              height={474}
+              priority
+              className="h-auto w-full object-contain"
+            />
+          </div>
 
-            {/* CANDIDATE PATTERNS */}
-            <h3 className="text-lg font-semibold leading-6 text-slate-900 dark:text-white">
-              Candidate patterns
-            </h3>
+          {/* CONFIDENCE BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-[#f7f8fa]
+              px-5
+              py-6
 
-            <InfoRows rows={candidatePatterns} />
+              sm:px-6
+              sm:py-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.14em]
+                text-[#7890b2]
+              "
+            >
+              Confidence boundary
+            </span>
 
-            {/* RESULT TREATMENT */}
-            <h3 className="pt-6 text-lg font-semibold leading-6 text-slate-900 dark:text-white">
-              How the result is treated
-            </h3>
-
-            <InfoRows rows={resultTreatment} />
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[850px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#091127]
+              "
+            >
+              Confidence is operational evidence, not proof of payer identity
+              or intent. Ambiguous candidate sets are never hidden, and a
+              match is never silently forced to clear a queue.
+            </p>
           </div>
         </div>
-
-        {/* MATCHING IMAGE */}
-        <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-slate-700 dark:bg-slate-900">
-          <Image
-            src="/images/payments-and-reconcilliation/matching.png"
-            alt="Payment matching workflow"
-            width={1116}
-            height={474}
-            priority
-            className="h-auto w-full object-contain"
-          />
-        </div>
-
-        {/* CONFIDENCE BOUNDARY */}
-        <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-blue-500 bg-[#f7f7f7] px-6 py-7 sm:px-7 dark:bg-slate-900">
-
-          <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
-            Confidence boundary
-          </span>
-
-          <p className="max-w-[850px] text-base font-normal leading-7 text-slate-900 dark:text-slate-200">
-            Confidence is operational evidence, not proof of payer identity or
-            intent. Ambiguous candidate sets are never hidden, and a match is
-            never silently forced to clear a queue.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="flex w-full justify-center pt-1">
-          <Link
-            href="/automation-and-workflows"
-            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
-          >
-            Explore Automation &amp; Workflows
-          </Link>
-        </div>
-
       </div>
     </section>
   );

@@ -23,208 +23,224 @@ export default function IntegrationSupport() {
           md:pb-20
 
           lg:flex-row
-          lg:items-start
+          lg:items-center
           lg:justify-between
           lg:gap-10
           lg:px-14
-          lg:py-16
+          lg:py-20
 
           xl:gap-14
           xl:px-20
-          xl:py-20
         "
       >
         {/* LEFT CONTENT */}
-        <div
-          className="
-            w-full
-            min-w-0
+        <div className="w-full min-w-0 lg:w-[52%]">
+          {/* EYEBROW */}
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
 
-            lg:w-[52%]
-            lg:pt-1
-          "
-        >
-          <div
-            className="
-              flex
-              w-full
-              max-w-[606px]
-              flex-col
-              items-start
-              gap-5
-
-              sm:gap-6
-            "
-          >
-            {/* EYEBROW */}
-            <div className="flex items-center gap-3">
-              <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
-
-              <span
-                className="
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  leading-4
-                  tracking-[0.16em]
-                  text-[#7890b2]
-
-                  sm:text-xs
-                  sm:tracking-[0.18em]
-                "
-              >
-                Integration Support
-              </span>
-            </div>
-
-            {/* HEADING */}
-            <h1
+            <span
               className="
-                !m-0
-                w-full
-                max-w-[606px]
-                text-[36px]
+                text-[10px]
                 font-bold
-                leading-[1.12]
-                tracking-[-0.02em]
-                text-slate-900
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
 
-                sm:text-[42px]
-                md:text-[46px]
-
-                lg:text-[44px]
-                xl:text-[48px]
+                sm:text-xs
+                sm:tracking-[0.18em]
               "
             >
-              When your integration
-              <br className="hidden sm:block" /> behaves{" "}
-              <span className="text-blue-600">
-                differently than
-                <br className="hidden sm:block" /> documented.
-              </span>
-            </h1>
+              Integration Support
+            </span>
+          </div>
 
-            {/* DESCRIPTION */}
+          {/* MOBILE + TABLET HEADING */}
+          <h1
+            className="
+              !m-0
+              !block
+              !max-w-[700px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              sm:!text-[46px]
+
+              md:!text-[50px]
+
+              lg:!hidden
+            "
+          >
+            When your integration behaves{" "}
+            <span className="text-blue-600">
+              differently than documented.
+            </span>
+          </h1>
+
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !max-w-none
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
+              lg:!text-[44px]
+
+              xl:!text-[50px]
+            "
+          >
+            <span className="block">
+              When your integration
+            </span>
+
+            <span className="block">
+              behaves
+            </span>
+
+            <span className="block text-blue-600">
+              differently than
+            </span>
+
+            <span className="block text-blue-600">
+              documented.
+            </span>
+          </h1>
+
+          {/* DESCRIPTION */}
+          <p
+            className="
+              !mt-8
+              w-full
+              max-w-[687px]
+              text-[15px]
+              font-normal
+              leading-7
+              text-[#5d7192]
+
+              sm:mt-9
+              sm:text-base
+
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
+            "
+          >
+            Secure intake for account-specific integration behavior — API
+            requests, authentication context, webhook delivery, sync and
+            provider connections. Public technical contracts stay in
+            Developers; this is for the case where your account does
+            something the documentation does not describe.
+          </p>
+
+          {/* CTA BUTTONS */}
+          <div
+            className="
+              mt-7
+              flex
+              w-full
+              flex-col
+              gap-3
+
+              sm:mt-8
+              sm:w-auto
+              sm:flex-row
+              sm:flex-wrap
+            "
+          >
+            <Link
+              href="/contact-support"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                bg-blue-600
+                px-7
+                text-center
+                text-sm
+                font-semibold
+                text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
+                transition
+                hover:bg-blue-700
+
+                sm:w-auto
+              "
+            >
+              Start integration support request
+            </Link>
+
+            <Link
+              href="/documentation"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-7
+                text-center
+                text-sm
+                font-semibold
+                text-[#091127]
+                transition
+                hover:bg-[#f8faff]
+
+                sm:w-auto
+              "
+            >
+              Review Developers documentation
+            </Link>
+          </div>
+
+          {/* SUPPORT NOTE */}
+          <div
+            className="
+              mt-7
+              w-full
+              max-w-[562px]
+              rounded-r-[10px]
+              border
+              border-l-[3px]
+              border-[#1f6feb]
+              bg-white
+              px-4
+              py-3.5
+
+              sm:mt-8
+              sm:py-4
+            "
+          >
             <p
               className="
                 !m-0
-                w-full
-                max-w-[687px]
-                pt-1
-                text-[15px]
+                text-sm
                 font-normal
-                leading-7
+                leading-5
                 text-[#5d7192]
-
-                sm:text-base
               "
             >
-              Secure intake for account-specific integration behavior — API
-              requests, authentication context, webhook delivery, sync and
-              provider connections. Public technical contracts stay in
-              Developers; this is for the case where your account does
-              something the documentation does not describe.
+              Support cannot override identity, permission or security
+              controls, and never needs a credential to diagnose an
+              integration.
             </p>
-
-            {/* CTA BUTTONS */}
-            <div
-              className="
-                flex
-                w-full
-                flex-col
-                gap-3
-                pt-1
-
-                sm:flex-row
-                sm:flex-wrap
-              "
-            >
-              <Link
-                href="/contact-support"
-                className="
-                  inline-flex
-                  min-h-11
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-blue-600
-                  px-6
-                  py-2.5
-                  text-center
-                  text-sm
-                  font-semibold
-                  leading-6
-                  text-white
-                  shadow-[0_8px_20px_rgba(31,111,235,0.26)]
-                  transition
-                  hover:bg-blue-700
-
-                  sm:w-auto
-                "
-              >
-                Start integration support request
-              </Link>
-
-              <Link
-                href="/developers"
-                className="
-                  inline-flex
-                  min-h-11
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-[#dfe5ee]
-                  bg-white
-                  px-6
-                  py-2.5
-                  text-center
-                  text-sm
-                  font-semibold
-                  leading-6
-                  text-[#091127]
-                  transition
-                  hover:bg-[#f8faff]
-
-                  sm:w-auto
-                "
-              >
-                Review Developers documentation
-              </Link>
-            </div>
-
-            {/* SUPPORT NOTE */}
-            <div
-              className="
-                w-full
-                max-w-[562px]
-                rounded-r-[10px]
-                border
-                border-l-[3px]
-                border-[#1f6feb]
-                bg-white
-                px-4
-                py-3.5
-
-                sm:py-4
-              "
-            >
-              <p
-                className="
-                  !m-0
-                  text-sm
-                  font-normal
-                  leading-5
-                  text-[#5d7192]
-                "
-              >
-                Support cannot override identity, permission or security
-                controls, and never needs a credential to diagnose an
-                integration.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -248,17 +264,11 @@ export default function IntegrationSupport() {
             className="
               relative
               mx-auto
-              h-[420px]
+              aspect-square
               w-full
-              max-w-[557px]
+              max-w-[547px]
               overflow-hidden
               rounded-2xl
-
-              sm:h-[470px]
-
-              md:h-[500px]
-
-              lg:h-[519px]
             "
           >
             <Image
@@ -272,7 +282,7 @@ export default function IntegrationSupport() {
                 (max-width: 767px) 90vw,
                 (max-width: 1023px) 85vw,
                 (max-width: 1279px) 44vw,
-                557px
+                547px
               "
             />
           </div>

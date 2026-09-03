@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SmallBiz() {
   return (
@@ -20,9 +21,7 @@ export default function SmallBiz() {
           {/* Heading */}
           <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.14]">
             Keep billing organized as{" "}
-            <span className="text-blue-600">
-              the business grows.
-            </span>
+            <span className="text-blue-600">the business grows.</span>
           </h2>
 
           {/* Description */}
@@ -35,26 +34,31 @@ export default function SmallBiz() {
 
           {/* Buttons */}
           <div className="mt-3 flex w-full flex-wrap gap-2.5">
+            {/* See how it works - commented out */}
+            {/*
             <button
               type="button"
               className="min-h-11 rounded-full bg-blue-600 px-5 text-sm font-semibold leading-6 text-white shadow-[0px_6px_16px_0px_rgba(31,111,235,0.24)] transition hover:bg-blue-700"
             >
               See how it works
             </button>
+            */}
 
-            <button
-              type="button"
-              className="min-h-11 rounded-full border border-gray-200 bg-white px-5 text-sm font-semibold leading-6 text-gray-900 transition hover:bg-gray-50"
+            {/* View Pricing & Plans */}
+            <Link
+              href="/pricing-and-plans"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-5 text-center text-sm font-semibold leading-6 text-white shadow-[0px_6px_16px_0px_rgba(31,111,235,0.24)] transition hover:bg-blue-700"
             >
-              View Pricing & Plans
-            </button>
+              View Pricing &amp; Plans
+            </Link>
 
-            <button
-              type="button"
-              className="min-h-11 rounded-full border border-gray-200 bg-white px-5 text-sm font-semibold leading-6 text-gray-900 transition hover:bg-gray-50"
+            {/* Create Account */}
+            <Link
+              href="/create-account"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-gray-200 bg-white px-5 text-center text-sm font-semibold leading-6 text-gray-900 transition hover:bg-gray-50"
             >
               Create account
-            </button>
+            </Link>
           </div>
         </div>
 

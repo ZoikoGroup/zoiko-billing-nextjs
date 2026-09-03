@@ -46,109 +46,538 @@ const rows = [
 
 export default function BillingContext() {
   return (
-    <section className="w-full border-t border-gray-200 bg-white">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-6 py-12 sm:px-8 sm:py-14 lg:px-7 lg:py-16">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* Eyebrow */}
-        <div className="flex h-4 items-center">
-          <span className="h-px w-6 bg-blue-600 opacity-70" />
+          sm:px-8
+          sm:py-16
 
-          <span className="ml-2.5 text-xs font-bold uppercase leading-4 tracking-[0.18em] text-blue-600">
-            Client, brand &amp; engagement context
-          </span>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Heading */}
-        <h2 className="!m-0 w-full max-w-[900px] !text-[30px] !font-extrabold !leading-[1.15] tracking-tight text-gray-900">
-          A campaign reference explains why you are billing. It does not run
-          the campaign.
-        </h2>
+          lg:px-14
 
-        {/* Description */}
-        <p className="w-full max-w-[686px] text-sm font-normal leading-6 text-gray-600 sm:text-base">
-          Context can arrive from a CRM, project tool or media plan. Authority
-          over issued billing documents, payments and financial approvals stays
-          where it belongs.
-        </p>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-8
 
-        {/* Table */}
-        <div className="mt-3 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse">
-              <thead>
-                <tr className="bg-gray-50">
-                  <th className="w-[320px] border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              items-start
+              gap-3
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex h-4 items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Client, brand &amp; engagement context
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[900px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              A campaign reference explains why you are billing. It does not
+              run the campaign.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[686px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Context can arrive from a CRM, project tool or media plan.
+              Authority over issued billing documents, payments and financial
+              approvals stays where it belongs.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[260px_minmax(0,1fr)_176px]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Context
-                  </th>
+                  </span>
+                </div>
 
-                  <th className="w-[calc(100%-496px)] border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Behavior
-                  </th>
+                  </span>
+                </div>
 
-                  <th className="w-44 border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Authority
-                  </th>
-                </tr>
-              </thead>
+                  </span>
+                </div>
+              </div>
 
-              <tbody>
-                {rows.map((row) => (
-                  <tr key={row.context}>
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
-                      <span className="text-sm font-semibold leading-5 text-gray-900">
-                        {row.context}
-                      </span>
-                    </td>
+              {/* ROWS */}
+              {rows.map((row, index) => (
+                <div
+                  key={row.context}
+                  className={`
+                    grid
+                    grid-cols-[260px_minmax(0,1fr)_176px]
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* CONTEXT */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.context}
+                    </span>
+                  </div>
 
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
-                      <span className="text-sm font-normal leading-5 text-gray-600">
-                        {row.behavior}
-                      </span>
-                    </td>
+                  {/* BEHAVIOR */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.behavior}
+                    </span>
+                  </div>
 
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
-                      <span
-                        className={`text-sm font-semibold leading-6 ${
+                  {/* AUTHORITY */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className={`
+                        text-sm
+                        font-semibold
+                        leading-6
+                        ${
                           row.highlighted
-                            ? "text-blue-600"
-                            : "text-gray-600"
-                        }`}
-                      >
-                        {row.authority}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-
-                {/* Unknown / incomplete */}
-                <tr>
-                  <td className="px-4 py-3.5 align-top">
-                    <span className="text-sm font-semibold leading-5 text-gray-900">
-                      Unknown or incomplete
+                            ? "text-[#58759d]"
+                            : "text-[#5d7192]"
+                        }
+                      `}
+                    >
+                      {row.authority}
                     </span>
-                  </td>
+                  </div>
+                </div>
+              ))}
 
-                  <td className="px-4 py-3.5 align-top">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="inline-flex min-h-6 items-center rounded-md border border-orange-200 bg-orange-50 px-2.5 py-0.5 text-xs font-semibold leading-4 text-orange-700">
-                        <span className="mr-2 h-1.5 w-1.5 rounded-sm bg-orange-500" />
-                        Needs input
-                      </span>
+              {/* UNKNOWN / INCOMPLETE */}
+              <div className="grid grid-cols-[260px_minmax(0,1fr)_176px]">
+                {/* CONTEXT */}
+                <div className="px-4 py-3.5">
+                  <span
+                    className="
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    Unknown or incomplete
+                  </span>
+                </div>
 
-                      <span className="text-sm font-normal leading-5 text-gray-600">
-                        stays visible until the source owner resolves it.
-                      </span>
-                    </div>
-                  </td>
-
-                  <td className="px-4 py-3.5 align-top">
-                    <span className="text-sm font-normal leading-5 text-gray-600">
-                      Named source owner
+                {/* BEHAVIOR */}
+                <div className="px-4 py-3.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span
+                      className="
+                        inline-flex
+                        min-h-6
+                        items-center
+                        rounded-md
+                        border
+                        border-[#f1dfc7]
+                        bg-[#fff8ed]
+                        px-2.5
+                        py-0.5
+                        text-xs
+                        font-semibold
+                        leading-4
+                        text-[#9a681f]
+                      "
+                    >
+                      <span className="mr-2 h-1.5 w-1.5 rounded-sm bg-[#c58a38]" />
+                      Needs input
                     </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      stays visible until the source owner resolves it.
+                    </span>
+                  </div>
+                </div>
+
+                {/* AUTHORITY */}
+                <div className="px-4 py-3.5">
+                  <span
+                    className="
+                      text-sm
+                      font-normal
+                      leading-5
+                      text-[#5d7192]
+                    "
+                  >
+                    Named source owner
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {rows.map((row, index) => (
+                <div
+                  key={row.context}
+                  className={`
+                    p-5
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* CONTEXT */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Context
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.context}
+                    </p>
+                  </div>
+
+                  {/* BEHAVIOR */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Behavior
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.behavior}
+                    </p>
+                  </div>
+
+                  {/* AUTHORITY */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Authority
+                    </p>
+
+                    <p
+                      className={`
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-6
+                        ${
+                          row.highlighted
+                            ? "text-[#58759d]"
+                            : "text-[#5d7192]"
+                        }
+                      `}
+                    >
+                      {row.authority}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              {/* UNKNOWN / INCOMPLETE */}
+              <div className="p-5">
+                {/* CONTEXT */}
+                <div className="mb-4">
+                  <p
+                    className="
+                      !m-0
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Context
+                  </p>
+
+                  <p
+                    className="
+                      !m-0
+                      mt-1.5
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    Unknown or incomplete
+                  </p>
+                </div>
+
+                {/* BEHAVIOR */}
+                <div className="mb-4">
+                  <p
+                    className="
+                      !m-0
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Behavior
+                  </p>
+
+                  <div className="mt-1.5 flex flex-wrap items-center gap-2">
+                    <span
+                      className="
+                        inline-flex
+                        min-h-6
+                        items-center
+                        rounded-md
+                        border
+                        border-[#f1dfc7]
+                        bg-[#fff8ed]
+                        px-2.5
+                        py-0.5
+                        text-xs
+                        font-semibold
+                        leading-4
+                        text-[#9a681f]
+                      "
+                    >
+                      <span className="mr-2 h-1.5 w-1.5 rounded-sm bg-[#c58a38]" />
+                      Needs input
+                    </span>
+
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      stays visible until the source owner resolves it.
+                    </span>
+                  </div>
+                </div>
+
+                {/* AUTHORITY */}
+                <div>
+                  <p
+                    className="
+                      !m-0
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Authority
+                  </p>
+
+                  <p
+                    className="
+                      !m-0
+                      mt-1.5
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    Named source owner
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

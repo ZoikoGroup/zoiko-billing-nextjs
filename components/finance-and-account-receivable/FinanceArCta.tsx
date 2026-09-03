@@ -17,7 +17,7 @@ export default function FinanceArCta() {
           <div className="w-full">
             <h2 className="m-0 text-2xl font-bold leading-8 text-white sm:text-3xl sm:leading-10">
               Bring Finance and AR work
-              <br className="hidden sm:block" />
+            
               back to the billing record.
             </h2>
           </div>
@@ -35,7 +35,7 @@ export default function FinanceArCta() {
           <div className="relative z-30 flex w-full flex-wrap items-center gap-3 pt-2.5">
             {/* Create account */}
             <Link
-              href="#"
+              href="create-account"
               className="!inline-flex !min-h-11 !items-center !justify-center !rounded-full !bg-white !px-5 !text-sm !font-semibold !leading-6 !text-slate-900 shadow-sm transition hover:!bg-gray-100"
             >
               Create account
@@ -43,7 +43,7 @@ export default function FinanceArCta() {
 
             {/* Book a demo */}
             <Link
-              href="#"
+              href="book-demo"
               className="!inline-flex !min-h-11 !items-center !justify-center !rounded-full !border !border-white/35 !bg-transparent !px-5 !text-sm !font-semibold !leading-6 !text-white transition hover:!bg-white/10"
               style={{ color: "#ffffff" }}
             >
@@ -52,7 +52,7 @@ export default function FinanceArCta() {
 
             {/* View pricing */}
             <Link
-              href="#"
+              href="pricing-and-plans"
               className="!inline-flex !min-h-11 !items-center !justify-center !rounded-full !border !border-white/35 !bg-transparent !px-5 !text-sm !font-semibold !leading-6 !text-white transition hover:!bg-white/10"
               style={{ color: "#ffffff" }}
             >

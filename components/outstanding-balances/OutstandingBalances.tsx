@@ -94,7 +94,7 @@ export default function OutstandingBalances() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[606px]
               text-[15px]
@@ -120,7 +120,7 @@ export default function OutstandingBalances() {
           {/* CTA */}
           <div className="mt-7 sm:mt-8">
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

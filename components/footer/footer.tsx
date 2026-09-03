@@ -151,14 +151,14 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Legal Corporate',
     links: [
-      { label: 'Terms of User', href: '#' },
+      { label: 'Terms of User', href: '/terms-of-user' },
       { label: 'Privacy Policy', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
       { label: 'Acceptable Use Policy', href: '#' },
       { label: 'Data Processing Addendum', href: '#' },
-      { label: 'Subprocessors', href: '#' },
+      { label: 'Subprocessors', href: '/subprocessors' },
       { label: 'Legal Notices', href: '/legal-notices' },
-      { label: 'Sitemap', href: '#' },
+      { label: 'Sitemap', href: '/sitemap' },
     ],
   },
 ];

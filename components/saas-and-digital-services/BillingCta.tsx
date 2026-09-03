@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BillingCta() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full !bg-white">
       <div className="mx-auto w-full max-w-[1240px] px-4 py-8 sm:px-6 sm:py-10 lg:px-7 lg:py-12">
         <div
           className="
             relative
             overflow-hidden
             rounded-2xl
-            bg-slate-900
+            !bg-slate-900
             px-6
             py-8
             sm:rounded-3xl
@@ -49,6 +50,7 @@ export default function BillingCta() {
               max-w-[500px]
               flex-col
               items-start
+              justify-center
               gap-3.5
               lg:max-w-[480px]
             "
@@ -56,11 +58,12 @@ export default function BillingCta() {
             {/* Heading */}
             <h2
               className="
+                !m-0
                 text-[24px]
                 font-extrabold
                 leading-[1.25]
                 tracking-[-0.01em]
-                text-white
+                !text-white
                 sm:text-[26px]
                 lg:text-[28px]
               "
@@ -77,11 +80,12 @@ export default function BillingCta() {
             {/* Description */}
             <p
               className="
+                !m-0
                 max-w-[450px]
                 text-sm
                 font-normal
                 leading-6
-                text-white/70
+                !text-white/70
                 sm:text-base
               "
             >
@@ -90,65 +94,96 @@ export default function BillingCta() {
             </p>
 
             {/* Buttons */}
-            <div className="flex w-full flex-wrap gap-3 pt-2 sm:pt-3">
-              <button
-                type="button"
+            <div
+              className="
+                flex
+                w-full
+                flex-wrap
+                items-center
+                gap-3
+                pt-2
+                sm:pt-3
+              "
+            >
+              {/* CREATE ACCOUNT */}
+              <Link
+                href="/create-account"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-full
-                  bg-white
+                  !border-0
+                  !bg-white
                   px-5
                   text-sm
                   font-semibold
                   leading-6
-                  text-slate-900
+                  !text-slate-900
+                  opacity-100
                   transition
-                  hover:bg-gray-100
+                  hover:!bg-gray-100
+                  hover:!text-slate-900
                   sm:px-6
                 "
               >
                 Create account
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              {/* BOOK A DEMO */}
+              <Link
+                href="/book-demo"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-full
-                  border
-                  border-white/30
+                  !border
+                  !border-white/30
+                  !bg-transparent
                   px-5
                   text-sm
                   font-semibold
                   leading-6
-                  text-white
+                  !text-white
+                  opacity-100
                   transition
-                  hover:bg-white/10
+                  hover:!bg-white/10
+                  hover:!text-white
                   sm:px-6
                 "
               >
                 Book a demo
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              {/* VIEW PRICING */}
+              <Link
+                href="/pricing-and-plans"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-full
-                  border
-                  border-white/30
+                  !border
+                  !border-white/30
+                  !bg-transparent
                   px-5
                   text-sm
                   font-semibold
                   leading-6
-                  text-white
+                  !text-white
+                  opacity-100
                   transition
-                  hover:bg-white/10
+                  hover:!bg-white/10
+                  hover:!text-white
                   sm:px-6
                 "
               >
                 View pricing
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -3,7 +3,9 @@ import Link from "next/link";
 
 export default function HelpCenter() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id ="help-center"
+     className="w-full overflow-hidden bg-white">
       <div
         className="
           mx-auto
@@ -27,11 +29,10 @@ export default function HelpCenter() {
           lg:justify-between
           lg:gap-10
           lg:px-14
-          lg:py-16
+          lg:py-20
 
           xl:gap-14
           xl:px-20
-          xl:py-20
         "
       >
         {/* LEFT CONTENT */}
@@ -43,7 +44,7 @@ export default function HelpCenter() {
             <span
               className="
                 text-[10px]
-                font-semibold
+                font-bold
                 uppercase
                 leading-4
                 tracking-[0.16em]
@@ -57,23 +58,23 @@ export default function HelpCenter() {
             </span>
           </div>
 
-          {/* HEADING */}
+          {/* MOBILE + TABLET HEADING */}
           <h1
             className="
               !m-0
-              w-full
-              max-w-[700px]
-              text-[36px]
-              font-bold
-              leading-[1.12]
-              tracking-[-0.02em]
-              text-slate-900
+              !block
+              !max-w-[700px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
 
-              sm:text-[42px]
-              md:text-[46px]
+              sm:!text-[46px]
 
-              lg:text-[44px]
-              xl:text-[48px]
+              md:!text-[50px]
+
+              lg:!hidden
             "
           >
             Find answers and guidance for{" "}
@@ -82,10 +83,44 @@ export default function HelpCenter() {
             </span>
           </h1>
 
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !max-w-none
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
+              lg:!text-[44px]
+
+              xl:!text-[50px]
+            "
+          >
+            <span className="block">
+              Find answers and
+            </span>
+
+            <span className="block">
+              guidance for
+            </span>
+
+            <span className="block text-blue-600">
+              your billing
+            </span>
+
+            <span className="block text-blue-600">
+              questions.
+            </span>
+          </h1>
+
           {/* DESCRIPTION */}
           <p
             className="
-              !mt-9
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -93,11 +128,14 @@ export default function HelpCenter() {
               leading-7
               text-[#5d7192]
 
-              sm:mt-8
+              sm:mt-9
               sm:text-base
 
-              lg:mt-7
-              xl:mt-8
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
             "
           >
             Explore practical guidance for billing operations, invoices,
@@ -120,8 +158,8 @@ export default function HelpCenter() {
               sm:flex-wrap
             "
           >
-            <Link
-              href="/billing-glossary"
+            <a
+              href="#help-center"
               className="
                 inline-flex
                 min-h-11
@@ -131,10 +169,8 @@ export default function HelpCenter() {
                 rounded-full
                 bg-blue-600
                 px-7
-                text-center
                 text-sm
                 font-semibold
-                leading-6
                 text-white
                 shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
@@ -144,7 +180,7 @@ export default function HelpCenter() {
               "
             >
               Browse Help Center
-            </Link>
+            </a>
 
             <Link
               href="/contact-support"
@@ -159,10 +195,8 @@ export default function HelpCenter() {
                 border-[#dfe5ee]
                 bg-white
                 px-7
-                text-center
                 text-sm
                 font-semibold
-                leading-6
                 text-[#091127]
                 transition
                 hover:bg-[#f8faff]
@@ -182,6 +216,7 @@ export default function HelpCenter() {
             w-full
 
             sm:mt-12
+
             md:mt-14
 
             lg:mt-0
@@ -196,7 +231,7 @@ export default function HelpCenter() {
               mx-auto
               aspect-square
               w-full
-              max-w-[557px]
+              max-w-[547px]
               overflow-hidden
               rounded-2xl
             "
@@ -212,7 +247,7 @@ export default function HelpCenter() {
                 (max-width: 767px) 90vw,
                 (max-width: 1023px) 85vw,
                 (max-width: 1279px) 44vw,
-                557px
+                547px
               "
             />
           </div>

@@ -15,27 +15,41 @@ const leftFaqs: Faq[] = [
   },
   {
     question: "Does Zoiko run the implementation for us?",
+    answer:
+      "Implementation support depends on the engagement and scope. Zoiko can provide product guidance, technical documentation and integration support, but your organization remains responsible for its data, configuration, approvals and operational decisions.",
   },
   {
     question: "Is there a migration tool for our existing data?",
+    answer:
+      "Migration options depend on the source system, data structure and supported integration path. Existing data can be assessed and mapped against the available import or integration capabilities; unsupported migration paths should not be assumed.",
   },
   {
     question: "Why is there no readiness score?",
+    answer:
+      "A single readiness score would hide the factors that actually determine implementation risk. Readiness depends on data quality, integrations, ownership, controls, testing, approvals and operational processes, so these should be assessed individually.",
   },
 ];
 
 const rightFaqs: Faq[] = [
   {
     question: "What is the rollback procedure?",
+    answer:
+      "Rollback is defined according to the affected integration, data flow and deployment change. Changes should be tested before production, with ownership, recovery steps and evidence requirements agreed before go-live rather than relying on a single universal rollback procedure.",
   },
   {
     question: "How much historical data should we bring?",
+    answer:
+      "Bring the historical data required for your operational, reporting, reconciliation, accounting and legal needs. The appropriate period varies by organization, so the migration scope should be agreed based on actual business and retention requirements.",
   },
   {
     question: "Who signs off go-live?",
+    answer:
+      "Go-live should be approved by the owners responsible for the affected operations, data, integrations and controls. The exact sign-off roles depend on your organization and implementation scope; Zoiko does not replace your internal approval process.",
   },
   {
     question: "Where do legal and tax obligations fit?",
+    answer:
+      "Legal, tax, accounting, banking and regulatory obligations remain with the relevant organization and its advisers. Zoiko provides product capabilities and documentation, but those obligations should be assessed and approved as part of your own implementation and go-live process.",
   },
 ];
 
@@ -54,14 +68,23 @@ function FaqItem({
         type="button"
         onClick={onClick}
         className="
-          flex min-h-20 w-full items-center justify-between
-          gap-4 px-5 py-4 text-left
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-4
+          text-left
         "
         aria-expanded={isOpen}
       >
         <span
           className="
-            text-sm font-semibold leading-6
+            text-sm
+            font-semibold
+            leading-6
             text-[#091127]
           "
         >
@@ -70,9 +93,18 @@ function FaqItem({
 
         <span
           className="
-            flex h-5 w-5 shrink-0 items-center justify-center
-            rounded-md bg-[#f7f8fa]
-            text-sm font-semibold leading-5 text-[#5d7192]
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-5
+            text-[#5d7192]
           "
         >
           {isOpen ? "−" : "+"}
@@ -83,8 +115,11 @@ function FaqItem({
         <div className="px-5 pb-5">
           <p
             className="
-              !m-0 text-sm font-normal
-              leading-5 text-[#5d7192]
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
             "
           >
             {faq.answer}
@@ -118,11 +153,15 @@ export default function ImplementationFAQ() {
           items-start
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
+
           xl:px-20
         "
       >
@@ -134,8 +173,11 @@ export default function ImplementationFAQ() {
             max-w-[1240px]
             flex-col
             items-center
-            gap-11
-            px-0
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* SECTION INTRO */}
@@ -163,6 +205,7 @@ export default function ImplementationFAQ() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
+
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -179,20 +222,20 @@ export default function ImplementationFAQ() {
                 !m-0
                 w-full
                 max-w-[662px]
-                !pb-[0.69px]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
+
                 sm:!text-[34px]
+
                 md:!text-[36px]
+
                 lg:!text-[40px]
               "
             >
-              Direct answers about scope and
-             
-              support.
+              Direct answers about scope and support.
             </h2>
 
             {/* DESCRIPTION */}
@@ -201,11 +244,11 @@ export default function ImplementationFAQ() {
                 !m-0
                 w-full
                 max-w-[687px]
-                pt-[3px]
                 text-[15px]
                 font-normal
                 leading-7
                 text-[#5d7192]
+
                 sm:text-base
               "
             >
@@ -221,6 +264,7 @@ export default function ImplementationFAQ() {
               w-full
               flex-col
               gap-5
+
               lg:flex-row
             "
           >

@@ -34,8 +34,7 @@ const rows = [
   },
   {
     object: "Delivery",
-    control:
-      "Delivery state is distinct from issue state.",
+    control: "Delivery state is distinct from issue state.",
     evidence: "Route, attempts, failure reason",
     delivery: true,
   },
@@ -54,176 +53,447 @@ const rows = [
 
 export default function InvoiceControl() {
   return (
-    <section className="w-full border-t border-gray-200 bg-gray-50 px-5 py-20 sm:px-8 lg:px-14 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-0 sm:px-7">
-        {/* Eyebrow */}
-        <div className="relative flex h-6 w-full max-w-[400px] items-center">
-          <span className="text-xs font-bold uppercase leading-4 tracking-widest text-blue-600">
-            Invoice, credit &amp; adjustment control
-          </span>
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          <span className="ml-4 h-px w-6 shrink-0 bg-blue-600 opacity-50" />
-        </div>
+          sm:px-8
+          sm:py-16
 
-        {/* Heading */}
-        <div className="w-full pb-[0.61px]">
-          <h2 className="m-0 text-2xl font-bold leading-8 text-slate-900 sm:text-3xl sm:leading-10">
-            Issued records are corrected, never quietly rewritten.
-          </h2>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Description */}
-        <div className="w-full max-w-[686.38px] pb-[0.59px]">
-          <p className="m-0 text-base font-normal leading-6 text-slate-600">
-            Each object below has a controlling authority, a reason
-            requirement, and an evidence trail.
-          </p>
-        </div>
+          lg:px-14
 
-        {/* Table Container */}
-        <div className="mt-6 w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-gray-200">
-          {/* Intro */}
-          <div className="border-b border-gray-200 bg-gray-50 px-5 py-4 sm:px-6">
-            <p className="m-0 text-sm font-normal leading-5 text-slate-600">
-              Document control model. Delivery state is tracked separately
-              from issue state throughout.
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-3.5
+          "
+        >
+          {/* EYEBROW */}
+          <div className="flex items-center gap-3">
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+            <span
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
+              Invoice, credit &amp; adjustment control
+            </span>
+          </div>
+
+          {/* HEADING */}
+          <div className="w-full">
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[900px]
+                !text-[30px]
+                !font-bold
+                !leading-[1.2]
+                !tracking-[-0.025em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Issued records are corrected, never quietly rewritten.
+            </h2>
+          </div>
+
+          {/* DESCRIPTION */}
+          <div className="w-full max-w-[686px]">
+            <p
+              className="
+                !m-0
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Each object below has a controlling authority, a reason
+              requirement, and an evidence trail.
             </p>
           </div>
 
-          {/* Desktop Table */}
-          <div className="hidden md:block">
-            {/* Header */}
-            <div className="grid grid-cols-[208px_minmax(0,1fr)_320px] border-b border-gray-200 bg-gray-50">
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                  Object or action
-                </span>
-              </div>
+          {/* TABLE CONTAINER */}
+          <div
+            className="
+              mt-6
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* INTRO */}
+            <div
+              className="
+                border-b
+                border-[#dfe5ee]
+                bg-[#fafbfc]
+                px-5
+                py-4
 
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                  Control
-                </span>
-              </div>
-
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                  Evidence retained
-                </span>
-              </div>
+                sm:px-6
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                Document control model. Delivery state is tracked separately
+                from issue state throughout.
+              </p>
             </div>
 
-            {/* Rows */}
-            {rows.map((row, index) => (
-              <div
-                key={row.object}
-                className={`grid grid-cols-[208px_minmax(0,1fr)_320px] ${
-                  index !== rows.length - 1 ? "border-b border-gray-200" : ""
-                }`}
-              >
-                {/* Object */}
-                <div className="px-4 py-3.5">
-                  <span className="text-sm font-semibold leading-5 text-slate-900">
-                    {row.object}
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[208px_minmax(0,1fr)_320px] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Object or action
                   </span>
                 </div>
 
-                {/* Control */}
-                <div className="flex flex-wrap items-center gap-1 px-4 py-3.5">
-                  <span className="text-sm font-normal leading-5 text-slate-600">
-                    {row.control}
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Control
                   </span>
-
-                  {row.delivery && (
-                    <>
-                      <span className="inline-flex min-h-6 items-center gap-2 rounded-md bg-orange-50 px-2.5 py-1 outline outline-1 outline-offset-[-1px] outline-orange-200">
-                        <span className="size-1.5 shrink-0 rounded-sm bg-orange-600 opacity-75" />
-
-                        <span className="text-xs font-semibold leading-4 text-orange-600">
-                          Delivery failed
-                        </span>
-                      </span>
-
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        is its own outcome.
-                      </span>
-                    </>
-                  )}
                 </div>
 
-                {/* Evidence */}
-                <div className="px-4 py-3.5">
-                  <span className="text-sm font-normal leading-5 text-slate-600">
-                    {row.evidence}
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Evidence retained
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Mobile Table */}
-          <div className="md:hidden">
-            {rows.map((row, index) => (
-              <div
-                key={row.object}
-                className={`flex flex-col gap-4 px-5 py-5 ${
-                  index !== rows.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                }`}
-              >
-                {/* Object */}
-                <div>
-                  <p className="m-0 text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                    Object or action
-                  </p>
+              {/* ROWS */}
+              {rows.map((row, index) => (
+                <div
+                  key={row.object}
+                  className={`
+                    grid
+                    grid-cols-[208px_minmax(0,1fr)_320px]
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* OBJECT */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.object}
+                    </span>
+                  </div>
 
-                  <p className="m-0 mt-1 text-sm font-semibold leading-5 text-slate-900">
-                    {row.object}
-                  </p>
-                </div>
-
-                {/* Control */}
-                <div>
-                  <p className="m-0 text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                    Control
-                  </p>
-
-                  <div className="mt-1 flex flex-wrap items-center gap-1">
-                    <span className="text-sm font-normal leading-5 text-slate-600">
+                  {/* CONTROL */}
+                  <div className="flex flex-wrap items-center gap-1 px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
                       {row.control}
                     </span>
 
                     {row.delivery && (
                       <>
-                        <span className="inline-flex min-h-6 items-center gap-2 rounded-md bg-orange-50 px-2.5 py-1 outline outline-1 outline-offset-[-1px] outline-orange-200">
+                        <span
+                          className="
+                            inline-flex
+                            min-h-6
+                            items-center
+                            gap-2
+                            rounded-md
+                            border
+                            border-orange-200
+                            bg-orange-50
+                            px-2.5
+                            py-1
+                          "
+                        >
                           <span className="size-1.5 shrink-0 rounded-sm bg-orange-600 opacity-75" />
 
-                          <span className="text-xs font-semibold leading-4 text-orange-600">
+                          <span
+                            className="
+                              text-xs
+                              font-semibold
+                              leading-4
+                              text-orange-600
+                            "
+                          >
                             Delivery failed
                           </span>
                         </span>
 
-                        <span className="text-sm font-normal leading-5 text-slate-600">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
                           is its own outcome.
                         </span>
                       </>
                     )}
                   </div>
-                </div>
 
-                {/* Evidence */}
-                <div>
-                  <p className="m-0 text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                    Evidence retained
-                  </p>
-
-                  <p className="m-0 mt-1 text-sm font-normal leading-5 text-slate-600">
-                    {row.evidence}
-                  </p>
+                  {/* EVIDENCE */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.evidence}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* MOBILE TABLE */}
+            <div className="md:hidden">
+              {rows.map((row, index) => (
+                <div
+                  key={row.object}
+                  className={`
+                    flex
+                    flex-col
+                    gap-4
+                    px-5
+                    py-5
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* OBJECT */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Object or action
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.object}
+                    </p>
+                  </div>
+
+                  {/* CONTROL */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Control
+                    </p>
+
+                    <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
+                        {row.control}
+                      </span>
+
+                      {row.delivery && (
+                        <>
+                          <span
+                            className="
+                              inline-flex
+                              min-h-6
+                              items-center
+                              gap-2
+                              rounded-md
+                              border
+                              border-orange-200
+                              bg-orange-50
+                              px-2.5
+                              py-1
+                            "
+                          >
+                            <span className="size-1.5 shrink-0 rounded-sm bg-orange-600 opacity-75" />
+
+                            <span
+                              className="
+                                text-xs
+                                font-semibold
+                                leading-4
+                                text-orange-600
+                              "
+                            >
+                              Delivery failed
+                            </span>
+                          </span>
+
+                          <span
+                            className="
+                              text-sm
+                              font-normal
+                              leading-6
+                              text-[#5d7192]
+                            "
+                          >
+                            is its own outcome.
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* EVIDENCE */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Evidence retained
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.evidence}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
