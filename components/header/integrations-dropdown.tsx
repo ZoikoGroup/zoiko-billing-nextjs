@@ -53,7 +53,7 @@ const PARTNER_ITEMS: MenuItem[] = [
   { title: 'Technology Partners', description: 'Explore our technology partner network.', href: '/technology-partners', icon: Share2 },
   { title: 'Integration Standards', description: 'Guidelines and best practices.', href: '/integrations-support', icon: ShieldCheck },
   { title: 'Partner Programme', description: 'Join the Zoiko partner programme.', href: '/partner-programme', icon: Users },
-  { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '#', icon: Send },
+  { title: 'Submit an Integration', description: 'Propose your integration to Zoiko.', href: '/submit-an-integration', icon: Send },
   { title: 'Integration Support', description: 'Get help for integration-related queries.', href: '/integration-support', icon: HelpCircle },
 ];
 
