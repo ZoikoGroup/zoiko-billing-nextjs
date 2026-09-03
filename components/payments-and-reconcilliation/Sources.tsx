@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 const evidenceRows = [
   {
     number: "1",
@@ -78,172 +76,430 @@ const sourceRows = [
 
 export default function Sources() {
   return (
-    <section className="w-full bg-[#f7f7f7] transition-colors duration-300 dark:bg-slate-950">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-8 px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* HEADER */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
+          sm:px-8
+          sm:py-16
 
-          {/* LEFT */}
-          <div className="flex flex-1 flex-col items-start gap-5">
+          md:px-10
+          md:py-20
 
-            {/* LABEL */}
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+          lg:px-14
 
-              <span className="text-xs font-medium uppercase tracking-wider text-blue-500 dark:text-blue-400">
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Sources
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
-            <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.1] tracking-tight text-slate-900 sm:text-[48px] sm:leading-[1.12] dark:text-white">
-              Preserve the original
-              <br className="hidden sm:block" />
-              evidence behind every
-              <br className="hidden sm:block" />
-              payment state.
-            </h2>
-          </div>
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-          {/* RIGHT */}
-          <div className="w-full max-w-[530px] flex-1">
-            <p className="text-base font-normal leading-7 text-slate-600 sm:leading-8 dark:text-slate-300">
-              Normalization makes provider states comparable. It never discards
-              what the provider actually said, or when it said it.
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Preserve the original evidence behind every payment state.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Normalization makes provider states comparable. It never
+              discards what the provider actually said, or when it said it.
             </p>
           </div>
-        </div>
 
-        {/* MAIN CONTENT */}
-        <div className="grid w-full gap-12 pt-4 lg:grid-cols-2 lg:gap-16">
+          {/* MAIN CONTENT */}
+          <div
+            className="
+              grid
+              w-full
+              gap-10
+              pt-2
 
-          {/* PRODUCT VIEW */}
-          <div className="flex w-full flex-col items-start gap-3">
+              lg:grid-cols-2
+              lg:gap-12
+            "
+          >
+            {/* PRODUCT VIEW */}
+            <div className="flex w-full flex-col items-start gap-3">
+              {/* BADGE */}
+              <div className="flex items-center">
+                <div
+                  className="
+                    flex
+                    h-7
+                    items-center
+                    rounded-full
+                    border
+                    border-[#dfe5ee]
+                    bg-white
+                    px-3
+                  "
+                >
+                  <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-[#7890b2]" />
 
-            {/* BADGE */}
-            <div className="flex items-center">
-              <div className="flex h-7 items-center rounded-full border border-emerald-500/10 bg-white/70 px-3 dark:border-emerald-400/10 dark:bg-slate-900/70">
-                <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-blue-500" />
-
-                <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
-                  Illustrative product view
-                </span>
+                  <span
+                    className="
+                      text-[10px]
+                      font-normal
+                      uppercase
+                      leading-4
+                      tracking-wider
+                      text-[#7890b2]
+                    "
+                  >
+                    Illustrative product view
+                  </span>
+                </div>
               </div>
+
+              {/* PRODUCT CARD */}
+              <div
+                className="
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* CARD HEADER */}
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    items-center
+                    gap-2.5
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-4
+                    py-3.5
+                  "
+                >
+                  <span className="h-2 w-2 rounded-sm bg-[#7890b2]" />
+
+                  <span
+                    className="
+                      text-xs
+                      font-normal
+                      uppercase
+                      tracking-wider
+                      text-[#5d7192]
+                    "
+                  >
+                    State normalization · PMT-88A41C
+                  </span>
+
+                  <span
+                    className="
+                      ml-auto
+                      rounded-full
+                      border
+                      border-[#dfe5ee]
+                      bg-white
+                      px-3
+                      py-1
+                      text-[10px]
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-[#7890b2]
+                    "
+                  >
+                    ✓ &nbsp; Mapping v6
+                  </span>
+                </div>
+
+                {/* EVIDENCE ROWS */}
+                {evidenceRows.map((row, index) => (
+                  <div
+                    key={row.number}
+                    className={`
+                      flex
+                      items-start
+                      gap-3.5
+                      px-4
+                      py-3.5
+
+                      ${
+                        index !== evidenceRows.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    {/* NUMBER */}
+                    <div
+                      className="
+                        flex
+                        h-6
+                        w-6
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-md
+                        border
+                        border-[#dfe5ee]
+                        bg-[#fafbfc]
+                      "
+                    >
+                      <span
+                        className="
+                          text-[9px]
+                          font-semibold
+                          leading-4
+                          text-[#7890b2]
+                        "
+                      >
+                        {row.number}
+                      </span>
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="min-w-0 flex-1">
+                      <div
+                        className="
+                          text-[9px]
+                          font-bold
+                          uppercase
+                          leading-4
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        {row.label}
+                      </div>
+
+                      <div
+                        className={`
+                          mt-1.5
+                          break-words
+                          text-sm
+                          leading-5
+                          text-[#091127]
+                          ${
+                            row.mono
+                              ? "font-mono"
+                              : "font-normal"
+                          }
+                        `}
+                      >
+                        {row.value}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* PRODUCT NOTE */}
+              <p
+                className="
+                  !m-0
+                  text-[10px]
+                  font-normal
+                  uppercase
+                  leading-5
+                  tracking-wider
+                  text-[#7890b2]
+                "
+              >
+                Support for a specific provider, bank, country, network or
+                payment method is published only where it has been verified.
+              </p>
             </div>
 
-            {/* PRODUCT CARD */}
-            <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04)] dark:border-slate-700 dark:bg-slate-900">
+            {/* WHERE EVIDENCE COMES FROM */}
+            <div className="flex w-full flex-col items-start gap-3">
+              <h3
+                className="
+                  !m-0
+                  text-lg
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+                "
+              >
+                Where evidence comes from
+              </h3>
 
-              {/* CARD HEADER */}
-              <div className="flex flex-wrap items-center gap-2.5 border-b border-zinc-200 bg-[#f7f7f7] px-4 py-3.5 dark:border-slate-700 dark:bg-slate-800">
-                <span className="h-2 w-2 rounded-sm bg-blue-500" />
+              <div className="mt-1 w-full">
+                {sourceRows.map((row, index) => (
+                  <div
+                    key={index}
+                    className={`
+                      grid
+                      gap-4
+                      py-3.5
 
-                <span className="text-xs font-normal uppercase tracking-wider text-slate-600 dark:text-slate-300">
-                  State normalization · PMT-88A41C
-                </span>
+                      sm:grid-cols-[145px_1fr]
 
-                <span className="ml-auto rounded-full border border-blue-500/20 bg-[#f7f7f7] px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-blue-500 dark:border-blue-400/20 dark:bg-slate-900 dark:text-blue-400">
-                  ✓ &nbsp; Mapping v6
-                </span>
-              </div>
-
-              {/* EVIDENCE ROWS */}
-              {evidenceRows.map((row, index) => (
-                <div
-                  key={row.number}
-                  className={`flex items-start gap-3.5 px-4 py-3.5 ${
-                    index !== evidenceRows.length - 1
-                      ? "border-b border-zinc-200 dark:border-slate-700"
-                      : ""
-                  }`}
-                >
-                  {/* NUMBER */}
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-blue-500/20 bg-[#f7f7f7] dark:border-blue-400/20 dark:bg-slate-800">
-                    <span className="text-[9px] font-semibold leading-4 text-blue-500 dark:text-blue-400">
-                      {row.number}
-                    </span>
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[9px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
-                      {row.label}
+                      ${
+                        index !== sourceRows.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    <div
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-[#091127]
+                      "
+                    >
+                      {row.title}
                     </div>
 
                     <div
-                      className={`mt-1.5 break-words text-sm leading-5 text-slate-900 dark:text-slate-200 ${
-                        row.mono ? "font-mono" : "font-normal"
-                      }`}
+                      className="
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
                     >
-                      {row.value}
+                      {row.description}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+          </div>
 
-            {/* PRODUCT NOTE */}
-            <p className="text-[10px] font-normal uppercase leading-5 tracking-wider text-blue-500 dark:text-blue-400">
-              Support for a specific provider, bank, country, network or
-              payment method is published only where it has been verified.
+          {/* SOURCE BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-6
+              py-7
+
+              sm:px-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.12em]
+                text-[#7890b2]
+              "
+            >
+              Source boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                max-w-[850px]
+                text-base
+                font-normal
+                leading-7
+                text-[#091127]
+              "
+            >
+              Manual evidence never silently overrides provider truth. Where
+              a manual record conflicts with a provider state, the conflict is
+              surfaced for review rather than resolved quietly.
             </p>
           </div>
-
-          {/* WHERE EVIDENCE COMES FROM */}
-          <div className="flex w-full flex-col items-start gap-1.5">
-
-            <h3 className="text-lg font-semibold leading-6 text-slate-900 dark:text-white">
-              Where evidence comes from
-            </h3>
-
-            <div className="mt-1 w-full">
-              {sourceRows.map((row, index) => (
-                <div
-                  key={index}
-                  className={`grid gap-4 py-3.5 sm:grid-cols-[145px_1fr] ${
-                    index !== sourceRows.length - 1
-                      ? "border-b border-zinc-200 dark:border-slate-700"
-                      : ""
-                  }`}
-                >
-                  <div className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
-                    {row.title}
-                  </div>
-
-                  <div className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
-                    {row.description}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-
-        {/* SOURCE BOUNDARY */}
-        <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-blue-500 bg-[#f7f7f7] px-6 py-7 sm:px-7 dark:bg-slate-900">
-
-          <span className="text-[10px] font-normal uppercase leading-4 tracking-wider text-blue-500 dark:text-blue-400">
-            Source boundary
-          </span>
-
-          <p className="max-w-[850px] text-base font-normal leading-7 text-slate-900 dark:text-slate-200">
-            Manual evidence never silently overrides provider truth. Where a
-            manual record conflicts with a provider state, the conflict is
-            surfaced for review rather than resolved quietly.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="flex w-full items-center pt-1">
-          <Link
-            href="/verified-payment-sources"
-            className="inline-flex min-h-12 items-center justify-center rounded-lg bg-slate-950 px-6 py-3 text-base font-normal leading-6 !text-white transition-colors hover:bg-slate-800"
-          >
-            See verified payment sources
-          </Link>
-        </div>
-
       </div>
     </section>
   );

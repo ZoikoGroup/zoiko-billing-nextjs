@@ -29,7 +29,7 @@ export default function BillingCta() {
           <div className="relative z-30 flex w-full flex-wrap items-center gap-3 pt-2.5">
             {/* Create account */}
             <Link
-              href="/signup"
+              href="/create-account"
               className="!inline-flex min-h-11 items-center justify-center rounded-full !bg-white px-5 text-center text-sm font-semibold leading-6 !text-slate-950 no-underline transition-opacity hover:!bg-gray-100 hover:!text-slate-950"
             >
               Create account
@@ -37,7 +37,7 @@ export default function BillingCta() {
 
             {/* Book a demo */}
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="!inline-flex min-h-11 items-center justify-center rounded-full !border !border-white/40 !bg-transparent px-5 text-center text-sm font-semibold leading-6 !text-white no-underline transition-colors hover:!bg-white/10 hover:!text-white"
             >
               Book a demo
@@ -45,7 +45,7 @@ export default function BillingCta() {
 
             {/* View pricing */}
             <Link
-              href="/pricing"
+              href="/pricing-and-plans"
               className="!inline-flex min-h-11 items-center justify-center rounded-full !border !border-white/40 !bg-transparent px-5 text-center text-sm font-semibold leading-6 !text-white no-underline transition-colors hover:!bg-white/10 hover:!text-white"
             >
               View pricing

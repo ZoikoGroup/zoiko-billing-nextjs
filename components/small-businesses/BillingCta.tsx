@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BillingCta() {
   return (
@@ -25,27 +26,34 @@ export default function BillingCta() {
                 only when you need them.
               </p>
 
+              {/* CTAs */}
               <div className="flex w-full flex-wrap gap-3 pt-2.5">
-                <button
-                  type="button"
-                  className="min-h-11 rounded-full bg-white px-5 text-sm font-semibold leading-6 text-[#17243a] transition hover:bg-gray-100"
+                {/* Create account */}
+                <Link
+                  href="/create-account"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-center text-sm font-semibold leading-6 transition hover:bg-gray-100"
+                  style={{ color: "#17243a" }}
                 >
                   Create account
-                </button>
+                </Link>
 
-                <button
-                  type="button"
-                  className="min-h-11 rounded-full border border-white/35 px-5 text-sm font-semibold leading-6 text-white transition hover:bg-white/10"
+                {/* Book a demo */}
+                <Link
+                  href="/book-demo"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-center text-sm font-semibold leading-6 transition hover:bg-white/10"
+                  style={{ color: "#ffffff" }}
                 >
                   Book a demo
-                </button>
+                </Link>
 
-                <button
-                  type="button"
-                  className="min-h-11 rounded-full border border-white/35 px-5 text-sm font-semibold leading-6 text-white transition hover:bg-white/10"
+                {/* View pricing */}
+                <Link
+                  href="/pricing-and-plans"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-center text-sm font-semibold leading-6 transition hover:bg-white/10"
+                  style={{ color: "#ffffff" }}
                 >
                   View pricing
-                </button>
+                </Link>
               </div>
             </div>
 

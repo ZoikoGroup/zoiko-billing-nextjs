@@ -67,29 +67,72 @@ function FaqItem({ question, answer }: Faq) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="flex min-h-20 w-full items-center justify-between gap-5 px-5 py-4 text-left"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-5
+          px-5
+          py-4
+          text-left
+
+          sm:px-6
+        "
         aria-expanded={open}
       >
-        <span className="text-sm font-semibold leading-6 text-gray-900">
+        <span
+          className="
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+
+            sm:text-[15px]
+          "
+        >
           {question}
         </span>
 
         <span
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-gray-100 text-sm font-semibold leading-5 text-gray-500 transition-transform duration-200 ${
-            open ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-5
+            text-[#5d7192]
+            transition-transform
+            duration-200
+            ${open ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
       </button>
 
       {open && (
-        <div className="px-5 pb-5">
-          <p className="text-sm font-normal leading-5 text-gray-500">
+        <div className="px-5 pb-5 sm:px-6">
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {answer}
           </p>
         </div>
@@ -100,66 +143,116 @@ function FaqItem({ question, answer }: Faq) {
 
 export default function BillingFaq() {
   return (
-    <section className="w-full bg-gray-50">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-14 lg:py-20">
-        <div className="flex w-full max-w-[1240px] flex-col items-center gap-5">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          {/* Header */}
-          <div className="mx-auto flex w-full max-w-[900px] flex-col items-center pt-2 text-center">
+          sm:px-8
+          sm:py-16
 
-            {/* Eyebrow */}
-            <div className="mb-4 flex w-full items-center justify-center gap-3">
-              <span className="h-px w-4 shrink-0 bg-blue-600/40" />
+          md:px-10
+          md:py-20
 
-              <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-blue-600 sm:text-[11px] sm:tracking-[0.14em] lg:text-xs lg:tracking-widest">
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Security, fit, FAQ &amp; pricing
               </span>
 
-              <span className="h-px w-4 shrink-0 bg-blue-600/40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2
               className="
-                mx-auto
+                !m-0
                 w-full
                 max-w-[900px]
-                text-center
-                text-[30px]
-                font-extrabold
-                leading-[1.15]
-                tracking-[-0.02em]
-                text-gray-900
-                sm:text-[38px]
-                sm:leading-[1.15]
-                lg:text-5xl
-                lg:leading-[1.14]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              <span className="block">
-                Questions about digital-service
-              </span>
+              <span className="block">Questions about digital-service</span>
 
-              <span className="block">
-                billing.
-              </span>
+              <span className="block">billing.</span>
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
-                mx-auto
-                mt-4
+                !m-0
                 w-full
                 max-w-[687px]
-                text-center
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
-                text-gray-500
-                sm:mt-5
+                leading-7
+                text-[#5d7192]
+
                 sm:text-base
-                sm:leading-7
               "
             >
               Where a capability depends on configuration, an upstream source
@@ -167,23 +260,52 @@ export default function BillingFaq() {
             </p>
           </div>
 
-          {/* FAQ Cards */}
-          <div className="grid w-full grid-cols-1 gap-5 pt-3 lg:grid-cols-2 lg:pt-5">
+          {/* FAQ CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+              pt-1
 
-            {/* Left */}
-            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)]">
+              sm:gap-5
+              sm:pt-2
+
+              lg:grid-cols-2
+            "
+          >
+            {/* LEFT FAQ CARD */}
+            <div
+              className="
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
               {leftFaqs.map((faq) => (
                 <FaqItem key={faq.question} {...faq} />
               ))}
             </div>
 
-            {/* Right */}
-            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)]">
+            {/* RIGHT FAQ CARD */}
+            <div
+              className="
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
               {rightFaqs.map((faq) => (
                 <FaqItem key={faq.question} {...faq} />
               ))}
             </div>
-
           </div>
         </div>
       </div>

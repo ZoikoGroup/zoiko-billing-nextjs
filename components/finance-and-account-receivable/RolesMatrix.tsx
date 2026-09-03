@@ -66,104 +66,248 @@ const rows = [
 
 export default function RolesMatrix() {
   return (
-    <section className="w-full border-t border-gray-200 bg-white px-5 py-20 sm:px-8 lg:px-14 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-0 sm:px-7">
-        {/* Eyebrow */}
-        <div className="relative flex h-6 w-full max-w-[420px] items-center">
-          <span className="text-xs font-bold uppercase leading-4 tracking-widest text-blue-600">
-            Roles, approvals &amp; segregation of duties
-          </span>
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          <span className="ml-4 h-px w-6 shrink-0 bg-blue-600 opacity-50" />
-        </div>
+          sm:px-8
+          sm:py-16
 
-        {/* Heading */}
-        <div className="w-full pb-[0.61px]">
-          <h2 className="m-0 text-2xl font-bold leading-8 text-slate-900 sm:text-3xl sm:leading-10">
-            Creating a document and approving it are different jobs.
-          </h2>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Description */}
-        <div className="w-full max-w-[686.38px]">
-          <p className="m-0 text-base font-normal leading-6 text-slate-600">
-            The matrix below is illustrative role architecture — not a claim
-            that every plan ships these exact role names.
-          </p>
-        </div>
+          lg:px-14
 
-        {/* Table */}
-        <div className="mt-6 w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-gray-200">
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[1264px]">
-              {/* Header */}
-              <div className="flex">
-                {columns.map((column) => (
-                  <div
-                    key={column.label}
-                    className={`${column.width} shrink-0 border-b border-gray-200 bg-gray-50 px-4 py-3`}
-                  >
-                    <span className="text-xs font-bold uppercase leading-4 tracking-wide text-blue-600">
-                      {column.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-3.5
+          "
+        >
+          {/* EYEBROW */}
+          <div className="flex items-center gap-3">
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-              {/* Rows */}
-              <div>
-                {rows.map((row, rowIndex) => (
-                  <div
-                    key={row.decision}
-                    className={`flex ${
-                      rowIndex !== rows.length - 1
-                        ? "border-b border-gray-200"
-                        : ""
-                    }`}
-                  >
-                    {/* Decision */}
-                    <div className="w-[288px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-semibold leading-5 text-slate-900">
-                        {row.decision}
+            <span
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
+              Roles, approvals &amp; segregation of duties
+            </span>
+          </div>
+
+          {/* HEADING */}
+          <div className="w-full">
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[900px]
+                !text-[30px]
+                !font-bold
+                !leading-[1.2]
+                !tracking-[-0.025em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Creating a document and approving it are different jobs.
+            </h2>
+          </div>
+
+          {/* DESCRIPTION */}
+          <div className="w-full max-w-[686px]">
+            <p
+              className="
+                !m-0
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              The matrix below is illustrative role architecture — not a claim
+              that every plan ships these exact role names.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              mt-6
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[1264px]">
+                {/* HEADER */}
+                <div className="flex bg-[#fafbfc]">
+                  {columns.map((column) => (
+                    <div
+                      key={column.label}
+                      className={`
+                        ${column.width}
+                        shrink-0
+                        border-b
+                        border-[#dfe5ee]
+                        px-4
+                        py-3.5
+                      `}
+                    >
+                      <span
+                        className="
+                          text-xs
+                          font-bold
+                          uppercase
+                          leading-4
+                          tracking-wide
+                          text-[#7890b2]
+                        "
+                      >
+                        {column.label}
                       </span>
                     </div>
+                  ))}
+                </div>
 
-                    {/* AR Analyst */}
-                    <div className="w-[144px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        {row.values[0]}
-                      </span>
-                    </div>
+                {/* ROWS */}
+                <div>
+                  {rows.map((row, rowIndex) => (
+                    <div
+                      key={row.decision}
+                      className={`
+                        flex
+                        ${
+                          rowIndex !== rows.length - 1
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      {/* DECISION */}
+                      <div className="w-[288px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-semibold
+                            leading-5
+                            text-[#091127]
+                          "
+                        >
+                          {row.decision}
+                        </span>
+                      </div>
 
-                    {/* AR Manager */}
-                    <div className="w-[160px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        {row.values[1]}
-                      </span>
-                    </div>
+                      {/* AR ANALYST */}
+                      <div className="w-[144px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
+                          {row.values[0]}
+                        </span>
+                      </div>
 
-                    {/* Finance Approver */}
-                    <div className="w-[288px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        {row.values[2]}
-                      </span>
-                    </div>
+                      {/* AR MANAGER */}
+                      <div className="w-[160px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
+                          {row.values[1]}
+                        </span>
+                      </div>
 
-                    {/* Billing Admin */}
-                    <div className="w-[160px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        {row.values[3]}
-                      </span>
-                    </div>
+                      {/* FINANCE APPROVER */}
+                      <div className="w-[288px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
+                          {row.values[2]}
+                        </span>
+                      </div>
 
-                    {/* Auditor */}
-                    <div className="w-[224px] shrink-0 px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-slate-600">
-                        {row.values[4]}
-                      </span>
+                      {/* BILLING ADMIN */}
+                      <div className="w-[160px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
+                          {row.values[3]}
+                        </span>
+                      </div>
+
+                      {/* AUDITOR */}
+                      <div className="w-[224px] shrink-0 px-4 py-3.5">
+                        <span
+                          className="
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
+                          {row.values[4]}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

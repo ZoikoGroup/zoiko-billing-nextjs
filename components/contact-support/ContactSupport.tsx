@@ -3,7 +3,9 @@ import Link from "next/link";
 
 export default function ContactSupport() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id = "contact-support"
+     className="w-full overflow-hidden bg-white">
       <div
         className="
           mx-auto
@@ -110,7 +112,7 @@ export default function ContactSupport() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -149,8 +151,8 @@ export default function ContactSupport() {
               sm:flex-wrap
             "
           >
-            <Link
-              href="/support-path"
+            <a
+              href="#contact-support"
               className="
                 inline-flex
                 min-h-11
@@ -173,7 +175,7 @@ export default function ContactSupport() {
               "
             >
               Find the right support path
-            </Link>
+            </a>
 
             <Link
               href="/help-center"

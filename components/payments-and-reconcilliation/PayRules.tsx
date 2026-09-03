@@ -13,7 +13,7 @@ const rules = [
     description: (
       <>
         The source event and its
-        <br className="hidden xl:block" /> own state are kept
+        <br className="hidden xl:block" /> own state are kept 
         <br className="hidden xl:block" /> exactly as received.
       </>
     ),

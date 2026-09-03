@@ -97,7 +97,7 @@ export default function SaasHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[650px]
               text-[15px]
@@ -138,7 +138,7 @@ export default function SaasHero() {
             "
           >
             <Link
-              href="/signup"
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -163,7 +163,7 @@ export default function SaasHero() {
             </Link>
 
             <Link
-              href="/pricing"
+              href="/pricing-and-plans"
               className="
                 inline-flex
                 min-h-11

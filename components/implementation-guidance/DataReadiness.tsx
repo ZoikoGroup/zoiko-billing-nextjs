@@ -52,7 +52,9 @@ export default function DataReadiness() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id = "implementation-readiness"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

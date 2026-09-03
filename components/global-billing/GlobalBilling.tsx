@@ -117,7 +117,7 @@ export default function GlobalBilling() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[690px]
               text-[15px]

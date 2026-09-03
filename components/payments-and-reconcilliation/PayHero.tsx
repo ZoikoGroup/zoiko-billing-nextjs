@@ -96,7 +96,7 @@ export default function PayHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[600px]
               text-[15px]
@@ -161,7 +161,7 @@ export default function PayHero() {
             </Link>
 
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

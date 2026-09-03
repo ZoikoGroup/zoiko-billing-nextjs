@@ -15,7 +15,9 @@ const leftFaqs: FAQ[] = [
         No. Support never needs a credential to diagnose an integration, and
         never asks for one. Detected secrets are blocked before submission and
         are not echoed back or logged.{" "}
-        <span className="font-semibold text-blue-600">See the intake</span>
+        <span className="font-semibold text-[#7890b2]">
+          See the intake
+        </span>
       </>
     ),
   },
@@ -110,21 +112,53 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-color-grey-95-10 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex min-h-20 w-full items-center justify-between gap-4 px-5 py-4 text-left"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-4
+          text-left
+        "
       >
-        <span className="text-sm font-semibold leading-6 text-color-azure-11-2">
+        <span
+          className="
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+          "
+        >
           {faq.question}
         </span>
 
         <span
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-color-grey-97-4 text-sm font-semibold leading-5 text-color-azure-44-3 transition-transform duration-200 ${
-            isOpen ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-5
+            text-[#5d7192]
+            transition-transform
+            duration-200
+
+            ${isOpen ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
@@ -132,7 +166,14 @@ function FAQItem({
 
       {isOpen && (
         <div className="px-5 pb-5">
-          <div className="text-sm font-normal leading-5 text-color-azure-44-3">
+          <div
+            className="
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {faq.answer}
           </div>
         </div>
@@ -145,7 +186,18 @@ function FAQColumn({ faqs }: { faqs: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex-1 overflow-hidden rounded-2xl bg-color-white-solid shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4">
+    <div
+      className="
+        min-w-0
+        flex-1
+        overflow-hidden
+        rounded-2xl
+        border
+        border-[#dfe5ee]
+        bg-white
+        shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+      "
+    >
       {faqs.map((faq, index) => (
         <FAQItem
           key={faq.question}
@@ -162,43 +214,138 @@ function FAQColumn({ faqs }: { faqs: FAQ[] }) {
 
 export default function IntegrationSupportFAQ() {
   return (
-    <section className="w-full bg-color-grey-97-4 px-6 py-16 sm:px-8 lg:px-24 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-11 px-0 sm:px-4 lg:px-7">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2">
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center">
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="mx-2 whitespace-nowrap text-center text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Integration Support FAQ
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Title */}
-          <div className="w-full">
-            <h2 className="text-center font-['Plus_Jakarta_Sans'] text-3xl font-extrabold leading-10 text-color-azure-11-2 sm:text-4xl">
-              Direct answers before you open a
-              <br className="hidden sm:block" />
-              case.
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[1000px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Integration Support FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Direct answers before you open a case.
             </h2>
-          </div>
 
-          {/* Description */}
-          <div className="w-full max-w-[687px] pt-[3px]">
-            <p className="text-center font-['Inter'] text-sm font-normal leading-6 text-color-azure-44-3 sm:text-base sm:leading-7">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               No response time, priority model or channel commitment appears
               here — Support Policy owns those.
             </p>
           </div>
-        </div>
 
-        {/* FAQ */}
-        <div className="flex w-full flex-col items-stretch gap-5 lg:flex-row">
-          <FAQColumn faqs={leftFaqs} />
-          <FAQColumn faqs={rightFaqs} />
+          {/* FAQ COLUMNS */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-5
+
+              lg:flex-row
+            "
+          >
+            {/* LEFT COLUMN */}
+            <FAQColumn faqs={leftFaqs} />
+
+            {/* RIGHT COLUMN */}
+            <FAQColumn faqs={rightFaqs} />
+          </div>
         </div>
       </div>
     </section>

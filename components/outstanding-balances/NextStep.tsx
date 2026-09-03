@@ -212,7 +212,7 @@ function AgingBar({ values }: { values: number[] }) {
         w-28
         overflow-hidden
         rounded-full
-        bg-slate-100
+        bg-[#edf0f4]
       "
     >
       {values.map((value, index) => (
@@ -234,9 +234,10 @@ function StatusBadge({ status }: { status: Account["status"] }) {
         whitespace-nowrap
         rounded-full
         px-2.5
-        py-0.5
+        py-1
         text-xs
         font-semibold
+        leading-4
         ${statusStyles[status]}
       `}
     >
@@ -280,14 +281,17 @@ export default function NextStep() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
+          flex
           w-full
           max-w-[1440px]
+          flex-col
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
           sm:py-16
@@ -300,16 +304,31 @@ export default function NextStep() {
           xl:px-20
         "
       >
-        <div className="mx-auto w-full max-w-[1240px]">
-          {/* SECTION HEADER */}
-          <div className="mb-8">
-            <div className="mb-5 flex items-center gap-3 sm:mb-6">
-              <span className="h-px w-6 shrink-0 bg-blue-600 opacity-70" />
+        <div
+          className="
+            mx-auto
+            w-full
+            max-w-[1240px]
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              items-start
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
                   text-[10px]
-                  font-semibold
+                  font-bold
                   uppercase
                   leading-4
                   tracking-[0.16em]
@@ -321,30 +340,38 @@ export default function NextStep() {
               >
                 Account detail
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
+            {/* HEADING */}
             <h2
               className="
                 !m-0
-                !text-[32px]
+                mt-3
+                w-full
+                max-w-[900px]
+                !text-[30px]
                 !font-extrabold
-                !leading-[1.1]
-                !tracking-[-0.03em]
-                !text-slate-900
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:!text-[40px]
+                sm:!text-[34px]
 
-                md:!text-[46px]
+                md:!text-[36px]
 
-                lg:!text-[50px]
+                lg:!text-[40px]
               "
             >
               Balances by account.
             </h2>
 
+            {/* DESCRIPTION */}
             <p
               className="
-                mt-5
+                !m-0
+                mt-3
                 w-full
                 max-w-[605px]
                 text-[15px]
@@ -352,7 +379,7 @@ export default function NextStep() {
                 leading-7
                 text-[#5d7192]
 
-                sm:mt-6
+                sm:mt-4
                 sm:text-base
               "
             >
@@ -362,7 +389,7 @@ export default function NextStep() {
           </div>
 
           {/* FILTERS */}
-          <div className="mb-6 flex flex-col gap-4">
+          <div className="mt-8 flex flex-col gap-4">
             {/* FILTER PILLS */}
             <div
               className="
@@ -373,7 +400,7 @@ export default function NextStep() {
                 gap-1
                 rounded-2xl
                 border
-                border-slate-200
+                border-[#dfe5ee]
                 bg-white
                 p-1
 
@@ -400,7 +427,7 @@ export default function NextStep() {
                       ${
                         active
                           ? "bg-[#18233b] text-white"
-                          : "text-[#53657b] hover:bg-slate-50"
+                          : "text-[#53657b] hover:bg-[#f7f8fa]"
                       }
                     `}
                   >
@@ -412,7 +439,7 @@ export default function NextStep() {
                         ${
                           active
                             ? "text-white/60"
-                            : "text-[#7c8da0]"
+                            : "text-[#7890b2]"
                         }
                       `}
                     >
@@ -447,16 +474,17 @@ export default function NextStep() {
                     w-full
                     rounded-full
                     border
-                    border-slate-200
+                    border-[#dfe5ee]
                     bg-white
                     px-4
                     pl-10
                     text-sm
-                    text-[#18233b]
+                    font-normal
+                    text-[#091127]
                     outline-none
-                    placeholder:text-[#8492a3]
+                    placeholder:text-[#8a98aa]
                     transition
-                    focus:border-blue-400
+                    focus:border-[#7890b2]
                     focus:ring-2
                     focus:ring-blue-100
                   "
@@ -470,7 +498,7 @@ export default function NextStep() {
                     h-4
                     w-4
                     -translate-y-1/2
-                    text-slate-400
+                    text-[#7890b2]
                   "
                   viewBox="0 0 24 24"
                   fill="none"
@@ -501,17 +529,18 @@ export default function NextStep() {
                     h-11
                     rounded-full
                     border
-                    border-slate-200
+                    border-[#dfe5ee]
                     bg-white
                     px-4
                     text-sm
-                    text-[#18233b]
+                    font-normal
+                    text-[#091127]
                     transition
-                    hover:bg-slate-50
+                    hover:bg-[#fafbfc]
                   "
                 >
                   All currencies
-                  <span className="ml-3 text-slate-400">⌄</span>
+                  <span className="ml-3 text-[#7890b2]">⌄</span>
                 </button>
 
                 <button
@@ -520,17 +549,18 @@ export default function NextStep() {
                     h-11
                     rounded-full
                     border
-                    border-slate-200
+                    border-[#dfe5ee]
                     bg-white
                     px-4
                     text-sm
-                    text-[#18233b]
+                    font-normal
+                    text-[#091127]
                     transition
-                    hover:bg-slate-50
+                    hover:bg-[#fafbfc]
                   "
                 >
                   All owners
-                  <span className="ml-3 text-slate-400">⌄</span>
+                  <span className="ml-3 text-[#7890b2]">⌄</span>
                 </button>
 
                 <button
@@ -540,14 +570,14 @@ export default function NextStep() {
                     h-11
                     rounded-full
                     border
-                    border-slate-200
+                    border-[#dfe5ee]
                     bg-white
                     px-4
                     text-xs
                     font-semibold
-                    text-[#18233b]
+                    text-[#091127]
                     transition
-                    hover:bg-slate-50
+                    hover:bg-[#fafbfc]
                   "
                 >
                   Clear filters
@@ -556,16 +586,17 @@ export default function NextStep() {
             </div>
           </div>
 
-          {/* DESKTOP / TABLET TABLE */}
+          {/* DESKTOP TABLE */}
           <div
             className="
+              mt-6
               hidden
               overflow-hidden
               rounded-2xl
               border
-              border-slate-200
+              border-[#dfe5ee]
               bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05)]
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
               md:block
             "
@@ -574,8 +605,8 @@ export default function NextStep() {
               <table className="w-full min-w-[1020px] border-collapse">
                 <thead>
                   <tr className="bg-[#fafbfc]">
-                    <th className="w-14 border-b border-slate-200 px-5 py-4">
-                      <div className="h-4 w-4 rounded-sm border border-slate-400 bg-white" />
+                    <th className="w-14 border-b border-[#dfe5ee] px-5 py-3.5">
+                      <div className="h-4 w-4 rounded-sm border border-[#7890b2] bg-white" />
                     </th>
 
                     {[
@@ -592,15 +623,16 @@ export default function NextStep() {
                         key={`${heading}-${index}`}
                         className={`
                           border-b
-                          border-slate-200
+                          border-[#dfe5ee]
                           px-4
-                          py-4
+                          py-3.5
                           text-left
-                          text-[11px]
+                          text-xs
                           font-bold
                           uppercase
+                          leading-4
                           tracking-wide
-                          text-[#708096]
+                          text-[#7890b2]
 
                           ${
                             heading === "Outstanding"
@@ -619,15 +651,15 @@ export default function NextStep() {
                   {filteredAccounts.map((account, index) => (
                     <tr
                       key={account.id}
-                      className="transition hover:bg-slate-50"
+                      className="transition hover:bg-[#fafbfc]"
                     >
-                      {/* Checkbox */}
-                      <td className="border-b border-slate-100 px-5 py-5">
-                        <div className="h-4 w-4 rounded-sm border border-slate-400 bg-white" />
+                      {/* CHECKBOX */}
+                      <td className="border-b border-[#edf0f4] px-5 py-4">
+                        <div className="h-4 w-4 rounded-sm border border-[#7890b2] bg-white" />
                       </td>
 
-                      {/* Account */}
-                      <td className="border-b border-slate-100 px-4 py-3.5">
+                      {/* ACCOUNT */}
+                      <td className="border-b border-[#edf0f4] px-4 py-3.5">
                         <div className="flex items-center gap-3">
                           <div
                             className={`
@@ -647,73 +679,97 @@ export default function NextStep() {
                           </div>
 
                           <div className="min-w-0">
-                            <div className="text-sm font-semibold leading-6 text-[#18233b]">
+                            <div
+                              className="
+                                text-sm
+                                font-semibold
+                                leading-6
+                                text-[#091127]
+                              "
+                            >
                               {account.name}
                             </div>
 
-                            <div className="text-xs leading-5 text-[#728298]">
+                            <div
+                              className="
+                                text-xs
+                                font-normal
+                                leading-5
+                                text-[#5d7192]
+                              "
+                            >
                               {account.id} · {account.currency}
                             </div>
                           </div>
                         </div>
                       </td>
 
-                      {/* Open invoices */}
-                      <td className="border-b border-slate-100 px-4 py-5 text-sm text-[#18233b]">
+                      {/* OPEN INVOICES */}
+                      <td
+                        className="
+                          border-b
+                          border-[#edf0f4]
+                          px-4
+                          py-4
+                          text-sm
+                          font-normal
+                          text-[#091127]
+                        "
+                      >
                         {account.invoices}
                       </td>
 
-                      {/* Oldest due */}
-                      <td className="border-b border-slate-100 px-4 py-5">
-                        <div className="text-sm leading-6 text-[#18233b]">
+                      {/* OLDEST DUE */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4">
+                        <div className="text-sm leading-6 text-[#091127]">
                           {account.due}
                         </div>
 
-                        <div className="text-xs leading-5 text-[#728298]">
+                        <div className="text-xs leading-5 text-[#5d7192]">
                           {account.days}
                         </div>
                       </td>
 
-                      {/* Aging */}
-                      <td className="border-b border-slate-100 px-4 py-5">
+                      {/* AGING */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4">
                         <AgingBar values={account.aging} />
                       </td>
 
-                      {/* Outstanding */}
-                      <td className="border-b border-slate-100 px-4 py-5 text-right">
-                        <span className="text-sm font-semibold text-[#18233b]">
+                      {/* OUTSTANDING */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4 text-right">
+                        <span className="text-sm font-semibold text-[#091127]">
                           {account.amount}
                         </span>
                       </td>
 
-                      {/* Status */}
-                      <td className="border-b border-slate-100 px-4 py-5">
+                      {/* STATUS */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4">
                         <StatusBadge status={account.status} />
                       </td>
 
-                      {/* Owner */}
-                      <td className="border-b border-slate-100 px-4 py-5">
-                        <span className="whitespace-nowrap text-sm text-[#18233b]">
+                      {/* OWNER */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4">
+                        <span className="whitespace-nowrap text-sm text-[#091127]">
                           {account.owner}
                         </span>
                       </td>
 
-                      {/* Action */}
-                      <td className="border-b border-slate-100 px-4 py-5">
+                      {/* ACTION */}
+                      <td className="border-b border-[#edf0f4] px-4 py-4">
                         <button
                           type="button"
                           className="
                             h-8
                             rounded-lg
                             border
-                            border-slate-200
+                            border-[#dfe5ee]
                             bg-white
                             px-2.5
                             text-xs
                             font-semibold
                             text-[#53657b]
                             transition
-                            hover:bg-slate-50
+                            hover:bg-[#fafbfc]
                           "
                         >
                           Open
@@ -729,7 +785,7 @@ export default function NextStep() {
             <div
               className="
                 border-t
-                border-slate-200
+                border-[#dfe5ee]
                 bg-[#fafbfc]
                 px-5
                 py-4
@@ -741,7 +797,8 @@ export default function NextStep() {
                   flex-col
                   gap-2
                   text-xs
-                  text-[#728298]
+                  font-normal
+                  text-[#5d7192]
 
                   sm:flex-row
                   sm:items-center
@@ -755,7 +812,7 @@ export default function NextStep() {
 
                 <span>
                   Total outstanding:{" "}
-                  <strong className="text-[#18233b]">
+                  <strong className="text-[#091127]">
                     £2,486,310
                   </strong>
                 </span>
@@ -764,7 +821,7 @@ export default function NextStep() {
           </div>
 
           {/* MOBILE CARDS */}
-          <div className="space-y-3 md:hidden">
+          <div className="mt-6 space-y-3 md:hidden">
             {filteredAccounts.map((account, index) => (
               <div
                 key={account.id}
@@ -772,13 +829,13 @@ export default function NextStep() {
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-slate-200
+                  border-[#dfe5ee]
                   bg-white
-                  shadow-[0_4px_16px_rgba(15,23,42,0.04)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {/* Card Header */}
-                <div className="flex items-start justify-between gap-3 p-4">
+                {/* CARD HEADER */}
+                <div className="flex items-start justify-between gap-3 p-5">
                   <div className="flex min-w-0 items-center gap-3">
                     <div
                       className={`
@@ -798,11 +855,28 @@ export default function NextStep() {
                     </div>
 
                     <div className="min-w-0">
-                      <h3 className="truncate text-sm font-semibold text-[#18233b]">
+                      <h3
+                        className="
+                          !m-0
+                          truncate
+                          text-sm
+                          font-semibold
+                          leading-6
+                          text-[#091127]
+                        "
+                      >
                         {account.name}
                       </h3>
 
-                      <p className="text-xs text-[#728298]">
+                      <p
+                        className="
+                          !m-0
+                          text-xs
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
                         {account.id} · {account.currency}
                       </p>
                     </div>
@@ -811,67 +885,118 @@ export default function NextStep() {
                   <StatusBadge status={account.status} />
                 </div>
 
-                {/* Card Details */}
-                <div className="grid grid-cols-2 border-t border-slate-100">
-                  <div className="border-r border-slate-100 p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                {/* CARD DETAILS */}
+                <div className="grid grid-cols-2 border-t border-[#edf0f4]">
+                  <div className="border-r border-[#edf0f4] p-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Open invoices
                     </p>
 
-                    <p className="mt-1 text-sm text-[#18233b]">
+                    <p className="!m-0 mt-1 text-sm text-[#091127]">
                       {account.invoices}
                     </p>
                   </div>
 
                   <div className="p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Outstanding
                     </p>
 
-                    <p className="mt-1 text-sm font-semibold text-[#18233b]">
+                    <p className="!m-0 mt-1 text-sm font-semibold text-[#091127]">
                       {account.amount}
                     </p>
                   </div>
 
-                  <div className="border-r border-t border-slate-100 p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                  <div className="border-r border-t border-[#edf0f4] p-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Oldest due
                     </p>
 
-                    <p className="mt-1 text-sm text-[#18233b]">
+                    <p className="!m-0 mt-1 text-sm text-[#091127]">
                       {account.due}
                     </p>
 
-                    <p className="text-xs text-[#728298]">
+                    <p className="!m-0 text-xs text-[#5d7192]">
                       {account.days}
                     </p>
                   </div>
 
-                  <div className="border-t border-slate-100 p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                  <div className="border-t border-[#edf0f4] p-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Owner
                     </p>
 
-                    <p className="mt-1 text-sm text-[#18233b]">
+                    <p className="!m-0 mt-1 text-sm text-[#091127]">
                       {account.owner}
                     </p>
                   </div>
                 </div>
 
-                {/* Card Footer */}
+                {/* CARD FOOTER */}
                 <div
                   className="
                     flex
                     items-center
                     justify-between
                     border-t
-                    border-slate-100
+                    border-[#edf0f4]
                     px-4
-                    py-3
+                    py-3.5
                   "
                 >
                   <div>
-                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-[#8190a3]">
+                    <p
+                      className="
+                        !m-0
+                        mb-1
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Aging
                     </p>
 
@@ -884,14 +1009,14 @@ export default function NextStep() {
                       h-8
                       rounded-lg
                       border
-                      border-slate-200
+                      border-[#dfe5ee]
                       bg-white
                       px-3
                       text-xs
                       font-semibold
                       text-[#53657b]
                       transition
-                      hover:bg-slate-50
+                      hover:bg-[#fafbfc]
                     "
                   >
                     Open
@@ -906,12 +1031,13 @@ export default function NextStep() {
                 className="
                   rounded-2xl
                   border
-                  border-slate-200
+                  border-[#dfe5ee]
                   bg-white
                   p-8
                   text-center
                   text-sm
-                  text-[#728298]
+                  font-normal
+                  text-[#5d7192]
                 "
               >
                 No accounts found.

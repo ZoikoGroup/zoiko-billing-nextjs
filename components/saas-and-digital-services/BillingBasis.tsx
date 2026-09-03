@@ -55,80 +55,231 @@ const billingBases = [
 
 export default function BillingBasis() {
   return (
-    <section className="w-full bg-gray-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 px-0 sm:px-4 lg:px-7">
-        {/* Heading */}
-        <div className="flex w-full max-w-[950px] flex-col items-center gap-5">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-blue-600/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[11px] font-bold uppercase leading-4 tracking-[0.18em] text-blue-600 sm:text-xs">
-              Choose the billing basis
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 bg-blue-600/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[950px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Choose the billing basis
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Start from what you already bill.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Seven bases with equal weight. Two of them depend entirely on
+              an approved upstream source — and the page says so on the card
+              rather than in a footnote.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.14]">
-            Start from what you already bill.
-          </h2>
+          {/* BILLING CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
 
-          {/* Description */}
-          <p className="mx-auto w-full max-w-[687px] text-center text-sm font-normal leading-6 text-slate-500 sm:text-base sm:leading-7">
-            Seven bases with equal weight. Two of them depend entirely on an
-            approved upstream source — and the page says so on the card rather
-            than in a footnote.
-          </p>
-        </div>
+              sm:grid-cols-2
 
-        {/* Billing Cards */}
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {billingBases.map((item, index) => (
-            <div
-              key={item.title}
-              className={`flex min-h-[190px] flex-col rounded-2xl bg-white p-5 ${
-                index === 0
-                  ? "border border-blue-600 shadow-[0px_0px_0px_3px_rgba(31,111,235,0.12)]"
-                  : "border border-gray-200 shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)]"
-              }`}
-            >
-              {/* Card Title */}
-              <h3 className="text-sm font-bold leading-6 text-slate-900 sm:text-base">
-                {item.title}
-              </h3>
-
-              {/* Card Description */}
-              <p className="mt-2 flex-1 text-xs font-normal leading-5 text-slate-500">
-                {item.description}
-              </p>
-
-              {/* Status */}
+              lg:grid-cols-4
+            "
+          >
+            {billingBases.map((item, index) => (
               <div
-                className={`mt-4 w-fit rounded-md border px-2.5 py-1 text-[11px] font-semibold leading-4 ${
-                  item.type === "supported"
-                    ? "border-green-200 bg-green-50 text-green-700"
-                    : item.type === "source"
-                      ? "border-gray-200 bg-gray-50 text-slate-600"
-                      : "border-blue-200 bg-blue-50 text-blue-600"
-                }`}
-              >
-                {item.status}
-              </div>
-            </div>
-          ))}
-        </div>
+                key={item.title}
+                className={`
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  rounded-2xl
+                  bg-white
+                  p-5
 
-        {/* Section Image */}
-        <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-          <Image
-            src="/images/saas-and-digital-services/billing-basis.png"
-            alt="Billing basis"
-            width={1184}
-            height={592}
-            className="h-auto w-full object-cover"
-          />
+                  ${
+                    index === 0
+                      ? "border border-[#1f6feb] shadow-[0_0_0_3px_rgba(31,111,235,0.12)]"
+                      : "border border-[#dfe5ee] shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]"
+                  }
+                `}
+              >
+                {/* CARD TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    text-sm
+                    font-bold
+                    leading-6
+                    text-[#091127]
+
+                    sm:text-base
+                  "
+                >
+                  {item.title}
+                </h3>
+
+                {/* CARD DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    flex-1
+                    text-xs
+                    font-normal
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+
+                {/* STATUS */}
+                <div
+                  className={`
+                    mt-4
+                    w-fit
+                    rounded-md
+                    border
+                    px-2.5
+                    py-1
+                    text-[11px]
+                    font-semibold
+                    leading-4
+
+                    ${
+                      item.type === "supported"
+                        ? "border-[#bbebd0] bg-[#f0fdf4] text-[#15803d]"
+                        : item.type === "source"
+                          ? "border-[#dfe5ee] bg-[#f7f8fa] text-[#5d7192]"
+                          : "border-[#bfdbfe] bg-[#eff6ff] text-[#2563eb]"
+                    }
+                  `}
+                >
+                  {item.status}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* SECTION IMAGE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <Image
+              src="/images/saas-and-digital-services/billing-basis.png"
+              alt="Billing basis"
+              width={1184}
+              height={592}
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

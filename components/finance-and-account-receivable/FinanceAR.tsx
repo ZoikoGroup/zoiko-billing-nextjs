@@ -26,7 +26,7 @@ export default function FinanceAR() {
         "
       >
         <div
-          className="
+          className=" 
             relative
             flex
             w-full
@@ -144,7 +144,7 @@ export default function FinanceAR() {
               "
             >
               <Link
-                href="#"
+                href="pricing-and-plans"
                 className="
                   inline-flex
                   min-h-11
@@ -170,7 +170,7 @@ export default function FinanceAR() {
               </Link>
 
               <Link
-                href="#"
+                href="create-account"
                 className="
                   inline-flex
                   min-h-11
