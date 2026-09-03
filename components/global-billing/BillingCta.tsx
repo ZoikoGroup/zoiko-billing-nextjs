@@ -105,7 +105,7 @@ export default function BillingCta() {
             "
           >
             <Link
-              href="/global-billing"
+              href="#"
               style={{
                 height: "44px",
                 minHeight: "44px",
@@ -129,7 +129,7 @@ export default function BillingCta() {
             </Link>
 
             <Link
-              href="/pricing"
+              href="/pricing-and-plans"
               style={{
                 height: "44px",
                 minHeight: "44px",

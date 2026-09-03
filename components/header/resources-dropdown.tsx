@@ -31,20 +31,20 @@ const LEARN_ITEMS: MenuItem[] = [
   { title: 'Billing Guides',  href: '/billing-guides', icon: FileText },
   { title: 'Templates',  href: '/templates', icon: LayoutGrid },
   { title: 'Billing Glossary',  href: '/billing-glossary', icon: Type },
-  { title: 'Reports & Insights',  href: '#', icon: BarChart3 },
+  { title: 'Reports & Insights',  href: '/reports-and-insights', icon: BarChart3 },
 ];
 
 const EVALUATE_ITEMS: MenuItem[] = [
-  { title: 'Customer Stories', href: '#', icon: Users },
+  { title: 'Customer Stories', href: '/customer-stories', icon: Users },
   { title: 'Product Tour', href: '#', icon: PlaySquare },
   { title: 'Demo Library',  href: '#', icon: Video },
-  { title: 'Webinars & Events',  href: '#', icon: Calendar },
+  { title: 'Webinars & Events',  href: '/webinar-and-events', icon: Calendar },
   { title: 'Security Overview',  href: '/security-overview', icon: ShieldCheck },
 ];
 
 const HELP_ITEMS: MenuItem[] = [
   { title: 'Help Centre',  href: '/help-center', icon: HelpCircle },
-  { title: 'Documentation', href: '/docs', icon: BookOpen },
+  { title: 'Documentation', href: '/documentation', icon: BookOpen },
   { title: 'Release Notes',  href: '/releases', icon: Bell },
   { title: 'System Status',  href: '/system-status', icon: Activity },
   { title: 'Contact Support',  href: '/contact-support', icon: Headphones },
@@ -78,7 +78,7 @@ export default function ResourcesDropdown() {
           </p>
           <div>
              <Link
-          href="/resources/invoice-to-payment-guide"
+          href="/resources/billing-guides"
           className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >
@@ -92,7 +92,7 @@ export default function ResourcesDropdown() {
 
       <div className="border-t border-slate-100 px-5 py-3 sm:px-6 dark:border-gray-800">
         <Link
-          href="/resources"
+          href="/resource-center"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >

@@ -55,7 +55,7 @@ const rows = [
 
 export default function MultiEntityOperatingModel() {
   return (
-    <section className="w-full overflow-hidden bg-[#f7f8fa]">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -63,61 +63,61 @@ export default function MultiEntityOperatingModel() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
-          sm:py-14
+          sm:py-16
 
           md:px-10
-          md:py-16
+          md:py-20
 
           lg:px-14
-          lg:py-20
 
-          xl:px-24
+          xl:px-20
         "
       >
         <div
           className="
+            mx-auto
             flex
             w-full
             max-w-[1240px]
             flex-col
             items-center
-            gap-9
+            gap-8
 
             sm:gap-10
 
-            lg:gap-11
+            md:gap-11
           "
         >
-          {/* HEADING CONTENT */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
-              max-w-[1000px]
+              max-w-[662px]
               flex-col
               items-center
               gap-3
-              pt-1
+              pt-2
+              text-center
             "
           >
             {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-4 bg-blue-600 opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
-                  text-center
                   text-[10px]
                   font-bold
                   uppercase
                   leading-4
                   tracking-[0.16em]
-                  text-blue-600
+                  text-[#7890b2]
 
                   sm:text-xs
                   sm:tracking-[0.18em]
@@ -126,27 +126,26 @@ export default function MultiEntityOperatingModel() {
                 Multi-entity operating model
               </span>
 
-              <span className="h-px w-4 bg-blue-600 opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* TITLE */}
+            {/* HEADING */}
             <h2
               className="
                 !m-0
                 w-full
-                text-center
-                text-[30px]
-                font-extrabold
-                leading-[1.12]
-                tracking-[-0.035em]
-                text-slate-900
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-[34px]
+                sm:!text-[34px]
 
-                md:text-[38px]
+                md:!text-[36px]
 
-                lg:text-4xl
-                lg:leading-10
+                lg:!text-[40px]
               "
             >
               Shared control, not shared authority.
@@ -158,16 +157,12 @@ export default function MultiEntityOperatingModel() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-center
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
+                leading-7
                 text-[#5d7192]
 
-                sm:text-[15px]
-                sm:leading-7
-
-                md:text-base
+                sm:text-base
               "
             >
               A central control plane can summarize state across entities,
@@ -183,12 +178,12 @@ export default function MultiEntityOperatingModel() {
               overflow-hidden
               rounded-2xl
               border
-              border-[#e1e5eb]
+              border-[#dfe5ee]
               bg-white
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            {/* ================= DESKTOP ================= */}
+            {/* DESKTOP TABLE */}
             <div className="hidden md:block">
               {/* TABLE HEADER */}
               <div
@@ -196,11 +191,11 @@ export default function MultiEntityOperatingModel() {
                   grid
                   grid-cols-[240px_minmax(0,464px)_minmax(0,1fr)]
                   border-b
-                  border-[#e1e5eb]
-                  bg-[#fbfbfc]
+                  border-[#dfe5ee]
+                  bg-[#fafbfc]
                 "
               >
-                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                <div className="border-r border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -208,14 +203,14 @@ export default function MultiEntityOperatingModel() {
                       uppercase
                       leading-4
                       tracking-[0.08em]
-                      text-blue-600
+                      text-[#7890b2]
                     "
                   >
                     Layer
                   </span>
                 </div>
 
-                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                <div className="border-r border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -223,7 +218,7 @@ export default function MultiEntityOperatingModel() {
                       uppercase
                       leading-4
                       tracking-[0.08em]
-                      text-blue-600
+                      text-[#7890b2]
                     "
                   >
                     Question
@@ -238,7 +233,7 @@ export default function MultiEntityOperatingModel() {
                       uppercase
                       leading-4
                       tracking-[0.08em]
-                      text-blue-600
+                      text-[#7890b2]
                     "
                   >
                     Required representation
@@ -246,7 +241,7 @@ export default function MultiEntityOperatingModel() {
                 </div>
               </div>
 
-              {/* TABLE BODY */}
+              {/* TABLE ROWS */}
               {rows.map((row, index) => (
                 <div
                   key={row.layer}
@@ -255,7 +250,7 @@ export default function MultiEntityOperatingModel() {
                     grid-cols-[240px_minmax(0,464px)_minmax(0,1fr)]
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#edf0f3]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
@@ -264,7 +259,7 @@ export default function MultiEntityOperatingModel() {
                   <div
                     className="
                       border-r
-                      border-[#edf0f3]
+                      border-[#edf0f4]
                       px-4
                       py-3.5
                     "
@@ -275,7 +270,7 @@ export default function MultiEntityOperatingModel() {
                         text-sm
                         font-semibold
                         leading-5
-                        text-slate-900
+                        text-[#091127]
                       "
                     >
                       {row.layer}
@@ -286,7 +281,7 @@ export default function MultiEntityOperatingModel() {
                   <div
                     className="
                       border-r
-                      border-[#edf0f3]
+                      border-[#edf0f4]
                       px-4
                       py-3.5
                     "
@@ -322,13 +317,13 @@ export default function MultiEntityOperatingModel() {
               ))}
             </div>
 
-            {/* ================= MOBILE ================= */}
+            {/* MOBILE */}
             <div className="md:hidden">
               <div
                 className="
                   border-b
-                  border-[#e1e5eb]
-                  bg-[#fbfbfc]
+                  border-[#dfe5ee]
+                  bg-[#fafbfc]
                   px-4
                   py-3
 
@@ -342,7 +337,7 @@ export default function MultiEntityOperatingModel() {
                     uppercase
                     leading-4
                     tracking-[0.1em]
-                    text-blue-600
+                    text-[#7890b2]
 
                     sm:text-xs
                   "
@@ -366,7 +361,7 @@ export default function MultiEntityOperatingModel() {
 
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#edf0f3]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
@@ -379,7 +374,7 @@ export default function MultiEntityOperatingModel() {
                         text-sm
                         font-semibold
                         leading-5
-                        text-slate-900
+                        text-[#091127]
 
                         sm:text-base
                       "
@@ -397,7 +392,7 @@ export default function MultiEntityOperatingModel() {
                         uppercase
                         leading-4
                         tracking-[0.08em]
-                        text-blue-600
+                        text-[#7890b2]
                       "
                     >
                       Question
@@ -425,7 +420,7 @@ export default function MultiEntityOperatingModel() {
                         uppercase
                         leading-4
                         tracking-[0.08em]
-                        text-blue-600
+                        text-[#7890b2]
                       "
                     >
                       Required representation

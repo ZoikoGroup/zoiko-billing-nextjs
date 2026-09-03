@@ -32,7 +32,7 @@ const ABOUT_ITEMS: MenuItem[] = [
 ];
 
 const WORK_ITEMS: MenuItem[] = [
-  { title: 'Partners',  href: '/partners', icon: Handshake },
+  { title: 'Partners',  href: '#', icon: Handshake },
   { title: 'Partner Programme', href: '/partner-programme', icon: Users },
   { title: 'Careers', href: '/careers', icon: Briefcase },
   { title: 'Become a Partner',  href: '/become-a-partner', icon: Send },

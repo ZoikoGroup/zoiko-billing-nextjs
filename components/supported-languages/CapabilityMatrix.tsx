@@ -19,8 +19,7 @@ const surfaces = [
   {
     surface: "Authenticated product & admin UI",
     shown: "Internal billing administration interface state.",
-    boundary:
-      "Admin UI support does not imply customer-facing support",
+    boundary: "Admin UI support does not imply customer-facing support",
   },
   {
     surface: "Help & documentation",
@@ -52,141 +51,245 @@ const surfaces = [
 
 export default function CapabilityMatrix() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 sm:gap-10 lg:gap-11">
-        {/* Heading */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-[#3B82F6] sm:text-xs sm:tracking-[0.16em]">
-              Language-by-surface capability matrix
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-[#3B82F6]/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Language-by-surface capability matrix
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Eight surface classes, each with its own boundary.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Only surfaces with an approved registry definition appear.
+              Empty cells are never filled with checkmarks, dashes or inferred
+              parity to make the matrix look complete.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-3xl font-extrabold leading-9 text-[#172033] sm:text-4xl sm:leading-10">
-            <span className="block">
-              Eight surface classes, each with its
-            </span>
-            <span className="block">own boundary.</span>
-          </h2>
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Surface class
+                  </span>
+                </div>
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-[#5B6577] sm:text-base sm:leading-7">
-            Only surfaces with an approved registry definition appear. Empty
-            cells are never filled with checkmarks, dashes or inferred parity
-            to make the matrix look complete.
-          </p>
-        </div>
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    What can be shown when authoritative
+                  </span>
+                </div>
 
-        {/* Desktop Table */}
-        <div className="hidden w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] ring-1 ring-[#E5E7EB] md:block">
-          <div className="grid grid-cols-[224px_minmax(0,1fr)_minmax(0,1fr)]">
-            {/* Header */}
-            <div className="border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-3">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                Surface class
-              </span>
-            </div>
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Critical boundary
+                  </span>
+                </div>
+              </div>
 
-            <div className="border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-3">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                What can be shown when authoritative
-              </span>
-            </div>
-
-            <div className="border-b border-[#E5E7EB] bg-[#FAFAFA] px-4 py-3">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                Critical boundary
-              </span>
-            </div>
-
-            {/* Rows */}
-            {surfaces.map((item, index) => {
-              const isLast = index === surfaces.length - 1;
-
-              return (
-                <div key={item.surface} className="contents">
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-[#F0F1F3]" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-semibold leading-5 text-[#172033]">
+              {/* ROWS */}
+              {surfaces.map((item, index) => (
+                <div
+                  key={item.surface}
+                  className={`
+                    grid
+                    grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)]
+                    ${
+                      index !== surfaces.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* SURFACE */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
                       {item.surface}
                     </span>
                   </div>
 
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-[#F0F1F3]" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-normal leading-5 text-[#5B6577]">
+                  {/* SHOWN */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
                       {item.shown}
                     </span>
                   </div>
 
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-[#F0F1F3]" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-normal leading-5 text-[#5B6577]">
+                  {/* BOUNDARY */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
                       {item.boundary}
                     </span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="flex w-full flex-col gap-4 md:hidden">
-          {surfaces.map((item) => (
-            <div
-              key={item.surface}
-              className="w-full rounded-2xl bg-white p-5 shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] ring-1 ring-[#E5E7EB]"
-            >
-              {/* Surface */}
-              <div>
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                  Surface class
-                </p>
-
-                <h3 className="mt-1 text-sm font-semibold leading-5 text-[#172033]">
-                  {item.surface}
-                </h3>
-              </div>
-
-              {/* What can be shown */}
-              <div className="mt-5 border-t border-[#F0F1F3] pt-4">
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                  What can be shown when authoritative
-                </p>
-
-                <p className="mt-1.5 text-sm font-normal leading-5 text-[#5B6577]">
-                  {item.shown}
-                </p>
-              </div>
-
-              {/* Critical boundary */}
-              <div className="mt-5 border-t border-[#F0F1F3] pt-4">
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
-                  Critical boundary
-                </p>
-
-                <p className="mt-1.5 text-sm font-normal leading-5 text-[#5B6577]">
-                  {item.boundary}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {surfaces.map((item, index) => (
+                <div
+                  key={item.surface}
+                  className={`
+                    p-5
+                    ${
+                      index !== surfaces.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* SURFACE */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Surface class
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                      {item.surface}
+                    </p>
+                  </div>
+
+                  {/* SHOWN */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      What can be shown when authoritative
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {item.shown}
+                    </p>
+                  </div>
+
+                  {/* BOUNDARY */}
+                  <div>
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Critical boundary
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {item.boundary}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

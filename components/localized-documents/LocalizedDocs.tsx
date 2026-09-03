@@ -121,7 +121,7 @@ export default function LocalizedDocs() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]

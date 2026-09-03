@@ -32,7 +32,7 @@ const HANDOFFS: Handoff[] = [
     body: (
       <>
         <Link
-          href="#"
+          href="/business-continuity"
           className="font-semibold !text-[#1F6FEB] hover:underline"
         >
           Business Continuity
@@ -48,7 +48,7 @@ const HANDOFFS: Handoff[] = [
     body: (
       <>
         <Link
-          href="#"
+          href="/accessibility"
           className="font-semibold !text-[#1F6FEB] hover:underline"
         >
           Accessibility

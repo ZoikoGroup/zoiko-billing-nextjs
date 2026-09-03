@@ -48,84 +48,294 @@ const implementationAreas = [
 
 export default function Implementation() {
   return (
-    <section className="w-full bg-color-grey-97-4 px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20 xl:px-24">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 lg:gap-11">
-        {/* Header */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2">
-          {/* Eyebrow */}
-          <div className="flex w-full max-w-[420px] items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="whitespace-nowrap text-center text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Implementation, security, privacy &amp; resilience
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* ================= SECTION INTRO ================= */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Implementation, security, privacy &amp; resilience
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Validate availability before committing scope.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A global rollout resolves each capability against the current
+              registry first, then configures with source ownership and
+              effective dates.
+            </p>
           </div>
 
-          {/* Title */}
-          <h2 className="text-center text-3xl font-extrabold leading-9 text-color-azure-11-2 sm:text-4xl sm:leading-10">
-            Validate availability before
-            <br className="hidden sm:block" />
-            committing scope.
-          </h2>
-
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-color-azure-44-3 sm:text-base sm:leading-7">
-            A global rollout resolves each capability against the current
-            registry first, then configures with source ownership and
-            effective dates.
-          </p>
-        </div>
-
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-2xl border border-color-grey-92-4 bg-color-white-solid shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[850px]">
-              {/* Header */}
-              <div className="grid grid-cols-[176px_minmax(674px,1fr)] bg-color-grey-99-2">
-                <div className="border-b border-color-grey-92-4 px-4 py-3">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+          {/* ================= TABLE ================= */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[176px_minmax(0,1fr)]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Area
                   </span>
                 </div>
 
-                <div className="border-b border-color-grey-92-4 px-4 py-3">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Requirement
                   </span>
                 </div>
               </div>
 
-              {/* Rows */}
-              {implementationAreas.map((item, index) => {
-                const isLast = index === implementationAreas.length - 1;
-
-                return (
-                  <div
-                    key={item.area}
-                    className={`grid grid-cols-[176px_minmax(674px,1fr)] ${
-                      !isLast
-                        ? "border-b border-color-grey-95-10"
+              {/* ROWS */}
+              {implementationAreas.map((item, index) => (
+                <div
+                  key={item.area}
+                  className={`
+                    grid
+                    grid-cols-[176px_minmax(0,1fr)]
+                    ${
+                      index !== implementationAreas.length - 1
+                        ? "border-b border-[#edf0f4]"
                         : ""
-                    }`}
-                  >
-                    {/* Area */}
-                    <div className="px-4 py-3.5">
-                      <span className="text-sm font-semibold leading-5 text-color-azure-11-2">
-                        {item.area}
-                      </span>
-                    </div>
-
-                    {/* Requirement */}
-                    <div className="px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-color-azure-44-3">
-                        {item.requirement}
-                      </span>
-                    </div>
+                    }
+                  `}
+                >
+                  {/* AREA */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.area}
+                    </span>
                   </div>
-                );
-              })}
+
+                  {/* REQUIREMENT */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.requirement}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {implementationAreas.map((item, index) => (
+                <div
+                  key={item.area}
+                  className={`
+                    p-5
+                    ${
+                      index !== implementationAreas.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* AREA */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Area
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.area}
+                    </p>
+                  </div>
+
+                  {/* REQUIREMENT */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Requirement
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.requirement}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

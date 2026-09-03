@@ -48,7 +48,7 @@ export default function IssuerIdentity() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -56,19 +56,19 @@ export default function IssuerIdentity() {
           w-full
           max-w-[1440px]
           flex-col
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
-          sm:py-14
+          sm:py-16
 
           md:px-10
-          md:py-16
+          md:py-20
 
           lg:px-14
-          lg:py-20
 
-          xl:px-24
+          xl:px-20
         "
       >
         <div
@@ -78,9 +78,11 @@ export default function IssuerIdentity() {
             w-full
             max-w-[1184px]
             flex-col
-            gap-10
+            gap-8
 
-            md:gap-12
+            sm:gap-10
+
+            md:gap-11
 
             lg:flex-row
             lg:items-center
@@ -96,21 +98,13 @@ export default function IssuerIdentity() {
               flex-1
               flex-col
               items-start
-              gap-3.5
+              gap-3
               pt-2
             "
           >
             {/* EYEBROW */}
             <div className="flex items-center gap-3">
-              <span
-                className="
-                  h-px
-                  w-6
-                  shrink-0
-                  bg-blue-600
-                  opacity-75
-                "
-              />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
@@ -119,7 +113,7 @@ export default function IssuerIdentity() {
                   uppercase
                   leading-4
                   tracking-[0.16em]
-                  text-blue-600
+                  text-[#7890b2]
 
                   sm:text-xs
                   sm:tracking-[0.18em]
@@ -127,6 +121,8 @@ export default function IssuerIdentity() {
               >
                 Issuer identity, documents, numbering &amp; locale
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
@@ -134,26 +130,21 @@ export default function IssuerIdentity() {
               className="
                 !m-0
                 w-full
-                max-w-[1000px]
-                text-[30px]
-                font-extrabold
-                leading-[1.12]
-                tracking-[-0.035em]
-                text-slate-900
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-[34px]
+                sm:!text-[34px]
 
-                md:text-[38px]
+                md:!text-[36px]
 
-                lg:text-3xl
-                lg:leading-9
-
-                xl:text-[36px]
+                lg:!text-[40px]
               "
             >
-              Renaming an entity cannot rewrite a
-              <br className="hidden sm:block" />
-              document it already issued.
+              Renaming an entity cannot rewrite a document it already issued.
             </h2>
 
             {/* DESCRIPTION */}
@@ -162,15 +153,12 @@ export default function IssuerIdentity() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
+                leading-7
                 text-[#5d7192]
 
-                sm:text-[15px]
-                sm:leading-7
-
-                md:text-base
+                sm:text-base
               "
             >
               Changing an entity name, address, template, series, currency
@@ -214,7 +202,9 @@ export default function IssuerIdentity() {
                       text-[#5d7192]
                     "
                   >
-                    <span className="font-bold">{item.title}</span>{" "}
+                    <span className="font-bold text-[#091127]">
+                      {item.title}
+                    </span>{" "}
                     —{" "}
                     {item.link ? (
                       <>
@@ -245,7 +235,7 @@ export default function IssuerIdentity() {
               overflow-hidden
               rounded-2xl
               border
-              border-[#e1e5eb]
+              border-[#dfe5ee]
               bg-white
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 

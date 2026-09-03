@@ -25,7 +25,7 @@ const LEFT: FAQ[] = [
         Not automatically. Assurance evidence carries its own scope, status and
         date, and a certification held elsewhere in the group does not extend to
         this product by default.{" "}
-        <Link href="#" className={linkClass}>
+        <Link href="/trust-center" className={linkClass}>
           Trust Center
         </Link>{" "}
         is where that scope is stated.

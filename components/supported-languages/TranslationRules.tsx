@@ -44,90 +44,219 @@ const rows = [
 
 export default function TranslationRules() {
   return (
-    <section className="w-full bg-[#F7F7F6] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-10 lg:gap-11">
-        {/* Heading */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full max-w-[471px] items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#5B6577]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[10px] font-bold uppercase leading-4 tracking-[0.14em] text-[#5B6577] sm:text-xs sm:tracking-[0.16em]">
-              Translation source, review &amp; provider boundaries
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-[#5B6577]/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Translation source, review &amp; provider boundaries
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              No quality theatre.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Source, reviewer and currentness are shown. A star rating,
+              accuracy percentage or confidence meter is not evidence and does
+              not appear.
+            </p>
           </div>
 
-          {/* Title */}
-          <h2 className="w-full text-3xl font-extrabold leading-10 text-[#172033] sm:text-4xl">
-            No quality theatre.
-          </h2>
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[288px_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Content or source
+                  </span>
+                </div>
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-sm font-normal leading-6 text-[#5B6577] sm:text-base sm:leading-7">
-            Source, reviewer and currentness are shown. A star rating,
-            accuracy percentage or confidence meter is not evidence and does
-            not appear.
-          </p>
-        </div>
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Required treatment
+                  </span>
+                </div>
+              </div>
 
-        {/* Desktop Table */}
-        <div className="hidden w-full overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] md:block">
-          <div className="grid grid-cols-[288px_minmax(0,1fr)] bg-[#FCFCFC]">
-            <div className="border-b border-[#E5E7EB] px-4 py-3.5 text-xs font-bold uppercase leading-4 tracking-wide text-[#5B6577]">
-              Content or source
+              {/* ROWS */}
+              {rows.map((row, index) => (
+                <div
+                  key={row.source}
+                  className={`
+                    grid
+                    grid-cols-[288px_minmax(0,1fr)]
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
+                      {row.source}
+                    </span>
+                  </div>
+
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {row.treatment}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="border-b border-[#E5E7EB] px-4 py-3.5 text-xs font-bold uppercase leading-4 tracking-wide text-[#5B6577]">
-              Required treatment
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {rows.map((row, index) => (
+                <div
+                  key={row.source}
+                  className={`
+                    p-5
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* CONTENT OR SOURCE */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Content or source
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                      {row.source}
+                    </p>
+                  </div>
+
+                  {/* REQUIRED TREATMENT */}
+                  <div>
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Required treatment
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {row.treatment}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {rows.map((row, index) => (
-            <div
-              key={row.source}
-              className={`grid grid-cols-[288px_minmax(0,1fr)] ${
-                index !== rows.length - 1 ? "border-b border-[#E8EAEE]" : ""
-              }`}
-            >
-              <div className="px-4 py-3.5 text-sm font-semibold leading-5 text-[#172033]">
-                {row.source}
-              </div>
-
-              <div className="px-4 py-3.5 text-sm font-normal leading-5 text-[#5B6577]">
-                {row.treatment}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="flex w-full flex-col gap-3 md:hidden">
-          {rows.map((row) => (
-            <div
-              key={row.source}
-              className="w-full rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0px_2px_8px_rgba(15,23,42,0.04)]"
-            >
-              <div className="mb-2 text-[11px] font-bold uppercase leading-4 tracking-wide text-[#5B6577]">
-                Content or source
-              </div>
-
-              <div className="text-sm font-semibold leading-5 text-[#172033]">
-                {row.source}
-              </div>
-
-              <div className="my-3 h-px w-full bg-[#E8EAEE]" />
-
-              <div className="mb-2 text-[11px] font-bold uppercase leading-4 tracking-wide text-[#5B6577]">
-                Required treatment
-              </div>
-
-              <div className="text-sm font-normal leading-6 text-[#5B6577]">
-                {row.treatment}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

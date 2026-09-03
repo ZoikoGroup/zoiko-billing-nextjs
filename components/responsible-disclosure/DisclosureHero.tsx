@@ -222,7 +222,7 @@ export default function DisclosureHero() {
               Not a security issue? Product, account, billing, integration and
               access problems go to{" "}
               <Link
-                href="#"
+                href="/help-center"
                 className="font-semibold !text-[#1F6FEB] hover:underline"
               >
                 Help Center

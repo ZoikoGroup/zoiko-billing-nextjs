@@ -53,77 +53,217 @@ const dimensions = [
 
 export default function SupportMatrix() {
   return (
-    <section className="w-full bg-[#F7F7F6] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 sm:gap-10 lg:gap-11">
-        {/* Heading */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 text-center">
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center gap-3">
-            <span className="h-px w-4 bg-[#3B82F6]/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="whitespace-nowrap text-[11px] font-bold uppercase leading-4 tracking-[0.16em] text-[#3B82F6] sm:text-xs">
-              Support is surface-specific
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 bg-[#3B82F6]/40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Support is surface-specific
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              There is no universal &quot;supported&quot; flag.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A language cannot carry one boolean. Support resolves for a
+              defined surface and context across ten dimensions.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-[28px] font-extrabold leading-9 text-[#172033] sm:text-[32px] sm:leading-10 lg:text-4xl">
-            There is no universal &quot;supported&quot; flag.
-          </h2>
-
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-[#5B6577] sm:text-base sm:leading-7">
-            A language cannot carry one boolean. Support resolves for a defined
-            surface and context across ten dimensions.
-          </p>
-        </div>
-
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)] ring-1 ring-[#E5E7EB]">
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[900px]">
-              {/* Header */}
-              <div className="grid grid-cols-[320px_minmax(0,1fr)] border-b border-[#E5E7EB] bg-[#FAFAFA] sm:grid-cols-[360px_minmax(0,1fr)]">
-                <div className="px-4 py-3">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[320px_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
                     Dimension
                   </span>
                 </div>
 
-                <div className="px-4 py-3">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#3B82F6]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
                     Required meaning
                   </span>
                 </div>
               </div>
 
-              {/* Rows */}
-              <div>
-                {dimensions.map((item, index) => (
-                  <div
-                    key={item.name}
-                    className={`grid grid-cols-[320px_minmax(0,1fr)] sm:grid-cols-[360px_minmax(0,1fr)] ${
+              {/* ROWS */}
+              {dimensions.map((item, index) => (
+                <div
+                  key={item.name}
+                  className={`
+                    grid
+                    grid-cols-[320px_minmax(0,1fr)]
+                    ${
                       index !== dimensions.length - 1
-                        ? "border-b border-[#F0F1F3]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
-                    }`}
-                  >
-                    <div className="px-4 py-3.5">
-                      <span className="text-sm font-semibold leading-5 text-[#172033]">
-                        {item.name}
-                      </span>
-                    </div>
-
-                    <div className="px-4 py-3.5">
-                      <span className="text-sm font-normal leading-5 text-[#5B6577]">
-                        {item.meaning}
-                      </span>
-                    </div>
+                    }
+                  `}
+                >
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
+                      {item.name}
+                    </span>
                   </div>
-                ))}
-              </div>
+
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {item.meaning}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {dimensions.map((item, index) => (
+                <div
+                  key={item.name}
+                  className={`
+                    p-5
+                    ${
+                      index !== dimensions.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* DIMENSION */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Dimension
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                      {item.name}
+                    </p>
+                  </div>
+
+                  {/* REQUIRED MEANING */}
+                  <div>
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Required meaning
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {item.meaning}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -40,109 +40,294 @@ const layers = [
 
 export default function EligibilityGates() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-7 sm:gap-11">
-        {/* Heading */}
-        <div className="flex w-full max-w-[900px] flex-col items-center gap-3 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[9px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
-              Entity, customer &amp; commercial eligibility
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-[28px] font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl sm:leading-[1.08] lg:text-[40px]">
-            <span className="block">Availability is necessary, not</span>
-            <span className="block">sufficient.</span>
-          </h2>
+          lg:px-14
 
-          {/* Description */}
-          <p className="w-full max-w-[720px] text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-            An Available jurisdiction does not mean every organization can
-            immediately issue, collect, settle, integrate or use every
-            feature. Six further gates remain.
-          </p>
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] sm:rounded-2xl">
-          {/* Desktop */}
-          <div className="hidden md:block">
-            {/* Header */}
-            <div className="grid grid-cols-[256px_minmax(0,1fr)] border-b border-gray-200 bg-gray-50">
-              <div className="px-4 py-3.5">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                  Layer
-                </span>
-              </div>
+            sm:gap-10
 
-              <div className="px-4 py-3.5">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                  Availability vs eligibility
-                </span>
-              </div>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Entity, customer &amp; commercial eligibility
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Rows */}
-            {layers.map((item, index) => (
-              <div
-                key={item.layer}
-                className={`grid grid-cols-[256px_minmax(0,1fr)] ${
-                  index !== layers.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                }`}
-              >
-                <div className="px-4 py-4">
-                  <p className="text-sm font-semibold leading-5 text-slate-900">
-                    {item.layer}
-                  </p>
-                </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                <div className="px-4 py-4">
-                  <p className="text-sm leading-6 text-slate-600">
-                    {item.detail}
-                  </p>
-                </div>
-              </div>
-            ))}
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Availability is necessary, not sufficient.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              An Available jurisdiction does not mean every organization can
+              immediately issue, collect, settle, integrate or use every
+              feature. Six further gates remain.
+            </p>
           </div>
 
-          {/* Mobile */}
-          <div className="md:hidden">
-            {layers.map((item, index) => (
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
               <div
-                key={item.layer}
-                className={`px-4 py-5 sm:px-5 ${
-                  index !== layers.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                }`}
+                className="
+                  grid
+                  grid-cols-[176px_minmax(0,1fr)]
+                  bg-[#fafbfc]
+                "
               >
-                {/* Layer */}
-                <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
-                  Layer
-                </p>
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Layer
+                  </span>
+                </div>
 
-                <p className="mt-1 text-sm font-semibold leading-6 text-slate-900">
-                  {item.layer}
-                </p>
-
-                {/* Detail */}
-                <p className="mt-3 text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
-                  Availability vs eligibility
-                </p>
-
-                <p className="mt-1 text-sm leading-6 text-slate-600">
-                  {item.detail}
-                </p>
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Availability vs eligibility
+                  </span>
+                </div>
               </div>
-            ))}
+
+              {/* ROWS */}
+              {layers.map((item, index) => (
+                <div
+                  key={item.layer}
+                  className={`
+                    grid
+                    grid-cols-[176px_minmax(0,1fr)]
+                    ${
+                      index !== layers.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* LAYER */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.layer}
+                    </span>
+                  </div>
+
+                  {/* DETAIL */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.detail}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {layers.map((item, index) => (
+                <div
+                  key={item.layer}
+                  className={`
+                    p-5
+                    ${
+                      index !== layers.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* LAYER */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Layer
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.layer}
+                    </p>
+                  </div>
+
+                  {/* DETAIL */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Availability vs eligibility
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
