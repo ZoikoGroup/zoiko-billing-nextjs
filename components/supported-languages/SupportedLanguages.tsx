@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function SupportedLanguages() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id = "languages"
+     className="w-full overflow-hidden bg-white">
       <div
         className="
           mx-auto flex w-full max-w-[1440px] flex-col
@@ -26,7 +28,7 @@ export default function SupportedLanguages() {
                 sm:text-xs sm:tracking-[0.18em]
               "
             >
-              Supported Languages
+              Supported Languages 
             </span>
           </div>
 

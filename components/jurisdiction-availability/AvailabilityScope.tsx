@@ -1,178 +1,397 @@
-"use client";
-
-const dimensions = [
-  {
-    dimension: "Jurisdiction",
-    why: "Where the status applies.",
-    authority: "Jurisdiction registry",
-  },
-  {
-    dimension: "Capability / operation",
-    why: "Invoice creation, document localization, provider integration, payment operation and more.",
-    authority: "Owning product or integration registry",
-  },
-  {
-    dimension: "Entity context",
-    why: "Which configured billing entity may use the capability.",
-    authority: "Multi-Entity Billing",
-  },
-  {
-    dimension: "Currency context",
-    why: "Which currency and operation is supported.",
-    authority: "Multi-Currency Billing",
-  },
-  {
-    dimension: "Provider dependency",
-    why: "Which payment, tax, banking or integration provider is required.",
-    authority: "Provider and integration registry",
-  },
-  {
-    dimension: "Plan / commercial state",
-    why: "Whether the current commercial package can use it.",
-    authority: "Pricing and commercial configuration",
-  },
-  {
-    dimension: "Environment",
-    why: "Production, test or sandbox where relevant.",
-    authority: "Owning capability registry",
-  },
-  {
-    dimension: "Language / document surface",
-    why: "Localized document or language support.",
-    authority: "Localized Documents · Supported Languages",
-  },
-  {
-    dimension: "Effective period",
-    why: "When the status is current.",
-    authority: "Availability record",
-  },
-];
-
 export default function AvailabilityScope() {
+  const dimensions = [
+    {
+      dimension: "Jurisdiction",
+      why: "Where the status applies.",
+      authority: "Jurisdiction registry",
+    },
+    {
+      dimension: "Capability / operation",
+      why: "Invoice creation, document localization, provider integration, payment operation and more.",
+      authority: "Owning product or integration registry",
+    },
+    {
+      dimension: "Entity context",
+      why: "Which configured billing entity may use the capability.",
+      authority: "Multi-Entity Billing",
+    },
+    {
+      dimension: "Currency context",
+      why: "Which currency and operation is supported.",
+      authority: "Multi-Currency Billing",
+    },
+    {
+      dimension: "Provider dependency",
+      why: "Which payment, tax, banking or integration provider is required.",
+      authority: "Provider and integration registry",
+    },
+    {
+      dimension: "Plan / commercial state",
+      why: "Whether the current commercial package can use it.",
+      authority: "Pricing and commercial configuration",
+    },
+    {
+      dimension: "Environment",
+      why: "Production, test or sandbox where relevant.",
+      authority: "Owning capability registry",
+    },
+    {
+      dimension: "Language / document surface",
+      why: "Localized document or language support.",
+      authority: "Localized Documents · Supported Languages",
+    },
+    {
+      dimension: "Effective period",
+      why: "When the status is current.",
+      authority: "Availability record",
+    },
+  ];
+
   return (
-    <section className="w-full bg-gray-50 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-7 sm:gap-8">
-        {/* Heading */}
-        <div className="flex w-full max-w-[900px] flex-col items-center gap-3 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[9px] font-bold uppercase leading-4 tracking-[0.12em] text-sky-600 sm:text-xs sm:tracking-[0.18em]">
-              Availability means scope
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-[28px] font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl sm:leading-[1.08] lg:text-[40px]">
-            A country is not a checkbox.
-          </h2>
+          lg:px-14
 
-          {/* Description */}
-          <p className="w-full max-w-[720px] text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-            A market can be Available for one capability and Limited or Not
-            available for another. Nine dimensions define what a status
-            actually covers.
-          </p>
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] sm:rounded-2xl">
-          {/* Desktop Header */}
-          <div className="hidden grid-cols-[220px_minmax(0,1fr)_280px] border-b border-gray-200 bg-gray-50 md:grid lg:grid-cols-[240px_minmax(0,1fr)_320px]">
-            <div className="px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                Dimension
-              </span>
-            </div>
+            sm:gap-10
 
-            <div className="px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                Why it matters
-              </span>
-            </div>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <div className="px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                Authoritative relationship
-              </span>
-            </div>
-          </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-          {/* Rows */}
-          <div>
-            {dimensions.map((item, index) => (
-              <div
-                key={item.dimension}
-                className={
-                  index !== dimensions.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                }
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                {/* Desktop */}
-                <div className="hidden md:grid md:grid-cols-[220px_minmax(0,1fr)_280px] lg:grid-cols-[240px_minmax(0,1fr)_320px]">
-                  {/* Dimension */}
-                  <div className="px-4 py-4">
-                    <p className="text-sm font-semibold leading-5 text-slate-900">
-                      {item.dimension}
-                    </p>
-                  </div>
+                Availability means scope
+              </span>
 
-                  {/* Why it matters */}
-                  <div className="px-4 py-4">
-                    <p className="text-sm leading-6 text-slate-600">
-                      {item.why}
-                    </p>
-                  </div>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
 
-                  {/* Authority */}
-                  <div className="px-4 py-4">
-                    <p className="text-sm leading-6 text-slate-600">
-                      {item.authority}
-                    </p>
-                  </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              A country is not a checkbox.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A market can be Available for one capability and Limited or Not
+              available for another. Nine dimensions define what a status
+              actually covers.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[176px_minmax(0,1.05fr)_minmax(0,0.9fr)]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Dimension
+                  </span>
                 </div>
 
-                {/* Mobile */}
-                <div className="flex flex-col gap-4 px-4 py-5 sm:px-5 md:hidden">
-                  {/* Dimension */}
-                  <div>
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Why it matters
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Authoritative relationship
+                  </span>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {dimensions.map((item, index) => (
+                <div
+                  key={item.dimension}
+                  className={`
+                    grid
+                    grid-cols-[176px_minmax(0,1.05fr)_minmax(0,0.9fr)]
+                    ${
+                      index !== dimensions.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* DIMENSION */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.dimension}
+                    </span>
+                  </div>
+
+                  {/* WHY IT MATTERS */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.why}
+                    </span>
+                  </div>
+
+                  {/* AUTHORITY */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.authority}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {dimensions.map((item, index) => (
+                <div
+                  key={item.dimension}
+                  className={`
+                    p-5
+                    ${
+                      index !== dimensions.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* DIMENSION */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
                       Dimension
                     </p>
 
-                    <p className="mt-1 text-sm font-semibold leading-6 text-slate-900">
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
                       {item.dimension}
                     </p>
                   </div>
 
-                  {/* Why it matters */}
-                  <div>
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
+                  {/* WHY IT MATTERS */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
                       Why it matters
                     </p>
 
-                    <p className="mt-1 text-sm leading-6 text-slate-600">
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
                       {item.why}
                     </p>
                   </div>
 
-                  {/* Authority */}
+                  {/* AUTHORITY */}
                   <div>
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
                       Authoritative relationship
                     </p>
 
-                    <p className="mt-1 text-sm leading-6 text-slate-600">
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
                       {item.authority}
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

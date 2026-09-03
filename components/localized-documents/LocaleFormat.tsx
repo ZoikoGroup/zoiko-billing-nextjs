@@ -49,122 +49,420 @@ const localeDimensions = [
 
 export default function LocaleFormat() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1000px] flex-col items-center gap-5">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2">
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-sky-600/40" />
+    <section className="w-full overflow-hidden bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
 
-            <span className="text-center text-xs font-bold uppercase leading-4 tracking-[0.15em] text-sky-600">
-              Locale &amp; regional formatting
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 bg-sky-600/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          <h2 className="text-center text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl sm:leading-10">
-            Formatting changes the display, never
-            the value.
-          </h2>
+          lg:px-14
 
-          <p className="max-w-[687px] text-center text-sm font-normal leading-6 text-slate-600 sm:text-base sm:leading-7">
-            Nine locale dimensions, each with a boundary that keeps the
-            underlying record intact.
-          </p>
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-9
 
-        {/* Desktop Table */}
-        <div className="hidden w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] lg:block">
-          <div className="grid grid-cols-[210px_330px_1fr]">
-            {/* Header */}
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Dimension
+            sm:gap-10
+
+            lg:gap-11
+          "
+        >
+          {/* HEADER */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[1000px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-center
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Locale &amp; regional formatting
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Required control
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[1000px]
+                text-center
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.12]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Boundary
-            </div>
+                sm:!text-[36px]
 
-            {/* Rows */}
-            {localeDimensions.map((item, index) => (
-              <div key={item.dimension} className="contents">
-                <div
-                  className={`px-4 py-3.5 text-sm font-semibold leading-5 text-slate-900 ${
-                    index !== localeDimensions.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.dimension}
-                </div>
+                md:!text-[40px]
 
-                <div
-                  className={`px-4 py-3.5 text-sm leading-5 text-slate-600 ${
-                    index !== localeDimensions.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.control}
-                </div>
-
-                <div
-                  className={`px-4 py-3.5 text-sm leading-5 text-slate-600 ${
-                    index !== localeDimensions.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.boundary}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile / Tablet */}
-        <div className="flex w-full flex-col gap-3 lg:hidden">
-          {localeDimensions.map((item, index) => (
-            <div
-              key={item.dimension}
-              className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+                lg:!text-4xl
+                lg:!leading-10
+              "
             >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-50 text-xs font-bold text-sky-600">
-                  {index + 1}
-                </span>
+              Formatting changes the display, never
+              <br className="hidden sm:block" />
+              the value.
+            </h2>
 
-                <h3 className="text-sm font-semibold leading-5 text-slate-900">
-                  {item.dimension}
-                </h3>
-              </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-center
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
 
-              <div className="space-y-4 pl-10">
-                <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-sky-600">
-                    Required control
-                  </p>
-                  <p className="text-sm leading-5 text-slate-600">
-                    {item.control}
-                  </p>
-                </div>
+                sm:text-[15px]
+                sm:leading-7
 
-                <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-sky-600">
-                    Boundary
-                  </p>
-                  <p className="text-sm leading-5 text-slate-600">
-                    {item.boundary}
-                  </p>
-                </div>
-              </div>
+                md:text-base
+              "
+            >
+              Nine locale dimensions, each with a boundary that keeps the
+              underlying record intact.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#e1e5eb]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* TABLE INTRO */}
+            <div
+              className="
+                border-b
+                border-[#e1e5eb]
+                bg-[#fbfbfc]
+                px-5
+                py-4
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-sm
+                  font-normal
+                  leading-5
+                  text-[#5d7192]
+                "
+              >
+                Locale dimensions, required controls, and their boundaries.
+              </p>
             </div>
-          ))}
+
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[220px_minmax(0,1fr)_minmax(0,1.05fr)]
+                  border-b
+                  border-[#e1e5eb]
+                  bg-[#fbfbfc]
+                "
+              >
+                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Dimension
+                  </span>
+                </div>
+
+                <div className="border-r border-[#e1e5eb] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Required control
+                  </span>
+                </div>
+
+                <div className="px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Boundary
+                  </span>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {localeDimensions.map((item, index) => (
+                <div
+                  key={item.dimension}
+                  className={`
+                    grid
+                    grid-cols-[220px_minmax(0,1fr)_minmax(0,1.05fr)]
+                    ${
+                      index !== localeDimensions.length - 1
+                        ? "border-b border-[#edf0f3]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* DIMENSION */}
+                  <div
+                    className="
+                      border-r
+                      border-[#edf0f3]
+                      px-4
+                      py-3.5
+                    "
+                  >
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.dimension}
+                    </p>
+                  </div>
+
+                  {/* CONTROL */}
+                  <div
+                    className="
+                      border-r
+                      border-[#edf0f3]
+                      px-4
+                      py-3.5
+                    "
+                  >
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.control}
+                    </p>
+                  </div>
+
+                  {/* BOUNDARY */}
+                  <div className="px-4 py-3.5">
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.boundary}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE */}
+            <div className="md:hidden">
+              <div
+                className="
+                  border-b
+                  border-[#e1e5eb]
+                  bg-[#fbfbfc]
+                  px-4
+                  py-3
+
+                  sm:px-5
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.1em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                  "
+                >
+                  Locale dimensions
+                </span>
+              </div>
+
+              {localeDimensions.map((item, index) => (
+                <div
+                  key={item.dimension}
+                  className={`
+                    flex
+                    flex-col
+                    gap-4
+                    px-4
+                    py-5
+
+                    sm:px-5
+                    sm:py-6
+
+                    ${
+                      index !== localeDimensions.length - 1
+                        ? "border-b border-[#edf0f3]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* DIMENSION */}
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+
+                      sm:text-base
+                    "
+                  >
+                    {item.dimension}
+                  </p>
+
+                  {/* REQUIRED CONTROL */}
+                  <div className="flex flex-col gap-1">
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Required control
+                    </span>
+
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.control}
+                    </p>
+                  </div>
+
+                  {/* BOUNDARY */}
+                  <div className="flex flex-col gap-1">
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Boundary
+                    </span>
+
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.boundary}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

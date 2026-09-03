@@ -58,165 +58,369 @@ const highlightedAuthorities = new Set([
 
 export default function CapabilityMatrix() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-7 sm:gap-8">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1100px] flex-col items-center gap-3 text-center">
-          {/* Eyebrow */}
-          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-[9px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
-              Capability availability matrix
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-sky-600/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <h2 className="w-full text-center text-[28px] font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-[36px] sm:leading-[1.08] lg:text-[40px]">
-            <span className="block">
-              Nine capability rows, each with its
-            </span>
-            <span className="block">own authority.</span>
-          </h2>
+          lg:px-14
 
-          {/* Description */}
-          <p className="w-full max-w-[720px] text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-            Each cell carries a text status and its limitations. No checkmark
-            or color alone conveys meaning, and a selected jurisdiction is
-            fully understandable without a map.
-          </p>
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-        {/* Matrix */}
-        <div className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] sm:rounded-2xl">
-          {/* Desktop / Tablet */}
-          <div className="hidden md:block">
-            {/* Header */}
-            <div className="grid grid-cols-[minmax(190px,1.15fr)_minmax(240px,1.6fr)_minmax(190px,1fr)] border-b border-gray-200 bg-gray-50 lg:grid-cols-[minmax(220px,1.2fr)_minmax(280px,1.7fr)_minmax(220px,1fr)]">
-              <div className="px-4 py-3.5">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                  Capability
-                </span>
-              </div>
+            sm:gap-10
 
-              <div className="px-4 py-3.5">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                  Scoped by
-                </span>
-              </div>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-              <div className="px-4 py-3.5">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                  Detail authority
-                </span>
-              </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Capability availability matrix
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Rows */}
-            {capabilities.map((item, index) => {
-              const isHighlighted = highlightedAuthorities.has(
-                item.authority
-              );
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-              return (
-                <div
-                  key={item.capability}
-                  className={`grid grid-cols-[minmax(190px,1.15fr)_minmax(240px,1.6fr)_minmax(190px,1fr)] lg:grid-cols-[minmax(220px,1.2fr)_minmax(280px,1.7fr)_minmax(220px,1fr)] ${
-                    index !== capabilities.length - 1
-                      ? "border-b border-gray-200"
-                      : ""
-                  }`}
-                >
-                  {/* Capability */}
-                  <div className="px-4 py-4">
-                    <p className="text-sm font-semibold leading-5 text-slate-900">
-                      {item.capability}
-                    </p>
-                  </div>
+                sm:!text-[34px]
 
-                  {/* Scoped by */}
-                  <div className="px-4 py-4">
-                    <p className="text-sm leading-6 text-slate-600">
-                      {item.scopedBy}
-                    </p>
-                  </div>
+                md:!text-[36px]
 
-                  {/* Authority */}
-                  <div className="px-4 py-4">
-                    <p
-                      className={`text-sm leading-6 ${
-                        isHighlighted
-                          ? "font-semibold text-sky-600"
-                          : "text-slate-600"
-                      }`}
-                    >
-                      {item.authority}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+                lg:!text-[40px]
+              "
+            >
+              Nine capability rows, each with its own authority.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Each cell carries a text status and its limitations. No
+              checkmark or color alone conveys meaning, and a selected
+              jurisdiction is fully understandable without a map.
+            </p>
           </div>
 
-          {/* Mobile */}
-          <div className="md:hidden">
-            {capabilities.map((item, index) => {
-              const isHighlighted = highlightedAuthorities.has(
-                item.authority
-              );
-
-              return (
-                <div
-                  key={item.capability}
-                  className={`px-4 py-5 sm:px-5 ${
-                    index !== capabilities.length - 1
-                      ? "border-b border-gray-200"
-                      : ""
-                  }`}
-                >
-                  {/* Capability */}
-                  <div>
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
-                      Capability
-                    </p>
-
-                    <p className="mt-1 text-sm font-semibold leading-6 text-slate-900">
-                      {item.capability}
-                    </p>
-                  </div>
-
-                  {/* Scoped by */}
-                  <div className="mt-4">
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
-                      Scoped by
-                    </p>
-
-                    <p className="mt-1 text-sm leading-6 text-slate-600">
-                      {item.scopedBy}
-                    </p>
-                  </div>
-
-                  {/* Authority */}
-                  <div className="mt-4">
-                    <p className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-slate-400">
-                      Detail authority
-                    </p>
-
-                    <p
-                      className={`mt-1 text-sm leading-6 ${
-                        isHighlighted
-                          ? "font-semibold text-sky-600"
-                          : "text-slate-600"
-                      }`}
-                    >
-                      {item.authority}
-                    </p>
-                  </div>
+          {/* MATRIX */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Capability
+                  </span>
                 </div>
-              );
-            })}
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Scoped by
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Detail authority
+                  </span>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {capabilities.map((item, index) => {
+                const isHighlighted = highlightedAuthorities.has(
+                  item.authority
+                );
+
+                return (
+                  <div
+                    key={item.capability}
+                    className={`
+                      grid
+                      grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)]
+                      ${
+                        index !== capabilities.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    {/* CAPABILITY */}
+                    <div className="px-4 py-3.5">
+                      <span
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
+                        {item.capability}
+                      </span>
+                    </div>
+
+                    {/* SCOPED BY */}
+                    <div className="px-4 py-3.5">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.scopedBy}
+                      </span>
+                    </div>
+
+                    {/* AUTHORITY */}
+                    <div className="px-4 py-3.5">
+                      <span
+                        className={`
+                          text-sm
+                          leading-5
+                          ${
+                            isHighlighted
+                              ? "font-semibold text-sky-600"
+                              : "font-normal text-[#5d7192]"
+                          }
+                        `}
+                      >
+                        {item.authority}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {capabilities.map((item, index) => {
+                const isHighlighted = highlightedAuthorities.has(
+                  item.authority
+                );
+
+                return (
+                  <div
+                    key={item.capability}
+                    className={`
+                      p-5
+                      ${
+                        index !== capabilities.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    {/* CAPABILITY */}
+                    <div className="mb-4">
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        Capability
+                      </p>
+
+                      <p
+                        className="
+                          !m-0
+                          mt-1.5
+                          text-sm
+                          font-semibold
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
+                        {item.capability}
+                      </p>
+                    </div>
+
+                    {/* SCOPED BY */}
+                    <div className="mb-4">
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        Scoped by
+                      </p>
+
+                      <p
+                        className="
+                          !m-0
+                          mt-1.5
+                          text-sm
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.scopedBy}
+                      </p>
+                    </div>
+
+                    {/* AUTHORITY */}
+                    <div>
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        Detail authority
+                      </p>
+
+                      <p
+                        className={`
+                          !m-0
+                          mt-1.5
+                          text-sm
+                          leading-6
+                          ${
+                            isHighlighted
+                              ? "font-semibold text-sky-600"
+                              : "font-normal text-[#5d7192]"
+                          }
+                        `}
+                      >
+                        {item.authority}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

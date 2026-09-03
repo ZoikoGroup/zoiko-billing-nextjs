@@ -50,95 +50,273 @@ const evidenceRows = [
 
 export default function AuditEvidence() {
   return (
-    <section className="w-full bg-gray-50 px-4 py-14 dark:bg-slate-950 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-5">
-        {/* Heading */}
-        <div className="flex w-full max-w-[900px] flex-col items-center gap-3 text-center">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-sky-600/40 dark:bg-sky-400/40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="whitespace-nowrap text-xs font-bold uppercase leading-4 tracking-[0.18em] text-sky-600 dark:text-sky-400">
-              Audit, approvals, exceptions &amp; conflict evidence
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 bg-sky-600/40 dark:bg-sky-400/40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <h2 className="text-center text-3xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white sm:text-4xl sm:leading-[1.08]">
-            <span className="block whitespace-nowrap">
-              History has to support an
-            </span>
+          lg:px-14
 
-            <span className="block whitespace-nowrap">
-              investigation.
-            </span>
-          </h2>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-          {/* Description */}
-          <p className="max-w-[720px] text-sm leading-6 text-slate-600 dark:text-slate-400 sm:text-base sm:leading-7">
-            Which currency, rate and policy was effective, which source
-            supplied it, what operation consumed it, who approved an
-            exception, and what downstream record resulted.
-          </p>
-        </div>
+            sm:gap-10
 
-        {/* Table */}
-        <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
-          {/* Desktop header */}
-          <div className="hidden grid-cols-[320px_minmax(0,1fr)] border-b border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900/80 md:grid">
-            <div className="px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500 dark:text-slate-400">
-                Event
-              </span>
-            </div>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <div className="px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500 dark:text-slate-400">
-                Evidence required
-              </span>
-            </div>
-          </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-          {/* Rows */}
-          <div>
-            {evidenceRows.map((item, index) => (
-              <div
-                key={item.event}
-                className={
-                  index !== 0
-                    ? "border-t border-gray-200 dark:border-slate-800"
-                    : ""
-                }
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                {/* Desktop */}
-                <div className="hidden md:grid md:grid-cols-[320px_minmax(0,1fr)]">
+                Audit, approvals, exceptions &amp; conflict evidence
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              History has to support an investigation.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Which currency, rate and policy was effective, which source
+              supplied it, what operation consumed it, who approved an
+              exception, and what downstream record resulted.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[320px_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Event
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Evidence required
+                  </span>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {evidenceRows.map((item, index) => (
+                <div
+                  key={item.event}
+                  className={`
+                    grid
+                    grid-cols-[320px_minmax(0,1fr)]
+                    ${
+                      index !== evidenceRows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* EVENT */}
                   <div className="px-4 py-3.5">
-                    <p className="text-sm font-semibold leading-5 text-slate-900 dark:text-white">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
+                      {item.event}
+                    </span>
+                  </div>
+
+                  {/* EVIDENCE */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {item.evidence}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {evidenceRows.map((item, index) => (
+                <div
+                  key={item.event}
+                  className={`
+                    p-5
+                    ${
+                      index !== evidenceRows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* EVENT */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Event
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
                       {item.event}
                     </p>
                   </div>
 
-                  <div className="px-4 py-3.5">
-                    <p className="text-sm leading-5 text-slate-600 dark:text-slate-400">
+                  {/* EVIDENCE */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Evidence required
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
                       {item.evidence}
                     </p>
                   </div>
                 </div>
-
-                {/* Mobile */}
-                <div className="flex flex-col gap-2 px-4 py-4 md:hidden">
-                  <p className="text-sm font-semibold leading-5 text-slate-900 dark:text-white">
-                    {item.event}
-                  </p>
-
-                  <p className="text-sm leading-6 text-slate-600 dark:text-slate-400">
-                    {item.evidence}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

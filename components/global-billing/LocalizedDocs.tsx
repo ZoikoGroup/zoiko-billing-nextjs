@@ -73,26 +73,22 @@ const localizationStates = [
 
 const stateStyles = {
   success: {
-    wrapper:
-      "bg-color-grey-93-8 border-color-spring-green-86-3",
+    wrapper: "bg-color-grey-93-8 border-color-spring-green-86-3",
     dot: "bg-color-spring-green-29",
     text: "text-color-spring-green-29",
   },
   review: {
-    wrapper:
-      "bg-color-grey-95-13 border-color-grey-91-5",
+    wrapper: "bg-color-grey-95-13 border-color-grey-91-5",
     dot: "border-2 border-color-azure-43",
     text: "text-color-azure-43",
   },
   warning: {
-    wrapper:
-      "bg-color-grey-94-7 border-color-orange-86",
+    wrapper: "bg-color-grey-94-7 border-color-orange-86",
     dot: "bg-color-orange-35",
     text: "text-color-orange-35",
   },
   error: {
-    wrapper:
-      "bg-color-grey-95-12 border-color-red-89",
+    wrapper: "bg-color-grey-95-12 border-color-red-89",
     dot: "bg-color-red-46-2",
     text: "text-color-red-46-2",
   },
@@ -100,114 +96,319 @@ const stateStyles = {
 
 export default function LocalizedDocs() {
   return (
-    <section className="w-full bg-color-grey-97-4 px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20 xl:px-24">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 lg:gap-11">
-        {/* Header */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2">
-          {/* Eyebrow */}
-          <div className="flex w-full max-w-[224px] items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="whitespace-nowrap text-center text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Localized documents
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Title */}
-          <h2 className="text-center text-3xl font-extrabold leading-9 text-color-azure-11-2 sm:text-4xl sm:leading-10">
-            Translation is not legal compliance.
-          </h2>
+          lg:px-14
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-center text-sm font-normal leading-6 text-color-azure-44-3 sm:text-base sm:leading-7">
-            A localized invoice can be linguistically correct and still not
-            satisfy a market&apos;s invoicing requirements. Localization state
-            and legal-review state are tracked separately.
-          </p>
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-        {/* Content */}
-        <div className="flex w-full flex-col gap-5 lg:flex-row lg:items-start">
-          {/* Localization Dimensions */}
-          <div className="w-full rounded-2xl border border-color-grey-92-4 bg-color-white-solid px-4 py-5 shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)] sm:px-6 sm:py-6 lg:flex-1">
-            <h3 className="text-lg font-bold leading-7 text-color-azure-11-2">
-              Localization dimensions
-            </h3>
+            sm:gap-10
 
-            <div className="mt-3 overflow-hidden">
-              {localizationDimensions.map((item, index) => (
-                <div
-                  key={item.title}
-                  className={`grid grid-cols-1 sm:grid-cols-[145px_1fr] ${
-                    index !== localizationDimensions.length - 1
-                      ? "border-b border-color-grey-95-10"
-                      : ""
-                  }`}
-                >
-                  <div className="px-3 py-3.5 sm:px-4">
-                    <span className="text-sm font-semibold leading-5 text-color-azure-11-2">
-                      {item.title}
-                    </span>
-                  </div>
+            md:gap-11
+          "
+        >
+          {/* ================= HEADER ================= */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                  <div className="px-3 pb-4 sm:px-4 sm:py-3.5">
-                    <span className="text-sm font-normal leading-5 text-color-azure-44-3">
-                      {item.description}
-                    </span>
-                  </div>
-                </div>
-              ))}
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Localized documents
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Translation is not legal compliance.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A localized invoice can be linguistically correct and still not
+              satisfy a market&apos;s invoicing requirements. Localization state
+              and legal-review state are tracked separately.
+            </p>
           </div>
 
-          {/* Localization States */}
-          <div className="w-full lg:flex-1">
-            <div className="rounded-2xl border border-color-grey-92-4 bg-color-white-solid px-4 py-5 shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)] sm:px-6 sm:py-6">
-              <h3 className="text-lg font-bold leading-7 text-color-azure-11-2">
-                Localization states
+          {/* ================= CONTENT ================= */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-5
+
+              lg:flex-row
+              lg:items-start
+            "
+          >
+            {/* ================= LOCALIZATION DIMENSIONS ================= */}
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-4
+                py-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                sm:px-6
+                sm:py-6
+
+                lg:flex-1
+              "
+            >
+              <h3
+                className="
+                  !m-0
+                  text-lg
+                  font-bold
+                  leading-7
+                  text-[#091127]
+                "
+              >
+                Localization dimensions
               </h3>
 
-              <div className="mt-3">
-                {localizationStates.map((item, index) => {
-                  const styles = stateStyles[item.type as keyof typeof stateStyles];
+              <div className="mt-3 overflow-hidden">
+                {localizationDimensions.map((item, index) => (
+                  <div
+                    key={item.title}
+                    className={`
+                      grid
+                      grid-cols-1
 
-                  return (
-                    <div
-                      key={item.label}
-                      className={`grid grid-cols-1 sm:grid-cols-[192px_1fr] ${
-                        index !== localizationStates.length - 1
-                          ? "border-b border-color-grey-95-10"
+                      sm:grid-cols-[145px_1fr]
+
+                      ${
+                        index !== localizationDimensions.length - 1
+                          ? "border-b border-[#edf0f4]"
                           : ""
-                      }`}
-                    >
-                      {/* State */}
-                      <div className="px-3 py-3.5 sm:px-4">
-                        <div
-                          className={`inline-flex min-h-6 items-center gap-2 rounded-md border px-2.5 py-1 ${styles.wrapper}`}
-                        >
-                          <span
-                            className={`h-1.5 w-1.5 shrink-0 rounded-sm ${styles.dot}`}
-                          />
+                      }
+                    `}
+                  >
+                    {/* TITLE */}
+                    <div className="px-3 py-3.5 sm:px-4">
+                      <span
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
+                        {item.title}
+                      </span>
+                    </div>
 
-                          <span
-                            className={`text-xs font-semibold leading-4 ${styles.text}`}
+                    {/* DESCRIPTION */}
+                    <div className="px-3 pb-4 sm:px-4 sm:py-3.5">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.description}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ================= LOCALIZATION STATES ================= */}
+            <div className="w-full lg:flex-1">
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-4
+                  py-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                  sm:px-6
+                  sm:py-6
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-lg
+                    font-bold
+                    leading-7
+                    text-[#091127]
+                  "
+                >
+                  Localization states
+                </h3>
+
+                <div className="mt-3">
+                  {localizationStates.map((item, index) => {
+                    const styles =
+                      stateStyles[item.type as keyof typeof stateStyles];
+
+                    return (
+                      <div
+                        key={item.label}
+                        className={`
+                          grid
+                          grid-cols-1
+
+                          sm:grid-cols-[192px_1fr]
+
+                          ${
+                            index !== localizationStates.length - 1
+                              ? "border-b border-[#edf0f4]"
+                              : ""
+                          }
+                        `}
+                      >
+                        {/* STATE */}
+                        <div className="px-3 py-3.5 sm:px-4">
+                          <div
+                            className={`
+                              inline-flex
+                              min-h-6
+                              max-w-full
+                              items-center
+                              gap-2
+                              rounded-md
+                              border
+                              px-2.5
+                              py-1
+                              ${styles.wrapper}
+                            `}
                           >
-                            {item.label}
+                            <span
+                              className={`
+                                h-1.5
+                                w-1.5
+                                shrink-0
+                                rounded-sm
+                                ${styles.dot}
+                              `}
+                            />
+
+                            <span
+                              className={`
+                                text-xs
+                                font-semibold
+                                leading-4
+                                ${styles.text}
+                              `}
+                            >
+                              {item.label}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* DESCRIPTION */}
+                        <div className="px-3 pb-4 sm:px-4 sm:py-3.5">
+                          <span
+                            className="
+                              text-sm
+                              font-normal
+                              leading-5
+                              text-[#5d7192]
+                            "
+                          >
+                            {item.description}
                           </span>
                         </div>
                       </div>
-
-                      {/* Description */}
-                      <div className="px-3 pb-4 sm:px-4 sm:py-3.5">
-                        <span className="text-sm font-normal leading-5 text-color-azure-44-3">
-                          {item.description}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

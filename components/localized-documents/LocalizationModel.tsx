@@ -57,116 +57,351 @@ const localizationLayers = [
 
 export default function LocalizationModel() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-10">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-4 text-center">
-          <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-sky-600">
-            <span className="h-px w-4 bg-sky-600/40" />
-            <span>Document localization operating model</span>
-            <span className="h-px w-4 bg-sky-600/40" />
-          </div>
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            Ten layers, resolved from
-            <br className="hidden sm:block" />
-            configuration — never guessed.
-          </h2>
+          sm:px-8
+          sm:py-16
 
-          <p className="max-w-[687px] text-sm font-normal leading-6 text-slate-600 sm:text-base sm:leading-7">
-            Localization must not infer language, legal text, jurisdiction,
-            currency or entity from browser settings, IP address, customer
-            name, email domain or any similar weak signal.
-          </p>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Desktop Table */}
-        <div className="hidden w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:block">
-          <div className="grid grid-cols-[210px_290px_1fr] bg-slate-50">
-            <div className="border-b border-slate-200 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Layer
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Document localization operating model
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <div className="border-b border-slate-200 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Question
-            </div>
-            <div className="border-b border-slate-200 px-4 py-3 text-xs font-bold uppercase tracking-wide text-sky-600">
-              Required representation
-            </div>
 
-            {localizationLayers.map((item, index) => (
-              <div key={item.layer} className="contents">
-                <div
-                  className={`px-4 py-4 text-sm font-semibold leading-5 text-slate-900 ${
-                    index !== localizationLayers.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.layer}
-                </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                <div
-                  className={`px-4 py-4 text-sm leading-5 text-slate-600 ${
-                    index !== localizationLayers.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.question}
-                </div>
+                sm:!text-[34px]
 
-                <div
-                  className={`px-4 py-4 text-sm leading-5 text-slate-600 ${
-                    index !== localizationLayers.length - 1
-                      ? "border-b border-slate-100"
-                      : ""
-                  }`}
-                >
-                  {item.representation}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+                md:!text-[36px]
 
-        {/* Mobile / Tablet Cards */}
-        <div className="flex w-full flex-col gap-3 lg:hidden">
-          {localizationLayers.map((item, index) => (
-            <div
-              key={item.layer}
-              className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+                lg:!text-[40px]
+              "
             >
-              <div className="mb-4 flex items-start gap-3">
-                <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-sky-50 px-2 text-xs font-bold text-sky-600">
-                  {index + 1}
-                </span>
+              Ten layers, resolved from configuration — never guessed.
+            </h2>
 
-                <h3 className="text-sm font-semibold leading-5 text-slate-900">
-                  {item.layer}
-                </h3>
-              </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
 
-              <div className="space-y-4 pl-10">
-                <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-sky-600">
+                sm:text-base
+              "
+            >
+              Localization must not infer language, legal text, jurisdiction,
+              currency or entity from browser settings, IP address, customer
+              name, email domain or any similar weak signal.
+            </p>
+          </div>
+
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Layer
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Question
-                  </p>
-                  <p className="text-sm leading-5 text-slate-600">
-                    {item.question}
-                  </p>
+                  </span>
                 </div>
 
-                <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-sky-600">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Required representation
-                  </p>
-                  <p className="text-sm leading-5 text-slate-600">
-                    {item.representation}
-                  </p>
+                  </span>
                 </div>
               </div>
+
+              {/* ROWS */}
+              {localizationLayers.map((item, index) => (
+                <div
+                  key={item.layer}
+                  className={`
+                    grid
+                    grid-cols-[176px_minmax(0,1.05fr)_minmax(0,1fr)]
+                    ${
+                      index !== localizationLayers.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* LAYER */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.layer}
+                    </span>
+                  </div>
+
+                  {/* QUESTION */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.question}
+                    </span>
+                  </div>
+
+                  {/* REPRESENTATION */}
+                  <div className="px-4 py-3.5">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.representation}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {localizationLayers.map((item, index) => (
+                <div
+                  key={item.layer}
+                  className={`
+                    p-5
+                    ${
+                      index !== localizationLayers.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* LAYER */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Layer
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.layer}
+                    </p>
+                  </div>
+
+                  {/* QUESTION */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Question
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.question}
+                    </p>
+                  </div>
+
+                  {/* REPRESENTATION */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Required representation
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.representation}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

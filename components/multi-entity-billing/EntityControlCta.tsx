@@ -4,68 +4,46 @@ import Link from "next/link";
 export default function EntityControlCta() {
   return (
     <section className="w-full overflow-hidden bg-white">
-      <div
-        className="
-          mx-auto
-          w-full
-          max-w-[1240px]
-          px-5
-          py-10
-
-          sm:px-8
-          sm:py-12
-
-          md:px-10
-          md:py-14
-
-          lg:px-14
-          lg:py-16
-
-          xl:px-7
-        "
-      >
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-12 sm:px-8 md:px-10 lg:px-12">
         <div
           className="
             relative
+            mx-auto
             flex
+            min-h-[384px]
             w-full
+            max-w-[1184px]
             flex-col
             overflow-hidden
             rounded-3xl
-            bg-[#111f38]
-            p-7
+            bg-[#0B1B3C]
+            px-7
+            py-8
 
-            sm:p-9
+            sm:px-10
+            sm:py-10
 
-            md:p-10
-
-            lg:grid
-            lg:min-h-[418px]
-            lg:grid-cols-[1fr_42%]
+            lg:flex-row
             lg:items-center
-            lg:gap-8
-            lg:p-10
-
-            xl:grid-cols-[1fr_43%]
-            xl:gap-10
-            xl:p-12
+            lg:px-8
+            lg:py-10
           "
         >
-          {/* RADIAL GLOW */}
+          {/* Background glow */}
           <div
             className="
               pointer-events-none
               absolute
-              -right-[100px]
+              -right-[110px]
               -top-[110px]
-              h-96
-              w-96
+              h-[380px]
+              w-[380px]
               rounded-full
-              bg-[radial-gradient(circle,rgba(31,111,235,0.55)_0%,rgba(31,111,235,0)_70%)]
+              bg-[radial-gradient(circle,#1F5FBF_0%,rgba(31,95,191,0.35)_40%,transparent_70%)]
             "
           />
 
-          {/* CONTENT */}
+          {/* LEFT CONTENT */}
           <div
             className="
               relative
@@ -74,52 +52,49 @@ export default function EntityControlCta() {
               w-full
               flex-col
               items-start
-              gap-3.5
+              justify-center
 
-              lg:max-w-[610px]
+              lg:w-[53%]
+              lg:pr-6
             "
           >
-            {/* HEADING */}
-            <h2
+            {/* Heading */}
+            <div
               className="
                 !m-0
-                max-w-full
-                text-3xl
+                !p-0
+                text-[32px]
                 font-extrabold
-                leading-[1.12]
-                tracking-[-0.035em]
+                leading-[38px]
+                tracking-[-0.8px]
                 !text-white
 
-                sm:text-[34px]
+                sm:text-[36px]
+                sm:leading-[42px]
 
-                md:text-4xl
-                md:leading-10
-
-                lg:max-w-[600px]
-
-                xl:text-[48px]
-                xl:leading-[1.08]
+                lg:text-[40px]
+                lg:leading-[46px]
               "
             >
               Separate the entities.
               <br />
               Share the control.
-            </h2>
+            </div>
 
-            {/* DESCRIPTION */}
+            {/* Description */}
             <p
               className="
                 !m-0
-                w-full
-                max-w-[520px]
-                text-sm
+                mt-4
+                max-w-[510px]
+                !p-0
+                text-[14px]
                 font-normal
-                leading-6
+                leading-[21px]
                 !text-white/70
 
-                sm:text-base
-
-                lg:max-w-[510px]
+                sm:text-[15px]
+                sm:leading-[22px]
               "
             >
               Keep issuer context, customer ownership, currency scope,
@@ -127,60 +102,50 @@ export default function EntityControlCta() {
               for every entity you operate.
             </p>
 
-            {/* BUTTONS */}
+            {/* Buttons */}
             <div
               className="
+                mt-6
                 flex
-                w-full
-                flex-col
+                flex-wrap
+                items-center
                 gap-3
-                pt-2
-
-                sm:w-auto
-                sm:flex-row
-                sm:flex-wrap
               "
             >
-              {/* PRIMARY CTA */}
+              {/* Primary */}
               <Link
                 href="/entity-level-controls"
                 className="
                   inline-flex
                   min-h-11
-                  w-full
                   items-center
                   justify-center
                   rounded-full
-                  border
-                  border-transparent
                   bg-white
                   px-6
                   text-sm
                   font-semibold
                   leading-6
-                  !text-[#111f38]
+                  !text-[#0B1B3C]
                   no-underline
-                  transition
-                  hover:bg-slate-100
-
-                  sm:w-auto
+                  transition-opacity
+                  hover:opacity-90
                 "
               >
                 Review Entity-Level Controls
               </Link>
 
-              {/* SECONDARY CTA */}
+              {/* Secondary */}
               <Link
-                href="/supported-languages"
+                href="#"
                 className="
                   inline-flex
                   min-h-11
-                  w-full
                   items-center
                   justify-center
                   rounded-full
                   border
-                  border-white/30
+                  border-white/35
                   bg-transparent
                   px-6
                   text-sm
@@ -188,10 +153,8 @@ export default function EntityControlCta() {
                   leading-6
                   !text-white
                   no-underline
-                  transition
+                  transition-colors
                   hover:bg-white/10
-
-                  sm:w-auto
                 "
               >
                 Check availability
@@ -199,42 +162,33 @@ export default function EntityControlCta() {
             </div>
           </div>
 
-          {/* IMAGE */}
+          {/* RIGHT IMAGE */}
           <div
             className="
               relative
               z-10
-              mt-7
+              mt-8
+              flex
               w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-white/15
-              bg-white/5
-              p-3
-
-              sm:mt-8
-              sm:p-4
-
-              md:mt-9
+              items-center
+              justify-center
 
               lg:mt-0
-              lg:w-full
-              lg:self-center
-              lg:p-4
+              lg:w-[47%]
+              lg:justify-end
             "
           >
-            <div className="relative aspect-[478/340] w-full">
+            <div className="relative w-full max-w-[478px] overflow-hidden rounded-2xl">
               <Image
                 src="/images/multi-entity-billing/entity-control.png"
                 alt="Entity-level controls"
-                fill
+                width={478}
+                height={340}
                 sizes="
-                  (max-width: 639px) 100vw,
-                  (max-width: 1023px) 90vw,
+                  (max-width: 1023px) 100vw,
                   478px
                 "
-                className="rounded-xl object-cover"
+                className="block h-auto w-full object-cover"
               />
             </div>
           </div>
