@@ -139,6 +139,9 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     title: 'Partners & Connect',
     links: [
+      { label: 'Partner Program', href: '#' },
+      { label: 'Technology Partners', href: '/technology-partners' },
+      { label: 'Become a Partner', href: '#' },
       { label: 'Partner Program', href: '/partner-programme' },
       { label: 'Technology Partners', href: '#' },
       { label: 'Become a Partner', href: '/become-a-partner' },

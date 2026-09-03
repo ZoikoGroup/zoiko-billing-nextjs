@@ -27,7 +27,7 @@ const SITUATIONS: Situation[] = [
     situation: "Something looks wrong in your account",
     route: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/help-center" className={linkClass}>
           Help Center
         </Link>{" "}
         ·{" "}
@@ -45,7 +45,7 @@ const SITUATIONS: Situation[] = [
   {
     situation: "An integration is failing",
     route: (
-      <Link href="#" className={linkClass}>
+      <Link href="/integration-support" className={linkClass}>
         Integration Support
       </Link>
     ),
