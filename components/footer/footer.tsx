@@ -157,7 +157,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Acceptable Use Policy', href: '#' },
       { label: 'Data Processing Addendum', href: '#' },
       { label: 'Subprocessors', href: '#' },
-      { label: 'Legal Notices', href: '#' },
+      { label: 'Legal Notices', href: '/legal-notices' },
       { label: 'Sitemap', href: '#' },
     ],
   },
