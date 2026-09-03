@@ -44,140 +44,348 @@ const layers = [
 
 export default function OpModel() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 xl:px-16">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-5">
-        {/* Header */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2">
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center gap-3">
-            <span className="h-px w-4 bg-slate-500 opacity-40" />
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-center text-xs font-bold uppercase leading-4 tracking-[0.18em] text-slate-500">
-              Enterprise operating model
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <span className="h-px w-4 bg-slate-500 opacity-40" />
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Heading */}
-          <div className="w-full">
-  <h2 className="w-full text-center text-xl font-extrabold leading-9 tracking-tight text-slate-900 sm:text-4xl sm:leading-10">
-    Eight layers, each answering one
-    <br />
-    question.
-  </h2>
-</div>
+          lg:px-14
 
-          {/* Description */}
-          <div className="w-full max-w-[687px] pt-0.5"> 
-            <p className="text-center text-base font-normal leading-7 text-slate-600"> 
-              Centralized visibility is not centralized permission. The control 
-              plane shows the whole picture without any one person holding 
-              every financial, entity, security and integration right. 
-            </p> 
-          </div> 
-        </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
 
-        {/* Desktop / Tablet Table */}
-        <div className="hidden w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] md:block">
-          <div className="grid grid-cols-[minmax(150px,0.9fr)_minmax(300px,2.7fr)_minmax(220px,1.8fr)]">
-            {/* Header */}
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                Layer
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Enterprise operating model
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                Question it answers
-              </span>
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3.5">
-              <span className="text-xs font-bold uppercase leading-4 tracking-wide text-slate-500">
-                What must be shown
-              </span>
-            </div>
+                sm:!text-[34px]
 
-            {/* Rows */}
-            {layers.map((item, index) => {
-              const isLast = index === layers.length - 1;
+                md:!text-[36px]
 
-              return (
-                <div key={item.layer} className="contents">
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-slate-100" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-semibold leading-5 text-slate-900">
-                      {item.layer}
-                    </span>
-                  </div>
-
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-slate-100" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-normal leading-5 text-slate-600">
-                      {item.question}
-                    </span>
-                  </div>
-
-                  <div
-                    className={`px-4 py-3.5 ${
-                      !isLast ? "border-b border-slate-100" : ""
-                    }`}
-                  >
-                    <span className="text-sm font-normal leading-5 text-slate-600">
-                      {item.shown}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Mobile */}
-        <div className="flex w-full flex-col gap-3 md:hidden">
-          {layers.map((item, index) => (
-            <div
-              key={item.layer}
-              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_16px_rgba(15,23,42,0.04)]"
+                lg:!text-[40px]
+              "
             >
-              {/* Layer */}
-              <div className="border-b border-slate-100 bg-slate-50 px-4 py-3.5">
-                <span className="text-sm font-semibold leading-5 text-slate-900">
-                  {item.layer}
+              Eight layers, each answering one question.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Centralized visibility is not centralized permission. The control
+              plane shows the whole picture without any one person holding
+              every financial, entity, security and integration right.
+            </p>
+          </div>
+
+          {/* DESKTOP TABLE */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              md:block
+            "
+          >
+            <div
+              className="
+                grid
+                grid-cols-[minmax(150px,0.9fr)_minmax(300px,2.7fr)_minmax(220px,1.8fr)]
+              "
+            >
+              {/* HEADER */}
+              <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-4 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-wide
+                    text-[#7890b2]
+                  "
+                >
+                  Layer
                 </span>
               </div>
 
-              {/* Question */}
-              <div className="px-4 py-3.5">
-                <div className="mb-1.5 text-[11px] font-bold uppercase leading-4 tracking-wide text-slate-400">
+              <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-4 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-wide
+                    text-[#7890b2]
+                  "
+                >
                   Question it answers
-                </div>
-
-                <p className="text-sm font-normal leading-6 text-slate-600">
-                  {item.question}
-                </p>
+                </span>
               </div>
 
-              {/* What must be shown */}
-              <div className="border-t border-slate-100 px-4 py-3.5">
-                <div className="mb-1.5 text-[11px] font-bold uppercase leading-4 tracking-wide text-slate-400">
+              <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-4 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-wide
+                    text-[#7890b2]
+                  "
+                >
                   What must be shown
+                </span>
+              </div>
+
+              {/* ROWS */}
+              {layers.map((item, index) => {
+                const isLast = index === layers.length - 1;
+
+                return (
+                  <div key={item.layer} className="contents">
+                    {/* LAYER */}
+                    <div
+                      className={`
+                        px-4
+                        py-3.5
+                        ${!isLast ? "border-b border-[#edf0f4]" : ""}
+                      `}
+                    >
+                      <span
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
+                        {item.layer}
+                      </span>
+                    </div>
+
+                    {/* QUESTION */}
+                    <div
+                      className={`
+                        px-4
+                        py-3.5
+                        ${!isLast ? "border-b border-[#edf0f4]" : ""}
+                      `}
+                    >
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.question}
+                      </span>
+                    </div>
+
+                    {/* SHOWN */}
+                    <div
+                      className={`
+                        px-4
+                        py-3.5
+                        ${!isLast ? "border-b border-[#edf0f4]" : ""}
+                      `}
+                    >
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.shown}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* MOBILE CARDS */}
+          <div className="flex w-full flex-col gap-3 md:hidden">
+            {layers.map((item) => (
+              <div
+                key={item.layer}
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_4px_16px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* LAYER */}
+                <div className="border-b border-[#edf0f4] bg-[#fafbfc] px-4 py-3.5">
+                  <span
+                    className="
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    {item.layer}
+                  </span>
                 </div>
 
-                <p className="text-sm font-normal leading-6 text-slate-600">
-                  {item.shown}
-                </p>
+                {/* QUESTION */}
+                <div className="px-4 py-3.5">
+                  <div
+                    className="
+                      mb-1.5
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Question it answers
+                  </div>
+
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {item.question}
+                  </p>
+                </div>
+
+                {/* WHAT MUST BE SHOWN */}
+                <div className="border-t border-[#edf0f4] px-4 py-3.5">
+                  <div
+                    className="
+                      mb-1.5
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    What must be shown
+                  </div>
+
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {item.shown}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

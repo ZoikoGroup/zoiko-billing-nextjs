@@ -46,23 +46,25 @@ const disputeSteps = [
 
 export default function ReceivablesOperations() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
+          flex
           w-full
           max-w-[1440px]
+          flex-col
+          items-start
           px-5
-          py-10
+          py-14
 
           sm:px-8
-          sm:py-12
+          sm:py-16
 
           md:px-10
-          md:py-16
+          md:py-20
 
           lg:px-14
-          lg:py-20
 
           xl:px-20
         "
@@ -86,88 +88,106 @@ export default function ReceivablesOperations() {
               w-full
               rounded-2xl
               border
-              border-slate-200
-              bg-[#f4f5f7]
-              px-5
-              py-7
-              shadow-[0_8px_24px_rgba(15,23,42,0.05)]
+              border-[#dfe5ee]
+              bg-white
+              p-5
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
-              sm:px-6
-              sm:py-8
+              sm:p-6
+
+              md:p-7
             "
           >
-            {/* Label */}
+            {/* EYEBROW */}
             <div className="mb-3 flex items-center gap-3">
-              <span className="h-px w-5 shrink-0 bg-[#6b7d91] opacity-60" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
                   text-[10px]
-                  font-semibold
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-[0.18em]
-                  text-[#62758b]
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
                   sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
                 Reminder queue
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h3
               className="
                 !m-0
-                text-lg
-                font-bold
-                leading-7
-                text-[#111827]
+                text-[20px]
+                font-extrabold
+                leading-[1.25]
+                tracking-[-0.025em]
+                text-[#091127]
+
+                sm:text-[22px]
+
+                md:text-[24px]
               "
             >
               Scheduled to go out today
             </h3>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
+                !m-0
                 mt-2
+                w-full
                 max-w-[560px]
-                text-sm
+                text-[14px]
                 font-normal
-                leading-5
-                text-[#61738a]
+                leading-6
+                text-[#5d7192]
+
+                sm:text-[15px]
+                sm:leading-7
               "
             >
               Nothing sends without an owner&apos;s approval. Each reminder
               cites the invoice it refers to.
             </p>
 
-            {/* Queue */}
-            <div className="mt-4">
-              {reminderQueue.map((item) => (
+            {/* QUEUE */}
+            <div className="mt-5">
+              {reminderQueue.map((item, index) => (
                 <div
                   key={item.name}
-                  className="
+                  className={`
                     flex
                     items-center
                     justify-between
                     gap-4
-                    border-t
-                    border-slate-200
-                    py-3
-                  "
+                    py-3.5
+
+                    ${
+                      index !== 0
+                        ? "border-t border-[#edf0f4]"
+                        : "border-t border-[#edf0f4]"
+                    }
+                  `}
                 >
-                  {/* Name + Detail */}
+                  {/* NAME + DETAIL */}
                   <div className="min-w-0 flex-1">
                     <p
                       className="
+                        !m-0
                         truncate
                         text-sm
                         font-semibold
                         leading-6
-                        text-[#111827]
+                        text-[#091127]
                       "
                     >
                       {item.name}
@@ -175,24 +195,27 @@ export default function ReceivablesOperations() {
 
                     <p
                       className="
+                        !m-0
                         text-xs
                         font-normal
                         leading-5
-                        text-[#6f8095]
+                        text-[#5d7192]
                       "
                     >
                       {item.detail}
                     </p>
                   </div>
 
-                  {/* Amount */}
+                  {/* AMOUNT */}
                   <p
                     className="
+                      !m-0
                       shrink-0
+                      text-right
                       text-sm
-                      font-bold
+                      font-semibold
                       leading-6
-                      text-[#111827]
+                      text-[#091127]
 
                       sm:text-base
                     "
@@ -203,18 +226,19 @@ export default function ReceivablesOperations() {
               ))}
             </div>
 
-            {/* Link */}
+            {/* LINK */}
             <Link
               href="/receivables"
               className="
-                mt-1
+                mt-2
                 inline-flex
                 text-sm
                 font-semibold
                 leading-6
-                text-blue-600
+                !text-[#2563eb]
+                no-underline
                 transition
-                hover:text-blue-700
+                hover:!text-[#1d4ed8]
               "
             >
               Review the queue →
@@ -227,66 +251,79 @@ export default function ReceivablesOperations() {
               w-full
               rounded-2xl
               border
-              border-slate-200
-              bg-[#f4f5f7]
-              px-5
-              py-7
-              shadow-[0_8px_24px_rgba(15,23,42,0.05)]
+              border-[#dfe5ee]
+              bg-white
+              p-5
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
-              sm:px-6
-              sm:py-8
+              sm:p-6
+
+              md:p-7
             "
           >
-            {/* Label */}
+            {/* EYEBROW */}
             <div className="mb-3 flex items-center gap-3">
-              <span className="h-px w-5 shrink-0 bg-[#6b7d91] opacity-60" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
                   text-[10px]
-                  font-semibold
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-[0.18em]
-                  text-[#526f91]
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
                   sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
                 Disputes &amp; collections
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h3
               className="
                 !m-0
-                text-lg
-                font-bold
-                leading-7
-                text-[#111827]
+                text-[20px]
+                font-extrabold
+                leading-[1.25]
+                tracking-[-0.025em]
+                text-[#091127]
+
+                sm:text-[22px]
+
+                md:text-[24px]
               "
             >
               How a balance moves out of dispute
             </h3>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
+                !m-0
                 mt-2
+                w-full
                 max-w-[570px]
-                text-sm
+                text-[14px]
                 font-normal
-                leading-5
-                text-[#61738a]
+                leading-6
+                text-[#5d7192]
+
+                sm:text-[15px]
+                sm:leading-7
               "
             >
               A disputed amount stays on the balance and out of the reminder
               queue until it is resolved on the record.
             </p>
 
-            {/* Steps */}
-            <div className="mt-4">
+            {/* STEPS */}
+            <div className="mt-5">
               {disputeSteps.map((step, index) => (
                 <div
                   key={step.number}
@@ -298,22 +335,24 @@ export default function ReceivablesOperations() {
 
                     ${
                       index !== 0
-                        ? "border-t border-slate-200"
-                        : ""
+                        ? "border-t border-[#edf0f4]"
+                        : "border-t border-[#edf0f4]"
                     }
                   `}
                 >
-                  {/* Number */}
+                  {/* NUMBER */}
                   <div
                     className="
                       flex
-                      h-6
-                      w-6
+                      h-7
+                      w-7
                       shrink-0
                       items-center
                       justify-center
                       rounded-lg
-                      bg-white
+                      border
+                      border-[#dfe5ee]
+                      bg-[#f7f8fa]
                     "
                   >
                     <span
@@ -321,21 +360,22 @@ export default function ReceivablesOperations() {
                         text-xs
                         font-bold
                         leading-5
-                        text-[#25334c]
+                        text-[#091127]
                       "
                     >
                       {step.number}
                     </span>
                   </div>
 
-                  {/* Content */}
+                  {/* CONTENT */}
                   <div className="min-w-0 flex-1">
                     <p
                       className="
+                        !m-0
                         text-sm
                         font-semibold
                         leading-6
-                        text-[#111827]
+                        text-[#091127]
                       "
                     >
                       {step.title}
@@ -343,11 +383,15 @@ export default function ReceivablesOperations() {
 
                     <p
                       className="
+                        !m-0
                         mt-0.5
                         text-xs
                         font-normal
                         leading-5
-                        text-[#61738a]
+                        text-[#5d7192]
+
+                        sm:text-sm
+                        sm:leading-6
                       "
                     >
                       {step.description}

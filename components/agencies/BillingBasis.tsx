@@ -9,7 +9,8 @@ const billingBases = [
   },
   {
     title: "Retainer",
-    description: "An approved recurring or pre-billed client service arrangement.",
+    description:
+      "An approved recurring or pre-billed client service arrangement.",
     status: "Where configured",
     type: "configured",
   },
@@ -27,7 +28,8 @@ const billingBases = [
   },
   {
     title: "Pass-through or reimbursable cost",
-    description: "An approved external cost that is billable to the client.",
+    description:
+      "An approved external cost that is billable to the client.",
     status: "Where configured",
     type: "configured",
   },
@@ -39,7 +41,8 @@ const billingBases = [
   },
   {
     title: "Time-derived",
-    description: "Billable input arrives from an approved upstream time source.",
+    description:
+      "Billable input arrives from an approved upstream time source.",
     status: "Requires upstream source",
     type: "upstream",
   },
@@ -53,82 +56,232 @@ const billingBases = [
 
 export default function BillingBasis() {
   return (
-    <section className="w-full border-t border-gray-200 bg-gray-50">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-6 py-12 sm:px-8 sm:py-14 lg:px-7 lg:py-16">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* Eyebrow */}
-        <div className="flex h-4 items-center">
-          <span className="h-px w-6 bg-blue-600 opacity-70" />
+          sm:px-8
+          sm:py-16
 
-          <span className="ml-2.5 text-xs font-bold uppercase leading-4 tracking-[0.18em] text-blue-600">
-            Choose the client billing basis
-          </span>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Heading */}
-        <h2 className="!m-0 w-full max-w-[620px] !text-[30px] !font-extrabold !leading-[1.15] tracking-tight text-gray-900">
-          Most agencies run several of these at once.
-        </h2>
+          lg:px-14
 
-        {/* Description */}
-        <p className="w-full max-w-[686px] text-sm font-normal leading-6 text-gray-600 sm:text-base">
-          Seven bases, shown with equal weight. Nothing here recommends a model
-          using client value, spend, margin or account tier — the selector
-          helps you recognize what you already run and check whether the
-          configured Billing model supports it.
-        </p>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-8
 
-        {/* Billing basis cards */}
-        <div className="grid w-full grid-cols-1 gap-3 pt-3 sm:grid-cols-2 lg:grid-cols-4">
+            sm:gap-10
 
-          {billingBases.map((item, index) => (
-            <div
-              key={item.title}
-              className={`flex min-h-[144px] flex-col rounded-2xl border bg-white px-4 py-5 ${
-                index === 0
-                  ? "border-blue-600 shadow-[0_0_0_3px_rgba(31,111,235,0.12)]"
-                  : "border-gray-200"
-              }`}
-            >
-              {/* Title */}
-              <h3 className="!m-0 text-sm font-bold leading-6 text-gray-900">
-                {item.title}
-              </h3>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[700px]
+              flex-col
+              items-start
+              gap-3
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex h-4 items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-              {/* Description */}
-              <p className="mt-1 min-h-[40px] text-xs font-normal leading-5 text-gray-600">
-                {item.description}
-              </p>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-              {/* Status */}
-              <div className="mt-auto pt-2">
-                <span
-                  className={`inline-flex min-h-6 items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold leading-4 ${
-                    item.type === "supported"
-                      ? "border-green-200 bg-green-50 text-green-700"
-                      : item.type === "configured"
-                        ? "border-orange-200 bg-orange-50 text-orange-700"
-                        : item.type === "upstream"
-                          ? "border-gray-200 bg-gray-50 text-gray-600"
-                          : "border-blue-100 bg-blue-50 text-blue-600"
-                  }`}
-                >
-                  {item.status}
-                </span>
-              </div>
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Choose the client billing basis
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-          ))}
-        </div>
 
-        {/* Section image */}
-        <div className="mt-1 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05)]">
-          <Image
-            src="/images/agencies/basis.png"
-            alt="Client billing basis overview"
-            width={1264}
-            height={632}
-            className="h-auto w-full object-cover"
-          />
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[620px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Most agencies run several of these at once.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[686px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Seven bases, shown with equal weight. Nothing here recommends a
+              model using client value, spend, margin or account tier — the
+              selector helps you recognize what you already run and check
+              whether the configured Billing model supports it.
+            </p>
+          </div>
+
+          {/* BILLING BASIS CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:grid-cols-2
+
+              lg:grid-cols-4
+            "
+          >
+            {billingBases.map((item) => (
+              <div
+                key={item.title}
+                className="
+                  flex
+                  min-h-[144px]
+                  flex-col
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-4
+                  py-5
+                  shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+                "
+              >
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    text-sm
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
+                  {item.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    min-h-[40px]
+                    text-xs
+                    font-normal
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+
+                {/* STATUS */}
+                <div className="mt-auto pt-4">
+                  <span
+                    className={`
+                      inline-flex
+                      min-h-6
+                      items-center
+                      rounded-md
+                      border
+                      px-2.5
+                      py-0.5
+                      text-xs
+                      font-semibold
+                      leading-4
+
+                      ${
+                        item.type === "supported"
+                          ? "border-[#cfe8d5] bg-[#f1faf3] text-[#3b7a4a]"
+                          : item.type === "configured"
+                            ? "border-[#f1dfc7] bg-[#fff8ed] text-[#9a681f]"
+                            : item.type === "upstream"
+                              ? "border-[#dfe5ee] bg-[#f7f8fa] text-[#5d7192]"
+                              : "border-[#dce6f5] bg-[#f4f8fd] text-[#58759d]"
+                      }
+                    `}
+                  >
+                    {item.status}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* SECTION IMAGE */}
+          <div
+            className="
+              mt-1
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <Image
+              src="/images/agencies/basis.png"
+              alt="Client billing basis overview"
+              width={1264}
+              height={632}
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -66,24 +66,61 @@ function FaqItem({
 }) {
   return (
     <div
-      className={`border-b border-gray-200 last:border-b-0 ${
-        open ? "bg-gray-50/50" : "bg-white"
-      }`}
+      className={`
+        border-b
+        border-[#edf0f4]
+        last:border-b-0
+        ${open ? "bg-[#fafbfc]" : "bg-white"}
+      `}
     >
       <button
         type="button"
         onClick={onClick}
         aria-expanded={open}
-        className="flex min-h-20 w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-5
+          px-5
+          py-5
+          text-left
+
+          sm:px-6
+        "
       >
-        <span className="text-sm font-semibold leading-6 text-slate-900">
+        <span
+          className="
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+          "
+        >
           {question}
         </span>
 
         <span
-          className={`flex size-5 shrink-0 items-center justify-center rounded-md bg-gray-100 text-sm font-semibold leading-5 text-slate-600 transition-transform ${
-            open ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            size-6
+            shrink-0
+            items-center
+            justify-center
+            rounded-lg
+            border
+            border-[#dfe5ee]
+            bg-white
+            text-base
+            font-normal
+            leading-5
+            text-[#5d7192]
+            transition-transform
+            duration-200
+            ${open ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
@@ -91,7 +128,15 @@ function FaqItem({
 
       {open && (
         <div className="px-5 pb-5 sm:px-6">
-          <p className="m-0 text-sm font-normal leading-5 text-slate-600">
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {answer}
           </p>
         </div>
@@ -108,58 +153,165 @@ export default function FinanceFAQ() {
   };
 
   return (
-    <section className="w-full border-t border-gray-200 bg-white px-5 py-20 sm:px-8 lg:px-14 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-0 pb-px sm:px-7">
-        {/* Eyebrow */}
-        <div className="relative flex h-6 w-full max-w-[260px] items-center">
-          <span className="text-xs font-bold uppercase leading-4 tracking-widest text-blue-600">
-            Fit, FAQ &amp; procurement
-          </span>
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          <span className="ml-4 h-px w-6 shrink-0 bg-blue-600 opacity-50" />
-        </div>
+          sm:px-8
+          sm:py-16
 
-        {/* Heading */}
-        <div className="w-full pb-[0.61px]">
-          <h2 className="m-0 text-2xl font-bold leading-8 text-slate-900 sm:text-3xl sm:leading-10">
-            Questions Finance and AR teams ask first.
-          </h2>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Description */}
-        <div className="w-full max-w-[686.38px]">
-          <p className="m-0 text-base font-normal leading-6 text-slate-600">
-            Where a capability depends on approval or availability, the answer
-            says so instead of implying it.
-          </p>
-        </div>
+          lg:px-14
 
-        {/* FAQ Columns */}
-        <div className="flex w-full flex-col gap-5 pt-3.5 pb-2 lg:flex-row">
-          {/* Left Column */}
-          <div className="w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-gray-200 lg:flex-1">
-            {leftFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                open={openFaq === faq.question}
-                onClick={() => toggleFaq(faq.question)}
-              />
-            ))}
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-3.5
+          "
+        >
+          {/* EYEBROW */}
+          <div className="flex items-center gap-3">
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+            <span
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
+              Fit, FAQ &amp; procurement
+            </span>
           </div>
 
-          {/* Right Column */}
-          <div className="w-full overflow-hidden rounded-2xl bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-gray-200 lg:flex-1">
-            {rightFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                open={openFaq === faq.question}
-                onClick={() => toggleFaq(faq.question)}
-              />
-            ))}
+          {/* HEADING */}
+          <div className="w-full">
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[900px]
+                !text-[30px]
+                !font-bold
+                !leading-[1.2]
+                !tracking-[-0.025em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Questions Finance and AR teams ask first.
+            </h2>
+          </div>
+
+          {/* DESCRIPTION */}
+          <div className="w-full max-w-[686px]">
+            <p
+              className="
+                !m-0
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Where a capability depends on approval or availability, the
+              answer says so instead of implying it.
+            </p>
+          </div>
+
+          {/* FAQ COLUMNS */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-5
+              pt-3.5
+              pb-2
+
+              lg:flex-row
+            "
+          >
+            {/* LEFT COLUMN */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                lg:flex-1
+              "
+            >
+              {leftFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  open={openFaq === faq.question}
+                  onClick={() => toggleFaq(faq.question)}
+                />
+              ))}
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                lg:flex-1
+              "
+            >
+              {rightFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  open={openFaq === faq.question}
+                  onClick={() => toggleFaq(faq.question)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

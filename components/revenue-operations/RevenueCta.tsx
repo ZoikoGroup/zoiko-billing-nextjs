@@ -26,21 +26,21 @@ export default function RevenueCta() {
               {/* CTAs */}
               <div className="flex flex-wrap gap-3 pt-2.5">
                 <Link
-                  href="#"
+                  href="create-account"
                   className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold leading-6 !text-[#17233f] shadow-sm transition-opacity hover:opacity-90"
                 >
                   Create account
                 </Link>
 
                 <Link
-                  href="#"
+                  href="book-demo"
                   className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-sm font-semibold leading-6 !text-white transition-colors hover:bg-white/10"
                 >
                   Book a demo
                 </Link>
 
                 <Link
-                  href="#"
+                  href="/pricing-and-plans"
                   className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-5 text-sm font-semibold leading-6 !text-white transition-colors hover:bg-white/10"
                 >
                   View pricing

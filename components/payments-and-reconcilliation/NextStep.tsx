@@ -203,7 +203,7 @@ export default function NextStep() {
 
               {/* BOOK A DEMO */}
               <Link
-                href="/book-a-demo"
+                href="/book-demo"
                 className="
                   !text-white
                   inline-flex
@@ -231,7 +231,7 @@ export default function NextStep() {
 
               {/* INTEGRATIONS */}
               <Link
-                href="/integrations"
+                href="/integration-availability"
                 className="
                   !text-cyan-400
                   inline-flex

@@ -54,117 +54,447 @@ const states = [
 ];
 
 const stateStyles = {
-  neutral: "border-gray-200 bg-gray-50 text-gray-500",
-  orange: "border-orange-200 bg-orange-50 text-orange-700",
-  green: "border-green-200 bg-green-50 text-green-700",
-  approval: "border-gray-200 bg-gray-100 text-gray-600",
-  blue: "border-blue-100 bg-blue-50 text-blue-600",
-};
-
-const dotStyles = {
-  neutral: "bg-gray-500",
-  orange: "bg-orange-500",
-  green: "bg-green-600",
-  approval: "border-2 border-gray-500 bg-transparent",
-  blue: "bg-blue-500",
+  neutral: {
+    wrapper: "border-[#dfe5ee] bg-[#f7f8fa] text-[#5d7192]",
+    dot: "bg-[#7890b2]",
+  },
+  orange: {
+    wrapper: "border-[#f1dfc7] bg-[#fff8ed] text-[#9a681f]",
+    dot: "bg-[#c58a38]",
+  },
+  green: {
+    wrapper: "border-[#cfe8d5] bg-[#f1faf3] text-[#3b7a4a]",
+    dot: "bg-[#4d9960]",
+  },
+  approval: {
+    wrapper: "border-[#dfe5ee] bg-[#f1f3f6] text-[#5d7192]",
+    dot: "border-2 border-[#7890b2] bg-transparent",
+  },
+  blue: {
+    wrapper: "border-[#dce6f5] bg-[#f4f8fd] text-[#58759d]",
+    dot: "bg-[#58759d]",
+  },
 };
 
 export default function RetainerStates() {
   return (
-    <section className="w-full border-t border-gray-200 bg-white">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-6 py-12 sm:px-8 sm:py-14 lg:px-7 lg:py-16">
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* Eyebrow */}
-        <div className="flex h-4 items-center">
-          <span className="h-px w-6 bg-blue-600 opacity-70" />
+          sm:px-8
+          sm:py-16
 
-          <span className="ml-2.5 text-xs font-bold uppercase leading-4 tracking-[0.18em] text-blue-600">
-            Retainers, deposits &amp; pre-billed amounts
-          </span>
-        </div>
+          md:px-10
+          md:py-20
 
-        {/* Heading */}
-        <h2 className="!m-0 w-full max-w-[900px] !text-[30px] !font-extrabold !leading-[1.15] tracking-tight text-gray-900">
-          An agency retainer is a commercial arrangement you define. This is
-          only the billing record.
-        </h2>
+          lg:px-14
 
-        {/* Description */}
-        <p className="w-full max-w-[686px] text-sm font-normal leading-6 text-gray-600 sm:text-base">
-          Where a retainer or pre-billed model is configured and supported,
-          Zoiko Billing tracks the record, its application to invoices, and
-          the history of both.
-        </p>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-8
 
-        {/* Table */}
-        <div className="mt-3 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
+            sm:gap-10
 
-          {/* Intro */}
-          <div className="border-b border-gray-200 bg-gray-50 px-5 py-4">
-            <p className="!m-0 text-sm font-normal leading-5 text-gray-600">
-              Retainer and pre-billed states. Where no model is configured, no
-              retainer interface is shown at all.
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              items-start
+              gap-3
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex h-4 items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Retainers, deposits &amp; pre-billed amounts
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[900px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              An agency retainer is a commercial arrangement you define. This
+              is only the billing record.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[686px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Where a retainer or pre-billed model is configured and supported,
+              Zoiko Billing tracks the record, its application to invoices, and
+              the history of both.
             </p>
           </div>
 
-          {/* Scrollable table */}
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse">
-              <thead>
-                <tr className="bg-gray-50">
-                  <th className="w-64 border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+          {/* TABLE CARD */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* INTRO */}
+            <div
+              className="
+                border-b
+                border-[#dfe5ee]
+                bg-[#fafbfc]
+                px-5
+                py-4
+
+                sm:px-6
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                Retainer and pre-billed states. Where no model is configured,
+                no retainer interface is shown at all.
+              </p>
+            </div>
+
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[220px_minmax(0,1fr)_300px]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     State
-                  </th>
+                  </span>
+                </div>
 
-                  <th className="w-[596px] border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Meaning
-                  </th>
+                  </span>
+                </div>
 
-                  <th className="w-96 border-b border-gray-200 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-blue-600">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Boundary
-                  </th>
-                </tr>
-              </thead>
+                  </span>
+                </div>
+              </div>
 
-              <tbody>
-                {states.map((state) => (
-                  <tr key={state.label}>
-                    {/* State */}
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
+              {/* ROWS */}
+              {states.map((state, index) => {
+                const styles =
+                  stateStyles[state.type as keyof typeof stateStyles];
+
+                return (
+                  <div
+                    key={state.label}
+                    className={`
+                      grid
+                      grid-cols-[220px_minmax(0,1fr)_300px]
+                      ${
+                        index !== states.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    {/* STATE */}
+                    <div className="px-4 py-3.5">
                       <span
-                        className={`inline-flex min-h-6 items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold leading-4 ${
-                          stateStyles[
-                            state.type as keyof typeof stateStyles
-                          ]
-                        }`}
+                        className={`
+                          inline-flex
+                          min-h-6
+                          items-center
+                          rounded-md
+                          border
+                          px-2.5
+                          py-0.5
+                          text-xs
+                          font-semibold
+                          leading-4
+                          ${styles.wrapper}
+                        `}
                       >
                         <span
-                          className={`mr-2 h-1.5 w-1.5 rounded-sm ${
-                            dotStyles[state.type as keyof typeof dotStyles]
-                          }`}
+                          className={`
+                            mr-2
+                            h-1.5
+                            w-1.5
+                            shrink-0
+                            rounded-sm
+                            ${styles.dot}
+                          `}
                         />
 
                         {state.label}
                       </span>
-                    </td>
+                    </div>
 
-                    {/* Meaning */}
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
-                      <p className="!m-0 text-sm font-normal leading-5 text-gray-600">
+                    {/* MEANING */}
+                    <div className="px-4 py-3.5">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {state.meaning}
+                      </span>
+                    </div>
+
+                    {/* BOUNDARY */}
+                    <div className="px-4 py-3.5">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
+                        {state.boundary}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {states.map((state, index) => {
+                const styles =
+                  stateStyles[state.type as keyof typeof stateStyles];
+
+                return (
+                  <div
+                    key={state.label}
+                    className={`
+                      p-5
+                      ${
+                        index !== states.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
+                  >
+                    {/* STATE */}
+                    <div className="mb-4">
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        State
+                      </p>
+
+                      <div className="mt-1.5">
+                        <span
+                          className={`
+                            inline-flex
+                            min-h-6
+                            items-center
+                            rounded-md
+                            border
+                            px-2.5
+                            py-0.5
+                            text-xs
+                            font-semibold
+                            leading-4
+                            ${styles.wrapper}
+                          `}
+                        >
+                          <span
+                            className={`
+                              mr-2
+                              h-1.5
+                              w-1.5
+                              shrink-0
+                              rounded-sm
+                              ${styles.dot}
+                            `}
+                          />
+
+                          {state.label}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* MEANING */}
+                    <div className="mb-4">
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        Meaning
+                      </p>
+
+                      <p
+                        className="
+                          !m-0
+                          mt-1.5
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
                         {state.meaning}
                       </p>
-                    </td>
+                    </div>
 
-                    {/* Boundary */}
-                    <td className="border-b border-gray-100 px-4 py-3.5 align-top">
-                      <p className="!m-0 text-sm font-normal leading-5 text-gray-600">
+                    {/* BOUNDARY */}
+                    <div>
+                      <p
+                        className="
+                          !m-0
+                          text-[11px]
+                          font-bold
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#7890b2]
+                        "
+                      >
+                        Boundary
+                      </p>
+
+                      <p
+                        className="
+                          !m-0
+                          mt-1.5
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
                         {state.boundary}
                       </p>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

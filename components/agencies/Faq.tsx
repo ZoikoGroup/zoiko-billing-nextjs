@@ -68,29 +68,72 @@ function FaqItem({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="flex min-h-20 w-full items-center justify-between gap-4 px-5 py-4 text-left"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-4
+          text-left
+          transition-colors
+          hover:bg-[#fafbfc]
+
+          sm:px-6
+        "
       >
-        <span className="text-sm font-semibold leading-6 text-gray-900">
+        <span
+          className="
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+          "
+        >
           {question}
         </span>
 
         <span
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-gray-100 text-sm font-semibold leading-none text-gray-600 transition-transform ${
-            open ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            bg-[#f1f3f6]
+            text-sm
+            font-semibold
+            leading-none
+            text-[#5d7192]
+            transition-transform
+            duration-200
+            ${open ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
       </button>
 
       {open && (
-        <div className="px-5 pb-5">
-          <p className="text-sm font-normal leading-5 text-gray-600">
+        <div className="px-5 pb-5 sm:px-6">
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {answer}
           </p>
         </div>
@@ -101,50 +144,169 @@ function FaqItem({
 
 export default function Faq() {
   return (
-    <section className="w-full border-t border-gray-200 bg-white">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-6 py-12 sm:px-8 sm:py-14 lg:px-7 lg:py-16">
-        {/* Eyebrow */}
-        <div className="flex h-4 items-center">
-          <span className="h-px w-6 bg-blue-600 opacity-70" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          <span className="ml-2.5 text-xs font-bold uppercase leading-4 tracking-[0.18em] text-blue-600">
-            Security, fit, FAQ &amp; pricing
-          </span>
-        </div>
+          sm:px-8
+          sm:py-16
 
-        {/* Heading */}
-        <h2 className="!m-0 w-full max-w-[1000px] !text-[30px] !font-extrabold !leading-[1.15] tracking-tight text-gray-900">
-          The questions agency owners and finance leads ask first.
-        </h2>
+          md:px-10
+          md:py-20
 
-        {/* Description */}
-        <p className="w-full max-w-[686px] text-sm font-normal leading-6 text-gray-600 sm:text-base">
-          Where a capability depends on configuration, an upstream source or
-          approval, the answer says so.
-        </p>
+          lg:px-14
 
-        {/* FAQ columns */}
-        <div className="mt-3.5 grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
-          {/* Left */}
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
-            {leftFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[1000px]
+              flex-col
+              items-start
+              gap-3
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex h-4 items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Security, fit, FAQ &amp; pricing
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[1000px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              The questions agency owners and finance leads ask first.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[686px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Where a capability depends on configuration, an upstream source
+              or approval, the answer says so.
+            </p>
           </div>
 
-          {/* Right */}
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_rgba(15,23,42,0.05),0px_1px_2px_rgba(15,23,42,0.04)]">
-            {rightFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
+          {/* FAQ COLUMNS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-5
+
+              lg:grid-cols-2
+            "
+          >
+            {/* LEFT COLUMN */}
+            <div
+              className="
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {leftFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div
+              className="
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {rightFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

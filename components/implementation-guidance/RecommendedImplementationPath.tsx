@@ -83,7 +83,9 @@ export default function RecommendedImplementationPath() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id = "implementation-path"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

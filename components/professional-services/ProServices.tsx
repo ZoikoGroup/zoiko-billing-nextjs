@@ -98,7 +98,7 @@ export default function ProServices() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[686px]
               text-[15px]
@@ -139,7 +139,7 @@ export default function ProServices() {
             "
           >
             <Link
-              href="/pricing"
+              href="/pricing-and-plans"
               className="
                 inline-flex
                 min-h-11

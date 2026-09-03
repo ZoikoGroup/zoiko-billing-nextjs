@@ -97,18 +97,16 @@ export default function ImplementationGuidance() {
               xl:!text-[50px]
             "
           >
-            <span className="block">Implement billing</span>
-            <span className="block">operations </span>
-            <span className="block text-blue-600">in a</span>
-            <span className="block text-blue-600">
-              defensible sequence.
-            </span>
+            <span className="block">Implement billing operations</span>
+           
+            <span className="block text-blue-600">in a defensible sequence.</span>
+            
           </h2>
 
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -148,7 +146,7 @@ export default function ImplementationGuidance() {
             "
           >
             <Link
-              href="/implementation-readiness"
+              href="#implementation-readiness"
               className="
                 inline-flex
                 min-h-11
@@ -174,7 +172,7 @@ export default function ImplementationGuidance() {
             </Link>
 
             <Link
-              href="/implementation-path"
+              href="#implementation-path"
               className="
                 inline-flex
                 min-h-11

@@ -35,112 +35,215 @@ export default function BillingLifecycle() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f7f7] px-4 py-12 sm:px-6 sm:py-16 lg:px-14 lg:py-20">
-      <div className="mx-auto grid w-full max-w-[1180px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* Image */}
-        <div className="w-full rounded-2xl bg-[#eeeeee] p-2.5 sm:rounded-3xl sm:p-4">
-          <div className="relative aspect-[1/1] w-full overflow-hidden rounded-xl bg-[#050505] sm:rounded-2xl lg:aspect-[1/1.02]">
-            <Image
-              src="/images/saas-and-digital-services/billing-lifecycle.png"
-              alt="Billing lifecycle"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1023px) 100vw, 50vw"
-            />
-          </div>
-        </div>
+          sm:px-8
+          sm:py-16
 
-        {/* Content */}
-        <div className="w-full">
+          md:px-10
+          md:py-20
 
-          {/* Eyebrow */}
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-5 shrink-0 bg-blue-600 sm:w-6" />
+          lg:px-14
 
-            <span className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-blue-600 sm:text-xs sm:tracking-[0.18em]">
-              Recurring schedules &amp; service periods
-            </span>
-          </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            grid
+            w-full
+            max-w-[1240px]
+            items-center
+            gap-10
 
-          {/* Heading */}
-          <h2
+            lg:grid-cols-2
+            lg:gap-14
+          "
+        >
+          {/* IMAGE */}
+          <div
             className="
-              max-w-[680px]
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.02em]
-              text-gray-900
-              sm:text-[38px]
-              sm:leading-[1.15]
-              lg:text-5xl
-              lg:leading-[1.14]
+              w-full
+              rounded-2xl
+              bg-[#eeeeee]
+              p-2.5
+
+              sm:rounded-3xl
+              sm:p-4
             "
           >
-            Stopping a billing schedule does not cancel a customer&apos;s
-            service.
-          </h2>
+            <div
+              className="
+                relative
+                aspect-[1/1]
+                w-full
+                overflow-hidden
+                rounded-xl
+                bg-[#050505]
 
-          {/* Description */}
-          <p
-            className="
-              mt-5
-              max-w-[680px]
-              text-sm
-              font-normal
-              leading-6
-              text-slate-600
-              sm:mt-6
-              sm:text-base
-              sm:leading-7
-            "
-          >
-            Billing lifecycle and service lifecycle can influence each other
-            through approved handoffs, but they stay separate authorities.
-            Nothing here activates, suspends, downgrades, renews or terminates
-            an entitlement.
-          </p>
+                sm:rounded-2xl
 
-          {/* Lifecycle items */}
-          <div className="mt-7 space-y-5 sm:mt-8 sm:space-y-5">
-            {items.map((item) => (
-              <div
-                key={item.title}
+                lg:aspect-[1/1.02]
+              "
+            >
+              <Image
+                src="/images/saas-and-digital-services/billing-lifecycle.png"
+                alt="Billing lifecycle"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1023px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+
+          {/* CONTENT */}
+          <div className="w-full">
+            {/* EYEBROW */}
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
                 className="
-                  grid
-                  grid-cols-[6px_1fr]
-                  items-start
-                  gap-x-3
-                  gap-y-1
-                  sm:grid-cols-[6px_170px_1fr]
-                  sm:gap-x-3
-                  sm:gap-y-0
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                {/* Bullet */}
-                <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-sm bg-blue-600" />
+                Recurring schedules &amp; service periods
+              </span>
+            </div>
 
-                {/* Title */}
-                <p className="text-sm font-bold leading-6 text-slate-700 sm:col-start-2">
-                  {item.title}
-                </p>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[680px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                {/* Description */}
-                <p
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Stopping a billing schedule does not cancel a customer&apos;s
+              service.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                mt-5
+                w-full
+                max-w-[680px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:mt-6
+                sm:text-base
+              "
+            >
+              Billing lifecycle and service lifecycle can influence each other
+              through approved handoffs, but they stay separate authorities.
+              Nothing here activates, suspends, downgrades, renews or
+              terminates an entitlement.
+            </p>
+
+            {/* LIFECYCLE ITEMS */}
+            <div
+              className="
+                mt-7
+                space-y-5
+
+                sm:mt-8
+              "
+            >
+              {items.map((item) => (
+                <div
+                  key={item.title}
                   className="
-                    col-start-2
-                    text-sm
-                    font-normal
-                    leading-6
-                    text-slate-600
-                    sm:col-start-3
+                    grid
+                    grid-cols-[6px_1fr]
+                    items-start
+                    gap-x-3
+                    gap-y-1
+
+                    sm:grid-cols-[6px_170px_1fr]
+                    sm:gap-x-3
+                    sm:gap-y-0
                   "
                 >
-                  {item.description}
-                </p>
-              </div>
-            ))}
+                  {/* BULLET */}
+                  <span
+                    className="
+                      mt-[9px]
+                      h-1.5
+                      w-1.5
+                      shrink-0
+                      rounded-sm
+                      bg-[#7890b2]
+                    "
+                  />
+
+                  {/* TITLE */}
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-bold
+                      leading-6
+                      text-[#091127]
+
+                      sm:col-start-2
+                    "
+                  >
+                    {item.title}
+                  </p>
+
+                  {/* DESCRIPTION */}
+                  <p
+                    className="
+                      !m-0
+                      col-start-2
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+
+                      sm:col-start-3
+                    "
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
