@@ -65,7 +65,7 @@ const ISSUES: Issue[] = [
     type: "Commercial purchase or contracting",
     authority: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/sales-enquiries" className={linkClass}>
           Sales Enquiries
         </Link>{" "}
         or an approved partner commercial route
@@ -81,7 +81,7 @@ const ISSUES: Issue[] = [
   {
     type: "Partnership application",
     authority: (
-      <Link href="#" className={linkClass}>
+      <Link href="/become-a-partner" className={linkClass}>
         Become a Partner
       </Link>
     ),

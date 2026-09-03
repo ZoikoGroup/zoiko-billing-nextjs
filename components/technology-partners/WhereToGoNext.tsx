@@ -9,7 +9,7 @@ const DESTINATIONS: { title: string; body: React.ReactNode }[] = [
     title: "Become a partner",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/become-a-partner" className={linkClass}>
           Become a Partner
         </Link>{" "}
         is the application route.{" "}
@@ -24,7 +24,7 @@ const DESTINATIONS: { title: string; body: React.ReactNode }[] = [
     title: "Understand the program",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/partner-programme" className={linkClass}>
           Partner Program
         </Link>{" "}
         owns the proposition.{" "}
@@ -38,7 +38,7 @@ const DESTINATIONS: { title: string; body: React.ReactNode }[] = [
     title: "Submit an integration",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/submit-an-integration" className={linkClass}>
           Submit an Integration
         </Link>{" "}
         for technical review.{" "}
@@ -54,7 +54,7 @@ const DESTINATIONS: { title: string; body: React.ReactNode }[] = [
     title: "Commercial question",
     body: (
       <>
-        <Link href="#" className={linkClass}>
+        <Link href="/sales-enquiries" className={linkClass}>
           Sales Enquiries
         </Link>
         .{" "}
