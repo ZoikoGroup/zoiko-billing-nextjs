@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ARHero() {
+export default function GlobalBillingHeader() {
   return (
     <section className="w-full overflow-hidden bg-white">
       <div
@@ -21,7 +21,6 @@ export default function ARHero() {
 
           md:px-10
           md:pb-20
-          md:pt-16
 
           lg:flex-row
           lg:items-center
@@ -35,15 +34,7 @@ export default function ARHero() {
         "
       >
         {/* LEFT CONTENT */}
-        <div
-          className="
-            w-full
-            min-w-0
-
-            lg:w-[51%]
-            lg:max-w-[620px]
-          "
-        >
+        <div className="w-full min-w-0 lg:w-[52%]">
           {/* EYEBROW */}
           <div className="mb-5 flex items-center gap-3 sm:mb-6">
             <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
@@ -61,16 +52,16 @@ export default function ARHero() {
                 sm:tracking-[0.18em]
               "
             >
-              Accounts Receivable
+              Global Billing
             </span>
           </div>
 
-          {/* HEADING */}
+          {/* MOBILE + TABLET HEADING */}
           <h1
             className="
               !m-0
               !block
-              !max-w-[620px]
+              !max-w-[700px]
               !text-[40px]
               !font-extrabold
               !leading-[1.08]
@@ -81,15 +72,46 @@ export default function ARHero() {
 
               md:!text-[50px]
 
+              lg:!hidden
+            "
+          >
+            Billing across currencies and entities,{" "}
+            <span className="text-blue-600">
+              with the scope stated every time.
+            </span>
+          </h1>
+
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !max-w-none
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
               lg:!text-[44px]
-              lg:!leading-[1.08]
 
               xl:!text-[50px]
             "
           >
-            Know what is due, who owns it, and{" "}
-            <span className="text-blue-600">
-              what should happen next.
+            <span className="block">
+              Billing across currencies
+            </span>
+
+            <span className="block">
+              and entities,
+            </span>
+
+            <span className="block text-blue-600">
+              with the
+            </span>
+
+            <span className="block text-blue-600">
+              scope stated every time.
             </span>
           </h1>
 
@@ -98,7 +120,7 @@ export default function ARHero() {
             className="
               !mt-8
               w-full
-              max-w-[606px]
+              max-w-[687px]
               text-[15px]
               font-normal
               leading-7
@@ -114,10 +136,10 @@ export default function ARHero() {
               xl:mt-9
             "
           >
-            Zoiko Billing connects issued documents, credits, due dates,
-            ownership, reminders, disputes, promises, exceptions and current
-            payment status so teams can act with current context and
-            accountable evidence.
+            Zoiko Billing supports multi-currency and multi-entity billing
+            with localized documents. What is available to you depends on
+            jurisdiction, provider and configuration — and this page tells
+            you where each of those is actually resolved.
           </p>
 
           {/* CTA BUTTONS */}
@@ -136,7 +158,7 @@ export default function ARHero() {
             "
           >
             <Link
-              href="/create-account"
+              href="#requirements"
               className="
                 inline-flex
                 min-h-11
@@ -146,9 +168,9 @@ export default function ARHero() {
                 rounded-full
                 bg-blue-600
                 px-7
+                text-center
                 text-sm
                 font-semibold
-                leading-6
                 text-white
                 shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
@@ -157,7 +179,7 @@ export default function ARHero() {
                 sm:w-auto
               "
             >
-              Create Account
+              Check your requirements
             </Link>
 
             <Link
@@ -173,9 +195,9 @@ export default function ARHero() {
                 border-[#dfe5ee]
                 bg-white
                 px-7
+                text-center
                 text-sm
                 font-semibold
-                leading-6
                 text-[#091127]
                 transition
                 hover:bg-[#f8faff]
@@ -183,8 +205,40 @@ export default function ARHero() {
                 sm:w-auto
               "
             >
-              Book a Demo
+              Get Demo
             </Link>
+          </div>
+
+          {/* NOTE */}
+          <div
+            className="
+              mt-7
+              w-full
+              max-w-[562px]
+              rounded-r-[10px]
+              border
+              border-l-[3px]
+              border-[#1f6feb]
+              bg-white
+              px-4
+              py-3.5
+
+              sm:mt-8
+              sm:py-4
+            "
+          >
+            <p
+              className="
+                !m-0
+                text-sm
+                font-normal
+                leading-5
+                text-[#5d7192]
+              "
+            >
+              Currency support is not country support. Language support is not
+              legal invoice compliance. Neither implies the other.
+            </p>
           </div>
         </div>
 
@@ -192,10 +246,7 @@ export default function ARHero() {
         <div
           className="
             mt-10
-            flex
             w-full
-            items-center
-            justify-center
 
             sm:mt-12
 
@@ -203,7 +254,6 @@ export default function ARHero() {
 
             lg:mt-0
             lg:w-[44%]
-            lg:justify-end
 
             xl:w-[43%]
           "
@@ -211,28 +261,26 @@ export default function ARHero() {
           <div
             className="
               relative
+              mx-auto
+              aspect-[557/538]
               w-full
-              max-w-[500px]
+              max-w-[557px]
+              overflow-hidden
+              rounded-2xl
             "
           >
             <Image
-              src="/accounts-receivable/image.png"
-              alt="Zoiko Billing Accounts Receivable"
-              width={1000}
-              height={1000}
+              src="/images/global-billing-header/global-billing.png"
+              alt="Global Billing"
+              fill
               priority
-              className="
-                block
-                h-auto
-                w-full
-                object-contain
-              "
+              className="object-cover"
               sizes="
                 (max-width: 639px) 100vw,
                 (max-width: 767px) 90vw,
                 (max-width: 1023px) 85vw,
                 (max-width: 1279px) 44vw,
-                500px
+                557px
               "
             />
           </div>
