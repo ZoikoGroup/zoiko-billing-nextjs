@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function AvailabilityStates() {
   return (
-    <section className="w-full overflow-hidden bg-[#f7f8fa]">
+    <section 
+    id = "integration-availability"
+    className="w-full overflow-hidden bg-[#f7f8fa]">
       <div
         className="
           mx-auto

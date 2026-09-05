@@ -121,7 +121,7 @@ export default function Ecosystem() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -164,7 +164,7 @@ export default function Ecosystem() {
             "
           >
             <Link
-              href="/approved-connections"
+              href="#approved-connections"
               className="
                 inline-flex
                 min-h-11
@@ -189,7 +189,7 @@ export default function Ecosystem() {
             </Link>
 
             <Link
-              href="/compare-billing-zoiko-one"
+              href="/zoiko-billing-plus-zoiko-one"
               className="
                 inline-flex
                 min-h-11

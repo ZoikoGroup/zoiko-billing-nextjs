@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SourcesAndHandoffs() {
   const handoffs = [
     {
@@ -44,12 +46,15 @@ export default function SourcesAndHandoffs() {
           items-start
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
-          lg:py-24
+
           xl:px-20
         "
       >
@@ -58,12 +63,14 @@ export default function SourcesAndHandoffs() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
             items-start
-            gap-9
-            px-0
-            lg:px-12
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* HEADER */}
@@ -74,6 +81,7 @@ export default function SourcesAndHandoffs() {
               flex-col
               items-start
               gap-8
+
               lg:flex-row
               lg:items-end
               lg:gap-16
@@ -88,15 +96,17 @@ export default function SourcesAndHandoffs() {
                 flex-col
                 items-start
                 gap-5
-                pt-2.5
+                pt-2
                 pb-2
-                lg:pb-6
+
+                lg:pb-5
               "
             >
+              {/* EYEBROW */}
               <div className="flex items-center gap-3">
                 <span
                   className="
-                    h-0.5
+                    h-[2px]
                     w-5
                     shrink-0
                     rounded-full
@@ -109,30 +119,36 @@ export default function SourcesAndHandoffs() {
                 <span
                   className="
                     text-[10px]
-                    font-medium
+                    font-bold
                     uppercase
                     leading-4
-                    tracking-[0.14em]
+                    tracking-[0.16em]
                     text-[#49758f]
+
                     sm:text-xs
+                    sm:tracking-[0.18em]
                   "
                 >
                   Sources and handoffs
                 </span>
               </div>
 
+              {/* TITLE */}
               <h2
                 className="
                   !m-0
                   max-w-[638px]
-                  text-[34px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#08294a]
-                  sm:text-[40px]
-                  md:text-[44px]
-                  lg:text-[48px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#08294a]
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
                 "
               >
                 Where documents come from, and where they go next.
@@ -148,8 +164,8 @@ export default function SourcesAndHandoffs() {
                   font-normal
                   leading-7
                   text-[#526c82]
+
                   sm:text-base
-                  sm:leading-8
                 "
               >
                 Approved systems and workflows can supply the context and
@@ -170,7 +186,9 @@ export default function SourcesAndHandoffs() {
               border
               border-zinc-200
               bg-zinc-200
+
               sm:grid-cols-2
+
               lg:grid-cols-3
             "
           >
@@ -183,17 +201,14 @@ export default function SourcesAndHandoffs() {
                   flex-col
                   items-start
                   bg-white
-                  px-6
-                  py-6
+                  px-5
+                  py-5
                   transition-colors
                   hover:bg-[#fbfcfc]
-                  sm:min-h-[205px]
-                  sm:border-r
-                  sm:border-b
-                  sm:border-zinc-200
+
+                  sm:min-h-[200px]
+
                   lg:min-h-[210px]
-                  lg:[&:nth-child(3n)]:border-r-0
-                  lg:[&:nth-child(n+4)]:border-b-0
                 "
               >
                 {/* NUMBER */}
@@ -213,16 +228,16 @@ export default function SourcesAndHandoffs() {
                     text-white
                   "
                 >
-                  {index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
                 {/* TITLE */}
                 <h3
                   className="
                     !m-0
-                    text-base
+                    text-sm
                     font-semibold
-                    leading-6
+                    leading-5
                     text-[#08294a]
                   "
                 >
@@ -234,10 +249,10 @@ export default function SourcesAndHandoffs() {
                   className="
                     !m-0
                     mt-2
-                    max-w-[500px]
+                    max-w-[250px]
                     text-sm
                     font-normal
-                    leading-6
+                    leading-5
                     text-[#526c82]
                   "
                 >
@@ -256,34 +271,41 @@ export default function SourcesAndHandoffs() {
               border-[#4389b5]
               bg-[#eef2f3]
               px-5
-              py-7
-              sm:px-7
-              sm:py-8
+              py-6
+
+              sm:px-6
+              sm:py-7
+
+              md:px-7
             "
           >
-            <div
+            <span
               className="
                 text-[10px]
-                font-normal
+                font-bold
                 uppercase
                 leading-4
-                tracking-[0.08em]
+                tracking-[0.12em]
                 text-[#49758f]
+
+                sm:text-xs
               "
             >
               Connector boundary
-            </div>
+            </span>
 
             <p
               className="
                 !m-0
                 mt-2
-                max-w-[850px]
+                max-w-[900px]
                 text-sm
                 font-normal
-                leading-7
+                leading-6
                 text-[#08294a]
+
                 sm:text-base
+                sm:leading-7
               "
             >
               Not every connector creates, updates, posts or clears
@@ -301,16 +323,21 @@ export default function SourcesAndHandoffs() {
               flex-col
               items-stretch
               justify-center
-              gap-4
-              pt-0
+              gap-3
+              pt-1
+
               sm:flex-row
               sm:items-center
             "
           >
-            <button
-              type="button"
+            {/* PRIMARY CTA */}
+            <Link
+              href="/automation"
               className="
+                inline-flex
                 min-h-11
+                items-center
+                justify-center
                 rounded-lg
                 bg-[#08294a]
                 px-5
@@ -319,7 +346,7 @@ export default function SourcesAndHandoffs() {
                 text-base
                 font-normal
                 leading-6
-                text-white
+                !text-white
                 outline
                 outline-1
                 outline-offset-[-1px]
@@ -329,10 +356,11 @@ export default function SourcesAndHandoffs() {
               "
             >
               Explore Automation &amp; Workflows
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            {/* SECONDARY CTA */}
+            <Link
+              href="/integration-availability"
               className="
                 inline-flex
                 min-h-11
@@ -351,7 +379,7 @@ export default function SourcesAndHandoffs() {
             >
               Browse integrations
               <span className="text-base font-bold">→</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

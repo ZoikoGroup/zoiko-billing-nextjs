@@ -37,81 +37,284 @@ const views = [
 
 export default function OperationalViews() {
   return (
-    <section className="w-full bg-slate-50 px-5 py-16 transition-colors dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-8 sm:gap-9">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          {/* Left */}
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                Operational views
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-4
+
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+              lg:gap-16
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                flex
+                w-full
+                max-w-[662px]
+                flex-col
+                items-start
+                gap-3
+              "
+            >
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Operational views
+                </span>
+              </div>
+
+              {/* HEADING */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[662px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
+                Report across the
+                <br className="hidden sm:block" />
+                platform without
+                <br className="hidden sm:block" />
+                collapsing distinct
+                <br className="hidden sm:block" />
+                states.
+              </h2>
+            </div>
+
+            {/* DESCRIPTION */}
+            <div
+              className="
+                w-full
+                max-w-[528px]
+                lg:pb-1
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+
+                  sm:text-base
+                "
+              >
+                Counts use exact source-state definitions. A queued document
+                and a delivered one are never added together to make a tidier
+                number.
+              </p>
+            </div>
+          </div>
+
+          {/* OPERATIONAL VIEWS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-px
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-[#dfe5ee]
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
+            {views.map((view) => (
+              <div
+                key={view.title}
+                className="
+                  flex
+                  min-h-[155px]
+                  flex-col
+                  items-start
+                  gap-2
+                  bg-white
+                  px-5
+                  py-5
+
+                  sm:px-6
+                  sm:py-6
+                "
+              >
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {view.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {view.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* COMPARISON BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
+
+              sm:px-7
+              sm:py-7
+            "
+          >
+            <div className="mb-2">
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                "
+              >
+                Comparison boundary
               </span>
             </div>
 
-            <h2 className="text-3xl font-medium leading-[1.15] tracking-tight text-sky-950 dark:text-white sm:text-4xl lg:text-5xl">
-              Report across the
-              <br className="hidden sm:block" />
-              platform without
-              <br className="hidden sm:block" />
-              collapsing distinct
-              <br className="hidden sm:block" />
-              states.
-            </h2>
-          </div>
+            <p
+              className="
+                !m-0
+                max-w-[761px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
 
-          {/* Right Description */}
-          <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-8 text-slate-600 dark:text-slate-300">
-              Counts use exact source-state definitions. A queued document and
-              a delivered one are never added together to make a tidier number.
+                sm:text-base
+              "
+            >
+              Incompatible periods or units are never compared without an
+              explanation. Where a comparison is not valid, the report says
+              so rather than presenting a number anyway.
             </p>
           </div>
-        </div>
 
-        {/* Operational Views */}
-        <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-          {views.map((view) => (
-            <div
-              key={view.title}
-              className="flex min-h-[155px] flex-col items-start gap-2 bg-white px-6 py-6 transition-colors dark:bg-slate-900"
+          {/* CTA */}
+          <div className="flex w-full justify-center">
+            <Link
+              href="platform-overview"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2.5
+                !text-white
+                outline
+                outline-1
+                outline-offset-[-1px]
+                outline-[#091127]
+                transition
+                hover:bg-[#17233d]
+                hover:!text-white
+              "
             >
-              <h3 className="text-base font-semibold leading-6 text-sky-950 dark:text-white">
-                {view.title}
-              </h3>
-
-              <p className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
-                {view.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Comparison Boundary */}
-        <div className="w-full rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-50 px-5 py-7 dark:bg-slate-900 sm:px-7 sm:py-8">
-          <div className="mb-2">
-            <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-              Comparison boundary
-            </span>
+              Explore the platform
+            </Link>
           </div>
-
-          <p className="max-w-[761px] text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-            Incompatible periods or units are never compared without an
-            explanation. Where a comparison is not valid, the report says so
-            rather than presenting a number anyway.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="flex w-full justify-center">
-          <Link
-            href="#"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-sky-950 px-5 py-2.5 !text-white outline outline-1 outline-offset-[-1px] outline-sky-950 transition hover:bg-sky-900 hover:!text-white dark:bg-sky-600 dark:outline-sky-600 dark:hover:bg-sky-500"
-          >
-            Explore the platform
-          </Link>
         </div>
       </div>
     </section>

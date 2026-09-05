@@ -76,27 +76,27 @@ const statusStyles: Record<
   }
 > = {
   neutral: {
-    badge: "bg-[#f7f8fa] border-[#dfe5ee]",
+    badge: "border-[#dfe5ee] bg-[#f7f8fa]",
     icon: "text-[#5d7192]",
     text: "text-[#5d7192]",
   },
   active: {
-    badge: "bg-[#f7f8fa] border-[#b9c7dc]",
+    badge: "border-[#cbd6e3] bg-[#f7f8fa]",
     icon: "text-[#52709d]",
     text: "text-[#52709d]",
   },
   error: {
-    badge: "bg-[#faf8f7] border-[#e3b8ae]",
+    badge: "border-[#e3b8ae] bg-[#faf8f7]",
     icon: "text-[#b74d3c]",
     text: "text-[#b74d3c]",
   },
   ready: {
-    badge: "bg-[#f7f8fa] border-[#b8c9dc]",
+    badge: "border-[#cbd6e3] bg-[#f7f8fa]",
     icon: "text-[#52709d]",
     text: "text-[#52709d]",
   },
   info: {
-    badge: "bg-[#f4f6fa] border-[#cbd5e1]",
+    badge: "border-[#cbd5e1] bg-[#f4f6fa]",
     icon: "text-[#5273a8]",
     text: "text-[#5273a8]",
   },
@@ -106,37 +106,30 @@ const artifactDetails = [
   {
     label: "Document and version",
     value: "ZB-UK-2026-0418 · issued v3",
-    mono: true,
   },
   {
     label: "Template",
     value: "UK-STD-EN · v7 · owner brand-ops",
-    mono: true,
   },
   {
     label: "Issuer and sender",
     value: "Zoiko Ltd (UK) · supported sender identity",
-    mono: false,
   },
   {
     label: "Locale and formatting",
     value: "en-GB · DD/MM/YYYY · 1,234.56",
-    mono: true,
   },
   {
     label: "Output",
     value: "PDF · 2 pages · tagged for accessibility",
-    mono: false,
   },
   {
     label: "Validation",
     value: "stable reference recorded · checks passed",
-    mono: true,
   },
   {
     label: "Retention",
     value: "Policy DOC-RET-02 · no replacement artifact",
-    mono: false,
   },
 ];
 
@@ -162,16 +155,38 @@ function StatusBadge({
 
   return (
     <div
-      className={`inline-flex min-h-7 items-center gap-2 rounded-full border px-2.5 py-1 ${style.badge}`}
+      className={`
+        inline-flex
+        min-h-7
+        items-center
+        gap-2
+        rounded-full
+        border
+        px-2.5
+        py-1
+        ${style.badge}
+      `}
     >
       <span
-        className={`font-mono text-xs font-medium leading-3 ${style.icon}`}
+        className={`
+          text-xs
+          font-medium
+          leading-3
+          ${style.icon}
+        `}
       >
         {icon}
       </span>
 
       <span
-        className={`font-mono text-[10px] font-medium uppercase leading-4 tracking-wide ${style.text}`}
+        className={`
+          text-[10px]
+          font-bold
+          uppercase
+          leading-4
+          tracking-[0.08em]
+          ${style.text}
+        `}
       >
         {title}
       </span>
@@ -191,12 +206,16 @@ export default function Rendering() {
           flex-col
           items-start
           px-5
-          py-16
+          py-14
+
           sm:px-8
-          sm:py-20
+          sm:py-16
+
           md:px-10
-          md:py-24
+          md:py-20
+
           lg:px-14
+
           xl:px-20
         "
       >
@@ -205,115 +224,99 @@ export default function Rendering() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
-            gap-9
-            lg:px-12
+            items-center
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
           "
         >
           {/* =====================================================
-              HEADER
+              SECTION INTRO
           ===================================================== */}
 
           <div
             className="
               flex
               w-full
+              max-w-[760px]
               flex-col
-              items-start
-              gap-8
-              lg:flex-row
-              lg:items-end
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT */}
-            <div
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Rendering
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
               className="
-                flex
+                !m-0
                 w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2.5
-                lg:pb-6
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              {/* EYEBROW */}
-              <div className="flex items-center gap-2.5">
-                <span
-                  className="
-                    h-0.5
-                    w-5
-                    rounded-sm
-                    bg-gradient-to-r
-                    from-[#39d5cf]
-                    to-[#52709d]
-                  "
-                />
+              Render the approved document version — not a disconnected copy.
+            </h2>
 
-                <span
-                  className="
-                    font-mono
-                    text-xs
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-wider
-                    text-[#7890b2]
-                  "
-                >
-                  Rendering
-                </span>
-              </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
 
-              {/* HEADING */}
-              <h2
-                className="
-                  !m-0
-                  w-full
-                  max-w-[638px]
-                  text-[32px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  !text-[#091127]
-                  sm:text-[38px]
-                  md:text-[44px]
-                  lg:text-[48px]
-                  lg:leading-[53.82px]
-                "
-              >
-                Render the approved
-                <br className="hidden sm:block" />
-                document version — not
-                <br className="hidden sm:block" />
-                a disconnected copy.
-              </h2>
-            </div>
-
-            {/* RIGHT */}
-            <div className="w-full max-w-[529px] flex-1">
-              <p
-                className="
-                  !m-0
-                  text-base
-                  font-normal
-                  leading-8
-                  !text-[#5d7192]
-                "
-              >
-                An artifact is always tied to the exact issued version and
-                template version that produced it. Changing a template later
-                never rewrites what was already delivered.
-              </p>
-            </div>
+                sm:text-base
+              "
+            >
+              An artifact is always tied to the exact issued version and
+              template version that produced it. Changing a template later
+              never rewrites what was already delivered.
+            </p>
           </div>
 
           {/* =====================================================
-              CONTENT
+              MAIN CONTENT
           ===================================================== */}
 
           <div
@@ -321,112 +324,87 @@ export default function Rendering() {
               flex
               w-full
               flex-col
-              items-stretch
-              gap-10
-              pt-2
+              gap-8
+
               lg:flex-row
               lg:items-start
-              lg:gap-16
+              lg:gap-8
             "
           >
             {/* ===================================================
-                LEFT PRODUCT VIEW
+                LEFT — ARTIFACT DETAILS
             =================================================== */}
 
-            <div className="w-full lg:w-1/2">
-              <div className="flex flex-col gap-3">
-                {/* PRODUCT LABEL */}
-                <div className="flex flex-wrap items-center">
-                  <div
+            <div className="w-full lg:w-[44%]">
+              <div
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* CARD HEADER */}
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    items-center
+                    gap-3
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-4
+                    py-3.5
+                  "
+                >
+                  <span
                     className="
-                      inline-flex
-                      min-h-7
-                      items-center
-                      gap-2
-                      rounded-full
-                      border
-                      border-[#d7e0e9]
-                      bg-white/70
-                      px-3
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#7890b2]
                     "
                   >
-                    <span className="h-[5px] w-[5px] rounded-sm bg-[#52709d]" />
+                    Render artifact
+                  </span>
 
-                    <span
-                      className="
-                        font-mono
-                        text-[10px]
-                        font-normal
-                        uppercase
-                        leading-4
-                        tracking-wide
-                        !text-[#52709d]
-                      "
-                    >
-                      Illustrative product view
-                    </span>
+                  <span className="text-sm text-[#b0bbca]">·</span>
+
+                  <span
+                    className="
+                      text-xs
+                      font-normal
+                      leading-4
+                      text-[#5d7192]
+                    "
+                  >
+                    AR-33108
+                  </span>
+
+                  <div className="ml-auto">
+                    <StatusBadge status="ready" title="Ready" />
                   </div>
                 </div>
 
-                {/* PRODUCT CARD */}
-                <div
-                  className="
-                    overflow-hidden
-                    rounded-2xl
-                    border
-                    border-[#dfe5ee]
-                    bg-white
-                    shadow-[0_4px_14px_rgba(14,33,27,0.04),0_1px_2px_rgba(14,33,27,0.05)]
-                  "
-                >
-                  {/* CARD HEADER */}
-                  <div
-                    className="
-                      flex
-                      flex-wrap
-                      items-center
-                      gap-2.5
-                      border-b
-                      border-[#dfe5ee]
-                      bg-[#f7f8fa]
-                      px-4
-                      py-3.5
-                    "
-                  >
-                    <span className="h-2 w-2 rounded-sm bg-[#52709d]" />
-
-                    <span
-                      className="
-                        font-mono
-                        text-xs
-                        font-normal
-                        uppercase
-                        leading-4
-                        tracking-wide
-                        !text-[#5d7192]
-                      "
-                    >
-                      Render artifact AR-33108
-                    </span>
-
-                    <div className="ml-auto">
-                      <StatusBadge
-                        status="ready"
-                        title="Ready"
-                      />
-                    </div>
-                  </div>
-
-                  {/* ARTIFACT DETAILS */}
+                {/* ARTIFACT DETAILS */}
+                <div className="flex flex-col">
                   {artifactDetails.map((item, index) => (
                     <div
                       key={item.label}
                       className={`
                         flex
                         items-start
-                        gap-3.5
+                        gap-4
                         px-4
-                        py-3.5
+                        py-4
+
+                        sm:px-5
+
                         ${
                           index !== artifactDetails.length - 1
                             ? "border-b border-[#edf0f4]"
@@ -445,53 +423,48 @@ export default function Rendering() {
                           justify-center
                           rounded-md
                           border
-                          border-[#cbd6e3]
+                          border-[#dfe5ee]
                           bg-[#f7f8fa]
                         "
                       >
                         <span
                           className="
-                            font-mono
-                            text-[9px]
+                            text-[10px]
                             font-semibold
                             leading-4
-                            !text-[#52709d]
+                            text-[#7890b2]
                           "
                         >
                           {index + 1}
                         </span>
                       </div>
 
-                      {/* DETAIL */}
+                      {/* CONTENT */}
                       <div className="min-w-0 flex-1">
                         <p
                           className="
                             !m-0
-                            font-mono
-                            text-[9px]
-                            font-normal
+                            text-[10px]
+                            font-bold
                             uppercase
                             leading-4
-                            tracking-wide
-                            !text-[#7890b2]
+                            tracking-[0.08em]
+                            text-[#7890b2]
                           "
                         >
                           {item.label}
                         </p>
 
                         <p
-                          className={`
+                          className="
                             !m-0
                             mt-1.5
+                            break-words
                             text-sm
+                            font-normal
                             leading-6
-                            !text-[#091127]
-                            ${
-                              item.mono
-                                ? "font-mono"
-                                : "font-normal"
-                            }
-                          `}
+                            text-[#091127]
+                          "
                         >
                           {item.value}
                         </p>
@@ -499,32 +472,31 @@ export default function Rendering() {
                     </div>
                   ))}
                 </div>
-
-                {/* DISCLAIMER */}
-                <p
-                  className="
-                    !m-0
-                    font-mono
-                    text-[10px]
-                    font-normal
-                    uppercase
-                    leading-5
-                    tracking-wide
-                    !text-[#52709d]
-                  "
-                >
-                  Universal PDF/A, archival, digital-signature or regulatory
-                  format support is not claimed. Supported formats are
-                  published per document type and market.
-                </p>
               </div>
+
+              {/* DISCLAIMER */}
+              <p
+                className="
+                  !m-0
+                  mt-3
+                  px-1
+                  text-xs
+                  font-normal
+                  leading-5
+                  text-[#7890b2]
+                "
+              >
+                Universal PDF/A, archival, digital-signature or regulatory
+                format support is not claimed. Supported formats are published
+                per document type and market.
+              </p>
             </div>
 
             {/* ===================================================
-                RIGHT STATES
+                RIGHT — ARTIFACT STATES
             =================================================== */}
 
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-[56%]">
               <div
                 className="
                   overflow-hidden
@@ -532,49 +504,88 @@ export default function Rendering() {
                   border
                   border-[#dfe5ee]
                   bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {/* TABLE TITLE */}
+                {/* TABLE HEADER */}
                 <div
                   className="
                     border-b
                     border-[#dfe5ee]
-                    bg-[#f7f8fa]
-                    px-5
-                    py-4
+                    bg-[#fafbfc]
+                    px-4
+                    py-3.5
+
+                    sm:px-5
                   "
                 >
                   <span
                     className="
-                      font-mono
-                      text-[10px]
-                      font-normal
+                      text-xs
+                      font-bold
                       uppercase
                       leading-4
-                      tracking-wide
-                      !text-[#5d7192]
+                      tracking-[0.08em]
+                      text-[#7890b2]
                     "
                   >
                     Artifact states and required treatment
                   </span>
                 </div>
 
-                {/* DESKTOP HEADER */}
-                <div className="hidden grid-cols-[1.1fr_0.85fr_1.15fr] border-b border-[#dfe5ee] bg-[#fafbfc] md:grid">
-                  <div className="px-3.5 py-2">
-                    <span className="font-mono text-[10px] font-medium uppercase leading-4 tracking-wide !text-[#7890b2]">
+                {/* DESKTOP TABLE HEADER */}
+                <div
+                  className="
+                    hidden
+                    grid-cols-[1.05fr_1fr_1fr]
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+
+                    md:grid
+                  "
+                >
+                  <div className="px-4 py-3">
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
+                      "
+                    >
                       State
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-2">
-                    <span className="font-mono text-[10px] font-medium uppercase leading-4 tracking-wide !text-[#7890b2]">
+                  <div className="px-4 py-3">
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
+                      "
+                    >
                       Meaning
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-2">
-                    <span className="font-mono text-[10px] font-medium uppercase leading-4 tracking-wide !text-[#7890b2]">
+                  <div className="px-4 py-3">
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
+                      "
+                    >
                       Required treatment
                     </span>
                   </div>
@@ -587,7 +598,8 @@ export default function Rendering() {
                       key={state.title}
                       className={`
                         grid
-                        grid-cols-[1.1fr_0.85fr_1.15fr]
+                        grid-cols-[1.05fr_1fr_1fr]
+
                         ${
                           index !== artifactStates.length - 1
                             ? "border-b border-[#edf0f4]"
@@ -595,21 +607,40 @@ export default function Rendering() {
                         }
                       `}
                     >
-                      <div className="flex items-start px-3.5 py-5">
+                      {/* STATE */}
+                      <div className="px-4 py-4">
                         <StatusBadge
                           status={state.status}
                           title={state.title}
                         />
                       </div>
 
-                      <div className="px-3.5 py-4">
-                        <p className="!m-0 text-sm leading-5 !text-[#091127]">
+                      {/* MEANING */}
+                      <div className="px-4 py-4">
+                        <p
+                          className="
+                            !m-0
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
                           {state.meaning}
                         </p>
                       </div>
 
-                      <div className="px-3.5 py-4">
-                        <p className="!m-0 text-sm leading-5 !text-[#091127]">
+                      {/* TREATMENT */}
+                      <div className="px-4 py-4">
+                        <p
+                          className="
+                            !m-0
+                            text-sm
+                            font-normal
+                            leading-5
+                            text-[#5d7192]
+                          "
+                        >
                           {state.treatment}
                         </p>
                       </div>
@@ -617,13 +648,14 @@ export default function Rendering() {
                   ))}
                 </div>
 
-                {/* MOBILE */}
+                {/* MOBILE CARDS */}
                 <div className="flex flex-col md:hidden">
                   {artifactStates.map((state, index) => (
                     <div
                       key={state.title}
                       className={`
-                        p-4
+                        p-5
+
                         ${
                           index !== artifactStates.length - 1
                             ? "border-b border-[#edf0f4]"
@@ -631,27 +663,68 @@ export default function Rendering() {
                         }
                       `}
                     >
+                      {/* STATE */}
                       <StatusBadge
                         status={state.status}
                         title={state.title}
                       />
 
+                      {/* MEANING */}
                       <div className="mt-4">
-                        <p className="!m-0 font-mono text-[10px] font-medium uppercase tracking-wide !text-[#7890b2]">
+                        <p
+                          className="
+                            !m-0
+                            text-[10px]
+                            font-bold
+                            uppercase
+                            leading-4
+                            tracking-[0.08em]
+                            text-[#7890b2]
+                          "
+                        >
                           Meaning
                         </p>
 
-                        <p className="!m-0 mt-1.5 text-sm leading-6 !text-[#091127]">
+                        <p
+                          className="
+                            !m-0
+                            mt-1.5
+                            text-sm
+                            font-normal
+                            leading-6
+                            text-[#5d7192]
+                          "
+                        >
                           {state.meaning}
                         </p>
                       </div>
 
+                      {/* TREATMENT */}
                       <div className="mt-4">
-                        <p className="!m-0 font-mono text-[10px] font-medium uppercase tracking-wide !text-[#7890b2]">
+                        <p
+                          className="
+                            !m-0
+                            text-[10px]
+                            font-bold
+                            uppercase
+                            leading-4
+                            tracking-[0.08em]
+                            text-[#7890b2]
+                          "
+                        >
                           Required treatment
                         </p>
 
-                        <p className="!m-0 mt-1.5 text-sm leading-6 !text-[#091127]">
+                        <p
+                          className="
+                            !m-0
+                            mt-1.5
+                            text-sm
+                            font-normal
+                            leading-6
+                            text-[#5d7192]
+                          "
+                        >
                           {state.treatment}
                         </p>
                       </div>
@@ -663,25 +736,25 @@ export default function Rendering() {
               {/* TEMPLATE BOUNDARY */}
               <div
                 className="
-                  mt-8
+                  mt-6
                   rounded-r-2xl
-                  border-l-[3px]
-                  border-[#52709d]
-                  bg-[#f7f8fa]
-                  px-6
-                  py-6
+                  border-l-2
+                  border-[#7890b2]
+                  bg-white
+                  px-5
+                  py-5
+                  shadow-[0_1px_2px_rgba(15,23,42,0.02)]
                 "
               >
                 <p
                   className="
                     !m-0
-                    font-mono
                     text-[10px]
-                    font-normal
+                    font-bold
                     uppercase
                     leading-4
-                    tracking-wide
-                    !text-[#7890b2]
+                    tracking-[0.08em]
+                    text-[#7890b2]
                   "
                 >
                   Template boundary
@@ -693,8 +766,8 @@ export default function Rendering() {
                     mt-2
                     text-sm
                     font-normal
-                    leading-7
-                    !text-[#091127]
+                    leading-6
+                    text-[#5d7192]
                   "
                 >
                   A template is presentation, not the billing record.
@@ -709,40 +782,28 @@ export default function Rendering() {
               CTA
           ===================================================== */}
 
-          <div className="flex w-full justify-center pt-2">
+          <div className="flex w-full justify-center pt-1">
             <Link
-              href="/invoices-and-credit-notes"
+              href="/invoices"
               className="
                 inline-flex
                 min-h-11
                 items-center
                 justify-center
                 rounded-lg
-                border
-                border-[#091127]
                 bg-[#091127]
                 px-5
                 py-2
-                !font-normal
-                !leading-6
-                !text-white
-                !no-underline
                 text-base
-                whitespace-nowrap
+                font-normal
+                leading-6
+                !text-white
+                no-underline
                 transition
                 hover:bg-[#17213a]
               "
             >
-              <span
-                className="
-                  block
-                  !font-normal
-                  !leading-6
-                  !text-white
-                "
-              >
-                Explore Invoices &amp; Credit Notes
-              </span>
+              Explore Invoices &amp; Credit Notes
             </Link>
           </div>
         </div>

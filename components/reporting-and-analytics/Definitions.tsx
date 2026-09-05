@@ -106,176 +106,577 @@ const definitionItems = [
 
 export default function Definitions() {
   return (
-    <section className="w-full bg-slate-50 px-5 py-16 transition-colors dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-12">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                Definitions
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-4
+
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+              lg:gap-16
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                flex
+                w-full
+                max-w-[662px]
+                flex-col
+                items-start
+                gap-3
+              "
+            >
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Definitions
+                </span>
+              </div>
+
+              {/* HEADING */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[662px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
+                Compare periods and
+                <br className="hidden sm:block" />
+                segments without hiding
+                <br className="hidden sm:block" />
+                the baseline.
+              </h2>
+            </div>
+
+            {/* DESCRIPTION */}
+            <div
+              className="
+                w-full
+                max-w-[528px]
+                lg:pb-1
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+
+                  sm:text-base
+                "
+              >
+                A metric catalog exists so two people reading the same number
+                mean the same thing by it.
+              </p>
+            </div>
+          </div>
+
+          {/* DEFINITION CONTENT */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              items-start
+              gap-8
+
+              lg:grid-cols-2
+              lg:gap-16
+            "
+          >
+            {/* IMAGE */}
+            <div className="w-full">
+              <div
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                <Image
+                  src="/images/reporting-and-analytics/definitions.png"
+                  alt="Reporting metric definitions and analytics model"
+                  width={526}
+                  height={505}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* DEFINITION DETAILS */}
+            <div className="flex w-full flex-col">
+              <h3
+                className="
+                  !m-0
+                  text-lg
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+                "
+              >
+                What a definition must carry
+              </h3>
+
+              <div className="mt-2 divide-y divide-[#dfe5ee]">
+                {definitionItems.map((item) => (
+                  <div
+                    key={item.title}
+                    className="
+                      grid
+                      grid-cols-1
+                      gap-2
+                      py-4
+
+                      sm:grid-cols-[145px_1fr]
+                      sm:gap-4
+                    "
+                  >
+                    <h4
+                      className="
+                        !m-0
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-[#091127]
+                      "
+                    >
+                      {item.title}
+                    </h4>
+
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CATALOG BOUNDARY */}
+              <div
+                className="
+                  mt-4
+                  rounded-r-2xl
+                  border-l-[3px]
+                  border-[#7890b2]
+                  bg-white
+                  px-5
+                  py-6
+
+                  sm:px-7
+                  sm:py-7
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                  "
+                >
+                  Catalog boundary
+                </span>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-7
+                    text-[#091127]
+
+                    sm:text-base
+                  "
+                >
+                  No metric is published without an accountable owner and a
+                  validated source, and terminology must match the source
+                  Product definitions rather than inventing a reporting
+                  dialect.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* COMPARISONS */}
+          <div className="pt-1">
+            <div className="mb-7 flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Comparisons and variance
               </span>
             </div>
 
-            <h2 className="text-3xl font-medium leading-[1.15] tracking-tight text-sky-950 dark:text-white sm:text-4xl lg:text-5xl">
-              Compare periods and
-              <br className="hidden sm:block" />
-              segments without hiding
-              <br className="hidden sm:block" />
-              the baseline.
-            </h2>
-          </div>
+            <div
+              className="
+                grid
+                w-full
+                grid-cols-1
+                gap-px
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-[#dfe5ee]
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
-          <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-8 text-slate-600 dark:text-slate-300">
-              A metric catalog exists so two people reading the same number
-              mean the same thing by it.
-            </p>
-          </div>
-        </div>
+                sm:grid-cols-2
 
-        {/* Definition Content */}
-        <div className="grid w-full grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Image */}
-          <div className="w-full">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04),0px_1px_2px_0px_rgba(14,33,27,0.05)] dark:border-slate-700 dark:bg-slate-900">
-              <Image
-                src="/images/reporting-and-analytics/definitions.png"
-                alt="Reporting metric definitions and analytics model"
-                width={526}
-                height={505}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Definition Details */}
-          <div className="flex w-full flex-col">
-            <h3 className="text-lg font-semibold leading-6 text-sky-950 dark:text-white">
-              What a definition must carry
-            </h3>
-
-            <div className="mt-2 divide-y divide-slate-200 dark:divide-slate-700">
-              {definitionItems.map((item) => (
+                lg:grid-cols-3
+              "
+            >
+              {comparisons.map((item) => (
                 <div
                   key={item.title}
-                  className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-[145px_1fr] sm:gap-4"
-                >
-                  <h4 className="text-sm font-semibold leading-6 text-sky-950 dark:text-white">
-                    {item.title}
-                  </h4>
+                  className="
+                    flex
+                    min-h-[150px]
+                    flex-col
+                    items-start
+                    gap-2
+                    bg-white
+                    px-5
+                    py-5
 
-                  <p className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
+                    sm:px-6
+                    sm:py-6
+                  "
+                >
+                  <h3
+                    className="
+                      !m-0
+                      text-base
+                      font-semibold
+                      leading-6
+                      text-[#091127]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
-
-            {/* Catalog Boundary */}
-            <div className="mt-4 rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-100 px-5 py-6 dark:bg-slate-900 sm:px-7 sm:py-7">
-              <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-                Catalog boundary
-              </span>
-
-              <p className="mt-2 text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-                No metric is published without an accountable owner and a
-                validated source, and terminology must match the source
-                Product definitions rather than inventing a reporting dialect.
-              </p>
-            </div>
           </div>
-        </div>
 
-        {/* Comparisons */}
-        <div className="pt-4">
-          <div className="mb-7 flex items-center gap-2.5">
-            <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+          {/* ANALYSIS BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
 
-            <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-              Comparisons and variance
+              sm:px-7
+              sm:py-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Analysis boundary
             </span>
+
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[761px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
+              A trend describes movement. It does not prove causation, and
+              targets or budgets require approved sources and versions before
+              they appear as a baseline.
+            </p>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-            {comparisons.map((item) => (
+          {/* FILTERS HEADER */}
+          <div
+            className="
+              border-t
+              border-[#dfe5ee]
+              pt-10
+
+              sm:pt-12
+            "
+          >
+            <h2
+              className="
+                !m-0
+                text-2xl
+                font-extrabold
+                leading-8
+                tracking-[-0.025em]
+                text-[#091127]
+
+                sm:text-3xl
+              "
+            >
+              Filters, scope and saved views
+            </h2>
+
+            <p
+              className="
+                !m-0
+                mt-3
+                max-w-[555px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Shaping a report should never quietly change what the number
+              means.
+            </p>
+          </div>
+
+          {/* FILTERS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
+            {filters.map((item) => (
               <div
-                key={item.title}
-                className="flex min-h-[150px] flex-col items-start gap-2 bg-white px-6 py-6 dark:bg-slate-900"
+                key={item.number}
+                className="
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  items-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_2px_8px_rgba(15,23,42,0.025)]
+
+                  sm:p-6
+                "
               >
-                <h3 className="text-base font-semibold leading-6 text-sky-950 dark:text-white">
+                {/* NUMBER */}
+                <span
+                  className="
+                    text-[11px]
+                    font-bold
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
+                  "
+                >
+                  {item.number}
+                </span>
+
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    pt-3
+                    pb-1
+                    text-base
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
                   {item.title}
                 </h3>
 
-                <p className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Analysis Boundary */}
-        <div className="w-full rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-100 px-5 py-7 dark:bg-slate-900 sm:px-7 sm:py-8">
-          <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-            Analysis boundary
-          </span>
+          {/* SAVED VIEW BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
 
-          <p className="mt-2 max-w-[761px] text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-            A trend describes movement. It does not prove causation, and
-            targets or budgets require approved sources and versions before
-            they appear as a baseline.
-          </p>
-        </div>
-
-        {/* Filters Header */}
-        <div className="border-t border-slate-200 pt-10 dark:border-slate-700 sm:pt-12">
-          <h2 className="text-2xl font-medium leading-8 text-sky-950 dark:text-white sm:text-3xl">
-            Filters, scope and saved views
-          </h2>
-
-          <p className="mt-3 max-w-[555px] text-base font-normal leading-7 text-slate-600 dark:text-slate-300">
-            Shaping a report should never quietly change what the number means.
-          </p>
-        </div>
-
-        {/* Filters */}
-        <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {filters.map((item) => (
-            <div
-              key={item.number}
-              className="flex min-h-[190px] flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900"
+              sm:px-7
+              sm:py-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
             >
-              <div className="flex w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-sky-600 py-1.5">
-                <span className="font-mono text-[10px] font-semibold leading-4 text-white">
-                  {item.number}
-                </span>
-              </div>
+              Saved-view boundary
+            </span>
 
-              <h3 className="pt-3 pb-1 text-base font-semibold leading-5 text-sky-950 dark:text-white">
-                {item.title}
-              </h3>
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[761px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
 
-              <p className="text-sm font-normal leading-5 text-slate-600 dark:text-slate-300">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Saved View Boundary */}
-        <div className="w-full rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-100 px-5 py-6 dark:bg-slate-900 sm:px-7 sm:py-7">
-          <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-            Saved-view boundary
-          </span>
-
-          <p className="mt-2 max-w-[761px] text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-            A saved filter does not freeze source data unless a snapshot is
-            explicitly retained, and restricted dimensions stay
-            permission-controlled inside a saved view.
-          </p>
+                sm:text-base
+              "
+            >
+              A saved filter does not freeze source data unless a snapshot is
+              explicitly retained, and restricted dimensions stay
+              permission-controlled inside a saved view.
+            </p>
+          </div>
         </div>
       </div>
     </section>

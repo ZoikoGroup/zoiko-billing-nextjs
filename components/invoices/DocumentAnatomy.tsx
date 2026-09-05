@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 const anatomyItems = [
   {
     number: "1",
@@ -99,7 +100,7 @@ const invoiceTotals = [
 
 export default function DocumentAnatomy() {
   return (
-    <section className="w-full bg-[#F7F8FA]">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -110,12 +111,15 @@ export default function DocumentAnatomy() {
           items-start
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
-          lg:py-20
+
           xl:px-20
         "
       >
@@ -124,14 +128,118 @@ export default function DocumentAnatomy() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
+            items-center
             gap-8
-            sm:gap-9
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* Header */}
+          {/* =========================================================
+              SECTION INTRO
+          ========================================================= */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#27c7d9]
+                  to-[#5c83aa]
+                  opacity-70
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#5c83aa]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Document anatomy
+              </span>
+
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#27c7d9]
+                  to-[#5c83aa]
+                  opacity-70
+                "
+              />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[800px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Keep every document connected to the billing context behind it.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              The information and relationships that make up a billing
+              document. Not every field or relationship is supported in every
+              market or plan.
+            </p>
+          </div>
+
+          {/* =========================================================
+              MAIN CONTENT
+          ========================================================= */}
           <div
             className="
               flex
@@ -139,124 +247,42 @@ export default function DocumentAnatomy() {
               flex-col
               items-start
               gap-8
+
               lg:flex-row
-              lg:items-end
-              lg:gap-16
+              lg:items-start
+              lg:gap-10
+
+              xl:gap-12
             "
           >
-            {/* Left */}
+            {/* =======================================================
+                INVOICE / PRODUCT VIEW
+            ======================================================= */}
             <div
               className="
                 flex
                 w-full
+                min-w-0
                 flex-1
                 flex-col
                 items-start
-                gap-5
-                pt-2
-                lg:pb-5
+                gap-3
               "
             >
-              {/* Eyebrow */}
-              <div className="flex items-center gap-3">
-                <span
-                  className="
-                    h-[2px]
-                    w-5
-                    shrink-0
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#27C7D9]
-                    to-[#5C83AA]
-                  "
-                />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.16em]
-                    text-[#5C83AA]
-                    sm:text-xs
-                  "
-                >
-                  Document anatomy
-                </span>
-              </div>
-
-              {/* Heading */}
-              <h2
-                className="
-                  !m-0
-                  w-full
-                  max-w-[638px]
-                  text-[34px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#091127]
-                  sm:text-[40px]
-                  md:text-[44px]
-                  lg:text-[48px]
-                "
-              >
-                Keep every document connected to the billing context behind
-                it.
-              </h2>
-            </div>
-
-            {/* Right Description */}
-            <div className="w-full max-w-[529px] flex-1">
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5D7192]
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                The information and relationships that make up a billing
-                document. Not every field or relationship is supported in
-                every market or plan.
-              </p>
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div
-            className="
-              flex
-              w-full
-              flex-col
-              items-start
-              gap-10
-              pt-3
-              lg:flex-row
-              lg:gap-12
-              xl:gap-16
-            "
-          >
-            {/* Left: Illustrative Product View */}
-            <div className="flex w-full min-w-0 flex-1 flex-col items-start gap-3">
-              {/* Label */}
+              {/* LABEL */}
               <div
                 className="
                   flex
                   items-center
                   rounded-full
                   border
-                  border-[#D8E9E3]
-                  bg-white/70
+                  border-[#d8e9e3]
+                  bg-white
                   px-3
                   py-1
                 "
               >
-                <span className="mr-2 h-[5px] w-[5px] shrink-0 rounded-full bg-[#527F73]" />
+                <span className="mr-2 h-[5px] w-[5px] shrink-0 rounded-full bg-[#527f73]" />
 
                 <span
                   className="
@@ -265,126 +291,165 @@ export default function DocumentAnatomy() {
                     uppercase
                     leading-4
                     tracking-[0.08em]
-                    text-[#527F73]
+                    text-[#527f73]
                   "
                 >
                   Illustrative product view
                 </span>
               </div>
 
-              {/* Invoice Card */}
+              {/* INVOICE CARD */}
               <div
                 className="
                   w-full
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-[#DFE5EE]
+                  border-[#dfe5ee]
                   bg-white
-                  shadow-[0_22px_50px_-20px_rgba(14,33,27,0.24),0_2px_6px_rgba(14,33,27,0.06)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {/* Invoice Header */}
+                {/* INVOICE HEADER */}
                 <div
                   className="
                     flex
                     flex-col
-                    gap-6
+                    gap-5
                     border-b
-                    border-[#DFE5EE]
+                    border-[#dfe5ee]
                     px-5
                     py-5
+
                     sm:px-6
+
                     md:flex-row
+                    md:items-start
                     md:justify-between
                     md:gap-8
                   "
                 >
-                  {/* Issuer / Customer */}
+                  {/* ISSUER / CUSTOMER */}
                   <div className="flex flex-col items-start">
                     <div className="flex items-start gap-2">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#5C83AA] text-[10px] font-semibold leading-5 text-white">
+                      <span
+                        className="
+                          flex
+                          h-5
+                          w-5
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          bg-[#5c83aa]
+                          text-[10px]
+                          font-semibold
+                          leading-5
+                          text-white
+                        "
+                      >
                         1
                       </span>
 
                       <div>
-                        <p className="!m-0 text-base font-bold leading-7 text-[#091127]">
+                        <p className="!m-0 text-base font-bold leading-6 text-[#091127]">
                           Zoiko Ltd
                         </p>
 
-                        <p className="!m-0 text-sm leading-5 text-[#5D7192]">
+                        <p className="!m-0 text-sm leading-5 text-[#5d7192]">
                           United Kingdom · VAT GB000000000
                         </p>
                       </div>
                     </div>
 
                     <div className="mt-3 flex items-start gap-2">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#5C83AA] text-[10px] font-semibold leading-5 text-white">
+                      <span
+                        className="
+                          flex
+                          h-5
+                          w-5
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          bg-[#5c83aa]
+                          text-[10px]
+                          font-semibold
+                          leading-5
+                          text-white
+                        "
+                      >
                         2
                       </span>
 
                       <div>
-                        <p className="!m-0 text-xs leading-5 text-[#5D7192]">
+                        <p className="!m-0 text-xs leading-5 text-[#5d7192]">
                           Northlane Consulting Ltd
                         </p>
 
-                        <p className="!m-0 text-xs leading-5 text-[#5D7192]">
+                        <p className="!m-0 text-xs leading-5 text-[#5d7192]">
                           Billing profile CUS-8Kd21
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Document Details */}
+                  {/* DOCUMENT DETAILS */}
                   <div
                     className="
                       flex
                       flex-col
                       items-start
-                      gap-1
+                      gap-0.5
+
                       md:items-end
                     "
                   >
-                    <p className="!m-0 text-xs font-semibold leading-5 text-[#091127]">
+                    <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
                       Tax invoice
                     </p>
 
-                    <p className="!m-0 text-xs leading-5 text-[#5D7192]">
+                    <p className="!m-0 text-xs leading-5 text-[#5d7192]">
                       ZB-UK-2026-0418
                     </p>
 
-                    <p className="!m-0 text-xs leading-5 text-[#5D7192]">
+                    <p className="!m-0 text-xs leading-5 text-[#5d7192]">
                       Series UK-STD · v3
                     </p>
                   </div>
                 </div>
 
-                {/* Meta */}
+                {/* =================================================
+                    META
+                ================================================= */}
                 <div
                   className="
                     grid
                     grid-cols-1
                     border-b
-                    border-[#DFE5EE]
+                    border-[#dfe5ee]
+
                     sm:grid-cols-2
+
                     lg:grid-cols-4
                   "
                 >
-                  {invoiceMeta.map(([label, value]) => (
+                  {invoiceMeta.map(([label, value], index) => (
                     <div
                       key={label}
-                      className="
-                        border-b
-                        border-[#DFE5EE]
+                      className={`
                         bg-white
                         px-5
                         py-3
-                        last:border-b-0
+
                         sm:px-6
-                        lg:border-b-0
-                        lg:border-r
-                        lg:last:border-r-0
-                      "
+
+                        ${
+                          index !== invoiceMeta.length - 1
+                            ? "border-b border-[#dfe5ee] lg:border-b-0 lg:border-r"
+                            : ""
+                        }
+                      `}
                     >
                       <p
                         className="
@@ -393,7 +458,7 @@ export default function DocumentAnatomy() {
                           uppercase
                           leading-4
                           tracking-[0.08em]
-                          text-[#527F73]
+                          text-[#527f73]
                         "
                       >
                         {label}
@@ -406,22 +471,33 @@ export default function DocumentAnatomy() {
                   ))}
                 </div>
 
-                {/* Line Items */}
+                {/* =================================================
+                    LINE ITEMS
+                ================================================= */}
                 <div className="overflow-x-auto">
                   <div className="min-w-[560px]">
-                    <div className="grid grid-cols-[minmax(0,2fr)_64px_120px_120px] border-b border-[#DFE5EE] bg-[#FAFBFC]">
+                    {/* TABLE HEADER */}
+                    <div
+                      className="
+                        grid
+                        grid-cols-[minmax(0,2fr)_64px_120px_120px]
+                        border-b
+                        border-[#dfe5ee]
+                        bg-[#fafbfc]
+                      "
+                    >
                       {["Line", "Qty", "Unit", "Amount"].map((heading) => (
                         <div
                           key={heading}
                           className="
                             px-3.5
-                            py-2
+                            py-2.5
                             text-[10px]
-                            font-medium
+                            font-bold
                             uppercase
                             leading-4
                             tracking-[0.08em]
-                            text-[#527F73]
+                            text-[#7890b2]
                           "
                         >
                           {heading}
@@ -429,29 +505,33 @@ export default function DocumentAnatomy() {
                       ))}
                     </div>
 
-                    {invoiceLines.map((line) => (
+                    {/* TABLE ROWS */}
+                    {invoiceLines.map((line, index) => (
                       <div
                         key={line.description}
-                        className="
+                        className={`
                           grid
                           grid-cols-[minmax(0,2fr)_64px_120px_120px]
-                          border-b
-                          border-[#EDF0F4]
-                        "
+                          ${
+                            index !== invoiceLines.length - 1
+                              ? "border-b border-[#edf0f4]"
+                              : ""
+                          }
+                        `}
                       >
-                        <div className="px-3.5 py-2.5 text-sm leading-5 text-[#091127]">
+                        <div className="px-3.5 py-3 text-sm leading-5 text-[#091127]">
                           {line.description}
                         </div>
 
-                        <div className="px-3.5 py-2.5 text-right text-xs leading-5 text-[#091127]">
+                        <div className="px-3.5 py-3 text-right text-sm leading-5 text-[#5d7192]">
                           {line.qty}
                         </div>
 
-                        <div className="px-3.5 py-2.5 text-right text-xs leading-5 text-[#091127]">
+                        <div className="px-3.5 py-3 text-right text-sm leading-5 text-[#5d7192]">
                           {line.unit}
                         </div>
 
-                        <div className="px-3.5 py-2.5 text-right text-xs leading-5 text-[#091127]">
+                        <div className="px-3.5 py-3 text-right text-sm leading-5 text-[#091127]">
                           {line.amount}
                         </div>
                       </div>
@@ -459,14 +539,21 @@ export default function DocumentAnatomy() {
                   </div>
                 </div>
 
-                {/* Totals */}
-                <div className="border-t border-[#DFE5EE] bg-[#FAFBFC] px-5 py-4 sm:px-6">
+                {/* =================================================
+                    TOTALS
+                ================================================= */}
+                <div className="border-t border-[#dfe5ee] bg-[#fafbfc] px-5 py-4 sm:px-6">
                   {invoiceTotals.map(([label, value]) => (
                     <div
                       key={label}
-                      className="flex items-start justify-between gap-6"
+                      className="
+                        flex
+                        items-start
+                        justify-between
+                        gap-6
+                      "
                     >
-                      <p className="!m-0 text-sm leading-6 text-[#091127]">
+                      <p className="!m-0 text-sm leading-6 text-[#5d7192]">
                         {label}
                       </p>
 
@@ -476,8 +563,19 @@ export default function DocumentAnatomy() {
                     </div>
                   ))}
 
-                  <div className="mt-2 flex items-start justify-between gap-6 border-t-2 border-[#091127] pt-2">
-                    <p className="!m-0 text-base leading-6 text-[#091127]">
+                  <div
+                    className="
+                      mt-2
+                      flex
+                      items-start
+                      justify-between
+                      gap-6
+                      border-t-2
+                      border-[#091127]
+                      pt-2
+                    "
+                  >
+                    <p className="!m-0 text-base font-semibold leading-6 text-[#091127]">
                       Remaining balance
                     </p>
 
@@ -487,8 +585,22 @@ export default function DocumentAnatomy() {
                   </div>
                 </div>
 
-                {/* Relationship Tags */}
-                <div className="flex flex-wrap gap-2 border-t border-[#DFE5EE] px-5 py-4 sm:px-6">
+                {/* =================================================
+                    RELATIONSHIPS
+                ================================================= */}
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-2
+                    border-t
+                    border-[#dfe5ee]
+                    px-5
+                    py-4
+
+                    sm:px-6
+                  "
+                >
                   {[
                     "Source: billing schedule",
                     "Owner: j.okafor",
@@ -501,13 +613,13 @@ export default function DocumentAnatomy() {
                       className="
                         rounded-full
                         border
-                        border-[#DFE5EE]
-                        bg-[#F7F8FA]
+                        border-[#dfe5ee]
+                        bg-[#f7f8fa]
                         px-2.5
                         py-1.5
                         text-[10px]
                         leading-4
-                        text-[#5D7192]
+                        text-[#5d7192]
                       "
                     >
                       {tag}
@@ -517,82 +629,142 @@ export default function DocumentAnatomy() {
               </div>
             </div>
 
-            {/* Right: Anatomy List */}
-            <div className="w-full shrink-0 lg:max-w-[384px]">
-              {anatomyItems.map((item, index) => (
-                <div
-                  key={item.number}
-                  className={`
-                    relative
-                    flex
-                    items-start
-                    gap-3
-                    py-4
-                    sm:py-5
-                    ${
-                      index !== anatomyItems.length - 1
-                        ? "border-b border-[#DFE5EE]"
-                        : ""
-                    }
-                  `}
-                >
-                  {/* Number */}
-                  <div
+            {/* =======================================================
+                ANATOMY LIST
+            ======================================================= */}
+            <div
+              className="
+                w-full
+                shrink-0
+
+                lg:max-w-[390px]
+              "
+            >
+              <div
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.04),0_1px_2px_rgba(15,23,42,0.03)]
+                "
+              >
+                {/* HEADER */}
+                <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-5 py-3.5">
+                  <span
                     className="
-                      flex
-                      h-5
-                      w-5
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-[#5C83AA]
-                      text-[10px]
-                      font-semibold
-                      leading-5
-                      text-white
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
                     "
                   >
-                    {item.number}
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex min-w-0 flex-col gap-1">
-                    <h3 className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
-                      {item.title}
-                    </h3>
-
-                    <p className="!m-0 text-sm font-normal leading-5 text-[#5D7192]">
-                      {item.description}
-                    </p>
-                  </div>
+                    Document fields
+                  </span>
                 </div>
-              ))}
+
+                {/* ITEMS */}
+                <div className="px-5">
+                  {anatomyItems.map((item, index) => (
+                    <div
+                      key={item.number}
+                      className={`
+                        flex
+                        items-start
+                        gap-3
+                        py-4
+
+                        sm:py-4.5
+
+                        ${
+                          index !== anatomyItems.length - 1
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      {/* NUMBER */}
+                      <div
+                        className="
+                          flex
+                          h-6
+                          w-6
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-lg
+                          bg-gradient-to-br
+                          from-[#27c7d9]
+                          to-[#5c83aa]
+                        "
+                      >
+                        <span className="text-[9px] font-semibold leading-4 text-white">
+                          {item.number}
+                        </span>
+                      </div>
+
+                      {/* CONTENT */}
+                      <div className="min-w-0 flex-1">
+                        <h3
+                          className="
+                            !m-0
+                            text-sm
+                            font-semibold
+                            leading-5
+                            text-[#091127]
+                          "
+                        >
+                          {item.title}
+                        </h3>
+
+                        <p
+                          className="
+                            !m-0
+                            mt-1
+                            text-sm
+                            font-normal
+                            leading-6
+                            text-[#5d7192]
+                          "
+                        >
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Field Boundary */}
+          {/* =========================================================
+              FIELD BOUNDARY
+          ========================================================= */}
           <div
             className="
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-[#5C83AA]
-              bg-[#F7F8FA]
+              border-[#5c83aa]
+              bg-[#eef1f4]
               px-5
               py-7
+
               sm:px-6
-              md:px-7
+              sm:py-8
             "
           >
             <span
               className="
                 text-[10px]
-                font-normal
+                font-medium
                 uppercase
                 leading-4
-                tracking-[0.08em]
-                text-[#5C83AA]
+                tracking-[0.16em]
+                text-[#5c83aa]
               "
             >
               Field boundary
@@ -602,13 +774,14 @@ export default function DocumentAnatomy() {
               className="
                 !m-0
                 mt-2
+                w-full
                 max-w-[850px]
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
+                leading-7
                 text-[#091127]
+
                 sm:text-base
-                sm:leading-7
               "
             >
               Displayed fields describe configured billing context. They do
@@ -617,12 +790,15 @@ export default function DocumentAnatomy() {
             </p>
           </div>
 
-          {/* CTA */}
-          <div className="flex w-full items-center">
+          {/* =========================================================
+              CTA
+          ========================================================= */}
+          <div className="flex w-full items-center justify-center">
             <Link
-              href="#"
+              href="charges-and-adjustments"
               className="
                 inline-flex
+                min-h-11
                 items-center
                 justify-center
                 rounded-lg
@@ -630,15 +806,16 @@ export default function DocumentAnatomy() {
                 border-[#091127]
                 bg-[#091127]
                 px-5
-                py-2.5
-                text-center
-                text-sm
+                py-2
+                text-base
                 font-normal
                 leading-6
                 !text-white
                 no-underline
                 transition-opacity
                 hover:opacity-90
+
+                max-sm:w-full
               "
             >
               Explore Charges &amp; Adjustments

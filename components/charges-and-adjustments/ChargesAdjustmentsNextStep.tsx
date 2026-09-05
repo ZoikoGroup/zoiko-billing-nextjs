@@ -38,57 +38,129 @@ const steps = [
 export default function ChargesAdjustmentsNextStep() {
   return (
     <section className="w-full bg-[#073B57]">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 md:px-10 lg:px-20 lg:py-24 xl:px-28">
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+
+            lg:flex-row
+            lg:items-center
+            lg:gap-12
+          "
+        >
           {/* =========================================================
               LEFT CONTENT
           ========================================================= */}
-          <div className="flex min-w-0 flex-1 flex-col items-start">
+          <div
+            className="
+              flex
+              min-w-0
+              w-full
+              flex-1
+              flex-col
+              items-start
+            "
+          >
+            {/* EYEBROW */}
+            <div className="mb-4 flex items-center gap-3 sm:mb-5">
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#25D8E8]
+                  to-[#3678FF]
+                "
+              />
 
-            {/* Eyebrow */}
-            <div className="mb-5 flex h-4 items-center">
-              <span className="mr-2.5 h-0.5 w-5 shrink-0 rounded-sm bg-gradient-to-r from-[#25D8E8] to-[#3678FF]" />
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#25D8E8]
 
-              <span className="whitespace-nowrap text-xs font-medium uppercase leading-4 tracking-wider text-[#25D8E8]">
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Next step
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2
               className="
-                max-w-[660px]
+                !m-0
+                w-full
+                max-w-[620px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
                 !text-white
-                text-[36px]
-                font-medium
-                leading-[1.12]
-                tracking-[-0.02em]
-                sm:text-[42px]
-                md:text-[46px]
-                lg:text-5xl
-                lg:leading-[50.16px]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
               Start with the
               <br className="hidden sm:block" />
               charges and controls
               <br className="hidden sm:block" />
-              your operation
-              <br className="hidden sm:block" />
-              needs.
+              your operation needs.
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
-                mt-5
-                max-w-[529px]
-                !text-[#A8C4D4]
-                text-base
+                !m-0
+                !mt-8
+                w-full
+                max-w-[620px]
+                text-[15px]
                 font-normal
                 leading-7
-                sm:leading-8
+                !text-[#A8C4D4]
+
+                sm:mt-5
+                sm:text-base
               "
             >
               Decide which amounts need review before they reach a customer,
@@ -97,11 +169,24 @@ export default function ChargesAdjustmentsNextStep() {
             </p>
 
             {/* CTA ROW */}
-            <div className="mt-6 flex w-full flex-wrap items-center gap-3">
+            <div
+              className="
+                mt-5
+                flex
+                w-full
+                flex-wrap
+                items-center
+                gap-3
 
-              {/* Create Account */}
+                sm:mt-6
+
+                max-sm:flex-col
+                max-sm:items-stretch
+              "
+            >
+              {/* CREATE ACCOUNT */}
               <Link
-                href="/signup"
+                href="/create-account"
                 className="
                   inline-flex
                   min-h-11
@@ -113,22 +198,23 @@ export default function ChargesAdjustmentsNextStep() {
                   bg-[#2F78FF]
                   px-5
                   py-2
-                  !text-white
                   text-base
                   font-normal
                   leading-6
+                  !text-white
+                  no-underline
                   transition-opacity
                   hover:opacity-90
+
+                  max-sm:w-full
                 "
               >
-                <span className="!text-white">
-                  Create Account
-                </span>
+                Create Account
               </Link>
 
-              {/* Book a Demo */}
+              {/* BOOK A DEMO */}
               <Link
-                href="/book-a-demo"
+                href="/book-demo"
                 className="
                   inline-flex
                   min-h-11
@@ -140,56 +226,63 @@ export default function ChargesAdjustmentsNextStep() {
                   bg-transparent
                   px-5
                   py-2
-                  !text-white
                   text-base
                   font-normal
                   leading-6
+                  !text-white
+                  no-underline
                   transition-colors
                   hover:bg-white/10
+
+                  max-sm:w-full
                 "
               >
-                <span className="!text-white">
-                  Book a Demo
-                </span>
+                Book a Demo
               </Link>
 
-              {/* View Pricing */}
+              {/* VIEW PRICING */}
               <Link
-                href="/pricing"
+                href="/pricing-and-plans"
                 className="
                   inline-flex
                   min-h-11
                   items-center
+                  justify-center
                   gap-2
                   px-2
                   py-2
-                  !text-[#25D8E8]
                   text-base
                   font-normal
                   leading-6
+                  !text-[#25D8E8]
+                  no-underline
                   transition-opacity
                   hover:opacity-80
+
+                  max-sm:w-full
                 "
               >
-                <span className="!text-[#25D8E8]">
-                  View Pricing
-                </span>
+                <span>View Pricing</span>
 
-                <span className="!text-[#25D8E8] text-base font-bold">
+                <span className="font-mono text-base font-bold leading-6 !text-[#25D8E8]">
                   →
                 </span>
               </Link>
             </div>
 
-            {/* Supporting text */}
+            {/* SUPPORTING TEXT */}
             <p
               className="
-                mt-6
-                max-w-[560px]
-                !text-[#A8C4D4]
+                !m-0
+                !mt-5
+                w-full
+                max-w-[620px]
                 text-sm
                 font-normal
                 leading-6
+                !text-[#A8C4D4]
+
+                sm:mt-6
                 sm:text-base
                 sm:leading-7
               "
@@ -203,9 +296,19 @@ export default function ChargesAdjustmentsNextStep() {
           {/* =========================================================
               RIGHT CONTENT
           ========================================================= */}
-          <div className="flex w-full min-w-0 flex-1 flex-col gap-5">
+          <div
+            className="
+              flex
+              w-full
+              min-w-0
+              flex-1
+              flex-col
+              gap-4
 
-            {/* Process card */}
+              sm:gap-5
+            "
+          >
+            {/* PROCESS CARD */}
             <div
               className="
                 w-full
@@ -214,11 +317,13 @@ export default function ChargesAdjustmentsNextStep() {
                 border-white/15
                 bg-white/[0.05]
                 p-5
+
                 sm:p-6
-                lg:p-7
+
+                md:p-7
               "
             >
-              {/* Steps */}
+              {/* STEPS */}
               <div className="flex flex-col">
                 {steps.map((step, index) => (
                   <div
@@ -227,8 +332,11 @@ export default function ChargesAdjustmentsNextStep() {
                       flex
                       items-start
                       gap-4
-                      py-4
+                      py-3.5
+
                       sm:gap-5
+                      sm:py-4
+
                       ${
                         index !== steps.length - 1
                           ? "border-b border-white/10"
@@ -236,7 +344,7 @@ export default function ChargesAdjustmentsNextStep() {
                       }
                     `}
                   >
-                    {/* Number */}
+                    {/* NUMBER */}
                     <div
                       className="
                         flex
@@ -250,18 +358,46 @@ export default function ChargesAdjustmentsNextStep() {
                         to-[#3678FF]
                       "
                     >
-                      <span className="!text-white text-[9px] font-normal leading-4">
+                      <span
+                        className="
+                          text-[9px]
+                          font-normal
+                          leading-4
+                          !text-white
+                        "
+                      >
                         {step.number}
                       </span>
                     </div>
 
-                    {/* Step content */}
+                    {/* STEP CONTENT */}
                     <div className="min-w-0 flex-1">
-                      <div className="!text-[#E8F0F4] text-sm font-normal leading-6">
+                      <div
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-6
+                          !text-[#E8F0F4]
+
+                          sm:text-base
+                        "
+                      >
                         {step.title}
                       </div>
 
-                      <div className="mt-1 !text-[#8BAABD] text-[10px] font-normal leading-4 sm:text-xs">
+                      <div
+                        className="
+                          mt-0.5
+                          text-[11px]
+                          font-normal
+                          leading-5
+                          !text-[#8BAABD]
+
+                          sm:mt-1
+                          sm:text-xs
+                          sm:leading-5
+                        "
+                      >
                         {step.description}
                       </div>
                     </div>
@@ -269,15 +405,35 @@ export default function ChargesAdjustmentsNextStep() {
                 ))}
               </div>
 
-              {/* Card footer */}
-              <div className="mt-4 border-t border-white/10 pt-5">
-                <p className="!text-white text-sm font-semibold leading-6 sm:text-base">
+              {/* CARD FOOTER */}
+              <div
+                className="
+                  mt-4
+                  border-t
+                  border-white/10
+                  pt-4
+
+                  sm:mt-5
+                  sm:pt-5
+                "
+              >
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-white
+
+                    sm:text-base
+                  "
+                >
                   Billing clarity from invoice to payment.
                 </p>
               </div>
             </div>
 
-            {/* Explore Billing Schedules */}
+            {/* EXPLORE BILLING SCHEDULES */}
             <div className="flex w-full">
               <Link
                 href="/billing-schedules"
@@ -292,17 +448,18 @@ export default function ChargesAdjustmentsNextStep() {
                   bg-transparent
                   px-5
                   py-2
-                  !text-white
                   text-base
                   font-normal
                   leading-6
+                  !text-white
+                  no-underline
                   transition-colors
                   hover:bg-white/10
+
+                  max-sm:w-full
                 "
               >
-                <span className="!text-white">
-                  Explore Billing Schedules
-                </span>
+                Explore Billing Schedules
               </Link>
             </div>
           </div>

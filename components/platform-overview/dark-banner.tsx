@@ -51,59 +51,254 @@ const stages: StageItem[] = [
 
 export default function ConnectedRecordSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto w-full max-w-6xl rounded-[28px] border border-cyan-500/25 bg-[#0b2444] px-5 py-6 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_30px_90px_rgba(2,6,23,0.45)] sm:px-8 sm:py-8 lg:px-10 lg:py-10">
-        <div className="space-y-10 lg:space-y-12">
-          {/* Section Header */}
-          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-12">
-            <div className="space-y-4 lg:col-span-7">
-              <div className="inline-flex items-center gap-2.5">
-                <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-500" />
-                <span className="text-cyan-400 text-xs font-mono font-medium uppercase tracking-wider">
-                  The connected record
-                </span>
-              </div>
-              <h2 className="text-3xl font-medium leading-tight text-white font-sans sm:text-4xl lg:text-5xl">
-                Keep the billing record connected from customer to payment.
-              </h2>
-            </div>
-            <div className="lg:col-span-5">
-              <p className="text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-                A conceptual view of how records connect. Real sequencing varies by customer, provider, entity and jurisdiction.
-              </p>
-            </div>
-          </div>
-
-          {/* Stages Cards Pipeline Grid */}
-          <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-            {stages.map((item) => (
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+          "
+        >
+          {/* MAIN CONTAINER */}
+          <div
+            className="
+              w-full
+              rounded-3xl
+              border
+              border-[#dfe5ee]
+              bg-[#091127]
+              p-5
+              shadow-[0_12px_32px_rgba(15,23,42,0.08)]
+              sm:p-7
+              md:p-9
+              lg:p-10
+            "
+          >
+            <div
+              className="
+                flex
+                w-full
+                flex-col
+                gap-8
+                sm:gap-10
+                md:gap-11
+              "
+            >
+              {/* SECTION HEADER */}
               <div
-                key={item.stage}
-                className="flex flex-col justify-between space-y-2 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-cyan-400/40 hover:bg-white/[0.07]"
+                className="
+                  flex
+                  w-full
+                  flex-col
+                  items-center
+                  gap-3
+                  text-center
+                "
               >
-                <span className="block text-[10px] font-mono font-normal uppercase tracking-wider text-cyan-400">
-                  {item.stage}
-                </span>
-                <div className="space-y-1">
-                  <h3 className="text-base font-semibold leading-snug text-white font-sans">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs font-normal leading-relaxed text-slate-400">
-                    {item.description}
+                {/* EYEBROW */}
+                <div className="flex items-center justify-center gap-3">
+                  <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-60" />
+
+                  <span
+                    className="
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.16em]
+                      text-[#8da5c8]
+                      sm:text-xs
+                      sm:tracking-[0.18em]
+                    "
+                  >
+                    The connected record
+                  </span>
+
+                  <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-60" />
+                </div>
+
+                {/* HEADING */}
+                <h2
+                  className="
+                    !m-0
+                    w-full
+                    max-w-[820px]
+                    !text-[30px]
+                    !font-extrabold
+                    !leading-[1.2]
+                    !tracking-[-0.035em]
+                    !text-white
+                    sm:!text-[34px]
+                    md:!text-[36px]
+                    lg:!text-[40px]
+                  "
+                >
+                  Keep the billing record connected from customer to payment.
+                </h2>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    w-full
+                    max-w-[720px]
+                    text-[15px]
+                    font-normal
+                    leading-7
+                    text-[#b6c2d5]
+                    sm:text-base
+                  "
+                >
+                  A conceptual view of how records connect. Real sequencing
+                  varies by customer, provider, entity and jurisdiction.
+                </p>
+              </div>
+
+              {/* STAGES */}
+              <div
+                className="
+                  grid
+                  w-full
+                  grid-cols-1
+                  gap-3
+                  sm:grid-cols-2
+                  sm:gap-4
+                  md:grid-cols-3
+                  lg:grid-cols-4
+                "
+              >
+                {stages.map((item) => (
+                  <div
+                    key={item.stage}
+                    className="
+                      flex
+                      min-h-[145px]
+                      flex-col
+                      justify-between
+                      rounded-2xl
+                      border
+                      border-white/10
+                      bg-white/[0.04]
+                      p-5
+                      transition-all
+                      duration-200
+                      hover:border-white/20
+                      hover:bg-white/[0.07]
+                    "
+                  >
+                    {/* STAGE LABEL */}
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.14em]
+                        text-[#8da5c8]
+                      "
+                    >
+                      {item.stage}
+                    </span>
+
+                    {/* CONTENT */}
+                    <div className="mt-5 flex flex-col gap-1.5">
+                      <h3
+                        className="
+                          !m-0
+                          text-[15px]
+                          font-semibold
+                          leading-5
+                          text-white
+                          sm:text-base
+                        "
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#9eabc0]
+                        "
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* BOUNDARY CALLOUT */}
+              <div
+                className="
+                  rounded-r-2xl
+                  border-l-2
+                  border-[#7890b2]
+                  bg-white/[0.04]
+                  p-5
+                  sm:p-6
+                  md:p-7
+                "
+              >
+                <div className="flex flex-col gap-2">
+                  <span
+                    className="
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      text-[#8da5c8]
+                    "
+                  >
+                    Boundary
+                  </span>
+
+                  <p
+                    className="
+                      !m-0
+                      max-w-[1000px]
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#d0d7e3]
+                      sm:text-base
+                      sm:leading-7
+                    "
+                  >
+                    This journey is conceptual. Zoiko Billing records and
+                    reconciles payments through approved providers; it does
+                    not process every payment, file taxes or replace
+                    accounting software.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Boundary Callout */}
-          <div className="space-y-2 rounded-r-2xl border-l-4 border-cyan-400 bg-white/[0.06] p-6 sm:p-7">
-            <span className="block text-cyan-400 text-[10px] font-mono font-medium uppercase tracking-wider">
-              Boundary
-            </span>
-            <p className="max-w-4xl text-sm font-normal leading-relaxed text-slate-200 sm:text-base">
-              This journey is conceptual. Zoiko Billing records and reconciles payments through approved providers; it does not process every payment, file taxes or replace accounting software.
-            </p>
+            </div>
           </div>
         </div>
       </div>

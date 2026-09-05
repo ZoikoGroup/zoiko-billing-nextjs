@@ -25,11 +25,34 @@ const enterpriseDifferences = [
 ];
 
 const procurementRoutes = [
-  "Trust",
-  "Privacy",
-  "Accessibility",
-  "Security",
-  "DPA",
+  {
+    label: "Trust",
+    href: "/trust-center",
+  },
+  {
+    label: "Privacy",
+    href: "/privacy-notice",
+  },
+  {
+    label: "Accessibility",
+    href: "/accessibility",
+  },
+  {
+    label: "Security",
+    href: "/security-overview",
+  },
+  {
+    label: "DPA",
+    href: "/data-processing-addendum",
+  },
+  {
+    label: "Subprocessor",
+    href: "/subprocessors",
+  },
+  {
+    label: "Legal",
+    href: "/legal-notices",
+  },
 ];
 
 function Tag({
@@ -144,19 +167,20 @@ export default function BaselineProtections() {
               </h3>
 
               <p className="mt-2 text-sm font-normal leading-5 text-slate-600">
-                Trust, Privacy, Accessibility, Security, DPA, Subprocessor, and
-                Legal pages are public. None of them sits behind a sales gate.
+                Trust, Privacy, Accessibility, Security, DPA, Subprocessor,
+                and Legal pages are public. None of them sits behind a sales
+                gate.
               </p>
             </div>
 
             <div className="flex w-full flex-wrap gap-2 lg:w-auto lg:max-w-[520px] lg:justify-end">
               {procurementRoutes.map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.label}
+                  href={item.href}
                   className="inline-flex h-9 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold leading-5 text-slate-900 transition hover:bg-gray-50"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>

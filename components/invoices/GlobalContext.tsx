@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function GlobalContext() {
   const contextItems = [
     {
@@ -54,11 +56,15 @@ export default function GlobalContext() {
           items-start
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
+
           xl:px-20
         "
       >
@@ -67,10 +73,14 @@ export default function GlobalContext() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
             items-start
-            gap-9
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* HEADER */}
@@ -81,6 +91,7 @@ export default function GlobalContext() {
               flex-col
               items-start
               gap-8
+
               lg:flex-row
               lg:items-end
               lg:gap-16
@@ -97,6 +108,7 @@ export default function GlobalContext() {
                 gap-5
                 pt-2
                 pb-2
+
                 lg:pb-5
               "
             >
@@ -117,12 +129,14 @@ export default function GlobalContext() {
                 <span
                   className="
                     text-[10px]
-                    font-medium
+                    font-bold
                     uppercase
                     leading-4
                     tracking-[0.16em]
                     text-[#70d7e3]
+
                     sm:text-xs
+                    sm:tracking-[0.18em]
                   "
                 >
                   Global context
@@ -134,14 +148,17 @@ export default function GlobalContext() {
                 className="
                   !m-0
                   max-w-[638px]
-                  text-[34px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-white
-                  sm:text-[40px]
-                  md:text-[44px]
-                  lg:text-[48px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-white
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
                 "
               >
                 One document model, configured per issuer and market.
@@ -157,8 +174,8 @@ export default function GlobalContext() {
                   font-normal
                   leading-7
                   text-[#9bb0c9]
+
                   sm:text-base
-                  sm:leading-8
                 "
               >
                 Issuer entity, numbering series, currency, language and tax
@@ -178,7 +195,9 @@ export default function GlobalContext() {
               border
               border-white/10
               bg-white/[0.06]
+
               sm:grid-cols-2
+
               lg:grid-cols-4
             "
           >
@@ -197,8 +216,10 @@ export default function GlobalContext() {
                   py-5
                   transition-colors
                   hover:bg-[#0d294a]
+
                   sm:min-h-[200px]
                   sm:[&:nth-child(odd)]:border-r
+
                   lg:min-h-[220px]
                   lg:border-r
                   lg:[&:nth-child(4n)]:border-r-0
@@ -267,19 +288,24 @@ export default function GlobalContext() {
               border-[#27c7d9]
               bg-white/[0.06]
               px-5
-              py-7
-              sm:px-7
-              sm:py-8
+              py-6
+
+              sm:px-6
+              sm:py-7
+
+              md:px-7
             "
           >
             <span
               className="
                 text-[10px]
-                font-normal
+                font-bold
                 uppercase
                 leading-4
-                tracking-[0.08em]
+                tracking-[0.12em]
                 text-[#70d7e3]
+
+                sm:text-xs
               "
             >
               Jurisdiction boundary
@@ -289,12 +315,14 @@ export default function GlobalContext() {
               className="
                 !m-0
                 mt-2
-                max-w-[850px]
+                max-w-[900px]
                 text-sm
                 font-normal
-                leading-7
+                leading-6
                 text-[#c1cedd]
+
                 sm:text-base
+                sm:leading-7
               "
             >
               Language does not determine jurisdiction, tax treatment or
@@ -314,14 +342,19 @@ export default function GlobalContext() {
               justify-center
               gap-3
               pt-1
+
               sm:flex-row
               sm:items-center
             "
           >
-            <button
-              type="button"
+            {/* EXPLORE GLOBAL BILLING */}
+            <Link
+              href="/global-billing"
               className="
+                inline-flex
                 min-h-11
+                items-center
+                justify-center
                 rounded-lg
                 bg-white
                 px-5
@@ -340,12 +373,16 @@ export default function GlobalContext() {
               "
             >
               Explore global billing
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            {/* CHECK JURISDICTION AVAILABILITY */}
+            <Link
+              href="/jurisdiction-availability"
               className="
+                inline-flex
                 min-h-11
+                items-center
+                justify-center
                 rounded-lg
                 border
                 border-white/35
@@ -355,13 +392,13 @@ export default function GlobalContext() {
                 text-base
                 font-normal
                 leading-6
-                text-white
+                !text-white
                 transition-colors
                 hover:bg-white/10
               "
             >
               Check jurisdiction availability
-            </button>
+            </Link>
           </div>
         </div>
       </div>

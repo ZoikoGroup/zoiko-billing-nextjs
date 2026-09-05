@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 type CorrectionPath = {
   situation: string;
   direction: string;
@@ -28,7 +30,8 @@ const correctionPaths: CorrectionPath[] = [
   {
     situation: "Issued overcharge",
     direction: "Create a supported credit or correction relation.",
-    control: "Original line and document, reason, amount, tax and approval.",
+    control:
+      "Original line and document, reason, amount, tax and approval.",
   },
   {
     situation: "Issued undercharge",
@@ -72,8 +75,7 @@ const amountStates: AmountState[] = [
     icon: "•",
     variant: "warning",
     meaning: "Configured review is required.",
-    treatment:
-      "Show policy, reviewer, amount, reason and due time.",
+    treatment: "Show policy, reviewer, amount, reason and due time.",
   },
   {
     state: "Approved",
@@ -103,8 +105,7 @@ const amountStates: AmountState[] = [
     state: "Superseded / expired",
     icon: "–",
     variant: "neutral",
-    meaning:
-      "The definition or eligibility is no longer effective.",
+    meaning: "The definition or eligibility is no longer effective.",
     treatment: "Block new use and retain history.",
   },
   {
@@ -121,55 +122,90 @@ const amountStates: AmountState[] = [
     icon: "!",
     variant: "error",
     meaning: "Calculation or application could not complete.",
-    treatment:
-      "Show owner, error class, retry or manual recovery.",
+    treatment: "Show owner, error class, retry or manual recovery.",
   },
 ];
 
-const stateStyles: Record<
-  AmountState["variant"],
-  string
-> = {
-  neutral:
-    "bg-color-grey-97-2 text-color-azure-35 border-zinc-200",
-  error:
-    "bg-color-grey-95-7 text-color-red-40 border-color-red-87",
-  warning:
-    "bg-color-grey-94-3 text-color-orange-37 border-color-orange-81-2",
-  success:
-    "bg-color-grey-97-2 text-color-azure-44 border-color-azure-86",
-  info:
-    "bg-color-grey-97-3 text-color-blue-50 border-color-grey-92-2",
+const stateStyles: Record<AmountState["variant"], string> = {
+  neutral: "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+  error: "bg-[#faf7f7] text-[#a45b5b] border-[#ead7d7]",
+  warning: "bg-[#faf9f5] text-[#9a7b48] border-[#e8dfc9]",
+  success: "bg-[#f7f8fa] text-[#456b9c] border-[#d8e0e9]",
+  info: "bg-[#f7f8fa] text-[#4f78a5] border-[#dfe5ee]",
 };
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+    <div className="flex items-center justify-center gap-3">
+      <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-      <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
+      <span
+        className="
+          text-[10px]
+          font-bold
+          uppercase
+          leading-4
+          tracking-[0.16em]
+          text-[#7890b2]
+
+          sm:text-xs
+          sm:tracking-[0.18em]
+        "
+      >
         {children}
       </span>
+
+      <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
     </div>
   );
 }
 
 function TableHeader({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-color-grey-99 px-3.5 py-2 font-['IBM_Plex_Mono'] text-[9.8px] font-medium uppercase leading-4 tracking-wide text-color-azure-55">
-      {children}
+    <div
+      className="
+        border-b
+        border-[#dfe5ee]
+        bg-[#fafbfc]
+        px-4
+        py-3.5
+      "
+    >
+      <span
+        className="
+          text-[10px]
+          font-bold
+          uppercase
+          leading-4
+          tracking-[0.12em]
+          text-[#7890b2]
+        "
+      >
+        {children}
+      </span>
     </div>
   );
 }
 
-function StateBadge({
-  item,
-}: {
-  item: AmountState;
-}) {
+function StateBadge({ item }: { item: AmountState }) {
   return (
     <span
-      className={`inline-flex h-7 items-center gap-2 rounded-full border px-2.5 font-['IBM_Plex_Mono'] text-[10.2px] font-medium uppercase leading-4 tracking-wide ${stateStyles[item.variant]}`}
+      className={`
+        inline-flex
+        h-7
+        items-center
+        gap-2
+        rounded-full
+        border
+        px-2.5
+        font-mono
+        text-[10px]
+        font-medium
+        uppercase
+        leading-4
+        tracking-wide
+        ${stateStyles[item.variant]}
+      `}
     >
       <span className="text-xs leading-3">{item.icon}</span>
       {item.state}
@@ -179,81 +215,231 @@ function StateBadge({
 
 export default function Corrections() {
   return (
-    <section className="w-full bg-color-white-solid">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start px-6 py-16 sm:px-10 lg:px-16 xl:px-28 xl:py-24">
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col items-start gap-11 px-0 xl:px-12">
-          {/* Header */}
-          <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
-            <div className="flex flex-1 flex-col items-start gap-5">
-              <SectionLabel>Corrections</SectionLabel>
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <h2 className="max-w-[638px] text-4xl font-medium leading-tight tracking-tight text-sky-950 sm:text-5xl sm:leading-[53.82px]">
-                Correct issued amounts
-                <br className="hidden sm:block" />
-                without erasing their
-                <br className="hidden sm:block" />
-                history.
-              </h2>
-            </div>
+          sm:px-8
+          sm:py-16
 
-            <div className="w-full max-w-[528px]">
-              <p className="text-base font-normal leading-8 text-color-azure-35">
-                Before issue, revise the draft. After issue, create a
-                relationship. The path depends on what went wrong and how far
-                the amount has travelled.
-              </p>
-            </div>
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            <SectionLabel>Corrections</SectionLabel>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Correct issued amounts without erasing their history.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Before issue, revise the draft. After issue, create a
+              relationship. The path depends on what went wrong and how far
+              the amount has travelled.
+            </p>
           </div>
 
-          {/* Correction paths */}
-          <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-color-white-solid">
-            <div className="border-b border-zinc-200 bg-color-grey-97-2 px-5 py-3.5">
-              <p className="font-['IBM_Plex_Mono'] text-[10.1px] uppercase leading-4 tracking-wide text-color-azure-35">
+          {/* CORRECTION PATHS */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* TABLE TITLE */}
+            <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-5 py-3.5">
+              <p
+                className="
+                  !m-0
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.12em]
+                  text-[#7890b2]
+                "
+              >
                 Correction paths · what to do when an amount is wrong
               </p>
             </div>
 
-            <div className="hidden grid-cols-[minmax(180px,1fr)_minmax(280px,1.8fr)_minmax(320px,2.3fr)] border-b border-zinc-200 bg-color-grey-99 md:grid">
+            {/* DESKTOP HEADER */}
+            <div
+              className="
+                hidden
+                border-b
+                border-[#dfe5ee]
+                bg-[#fafbfc]
+                md:grid
+                md:grid-cols-[minmax(180px,1fr)_minmax(280px,1.8fr)_minmax(320px,2.3fr)]
+              "
+            >
               <TableHeader>Situation</TableHeader>
               <TableHeader>Permitted direction</TableHeader>
               <TableHeader>Control</TableHeader>
             </div>
 
+            {/* CORRECTION ROWS */}
             {correctionPaths.map((item, index) => (
               <div
                 key={item.situation}
-                className={`grid grid-cols-1 md:grid-cols-[minmax(180px,1fr)_minmax(280px,1.8fr)_minmax(320px,2.3fr)] ${
-                  index !== correctionPaths.length - 1
-                    ? "border-b border-color-grey-93-4"
-                    : ""
-                }`}
+                className={`
+                  grid
+                  grid-cols-1
+
+                  md:grid-cols-[minmax(180px,1fr)_minmax(280px,1.8fr)_minmax(320px,2.3fr)]
+
+                  ${
+                    index !== correctionPaths.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }
+                `}
               >
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-1 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* SITUATION */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-1
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     Situation
                   </span>
 
-                  <p className="text-sm leading-5 text-sky-950">
+                  <p className="!m-0 text-sm leading-6 text-[#091127]">
                     {item.situation}
                   </p>
                 </div>
 
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-1 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* DIRECTION */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-1
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     Permitted direction
                   </span>
 
-                  <p className="text-sm leading-5 text-sky-950">
+                  <p className="!m-0 text-sm leading-6 text-[#5d7192]">
                     {item.direction}
                   </p>
                 </div>
 
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-1 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* CONTROL */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-1
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     Control
                   </span>
 
-                  <p className="text-sm leading-5 text-sky-950">
+                  <p className="!m-0 text-sm leading-6 text-[#5d7192]">
                     {item.control}
                   </p>
                 </div>
@@ -261,53 +447,134 @@ export default function Corrections() {
             ))}
           </div>
 
-          {/* Amount states */}
-          <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-color-white-solid">
-            <div className="border-b border-zinc-200 bg-color-grey-97-2 px-5 py-3.5">
-              <p className="font-['IBM_Plex_Mono'] text-[10.1px] uppercase leading-4 tracking-wide text-color-azure-35">
+          {/* AMOUNT STATES */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* TABLE TITLE */}
+            <div className="border-b border-[#dfe5ee] bg-[#fafbfc] px-5 py-3.5">
+              <p
+                className="
+                  !m-0
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.12em]
+                  text-[#7890b2]
+                "
+              >
                 Amount-component states and required treatment
               </p>
             </div>
 
-            <div className="hidden grid-cols-[minmax(180px,1fr)_minmax(320px,2.2fr)_minmax(280px,1.8fr)] border-b border-zinc-200 bg-color-grey-99 md:grid">
+            {/* DESKTOP HEADER */}
+            <div
+              className="
+                hidden
+                border-b
+                border-[#dfe5ee]
+                bg-[#fafbfc]
+                md:grid
+                md:grid-cols-[minmax(180px,1fr)_minmax(320px,2.2fr)_minmax(280px,1.8fr)]
+              "
+            >
               <TableHeader>State</TableHeader>
               <TableHeader>Meaning</TableHeader>
               <TableHeader>Required treatment</TableHeader>
             </div>
 
+            {/* STATE ROWS */}
             {amountStates.map((item, index) => (
               <div
                 key={item.state}
-                className={`grid grid-cols-1 md:grid-cols-[minmax(180px,1fr)_minmax(320px,2.2fr)_minmax(280px,1.8fr)] ${
-                  index !== amountStates.length - 1
-                    ? "border-b border-color-grey-93-4"
-                    : ""
-                }`}
+                className={`
+                  grid
+                  grid-cols-1
+
+                  md:grid-cols-[minmax(180px,1fr)_minmax(320px,2.2fr)_minmax(280px,1.8fr)]
+
+                  ${
+                    index !== amountStates.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }
+                `}
               >
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-2 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* STATE */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-2
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     State
                   </span>
 
                   <StateBadge item={item} />
                 </div>
 
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-1 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* MEANING */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-1
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     Meaning
                   </span>
 
-                  <p className="text-sm leading-5 text-sky-950">
+                  <p className="!m-0 text-sm leading-6 text-[#5d7192]">
                     {item.meaning}
                   </p>
                 </div>
 
-                <div className="px-3.5 py-3.5 md:py-4">
-                  <span className="mb-1 block font-['IBM_Plex_Mono'] text-[9.8px] uppercase tracking-wide text-color-azure-55 md:hidden">
+                {/* TREATMENT */}
+                <div className="px-4 py-4">
+                  <span
+                    className="
+                      mb-1
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+
+                      md:hidden
+                    "
+                  >
                     Required treatment
                   </span>
 
-                  <p className="text-sm leading-5 text-sky-950">
+                  <p className="!m-0 text-sm leading-6 text-[#5d7192]">
                     {item.treatment}
                   </p>
                 </div>
@@ -315,19 +582,79 @@ export default function Corrections() {
             ))}
           </div>
 
-          {/* Boundary */}
-          <div className="w-full rounded-r-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 py-7">
-            <div className="flex flex-col gap-2">
-              <p className="font-['IBM_Plex_Mono'] text-[9.9px] uppercase leading-4 tracking-wide text-color-azure-44">
-                Correction boundary
-              </p>
+          {/* CORRECTION BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-[#f7f8fa]
+              px-5
+              py-5
 
-              <p className="max-w-[761px] text-base font-normal leading-7 text-sky-950">
-                Credit, reversal, refund, write-off and payment correction are
-                distinct concepts. Issued amounts are never silently
-                overwritten, and an adjustment on its own never moves money.
-              </p>
-            </div>
+              sm:px-7
+              sm:py-6
+            "
+          >
+            <span
+              className="
+                block
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.12em]
+                text-[#7890b2]
+              "
+            >
+              Correction boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[900px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
+              Credit, reversal, refund, write-off and payment correction are
+              distinct concepts. Issued amounts are never silently
+              overwritten, and an adjustment on its own never moves money.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="flex w-full items-center justify-start">
+            <Link
+              href="/invoices"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2.5
+                text-center
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                transition-opacity
+                duration-200
+                hover:opacity-90
+              "
+            >
+              Explore Invoices &amp; Credit Notes
+            </Link>
           </div>
         </div>
       </div>

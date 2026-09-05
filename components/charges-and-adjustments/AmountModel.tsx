@@ -60,7 +60,8 @@ const amountComponents = [
 const downstreamConcepts = [
   {
     title: "Adjustment",
-    description: "Changes an amount component within the billing record, with a source and reason.",
+    description:
+      "Changes an amount component within the billing record, with a source and reason.",
   },
   {
     title: "Write-off",
@@ -86,7 +87,7 @@ const downstreamConcepts = [
 
 export default function AmountModel() {
   return (
-    <section className="w-full bg-white">
+    <section id="amount-model" className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -105,7 +106,6 @@ export default function AmountModel() {
           md:py-20
 
           lg:px-14
-          lg:py-24
 
           xl:px-20
         "
@@ -115,129 +115,109 @@ export default function AmountModel() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
-            gap-10
+            items-center
+            gap-8
 
-            sm:gap-11
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* INTRO */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
+              max-w-[760px]
               flex-col
-              gap-8
-
-              md:flex-row
-              md:items-end
-              md:gap-12
-
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            <div
-              className="
-                flex
-                min-w-0
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2.5
-                pb-2
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                md:pb-6
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex h-4 items-center">
-                <span
-                  className="
-                    mr-2.5
-                    h-0.5
-                    w-5
-                    rounded-sm
-                    bg-gradient-to-r
-                    from-cyan-400
-                    to-blue-500
-                  "
-                />
-
-                <span
-                  className="
-                    text-xs
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-wider
-                    text-[#456b9c]
-                  "
-                >
-                  Amount model
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+              <span
                 className="
-                  !m-0
-                  max-w-[638px]
-                  text-[30px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#08254a]
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:text-[36px]
-                  sm:leading-[1.18]
-
-                  md:text-[42px]
-
-                  lg:text-5xl
-                  lg:leading-[53.82px]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Keep the source, rule
-                <br className="hidden sm:block" />
-                and purpose behind
-                <br className="hidden sm:block" />
-                every amount.
-              </h2>
+                Amount model
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Keep the source, rule and purpose behind every amount.
+            </h2>
 
             {/* DESCRIPTION */}
-            <div
+            <p
               className="
+                !m-0
                 w-full
-                max-w-[529px]
-                shrink-0
-                md:pb-2
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
               "
             >
-              <p
-                className="
-                  !m-0
-                  text-sm
-                  font-normal
-                  leading-7
-                  text-[#45617f]
-
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Five component types, each with an explicit direction and its
-                own governance. Not every type is available in every plan or
-                market.
-              </p>
-            </div>
+              Five component types, each with an explicit direction and its
+              own governance. Not every type is available in every plan or
+              market.
+            </p>
           </div>
 
           {/* AMOUNT COMPONENTS */}
-          <div className="grid w-full grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:gap-4
+
+              md:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
             {amountComponents.map((item) => (
               <div
                 key={item.title}
@@ -247,11 +227,17 @@ export default function AmountModel() {
                   flex-col
                   rounded-2xl
                   border
-                  px-6
-                  py-6
-                  ${item.type === "info"
-                    ? "border-[#aebed0] bg-[#f5f7f9]"
-                    : "border-[#dfe3e8] bg-white"}
+                  px-5
+                  py-5
+
+                  sm:px-6
+                  sm:py-6
+
+                  ${
+                    item.type === "info"
+                      ? "border-[#dfe5ee] bg-[#f7f8fa]"
+                      : "border-[#dfe5ee] bg-white"
+                  }
                 `}
               >
                 {/* LABEL */}
@@ -267,16 +253,29 @@ export default function AmountModel() {
                       border
                       text-sm
                       font-semibold
-                      ${item.type === "negative" ||
-                      item.type === "adjustment"
-                        ? "border-cyan-200 bg-[#f2f8f9] text-cyan-600"
-                        : "border-[#d8e0e9] bg-[#f5f7f9] text-[#456b9c]"}
+
+                      ${
+                        item.type === "negative" ||
+                        item.type === "adjustment"
+                          ? "border-[#cfe5e8] bg-[#f2f8f9] text-[#4f91a0]"
+                          : "border-[#d8e0e9] bg-[#f5f7f9] text-[#456b9c]"
+                      }
                     `}
                   >
                     {item.symbol}
                   </div>
 
-                  <span className="pt-0.5 text-[9px] font-normal uppercase leading-4 tracking-wide text-[#55718f]">
+                  <span
+                    className="
+                      pt-0.5
+                      text-[9px]
+                      font-normal
+                      uppercase
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#55718f]
+                    "
+                  >
                     {item.label}
                   </span>
                 </div>
@@ -289,7 +288,7 @@ export default function AmountModel() {
                     text-base
                     font-semibold
                     leading-5
-                    text-[#08254a]
+                    text-[#091127]
                   "
                 >
                   {item.title}
@@ -303,7 +302,7 @@ export default function AmountModel() {
                     text-sm
                     font-normal
                     leading-6
-                    text-[#45617f]
+                    text-[#5d7192]
                   "
                 >
                   {item.description}
@@ -311,8 +310,17 @@ export default function AmountModel() {
 
                 {/* METADATA */}
                 <div className="mt-auto pt-6">
-                  <div className="border-t border-[#e0e4e9] pt-3">
-                    <p className="!m-0 text-[10px] font-normal leading-4 tracking-tight text-[#45617f]">
+                  <div className="border-t border-[#edf0f4] pt-3">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-normal
+                        leading-4
+                        tracking-tight
+                        text-[#5d7192]
+                      "
+                    >
                       {item.metadata}
                     </p>
                   </div>
@@ -327,12 +335,12 @@ export default function AmountModel() {
               grid
               w-full
               grid-cols-1
+              gap-px
               overflow-hidden
               rounded-2xl
               border
-              border-[#d9dde2]
-              bg-[#d9dde2]
-              gap-px
+              border-[#dfe5ee]
+              bg-[#dfe5ee]
 
               sm:grid-cols-2
 
@@ -344,10 +352,9 @@ export default function AmountModel() {
                 key={item.title}
                 className="
                   flex
-                  min-h-[185px]
+                  min-h-[175px]
                   flex-col
                   items-start
-                  gap-1.5
                   bg-white
                   px-5
                   py-5
@@ -360,7 +367,7 @@ export default function AmountModel() {
                     text-sm
                     font-semibold
                     leading-6
-                    text-[#08254a]
+                    text-[#091127]
                   "
                 >
                   {item.title}
@@ -372,7 +379,7 @@ export default function AmountModel() {
                     text-sm
                     font-normal
                     leading-5
-                    text-[#45617f]
+                    text-[#5d7192]
                   "
                 >
                   {item.description}
@@ -387,24 +394,24 @@ export default function AmountModel() {
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-[#456b9c]
-              bg-[#f5f7f9]
-              px-6
-              py-6
+              border-[#7890b2]
+              bg-[#f7f8fa]
+              px-5
+              py-5
 
               sm:px-7
-              sm:py-7
+              sm:py-6
             "
           >
             <span
               className="
                 block
                 text-[10px]
-                font-normal
+                font-bold
                 uppercase
                 leading-4
-                tracking-wide
-                text-[#456b9c]
+                tracking-[0.12em]
+                text-[#7890b2]
               "
             >
               Model boundary
@@ -418,7 +425,7 @@ export default function AmountModel() {
                 text-sm
                 font-normal
                 leading-7
-                text-[#08254a]
+                text-[#091127]
 
                 sm:text-base
               "

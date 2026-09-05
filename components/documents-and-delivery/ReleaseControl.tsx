@@ -55,99 +55,300 @@ const releaseChecks = [
 
 export default function ReleaseControl() {
   return (
-    <section className="w-full bg-color-grey-97-2 px-4 py-16 sm:px-6 md:px-10 lg:px-16 xl:px-28 xl:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-9 px-0 sm:px-4 lg:px-8 xl:px-12">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* ================= HEADER ================= */}
-        <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          <div className="min-w-0 flex-1 pt-2.5 pb-2 lg:pb-6">
-            <div className="relative mb-5 h-4 w-40">
-              <div className="absolute left-0 top-[7.94px] h-0.5 w-5 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+          sm:px-8
+          sm:py-16
 
-              <span className="absolute left-[30px] top-[-1px] whitespace-nowrap text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
+          "
+        >
+          {/* =====================================================
+              SECTION INTRO
+          ===================================================== */}
+
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Release control
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="max-w-[638px] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl lg:leading-[53.82px]">
-              Authorize the exact
-              <br className="hidden sm:block" />
-              document, recipient and
-              channel.
-            </h2>
-          </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-          <div className="w-full max-w-[528px]">
-            <p className="text-base font-normal leading-8 text-color-azure-35">
-              Release is its own decision, evaluated against current permission
-              and policy — not inherited from whoever approved the invoice.
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Authorize the exact document, recipient and channel.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Release is its own decision, evaluated against current
+              permission and policy — not inherited from whoever approved the
+              invoice.
             </p>
           </div>
-        </div>
 
-        {/* ================= 8 RELEASE CHECKS ================= */}
-        <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200">
-          <div className="grid w-full grid-cols-1 gap-px md:grid-cols-2">
+          {/* =====================================================
+              8 RELEASE CHECKS
+          ===================================================== */}
 
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:grid-cols-2
+            "
+          >
             {releaseChecks.map((item) => (
               <div
                 key={item.number}
-                className="flex min-h-[180px] w-full bg-color-white-solid p-6 sm:p-7"
+                className="
+                  flex
+                  min-h-[180px]
+                  w-full
+                  items-start
+                  gap-4
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-5
+                  py-5
+                  shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+
+                  sm:px-6
+                  sm:py-6
+                "
               >
-                <div className="flex w-full items-start gap-4">
+                {/* NUMBER */}
+                <div
+                  className="
+                    flex
+                    h-7
+                    w-7
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    border
+                    border-[#dfe5ee]
+                    bg-[#f7f8fa]
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      font-semibold
+                      leading-4
+                      text-[#7890b2]
+                    "
+                  >
+                    {item.number}
+                  </span>
+                </div>
 
-                  {/* NUMBER */}
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-color-azure-87 bg-color-grey-97-2">
-                    <span className="text-[9.6px] font-semibold leading-4 text-color-azure-44">
-                      {item.number}
-                    </span>
-                  </div>
+                {/* CONTENT */}
+                <div className="min-w-0 flex-1">
+                  <h3
+                    className="
+                      !m-0
+                      text-base
+                      font-semibold
+                      leading-6
+                      text-[#091127]
+                    "
+                  >
+                    {item.title}
+                  </h3>
 
-                  {/* CONTENT */}
-                  <div className="min-w-0 flex-1">
-                    <h3 className="mb-2 text-base font-semibold leading-6 text-sky-950">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-sm font-normal leading-6 text-color-azure-35">
-                      {item.description}
-                    </p>
-                  </div>
-
+                  <p
+                    className="
+                      !m-0
+                      mt-2
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
-
-          </div>
-        </div>
-
-        {/* ================= RELEASE BOUNDARY ================= */}
-        <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-6 py-7 sm:px-7">
-          <div className="w-full">
-            <span className="text-[9.9px] font-normal uppercase leading-4 tracking-wide text-color-azure-44">
-              Release boundary
-            </span>
           </div>
 
-          <p className="max-w-[900px] text-sm font-normal leading-7 text-sky-950 sm:text-base">
-            Approval applies to the exact document, recipient, channel and
-            version reviewed. It authorizes the attempt — it never guarantees
-            that the provider or the recipient will succeed.
-          </p>
-        </div>
+          {/* =====================================================
+              RELEASE BOUNDARY
+          ===================================================== */}
 
-        {/* ================= CTA ================= */}
-        <div className="flex w-full items-center justify-center pt-1">
-          <Link
-            href="/roles-and-approvals"
-            className="relative z-50 inline-flex min-h-[44px] w-fit shrink-0 items-center justify-center rounded-lg border border-sky-950 bg-sky-950 px-5 py-2.5 text-center no-underline"
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-2
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-5
+              shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+
+              sm:px-6
+              sm:py-6
+            "
           >
-            <span className="block whitespace-nowrap text-base font-normal leading-6 text-white">
-              Explore Roles &amp; Approvals
-            </span>
-          </Link>
-        </div>
+            <p
+              className="
+                !m-0
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.08em]
+                text-[#7890b2]
+              "
+            >
+              Release boundary
+            </p>
 
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[900px]
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+
+                sm:text-base
+                sm:leading-7
+              "
+            >
+              Approval applies to the exact document, recipient, channel and
+              version reviewed. It authorizes the attempt — it never
+              guarantees that the provider or the recipient will succeed.
+            </p>
+          </div>
+
+          {/* =====================================================
+              CTA
+          ===================================================== */}
+
+          <div className="flex w-full justify-center pt-1">
+            <Link
+              href="/roles-and-approvals"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                transition
+                hover:bg-[#17213a]
+              "
+            >
+              Explore Roles &amp; Approvals
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

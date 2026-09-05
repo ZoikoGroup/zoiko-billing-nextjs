@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const failures = [
   {
     title: "Rendering failure",
@@ -70,51 +72,38 @@ const correctionSteps = [
   {
     number: "01",
     title: "Identify the original",
-    lines: [
-      "The original issued and delivered document is",
-      "identified before anything new is produced.",
-    ],
+    description:
+      "The original issued and delivered document is identified before anything new is produced.",
   },
   {
     number: "02",
     title: "Render the corrective document",
-    lines: [
-      "The current corrective document is rendered from its",
-      "own approved version.",
-    ],
+    description:
+      "The current corrective document is rendered from its own approved version.",
   },
   {
     number: "03",
     title: "Decide the notice",
-    lines: [
-      "State whether a new message, portal publication or",
-      "notification is required.",
-    ],
+    description:
+      "State whether a new message, portal publication or notification is required.",
   },
   {
     number: "04",
     title: "Preserve prior artifacts",
-    lines: [
-      "Previous artifacts and attempts are retained",
-      "according to policy.",
-    ],
+    description:
+      "Previous artifacts and attempts are retained according to policy.",
   },
   {
     number: "05",
     title: "Link both documents",
-    lines: [
-      "Original and corrective documents are linked in",
-      "internal and recipient-facing context where",
-      "supported.",
-    ],
+    description:
+      "Original and corrective documents are linked in internal and recipient-facing context where supported.",
   },
   {
     number: "06",
     title: "Never silently replace",
-    lines: [
-      "Previously delivered evidence is not overwritten or",
-      "erased.",
-    ],
+    description:
+      "Previously delivered evidence is not overwritten or erased.",
   },
 ];
 
@@ -126,33 +115,64 @@ function RecoveryList({
   items: typeof failures;
 }) {
   return (
-    <div className="flex w-full flex-col items-start gap-1.5">
-      <div className="flex w-full flex-col items-start">
-        <h3 className="!m-0 text-lg font-semibold leading-6 text-sky-950">
-          {title}
-        </h3>
-      </div>
+    <div className="flex w-full flex-col items-start">
+      <h3
+        className="
+          !m-0
+          mb-2
+          text-lg
+          font-semibold
+          leading-6
+          text-[#091127]
+        "
+      >
+        {title}
+      </h3>
 
       <div className="flex w-full flex-col">
         {items.map((item, index) => (
           <div
             key={item.title}
-            className={`flex w-full flex-col gap-2 px-0 py-4 sm:flex-row sm:items-start sm:gap-4 ${
-              index !== items.length - 1
-                ? "border-b border-color-grey-93-4"
-                : ""
-            }`}
+            className={`
+              grid
+              w-full
+              grid-cols-1
+              gap-1.5
+              px-0
+              py-4
+              sm:grid-cols-[145px_minmax(0,1fr)]
+              sm:gap-5
+              ${
+                index !== items.length - 1
+                  ? "border-b border-[#edf0f4]"
+                  : ""
+              }
+            `}
           >
-            <div className="w-full shrink-0 sm:w-36">
-              <div className="text-sm font-semibold leading-6 text-sky-950">
+            <div>
+              <span
+                className="
+                  text-sm
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+                "
+              >
                 {item.title}
-              </div>
+              </span>
             </div>
 
-            <div className="min-w-0 flex-1">
-              <div className="text-sm font-normal leading-6 text-color-azure-35">
+            <div className="min-w-0">
+              <span
+                className="
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
                 {item.description}
-              </div>
+              </span>
             </div>
           </div>
         ))}
@@ -163,7 +183,7 @@ function RecoveryList({
 
 export default function Recovery() {
   return (
-    <section className="w-full bg-color-grey-97-2">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -187,26 +207,22 @@ export default function Recovery() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
             items-start
-            gap-9
-            px-0
-            sm:px-4
-            lg:px-12
+            gap-10
+            sm:gap-11
+            md:gap-12
           "
         >
-          {/* =========================================================
-              HERO
-          ========================================================= */}
-
+          {/* HERO */}
           <div
             className="
               flex
               w-full
               flex-col
               items-start
-              gap-8
+              gap-7
               lg:flex-row
               lg:items-end
               lg:gap-16
@@ -220,80 +236,60 @@ export default function Recovery() {
                 flex-1
                 flex-col
                 items-start
-                gap-5
-                pt-2.5
-                pb-4
-                lg:pb-6
+                gap-4
               "
             >
               {/* EYEBROW */}
-              <div className="relative flex h-4 w-24 items-center">
-                <div
-                  className="
-                    absolute
-                    left-0
-                    top-[7.94px]
-                    h-0.5
-                    w-5
-                    rounded-xs
-                    bg-gradient-to-r
-                    from-color-cyan-42
-                    to-color-azure-51
-                  "
-                />
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
                 <span
                   className="
-                    absolute
-                    left-[30px]
-                    top-[-1px]
-                    whitespace-nowrap
-                    text-xs
-                    font-medium
+                    text-[10px]
+                    font-bold
                     uppercase
                     leading-4
-                    tracking-wider
-                    text-color-azure-44
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                    sm:text-xs
+                    sm:tracking-[0.18em]
                   "
                 >
                   Recovery
                 </span>
+
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
               </div>
 
               {/* HEADING */}
-              <div className="w-full max-w-[638px]">
-                <h2
-                  className="
-                    !m-0
-                    text-[32px]
-                    font-medium
-                    leading-[1.2]
-                    tracking-[-0.03em]
-                    text-sky-950
-                    sm:text-[40px]
-                    md:text-[44px]
-                    lg:text-5xl
-                    lg:leading-[53.82px]
-                  "
-                >
-                  Make failure, retry and
-                  <br className="hidden sm:block" />
-                  alternate delivery
-                  <br className="hidden sm:block" />
-                  explicit.
-                </h2>
-              </div>
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[650px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+                  sm:!text-[34px]
+                  md:!text-[36px]
+                  lg:!text-[40px]
+                "
+              >
+                Make failure, retry and alternate delivery explicit.
+              </h2>
             </div>
 
-            {/* RIGHT DESCRIPTION */}
-            <div className="w-full max-w-[528px] flex-1">
+            {/* DESCRIPTION */}
+            <div className="w-full max-w-[530px] flex-1">
               <p
                 className="
                   !m-0
-                  text-sm
+                  text-[15px]
                   font-normal
                   leading-7
-                  text-color-azure-35
+                  text-[#5d7192]
                   sm:text-base
                 "
               >
@@ -304,35 +300,63 @@ export default function Recovery() {
             </div>
           </div>
 
-          {/* =========================================================
-              FAILURE + RECOVERY
-          ========================================================= */}
-
+          {/* FAILURE + RECOVERY */}
           <div
             className="
-              flex
+              grid
               w-full
-              flex-col
-              items-start
-              gap-12
-              py-6
-              lg:flex-row
-              lg:justify-center
-              lg:gap-16
-              lg:pb-10
+              grid-cols-1
+              gap-10
+              lg:grid-cols-2
+              lg:gap-12
+              xl:gap-16
             "
           >
-            <div className="w-full lg:max-w-[526px]">
-              <RecoveryList title="What goes wrong" items={failures} />
+            {/* WHAT GOES WRONG */}
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-5
+                py-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                sm:px-6
+                sm:py-6
+              "
+            >
+              <RecoveryList
+                title="What goes wrong"
+                items={failures}
+              />
             </div>
 
-            <div className="w-full lg:max-w-[526px]">
-              <RecoveryList title="How it recovers" items={recovery} />
+            {/* HOW IT RECOVERS */}
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-5
+                py-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                sm:px-6
+                sm:py-6
+              "
+            >
+              <RecoveryList
+                title="How it recovers"
+                items={recovery}
+              />
 
               {/* RECOVERY BOUNDARY */}
               <div
                 className="
-                  mt-8
+                  mt-7
                   flex
                   w-full
                   flex-col
@@ -340,28 +364,26 @@ export default function Recovery() {
                   gap-2
                   rounded-r-2xl
                   border-l-[3px]
-                  border-color-azure-51
-                  bg-color-grey-97-2
-                  px-6
-                  py-6
-                  sm:px-7
-                  sm:py-7
+                  border-[#7890b2]
+                  bg-[#f7f8fa]
+                  px-5
+                  py-5
+                  sm:px-6
+                  sm:py-6
                 "
               >
-                <div className="w-full">
-                  <div
-                    className="
-                      text-[9.9px]
-                      font-normal
-                      uppercase
-                      leading-4
-                      tracking-wide
-                      text-color-azure-44
-                    "
-                  >
-                    Recovery boundary
-                  </div>
-                </div>
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                  "
+                >
+                  Recovery boundary
+                </span>
 
                 <p
                   className="
@@ -370,7 +392,7 @@ export default function Recovery() {
                     text-sm
                     font-normal
                     leading-7
-                    text-sky-950
+                    text-[#091127]
                     sm:text-base
                   "
                 >
@@ -382,68 +404,62 @@ export default function Recovery() {
             </div>
           </div>
 
-          {/* =========================================================
-              CORRECTED DOCUMENTS INTRO
-          ========================================================= */}
-
+          {/* CORRECTED DOCUMENTS INTRO */}
           <div
             className="
               flex
               w-full
               flex-col
               items-start
-              gap-3.5
+              gap-3
               border-t
-              border-zinc-200
+              border-[#dfe5ee]
               pt-10
               sm:pt-12
             "
           >
-            <div className="w-full max-w-[512px]">
-              <h3
-                className="
-                  !m-0
-                  text-2xl
-                  font-medium
-                  leading-8
-                  tracking-[-0.02em]
-                  text-sky-950
-                  sm:text-3xl
-                "
-              >
-                Corrected and replacement documents
-              </h3>
-            </div>
+            <h3
+              className="
+                !m-0
+                w-full
+                max-w-[620px]
+                !text-[26px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.03em]
+                !text-[#091127]
+                sm:!text-[30px]
+                md:!text-[32px]
+              "
+            >
+              Corrected and replacement documents
+            </h3>
 
-            <div className="w-full max-w-[555px]">
-              <p
-                className="
-                  !m-0
-                  text-sm
-                  font-normal
-                  leading-7
-                  text-color-azure-35
-                  sm:text-base
-                "
-              >
-                When a credit note or correction supersedes something already
-                delivered, the prior delivery evidence stays exactly where it
-                is.
-              </p>
-            </div>
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              When a credit note or correction supersedes something already
+              delivered, the prior delivery evidence stays exactly where it
+              is.
+            </p>
           </div>
 
-          {/* =========================================================
-              CORRECTION STEPS
-          ========================================================= */}
-
+          {/* CORRECTION STEPS */}
           <div
             className="
               grid
               w-full
               grid-cols-1
               gap-3
-              pt-2
               sm:grid-cols-2
               lg:grid-cols-3
             "
@@ -453,40 +469,40 @@ export default function Recovery() {
                 key={step.number}
                 className="
                   flex
-                  min-h-[240px]
+                  min-h-[220px]
                   w-full
                   flex-col
                   items-start
-                  gap-1
                   rounded-2xl
                   border
-                  border-zinc-200
-                  bg-color-white-solid
-                  px-6
-                  py-6
+                  border-[#dfe5ee]
+                  bg-white
+                  px-5
+                  py-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.04),0_1px_2px_rgba(15,23,42,0.03)]
+                  sm:px-6
+                  sm:py-6
                 "
               >
                 {/* NUMBER */}
                 <div
                   className="
                     flex
-                    w-7
+                    min-w-9
                     items-center
                     justify-center
                     rounded-lg
-                    bg-gradient-to-br
-                    from-color-cyan-42
-                    to-color-azure-51
+                    bg-[#091127]
+                    px-2
                     py-1.5
                   "
                 >
                   <span
                     className="
-                      text-center
-                      text-[9.9px]
-                      font-semibold
+                      text-[10px]
+                      font-bold
                       leading-4
-                      text-color-white-solid
+                      text-white
                     "
                   >
                     {step.number}
@@ -494,45 +510,37 @@ export default function Recovery() {
                 </div>
 
                 {/* TITLE */}
-                <div className="flex w-full flex-col items-start pb-1 pt-2">
-                  <h4
-                    className="
-                      !m-0
-                      text-base
-                      font-semibold
-                      leading-5
-                      text-sky-950
-                    "
-                  >
-                    {step.title}
-                  </h4>
-                </div>
+                <h4
+                  className="
+                    !m-0
+                    mt-4
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {step.title}
+                </h4>
 
                 {/* DESCRIPTION */}
-                <div className="flex flex-col items-start">
-                  {step.lines.map((line) => (
-                    <p
-                      key={line}
-                      className="
-                        !m-0
-                        text-sm
-                        font-normal
-                        leading-5
-                        text-color-azure-35
-                      "
-                    >
-                      {line}
-                    </p>
-                  ))}
-                </div>
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* =========================================================
-              CORRECTION BOUNDARY
-          ========================================================= */}
-
+          {/* CORRECTION BOUNDARY */}
           <div
             className="
               flex
@@ -542,28 +550,26 @@ export default function Recovery() {
               gap-2
               rounded-r-2xl
               border-l-[3px]
-              border-color-azure-51
-              bg-color-grey-97-2
-              px-6
-              py-7
-              sm:px-7
-              sm:py-9
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
+              sm:px-6
+              sm:py-7
             "
           >
-            <div className="w-full">
-              <div
-                className="
-                  text-[9.9px]
-                  font-normal
-                  uppercase
-                  leading-4
-                  tracking-wide
-                  text-color-azure-44
-                "
-              >
-                Correction boundary
-              </div>
-            </div>
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Correction boundary
+            </span>
 
             <p
               className="
@@ -572,7 +578,7 @@ export default function Recovery() {
                 text-sm
                 font-normal
                 leading-7
-                text-sky-950
+                text-[#091127]
                 sm:text-base
               "
             >
@@ -582,13 +588,10 @@ export default function Recovery() {
             </p>
           </div>
 
-          {/* =========================================================
-              CTA
-          ========================================================= */}
-
+          {/* CTA */}
           <div className="flex w-full items-center justify-start">
-            <button
-              type="button"
+            <Link
+              href="/automation"
               className="
                 inline-flex
                 min-h-11
@@ -596,8 +599,8 @@ export default function Recovery() {
                 justify-center
                 rounded-lg
                 border
-                border-sky-950
-                bg-sky-950
+                border-[#091127]
+                bg-[#091127]
                 px-5
                 py-2
                 text-center
@@ -609,14 +612,14 @@ export default function Recovery() {
                 hover:opacity-90
                 focus:outline-none
                 focus:ring-2
-                focus:ring-sky-950
+                focus:ring-[#091127]
                 focus:ring-offset-2
               "
             >
               <span className="!text-white">
                 Explore Automation &amp; Workflows
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

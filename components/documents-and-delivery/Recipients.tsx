@@ -93,95 +93,295 @@ const recordedPerEndpoint = [
 
 export default function Recipients() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 md:px-12 lg:px-16 xl:px-28 xl:py-24">
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col items-start gap-9">
-          {/* Hero */}
-          <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
-            <div className="flex w-full flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
-              <div className="relative h-4 w-28">
-                <div className="absolute left-0 top-[7.94px] h-0.5 w-5 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-                <div className="absolute left-[30px] top-[-1px] whitespace-nowrap text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
-                  Recipients
-                </div>
-              </div>
+          sm:px-8
+          sm:py-16
 
-              <div className="w-full max-w-[638px]">
-                <h2 className="text-4xl font-medium leading-tight text-sky-950 sm:text-5xl sm:leading-[53.82px]">
-                  Who receives it, where,
-                  <br className="hidden sm:block" />
-                  and on what authority.
-                </h2>
-              </div>
-            </div>
+          md:px-10
+          md:py-20
 
-            <div className="w-full max-w-[529px]">
-              <p className="text-base font-normal leading-8 text-color-azure-35">
-                A contact is never automatically authorized for every
-                document. Purpose, authority and verification are separate
-                attributes.
-              </p>
-            </div>
-          </div>
+          lg:px-14
 
-          {/* Contact purpose label */}
-          <div className="relative h-16 w-40">
-            <div className="absolute left-0 top-[23.93px] h-0.5 w-5 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
 
-            <div className="absolute left-[30px] top-[15px] whitespace-nowrap text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
-              Contact purpose
-            </div>
-          </div>
+            sm:gap-12
 
-          {/* Contact purpose cards */}
-          <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl bg-zinc-200 outline outline-1 outline-zinc-200 sm:grid-cols-2 lg:grid-cols-3">
-            {contactPurposes.map((item) => (
-              <div
-                key={item.title}
-                className="flex min-h-[170px] flex-col items-start gap-1.5 bg-white px-5 pt-5 pb-6"
+            md:gap-14
+          "
+        >
+          {/* =====================================================
+              SECTION INTRO
+          ===================================================== */}
+
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                <div className="w-full pb-1">
-                  <h3 className="text-sm font-semibold leading-6 text-sky-950">
+                Recipients
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Who receives it, where, and on what authority.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A contact is never automatically authorized for every document.
+              Purpose, authority and verification are separate attributes.
+            </p>
+          </div>
+
+          {/* =====================================================
+              CONTACT PURPOSE
+          ===================================================== */}
+
+          <div className="flex w-full flex-col items-start">
+            {/* SECTION LABEL */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Contact purpose
+              </span>
+            </div>
+
+            {/* CARDS */}
+            <div
+              className="
+                mt-5
+                grid
+                w-full
+                grid-cols-1
+                gap-3
+
+                sm:grid-cols-2
+
+                lg:grid-cols-3
+              "
+            >
+              {contactPurposes.map((item) => (
+                <div
+                  key={item.title}
+                  className="
+                    flex
+                    min-h-[170px]
+                    flex-col
+                    items-start
+                    rounded-2xl
+                    border
+                    border-[#dfe5ee]
+                    bg-white
+                    px-5
+                    py-5
+                    shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+
+                    sm:px-6
+                    sm:py-6
+                  "
+                >
+                  <h3
+                    className="
+                      !m-0
+                      text-base
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
                     {item.title}
                   </h3>
-                </div>
 
-                <p className="text-sm font-normal leading-5 text-color-azure-35">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+                  <p
+                    className="
+                      !m-0
+                      mt-3
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Two-column information */}
-          <div className="flex w-full flex-col items-start gap-12 pt-4 lg:flex-row lg:gap-16">
-            {/* Endpoint types */}
-            <div className="flex w-full max-w-[526px] flex-col items-start gap-1.5">
-              <div className="w-full">
-                <h3 className="text-lg font-semibold leading-6 text-sky-950">
-                  Endpoint types
-                </h3>
-              </div>
+          {/* =====================================================
+              TWO COLUMN INFORMATION
+          ===================================================== */}
 
-              <div className="flex w-full flex-col">
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-10
+
+              lg:flex-row
+              lg:gap-12
+
+              xl:gap-16
+            "
+          >
+            {/* ===================================================
+                ENDPOINT TYPES
+            =================================================== */}
+
+            <div className="flex w-full flex-1 flex-col items-start">
+              <h3
+                className="
+                  !m-0
+                  text-xl
+                  font-bold
+                  leading-7
+                  tracking-[-0.02em]
+                  text-[#091127]
+                "
+              >
+                Endpoint types
+              </h3>
+
+              <div className="mt-4 flex w-full flex-col">
                 {endpointTypes.map((item, index) => (
                   <div
                     key={item.title}
-                    className={`flex w-full flex-col gap-3 py-4 sm:flex-row sm:items-start sm:gap-6 ${
-                      index !== endpointTypes.length - 1
-                        ? "border-b border-color-grey-93-4"
-                        : ""
-                    }`}
+                    className={`
+                      flex
+                      w-full
+                      flex-col
+                      gap-2
+                      py-4
+
+                      sm:flex-row
+                      sm:items-start
+                      sm:gap-6
+
+                      ${
+                        index !== endpointTypes.length - 1
+                          ? "border-b border-[#dfe5ee]"
+                          : ""
+                      }
+                    `}
                   >
                     <div className="w-full shrink-0 sm:w-36">
-                      <h4 className="text-sm font-semibold leading-6 text-sky-950">
+                      <h4
+                        className="
+                          !m-0
+                          text-sm
+                          font-semibold
+                          leading-6
+                          text-[#091127]
+                        "
+                      >
                         {item.title}
                       </h4>
                     </div>
 
-                    <div className="flex-1">
-                      <p className="text-sm font-normal leading-6 text-color-azure-35">
+                    <div className="min-w-0 flex-1">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
                         {item.description}
                       </p>
                     </div>
@@ -190,32 +390,70 @@ export default function Recipients() {
               </div>
             </div>
 
-            {/* What is recorded */}
-            <div className="flex w-full max-w-[526px] flex-col items-start gap-1.5">
-              <div className="w-full">
-                <h3 className="text-lg font-semibold leading-6 text-sky-950">
-                  What is recorded per endpoint
-                </h3>
-              </div>
+            {/* ===================================================
+                WHAT IS RECORDED
+            =================================================== */}
 
-              <div className="flex w-full flex-col">
+            <div className="flex w-full flex-1 flex-col items-start">
+              <h3
+                className="
+                  !m-0
+                  text-xl
+                  font-bold
+                  leading-7
+                  tracking-[-0.02em]
+                  text-[#091127]
+                "
+              >
+                What is recorded per endpoint
+              </h3>
+
+              <div className="mt-4 flex w-full flex-col">
                 {recordedPerEndpoint.map((item, index) => (
                   <div
                     key={item.title}
-                    className={`flex w-full flex-col gap-3 py-4 sm:flex-row sm:items-start sm:gap-6 ${
-                      index !== recordedPerEndpoint.length - 1
-                        ? "border-b border-color-grey-93-4"
-                        : ""
-                    }`}
+                    className={`
+                      flex
+                      w-full
+                      flex-col
+                      gap-2
+                      py-4
+
+                      sm:flex-row
+                      sm:items-start
+                      sm:gap-6
+
+                      ${
+                        index !== recordedPerEndpoint.length - 1
+                          ? "border-b border-[#dfe5ee]"
+                          : ""
+                      }
+                    `}
                   >
                     <div className="w-full shrink-0 sm:w-36">
-                      <h4 className="text-sm font-semibold leading-6 text-sky-950">
+                      <h4
+                        className="
+                          !m-0
+                          text-sm
+                          font-semibold
+                          leading-6
+                          text-[#091127]
+                        "
+                      >
                         {item.title}
                       </h4>
                     </div>
 
-                    <div className="flex-1">
-                      <p className="text-sm font-normal leading-6 text-color-azure-35">
+                    <div className="min-w-0 flex-1">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
                         {item.description}
                       </p>
                     </div>
@@ -223,37 +461,81 @@ export default function Recipients() {
                 ))}
               </div>
 
-              {/* Recipient boundary */}
-              <div className="mt-2 w-full rounded-tr-2xl rounded-br-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 py-7">
-                <div className="flex flex-col items-start gap-2">
-                  <div className="w-full">
-                    <div className="text-[9.9px] font-normal uppercase leading-4 tracking-wide text-color-azure-44">
-                      Recipient boundary
-                    </div>
-                  </div>
+              {/* RECIPIENT BOUNDARY */}
+              <div
+                className="
+                  mt-5
+                  w-full
+                  rounded-r-2xl
+                  border-l-2
+                  border-[#7890b2]
+                  bg-white
+                  px-5
+                  py-5
+                  shadow-[0_1px_2px_rgba(15,23,42,0.02)]
 
-                  <div className="w-full">
-                    <p className="text-sm font-normal leading-7 text-sky-950">
-                      Address or email validation does not prove legal identity
-                      or receipt. It confirms an endpoint is well-formed and,
-                      where supported, reachable — nothing about who is behind
-                      it.
-                    </p>
-                  </div>
-                </div>
+                  sm:px-6
+                  sm:py-6
+                "
+              >
+                <p
+                  className="
+                    !m-0
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.08em]
+                    text-[#7890b2]
+                  "
+                >
+                  Recipient boundary
+                </p>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  Address or email validation does not prove legal identity
+                  or receipt. It confirms an endpoint is well-formed and,
+                  where supported, reachable — nothing about who is behind it.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="flex w-full justify-center pt-4">
+          {/* =====================================================
+              CTA
+          ===================================================== */}
+
+          <div className="flex w-full justify-center pt-1">
             <Link
               href="/customer-records"
-              className="inline-flex h-11 min-w-[220px] items-center justify-center rounded-lg border border-sky-950 bg-sky-950 px-5 py-2.5 text-base font-normal leading-6 text-white no-underline transition-opacity hover:opacity-90"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                transition
+                hover:bg-[#17213a]
+              "
             >
-              <span className="whitespace-nowrap text-center text-white">
-                Explore Customer Records
-              </span>
+              Explore Customer Records
             </Link>
           </div>
         </div>

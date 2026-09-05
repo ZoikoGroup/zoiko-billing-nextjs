@@ -53,76 +53,216 @@ export default function ReportingFAQ() {
   };
 
   return (
-    <section className="w-full bg-slate-50 px-5 py-16 transition-colors dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-10 sm:gap-12 lg:gap-14">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-start
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-4
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+              lg:gap-16
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                flex
+                w-full
+                max-w-[662px]
+                flex-col
+                items-start
+                gap-3
+              "
+            >
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-              <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                Questions
-              </span>
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Questions
+                </span>
+
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+              </div>
+
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[662px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+                  sm:!text-[34px]
+                  md:!text-[36px]
+                  lg:!text-[40px]
+                "
+              >
+                Direct answers about
+                <br className="hidden sm:block" />
+                reporting.
+              </h2>
             </div>
 
-            <h2 className="text-3xl font-medium leading-[1.15] tracking-tight text-sky-950 dark:text-white sm:text-4xl lg:text-5xl">
-              Direct answers about
-              <br className="hidden sm:block" />
-              reporting.
-            </h2>
+            {/* RIGHT */}
+            <div className="w-full max-w-[528px]">
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+                  sm:text-base
+                "
+              >
+                Every answer is rendered on the page and works without
+                JavaScript.
+              </p>
+            </div>
           </div>
 
-          <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-8 text-slate-600 dark:text-slate-300">
-              Every answer is rendered on the page and works without
-              JavaScript.
-            </p>
-          </div>
-        </div>
+          {/* FAQ */}
+          <div className="w-full max-w-[920px]">
+            <div className="overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]">
+              {faqs.map((faq, index) => {
+                const isOpen = openIndex === index;
 
-        {/* FAQ */}
-        <div className="w-full max-w-[920px]">
-          <div className="border-t border-slate-200 dark:border-slate-700">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-
-              return (
-                <div
-                  key={faq.question}
-                  className="border-b border-slate-200 dark:border-slate-700"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleFAQ(index)}
-                    aria-expanded={isOpen}
-                    className="flex w-full items-start justify-between gap-6 px-0.5 py-5 text-left"
+                return (
+                  <div
+                    key={faq.question}
+                    className={
+                      index !== faqs.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
                   >
-                    <span className="text-base font-semibold leading-7 text-sky-950 dark:text-white">
-                      {faq.question}
-                    </span>
-
-                    <span
-                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono text-sm font-semibold leading-6 transition-colors ${
-                        isOpen
-                          ? "bg-sky-600 text-white outline outline-1 outline-offset-[-1px] outline-sky-600"
-                          : "text-slate-600 outline outline-1 outline-offset-[-1px] outline-slate-200 dark:text-slate-300 dark:outline-slate-700"
-                      }`}
+                    <button
+                      type="button"
+                      onClick={() => toggleFAQ(index)}
+                      aria-expanded={isOpen}
+                      className="
+                        flex
+                        w-full
+                        items-start
+                        justify-between
+                        gap-6
+                        px-5
+                        py-5
+                        text-left
+                        transition-colors
+                        hover:bg-[#fafbfc]
+                        sm:px-6
+                        sm:py-5
+                      "
                     >
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
+                      <span
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-6
+                          text-[#091127]
+                          sm:text-base
+                          sm:leading-7
+                        "
+                      >
+                        {faq.question}
+                      </span>
 
-                  {isOpen && (
-                    <div className="max-w-[736px] pb-6 pr-4 sm:pb-7">
-                      <p className="text-sm font-normal leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                      <span
+                        className={`
+                          flex
+                          h-7
+                          w-7
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          text-sm
+                          font-semibold
+                          leading-6
+                          transition-colors
+                          ${
+                            isOpen
+                              ? "bg-[#091127] text-white outline outline-1 outline-offset-[-1px] outline-[#091127]"
+                              : "bg-white text-[#5d7192] outline outline-1 outline-offset-[-1px] outline-[#dfe5ee]"
+                          }
+                        `}
+                        aria-hidden="true"
+                      >
+                        {isOpen ? "−" : "+"}
+                      </span>
+                    </button>
+
+                    {isOpen && (
+                      <div className="max-w-[780px] px-5 pb-6 sm:px-6 sm:pb-7">
+                        <p
+                          className="
+                            !m-0
+                            text-[15px]
+                            font-normal
+                            leading-7
+                            text-[#5d7192]
+                            sm:text-base
+                          "
+                        >
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

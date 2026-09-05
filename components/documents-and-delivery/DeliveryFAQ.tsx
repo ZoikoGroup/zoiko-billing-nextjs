@@ -54,83 +54,224 @@ export default function DeliveryFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full bg-[#f7f8f8] px-6 py-16 sm:px-10 lg:px-28 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-14 px-0 lg:px-12">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
-          {/* Left */}
-          <div className="flex min-w-0 flex-1 flex-col items-start gap-5 pt-2.5 pb-5">
-            {/* Eyebrow */}
-            <div className="relative h-4 w-28">
-              <div className="absolute left-0 top-[7px] h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <div className="absolute left-[30px] top-[-1px] whitespace-nowrap text-xs font-medium uppercase leading-4 tracking-wider text-[#47728e]">
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-11
+
+            md:gap-12
+          "
+        >
+          {/* ================= HEADER ================= */}
+
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-5
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Questions
-              </div>
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Heading */}
-            <div className="w-full max-w-[638px]">
-              <h2 className="text-4xl font-medium leading-[1.12] tracking-tight text-slate-950 sm:text-5xl">
-                Direct answers about
-                <br />
-                document delivery.
-              </h2>
-            </div>
-          </div>
+            {/* HEADING */}
 
-          {/* Description */}
-          <div className="w-full max-w-[529px]">
-            <p className="text-base font-normal leading-8 text-[#57758c]">
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about document delivery.
+            </h2>
+
+            {/* DESCRIPTION */}
+
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Every answer is rendered on the page and works without
               JavaScript.
             </p>
           </div>
-        </div>
 
-        {/* FAQ */}
-        <div className="w-full max-w-[920px]">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+          {/* ================= FAQ ================= */}
 
-            return (
-              <div
-                key={faq.question}
-                className="border-b border-zinc-200 first:border-t"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  aria-expanded={isOpen}
-                  className="flex min-h-16 w-full items-start justify-between gap-6 px-0.5 py-5 text-left"
+          <div className="w-full max-w-[920px]">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <div
+                  key={faq.question}
+                  className="
+                    border-b
+                    border-[#dfe5ee]
+                    first:border-t
+                  "
                 >
-                  <span className="text-base font-semibold leading-7 text-slate-950">
-                    {faq.question}
-                  </span>
-
-                  {/* Icon */}
-                  <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-sm font-semibold leading-6 transition-all ${
-                      isOpen
-                        ? "border-[#3f8fd8] bg-[#3f8fd8] text-white"
-                        : "border-zinc-200 bg-transparent text-[#57758c]"
-                    }`}
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    aria-expanded={isOpen}
+                    className="
+                      flex
+                      min-h-16
+                      w-full
+                      items-start
+                      justify-between
+                      gap-6
+                      px-0.5
+                      py-5
+                      text-left
+                      transition-opacity
+                      hover:opacity-80
+                      focus:outline-none
+                      focus-visible:ring-2
+                      focus-visible:ring-[#7890b2]
+                      focus-visible:ring-offset-2
+                    "
                   >
-                    {isOpen ? "−" : "+"}
-                  </span>
-                </button>
+                    {/* QUESTION */}
 
-                {/* Answer */}
-                {isOpen && (
-                  <div className="max-w-[736px] px-0.5 pb-6">
-                    <p className="text-base font-normal leading-7 text-[#57758c]">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                    <span
+                      className="
+                        text-base
+                        font-semibold
+                        leading-7
+                        text-[#091127]
+                      "
+                    >
+                      {faq.question}
+                    </span>
+
+                    {/* PLUS / MINUS */}
+
+                    <span
+                      className={`
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        text-sm
+                        font-semibold
+                        leading-6
+                        transition-all
+
+                        ${
+                          isOpen
+                            ? "border-[#7890b2] bg-[#7890b2] text-white"
+                            : "border-[#dfe5ee] bg-transparent text-[#5d7192]"
+                        }
+                      `}
+                    >
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {/* ANSWER */}
+
+                  {isOpen && (
+                    <div className="max-w-[736px] px-0.5 pb-6">
+                      <p
+                        className="
+                          !m-0
+                          text-[15px]
+                          font-normal
+                          leading-7
+                          text-[#5d7192]
+
+                          sm:text-base
+                        "
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

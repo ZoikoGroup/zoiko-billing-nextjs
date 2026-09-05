@@ -1,56 +1,248 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="flex w-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8 md:py-20">
-      <div className="grid w-full max-w-[1220px] grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-7 flex flex-col items-start justify-start gap-4 sm:gap-6">
-          <div className="inline-flex items-center gap-2.5">
-            <span className="shrink-0 rounded-xs h-0.5 w-5 bg-gradient-to-r from-cyan-500 to-sky-500" />
-            <span className="font-mono text-xs font-medium uppercase tracking-wider text-sky-600">
+    <section className="w-full overflow-hidden bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          px-5
+          pb-14
+          pt-10
+
+          sm:px-8
+          sm:pb-16
+          sm:pt-12
+
+          md:px-10
+          md:pb-20
+
+          lg:flex-row
+          lg:items-center
+          lg:justify-between
+          lg:gap-10
+          lg:px-14
+          lg:py-20
+
+          xl:gap-14
+          xl:px-20
+        "
+      >
+        {/* LEFT CONTENT */}
+        <div className="w-full min-w-0 lg:w-[52%]">
+          {/* EYEBROW */}
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
+
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
               Zoiko Billing Platform
             </span>
           </div>
 
-          <h1 className="font-sans text-4xl font-medium leading-[1.1] tracking-tight text-sky-950 sm:text-5xl lg:text-6xl">
-            Billing clarity from <br />
-            <span className="text-sky-600">invoice to payment.</span>
+          {/* MOBILE + TABLET HEADING */}
+          <h1
+            className="
+              !m-0
+              !block
+              !max-w-[700px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              sm:!text-[46px]
+
+              md:!text-[50px]
+
+              lg:!hidden
+            "
+          >
+            Billing clarity from{" "}
+            <span className="text-blue-600">
+              invoice to payment.
+            </span>
           </h1>
 
-          <p className="max-w-[528px] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            Zoiko Billing manages the connected billing record across customers,
-            charges, invoices, delivery, payments, balances and reporting. Use
-            it independently or as part of Zoiko One.
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !max-w-none
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
+              lg:!text-[44px]
+
+              xl:!text-[50px]
+            "
+          >
+            <span className="block">
+              Billing clarity from
+            </span>
+
+            <span className="block text-blue-600">
+              invoice to payment.
+            </span>
+          </h1>
+
+          {/* DESCRIPTION */}
+          <p
+            className="
+              !mt-8
+              w-full
+              max-w-[687px]
+              text-[15px]
+              font-normal
+              leading-7
+              text-[#5d7192]
+
+              sm:mt-9
+              sm:text-base
+
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
+            "
+          >
+            Zoiko Billing manages the connected billing record across
+            customers, charges, invoices, delivery, payments, balances and
+            reporting. Use it independently or as part of Zoiko One.
           </p>
 
-          <div className="flex w-full flex-wrap items-center gap-4 pt-2 sm:w-auto">
+          {/* CTA BUTTONS */}
+          <div
+            className="
+              mt-7
+              flex
+              w-full
+              flex-col
+              gap-3
+
+              sm:mt-8
+              sm:w-auto
+              sm:flex-row
+              sm:flex-wrap
+            "
+          >
             <Link
               href="/create-account"
-              className="min-h-11 rounded-lg bg-sky-600 px-6 py-2.5 text-base font-normal text-white shadow-sm transition-colors duration-150 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                bg-blue-600
+                px-7
+                text-center
+                text-sm
+                font-semibold
+                text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
+                transition
+                hover:bg-blue-700
+
+                sm:w-auto
+              "
             >
               Create Account
             </Link>
+
             <Link
               href="/book-demo"
-              className="min-h-11 rounded-lg border border-slate-200 bg-white px-6 py-2.5 text-base font-normal text-slate-950 transition-colors duration-150 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-7
+                text-center
+                text-sm
+                font-semibold
+                text-[#091127]
+                transition
+                hover:bg-[#f8faff]
+
+                sm:w-auto
+              "
             >
               Book a Demo
             </Link>
           </div>
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 via-sky-100/50 to-slate-100 p-4 sm:p-7 lg:col-span-5">
-          <div className="relative z-10 overflow-hidden rounded-2xl border border-slate-200 shadow-[0_22px_50px_-20px_rgba(14,33,27,0.24),0_2px_6px_0_rgba(14,33,27,0.06)]">
+        {/* RIGHT IMAGE */}
+        <div
+          className="
+            mt-10
+            w-full
+
+            sm:mt-12
+
+            md:mt-14
+
+            lg:mt-0
+            lg:w-[44%]
+
+            xl:w-[43%]
+          "
+        >
+          <div
+            className="
+              relative
+              mx-auto
+              w-full
+              max-w-[547px]
+              overflow-hidden
+              rounded-2xl
+            "
+          >
             <Image
               src="/images/platform-overview/Illustrative Zoiko Billing record showing eight connected stages.png"
               alt="Illustrative Zoiko Billing record showing eight connected stages"
-              width={500}
-              height={440}
-              className="block h-auto w-full object-cover"
+              width={547}
+              height={538}
               priority
+              className="h-auto w-full object-cover"
+              sizes="
+                (max-width: 639px) 100vw,
+                (max-width: 767px) 90vw,
+                (max-width: 1023px) 85vw,
+                (max-width: 1279px) 44vw,
+                547px
+              "
             />
           </div>
         </div>

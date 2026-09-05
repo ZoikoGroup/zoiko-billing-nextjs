@@ -70,7 +70,7 @@ export default function SupportImplementation() {
 
               <div className="flex w-full flex-wrap items-start gap-2.5 pt-1">
                 <Link
-                  href="/login"
+                  href="/sign-in"
                   className="!inline-flex !h-9 !items-center !justify-center !rounded-full !border !border-gray-300 !bg-white !px-4 !text-sm !font-semibold !leading-5 !text-slate-900 !no-underline shadow-sm transition hover:!border-gray-400 hover:!bg-gray-100"
                 >
                   Sign in
@@ -102,7 +102,7 @@ export default function SupportImplementation() {
 
               <div className="flex w-full flex-col items-start pt-1">
                 <Link
-                  href="/book-a-demo"
+                  href="/book-demo"
                   className="!inline-flex !h-9 !items-center !justify-center !rounded-full !border !border-blue-600 !bg-blue-600 !px-4 !text-sm !font-semibold !leading-5 !text-white !no-underline !shadow-[0px_6px_16px_0px_rgba(31,111,235,0.24)] transition hover:!border-blue-700 hover:!bg-blue-700"
                 >
                   Book a demo
