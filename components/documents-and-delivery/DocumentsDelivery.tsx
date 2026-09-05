@@ -12,47 +12,41 @@ export default function DocumentsDelivery() {
           max-w-[1440px]
           flex-col
           px-5
-          py-10
+          pb-14
+          pt-10
 
           sm:px-8
-          sm:py-12
+          sm:pb-16
+          sm:pt-12
 
           md:px-10
-          md:py-16
+          md:pb-20
 
           lg:flex-row
           lg:items-center
           lg:justify-between
-          lg:gap-12
+          lg:gap-10
           lg:px-14
           lg:py-20
 
-          xl:gap-16
+          xl:gap-14
           xl:px-20
         "
       >
         {/* LEFT CONTENT */}
-        <div
-          className="
-            w-full
-            min-w-0
-
-            lg:w-[50%]
-            xl:w-[51%]
-          "
-        >
+        <div className="w-full min-w-0 lg:w-[52%]">
           {/* EYEBROW */}
           <div className="mb-5 flex items-center gap-3 sm:mb-6">
-            <span className="h-px w-5 shrink-0 bg-blue-600" />
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
 
             <span
               className="
                 text-[10px]
-                font-medium
+                font-bold
                 uppercase
                 leading-4
                 tracking-[0.16em]
-                text-[#5679a8]
+                text-[#7890b2]
 
                 sm:text-xs
                 sm:tracking-[0.18em]
@@ -62,50 +56,84 @@ export default function DocumentsDelivery() {
             </span>
           </div>
 
-          {/* HEADING */}
-          <h2
+          {/* MOBILE + TABLET HEADING */}
+          <h1
             className="
               !m-0
-              max-w-[700px]
-              text-[40px]
-              font-medium
-              leading-[1.08]
-              tracking-[-0.035em]
-              text-slate-900
+              !block
+              !max-w-[700px]
+              !text-[40px]
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
 
-              sm:text-[46px]
+              sm:!text-[46px]
 
-              md:text-[50px]
+              md:!text-[50px]
 
-              lg:text-[46px]
-
-              xl:text-[52px]
+              lg:!hidden
             "
           >
-            Deliver the right
-            <br className="hidden sm:block" />
-            billing document
-            <br className="hidden sm:block" />
+            Deliver the right billing document{" "}
             <span className="text-blue-600">
               through a controlled path.
             </span>
-          </h2>
+          </h1>
+
+          {/* DESKTOP HEADING */}
+          <h1
+            className="
+              !m-0
+              !hidden
+              !max-w-none
+              !font-extrabold
+              !leading-[1.08]
+              !tracking-[-0.035em]
+              !text-slate-900
+
+              lg:!block
+              lg:!text-[44px]
+
+              xl:!text-[50px]
+            "
+          >
+            <span className="block">
+              Deliver the right
+            </span>
+
+            <span className="block">
+              billing document
+            </span>
+
+            <span className="block text-blue-600">
+              through a controlled
+            </span>
+
+            <span className="block text-blue-600">
+              path.
+            </span>
+          </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              mt-7
+              mt-8
               w-full
-              max-w-[560px]
+              max-w-[687px]
               text-[15px]
               font-normal
               leading-7
               text-[#5d7192]
 
-              sm:mt-8
+              sm:mt-9
               sm:text-base
 
-              lg:mt-7
+              md:mt-9
+
+              lg:mt-8
+
+              xl:mt-9
             "
           >
             Zoiko Billing supports versioned rendering, verified recipients,
@@ -136,12 +164,14 @@ export default function DocumentsDelivery() {
                 w-full
                 items-center
                 justify-center
-                rounded-lg
+                rounded-full
                 bg-blue-600
-                px-5
+                px-7
+                text-center
                 text-sm
-                font-normal
+                font-semibold
                 text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
                 hover:bg-blue-700
 
@@ -152,23 +182,24 @@ export default function DocumentsDelivery() {
             </Link>
 
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11
                 w-full
                 items-center
                 justify-center
-                rounded-lg
+                rounded-full
                 border
-                border-zinc-200
+                border-[#dfe5ee]
                 bg-white
-                px-5
+                px-7
+                text-center
                 text-sm
-                font-normal
-                text-slate-900
+                font-semibold
+                text-[#091127]
                 transition
-                hover:bg-slate-50
+                hover:bg-[#f8faff]
 
                 sm:w-auto
               "
@@ -179,7 +210,7 @@ export default function DocumentsDelivery() {
 
           {/* SECONDARY LINK */}
           <Link
-            href="/documents-and-delivery"
+            href="#delivery-model"
             className="
               mt-5
               inline-flex
@@ -218,68 +249,36 @@ export default function DocumentsDelivery() {
             md:mt-14
 
             lg:mt-0
-            lg:w-[46%]
+            lg:w-[44%]
 
-            xl:w-[44%]
+            xl:w-[43%]
           "
         >
           <div
             className="
               relative
               mx-auto
-              aspect-[500/620]
+              aspect-[557/538]
               w-full
-              max-w-[500px]
+              max-w-[547px]
               overflow-hidden
-              rounded-3xl
-              bg-[#edf5f8]
-              p-4
-
-              sm:p-5
-
-              md:p-6
-
-              lg:p-7
-          "
+              rounded-2xl
+            "
           >
-            {/* Background glow */}
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-0
-                bg-[radial-gradient(circle_at_20%_20%,rgba(50,220,140,0.18),transparent_45%)]
+            <Image
+              src="/images/documents-and-delivery/docs.png"
+              alt="Billing documents and delivery"
+              fill
+              priority
+              className="object-cover"
+              sizes="
+                (max-width: 639px) 100vw,
+                (max-width: 767px) 90vw,
+                (max-width: 1023px) 85vw,
+                (max-width: 1279px) 44vw,
+                547px
               "
             />
-
-            {/* IMAGE */}
-            <div
-              className="
-                relative
-                h-full
-                w-full
-                overflow-hidden
-                rounded-2xl
-                border
-                border-zinc-200
-                bg-white
-                shadow-[0_22px_50px_-20px_rgba(14,33,27,0.24)]
-              "
-            >
-              <Image
-                src="/images/documents-and-delivery/docs.png"
-                alt="Billing documents and delivery"
-                fill
-                priority
-                className="object-cover"
-                sizes="
-                  (max-width: 639px) 90vw,
-                  (max-width: 1023px) 75vw,
-                  (max-width: 1279px) 42vw,
-                  500px
-                "
-              />
-            </div>
           </div>
         </div>
       </div>

@@ -37,87 +37,323 @@ const trustItems = [
 
 export default function TrustSecurity() {
   return (
-    <section className="w-full bg-slate-50 px-5 py-16 transition-colors dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-8 sm:gap-9">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                Trust, privacy and security
-              </span>
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-4
+
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+              lg:gap-16
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                flex
+                w-full
+                max-w-[662px]
+                flex-col
+                items-start
+                gap-3
+              "
+            >
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Trust, privacy and security
+                </span>
+              </div>
+
+              {/* HEADING */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[662px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
+                Reporting concentrates
+                <br className="hidden sm:block" />
+                data, so it concentrates
+                <br className="hidden sm:block" />
+                risk.
+              </h2>
             </div>
 
-            <h2 className="text-3xl font-medium leading-[1.15] tracking-tight text-sky-950 dark:text-white sm:text-4xl lg:text-5xl">
-              Reporting concentrates
-              <br className="hidden sm:block" />
-              data, so it concentrates
-              <br className="hidden sm:block" />
-              risk.
-            </h2>
-          </div>
-
-          <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-8 text-slate-600 dark:text-slate-300">
-              A report can gather in one place what is otherwise scattered,
-              which is exactly why access, fields and exports are governed
-              separately.
-            </p>
-          </div>
-        </div>
-
-        {/* Trust Cards */}
-        <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-          {trustItems.map((item) => (
+            {/* DESCRIPTION */}
             <div
-              key={item.title}
-              className="flex min-h-[165px] flex-col items-start gap-2 bg-white px-6 py-6 transition-colors dark:bg-slate-900"
+              className="
+                w-full
+                max-w-[528px]
+                lg:pb-1
+              "
             >
-              <h3 className="text-base font-semibold leading-6 text-sky-950 dark:text-white">
-                {item.title}
-              </h3>
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
 
-              <p className="text-sm font-normal leading-6 text-slate-600 dark:text-slate-300">
-                {item.description}
+                  sm:text-base
+                "
+              >
+                A report can gather in one place what is otherwise scattered,
+                which is exactly why access, fields and exports are governed
+                separately.
               </p>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Assurance Boundary */}
-        <div className="w-full rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-100 px-5 py-7 dark:bg-slate-900 sm:px-7 sm:py-8">
-          <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-            Assurance boundary
-          </span>
+          {/* TRUST CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-px
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-[#dfe5ee]
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
-          <p className="mt-2 max-w-[761px] text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-            Internal schemas, customer data, security controls and
-            certification claims are published only with evidence. Product
-            reports are internal evidence — they do not replace statutory,
-            legal, tax or audit requirements.
-          </p>
-        </div>
+              sm:grid-cols-2
 
-        {/* CTAs */}
-        <div className="relative z-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            href="#"
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-lg !bg-sky-950 px-5 py-2.5 text-base font-normal leading-6 !text-white !outline !outline-1 !outline-offset-[-1px] !outline-sky-950 transition hover:!bg-sky-900 hover:!text-white dark:!bg-sky-600 dark:!outline-sky-600 dark:hover:!bg-sky-500 sm:w-auto"
+              lg:grid-cols-3
+            "
           >
-            Review security and trust
-          </Link>
+            {trustItems.map((item) => (
+              <div
+                key={item.title}
+                className="
+                  flex
+                  min-h-[165px]
+                  flex-col
+                  items-start
+                  gap-2
+                  bg-white
+                  px-5
+                  py-5
 
-          <Link
-            href="#"
-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 px-2 py-2.5 text-base font-normal leading-6 !text-sky-600 transition hover:!text-sky-800 dark:!text-sky-400 dark:hover:!text-sky-300 sm:w-auto"
+                  sm:px-6
+                  sm:py-6
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* ASSURANCE BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
+
+              sm:px-7
+              sm:py-7
+            "
           >
-            <span>Read the privacy notice</span>
-            <span className="font-mono text-base font-bold leading-6">
-              →
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Assurance boundary
             </span>
-          </Link>
+
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[761px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
+              Internal schemas, customer data, security controls and
+              certification claims are published only with evidence. Product
+              reports are internal evidence — they do not replace statutory,
+              legal, tax or audit requirements.
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-3
+
+              sm:flex-row
+            "
+          >
+            <Link
+              href="security-overview"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2.5
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                outline
+                outline-1
+                outline-offset-[-1px]
+                outline-[#091127]
+                transition
+                hover:bg-[#17233d]
+                hover:!text-white
+
+                sm:w-auto
+              "
+            >
+              Review security and trust
+            </Link>
+
+            <Link
+              href="privacy-notice"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                gap-2
+                px-2
+                py-2.5
+                text-base
+                font-normal
+                leading-6
+                !text-[#091127]
+                transition
+                hover:!text-[#5d7192]
+
+                sm:w-auto
+              "
+            >
+              <span>Read the privacy notice</span>
+
+              <span className="text-base font-bold leading-6">→</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -34,7 +34,7 @@ const capabilityBlocks: CapabilityBlock[] = [
     ],
     imageUrl: '/images/platform-overview/div (3).png',
     imageAlt: 'Customer and operational control dashboard',
-    bgGradient: 'bg-slate-100',
+    bgGradient: 'bg-[#f7f8fa]',
     reverseLayout: false,
   },
   {
@@ -51,7 +51,7 @@ const capabilityBlocks: CapabilityBlock[] = [
     ],
     imageUrl: '/images/platform-overview/div (6).png',
     imageAlt: 'Billing operations and delivery management',
-    bgGradient: 'bg-stone-100',
+    bgGradient: 'bg-[#f7f8fa]',
     reverseLayout: true,
   },
   {
@@ -68,91 +68,321 @@ const capabilityBlocks: CapabilityBlock[] = [
     ],
     imageUrl: '/images/platform-overview/div (7).png',
     imageAlt: 'Revenue control and analytics preview',
-    bgGradient: 'bg-cyan-50/70',
+    bgGradient: 'bg-[#f7f8fa]',
     reverseLayout: false,
   },
 ];
 
 export default function CapabilityBlocksSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-16 lg:space-y-24">
-        <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12">
-          <div className="space-y-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+            sm:gap-12
+            md:gap-14
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Capabilities
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight text-sky-950 font-sans sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               Three groups of capability, one record underneath.
             </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              Foundation, document control and post-issue visibility. Each links to its dedicated page.
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Foundation, document control and post-issue visibility. Each
+              links to its dedicated page.
             </p>
           </div>
-        </div>
 
-        <div className="space-y-16 lg:space-y-20">
-          {capabilityBlocks.map((block) => (
-            <div key={block.number} className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16">
+          {/* CAPABILITY BLOCKS */}
+          <div className="flex w-full flex-col gap-12 sm:gap-16 lg:gap-20">
+            {capabilityBlocks.map((block) => (
               <div
-                className={`flex items-center justify-center rounded-3xl p-6 sm:p-9 lg:col-span-6 ${block.bgGradient} ${
-                  block.reverseLayout ? 'lg:order-2' : 'lg:order-1'
-                }`}
+                key={block.number}
+                className="
+                  grid
+                  w-full
+                  grid-cols-1
+                  items-center
+                  gap-8
+                  lg:grid-cols-12
+                  lg:gap-14
+                  xl:gap-16
+                "
               >
-                <Image
-                  src={block.imageUrl}
-                  alt={block.imageAlt}
-                  width={484}
-                  height={393}
-                  className="h-auto w-full max-h-[400px] rounded-2xl border border-zinc-200 object-cover shadow-[0_22px_50px_-20px_rgba(14,33,27,0.24),0_2px_6px_0_rgba(14,33,27,0.06)]"
-                />
-              </div>
-
-              <div
-                className={`flex flex-col items-start justify-start space-y-6 lg:col-span-6 ${
-                  block.reverseLayout ? 'lg:order-1' : 'lg:order-2'
-                }`}
-              >
-                <div className="inline-flex items-center gap-3">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-[10px] font-semibold uppercase text-sky-600 font-mono">
-                    {block.number}
-                  </span>
-                  <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
-                    {block.category}
-                  </span>
+                {/* IMAGE */}
+                <div
+                  className={`
+                    flex
+                    min-h-[280px]
+                    items-center
+                    justify-center
+                    overflow-hidden
+                    rounded-3xl
+                    border
+                    border-[#dfe5ee]
+                    p-5
+                    ${block.bgGradient}
+                    sm:min-h-[340px]
+                    sm:p-7
+                    lg:col-span-6
+                    lg:min-h-[400px]
+                    ${
+                      block.reverseLayout
+                        ? 'lg:order-2'
+                        : 'lg:order-1'
+                    }
+                  `}
+                >
+                  <Image
+                    src={block.imageUrl}
+                    alt={block.imageAlt}
+                    width={484}
+                    height={393}
+                    className="
+                      h-auto
+                      max-h-[400px]
+                      w-full
+                      rounded-2xl
+                      border
+                      border-[#dfe5ee]
+                      object-cover
+                      shadow-[0_12px_30px_rgba(15,23,42,0.08),0_2px_6px_rgba(15,23,42,0.04)]
+                    "
+                  />
                 </div>
 
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-medium leading-snug text-sky-950 font-sans sm:text-3xl">
-                    {block.title}
-                  </h3>
-                  <p className="text-base font-normal leading-relaxed text-slate-600">
-                    {block.description}
-                  </p>
-                </div>
-
-                <div className="w-full divide-y divide-slate-100 border-y border-slate-100 pt-2">
-                  {block.links.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href || '#'}
-                      className="group flex items-center justify-between rounded-lg px-2 py-3.5 text-sky-950 transition-colors duration-150 hover:bg-slate-50 hover:text-sky-600"
+                {/* CONTENT */}
+                <div
+                  className={`
+                    flex
+                    flex-col
+                    items-start
+                    justify-start
+                    lg:col-span-6
+                    ${
+                      block.reverseLayout
+                        ? 'lg:order-1'
+                        : 'lg:order-2'
+                    }
+                  `}
+                >
+                  {/* NUMBER + CATEGORY */}
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="
+                        flex
+                        h-7
+                        min-w-7
+                        items-center
+                        justify-center
+                        rounded-lg
+                        border
+                        border-[#dfe5ee]
+                        bg-white
+                        px-2
+                        text-[10px]
+                        font-bold
+                        leading-4
+                        text-[#7890b2]
+                      "
                     >
-                      <span className="text-sm font-normal font-sans sm:text-base">{link.label}</span>
-                      <span className="font-mono text-base text-slate-400 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-sky-600">
-                        →
-                      </span>
-                    </Link>
-                  ))}
+                      {block.number}
+                    </span>
+
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.14em]
+                        text-[#7890b2]
+                        sm:text-xs
+                      "
+                    >
+                      {block.category}
+                    </span>
+                  </div>
+
+                  {/* TITLE + DESCRIPTION */}
+                  <div className="mt-5 flex flex-col gap-3">
+                    <h3
+                      className="
+                        !m-0
+                        text-[24px]
+                        font-extrabold
+                        leading-[1.25]
+                        tracking-[-0.025em]
+                        text-[#091127]
+                        sm:text-[28px]
+                        md:text-[30px]
+                      "
+                    >
+                      {block.title}
+                    </h3>
+
+                    <p
+                      className="
+                        !m-0
+                        text-[15px]
+                        font-normal
+                        leading-7
+                        text-[#5d7192]
+                        sm:text-base
+                      "
+                    >
+                      {block.description}
+                    </p>
+                  </div>
+
+                  {/* LINKS */}
+                  <div
+                    className="
+                      mt-6
+                      w-full
+                      divide-y
+                      divide-[#edf0f4]
+                      border-y
+                      border-[#edf0f4]
+                    "
+                  >
+                    {block.links.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href || '#'}
+                        className="
+                          group
+                          flex
+                          items-center
+                          justify-between
+                          gap-4
+                          rounded-lg
+                          px-2
+                          py-3.5
+                          text-[#091127]
+                          transition-colors
+                          duration-150
+                          hover:bg-white
+                          hover:text-[#45658f]
+                          focus:outline-none
+                        "
+                      >
+                        <span
+                          className="
+                            text-sm
+                            font-medium
+                            leading-5
+                            sm:text-base
+                          "
+                        >
+                          {link.label}
+                        </span>
+
+                        <span
+                          className="
+                            text-base
+                            text-[#9aa9be]
+                            transition-transform
+                            duration-150
+                            group-hover:translate-x-1
+                            group-hover:text-[#45658f]
+                          "
+                        >
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

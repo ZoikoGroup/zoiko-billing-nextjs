@@ -1,3 +1,4 @@
+
 const scheduleDimensions = [
   {
     number: "01",
@@ -84,12 +85,17 @@ const scheduleDefinition = [
 
 export default function ScheduleModel() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id = 'schedule-model'
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
+          flex
           w-full
           max-w-[1440px]
+          flex-col
+          items-start
           px-5
           py-14
 
@@ -100,102 +106,114 @@ export default function ScheduleModel() {
           md:py-20
 
           lg:px-14
-          lg:py-24
 
           xl:px-20
         "
       >
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-10 lg:gap-11">
-          {/* HEADER */}
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
           <div
             className="
               flex
+              w-full
+              max-w-[662px]
               flex-col
-              gap-7
-
-              lg:flex-row
-              lg:items-end
-              lg:justify-between
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* TITLE */}
-            <div className="w-full lg:flex-1">
-              <div className="mb-5 flex items-center gap-3">
-                <span className="h-0.5 w-5 shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600" />
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.16em]
-                    text-[#5272a0]
-
-                    sm:text-xs
-                  "
-                >
-                  Schedule model
-                </span>
-              </div>
-
-              <h2
+              <span
                 className="
-                  !m-0
-                  !max-w-[640px]
-                  !text-[38px]
-                  !font-medium
-                  !leading-[1.12]
-                  !tracking-[-0.035em]
-                  !text-slate-900
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:!text-[44px]
-
-                  md:!text-[48px]
-
-                  lg:!text-[50px]
-                  lg:!leading-[1.08]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Make timing, context
-                <br className="hidden sm:block" />
-                and ownership explicit.
-              </h2>
+                Schedule model
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* INTRO */}
-            <div className="w-full lg:max-w-[529px] lg:flex-1">
-              <p
-                className="
-                  m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Seven dimensions define a governed schedule. Internal cron
-                expressions and queue behaviour are deliberately not part of
-                this.
-              </p>
-            </div>
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Make timing, context and ownership explicit.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Seven dimensions define a governed schedule. Internal cron
+              expressions and queue behaviour are deliberately not part of
+              this.
+            </p>
           </div>
 
           {/* MAIN CONTENT */}
           <div
             className="
               flex
+              w-full
               flex-col
-              gap-10
-              pt-2
+              gap-8
 
               lg:flex-row
               lg:items-start
-              lg:gap-16
+              lg:gap-10
             "
           >
             {/* LEFT — SCHEDULE DEFINITION */}
@@ -210,21 +228,21 @@ export default function ScheduleModel() {
                     gap-2
                     rounded-full
                     border
-                    border-emerald-100
+                    border-[#dfe5ee]
                     bg-white
                     px-3
                   "
                 >
-                  <span className="h-[5px] w-[5px] rounded-full bg-blue-600" />
+                  <span className="h-[5px] w-[5px] rounded-full bg-[#7890b2]" />
 
                   <span
                     className="
                       text-[10px]
-                      font-normal
+                      font-bold
                       uppercase
                       leading-4
                       tracking-[0.12em]
-                      text-blue-600
+                      text-[#7890b2]
                     "
                   >
                     Illustrative product view
@@ -238,9 +256,9 @@ export default function ScheduleModel() {
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-zinc-200
+                  border-[#dfe5ee]
                   bg-white
-                  shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04),0px_1px_2px_0px_rgba(14,33,27,0.05)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
                 {/* CARD HEADER */}
@@ -250,8 +268,8 @@ export default function ScheduleModel() {
                     flex-col
                     gap-3
                     border-b
-                    border-zinc-200
-                    bg-[#f7f8fa]
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
                     px-4
                     py-3.5
 
@@ -261,16 +279,16 @@ export default function ScheduleModel() {
                   "
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="h-2 w-2 shrink-0 rounded-sm bg-blue-600" />
+                    <span className="h-2 w-2 shrink-0 rounded-sm bg-[#7890b2]" />
 
                     <span
                       className="
                         text-[10px]
-                        font-normal
+                        font-bold
                         uppercase
                         leading-4
                         tracking-[0.1em]
-                        text-[#5d7192]
+                        text-[#7890b2]
 
                         sm:text-xs
                       "
@@ -288,25 +306,25 @@ export default function ScheduleModel() {
                       self-start
                       rounded-full
                       border
-                      border-blue-100
-                      bg-[#f7f8fa]
+                      border-[#dfe5ee]
+                      bg-white
                       px-3
 
                       sm:self-auto
                     "
                   >
-                    <span className="text-xs font-medium text-blue-600">
+                    <span className="text-xs font-bold text-[#7890b2]">
                       ✓
                     </span>
 
                     <span
                       className="
                         text-[10px]
-                        font-medium
+                        font-bold
                         uppercase
                         leading-4
                         tracking-[0.08em]
-                        text-blue-600
+                        text-[#7890b2]
                       "
                     >
                       Version 4 active
@@ -324,7 +342,12 @@ export default function ScheduleModel() {
                       gap-3.5
                       px-4
                       py-3.5
-                      ${index !== scheduleDefinition.length - 1 ? "border-b border-zinc-200" : ""}
+
+                      ${
+                        index !== scheduleDefinition.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
                     `}
                   >
                     <div
@@ -337,12 +360,12 @@ export default function ScheduleModel() {
                         justify-center
                         rounded-md
                         border
-                        border-blue-100
-                        bg-[#f7f8fa]
+                        border-[#dfe5ee]
+                        bg-[#fafbfc]
                         text-[10px]
-                        font-semibold
+                        font-bold
                         leading-4
-                        text-blue-600
+                        text-[#7890b2]
                       "
                     >
                       {item.number}
@@ -351,13 +374,13 @@ export default function ScheduleModel() {
                     <div className="min-w-0 flex-1">
                       <p
                         className="
-                          m-0
+                          !m-0
                           text-[10px]
-                          font-medium
+                          font-bold
                           uppercase
                           leading-4
                           tracking-[0.08em]
-                          text-[#5272a0]
+                          text-[#7890b2]
                         "
                       >
                         {item.label}
@@ -365,13 +388,13 @@ export default function ScheduleModel() {
 
                       <p
                         className="
+                          !m-0
                           mt-1.5
-                          m-0
                           break-words
                           text-sm
                           font-normal
                           leading-6
-                          text-slate-900
+                          text-[#091127]
                         "
                       >
                         {item.value}
@@ -390,7 +413,7 @@ export default function ScheduleModel() {
                   !text-lg
                   !font-semibold
                   !leading-6
-                  !text-slate-900
+                  !text-[#091127]
                 "
               >
                 What each dimension controls
@@ -398,6 +421,7 @@ export default function ScheduleModel() {
 
               <p
                 className="
+                  !m-0
                   mt-2
                   max-w-[480px]
                   text-[15px]
@@ -413,16 +437,21 @@ export default function ScheduleModel() {
               </p>
 
               {/* DIMENSION LIST */}
-              <div className="mt-5">
+              <div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white">
                 {scheduleDimensions.map((item, index) => (
                   <div
                     key={item.number}
                     className={`
                       flex
                       gap-4
+                      px-4
                       py-4
 
-                      ${index !== scheduleDimensions.length - 1 ? "border-b border-zinc-200" : ""}
+                      ${
+                        index !== scheduleDimensions.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
                     `}
                   >
                     <span
@@ -431,9 +460,9 @@ export default function ScheduleModel() {
                         shrink-0
                         pt-0.5
                         text-[10px]
-                        font-semibold
+                        font-bold
                         leading-4
-                        text-blue-600
+                        text-[#7890b2]
                       "
                     >
                       {item.number}
@@ -446,7 +475,7 @@ export default function ScheduleModel() {
                           !text-sm
                           !font-semibold
                           !leading-6
-                          !text-slate-900
+                          !text-[#091127]
                         "
                       >
                         {item.title}
@@ -454,8 +483,8 @@ export default function ScheduleModel() {
 
                       <p
                         className="
+                          !m-0
                           mt-1
-                          m-0
                           text-sm
                           font-normal
                           leading-5
@@ -474,16 +503,14 @@ export default function ScheduleModel() {
           {/* MODEL BOUNDARY */}
           <div
             className="
-              flex
-              flex-col
-              items-start
-              gap-2
+              w-full
               rounded-r-2xl
               border-l-[3px]
-              border-blue-600
-              bg-[#f7f8fa]
+              border-[#7890b2]
+              bg-white
               px-5
               py-6
+              shadow-[0_4px_14px_rgba(15,23,42,0.03)]
 
               sm:px-6
               sm:py-7
@@ -492,36 +519,38 @@ export default function ScheduleModel() {
               lg:py-7
             "
           >
-            <span
-              className="
-                text-[10px]
-                font-medium
-                uppercase
-                leading-4
-                tracking-[0.12em]
-                text-blue-600
-              "
-            >
-              Model boundary
-            </span>
+            <div className="flex flex-col items-start gap-2">
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.12em]
+                  text-[#7890b2]
+                "
+              >
+                Model boundary
+              </span>
 
-            <p
-              className="
-                m-0
-                w-full
-                max-w-[780px]
-                text-[15px]
-                font-normal
-                leading-7
-                text-slate-900
+              <p
+                className="
+                  !m-0
+                  w-full
+                  max-w-[780px]
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#091127]
 
-                sm:text-base
-              "
-            >
-              Internal cron expressions and queue implementation are never
-              exposed. A displayed next run is a projection from the current
-              schedule version, not a commitment.
-            </p>
+                  sm:text-base
+                "
+              >
+                Internal cron expressions and queue implementation are never
+                exposed. A displayed next run is a projection from the current
+                schedule version, not a commitment.
+              </p>
+            </div>
           </div>
         </div>
       </div>

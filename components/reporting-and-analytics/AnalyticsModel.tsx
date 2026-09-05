@@ -43,89 +43,288 @@ const components = [
 
 export default function AnalyticsModel() {
   return (
-    <section className="w-full bg-white px-5 py-16 transition-colors dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-10 lg:gap-11">
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-          {/* Left */}
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            <div className="flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="font-mono text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                Analytics model
-              </span>
-            </div>
+          sm:px-8
+          sm:py-16
 
-            <h2 className="text-3xl font-medium leading-[1.15] tracking-tight text-sky-950 dark:text-white sm:text-4xl lg:text-5xl">
-              Start with the definition,
-              <br className="hidden sm:block" />
-              scope and snapshot
-              <br className="hidden sm:block" />
-              behind every result.
-            </h2>
-          </div>
+          md:px-10
+          md:py-20
 
-          {/* Right Description */}
-          <div className="w-full max-w-[528px] flex-1">
-            <p className="text-base font-normal leading-8 text-slate-600 dark:text-slate-300">
-              Six components make a report reviewable. A chart is never the
-              source of truth — it is one presentation of a defined measure
-              over a stated snapshot.
-            </p>
-          </div>
-        </div>
+          lg:px-14
 
-        {/* Six Components */}
-        <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {components.map((item) => (
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-4
+
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+              lg:gap-16
+            "
+          >
+            {/* LEFT */}
             <div
-              key={item.number}
-              className="flex min-h-[190px] flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 transition-colors dark:border-slate-700 dark:bg-slate-900"
+              className="
+                flex
+                w-full
+                max-w-[662px]
+                flex-col
+                items-start
+                gap-3
+              "
             >
-              {/* Number */}
-              <div className="flex w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-sky-600 py-1.5">
-                <span className="font-mono text-[10px] font-semibold leading-4 text-white">
-                  {item.number}
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Analytics model
                 </span>
               </div>
 
-              {/* Title */}
-              <h3 className="pt-3 pb-1 text-base font-semibold leading-5 text-sky-950 dark:text-white">
-                {item.title}
-              </h3>
+              {/* HEADING */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[662px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
 
-              {/* Description */}
-              <p className="text-sm font-normal leading-5 text-slate-600 dark:text-slate-300">
-                {item.description}
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
+                Start with the definition,
+                <br className="hidden sm:block" />
+                scope and snapshot
+                <br className="hidden sm:block" />
+                behind every result.
+              </h2>
+            </div>
+
+            {/* DESCRIPTION */}
+            <div
+              className="
+                w-full
+                max-w-[528px]
+                lg:pb-1
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+
+                  sm:text-base
+                "
+              >
+                Six components make a report reviewable. A chart is never the
+                source of truth — it is one presentation of a defined measure
+                over a stated snapshot.
               </p>
             </div>
-          ))}
-        </div>
-
-        {/* Model Image */}
-        <div className="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-          <Image
-            src="/images/reporting-and-analytics/model.png"
-            alt="Analytics model showing governed reporting components"
-            width={1116}
-            height={510}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-
-        {/* Model Boundary */}
-        <div className="w-full rounded-r-2xl border-l-[3px] border-sky-600 bg-slate-50 px-5 py-6 dark:bg-slate-900 sm:px-7 sm:py-7">
-          <div className="mb-2">
-            <span className="font-mono text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
-              Model boundary
-            </span>
           </div>
 
-          <p className="max-w-[761px] text-sm font-normal leading-7 text-sky-950 dark:text-slate-200 sm:text-base">
-            Sensitive schemas and proprietary formulas are not published here.
-            What is published is the governance that makes a number checkable.
-          </p>
+          {/* SIX COMPONENTS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
+            {components.map((item) => (
+              <div
+                key={item.number}
+                className="
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  items-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_2px_8px_rgba(15,23,42,0.025)]
+
+                  sm:p-6
+                "
+              >
+                {/* NUMBER */}
+                <span
+                  className="
+                    text-[11px]
+                    font-bold
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
+                  "
+                >
+                  {item.number}
+                </span>
+
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    pt-3
+                    pb-1
+                    text-base
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
+                  {item.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* MODEL IMAGE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <Image
+              src="/images/reporting-and-analytics/model.png"
+              alt="Analytics model showing governed reporting components"
+              width={1116}
+              height={510}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+
+          {/* MODEL BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
+
+              sm:px-7
+              sm:py-7
+            "
+          >
+            {/* LABEL */}
+            <div className="mb-2">
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                "
+              >
+                Model boundary
+              </span>
+            </div>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                max-w-[761px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
+              Sensitive schemas and proprietary formulas are not published
+              here. What is published is the governance that makes a number
+              checkable.
+            </p>
+          </div>
         </div>
       </div>
     </section>

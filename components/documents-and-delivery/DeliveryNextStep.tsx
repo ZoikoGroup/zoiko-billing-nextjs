@@ -121,7 +121,7 @@ export default function DocumentsDeliveryNextStep() {
 
               {/* Book a Demo */}
               <Link
-                href="/book-a-demo"
+                href="/book-demo"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -146,7 +146,7 @@ export default function DocumentsDeliveryNextStep() {
 
             {/* Security overview */}
             <Link
-              href="/security"
+              href="/security-overview"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

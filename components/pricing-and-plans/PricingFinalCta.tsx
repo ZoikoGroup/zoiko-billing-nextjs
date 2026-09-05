@@ -44,7 +44,7 @@ export default function PricingFinalCta() {
             </Link>
 
             <Link
-              href="/compare-deployment-options"
+              href="#compare-plans"
               className="!inline-flex !h-11 !items-center !justify-center !rounded-full !border !border-white/40 !bg-transparent !px-5 !text-sm !font-semibold !leading-6 !text-white !no-underline transition hover:!bg-white/10"
             >
               Compare deployment options

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const evidenceItems = [
   {
     number: "01",
@@ -93,7 +95,7 @@ const calculationSteps = [
 
 export default function Calculation() {
   return (
-    <section className="w-full bg-[#f5f7f9]">
+    <section id="calculation" className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -112,7 +114,6 @@ export default function Calculation() {
           md:py-20
 
           lg:px-14
-          lg:py-24
 
           xl:px-20
         "
@@ -122,12 +123,14 @@ export default function Calculation() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
+            items-center
             gap-8
 
-            sm:gap-9
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* SECTION INTRO */}
@@ -135,114 +138,77 @@ export default function Calculation() {
             className="
               flex
               w-full
+              max-w-[760px]
               flex-col
-              gap-8
-
-              md:flex-row
-              md:items-end
-              md:gap-12
-
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            <div
-              className="
-                flex
-                min-w-0
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2.5
-                pb-2
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                md:pb-6
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex h-4 items-center">
-                <span
-                  className="
-                    mr-2.5
-                    h-0.5
-                    w-5
-                    shrink-0
-                    rounded-sm
-                    bg-gradient-to-r
-                    from-cyan-400
-                    to-blue-500
-                  "
-                />
-
-                <span
-                  className="
-                    text-xs
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-wider
-                    text-[#456b9c]
-                  "
-                >
-                  Calculation
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+              <span
                 className="
-                  !m-0
-                  w-full
-                  max-w-[638px]
-                  text-[30px]
-                  font-medium
-                  leading-[1.18]
-                  tracking-[-0.035em]
-                  text-[#08254a]
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:text-[36px]
-
-                  md:text-[42px]
-
-                  lg:text-5xl
-                  lg:leading-[53.82px]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Make calculations
-                <br className="hidden sm:block" />
-                reviewable without
-                <br className="hidden sm:block" />
-                exposing sensitive
-                <br className="hidden sm:block" />
-                formulas.
-              </h2>
+                Calculation
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* INTRO DESCRIPTION */}
-            <div
+            {/* HEADING */}
+            <h2
               className="
+                !m-0
                 w-full
-                max-w-[529px]
-                shrink-0
-                md:pb-2
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              <p
-                className="
-                  !m-0
-                  text-sm
-                  font-normal
-                  leading-7
-                  text-[#45617f]
+              Make calculations reviewable without exposing sensitive
+              formulas.
+            </h2>
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Enough evidence to reproduce and challenge a number — without
-                publishing proprietary pricing logic or contract terms.
-              </p>
-            </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Enough evidence to reproduce and challenge a number — without
+              publishing proprietary pricing logic or contract terms.
+            </p>
           </div>
 
           {/* MAIN CONTENT */}
@@ -256,7 +222,7 @@ export default function Calculation() {
 
               lg:grid-cols-2
               lg:gap-16
-              lg:pt-6
+              lg:pt-4
             "
           >
             {/* LEFT — ILLUSTRATIVE CALCULATION */}
@@ -270,12 +236,12 @@ export default function Calculation() {
                     items-center
                     rounded-full
                     border
-                    border-[#cfe8dc]
-                    bg-white/70
+                    border-[#dfe5ee]
+                    bg-white
                     px-3
                   "
                 >
-                  <span className="mr-2 size-[5px] rounded-sm bg-[#456b9c]" />
+                  <span className="mr-2 size-[5px] rounded-sm bg-[#7890b2]" />
 
                   <span
                     className="
@@ -299,9 +265,9 @@ export default function Calculation() {
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-[#dfe3e8]
+                  border-[#dfe5ee]
                   bg-white
-                  shadow-[0_4px_14px_rgba(14,33,27,0.04),0_1px_2px_rgba(14,33,27,0.05)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
                 {/* CARD HEADER */}
@@ -312,13 +278,13 @@ export default function Calculation() {
                     items-center
                     gap-2.5
                     border-b
-                    border-[#dfe3e8]
-                    bg-[#f5f7f9]
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
                     px-4
                     py-3.5
                   "
                 >
-                  <span className="size-2 shrink-0 rounded-sm bg-[#456b9c]" />
+                  <span className="size-2 shrink-0 rounded-sm bg-[#7890b2]" />
 
                   <span
                     className="
@@ -327,7 +293,7 @@ export default function Calculation() {
                       uppercase
                       leading-4
                       tracking-wide
-                      text-[#45617f]
+                      text-[#5d7192]
                     "
                   >
                     Calculation event CE-9920
@@ -341,8 +307,8 @@ export default function Calculation() {
                         items-center
                         rounded-full
                         border
-                        border-[#c8d7e6]
-                        bg-[#f5f7f9]
+                        border-[#dfe5ee]
+                        bg-[#f7f8fa]
                         px-2.5
                       "
                     >
@@ -350,7 +316,16 @@ export default function Calculation() {
                         ✓
                       </span>
 
-                      <span className="text-[10px] font-medium uppercase leading-4 tracking-wide text-[#456b9c]">
+                      <span
+                        className="
+                          text-[10px]
+                          font-medium
+                          uppercase
+                          leading-4
+                          tracking-wide
+                          text-[#456b9c]
+                        "
+                      >
                         Final
                       </span>
                     </div>
@@ -367,9 +342,11 @@ export default function Calculation() {
                       gap-3.5
                       px-4
                       py-3.5
-                      ${index !== calculationSteps.length - 1
-                        ? "border-b border-[#e2e6eb]"
-                        : "border-b border-[#e2e6eb]"}
+                      ${
+                        index !== calculationSteps.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : "border-b border-[#edf0f4]"
+                      }
                     `}
                   >
                     <div
@@ -381,7 +358,7 @@ export default function Calculation() {
                         justify-center
                         rounded-md
                         border
-                        border-[#cdd9e5]
+                        border-[#d8e0e9]
                         bg-[#f5f7f9]
                       "
                     >
@@ -399,7 +376,7 @@ export default function Calculation() {
                           uppercase
                           leading-4
                           tracking-wide
-                          text-[#55718f]
+                          text-[#7890b2]
                         "
                       >
                         {step.title}
@@ -412,7 +389,7 @@ export default function Calculation() {
                           break-words
                           text-sm
                           leading-6
-                          text-[#08254a]
+                          text-[#091127]
                           ${step.mono ? "font-mono" : "font-normal"}
                         `}
                       >
@@ -423,62 +400,62 @@ export default function Calculation() {
                 ))}
 
                 {/* TOTALS */}
-                <div className="border-t border-[#dfe3e8] bg-[#fafbfc] px-4 py-4">
+                <div className="border-t border-[#dfe5ee] bg-[#fafbfc] px-4 py-4">
                   <div className="flex items-start justify-between gap-4">
-                    <span className="text-sm leading-6 text-[#08254a]">
+                    <span className="text-sm leading-6 text-[#091127]">
                       Base
                     </span>
 
-                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                    <span className="font-mono text-sm leading-6 text-[#091127]">
                       £3,840.00
                     </span>
                   </div>
 
                   <div className="mt-1.5 flex items-start justify-between gap-4">
-                    <span className="text-sm leading-6 text-[#08254a]">
+                    <span className="text-sm leading-6 text-[#091127]">
                       Discount · contract −5%
                     </span>
 
-                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                    <span className="font-mono text-sm leading-6 text-[#091127]">
                       −£192.00
                     </span>
                   </div>
 
                   <div className="mt-1.5 flex items-start justify-between gap-4">
-                    <span className="text-sm leading-6 text-[#08254a]">
+                    <span className="text-sm leading-6 text-[#091127]">
                       Tax component · VAT 20%
                     </span>
 
-                    <span className="font-mono text-sm leading-6 text-[#08254a]">
+                    <span className="font-mono text-sm leading-6 text-[#091127]">
                       £729.60
                     </span>
                   </div>
 
-                  <div className="mt-2 flex items-start justify-between gap-4 border-t-2 border-[#08254a] pt-2">
-                    <span className="text-base leading-6 text-[#08254a]">
+                  <div className="mt-2 flex items-start justify-between gap-4 border-t-2 border-[#091127] pt-2">
+                    <span className="text-base leading-6 text-[#091127]">
                       Net component total
                     </span>
 
-                    <span className="font-mono text-base font-semibold leading-6 text-[#08254a]">
+                    <span className="font-mono text-base font-semibold leading-6 text-[#091127]">
                       £4,377.60
                     </span>
                   </div>
                 </div>
 
                 {/* STATUS TAGS */}
-                <div className="flex flex-wrap gap-2 border-t border-[#dfe3e8] px-6 py-3.5">
+                <div className="flex flex-wrap gap-2 border-t border-[#dfe5ee] px-4 py-3.5 sm:px-6">
                   <span
                     className="
                       rounded-full
                       border
-                      border-[#dfe3e8]
-                      bg-[#f5f7f9]
+                      border-[#dfe5ee]
+                      bg-[#f7f8fa]
                       px-2.5
                       py-1.5
                       font-mono
                       text-[10px]
                       leading-4
-                      text-[#45617f]
+                      text-[#5d7192]
                     "
                   >
                     Draft line: ZB-UK-2026-0419
@@ -488,14 +465,14 @@ export default function Calculation() {
                     className="
                       rounded-full
                       border
-                      border-[#dfe3e8]
-                      bg-[#f5f7f9]
+                      border-[#dfe5ee]
+                      bg-[#f7f8fa]
                       px-2.5
                       py-1.5
                       font-mono
                       text-[10px]
                       leading-4
-                      text-[#45617f]
+                      text-[#5d7192]
                     "
                   >
                     Not yet issued
@@ -512,7 +489,7 @@ export default function Calculation() {
                   text-lg
                   font-semibold
                   leading-6
-                  text-[#08254a]
+                  text-[#091127]
                 "
               >
                 What the evidence has to contain
@@ -526,7 +503,7 @@ export default function Calculation() {
                   text-sm
                   font-normal
                   leading-7
-                  text-[#45617f]
+                  text-[#5d7192]
                 "
               >
                 Eight elements make an amount reproducible. Anything missing
@@ -544,9 +521,11 @@ export default function Calculation() {
                       items-start
                       gap-4
                       py-3
-                      ${index !== evidenceItems.length - 1
-                        ? "border-b border-[#dfe3e8]"
-                        : ""}
+                      ${
+                        index !== evidenceItems.length - 1
+                          ? "border-b border-[#dfe5ee]"
+                          : ""
+                      }
                     `}
                   >
                     <span
@@ -571,7 +550,7 @@ export default function Calculation() {
                           text-sm
                           font-semibold
                           leading-6
-                          text-[#08254a]
+                          text-[#091127]
                         "
                       >
                         {item.title}
@@ -584,7 +563,7 @@ export default function Calculation() {
                           text-sm
                           font-normal
                           leading-5
-                          text-[#45617f]
+                          text-[#5d7192]
                         "
                       >
                         {item.description}
@@ -602,24 +581,24 @@ export default function Calculation() {
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-[#456b9c]
-              bg-[#f5f7f9]
-              px-6
-              py-7
+              border-[#7890b2]
+              bg-[#f7f8fa]
+              px-5
+              py-5
 
               sm:px-7
-              sm:py-8
+              sm:py-6
             "
           >
             <span
               className="
                 block
                 text-[10px]
-                font-normal
+                font-bold
                 uppercase
                 leading-4
-                tracking-wide
-                text-[#456b9c]
+                tracking-[0.12em]
+                text-[#7890b2]
               "
             >
               Calculation boundary
@@ -633,7 +612,7 @@ export default function Calculation() {
                 text-sm
                 font-normal
                 leading-7
-                text-[#08254a]
+                text-[#091127]
 
                 sm:text-base
               "
@@ -647,28 +626,28 @@ export default function Calculation() {
 
           {/* CTA */}
           <div className="flex w-full items-center">
-            <button
-              type="button"
+            {/*<Link
+              href="/amount-sources"
               className="
                 inline-flex
                 min-h-11
                 items-center
                 justify-center
                 rounded-lg
-                bg-[#08254a]
+                bg-[#091127]
                 px-5
                 py-2.5
                 text-center
                 text-base
                 font-normal
                 leading-6
-                text-white
+                !text-white
                 transition-opacity
                 hover:opacity-90
               "
             >
               See approved amount sources
-            </button>
+            </Link>*/}
           </div>
         </div>
       </div>

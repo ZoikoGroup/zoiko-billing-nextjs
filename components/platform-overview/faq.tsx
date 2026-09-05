@@ -60,70 +60,230 @@ const faqData: FaqItem[] = [
 ];
 
 export default function FaqSection() {
-  const [openId, setOpenId] = useState<string | null>('what-is-zoiko-billing');
+  const [openId, setOpenId] = useState<string | null>(
+    'what-is-zoiko-billing'
+  );
 
   const toggleFaq = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <section className="w-full bg-slate-100/70 px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-12 lg:space-y-16">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Questions
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight text-sky-950 font-sans sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               Direct answers about the platform.
             </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              Every answer is rendered on the page and works without JavaScript.
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Every answer is rendered on the page and works without
+              JavaScript.
             </p>
           </div>
-        </div>
 
-        <div className="max-w-4xl divide-y divide-zinc-200 border-y border-zinc-200">
-          {faqData.map((item) => {
-            const isOpen = openId === item.id;
+          {/* FAQ LIST */}
+          <div
+            className="
+              w-full
+              max-w-[1000px]
+              divide-y
+              divide-[#edf0f4]
+              border-y
+              border-[#dfe5ee]
+            "
+          >
+            {faqData.map((item) => {
+              const isOpen = openId === item.id;
 
-            return (
-              <div key={item.id} className="py-2">
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(item.id)}
-                  aria-expanded={isOpen}
-                  className="group flex w-full items-center justify-between rounded-lg px-1 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
-                >
-                  <span className="text-base font-semibold text-sky-950 transition-colors group-hover:text-sky-600 font-sans sm:text-lg">
-                    {item.question}
-                  </span>
-                  <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold font-mono transition-colors ${
-                      isOpen
-                        ? 'bg-sky-600 text-white'
-                        : 'border border-zinc-300 text-slate-500 group-hover:border-sky-600 group-hover:text-sky-600'
-                    }`}
+              return (
+                <div key={item.id} className="py-1">
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(item.id)}
+                    aria-expanded={isOpen}
+                    className="
+                      group
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-5
+                      rounded-lg
+                      px-2
+                      py-4
+                      text-left
+                      transition-colors
+                      duration-150
+                      hover:bg-white
+                      focus:outline-none
+                      focus-visible:ring-2
+                      focus-visible:ring-[#7890b2]
+                      sm:px-3
+                      sm:py-5
+                    "
                   >
-                    {isOpen ? '−' : '+'}
-                  </span>
-                </button>
+                    <span
+                      className="
+                        text-[15px]
+                        font-semibold
+                        leading-6
+                        text-[#091127]
+                        transition-colors
+                        duration-150
+                        group-hover:text-[#45658f]
+                        sm:text-base
+                        md:text-lg
+                      "
+                    >
+                      {item.question}
+                    </span>
 
-                {isOpen && (
-                  <div className="pb-5 pl-1 pr-12">
-                    <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                    <span
+                      className={`
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        text-sm
+                        font-semibold
+                        leading-5
+                        transition-all
+                        duration-150
+                        ${
+                          isOpen
+                            ? 'bg-[#091127] text-white'
+                            : 'border border-[#cbd5e1] bg-white text-[#7890b2] group-hover:border-[#7890b2] group-hover:text-[#45658f]'
+                        }
+                      `}
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div
+                      className="
+                        pb-5
+                        pl-2
+                        pr-10
+                        sm:pl-3
+                        sm:pr-14
+                      "
+                    >
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                          sm:text-base
+                          sm:leading-7
+                        "
+                      >
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

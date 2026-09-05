@@ -66,287 +66,350 @@ export default function IssueControls() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
+            items-center
             gap-8
 
-            sm:gap-9
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* HEADER */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
+              max-w-[662px]
               flex-col
-              items-start
-              gap-8
-
-              lg:flex-row
-              lg:items-end
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2
-                pb-2
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                lg:pb-5
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Issue controls
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              {/* EYEBROW */}
-              <div className="flex items-center gap-3">
-                <span
-                  className="
-                    h-[2px]
-                    w-5
-                    shrink-0
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#27c7d9]
-                    to-[#5c83aa]
-                  "
-                />
+              Validate and approve before a document becomes issued.
+            </h2>
 
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.16em]
-                    text-[#5c83aa]
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
 
-                    sm:text-xs
-                  "
-                >
-                  Issue controls
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
-                className="
-                  !m-0
-                  max-w-[638px]
-                  text-[34px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#091127]
-
-                  sm:text-[40px]
-
-                  md:text-[44px]
-
-                  lg:text-[48px]
-                "
-              >
-                Validate and approve before a document becomes issued.
-              </h2>
-            </div>
-
-            {/* RIGHT DESCRIPTION */}
-            <div className="w-full max-w-[529px] flex-1">
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
-
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Issue is the point of consequence. Everything before it exists
-                so that moment is deliberate, attributable and hard to get
-                wrong.
-              </p>
-            </div>
+                sm:text-base
+              "
+            >
+              Issue is the point of consequence. Everything before it exists
+              so that moment is deliberate, attributable and hard to get
+              wrong.
+            </p>
           </div>
 
           {/* MAIN CONTENT */}
-          <div
-            className="
-              flex
-              w-full
-              flex-col
-              items-start
-              gap-10
-              pt-3
+          <div className="w-full">
+            <div
+              className="
+                grid
+                w-full
+                grid-cols-1
+                gap-6
 
-              lg:flex-row
-              lg:gap-12
-
-              xl:gap-16
-            "
-          >
-            {/* VALIDATION CHECKS */}
-            <div className="w-full flex-1">
-              <h3
-                className="
-                  !m-0
-                  text-lg
-                  font-semibold
-                  leading-6
-                  text-[#091127]
-                "
-              >
-                What validation checks
-              </h3>
-
-              <p
-                className="
-                  !m-0
-                  mt-1.5
-                  max-w-[480px]
-                  text-sm
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
-                "
-              >
-                Configured requirements only. Validation confirms the
-                document is complete and permitted — not that it is legally
-                correct.
-              </p>
-
-              {/* CHECK LIST */}
-              <div className="mt-5 flex w-full flex-col">
-                {validationChecks.map((item, index) => (
-                  <div
-                    key={item.title}
-                    className={`
-                      flex
-                      w-full
-                      flex-col
-                      gap-2
-                      py-4
-
-                      sm:flex-row
-                      sm:items-start
-                      sm:gap-6
-
-                      ${
-                        index !== validationChecks.length - 1
-                          ? "border-b border-[#dfe5ee]"
-                          : ""
-                      }
-                    `}
-                  >
-                    <div className="w-full shrink-0 sm:w-[145px]">
-                      <h4
-                        className="
-                          !m-0
-                          text-sm
-                          font-semibold
-                          leading-6
-                          text-[#091127]
-                        "
-                      >
-                        {item.title}
-                      </h4>
-                    </div>
-
-                    <p
-                      className="
-                        !m-0
-                        flex-1
-                        text-sm
-                        font-normal
-                        leading-6
-                        text-[#5d7192]
-                      "
-                    >
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ISSUE RECORDS */}
-            <div className="w-full flex-1 lg:max-w-[526px]">
-              <h3
-                className="
-                  !m-0
-                  text-lg
-                  font-semibold
-                  leading-6
-                  text-[#091127]
-                "
-              >
-                What issue records
-              </h3>
-
-              <p
-                className="
-                  !m-0
-                  mt-1.5
-                  max-w-[480px]
-                  text-base
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
-                "
-              >
-                The issued document becomes an accountable record with its own
-                version, number and evidence.
-              </p>
-
-              {/* IMAGE */}
+                lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]
+                lg:gap-8
+              "
+            >
+              {/* VALIDATION CHECKS */}
               <div
                 className="
-                  mt-5
-                  w-full
                   overflow-hidden
                   rounded-2xl
                   border
                   border-[#dfe5ee]
                   bg-white
-                  shadow-[0_4px_14px_rgba(14,33,27,0.04),0_1px_2px_rgba(14,33,27,0.05)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                <img
-                  src="/images/invoices/issue-record.png"
-                  alt="Issued document record"
+                {/* HEADER */}
+                <div
                   className="
-                    block
-                    h-auto
-                    w-full
-                    object-cover
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-5
+                    py-4
+
+                    sm:px-6
                   "
-                />
+                >
+                  <h3
+                    className="
+                      !m-0
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    What validation checks
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      mt-2
+                      max-w-[560px]
+                      text-[15px]
+                      font-normal
+                      leading-7
+                      text-[#5d7192]
+
+                      sm:text-base
+                    "
+                  >
+                    Configured requirements only. Validation confirms the
+                    document is complete and permitted — not that it is legally
+                    correct.
+                  </p>
+                </div>
+
+                {/* DESKTOP CHECKS */}
+                <div className="hidden md:block">
+                  {/* TABLE HEADER */}
+                  <div
+                    className="
+                      grid
+                      grid-cols-[176px_minmax(0,1fr)]
+                      bg-[#fafbfc]
+                    "
+                  >
+                    <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                      <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                        Check
+                      </span>
+                    </div>
+
+                    <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                      <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                        Description
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* ROWS */}
+                  {validationChecks.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`
+                        grid
+                        grid-cols-[176px_minmax(0,1fr)]
+                        ${
+                          index !== validationChecks.length - 1
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      <div className="px-4 py-3.5">
+                        <span className="text-sm font-semibold leading-5 text-[#091127]">
+                          {item.title}
+                        </span>
+                      </div>
+
+                      <div className="px-4 py-3.5">
+                        <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                          {item.description}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* MOBILE CHECKS */}
+                <div className="flex flex-col md:hidden">
+                  {validationChecks.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`
+                        p-5
+                        ${
+                          index !== validationChecks.length - 1
+                            ? "border-b border-[#edf0f4]"
+                            : ""
+                        }
+                      `}
+                    >
+                      <div className="mb-4">
+                        <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                          Check
+                        </p>
+
+                        <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                          {item.title}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                          Description
+                        </p>
+
+                        <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* NOTE */}
-              <p
+              {/* ISSUE RECORDS */}
+              <div
                 className="
-                  !m-0
-                  mt-3
-                  text-[10px]
-                  font-normal
-                  uppercase
-                  leading-5
-                  tracking-[0.06em]
-                  text-[#527f73]
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                Destructive deletion and silent overwrite of an issued
-                document are prevented according to policy and retention
-                obligations.
-              </p>
+                {/* HEADER */}
+                <div
+                  className="
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-5
+                    py-4
+
+                    sm:px-6
+                  "
+                >
+                  <h3
+                    className="
+                      !m-0
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    What issue records
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      mt-2
+                      text-[15px]
+                      font-normal
+                      leading-7
+                      text-[#5d7192]
+
+                      sm:text-base
+                    "
+                  >
+                    The issued document becomes an accountable record with its
+                    own version, number and evidence.
+                  </p>
+                </div>
+
+                {/* IMAGE */}
+                <div className="p-4 sm:p-5">
+                  <div
+                    className="
+                      w-full
+                      overflow-hidden
+                      rounded-2xl
+                      border
+                      border-[#dfe5ee]
+                      bg-white
+                    "
+                  >
+                    <img
+                      src="/images/invoices/issue-record.png"
+                      alt="Issued document record"
+                      className="
+                        block
+                        h-auto
+                        w-full
+                        object-cover
+                      "
+                    />
+                  </div>
+
+                  {/* NOTE */}
+                  <p
+                    className="
+                      !m-0
+                      mt-3
+                      text-[10px]
+                      font-normal
+                      uppercase
+                      leading-5
+                      tracking-[0.06em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Destructive deletion and silent overwrite of an issued
+                    document are prevented according to policy and retention
+                    obligations.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -356,12 +419,14 @@ export default function IssueControls() {
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-[#5c83aa]
-              bg-[#f7f8fa]
+              border-[#7890b2]
+              bg-white
               px-5
-              py-7
+              py-6
+              shadow-[0_1px_2px_rgba(15,23,42,0.02)]
 
               sm:px-6
+              sm:py-7
 
               md:px-7
             "
@@ -369,11 +434,11 @@ export default function IssueControls() {
             <span
               className="
                 text-[10px]
-                font-normal
+                font-bold
                 uppercase
                 leading-4
-                tracking-[0.08em]
-                text-[#5c83aa]
+                tracking-[0.12em]
+                text-[#7890b2]
               "
             >
               Issue boundary
@@ -384,13 +449,12 @@ export default function IssueControls() {
                 !m-0
                 mt-2
                 max-w-[900px]
-                text-sm
+                text-[15px]
                 font-normal
-                leading-6
+                leading-7
                 text-[#091127]
 
                 sm:text-base
-                sm:leading-7
               "
             >
               Validation confirms configured requirements, not universal legal
@@ -404,7 +468,7 @@ export default function IssueControls() {
           {/* CTA */}
           <div className="flex w-full justify-center">
             <a
-              href="#approvals-governed"
+              href="#"
               className="
                 inline-flex
                 min-h-11
@@ -413,16 +477,16 @@ export default function IssueControls() {
                 rounded-lg
                 border
                 border-[#dfe5ee]
-                bg-transparent
+                bg-white
                 px-5
-                py-2.5
+                py-2
                 text-center
-                text-sm
+                text-base
                 font-normal
                 leading-6
                 text-[#091127]
                 transition-colors
-                hover:bg-white
+                hover:bg-[#fafbfc]
               "
             >
               See how approvals are governed

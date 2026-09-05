@@ -48,7 +48,9 @@ const rows = [
 
 export default function Connections() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id ="approved-connections"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

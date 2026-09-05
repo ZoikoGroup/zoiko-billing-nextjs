@@ -92,75 +92,259 @@ const platformData: PlatformGroup[] = [
 
 export default function PlatformDestinationsSection() {
   return (
-    <section className="w-full bg-white px-4 py-12 text-slate-800 sm:px-6 lg:px-12 md:py-20">
-      <div className="mx-auto max-w-7xl space-y-12 md:space-y-16">
-        <div className="flex flex-col gap-6 pb-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 The complete platform
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl font-sans">
-              One connected platform for billing operations and revenue control.
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              One connected platform for billing operations and revenue
+              control.
             </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Twelve destinations across three groups. Every card links to its
+              own capability page.
+            </p>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-slate-600">
-            Twelve destinations across three groups. Every card links to its own capability page.
-          </p>
-        </div>
 
-        <div className="space-y-12">
-          {platformData.map((group) => (
-            <div key={group.category} className="space-y-4">
-              <div className="border-b border-zinc-200 pb-2">
-                <h3 className="text-xs font-medium uppercase tracking-wider text-sky-700 font-mono">
-                  {group.category}
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {group.cards.map((card) => (
-                  <div
-                    key={card.title}
-                    className={`group flex min-h-[128px] flex-col justify-between rounded-2xl border p-5 transition-all duration-200 ${
-                      card.isCurrent
-                        ? 'border-sky-500 bg-slate-50 shadow-xs'
-                        : 'border-zinc-200 bg-white hover:border-slate-300 hover:shadow-md'
-                    }`}
+          {/* PLATFORM GROUPS */}
+          <div className="flex w-full flex-col gap-10 sm:gap-12">
+            {platformData.map((group) => (
+              <div
+                key={group.category}
+                className="flex w-full flex-col gap-4"
+              >
+                {/* CATEGORY */}
+                <div className="border-b border-[#dfe5ee] pb-2">
+                  <h3
+                    className="
+                      !m-0
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      text-[#7890b2]
+                    "
                   >
-                    <div className="space-y-1">
-                      <h4 className="text-base font-semibold leading-snug text-sky-950 font-sans">
-                        {card.title}
-                      </h4>
-                      <p className="text-sm font-normal leading-normal text-slate-500">
-                        {card.description}
-                      </p>
-                    </div>
+                    {group.category}
+                  </h3>
+                </div>
 
-                    <div className="mt-auto pt-4">
-                      {card.isCurrent ? (
-                        <span className="inline-block rounded-full border border-sky-200 bg-white px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-sky-600 font-mono">
-                          You are here
-                        </span>
-                      ) : (
-                        <Link
-                          href={card.href || '#'}
-                          className="inline-flex items-center gap-1.5 text-xs font-normal uppercase tracking-wide text-sky-600 transition-colors hover:text-sky-700 focus:outline-none font-mono"
+                {/* CARDS */}
+                <div
+                  className="
+                    grid
+                    w-full
+                    grid-cols-1
+                    gap-4
+                    sm:grid-cols-2
+                    sm:gap-5
+                    lg:grid-cols-4
+                    lg:gap-5
+                  "
+                >
+                  {group.cards.map((card) => (
+                    <div
+                      key={card.title}
+                      className={`
+                        group
+                        flex
+                        min-h-[150px]
+                        flex-col
+                        justify-between
+                        rounded-2xl
+                        border
+                        p-5
+                        transition-all
+                        duration-200
+                        sm:p-6
+                        ${
+                          card.isCurrent
+                            ? 'border-[#7890b2] bg-[#f8fafc] shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]'
+                            : 'border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] hover:border-[#cbd5e1] hover:shadow-[0_12px_28px_rgba(15,23,42,0.07),0_2px_4px_rgba(15,23,42,0.04)]'
+                        }
+                      `}
+                    >
+                      {/* CARD CONTENT */}
+                      <div className="flex flex-col gap-1">
+                        <h4
+                          className="
+                            !m-0
+                            text-[15px]
+                            font-semibold
+                            leading-5
+                            text-[#091127]
+                            sm:text-base
+                          "
                         >
-                          <span>Open</span>
-                          <span className="transition-transform duration-200 group-hover:translate-x-1">
-                            →
+                          {card.title}
+                        </h4>
+
+                        <p
+                          className="
+                            !m-0
+                            text-sm
+                            font-normal
+                            leading-6
+                            text-[#5d7192]
+                          "
+                        >
+                          {card.description}
+                        </p>
+                      </div>
+
+                      {/* CARD ACTION */}
+                      <div className="mt-auto pt-5">
+                        {card.isCurrent ? (
+                          <span
+                            className="
+                              inline-flex
+                              rounded-full
+                              border
+                              border-[#dfe5ee]
+                              bg-white
+                              px-2.5
+                              py-1
+                              text-[10px]
+                              font-bold
+                              uppercase
+                              leading-4
+                              tracking-[0.08em]
+                              text-[#7890b2]
+                            "
+                          >
+                            You are here
                           </span>
-                        </Link>
-                      )}
+                        ) : (
+                          <Link
+                            href={card.href || '#'}
+                            className="
+                              inline-flex
+                              items-center
+                              gap-2
+                              text-xs
+                              font-semibold
+                              uppercase
+                              leading-4
+                              tracking-[0.08em]
+                              text-[#45658f]
+                              transition-colors
+                              duration-150
+                              hover:text-[#091127]
+                              focus:outline-none
+                            "
+                          >
+                            <span>Open</span>
+
+                            <span
+                              className="
+                                transition-transform
+                                duration-200
+                                group-hover:translate-x-1
+                              "
+                            >
+                              →
+                            </span>
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -91,6 +91,33 @@ const timingRows = [
   },
 ];
 
+const exceptionDetails = [
+  {
+    label: "Occurrence",
+    value: "SCH-2044 · 01 Aug 06:00 Europe/London",
+  },
+  {
+    label: "Class",
+    value: "Dependency unavailable · usage source",
+  },
+  {
+    label: "Severity",
+    value: "Material · affects 3 customers",
+  },
+  {
+    label: "Attempts",
+    value: "3 of 5 · next 08:30 UTC",
+  },
+  {
+    label: "Policy",
+    value: "CATCHUP-REVIEW · v2",
+  },
+  {
+    label: "Owner",
+    value: "r.iqbal",
+  },
+];
+
 export default function MissedRuns() {
   return (
     <section className="w-full bg-[#f7f8fa]">
@@ -112,7 +139,6 @@ export default function MissedRuns() {
           md:py-20
 
           lg:px-14
-          lg:py-24
 
           xl:px-20
         "
@@ -122,16 +148,95 @@ export default function MissedRuns() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            gap-10
+            items-center
+            gap-8
 
-            sm:gap-12
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* =========================
-              SECTION INTRO
-          ========================== */}
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[720px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Missed runs
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Decide what happens when a scheduled run cannot proceed.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Recovery is a decision you make in advance, not something the
+              system improvises. Catch-up and backfill carry real financial
+              weight.
+            </p>
+          </div>
+
+          {/* MAIN CONTENT */}
           <div
             className="
               flex
@@ -140,165 +245,70 @@ export default function MissedRuns() {
               gap-8
 
               lg:flex-row
-              lg:items-end
-              lg:gap-16
-            "
-          >
-            {/* LEFT */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2.5
-                pb-2
-
-                lg:pb-6
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex items-center gap-2.5">
-                <span
-                  className="
-                    h-0.5
-                    w-5
-                    shrink-0
-                    rounded-sm
-                    bg-gradient-to-r
-                    from-cyan-500
-                    to-blue-500
-                  "
-                />
-
-                <span
-                  className="
-                    font-mono
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.14em]
-                    text-[#54709a]
-
-                    sm:text-xs
-                  "
-                >
-                  Missed runs
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
-                className="
-                  !m-0
-                  max-w-[638px]
-                  text-[30px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#091127]
-
-                  sm:text-[36px]
-
-                  md:text-[42px]
-
-                  lg:text-[48px]
-                  lg:leading-[1.12]
-                "
-              >
-                Decide what happens
-                <br className="hidden sm:block" /> when a scheduled run
-                <br className="hidden sm:block" /> cannot proceed.
-              </h2>
-            </div>
-
-            {/* RIGHT DESCRIPTION */}
-            <div
-              className="
-                w-full
-                max-w-[529px]
-                flex-1
-                lg:pb-2
-              "
-            >
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
-
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Recovery is a decision you make in advance, not something
-                the system improvises. Catch-up and backfill carry real
-                financial weight.
-              </p>
-            </div>
-          </div>
-
-          {/* =========================
-              MAIN CONTENT
-          ========================== */}
-          <div
-            className="
-              flex
-              w-full
-              flex-col
-              gap-10
-
-              lg:flex-row
               lg:items-start
-              lg:gap-16
+              lg:gap-10
             "
           >
-            {/* =========================
-                LEFT COLUMN
-            ========================== */}
-            <div className="w-full lg:max-w-[526px]">
+            {/* LEFT COLUMN */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                lg:w-1/2
+              "
+            >
               {/* WHY A RUN CANNOT START */}
-              <div className="flex flex-col">
-                <h3
+              <div>
+                <div
                   className="
-                    !m-0
-                    mb-1.5
-                    text-lg
-                    font-semibold
-                    leading-6
-                    text-[#091127]
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-5
+                    py-4
                   "
                 >
-                  Why a run cannot start
-                </h3>
+                  <h3
+                    className="
+                      !m-0
+                      !text-lg
+                      !font-semibold
+                      !leading-6
+                      !text-[#091127]
+                    "
+                  >
+                    Why a run cannot start
+                  </h3>
+                </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col px-5">
                   {causes.map((item, index) => (
                     <div
                       key={item.title}
                       className={`
                         flex
                         flex-col
-                        gap-3
-                        py-3.5
+                        gap-2
+                        py-4
 
                         sm:flex-row
                         sm:items-start
-                        sm:gap-4
+                        sm:gap-5
 
                         ${
                           index !== causes.length - 1
-                            ? "border-b border-[#dfe5ee]"
+                            ? "border-b border-[#edf0f4]"
                             : ""
                         }
                       `}
                     >
-                      <div className="w-full sm:w-36 sm:shrink-0">
+                      <div className="w-full sm:w-[150px] sm:shrink-0">
                         <span
                           className="
                             text-sm
@@ -311,61 +321,69 @@ export default function MissedRuns() {
                         </span>
                       </div>
 
-                      <div className="flex-1">
-                        <p
-                          className="
-                            !m-0
-                            text-sm
-                            font-normal
-                            leading-6
-                            text-[#5d7192]
-                          "
-                        >
-                          {item.description}
-                        </p>
-                      </div>
+                      <p
+                        className="
+                          !m-0
+                          flex-1
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.description}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* RECOVERY POLICIES */}
-              <div className="mt-6 flex flex-col">
-                <h3
+              <div className="border-t border-[#dfe5ee]">
+                <div
                   className="
-                    !m-0
-                    mb-1.5
-                    text-lg
-                    font-semibold
-                    leading-6
-                    text-[#091127]
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-5
+                    py-4
                   "
                 >
-                  Recovery policies
-                </h3>
+                  <h3
+                    className="
+                      !m-0
+                      !text-lg
+                      !font-semibold
+                      !leading-6
+                      !text-[#091127]
+                    "
+                  >
+                    Recovery policies
+                  </h3>
+                </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col px-5">
                   {recoveryPolicies.map((item, index) => (
                     <div
                       key={item.title}
                       className={`
                         flex
                         flex-col
-                        gap-3
-                        py-3.5
+                        gap-2
+                        py-4
 
                         sm:flex-row
                         sm:items-start
-                        sm:gap-4
+                        sm:gap-5
 
                         ${
                           index !== recoveryPolicies.length - 1
-                            ? "border-b border-[#dfe5ee]"
+                            ? "border-b border-[#edf0f4]"
                             : ""
                         }
                       `}
                     >
-                      <div className="w-full sm:w-36 sm:shrink-0">
+                      <div className="w-full sm:w-[150px] sm:shrink-0">
                         <span
                           className="
                             text-sm
@@ -378,29 +396,26 @@ export default function MissedRuns() {
                         </span>
                       </div>
 
-                      <div className="flex-1">
-                        <p
-                          className="
-                            !m-0
-                            text-sm
-                            font-normal
-                            leading-6
-                            text-[#5d7192]
-                          "
-                        >
-                          {item.description}
-                        </p>
-                      </div>
+                      <p
+                        className="
+                          !m-0
+                          flex-1
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.description}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* =========================
-                RIGHT COLUMN
-            ========================== */}
-            <div className="w-full lg:max-w-[526px]">
+            {/* RIGHT COLUMN */}
+            <div className="w-full lg:w-1/2">
               {/* EXCEPTION CARD */}
               <div
                 className="
@@ -409,7 +424,7 @@ export default function MissedRuns() {
                   border
                   border-[#dfe5ee]
                   bg-white
-                  shadow-[0_4px_14px_rgba(14,33,27,0.04),0_1px_2px_rgba(14,33,27,0.05)]
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
                 {/* CARD HEADER */}
@@ -421,22 +436,23 @@ export default function MissedRuns() {
                     gap-2.5
                     border-b
                     border-[#dfe5ee]
-                    bg-[#f7f8fa]
-                    px-4
-                    py-3.5
+                    bg-[#fafbfc]
+                    px-5
+                    py-4
                   "
                 >
-                  <span className="h-2 w-2 rounded-sm bg-[#3b82f6]" />
+                  <span className="h-2 w-2 rounded-sm bg-[#7890b2]" />
 
                   <span
                     className="
-                      font-mono
                       text-[10px]
-                      font-normal
+                      font-bold
                       uppercase
                       leading-4
-                      tracking-wide
-                      text-[#5d7192]
+                      tracking-[0.1em]
+                      text-[#7890b2]
+
+                      sm:text-xs
                     "
                   >
                     Exception EX-8812
@@ -447,79 +463,53 @@ export default function MissedRuns() {
                       ml-auto
                       rounded-full
                       border
-                      border-red-200
-                      bg-red-50
+                      border-[#dfe5ee]
+                      bg-white
                       px-3
                       py-1.5
-                      font-mono
                       text-[10px]
-                      font-medium
+                      font-bold
                       uppercase
-                      tracking-wide
-                      text-red-500
+                      leading-4
+                      tracking-[0.08em]
+                      text-[#7890b2]
                     "
                   >
-                    ! &nbsp; Unresolved
+                    Unresolved
                   </span>
                 </div>
 
                 {/* DETAILS */}
                 <div className="flex flex-col">
-                  {[
-                    {
-                      label: "Occurrence",
-                      value: "SCH-2044 · 01 Aug 06:00 Europe/London",
-                    },
-                    {
-                      label: "Class",
-                      value: "Dependency unavailable · usage source",
-                    },
-                    {
-                      label: "Severity",
-                      value: "Material · affects 3 customers",
-                    },
-                    {
-                      label: "Attempts",
-                      value: "3 of 5 · next 08:30 UTC",
-                    },
-                    {
-                      label: "Policy",
-                      value: "CATCHUP-REVIEW · v2",
-                    },
-                    {
-                      label: "Owner",
-                      value: "r.iqbal",
-                    },
-                  ].map((item, index, items) => (
+                  {exceptionDetails.map((item, index) => (
                     <div
                       key={item.label}
                       className={`
                         flex
                         flex-col
                         gap-1.5
-                        px-4
-                        py-3
+                        px-5
+                        py-3.5
 
                         sm:flex-row
                         sm:items-start
-                        sm:gap-3.5
+                        sm:gap-5
 
                         ${
-                          index !== items.length - 1
-                            ? "border-b border-[#e5e9ef]"
+                          index !== exceptionDetails.length - 1
+                            ? "border-b border-[#edf0f4]"
                             : ""
                         }
                       `}
                     >
-                      <div className="w-full sm:w-24 sm:shrink-0">
+                      <div className="w-full sm:w-[90px] sm:shrink-0">
                         <span
                           className="
-                            font-mono
                             text-[10px]
-                            font-normal
+                            font-bold
                             uppercase
                             leading-4
-                            tracking-wide
+                            tracking-[0.08em]
                             text-[#7890b2]
                           "
                         >
@@ -531,6 +521,7 @@ export default function MissedRuns() {
                         className="
                           !m-0
                           flex-1
+                          break-words
                           text-sm
                           font-normal
                           leading-6
@@ -543,16 +534,27 @@ export default function MissedRuns() {
                   ))}
 
                   {/* CATCH-UP */}
-                  <div className="flex flex-col gap-1.5 px-4 py-3 sm:flex-row sm:items-center sm:gap-3.5">
-                    <div className="w-full sm:w-24 sm:shrink-0">
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      gap-2
+                      px-5
+                      py-4
+
+                      sm:flex-row
+                      sm:items-center
+                      sm:gap-5
+                    "
+                  >
+                    <div className="w-full sm:w-[90px] sm:shrink-0">
                       <span
                         className="
-                          font-mono
                           text-[10px]
-                          font-normal
+                          font-bold
                           uppercase
                           leading-4
-                          tracking-wide
+                          tracking-[0.08em]
                           text-[#7890b2]
                         "
                       >
@@ -567,19 +569,19 @@ export default function MissedRuns() {
                         items-center
                         rounded-full
                         border
-                        border-orange-200
-                        bg-orange-50
+                        border-[#dfe5ee]
+                        bg-[#fafbfc]
                         px-3
                         py-1.5
-                        font-mono
                         text-[10px]
-                        font-medium
+                        font-bold
                         uppercase
-                        tracking-wide
-                        text-orange-500
+                        leading-4
+                        tracking-[0.08em]
+                        text-[#7890b2]
                       "
                     >
-                      • &nbsp; Requires approval
+                      Requires approval
                     </span>
                   </div>
                 </div>
@@ -592,8 +594,8 @@ export default function MissedRuns() {
                     gap-2
                     border-t
                     border-[#dfe5ee]
-                    bg-[#fbfcfd]
-                    px-4
+                    bg-[#fafbfc]
+                    px-5
                     py-4
                   "
                 >
@@ -602,15 +604,17 @@ export default function MissedRuns() {
                     className="
                       rounded-lg
                       border
-                      border-[#3d79d8]
-                      bg-[#3d79d8]
+                      border-blue-600
+                      bg-blue-600
                       px-3
                       py-2.5
-                      font-mono
                       text-xs
                       font-semibold
                       leading-4
                       text-white
+                      transition
+                      hover:border-blue-700
+                      hover:bg-blue-700
                     "
                   >
                     Approve catch-up
@@ -625,11 +629,12 @@ export default function MissedRuns() {
                       bg-white
                       px-3
                       py-2.5
-                      font-mono
                       text-xs
                       font-normal
                       leading-4
                       text-[#5d7192]
+                      transition
+                      hover:bg-[#fafbfc]
                     "
                   >
                     Skip
@@ -644,11 +649,12 @@ export default function MissedRuns() {
                       bg-white
                       px-3
                       py-2.5
-                      font-mono
                       text-xs
                       font-normal
                       leading-4
                       text-[#5d7192]
+                      transition
+                      hover:bg-[#fafbfc]
                     "
                   >
                     Reassign
@@ -663,11 +669,12 @@ export default function MissedRuns() {
                       bg-white
                       px-3
                       py-2.5
-                      font-mono
                       text-xs
                       font-normal
                       leading-4
                       text-[#5d7192]
+                      transition
+                      hover:bg-[#fafbfc]
                     "
                   >
                     Escalate
@@ -678,36 +685,41 @@ export default function MissedRuns() {
               {/* RECOVERY BOUNDARY */}
               <div
                 className="
-                  mt-10
+                  mt-6
                   rounded-r-2xl
                   border-l-[3px]
-                  border-[#3d79d8]
-                  bg-[#f7f8fa]
-                  px-6
+                  border-[#7890b2]
+                  bg-white
+                  px-5
                   py-6
-                  sm:px-7
+                  shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+
+                  sm:px-6
                   sm:py-7
+
+                  lg:px-7
+                  lg:py-7
                 "
               >
-                <div
+                <span
                   className="
-                    font-mono
                     text-[10px]
-                    font-normal
+                    font-bold
                     uppercase
                     leading-4
-                    tracking-wide
-                    text-[#54709a]
+                    tracking-[0.12em]
+                    text-[#7890b2]
                   "
                 >
                   Recovery boundary
-                </div>
+                </span>
 
                 <p
                   className="
                     !m-0
                     mt-2
-                    text-sm
+                    w-full
+                    text-[15px]
                     font-normal
                     leading-7
                     text-[#091127]
@@ -723,9 +735,7 @@ export default function MissedRuns() {
             </div>
           </div>
 
-          {/* =========================
-              TIMING / EXCEPTION TABLE
-          ========================== */}
+          {/* TIMING AND EXCEPTION TABLE */}
           <div
             className="
               w-full
@@ -734,6 +744,7 @@ export default function MissedRuns() {
               border
               border-[#dfe5ee]
               bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
             {/* TABLE TITLE */}
@@ -741,22 +752,23 @@ export default function MissedRuns() {
               className="
                 border-b
                 border-[#dfe5ee]
-                bg-[#f7f8fa]
+                bg-[#fafbfc]
                 px-5
-                py-3.5
+                py-4
 
                 sm:px-6
               "
             >
               <span
                 className="
-                  font-mono
                   text-[10px]
-                  font-normal
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-wide
-                  text-[#5d7192]
+                  tracking-[0.1em]
+                  text-[#7890b2]
+
+                  sm:text-xs
                 "
               >
                 Timing and exception model · how each situation is resolved
@@ -770,15 +782,14 @@ export default function MissedRuns() {
                 className="
                   grid
                   grid-cols-[256px_minmax(0,1fr)_minmax(0,1.2fr)]
-                  bg-[#fbfcfd]
+                  bg-[#fafbfc]
                 "
               >
-                <div className="border-b border-[#dfe5ee] px-3.5 py-2.5">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
-                      font-mono
-                      text-[10px]
-                      font-medium
+                      text-xs
+                      font-bold
                       uppercase
                       leading-4
                       tracking-wide
@@ -789,12 +800,11 @@ export default function MissedRuns() {
                   </span>
                 </div>
 
-                <div className="border-b border-[#dfe5ee] px-3.5 py-2.5">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
-                      font-mono
-                      text-[10px]
-                      font-medium
+                      text-xs
+                      font-bold
                       uppercase
                       leading-4
                       tracking-wide
@@ -805,12 +815,11 @@ export default function MissedRuns() {
                   </span>
                 </div>
 
-                <div className="border-b border-[#dfe5ee] px-3.5 py-2.5">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
-                      font-mono
-                      text-[10px]
-                      font-medium
+                      text-xs
+                      font-bold
                       uppercase
                       leading-4
                       tracking-wide
@@ -832,16 +841,16 @@ export default function MissedRuns() {
 
                     ${
                       index !== timingRows.length - 1
-                        ? "border-b border-[#e5e9ef]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
                 >
-                  <div className="px-3.5 py-3">
+                  <div className="px-4 py-3.5">
                     <span
                       className="
                         text-sm
-                        font-normal
+                        font-semibold
                         leading-5
                         text-[#091127]
                       "
@@ -850,26 +859,26 @@ export default function MissedRuns() {
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-3">
+                  <div className="px-4 py-3.5">
                     <span
                       className="
                         text-sm
                         font-normal
                         leading-5
-                        text-[#091127]
+                        text-[#5d7192]
                       "
                     >
                       {row.direction}
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-3">
+                  <div className="px-4 py-3.5">
                     <span
                       className="
                         text-sm
                         font-normal
                         leading-5
-                        text-[#091127]
+                        text-[#5d7192]
                       "
                     >
                       {row.control}
@@ -889,7 +898,7 @@ export default function MissedRuns() {
 
                     ${
                       index !== timingRows.length - 1
-                        ? "border-b border-[#e5e9ef]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
@@ -899,12 +908,11 @@ export default function MissedRuns() {
                     <p
                       className="
                         !m-0
-                        font-mono
                         text-[10px]
-                        font-medium
+                        font-bold
                         uppercase
                         leading-4
-                        tracking-wide
+                        tracking-[0.1em]
                         text-[#7890b2]
                       "
                     >
@@ -929,12 +937,11 @@ export default function MissedRuns() {
                     <p
                       className="
                         !m-0
-                        font-mono
                         text-[10px]
-                        font-medium
+                        font-bold
                         uppercase
                         leading-4
-                        tracking-wide
+                        tracking-[0.1em]
                         text-[#7890b2]
                       "
                     >
@@ -947,7 +954,7 @@ export default function MissedRuns() {
                         mt-1.5
                         text-sm
                         leading-6
-                        text-[#091127]
+                        text-[#5d7192]
                       "
                     >
                       {row.direction}
@@ -959,12 +966,11 @@ export default function MissedRuns() {
                     <p
                       className="
                         !m-0
-                        font-mono
                         text-[10px]
-                        font-medium
+                        font-bold
                         uppercase
                         leading-4
-                        tracking-wide
+                        tracking-[0.1em]
                         text-[#7890b2]
                       "
                     >
@@ -977,7 +983,7 @@ export default function MissedRuns() {
                         mt-1.5
                         text-sm
                         leading-6
-                        text-[#091127]
+                        text-[#5d7192]
                       "
                     >
                       {row.control}

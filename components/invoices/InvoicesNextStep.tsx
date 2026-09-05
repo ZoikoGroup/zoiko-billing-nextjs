@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function InvoicesNextStep() {
   const lifecycle = [
     {
@@ -44,23 +46,32 @@ export default function InvoicesNextStep() {
           items-center
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
-          lg:py-24
+
           xl:px-20
         "
       >
         <div
           className="
+            mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
             items-center
-            gap-10
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+
             lg:flex-row
             lg:items-center
             lg:gap-16
@@ -74,15 +85,16 @@ export default function InvoicesNextStep() {
               flex-1
               flex-col
               items-start
-              gap-4
+              gap-5
             "
           >
-            {/* Eyebrow */}
+            {/* EYEBROW */}
             <div className="flex items-center gap-3">
               <span
                 className="
-                  h-0.5
+                  h-[2px]
                   w-5
+                  shrink-0
                   rounded-full
                   bg-gradient-to-r
                   from-[#27c7d9]
@@ -93,49 +105,52 @@ export default function InvoicesNextStep() {
               <span
                 className="
                   text-[10px]
-                  font-medium
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-[0.14em]
+                  tracking-[0.16em]
                   text-[#6dd9e8]
+
                   sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
                 Next step
               </span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2
               className="
                 !m-0
                 max-w-[660px]
-                pt-1.5
-                text-[34px]
-                font-medium
-                leading-[1.15]
-                tracking-[-0.035em]
-                text-white
-                sm:text-[40px]
-                md:text-[44px]
-                lg:text-[48px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-white
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
               Start with the billing documents your operation needs.
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
                 !m-0
-                mt-1
                 max-w-[529px]
                 text-[15px]
                 font-normal
                 leading-7
                 text-[#9bc1d4]
+
                 sm:text-base
-                sm:leading-8
               "
             >
               Decide what has to be approved before it is issued, how
@@ -143,7 +158,7 @@ export default function InvoicesNextStep() {
               then let the record hold itself together.
             </p>
 
-            {/* Main CTAs */}
+            {/* MAIN CTAS */}
             <div
               className="
                 flex
@@ -151,17 +166,22 @@ export default function InvoicesNextStep() {
                 flex-col
                 items-stretch
                 gap-3
-                pt-5
+                pt-1
+
                 sm:w-auto
                 sm:flex-row
                 sm:flex-wrap
                 sm:items-center
               "
             >
-              <button
-                type="button"
+              {/* CREATE ACCOUNT */}
+              <Link
+                href="/create-account"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-lg
                   bg-[#4389b5]
                   px-5
@@ -179,19 +199,23 @@ export default function InvoicesNextStep() {
                 "
               >
                 Create Account
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              {/* BOOK A DEMO */}
+              <Link
+                href="/book-demo"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-lg
                   px-5
                   py-2
                   text-base
                   font-normal
                   leading-6
-                  text-white
+                  !text-white
                   outline
                   outline-1
                   outline-offset-[-1px]
@@ -201,10 +225,11 @@ export default function InvoicesNextStep() {
                 "
               >
                 Book a Demo
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              {/* GLOBAL BILLING */}
+              <Link
+                href="/global-billing"
                 className="
                   inline-flex
                   min-h-11
@@ -216,25 +241,27 @@ export default function InvoicesNextStep() {
                   text-base
                   font-normal
                   leading-6
-                  text-[#27c7d9]
+                  !text-[#27c7d9]
                   transition-opacity
                   hover:opacity-75
                 "
               >
                 Global billing
                 <span className="text-base font-bold">→</span>
-              </button>
+              </Link>
             </div>
 
-            {/* Disclaimer */}
+            {/* DISCLAIMER */}
             <div className="mt-1 w-full">
               <p
                 className="
                   !m-0
                   text-sm
                   font-normal
-                  leading-7
-                  text-[#08294a]
+                  leading-6
+                  text-[#9bc1d4]
+
+                  sm:leading-7
                 "
               >
                 Issued documents are evidence, not drafts.
@@ -246,8 +273,17 @@ export default function InvoicesNextStep() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="flex w-full flex-1 flex-col items-start gap-5">
-            {/* Lifecycle card */}
+          <div
+            className="
+              flex
+              w-full
+              flex-1
+              flex-col
+              items-start
+              gap-5
+            "
+          >
+            {/* LIFECYCLE CARD */}
             <div
               className="
                 w-full
@@ -256,6 +292,7 @@ export default function InvoicesNextStep() {
                 border-white/10
                 bg-white/[0.05]
                 p-5
+
                 sm:p-6
               "
             >
@@ -268,7 +305,9 @@ export default function InvoicesNextStep() {
                       items-start
                       gap-4
                       py-3
+
                       sm:gap-5
+
                       ${
                         index !== lifecycle.length - 1
                           ? "border-b border-white/10"
@@ -276,7 +315,7 @@ export default function InvoicesNextStep() {
                       }
                     `}
                   >
-                    {/* Number */}
+                    {/* NUMBER */}
                     <div
                       className="
                         flex
@@ -298,9 +337,20 @@ export default function InvoicesNextStep() {
                       {item.number}
                     </div>
 
-                    {/* Text */}
+                    {/* TEXT */}
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                      <div
+                        className="
+                          flex
+                          flex-col
+                          gap-0.5
+
+                          sm:flex-row
+                          sm:items-center
+                          sm:justify-between
+                          sm:gap-3
+                        "
+                      >
                         <span
                           className="
                             text-sm
@@ -318,6 +368,7 @@ export default function InvoicesNextStep() {
                             font-normal
                             leading-4
                             text-[#6f9bb0]
+
                             sm:text-right
                           "
                         >
@@ -329,7 +380,7 @@ export default function InvoicesNextStep() {
                 ))}
               </div>
 
-              {/* Card Footer */}
+              {/* CARD FOOTER */}
               <div
                 className="
                   mt-4
@@ -352,12 +403,15 @@ export default function InvoicesNextStep() {
               </div>
             </div>
 
-            {/* Secondary CTA */}
+            {/* SECONDARY CTA */}
             <div className="flex w-full items-center">
-              <button
-                type="button"
+              <Link
+                href="/charges-and-adjustments"
                 className="
+                  inline-flex
                   min-h-11
+                  items-center
+                  justify-center
                   rounded-lg
                   px-5
                   py-2
@@ -365,7 +419,7 @@ export default function InvoicesNextStep() {
                   text-base
                   font-normal
                   leading-6
-                  text-white
+                  !text-white
                   outline
                   outline-1
                   outline-offset-[-1px]
@@ -375,7 +429,7 @@ export default function InvoicesNextStep() {
                 "
               >
                 Explore Charges &amp; Adjustments
-              </button>
+              </Link>
             </div>
           </div>
         </div>

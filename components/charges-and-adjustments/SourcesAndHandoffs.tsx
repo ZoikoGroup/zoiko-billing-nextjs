@@ -37,364 +37,343 @@ const handoffItems = [
 
 export default function SourcesAndHandoffs() {
   return (
-    <>
-      <style jsx global>{`
-        .sources-handoffs,
-        .sources-handoffs * {
-          box-sizing: border-box;
-        }
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        .sources-handoffs .sh-white {
-          color: #ffffff !important;
-        }
+          sm:px-8
+          sm:py-16
 
-        .sources-handoffs .sh-heading {
-          color: #062f49 !important;
-        }
+          md:px-10
+          md:py-20
 
-        .sources-handoffs .sh-body {
-          color: #536b78 !important;
-        }
+          lg:px-14
 
-        .sources-handoffs .sh-blue {
-          color: #3377ad !important;
-        }
-
-        .sources-handoffs .sh-card-title {
-          color: #062f49 !important;
-        }
-
-        .sources-handoffs .sh-card-description {
-          color: #536b78 !important;
-        }
-
-        .sources-handoffs .sh-boundary-text {
-          color: #062f49 !important;
-        }
-
-        .sources-handoffs .sh-primary {
-          color: #ffffff !important;
-          background-color: #062f49 !important;
-        }
-
-        .sources-handoffs .sh-secondary {
-          color: #3377ad !important;
-        }
-
-        .sources-handoffs .sh-secondary:hover {
-          color: #1e527c !important;
-        }
-
-        @media (max-width: 1023px) {
-          .sources-handoffs .sh-heading {
-            font-size: 42px !important;
-            line-height: 1.15 !important;
-          }
-        }
-
-        @media (max-width: 639px) {
-          .sources-handoffs {
-            padding: 64px 20px !important;
-          }
-
-          .sources-handoffs .sh-heading {
-            font-size: 36px !important;
-            line-height: 1.12 !important;
-          }
-
-          .sources-handoffs .sh-intro {
-            font-size: 15px !important;
-            line-height: 1.8 !important;
-          }
-
-          .sources-handoffs .sh-boundary-text {
-            font-size: 15px !important;
-            line-height: 1.7 !important;
-          }
-
-          .sources-handoffs .sh-actions {
-            flex-direction: column !important;
-          }
-
-          .sources-handoffs .sh-action {
-            width: 100% !important;
-          }
-        }
-      `}</style>
-
-      <section
-        className="sources-handoffs w-full"
-        style={{
-          backgroundColor: "#f7f8f8",
-          paddingLeft: "clamp(24px, 7.78vw, 112px)",
-          paddingRight: "clamp(24px, 7.78vw, 112px)",
-          paddingTop: "96px",
-          paddingBottom: "96px",
-        }}
+          xl:px-20
+        "
       >
         <div
-          className="mx-auto flex w-full flex-col"
-          style={{
-            maxWidth: "1220px",
-            paddingLeft: "48px",
-            paddingRight: "48px",
-            gap: "36px",
-          }}
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
         >
           {/* =========================================================
-              HEADER
+              SECTION INTRO
           ========================================================= */}
           <div
-            className="flex w-full flex-col lg:flex-row"
-            style={{
-              alignItems: "flex-end",
-              gap: "64px",
-            }}
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
           >
-            {/* LEFT */}
-            <div
-              className="flex flex-1 flex-col"
-              style={{
-                paddingTop: "10px",
-                paddingBottom: "20px",
-                gap: "20px",
-              }}
-            >
-              {/* Eyebrow */}
-              <div
-                className="flex items-center"
-                style={{
-                  height: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "20px",
-                    height: "2px",
-                    flexShrink: 0,
-                    borderRadius: "2px",
-                    background:
-                      "linear-gradient(to right, #35d9e5, #4b91ff)",
-                  }}
-                />
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                <span
-                  className="sh-blue"
-                  style={{
-                    marginLeft: "10px",
-                    fontFamily: "IBM Plex Mono, monospace",
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    lineHeight: "16px",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Sources and handoffs
-                </span>
-              </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-              {/* Heading */}
-              <h2
-                className="sh-heading"
-                style={{
-                  margin: 0,
-                  width: "100%",
-                  maxWidth: "638.15px",
-                  fontSize: "48px",
-                  fontWeight: 500,
-                  lineHeight: "53.82px",
-                  letterSpacing: "-0.02em",
-                }}
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                Where amounts come
-                <br />
-                from, and where they go.
-              </h2>
+                Sources and handoffs
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* RIGHT */}
-            <div
-              style={{
-                flex: 1,
-                width: "100%",
-                maxWidth: "528.77px",
-              }}
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
             >
-              <p
-                className="sh-body sh-intro"
-                style={{
-                  margin: 0,
-                  fontFamily: "Segoe UI, sans-serif",
-                  fontSize: "16px",
-                  fontWeight: 400,
-                  lineHeight: "32px",
-                }}
-              >
-                Approved systems can supply quantity, rate and eligibility
-                context inbound, and receive document, accounting or reporting
-                context outbound.
-              </p>
-            </div>
+              Where amounts come from,
+              <br className="hidden sm:block" />
+              and where they go.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Approved systems can supply quantity, rate and eligibility
+              context inbound, and receive document, accounting or reporting
+              context outbound.
+            </p>
           </div>
 
           {/* =========================================================
-              HANDOFF LIST
+              HANDOFF TABLE
           ========================================================= */}
           <div
-            style={{
-              width: "100%",
-              height: "384px",
-              overflow: "hidden",
-              borderRadius: "16px",
-              border: "1px solid #e4e7e8",
-              backgroundColor: "#ffffff",
-              display: "flex",
-              flexDirection: "column",
-            }}
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
           >
-            {/* FIRST */}
-            <div
-              style={{
-                width: "100%",
-                paddingLeft: "24px",
-                paddingRight: "24px",
-                paddingTop: "24px",
-                paddingBottom: "24px",
-                backgroundColor: "#ffffff",
-                display: "flex",
-                flexDirection: "column",
-                gap: "2.7px",
-              }}
-            >
+            {/* DESKTOP */}
+            <div className="hidden md:block">
+              {/* HEADER */}
               <div
-                style={{
-                  paddingBottom: "4.79px",
-                }}
+                className="
+                  grid
+                  grid-cols-[240px_minmax(0,1fr)]
+                  bg-[#fafbfc]
+                "
               >
-                <h3
-                  className="sh-card-title"
-                  style={{
-                    margin: 0,
-                    fontFamily: "Segoe UI, sans-serif",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    lineHeight: "24px",
-                  }}
-                >
-                  {handoffItems[0].title}
-                </h3>
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Handoff area
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
+                    Description
+                  </span>
+                </div>
               </div>
 
-              <p
-                className="sh-card-description"
-                style={{
-                  margin: 0,
-                  fontFamily: "Segoe UI, sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  lineHeight: "24px",
-                }}
-              >
-                Catalog, order, contract, usage, commerce, CRM, ERP, tax and
-                custom
-                <br />
-                integrations, described only where verified.
-              </p>
+              {/* ROWS */}
+              {handoffItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`
+                    grid
+                    grid-cols-[240px_minmax(0,1fr)]
+                    ${
+                      index !== handoffItems.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  <div className="px-5 py-4">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+
+                  <div className="px-5 py-4">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.description}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* REMAINING ITEMS */}
-            {handoffItems.slice(1).map((item, index) => (
-              <div
-                key={item.title}
-                style={{
-                  width: "100%",
-                  paddingLeft: "24px",
-                  paddingRight: "24px",
-                  paddingTop: index === 4 ? "24px" : "24px",
-                  paddingBottom: index === 0 || index === 3 ? "48px" : "24px",
-                  backgroundColor: "#ffffff",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                }}
-              >
-                <h3
-                  className="sh-card-title"
-                  style={{
-                    margin: 0,
-                    fontFamily: "Segoe UI, sans-serif",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    lineHeight: "24px",
-                  }}
+            {/* MOBILE */}
+            <div className="flex flex-col md:hidden">
+              {handoffItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`
+                    p-5
+                    ${
+                      index !== handoffItems.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
                 >
-                  {item.title}
-                </h3>
+                  {/* HANDOFF AREA */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Handoff area
+                    </p>
 
-                <p
-                  className="sh-card-description"
-                  style={{
-                    margin: 0,
-                    fontFamily: "Segoe UI, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: 400,
-                    lineHeight: "24px",
-                  }}
-                >
-                  {item.description}
-                </p>
-              </div>
-            ))}
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {item.title}
+                    </p>
+                  </div>
+
+                  {/* DESCRIPTION */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Description
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* =========================================================
               CONNECTOR BOUNDARY
           ========================================================= */}
           <div
-            style={{
-              width: "100%",
-              minHeight: "162px",
-              paddingLeft: "25px",
-              paddingRight: "28px",
-              paddingTop: "36px",
-              paddingBottom: "32px",
-              backgroundColor: "#f0f2f2",
-              borderLeft: "3px solid #4b91ff",
-              borderTopRightRadius: "16px",
-              borderBottomRightRadius: "16px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "8px",
-            }}
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#4b91ff]
+              bg-[#f0f2f2]
+              px-5
+              py-7
+
+              sm:px-6
+              sm:py-8
+            "
           >
+            {/* LABEL */}
             <span
-              className="sh-blue"
-              style={{
-                fontFamily: "IBM Plex Mono, monospace",
-                fontSize: "9.9px",
-                fontWeight: 400,
-                lineHeight: "16px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-              }}
+              className="
+                text-[10px]
+                font-medium
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
             >
               Connector boundary
             </span>
 
+            {/* TEXT */}
             <p
-              className="sh-boundary-text"
-              style={{
-                width: "100%",
-                maxWidth: "761.06px",
-                margin: 0,
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "28px",
-              }}
+              className="
+                !m-0
+                mt-2
+                w-full
+                max-w-[850px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
             >
               Not every connector calculates, rates, discounts, taxes or posts
               amounts, and not in real time. Behaviour is stated per connector
@@ -407,73 +386,82 @@ export default function SourcesAndHandoffs() {
               CTA
           ========================================================= */}
           <div
-            className="sh-actions flex w-full items-center justify-center"
-            style={{
-              gap: "12px",
-              minHeight: "44px",
-            }}
+            className="
+              flex
+              w-full
+              items-center
+              justify-center
+              gap-3
+
+              max-sm:flex-col
+            "
           >
+            {/* PRIMARY CTA */}
             <Link
-              href="/integrations"
-              className="sh-action sh-primary"
-              style={{
-                minHeight: "44px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                paddingTop: "8px",
-                paddingBottom: "10px",
-                borderRadius: "8px",
-                border: "1px solid #062f49",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              href="/integration-availability"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-[#091127]
+                bg-[#091127]
+                px-5
+                py-2
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                transition-colors
+                hover:bg-[#17213a]
+
+                max-sm:w-full
+              "
             >
               Browse integrations
             </Link>
 
+            {/* SECONDARY CTA */}
             <Link
-              href="/integrations"
-              className="sh-action sh-secondary"
-              style={{
-                minHeight: "44px",
-                paddingLeft: "8px",
-                paddingRight: "8px",
-                paddingTop: "8px",
-                paddingBottom: "8px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              href="#"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                gap-2
+                px-2
+                py-2
+                text-base
+                font-normal
+                leading-6
+                text-[#3377ad]
+                no-underline
+                transition-colors
+                hover:text-[#1e527c]
+
+                max-sm:w-full
+              "
             >
-              Compare deployment options
+              <span>Compare deployment options</span>
 
               <span
-                style={{
-                  fontFamily: "IBM Plex Mono, monospace",
-                  fontSize: "16px",
-                  fontWeight: 700,
-                  lineHeight: "24px",
-                }}
+                className="
+                  font-mono
+                  text-base
+                  font-bold
+                  leading-6
+                "
               >
                 →
               </span>
             </Link>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

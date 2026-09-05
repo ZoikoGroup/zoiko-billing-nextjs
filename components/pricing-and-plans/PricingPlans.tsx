@@ -54,14 +54,14 @@ export default function PricingPlans() {
             {/* Buttons */}  
             <div className="relative z-20 mt-5 flex w-full flex-wrap items-center gap-2.5">  
               <Link  
-                href="#"  
+                href="create-account"  
                 className="relative z-20 inline-flex h-11 items-center justify-center rounded-full !bg-blue-600 px-5 text-sm font-semibold leading-6 !text-white shadow-[0px_6px_16px_0px_rgba(31,111,235,0.24)] outline outline-1 outline-offset-[-1px] !outline-blue-600 transition-all duration-200 hover:!bg-blue-700 hover:!text-white"  
               >  
                 Create account  
               </Link>  
   
               <Link  
-                href="#"  
+                href="#compare-plans"  
                 className="relative z-20 inline-flex h-11 items-center justify-center rounded-full !bg-white px-5 text-sm font-semibold leading-6 !text-slate-900 outline outline-1 outline-offset-[-1px] !outline-slate-200 transition-all duration-200 hover:!bg-slate-100 hover:!text-slate-900"  
               >  
                 Compare plans  

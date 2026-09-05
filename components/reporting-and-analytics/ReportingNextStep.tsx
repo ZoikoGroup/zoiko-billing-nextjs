@@ -68,14 +68,14 @@ export default function ReportingNextStep() {
             {/* CTAs */}
             <div className="relative z-10 flex flex-col items-start gap-3 pt-4 sm:flex-row">
               <Link
-                href="#"
+                href="create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg !bg-sky-600 px-5 py-2.5 text-base font-normal leading-6 !text-white !outline !outline-1 !outline-offset-[-1px] !outline-sky-600 transition hover:!bg-sky-500 hover:!text-white"
               >
                 Create Account
               </Link>
 
               <Link
-                href="#"
+                href="book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg !bg-transparent px-5 py-2.5 text-base font-normal leading-6 !text-white !outline !outline-1 !outline-offset-[-1px] !outline-white/30 transition hover:!bg-white/10 hover:!text-white"
               >
                 Book a Demo
@@ -130,7 +130,7 @@ export default function ReportingNextStep() {
             {/* Explore Platform */}
             <div className="relative z-10 flex flex-wrap items-center">
               <Link
-                href="#"
+                href="platform-overview"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg !bg-transparent px-5 py-2.5 text-base font-normal leading-6 !text-white !outline !outline-1 !outline-offset-[-1px] !outline-white/30 transition hover:!bg-white/10 hover:!text-white"
               >
                 Explore the platform

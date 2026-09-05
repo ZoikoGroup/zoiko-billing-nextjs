@@ -107,30 +107,21 @@ export default function ChargesAndAdjustments() {
             "
           >
             <span className="block">
-              Control every
+              Control every  amount
             </span>
 
-            <span className="block">
-              amount
-            </span>
 
             <span className="block text-blue-600">
-              before it
+              before it  becomes part of  the bill.
             </span>
 
-            <span className="block text-blue-600">
-              becomes part of
-            </span>
-
-            <span className="block text-blue-600">
-              the bill.
-            </span>
+           
           </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[529px]
               text-[15px]
@@ -198,7 +189,7 @@ export default function ChargesAndAdjustments() {
 
             {/* BOOK DEMO */}
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11
@@ -256,7 +247,7 @@ export default function ChargesAndAdjustments() {
 
         {/* RIGHT IMAGE */}
         <div
-          id="amount-model"
+          
           className="
             mt-10
             w-full

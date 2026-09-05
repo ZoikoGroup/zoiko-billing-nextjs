@@ -37,16 +37,16 @@ export default function BillingSchedules() {
         <div className="w-full min-w-0 lg:w-[52%]">
           {/* EYEBROW */}
           <div className="mb-5 flex items-center gap-3 sm:mb-6">
-            <span className="h-0.5 w-5 shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600" />
+            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
 
             <span
               className="
                 text-[10px]
-                font-medium
+                font-bold
                 uppercase
                 leading-4
                 tracking-[0.16em]
-                text-[#5272a0]
+                text-[#7890b2]
 
                 sm:text-xs
                 sm:tracking-[0.18em]
@@ -56,13 +56,14 @@ export default function BillingSchedules() {
             </span>
           </div>
 
-          {/* HEADING */}
-          <h2
+          {/* MOBILE + TABLET HEADING */}
+          <h1
             className="
               !m-0
+              !block
               !max-w-[700px]
               !text-[40px]
-              !font-medium
+              !font-extrabold
               !leading-[1.08]
               !tracking-[-0.035em]
               !text-slate-900
@@ -78,15 +79,15 @@ export default function BillingSchedules() {
             <span className="text-blue-600">
               without guessing the result.
             </span>
-          </h2>
+          </h1>
 
           {/* DESKTOP HEADING */}
-          <h2
+          <h1
             className="
               !m-0
               !hidden
               !max-w-none
-              !font-medium
+              !font-extrabold
               !leading-[1.08]
               !tracking-[-0.035em]
               !text-slate-900
@@ -98,29 +99,35 @@ export default function BillingSchedules() {
             "
           >
             <span className="block">Control when</span>
+
             <span className="block">billing work</span>
+
             <span className="block">should begin —</span>
 
             <span className="block text-blue-600">without guessing</span>
+
             <span className="block text-blue-600">the result.</span>
-          </h2>
+          </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              mt-7
+              !mt-8
               w-full
-              max-w-[529px]
+              max-w-[687px]
               text-[15px]
               font-normal
               leading-7
               text-[#5d7192]
 
-              sm:mt-8
+              sm:mt-9
               sm:text-base
-              sm:leading-8
+
+              md:mt-9
 
               lg:mt-8
+
+              xl:mt-9
             "
           >
             Zoiko Billing manages governed start dates, recurrence, timezone,
@@ -128,7 +135,7 @@ export default function BillingSchedules() {
             for one-time and supported recurring billing work.
           </p>
 
-          {/* CTA */}
+          {/* CTA BUTTONS */}
           <div
             className="
               mt-7
@@ -143,6 +150,7 @@ export default function BillingSchedules() {
               sm:flex-wrap
             "
           >
+            {/* CREATE ACCOUNT */}
             <Link
               href="/create-account"
               className="
@@ -151,13 +159,14 @@ export default function BillingSchedules() {
                 w-full
                 items-center
                 justify-center
-                rounded-lg
+                rounded-full
                 bg-blue-600
-                px-5
-                text-base
-                font-normal
-                leading-6
+                px-7
+                text-center
+                text-sm
+                font-semibold
                 text-white
+                shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
                 hover:bg-blue-700
 
@@ -167,25 +176,26 @@ export default function BillingSchedules() {
               Create Account
             </Link>
 
+            {/* BOOK A DEMO */}
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11
                 w-full
                 items-center
                 justify-center
-                rounded-lg
+                rounded-full
                 border
-                border-zinc-200
+                border-[#dfe5ee]
                 bg-white
-                px-5
-                text-base
-                font-normal
-                leading-6
-                text-slate-900
+                px-7
+                text-center
+                text-sm
+                font-semibold
+                text-[#091127]
                 transition
-                hover:bg-slate-50
+                hover:bg-[#f8faff]
 
                 sm:w-auto
               "
@@ -194,32 +204,40 @@ export default function BillingSchedules() {
             </Link>
           </div>
 
-          {/* SECONDARY LINK */}
+          {/* EXPLORE SCHEDULE MODEL */}
           <Link
             href="#schedule-model"
             className="
-              mt-4
+              mt-5
               inline-flex
               min-h-11
               items-center
               gap-2
-              text-base
+              text-sm
               font-normal
-              leading-6
               text-blue-600
               transition
               hover:text-blue-700
+
+              sm:mt-4
+              sm:text-base
             "
           >
             <span>Explore the schedule model</span>
-            <span className="text-base font-semibold">↓</span>
+
+            <span
+              aria-hidden="true"
+              className="text-base leading-6"
+            >
+              ↓
+            </span>
           </Link>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE / SCHEDULE MODEL TARGET */}
         <div
-          id="schedule-model"
           className="
+            scroll-mt-24
             mt-10
             w-full
 
@@ -240,74 +258,24 @@ export default function BillingSchedules() {
               w-full
               max-w-[547px]
               overflow-hidden
-              rounded-3xl
-              bg-gradient-to-br
-              from-[#edf5ff]
-              via-[#e7f0fa]
-              to-[#dce9f5]
-              p-4
-
-              sm:p-5
-
-              md:p-7
+              rounded-2xl
             "
           >
-            {/* Background glow */}
-            <div
-              className="
-                pointer-events-none
-                absolute
-                left-0
-                top-0
-                h-full
-                w-[70%]
-                bg-[radial-gradient(circle_at_60%_20%,rgba(0,0,0,0.14),transparent_65%)]
+            <Image
+              src="/images/billing-schedules/schedules.png"
+              alt="Billing schedules"
+              width={547}
+              height={635}
+              priority
+              className="h-auto w-full object-cover"
+              sizes="
+                (max-width: 639px) 100vw,
+                (max-width: 767px) 90vw,
+                (max-width: 1023px) 85vw,
+                (max-width: 1279px) 44vw,
+                547px
               "
             />
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                left-0
-                top-0
-                h-full
-                w-[70%]
-                opacity-30
-                bg-[radial-gradient(circle,rgba(34,197,94,0.4),transparent_65%)]
-              "
-            />
-
-            {/* IMAGE */}
-            <div
-              className="
-                relative
-                z-10
-                w-full
-                overflow-hidden
-                rounded-2xl
-                border
-                border-zinc-200
-                bg-white
-                shadow-[0px_22px_50px_-20px_rgba(14,33,27,0.24),0px_2px_6px_0px_rgba(14,33,27,0.06)]
-              "
-            >
-              <Image
-                src="/images/billing-schedules/schedules.png"
-                alt="Billing schedules"
-                width={547}
-                height={635}
-                priority
-                className="h-auto w-full object-cover"
-                sizes="
-                  (max-width: 639px) 100vw,
-                  (max-width: 767px) 90vw,
-                  (max-width: 1023px) 85vw,
-                  (max-width: 1279px) 44vw,
-                  547px
-                "
-              />
-            </div>
           </div>
         </div>
       </div>
