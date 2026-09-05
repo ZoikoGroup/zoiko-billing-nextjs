@@ -62,7 +62,7 @@ const patterns = [
 
 export default function BillingSchedulePatterns() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -70,239 +70,171 @@ export default function BillingSchedulePatterns() {
           w-full
           max-w-[1440px]
           flex-col
+          items-start
           px-5
-          pb-14
-          pt-12
+          py-14
 
           sm:px-8
-          sm:pb-16
-          sm:pt-16
+          sm:py-16
 
           md:px-10
-          md:pb-20
+          md:py-20
 
           lg:px-14
-          lg:pb-24
-          lg:pt-24
 
           xl:px-20
         "
       >
-        <div className="mx-auto w-full max-w-[1220px]">
-          {/* HEADER */}
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
+              max-w-[700px]
               flex-col
-              gap-7
-
-              lg:flex-row
-              lg:items-end
-              lg:justify-between
-              lg:gap-14
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT CONTENT */}
-            <div className="min-w-0 flex-1">
-              {/* EYEBROW */}
-              <div className="mb-5 flex items-center gap-3 sm:mb-6">
-                <span
-                  className="
-                    h-px
-                    w-6
-                    shrink-0
-                    bg-blue-600
-                    opacity-75
-                  "
-                />
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    leading-4
-                    tracking-[0.16em]
-                    text-[#7890b2]
-
-                    sm:text-xs
-                    sm:tracking-[0.18em]
-                  "
-                >
-                  Patterns
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+              <span
                 className="
-                  !m-0
-                  max-w-[700px]
-                  text-[40px]
-                  font-extrabold
-                  leading-[1.08]
-                  tracking-[-0.035em]
-                  text-slate-900
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:text-[46px]
-
-                  md:text-[50px]
-
-                  lg:text-[48px]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Supported timing concepts, stated plainly.
-              </h2>
+                Patterns
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* RIGHT DESCRIPTION */}
-            <div className="w-full lg:max-w-[529px]">
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Not every recurrence standard or calendar is supported.
-                Recurring timing on its own defines no price, proration,
-                usage or contract term.
-              </p>
-            </div>
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Supported timing concepts, stated plainly.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Not every recurrence standard or calendar is supported.
+              Recurring timing on its own defines no price, proration, usage
+              or contract term.
+            </p>
           </div>
 
           {/* PATTERN CARDS */}
           <div
             className="
-              mt-10
-              -mx-5
-              overflow-x-auto
-              px-5
-              pb-4
-              scrollbar-hide
-
-              sm:-mx-8
-              sm:px-8
-
-              md:-mx-10
-              md:px-10
-
-              lg:mx-0
-              lg:mt-14
-              lg:overflow-visible
-              lg:px-0
+              w-full
+              overflow-hidden
+              rounded-2xl
             "
           >
+            {/* DESKTOP GRID */}
             <div
               className="
-                flex
-                min-w-max
-                gap-4
+                hidden
 
                 lg:grid
-                lg:min-w-0
                 lg:grid-cols-4
                 lg:gap-4
               "
             >
               {patterns.map((pattern, index) => (
-                <article
+                <PatternCard
                   key={`${pattern.title}-${index}`}
-                  className={`
-                    flex
-                    h-[208px]
-                    w-[256px]
-                    shrink-0
-                    flex-col
-                    rounded-2xl
-                    border
-                    px-5
-                    py-6
-
-                    ${
-                      pattern.boundary
-                        ? "border-[#8aa2c2] bg-[#f1f4f7]"
-                        : "border-[#e1e6ed] bg-white"
-                    }
-                  `}
-                >
-                  {/* LABEL */}
-                  <span
-                    className="
-                      text-[9px]
-                      font-semibold
-                      uppercase
-                      leading-4
-                      tracking-[0.12em]
-                      text-[#7890b2]
-                    "
-                  >
-                    {pattern.label}
-                  </span>
-
-                  {/* TITLE */}
-                  <h3
-                    className="
-                      !m-0
-                      mt-2
-                      text-base
-                      font-semibold
-                      leading-5
-                      text-slate-900
-                    "
-                  >
-                    {pattern.title}
-                  </h3>
-
-                  {/* DESCRIPTION */}
-                  <p
-                    className="
-                      !m-0
-                      mt-3
-                      text-sm
-                      font-normal
-                      leading-5
-                      text-[#5d7192]
-                    "
-                  >
-                    {pattern.description}
-                  </p>
-
-                  {/* EXAMPLE */}
-                  <div
-                    className="
-                      mt-auto
-                      flex
-                      min-h-8
-                      items-center
-                      overflow-hidden
-                      rounded-full
-                      border
-                      border-[#e3e7ec]
-                      bg-[#f8fafc]
-                      px-2.5
-                      text-[10px]
-                      font-normal
-                      leading-4
-                      text-[#5d7192]
-                      whitespace-nowrap
-                    "
-                  >
-                    {pattern.example}
-                  </div>
-                </article>
+                  pattern={pattern}
+                />
               ))}
+            </div>
+
+            {/* MOBILE / TABLET HORIZONTAL SCROLL */}
+            <div
+              className="
+                -mx-5
+                overflow-x-auto
+                px-5
+                pb-4
+                scrollbar-hide
+
+                sm:-mx-8
+                sm:px-8
+
+                md:-mx-10
+                md:px-10
+
+                lg:hidden
+              "
+            >
+              <div className="flex min-w-max gap-4">
+                {patterns.map((pattern, index) => (
+                  <PatternCard
+                    key={`${pattern.title}-${index}`}
+                    pattern={pattern}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-8 flex justify-center lg:mt-10">
+          <div className="flex w-full justify-center pt-1">
             <Link
               href="/charges-and-adjustments"
               className="
@@ -336,5 +268,100 @@ export default function BillingSchedulePatterns() {
         </div>
       </div>
     </section>
+  );
+}
+
+function PatternCard({
+  pattern,
+}: {
+  pattern: (typeof patterns)[number];
+}) {
+  return (
+    <article
+      className={`
+        flex
+        h-[208px]
+        w-[256px]
+        shrink-0
+        flex-col
+        rounded-2xl
+        border
+        px-5
+        py-6
+
+        ${
+          pattern.boundary
+            ? "border-[#b9c6d6] bg-[#eef1f5]"
+            : "border-[#dfe5ee] bg-white"
+        }
+
+        shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+      `}
+    >
+      {/* LABEL */}
+      <span
+        className="
+          text-[9px]
+          font-bold
+          uppercase
+          leading-4
+          tracking-[0.12em]
+          text-[#7890b2]
+        "
+      >
+        {pattern.label}
+      </span>
+
+      {/* TITLE */}
+      <h3
+        className="
+          !m-0
+          mt-2
+          !text-base
+          !font-semibold
+          !leading-5
+          !text-[#091127]
+        "
+      >
+        {pattern.title}
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p
+        className="
+          !m-0
+          mt-3
+          text-sm
+          font-normal
+          leading-5
+          text-[#5d7192]
+        "
+      >
+        {pattern.description}
+      </p>
+
+      {/* EXAMPLE */}
+      <div
+        className="
+          mt-auto
+          flex
+          min-h-8
+          items-center
+          overflow-hidden
+          rounded-full
+          border
+          border-[#dfe5ee]
+          bg-[#fafbfc]
+          px-2.5
+          text-[10px]
+          font-normal
+          leading-4
+          text-[#5d7192]
+          whitespace-nowrap
+        "
+      >
+        {pattern.example}
+      </div>
+    </article>
   );
 }

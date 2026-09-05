@@ -118,7 +118,7 @@ export default function InvoicesHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -182,7 +182,7 @@ export default function InvoicesHero() {
             </Link>
 
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11
@@ -240,7 +240,7 @@ export default function InvoicesHero() {
 
         {/* RIGHT IMAGE */}
         <div
-          id="document-lifecycle"
+         
           className="
             mt-10
             w-full

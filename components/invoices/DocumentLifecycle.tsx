@@ -39,7 +39,10 @@ const stages = [
 
 export default function DocumentLifecycle() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+      id="document-lifecycle"
+      className="w-full bg-[#f7f8fa]"
+    >
       <div
         className="
           mx-auto
@@ -67,9 +70,9 @@ export default function DocumentLifecycle() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
+            items-center
             gap-8
 
             sm:gap-10
@@ -77,115 +80,108 @@ export default function DocumentLifecycle() {
             md:gap-11
           "
         >
-          {/* HEADER */}
+          {/* =========================================================
+              SECTION INTRO
+          ========================================================= */}
           <div
             className="
               flex
               w-full
               flex-col
-              items-start
-              gap-8
-
-              lg:flex-row
-              lg:items-end
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT CONTENT */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2
-                pb-2
-
-                lg:pb-5
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex items-center gap-3">
-                <span
-                  className="
-                    h-[2px]
-                    w-5
-                    shrink-0
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#27c7d9]
-                    to-[#5c83aa]
-                  "
-                />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.16em]
-                    text-[#5c83aa]
-
-                    sm:text-xs
-                  "
-                >
-                  Document lifecycle
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span
                 className="
-                  !m-0
-                  max-w-[638px]
-                  text-[34px]
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.035em]
-                  text-[#091127]
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#27c7d9]
+                  to-[#5c83aa]
+                  opacity-70
+                "
+              />
 
-                  sm:text-[40px]
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#5c83aa]
 
-                  md:text-[44px]
-
-                  lg:text-[48px]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Move from draft to issued evidence with clear control.
-              </h2>
+                Document lifecycle
+              </span>
+
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#27c7d9]
+                  to-[#5c83aa]
+                  opacity-70
+                "
+              />
             </div>
 
-            {/* RIGHT DESCRIPTION */}
-            <div
+            {/* HEADING */}
+            <h2
               className="
+                !m-0
                 w-full
-                max-w-[529px]
-                flex-1
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#5d7192]
+              Move from draft to issued evidence with clear control.
+            </h2>
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Six stages. Each boundary between them matters, because a
-                scheduled document is not issued and an issued document is not
-                necessarily delivered or paid.
-              </p>
-            </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Six stages. Each boundary between them matters, because a
+              scheduled document is not issued and an issued document is not
+              necessarily delivered or paid.
+            </p>
           </div>
 
-          {/* LIFECYCLE STAGES */}
+          {/* =========================================================
+              LIFECYCLE STAGES
+          ========================================================= */}
           <div
             className="
               grid
@@ -210,15 +206,17 @@ export default function DocumentLifecycle() {
                   items-start
                   rounded-2xl
                   border
-                  border-black/10
+                  border-[#dfe5ee]
                   bg-white
-                  p-[17px]
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.04),0_1px_2px_rgba(15,23,42,0.03)]
                 "
               >
                 {/* NUMBER */}
                 <div
                   className="
                     flex
+                    min-h-7
                     min-w-7
                     items-center
                     justify-center
@@ -227,7 +225,7 @@ export default function DocumentLifecycle() {
                     from-[#27c7d9]
                     to-[#5c83aa]
                     px-2
-                    py-1.5
+                    py-1
                   "
                 >
                   <span
@@ -261,10 +259,10 @@ export default function DocumentLifecycle() {
                 <p
                   className="
                     !m-0
-                    mt-4
-                    text-xs
+                    mt-3
+                    text-sm
                     font-normal
-                    leading-5
+                    leading-6
                     text-[#5d7192]
                   "
                 >
@@ -274,7 +272,9 @@ export default function DocumentLifecycle() {
             ))}
           </div>
 
-          {/* LIFECYCLE IMAGE */}
+          {/* =========================================================
+              LIFECYCLE IMAGE
+          ========================================================= */}
           <div
             className="
               w-full
@@ -283,6 +283,7 @@ export default function DocumentLifecycle() {
               border
               border-[#dfe5ee]
               bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.04),0_1px_2px_rgba(15,23,42,0.03)]
             "
           >
             <img

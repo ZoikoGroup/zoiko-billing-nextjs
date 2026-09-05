@@ -35,83 +35,302 @@ const trustItems = [
 
 export default function TrustPrivacySecurity() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto w-full max-w-[1220px] px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="flex flex-col gap-9">
-          {/* Hero */}
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:gap-16">
-            <div className="flex-1 pb-5">
-              <div className="mb-5 flex h-4 items-center gap-2.5">
-                <div className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-                <span className="text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
-                  Trust, privacy and security
-                </span>
-              </div>
+          sm:px-8
+          sm:py-16
 
-              <h2 className="max-w-[638px] text-4xl font-medium leading-tight text-sky-950 sm:text-5xl sm:leading-[53.82px]">
-                Timing controls are
-                <br />
-                operational controls.
-              </h2>
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+          "
+        >
+          {/* =========================================================
+              SECTION INTRO
+          ========================================================= */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[700px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Trust, privacy and security
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <div className="flex-1 lg:max-w-[529px]">
-              <p className="text-base font-normal leading-8 text-color-azure-35">
-                Who may activate, pause, backfill or retire a schedule is as
-                consequential as any amount decision, and it is governed the
-                same way.
-              </p>
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Timing controls are operational controls.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Who may activate, pause, backfill or retire a schedule is as
+              consequential as any amount decision, and it is governed the
+              same way.
+            </p>
           </div>
 
-          {/* Trust controls */}
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2 lg:grid-cols-3">
+          {/* =========================================================
+              TRUST CONTROLS
+          ========================================================= */}
+          <div
+            className="
+              mt-10
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:mt-12
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
             {trustItems.map((item) => (
               <div
                 key={item.title}
-                className="flex min-h-[180px] flex-col bg-white px-6 py-6"
+                className="
+                  flex
+                  min-h-[180px]
+                  flex-col
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-6
+                  py-6
+                  shadow-[0_4px_14px_rgba(15,23,42,0.035)]
+                "
               >
-                <h3 className="text-base font-semibold leading-6 text-sky-950">
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-sm font-normal leading-6 text-color-azure-35">
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Scope boundary */}
-          <div className="rounded-tr-2xl rounded-br-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 py-8">
-            <div className="text-[9.9px] font-normal uppercase leading-4 tracking-wide text-color-azure-44">
+          {/* =========================================================
+              SCOPE BOUNDARY
+          ========================================================= */}
+          <div
+            className="
+              mt-10
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-6
+              py-7
+              shadow-[0_4px_14px_rgba(15,23,42,0.035)]
+
+              sm:mt-12
+              sm:px-7
+              sm:py-8
+            "
+          >
+            <div
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.12em]
+                text-[#7890b2]
+              "
+            >
               Scope boundary
             </div>
 
-            <p className="mt-2 max-w-[900px] text-base font-normal leading-7 text-sky-950">
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[900px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
               Internal queue, scheduler and security architecture are never
               published. Scheduling controls do not replace contractual, tax
               or accounting review.
             </p>
           </div>
 
-          {/* CTA */}
-          <div className="flex min-h-11 flex-wrap items-center justify-center gap-3">
+          {/* =========================================================
+              CTA
+          ========================================================= */}
+          <div
+            className="
+              mt-8
+              flex
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-3
+
+              sm:flex-row
+              sm:flex-wrap
+            "
+          >
+            {/* PRIMARY CTA */}
             <Link
-              href="/security"
-              className="inline-flex min-h-11 items-center justify-center rounded-lg !bg-sky-950 px-5 py-2.5 text-base font-normal leading-6 !text-white no-underline outline-none transition-opacity hover:!bg-sky-950 hover:!text-white hover:opacity-90 focus:!bg-sky-950 focus:!text-white"
+              href="/security-overview"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                !bg-[#091127]
+                px-5
+                py-2.5
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                outline-none
+                transition-opacity
+                hover:opacity-90
+                focus:outline-none
+              "
             >
               Review security and trust
             </Link>
 
+            {/* SECONDARY CTA */}
             <Link
-              href="/privacy"
-              className="inline-flex min-h-11 items-center justify-center gap-2 px-5 py-2.5 text-base font-normal leading-6 !text-color-azure-44 no-underline outline-none hover:!text-color-azure-44"
+              href="/privacy-and-data-governance"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                gap-2
+                px-5
+                py-2.5
+                text-base
+                font-normal
+                leading-6
+                !text-[#5d7192]
+                no-underline
+                outline-none
+                transition-colors
+                hover:!text-[#091127]
+              "
             >
               <span>Read the privacy notice</span>
 
-              <span className="text-base font-bold leading-6 text-color-azure-44">
+              <span
+                aria-hidden="true"
+                className="text-base font-bold leading-6"
+              >
                 →
               </span>
             </Link>

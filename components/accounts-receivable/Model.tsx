@@ -44,86 +44,233 @@ const concepts = [
 
 export default function Model() {
   return (
-    <section className="w-full bg-white dark:bg-slate-950">
-      <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-8 px-4 py-12 sm:px-6 md:px-8 lg:gap-11 lg:px-12 lg:py-24">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* Header */}
-        <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
+          sm:px-8
+          sm:py-16
 
-          {/* Left Content */}
-          <div className="flex w-full flex-1 flex-col items-start gap-5 lg:pt-2.5 lg:pb-5">
-            
-            {/* Section Label */}
-            <div className="flex h-4 items-center">
-              <div className="h-0.5 w-5 rounded-sm bg-gradient-to-r from-cyan-500 to-sky-600" />
+          md:px-10
+          md:py-20
 
-              <span className="ml-2 text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
+          "
+        >
+          {/* =====================================================
+              HEADER
+          ====================================================== */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Control model
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Heading */}
-            <div className="w-full max-w-[638px]">
-              <h2 className="text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl lg:leading-[1.12] dark:text-white">
-                Six concepts behind
-                <br className="hidden sm:block" />
-                every receivables action.
-              </h2>
-            </div>
-          </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-          {/* Right Description */}
-          <div className="w-full max-w-[529px]">
-            <p className="text-sm font-normal leading-7 text-slate-600 sm:text-base dark:text-slate-300">
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Six concepts behind every receivables action.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               No single score stands in for the receivables truth, and
               customer-level totals always keep their document, entity and
               currency detail.
             </p>
           </div>
-        </div>
 
-        {/* Cards */}
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* =====================================================
+              CONCEPT CARDS
+          ====================================================== */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
 
-          {concepts.map((concept) => (
-            <div
-              key={concept.number}
-              className="flex min-h-[190px] flex-col items-start rounded-2xl border border-zinc-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900"
-            >
-              {/* Number */}
-              <div className="flex w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-sky-600 py-1.5">
-                <span className="text-[10px] font-semibold leading-4 text-white">
-                  {concept.number}
-                </span>
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
+            {concepts.map((concept) => (
+              <div
+                key={concept.number}
+                className="
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  items-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-6
+                  shadow-[0_4px_14px_rgba(15,23,42,0.025)]
+                "
+              >
+                {/* NUMBER */}
+                <div
+                  className="
+                    flex
+                    h-7
+                    min-w-7
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-[#091127]
+                    px-1.5
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      font-semibold
+                      leading-4
+                      text-white
+                    "
+                  >
+                    {concept.number}
+                  </span>
+                </div>
+
+                {/* TITLE */}
+                <div className="w-full pb-1 pt-3">
+                  <h3
+                    className="
+                      !m-0
+                      text-base
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    {concept.title}
+                  </h3>
+                </div>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {concept.description}
+                </p>
               </div>
+            ))}
+          </div>
 
-              {/* Title */}
-              <div className="w-full pt-2 pb-1">
-                <h3 className="text-base font-semibold leading-5 text-sky-950 dark:text-white">
-                  {concept.title}
-                </h3>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm font-normal leading-5 text-slate-600 dark:text-slate-300">
-                {concept.description}
-              </p>
-            </div>
-          ))}
+          {/* =====================================================
+              IMAGE
+          ====================================================== */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            <Image
+              src="/accounts-receivable/control-model.png"
+              alt="Receivables control model"
+              width={1116}
+              height={587}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
         </div>
-
-        {/* Image */}
-        <div className="w-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-slate-700">
-          <Image
-            src="/accounts-receivable/control-model.png"
-            alt="Receivables control model"
-            width={1116}
-            height={587}
-            className="h-auto w-full object-cover"
-            priority
-          />
-        </div>
-
       </div>
     </section>
   );

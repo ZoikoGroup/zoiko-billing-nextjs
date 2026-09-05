@@ -7,16 +7,16 @@ export default function EcosystemCta() {
       <div
         className="
           mx-auto
+          flex
           w-full
           max-w-[1440px]
           px-5
-          py-10
+          py-14
           sm:px-8
-          sm:py-12
+          sm:py-16
           md:px-10
-          md:py-16
+          md:py-20
           lg:px-14
-          lg:py-20
           xl:px-20
         "
       >
@@ -26,7 +26,7 @@ export default function EcosystemCta() {
             mx-auto
             flex
             w-full
-            max-w-[1184px]
+            max-w-[1240px]
             flex-col
             overflow-hidden
             rounded-3xl
@@ -73,14 +73,14 @@ export default function EcosystemCta() {
                 !m-0
                 w-full
                 max-w-[600px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
                 !text-white
-                text-[30px]
-                font-extrabold
-                leading-[1.2]
-                tracking-[-0.03em]
-                sm:text-[34px]
-                md:text-[36px]
-                md:leading-10
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
               "
             >
               Connected products,
@@ -92,16 +92,15 @@ export default function EcosystemCta() {
             <p
               className="
                 !m-0
-                mt-4
+                !mt-4
                 w-full
                 max-w-[511px]
+                !text-[15px]
+                !font-normal
+                !leading-7
                 !text-white/70
-                text-[15px]
-                font-normal
-                leading-6
                 sm:mt-5
-                sm:text-base
-                sm:leading-7
+                sm:!text-base
               "
             >
               Check the product pair, direction, context mapping, permissions
@@ -125,7 +124,7 @@ export default function EcosystemCta() {
             >
               {/* Primary */}
               <Link
-                href="/resources/ecosystem"
+                href="#approved-connections"
                 className="
                   inline-flex
                   min-h-11
@@ -151,7 +150,7 @@ export default function EcosystemCta() {
 
               {/* Secondary */}
               <Link
-                href="/zoiko-one"
+                href="/zoiko-billing-plus-zoiko-one"
                 className="
                   inline-flex
                   min-h-11

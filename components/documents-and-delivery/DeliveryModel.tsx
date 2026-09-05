@@ -78,7 +78,7 @@ export default function DeliveryModel() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section id="delivery-model" className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -106,9 +106,9 @@ export default function DeliveryModel() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
+            items-center
             gap-10
 
             sm:gap-12
@@ -116,115 +116,82 @@ export default function DeliveryModel() {
             md:gap-14
           "
         >
-          {/* INTRO */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
               w-full
+              max-w-[760px]
               flex-col
-              items-start
-              gap-8
-
-              md:flex-row
-              md:items-end
-              md:gap-12
-
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                md:pb-5
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex items-center gap-2.5">
-                <span
-                  className="
-                    h-0.5
-                    w-5
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#36c5d8]
-                    to-[#7890b2]
-                  "
-                />
-
-                <span
-                  className="
-                    font-mono
-                    text-xs
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-wider
-                    text-[#7890b2]
-                  "
-                >
-                  Delivery model
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+              <span
                 className="
-                  !m-0
-                  max-w-[638px]
-                  text-[32px]
-                  font-medium
-                  leading-[1.2]
-                  tracking-[-0.035em]
-                  text-[#091127]
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:text-[38px]
-
-                  md:text-[42px]
-
-                  lg:text-5xl
-                  lg:leading-[1.12]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Connect the document,
-                <br className="hidden sm:block" />
-                recipient, channel and
-                <br className="hidden sm:block" />
-                evidence.
-              </h2>
+                Delivery model
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* RIGHT */}
-            <div
+            {/* HEADING */}
+            <h2
               className="
+                !m-0
                 w-full
-                max-w-[529px]
-                flex-1
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              <p
-                className="
-                  !m-0
-                  text-[15px]
-                  font-normal
-                  leading-7
-                  text-[#52698b]
+              Connect the document, recipient, channel and evidence.
+            </h2>
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Six components sit behind every delivery pathway. A template
-                never replaces the issued billing record, and a provider
-                result never means more than the provider documented.
-              </p>
-            </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Six components sit behind every delivery pathway. A template
+              never replaces the issued billing record, and a provider result
+              never means more than the provider documented.
+            </p>
           </div>
 
           {/* SIX COMPONENTS */}
@@ -238,8 +205,6 @@ export default function DeliveryModel() {
               sm:grid-cols-2
 
               lg:grid-cols-3
-
-              xl:grid-cols-6
             "
           >
             {components.map((component) => (
@@ -247,44 +212,34 @@ export default function DeliveryModel() {
                 key={component.number}
                 className="
                   flex
-                  min-h-[225px]
+                  min-h-[210px]
                   flex-col
                   items-start
                   rounded-2xl
                   border
                   border-[#dfe5ee]
                   bg-white
-                  px-6
-                  py-6
+                  px-5
+                  py-5
                   shadow-[0_1px_2px_rgba(15,23,42,0.02)]
+
+                  sm:px-6
+                  sm:py-6
                 "
               >
                 {/* NUMBER */}
-                <div
+                <span
                   className="
-                    flex
-                    w-7
-                    items-center
-                    justify-center
-                    rounded-lg
-                    bg-gradient-to-br
-                    from-[#36c5d8]
-                    to-[#7890b2]
-                    py-1.5
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
                   "
                 >
-                  <span
-                    className="
-                      font-mono
-                      text-[10px]
-                      font-semibold
-                      leading-4
-                      text-white
-                    "
-                  >
-                    {component.number}
-                  </span>
-                </div>
+                  {component.number}
+                </span>
 
                 {/* TITLE */}
                 <h3
@@ -308,8 +263,8 @@ export default function DeliveryModel() {
                     !m-0
                     text-sm
                     font-normal
-                    leading-5
-                    text-[#52698b]
+                    leading-6
+                    text-[#5d7192]
                   "
                 >
                   {component.description}
@@ -321,27 +276,20 @@ export default function DeliveryModel() {
           {/* FIVE SEPARATE FACTS */}
           <div className="flex w-full flex-col items-start">
             {/* SECTION LABEL */}
-            <div className="flex items-center gap-2.5">
-              <span
-                className="
-                  h-0.5
-                  w-5
-                  rounded-full
-                  bg-gradient-to-r
-                  from-[#36c5d8]
-                  to-[#7890b2]
-                "
-              />
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
-                  font-mono
-                  text-xs
-                  font-medium
+                  text-[10px]
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-wider
+                  tracking-[0.16em]
                   text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
                 Five separate facts
@@ -352,14 +300,16 @@ export default function DeliveryModel() {
             <h3
               className="
                 !m-0
-                mt-5
-                max-w-[700px]
-                text-lg
-                font-semibold
-                leading-6
+                mt-4
+                max-w-[760px]
+                text-xl
+                font-bold
+                leading-7
+                tracking-[-0.02em]
                 text-[#091127]
 
-                sm:text-xl
+                sm:text-2xl
+                sm:leading-8
               "
             >
               Issued, sent, delivered, opened and accepted are never the same
@@ -369,7 +319,7 @@ export default function DeliveryModel() {
             {/* FACT CARDS */}
             <div
               className="
-                mt-8
+                mt-7
                 grid
                 w-full
                 grid-cols-1
@@ -387,7 +337,7 @@ export default function DeliveryModel() {
                   key={fact.number}
                   className={`
                     flex
-                    min-h-[256px]
+                    min-h-[250px]
                     flex-col
                     rounded-2xl
                     border
@@ -404,12 +354,11 @@ export default function DeliveryModel() {
                   {/* FACT NUMBER */}
                   <span
                     className={`
-                      font-mono
-                      text-[10px]
-                      font-normal
+                      text-[11px]
+                      font-bold
                       uppercase
                       leading-4
-                      tracking-wide
+                      tracking-[0.12em]
                       ${
                         fact.highlighted
                           ? "text-[#b56c46]"
@@ -441,8 +390,8 @@ export default function DeliveryModel() {
                       mt-3
                       text-sm
                       font-normal
-                      leading-5
-                      text-[#52698b]
+                      leading-6
+                      text-[#5d7192]
                     "
                   >
                     {fact.description}
@@ -457,13 +406,12 @@ export default function DeliveryModel() {
                         gap-2
                         border-t
                         border-[#e1e5ea]
-                        pt-2.5
+                        pt-3
                       "
                     >
                       <span
                         className="
                           shrink-0
-                          font-mono
                           text-sm
                           font-semibold
                           leading-5

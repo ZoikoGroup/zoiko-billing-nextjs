@@ -53,211 +53,251 @@ export default function Questions() {
   };
 
   return (
-    <section
-      className="
-        w-full
-        bg-gray-100
-        px-4
-        py-16
-        sm:px-6
-        sm:py-20
-        lg:px-28
-        lg:py-24
-        dark:bg-slate-950
-      "
-    >
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
           flex
           w-full
-          max-w-[1220px]
+          max-w-[1440px]
           flex-col
           items-start
-          gap-10
-          sm:gap-12
-          lg:px-12
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
         "
       >
-        {/* Heading */}
         <div
           className="
+            mx-auto
             flex
             w-full
+            max-w-[1240px]
             flex-col
-            justify-center
+            items-center
             gap-8
-            lg:flex-row
-            lg:items-end
-            lg:gap-16
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* Left heading */}
-          <div className="flex-1 pt-2.5 pb-2">
-            <div className="mb-5 flex h-4 items-center gap-2.5">
-              <div
-                className="
-                  h-0.5
-                  w-5
-                  rounded-xs
-                  bg-gradient-to-r
-                  from-cyan-400
-                  to-blue-500
-                "
-              />
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-              <div
+              <span
                 className="
-                  text-xs
-                  font-medium
+                  text-[10px]
+                  font-bold
                   uppercase
                   leading-4
-                  tracking-wider
-                  text-blue-600
-                  dark:text-cyan-400
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
                 Questions
-              </div>
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
+            {/* HEADING */}
             <h2
               className="
-                max-w-[638px]
-                text-4xl
-                font-medium
-                leading-[1.15]
-                text-sky-950
-                sm:text-5xl
-                sm:leading-[53.82px]
-                dark:text-white
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              Direct answers about
-              <br className="hidden sm:block" />
-              receivables.
+              Direct answers about receivables.
             </h2>
-          </div>
 
-          {/* Right description */}
-          <div className="flex-1 lg:max-w-[528px]">
+            {/* DESCRIPTION */}
             <p
               className="
-                text-base
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
                 font-normal
                 leading-7
-                text-slate-600
-                lg:leading-8
-                dark:text-slate-300
+                text-[#5d7192]
+
+                sm:text-base
               "
             >
               Every answer is rendered on the page and works without
               JavaScript.
             </p>
           </div>
-        </div>
 
-        {/* FAQ list */}
-        <div className="w-full max-w-[920px]">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+          {/* FAQ LIST */}
+          <div
+            className="
+              w-full
+              max-w-[920px]
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
 
-            return (
-              <div
-                key={faq.question}
-                className={`
-                  w-full
-                  border-slate-200
-                  dark:border-slate-700
-                  ${index === 0 ? "border-t" : ""}
-                  border-b
-                `}
-              >
-                {/* Question */}
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(index)}
-                  className="
-                    flex
-                    min-h-16
+              return (
+                <div
+                  key={faq.question}
+                  className={`
                     w-full
-                    items-start
-                    justify-between
-                    gap-4
-                    px-0.5
-                    py-5
-                    text-left
-                  "
-                  aria-expanded={isOpen}
+                    ${
+                      index !== faqs.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
                 >
-                  <span
+                  {/* QUESTION */}
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={isOpen}
                     className="
-                      pr-4
-                      text-base
-                      font-semibold
-                      leading-7
-                      text-sky-950
-                      dark:text-white
+                      flex
+                      min-h-[64px]
+                      w-full
+                      items-center
+                      justify-between
+                      gap-5
+                      px-5
+                      py-4
+                      text-left
+                      transition-colors
+                      hover:bg-[#fafbfc]
+
+                      sm:px-6
+                      sm:py-5
                     "
                   >
-                    {faq.question}
-                  </span>
-
-                  <span
-                    className={`
-                      flex
-                      size-7
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      outline
-                      outline-1
-                      outline-offset-[-1px]
-                      ${
-                        isOpen
-                          ? "bg-blue-500 outline-blue-500"
-                          : "outline-slate-300 dark:outline-slate-600"
-                      }
-                    `}
-                  >
                     <span
-                      className={`
+                      className="
+                        pr-4
                         text-sm
                         font-semibold
                         leading-6
+                        text-[#091127]
+
+                        sm:text-base
+                        sm:leading-7
+                      "
+                    >
+                      {faq.question}
+                    </span>
+
+                    {/* PLUS / MINUS */}
+                    <span
+                      className={`
+                        flex
+                        size-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        transition-colors
                         ${
                           isOpen
-                            ? "text-white"
-                            : "text-slate-600 dark:text-slate-300"
+                            ? "border-[#7890b2] bg-[#7890b2]"
+                            : "border-[#dfe5ee] bg-white"
                         }
                       `}
                     >
-                      {isOpen ? "−" : "+"}
+                      <span
+                        className={`
+                          text-base
+                          font-medium
+                          leading-none
+                          ${
+                            isOpen
+                              ? "text-white"
+                              : "text-[#5d7192]"
+                          }
+                        `}
+                      >
+                        {isOpen ? "−" : "+"}
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
 
-                {/* Answer */}
-                {isOpen && (
-                  <div className="max-w-[735px] px-0.5 pb-6">
-                    <p
+                  {/* ANSWER */}
+                  {isOpen && (
+                    <div
                       className="
-                        text-sm
-                        font-normal
-                        leading-7
-                        text-slate-600
-                        sm:text-base
-                        dark:text-slate-300
+                        px-5
+                        pb-5
+                        sm:px-6
+                        sm:pb-6
                       "
                     >
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                      <p
+                        className="
+                          !m-0
+                          max-w-[735px]
+                          text-sm
+                          font-normal
+                          leading-7
+                          text-[#5d7192]
+
+                          sm:text-base
+                        "
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

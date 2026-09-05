@@ -96,7 +96,7 @@ export default function ARHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[606px]
               text-[15px]
@@ -136,7 +136,7 @@ export default function ARHero() {
             "
           >
             <Link
-              href="/start"
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -161,7 +161,7 @@ export default function ARHero() {
             </Link>
 
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

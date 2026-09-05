@@ -134,7 +134,7 @@ export default function IntegrationAvailability() {
               "
             >
               <Link
-                href="/check-integration"
+                href="#integration-availability"
                 className="
                   inline-flex
                   min-h-11
@@ -161,7 +161,7 @@ export default function IntegrationAvailability() {
               </Link>
 
               <Link
-                href="/integrations"
+                href="/integrations-directory"
                 className="
                   inline-flex
                   min-h-11

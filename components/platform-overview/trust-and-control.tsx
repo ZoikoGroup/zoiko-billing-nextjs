@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 
 interface TrustCard {
@@ -41,63 +42,247 @@ const trustItems: TrustCard[] = [
 
 export default function TrustAndControlSection() {
   return (
-    <section className="w-full bg-slate-100/70 px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Trust and control
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight text-sky-950 font-sans sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               Govern sensitive billing actions with attributable control.
             </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              Who may act, what required approval, what was recorded, and what we are willing to claim in public.
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Who may act, what required approval, what was recorded, and what
+              we are willing to claim in public.
             </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 gap-6 pt-2 md:grid-cols-2 lg:grid-cols-3">
-          {trustItems.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col justify-between space-y-3 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs transition-all duration-200 hover:border-slate-300 hover:shadow-md sm:p-7"
-            >
-              <div className="space-y-2">
-                <h3 className="text-base font-semibold leading-snug text-sky-950 font-sans">
+          {/* TRUST CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+              sm:grid-cols-2
+              sm:gap-5
+              lg:grid-cols-3
+              lg:gap-5
+            "
+          >
+            {trustItems.map((item) => (
+              <div
+                key={item.title}
+                className="
+                  flex
+                  min-h-[180px]
+                  flex-col
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  transition-all
+                  duration-200
+                  hover:border-[#cbd5e1]
+                  hover:shadow-[0_12px_28px_rgba(15,23,42,0.07),0_2px_4px_rgba(15,23,42,0.04)]
+                  sm:p-6
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-[15px]
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                    sm:text-base
+                  "
+                >
                   {item.title}
                 </h3>
-                <p className="text-sm font-normal leading-relaxed text-slate-600">
+
+                <p
+                  className="
+                    !m-0
+                    mt-2.5
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
                   {item.description}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
-          <Link
-            href="/trust-center"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-sky-950 px-6 py-3  font-medium text-white shadow-xs transition-colors duration-150 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
-            style={{color:"white"}}
+          {/* CTA */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-4
+              pt-1
+              sm:flex-row
+              sm:gap-6
+            "
           >
-            Review security and trust
-          </Link>
+            <Link
+              href="/trust-center"
+              className="
+                inline-flex
+                w-full
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                leading-5
+                !text-white
+                shadow-[0_4px_12px_rgba(15,23,42,0.12)]
+                transition-colors
+                duration-150
+                hover:bg-[#17213a]
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#7890b2]
+                focus:ring-offset-2
+                sm:w-auto
+              "
+            >
+              Review security and trust
+            </Link>
 
-          <Link
-            href="/jurisdiction-availability"
-            className="group inline-flex items-center gap-2 px-2 py-3 font-sans text-base font-medium text-sky-700 transition-colors focus:outline-none hover:text-sky-900"
-          >
-            <span>Check product availability</span>
-            <span className="font-mono transition-transform duration-150 group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
+            <Link
+              href="/jurisdiction-availability"
+              className="
+                group
+                inline-flex
+                items-center
+                gap-2
+                px-2
+                py-3
+                text-sm
+                font-medium
+                leading-5
+                text-[#45658f]
+                transition-colors
+                duration-150
+                hover:text-[#091127]
+                focus:outline-none
+              "
+            >
+              <span>Check product availability</span>
+
+              <span
+                className="
+                  transition-transform
+                  duration-150
+                  group-hover:translate-x-1
+                "
+              >
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

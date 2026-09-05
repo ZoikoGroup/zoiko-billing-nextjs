@@ -20,9 +20,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Product', href: '/about#overview', dropdown: 'product' },
-  { label: 'Solutions', href: '#solutions', dropdown: 'solutions' },
-  { label: 'Global Billing', href: '#global-billing', dropdown: 'global-billing' },
+  { label: 'Product', href: '/product', dropdown: 'product' },
+  { label: 'Solutions', href: '/solutions', dropdown: 'solutions' },
+  { label: 'Global Billing', href: '/global-billing-header', dropdown: 'global-billing' },
   { label: 'Integrations', href: '#integrations', dropdown: 'integrations' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Resources', href: '#resources', dropdown: 'resources' },

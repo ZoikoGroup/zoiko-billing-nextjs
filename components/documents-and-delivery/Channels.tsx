@@ -751,7 +751,7 @@ export default function Channels() {
 
           {/* CTA */}
           <div className="flex w-full justify-center">
-            <Link
+            {/*<Link
               href="#verified-providers"
               className="
                 inline-flex
@@ -774,7 +774,7 @@ export default function Channels() {
               "
             >
               <span className="!text-white">See verified providers</span>
-            </Link>
+            </Link>*/}
           </div>
         </div>
       </div>

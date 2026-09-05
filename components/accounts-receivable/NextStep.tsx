@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 
 const steps = [
   {
@@ -37,388 +37,431 @@ const steps = [
 
 export default function NextStep() {
   return (
-    <section
-      className="
-        w-full
-        bg-gray-100
-        px-4
-        py-12
-        sm:px-6
-        sm:py-16
-        md:px-8
-        lg:px-12
-        xl:px-16
-        2xl:px-28
-        dark:bg-slate-950
-      "
-    >
+    <section className="w-full !bg-white">
       <div
         className="
           mx-auto
           w-full
-          max-w-[1220px]
-          rounded-2xl
-          bg-[#082E4A]
-          px-6
-          py-10
-          sm:px-8
-          sm:py-12
-          md:px-10
-          md:py-14
-          lg:px-12
-          lg:py-16
+          max-w-[1240px]
+          px-4
+          py-8
+          sm:px-6
+          sm:py-10
+          lg:px-7
+          lg:py-12
         "
       >
         <div
           className="
-            flex
-            w-full
-            flex-col
-            items-start
-            justify-center
-            gap-10
-            lg:flex-row
-            lg:items-center
-            lg:gap-12
-            xl:gap-16
+            relative
+            overflow-hidden
+            rounded-2xl
+            !bg-slate-900
+            px-6
+            py-8
+            sm:rounded-3xl
+            sm:px-8
+            sm:py-10
+            lg:min-h-[504px]
+            lg:px-14
+            lg:py-14
           "
         >
-          {/* ================= LEFT SIDE ================= */}
+          {/* Background glow */}
           <div
             className="
+              pointer-events-none
+              absolute
+              -right-24
+              -top-28
+              h-72
+              w-72
+              rounded-full
+              bg-blue-500/20
+              blur-3xl
+              sm:h-80
+              sm:w-80
+              lg:h-96
+              lg:w-96
+            "
+          />
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-32
+              -left-32
+              h-72
+              w-72
+              rounded-full
+              bg-blue-500/10
+              blur-3xl
+              sm:h-80
+              sm:w-80
+            "
+          />
+
+          {/* Main content */}
+          <div
+            className="
+              relative
+              z-10
               flex
               w-full
-              flex-1
               flex-col
-              items-start
-              gap-4
-              lg:max-w-[590px]
+              gap-8
+              lg:flex-row
+              lg:items-center
+              lg:gap-12
             "
           >
-            {/* NEXT STEP */}
-            <div className="flex h-4 items-center gap-2">
-              <div
-                className="
-                  h-0.5
-                  w-5
-                  rounded-full
-                  bg-gradient-to-r
-                  from-cyan-400
-                  to-blue-500
-                "
-              />
+            {/* LEFT SIDE */}
+            <div
+              className="
+                flex
+                w-full
+                flex-col
+                items-start
+                gap-3.5
+                lg:max-w-[500px]
+              "
+            >
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3">
+                <span className="h-px w-4 shrink-0 bg-white/40" />
 
-              <span
-                className="
-                  text-[10px]
-                  font-medium
-                  uppercase
-                  leading-4
-                  tracking-[0.16em]
-                  text-cyan-400
-                  sm:text-xs
-                "
-              >
-                Next step
-              </span>
-            </div>
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    !text-white/60
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
+                  Next step
+                </span>
+              </div>
 
-            {/* HEADING */}
-            <div className="w-full pt-1.5">
+              {/* Heading */}
               <h2
                 className="
+                  !m-0
                   w-full
-                  max-w-[660px]
-                  text-3xl
-                  font-medium
-                  leading-[1.15]
-                  tracking-[-0.02em]
-                  text-white
-                  sm:text-4xl
-                  md:text-[44px]
-                  md:leading-[1.14]
-                  lg:text-5xl
-                  lg:leading-[50.16px]
+                  max-w-[500px]
+                  text-[24px]
+                  font-extrabold
+                  leading-[1.25]
+                  tracking-[-0.01em]
+                  !text-white
+                  sm:text-[26px]
+                  lg:text-[28px]
                 "
               >
-                Start with the
-                <br />
-                receivables work
-                <br />
-                your team needs to
-                <br />
-                control.
+                Start with the receivables work your team needs to control.
               </h2>
-            </div>
 
-            {/* DESCRIPTION */}
-            <div className="w-full max-w-[528px]">
+              {/* Description */}
               <p
                 className="
+                  !m-0
+                  w-full
+                  max-w-[450px]
                   text-sm
                   font-normal
                   leading-6
-                  text-slate-300
+                  !text-white/70
                   sm:text-base
-                  sm:leading-8
                 "
               >
                 Decide who owns each open item, what pauses ordinary
                 follow-up, and what has to be true before anyone contacts a
                 customer.
               </p>
-            </div>
 
-            {/* BUTTONS */}
-            <div
-              className="
-                flex
-                w-full
-                flex-wrap
-                items-center
-                gap-3
-                pt-3
-                sm:pt-4
-              "
-            >
-              {/* CREATE ACCOUNT */}
-              <button
-                type="button"
-                className="
-                  min-h-11
-                  rounded-lg
-                  bg-blue-500
-                  px-5
-                  py-2.5
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-white
-                  transition
-                  hover:bg-blue-600
-                  sm:text-base
-                "
-              >
-                Create Account
-              </button>
-
-              {/* BOOK A DEMO */}
-              <button
-                type="button"
-                className="
-                  min-h-11
-                  rounded-lg
-                  border
-                  border-white/30
-                  px-5
-                  py-2.5
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-white
-                  transition
-                  hover:border-white/50
-                  hover:bg-white/5
-                  sm:text-base
-                "
-              >
-                Book a Demo
-              </button>
-
-              {/* GLOBAL BILLING */}
-              <button
-                type="button"
+              {/* Buttons */}
+              <div
                 className="
                   flex
-                  min-h-11
+                  w-full
+                  flex-wrap
                   items-center
-                  gap-2
-                  px-1
-                  py-2.5
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-cyan-400
-                  transition
-                  hover:text-cyan-300
-                  sm:text-base
+                  gap-3
+                  pt-2
+                  sm:pt-3
                 "
               >
-                <span>Global billing</span>
+                {/* CREATE ACCOUNT */}
+                <Link
+                  href="/create-account"
+                  className="
+                    inline-flex
+                    min-h-11
+                    items-center
+                    justify-center
+                    rounded-full
+                    !border-0
+                    !bg-white
+                    px-5
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-slate-900
+                    opacity-100
+                    transition
+                    hover:!bg-gray-100
+                    hover:!text-slate-900
+                    sm:px-6
+                  "
+                >
+                  Create account
+                </Link>
 
-                <span className="font-mono text-base font-bold">
-                  →
-                </span>
-              </button>
-            </div>
+                {/* BOOK A DEMO */}
+                <Link
+                  href="/book-demo"
+                  className="
+                    inline-flex
+                    min-h-11
+                    items-center
+                    justify-center
+                    rounded-full
+                    !border
+                    !border-white/30
+                    !bg-transparent
+                    px-5
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-white
+                    opacity-100
+                    transition
+                    hover:!bg-white/10
+                    hover:!text-white
+                    sm:px-6
+                  "
+                >
+                  Book a demo
+                </Link>
 
-            {/* NOTE */}
-            <div className="w-full">
+                {/* GLOBAL BILLING */}
+                <Link
+                  href="/global-billing"
+                  className="
+                    inline-flex
+                    min-h-11
+                    items-center
+                    justify-center
+                    rounded-full
+                    !border
+                    !border-white/30
+                    !bg-transparent
+                    px-5
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-white
+                    opacity-100
+                    transition
+                    hover:!bg-white/10
+                    hover:!text-white
+                    sm:px-6
+                  "
+                >
+                  Global billing
+                </Link>
+              </div>
+
+              {/* Note */}
               <p
                 className="
-                  max-w-[540px]
-                  text-sm
+                  !m-0
+                  w-full
+                  max-w-[470px]
+                  pt-1
+                  text-xs
                   font-normal
-                  leading-6
-                  text-slate-300
-                  sm:text-base
-                  sm:leading-7
+                  leading-5
+                  !text-white/50
+                  sm:text-sm
+                  sm:leading-6
                 "
               >
-                Aging bands guide work. They are not judgments about
-                people.
+                Aging bands guide work. They are not judgments about people.
                 <br className="hidden sm:block" />
                 Availability varies by plan, provider, entity, market and
                 policy.
               </p>
             </div>
-          </div>
 
-          {/* ================= RIGHT SIDE ================= */}
-          <div
-            className="
-              flex
-              w-full
-              flex-1
-              flex-col
-              items-start
-              gap-4
-              lg:max-w-[526px]
-            "
-          >
-            {/* WORKFLOW CARD */}
+            {/* RIGHT SIDE */}
             <div
               className="
+                relative
+                z-10
                 w-full
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/[0.045]
-                px-5
-                py-5
-                sm:px-6
-                sm:py-6
-                lg:h-[551px]
-                lg:px-7
+                lg:ml-auto
+                lg:max-w-[478px]
               "
             >
-              <div className="flex h-full flex-col">
-                {/* STEPS */}
-                <div className="flex-1">
-                  {steps.map((step, index) => (
-                    <div
-                      key={step.number}
-                      className={`
-                        flex
-                        min-h-[72px]
-                        items-center
-                        gap-3
-                        py-2.5
-                        ${
-                          index !== steps.length - 1
-                            ? "border-b border-white/10"
-                            : ""
-                        }
-                      `}
-                    >
-                      {/* NUMBER */}
-                      <div
-                        className="
-                          flex
-                          h-6
-                          w-6
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-lg
-                          bg-gradient-to-br
-                          from-cyan-400
-                          to-blue-500
-                        "
-                      >
-                        <span
-                          className="
-                            font-mono
-                            text-[9px]
-                            font-normal
-                            leading-4
-                            text-white
-                          "
-                        >
-                          {step.number}
-                        </span>
-                      </div>
-
-                      {/* STEP CONTENT */}
-                      <div className="min-w-0 flex-1">
-                        <p
-                          className="
-                            text-sm
-                            font-normal
-                            leading-6
-                            text-slate-200
-                          "
-                        >
-                          {step.title}
-                        </p>
-
-                        <p
-                          className="
-                            font-mono
-                            text-[9px]
-                            font-normal
-                            leading-4
-                            text-slate-500
-                            sm:text-[9.5px]
-                          "
-                        >
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CARD FOOTER */}
-                <div className="border-t border-white/10 pt-3.5">
-                  <p
-                    className="
-                      pl-2.5
-                      text-sm
-                      font-semibold
-                      leading-6
-                      text-white
-                    "
-                  >
-                    Billing clarity from invoice to payment.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* EXPLORE BUTTON */}
-            <div className="flex w-full items-center">
-              <button
-                type="button"
+              {/* Workflow Card */}
+              <div
                 className="
-                  min-h-11
-                  rounded-lg
+                  relative
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
                   border
-                  border-white/30
-                  px-5
-                  py-2.5
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-white
-                  transition
-                  hover:border-white/50
-                  hover:bg-white/5
-                  sm:text-base
+                  border-white/10
+                  bg-white
+                  p-5
+                  sm:p-6
+                  lg:min-h-[430px]
+                  lg:p-7
                 "
               >
-                Explore Payments &amp; Reconciliation
-              </button>
+                <div className="flex h-full flex-col">
+                  {/* Card heading */}
+                  <div className="mb-2">
+                    <p
+                      className="
+                        !m-0
+                        text-xs
+                        font-bold
+                        uppercase
+                        tracking-[0.14em]
+                        text-slate-400
+                      "
+                    >
+                      Receivables workflow
+                    </p>
+                  </div>
+
+                  {/* Steps */}
+                  <div className="flex-1">
+                    {steps.map((step, index) => (
+                      <div
+                        key={step.number}
+                        className={`
+                          flex
+                          min-h-[58px]
+                          items-center
+                          gap-3
+                          py-2.5
+                          ${
+                            index !== steps.length - 1
+                              ? "border-b border-slate-200"
+                              : ""
+                          }
+                        `}
+                      >
+                        {/* Number */}
+                        <div
+                          className="
+                            flex
+                            h-7
+                            min-w-7
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-lg
+                            bg-slate-900
+                            px-1.5
+                          "
+                        >
+                          <span
+                            className="
+                              text-[10px]
+                              font-semibold
+                              leading-4
+                              text-white
+                            "
+                          >
+                            {step.number}
+                          </span>
+                        </div>
+
+                        {/* Step Content */}
+                        <div className="min-w-0 flex-1">
+                          <p
+                            className="
+                              !m-0
+                              text-sm
+                              font-semibold
+                              leading-5
+                              text-slate-900
+                            "
+                          >
+                            {step.title}
+                          </p>
+
+                          <p
+                            className="
+                              !m-0
+                              text-xs
+                              font-normal
+                              leading-5
+                              text-slate-500
+                            "
+                          >
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="mt-3.5 border-t border-slate-200 pt-3.5">
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-slate-900
+                      "
+                    >
+                      Billing clarity from invoice to payment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Explore Button */}
+              <div className="mt-3 flex w-full">
+                <Link
+                  href="/payments-and-reconcilliation"
+                  className="
+                    inline-flex
+                    min-h-11
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-full
+                    !border
+                    !border-white/30
+                    !bg-transparent
+                    px-5
+                    text-sm
+                    font-semibold
+                    leading-6
+                    !text-white
+                    opacity-100
+                    transition
+                    hover:!bg-white/10
+                    hover:!text-white
+                    sm:w-auto
+                    sm:px-6
+                  "
+                >
+                  Explore Payments &amp; Reconciliation
+                </Link>
+              </div>
             </div>
           </div>
         </div>

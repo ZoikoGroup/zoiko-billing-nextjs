@@ -39,7 +39,7 @@ export default function DueRunLifecycle() {
   ];
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -60,7 +60,6 @@ export default function DueRunLifecycle() {
           lg:px-14
 
           xl:px-20
-          xl:py-24
         "
       >
         <div
@@ -68,13 +67,14 @@ export default function DueRunLifecycle() {
             mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            items-start
-            gap-9
-            px-0
+            items-center
+            gap-8
 
-            xl:px-12
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* SECTION INTRO */}
@@ -82,212 +82,167 @@ export default function DueRunLifecycle() {
             className="
               flex
               w-full
+              max-w-[700px]
               flex-col
-              items-start
-              gap-8
-
-              lg:flex-row
-              lg:items-end
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                pt-2.5
-                pb-3
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                lg:pb-6
-              "
-            >
-              {/* EYEBROW */}
-              <div className="flex h-4 items-center">
-                <span
-                  className="
-                    mr-2.5
-                    h-0.5
-                    w-5
-                    shrink-0
-                    rounded-sm
-                    bg-gradient-to-r
-                    from-color-cyan-42
-                    to-color-azure-51
-                  "
-                />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    leading-4
-                    tracking-[0.12em]
-                    text-color-azure-44
-
-                    sm:text-xs
-                    sm:tracking-wider
-                  "
-                >
-                  Due-run lifecycle
-                </span>
-              </div>
-
-              {/* HEADING */}
-              <h2
+              <span
                 className="
-                  !m-0
-                  w-full
-                  max-w-[638px]
-                  !text-[32px]
-                  !font-medium
-                  !leading-[1.15]
-                  !tracking-[-0.025em]
-                  !text-sky-950
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-                  sm:!text-[40px]
-
-                  md:!text-[44px]
-
-                  lg:!text-[48px]
-                  lg:!leading-[53.82px]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                Treat every due
-                <br className="hidden sm:block" />
-                occurrence as a
-                <br className="hidden sm:block" />
-                governed trigger.
-              </h2>
+                Due-run lifecycle
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* RIGHT */}
-            <div
+            {/* HEADING */}
+            <h2
               className="
+                !m-0
                 w-full
-                flex-1
+                max-w-[700px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                lg:max-w-[528px]
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              <p
-                className="
-                  !m-0
-                  w-full
-                  text-sm
-                  font-normal
-                  leading-7
-                  text-color-azure-35
+              Treat every due occurrence as a governed trigger.
+            </h2>
 
-                  sm:text-base
-                  sm:leading-8
-                "
-              >
-                Reaching the due time starts an evaluation, not an outcome. A
-                due occurrence can legitimately end as skipped, blocked,
-                failed or review-required.
-              </p>
-            </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Reaching the due time starts an evaluation, not an outcome. A
+              due occurrence can legitimately end as skipped, blocked, failed
+              or review-required.
+            </p>
           </div>
 
           {/* LIFECYCLE STEPS */}
-          <div
-            className="
-              grid
-              w-full
-              grid-cols-1
-              gap-4
+          <div className="w-full">
+            <div
+              className="
+                grid
+                w-full
+                grid-cols-1
+                gap-4
 
-              sm:grid-cols-2
+                sm:grid-cols-2
 
-              lg:grid-cols-3
-
-              xl:grid-cols-6
-            "
-          >
-            {lifecycleSteps.map((step) => (
-              <div
-                key={step.number}
-                className="
-                  relative
-                  flex
-                  min-h-[240px]
-                  w-full
-                  flex-col
-                  items-start
-                  overflow-hidden
-                  rounded-2xl
-                  border
-                  border-black/10
-                  bg-white
-                  p-[18px]
-                "
-              >
-                {/* NUMBER */}
+                lg:grid-cols-3
+              "
+            >
+              {lifecycleSteps.map((step) => (
                 <div
+                  key={step.number}
                   className="
                     flex
-                    w-7
-                    items-center
-                    justify-center
-                    rounded-lg
-                    bg-gradient-to-br
-                    from-color-cyan-42
-                    to-color-azure-51
-                    px-0
-                    py-1.5
+                    min-h-[220px]
+                    w-full
+                    flex-col
+                    items-start
+                    rounded-2xl
+                    border
+                    border-[#dfe5ee]
+                    bg-white
+                    p-5
+                    shadow-[0_1px_2px_rgba(15,23,42,0.02)]
                   "
                 >
-                  <span
+                  {/* NUMBER */}
+                  <div
                     className="
-                      text-center
-                      font-['IBM_Plex_Mono']
-                      text-[9.9px]
-                      font-semibold
-                      leading-4
-                      text-color-white-solid
+                      flex
+                      h-7
+                      w-7
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-md
+                      border
+                      border-[#dfe5ee]
+                      bg-[#fafbfc]
                     "
                   >
-                    {step.number}
-                  </span>
+                    <span
+                      className="
+                        text-[10px]
+                        font-bold
+                        leading-4
+                        text-[#7890b2]
+                      "
+                    >
+                      {step.number}
+                    </span>
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="mt-5 flex w-full flex-col items-start">
+                    <h3
+                      className="
+                        !m-0
+                        !text-base
+                        !font-semibold
+                        !leading-6
+                        !text-[#091127]
+                      "
+                    >
+                      {step.title}
+                    </h3>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-2
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-
-                {/* CONTENT */}
-                <div className="mt-5 flex w-full flex-col items-start">
-                  <h3
-                    className="
-                      !m-0
-                      text-sm
-                      font-semibold
-                      leading-5
-                      text-sky-950
-                    "
-                  >
-                    {step.title}
-                  </h3>
-
-                  <p
-                    className="
-                      !m-0
-                      mt-4
-                      text-xs
-                      font-normal
-                      leading-5
-                      text-color-azure-35
-
-                      sm:text-sm
-                    "
-                  >
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* LIFECYCLE IMAGE */}
@@ -300,8 +255,10 @@ export default function DueRunLifecycle() {
                 w-full
                 rounded-2xl
                 border
-                border-zinc-200
+                border-[#dfe5ee]
+                bg-white
                 object-cover
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
               "
             />
           </div>
@@ -316,42 +273,43 @@ export default function DueRunLifecycle() {
               gap-2
               rounded-r-2xl
               border-l-[3px]
-              border-color-azure-51
-              bg-color-grey-97-2
-              px-6
+              border-[#7890b2]
+              bg-white
+              px-5
               py-6
+              shadow-[0_1px_2px_rgba(15,23,42,0.02)]
 
-              sm:px-7
+              sm:px-6
               sm:py-7
+
+              lg:px-7
+              lg:py-7
             "
           >
             {/* LABEL */}
-            <div className="flex w-full flex-col items-start">
-              <span
-                className="
-                  font-['IBM_Plex_Mono']
-                  text-[9.9px]
-                  font-normal
-                  uppercase
-                  leading-4
-                  tracking-wider
-                  text-color-azure-44
-                "
-              >
-                Outcome boundary
-              </span>
-            </div>
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.12em]
+                text-[#7890b2]
+              "
+            >
+              Outcome boundary
+            </span>
 
             {/* DESCRIPTION */}
             <p
               className="
                 !m-0
                 w-full
-                max-w-[761px]
-                text-sm
+                max-w-[780px]
+                text-[15px]
                 font-normal
                 leading-7
-                text-sky-950
+                text-[#091127]
 
                 sm:text-base
               "

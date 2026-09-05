@@ -127,7 +127,7 @@ export default function QualifierCta() {
             "
           >
             <Link
-              href="/integration-availability"
+              href="#integration-availability"
               className="
                 inline-flex
                 min-h-11
@@ -153,7 +153,7 @@ export default function QualifierCta() {
             </Link>
 
             <Link
-              href="/integrations"
+              href="/integrations-directory"
               className="
                 inline-flex
                 min-h-11

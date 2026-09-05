@@ -5,7 +5,9 @@ import Link from "next/link";
 
 export default function ComparePlans() {
   return (
-    <section className="w-full border-t border-gray-200 bg-gray-50">
+    <section
+    id ="compare-plans"
+     className="w-full border-t border-gray-200 bg-gray-50">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start px-5 py-12 sm:px-8 sm:py-16 lg:px-14 lg:py-20">
         <div className="flex w-full max-w-[1320px] flex-col items-start gap-3.5 px-0 sm:px-4 lg:px-7">
           {/* Section label */}
@@ -83,14 +85,14 @@ export default function ComparePlans() {
               <div className="w-full pt-2">
                 <div className="flex flex-wrap items-start gap-2.5">
                   <Link
-                    href="#"
+                    href="book-demo"
                     className="inline-flex h-9 items-center justify-center rounded-full bg-blue-600 px-4 text-sm font-semibold leading-5 text-white shadow-[0px_6px_16px_0px_rgba(31,111,235,0.24)] transition hover:bg-blue-700"
                   >
                     Book a demo
                   </Link>
 
                   <Link
-                    href="#"
+                    href="contact-support"
                     className="inline-flex h-9 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold leading-5 text-slate-900 transition hover:bg-gray-50"
                   >
                     Contact sales

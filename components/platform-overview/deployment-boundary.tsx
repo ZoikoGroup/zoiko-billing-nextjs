@@ -34,94 +34,304 @@ const deploymentOptions: DeploymentOption[] = [
 
 export default function DeploymentBoundarySection() {
   return (
-    <section className="w-full bg-slate-100/70 px-4 py-16 lg:px-12 lg:py-24 sm:px-6">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-medium uppercase tracking-wider text-sky-600 font-mono">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Deployment
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight text-sky-950 font-sans sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               Use Zoiko Billing independently or connect it with Zoiko One.
             </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              The same billing record either way. What changes is identity, navigation and which approved handoffs are switched on.
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              The same billing record either way. What changes is identity,
+              navigation and which approved handoffs are switched on.
             </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 gap-6 pt-4 md:grid-cols-2">
-          {deploymentOptions.map((option) => (
-            <div
-              key={option.title}
-              className={`flex flex-col justify-between gap-6 rounded-3xl p-8 transition-all duration-200 sm:p-10 ${
-                option.theme === 'dark'
-                  ? 'border border-slate-800 bg-gradient-to-br from-slate-900 via-sky-950 to-slate-900 text-white shadow-xl'
-                  : 'border border-slate-200/80 bg-white text-slate-800 shadow-xs'
-              }`}
-            >
-              <div className="space-y-4">
-                <span
-                  className={`block text-xs font-medium uppercase tracking-wider font-mono ${
-                    option.theme === 'dark' ? 'text-cyan-400' : 'text-sky-600'
-                  }`}
-                >
-                  {option.badge}
-                </span>
-
-                <h3
-                  className={`text-xl font-semibold leading-snug font-sans sm:text-2xl ${
-                    option.theme === 'dark' ? 'text-white' : 'text-sky-950'
-                  }`}
-                >
-                  {option.title}
-                </h3>
-
-                <ul className="space-y-3 pt-2">
-                  {option.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <span
-                        className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
-                          option.theme === 'dark' ? 'bg-cyan-400' : 'bg-sky-500'
-                        }`}
-                      />
-                      <span
-                        className={`text-sm font-normal leading-relaxed ${
-                          option.theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                        }`}
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="space-y-2 rounded-r-2xl border-l-4 border-sky-600 bg-white p-6 shadow-xs sm:p-8">
-          <span className="block text-[11px] font-medium uppercase tracking-wider text-sky-600 font-mono">
-            Boundary
-          </span>
-          <p className="max-w-4xl text-sm font-normal leading-relaxed text-sky-950 sm:text-base">
-            Zoiko One integrations are not automatically active. Shared data and entitlement behaviour applies only where it has been approved, configured and enabled for your organisation.
-          </p>
-        </div>
-
-        <div className="flex justify-center pt-2">
-          <a
-            href="#compare-deployment"
-            className="inline-flex items-center justify-center rounded-lg bg-sky-950 px-6 py-3 "
-            style={{color:'white'}}
+          {/* DEPLOYMENT OPTIONS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-5
+              md:grid-cols-2
+              md:gap-6
+            "
           >
-            Compare deployment options
-          </a>
+            {deploymentOptions.map((option) => (
+              <div
+                key={option.title}
+                className={`
+                  flex
+                  min-h-[330px]
+                  flex-col
+                  justify-between
+                  gap-6
+                  rounded-3xl
+                  border
+                  p-6
+                  transition-all
+                  duration-200
+                  sm:p-8
+                  ${
+                    option.theme === 'dark'
+                      ? 'border-[#1d2940] bg-[#091127] text-white shadow-[0_12px_32px_rgba(15,23,42,0.10)] hover:border-[#34425c]'
+                      : 'border-[#dfe5ee] bg-white text-[#091127] shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] hover:border-[#cbd5e1] hover:shadow-[0_12px_28px_rgba(15,23,42,0.07),0_2px_4px_rgba(15,23,42,0.04)]'
+                  }
+                `}
+              >
+                <div className="flex flex-col gap-4">
+                  {/* BADGE */}
+                  <span
+                    className={`
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      ${
+                        option.theme === 'dark'
+                          ? 'text-[#8da5c8]'
+                          : 'text-[#7890b2]'
+                      }
+                    `}
+                  >
+                    {option.badge}
+                  </span>
+
+                  {/* TITLE */}
+                  <h3
+                    className={`
+                      !m-0
+                      text-[20px]
+                      font-semibold
+                      leading-6
+                      ${
+                        option.theme === 'dark'
+                          ? 'text-white'
+                          : 'text-[#091127]'
+                      }
+                      sm:text-2xl
+                    `}
+                  >
+                    {option.title}
+                  </h3>
+
+                  {/* FEATURES */}
+                  <ul className="!m-0 flex flex-col gap-3 pt-2">
+                    {option.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3"
+                      >
+                        <span
+                          className={`
+                            mt-[9px]
+                            h-1.5
+                            w-1.5
+                            shrink-0
+                            rounded-full
+                            ${
+                              option.theme === 'dark'
+                                ? 'bg-[#8da5c8]'
+                                : 'bg-[#7890b2]'
+                            }
+                          `}
+                        />
+
+                        <span
+                          className={`
+                            text-sm
+                            font-normal
+                            leading-6
+                            ${
+                              option.theme === 'dark'
+                                ? 'text-[#b6c2d5]'
+                                : 'text-[#5d7192]'
+                            }
+                          `}
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-2
+              border-[#7890b2]
+              bg-white
+              p-5
+              shadow-[0_4px_14px_rgba(15,23,42,0.04)]
+              sm:p-7
+            "
+          >
+            <div className="flex flex-col gap-2">
+              <span
+                className="
+                  block
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                "
+              >
+                Boundary
+              </span>
+
+              <p
+                className="
+                  !m-0
+                  max-w-[1000px]
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#091127]
+                  sm:text-base
+                  sm:leading-7
+                "
+              >
+                Zoiko One integrations are not automatically active. Shared
+                data and entitlement behaviour applies only where it has been
+                approved, configured and enabled for your organisation.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex w-full justify-center pt-1">
+            <a
+              href="#compare-deployment"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                leading-5
+                !text-white
+                shadow-[0_4px_12px_rgba(15,23,42,0.10)]
+                transition-colors
+                duration-150
+                hover:bg-[#17213a]
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#7890b2]
+                focus:ring-offset-2
+                sm:w-auto
+              "
+            >
+              Compare deployment options
+            </a>
+          </div>
         </div>
       </div>
     </section>

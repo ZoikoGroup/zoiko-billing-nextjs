@@ -22,33 +22,102 @@ const leftFaqs: FaqItemData[] = [
   },
   {
     question: "Can Zoiko Billing work without Zoiko One?",
+    answer: (
+      <>
+        Yes. Zoiko Billing can operate independently where the required billing
+        capabilities are available on your plan. Zoiko One is only needed when
+        your configuration or agreement specifically requires the connection.
+      </>
+    ),
   },
   {
     question: "Can we connect later?",
+    answer: (
+      <>
+        Yes. A connection can be added later where the products, plan and
+        technical configuration support it. Any implementation work,
+        configuration or additional commercial terms should be confirmed
+        before connection.
+      </>
+    ),
   },
   {
     question: "Can we disconnect later?",
+    answer: (
+      <>
+        Yes, subject to the applicable configuration and agreement.
+        Disconnection may affect synchronization and connected workflows, so
+        the impact should be reviewed before the connection is removed.
+      </>
+    ),
   },
   {
     question: "What data is shared?",
+    answer: (
+      <>
+        Only the data required for the configured connected workflows is
+        shared. The exact data set depends on the integration, configuration,
+        permissions and applicable product or agreement terms.
+      </>
+    ),
   },
 ];
 
 const rightFaqs: FaqItemData[] = [
   {
     question: "Is synchronization real time?",
+    answer: (
+      <>
+        Synchronization timing depends on the connected workflow and
+        configuration. Some information may be synchronized automatically,
+        while other processes may operate on a scheduled or event-driven
+        basis.
+      </>
+    ),
   },
   {
     question: "What happens if a sync fails?",
+    answer: (
+      <>
+        A failed synchronization should be identified through the applicable
+        integration or system status. Depending on the failure, the record may
+        require retry, correction or manual review before the connected
+        workflow can continue.
+      </>
+    ),
   },
   {
     question: "Does Zoiko One change pricing?",
+    answer: (
+      <>
+        Not automatically. Pricing depends on the applicable plan, products,
+        configuration, market and commercial agreement. Adding Zoiko One or a
+        connected service may have separate commercial terms where explicitly
+        stated.
+      </>
+    ),
   },
   {
     question: "Is implementation included?",
+    answer: (
+      <>
+        Not necessarily. Implementation availability and scope depend on the
+        plan, market, configuration and commercial agreement. Any included or
+        separately charged implementation service should be confirmed in the
+        applicable commercial record.
+      </>
+    ),
   },
   {
     question: "Who supports a connected deployment?",
+    answer: (
+      <>
+        Support responsibility depends on the products and services included
+        in the deployment. The applicable support scope, responsibilities and
+        escalation path should be confirmed in the relevant agreement or
+        support terms.
+      </>
+    ),
   },
 ];
 

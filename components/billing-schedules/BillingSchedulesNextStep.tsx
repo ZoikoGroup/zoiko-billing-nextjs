@@ -78,7 +78,7 @@ export default function BillingSchedulesNextStep() {
               <div className="flex flex-wrap items-center gap-3 pt-5">
                 {/* Create Account */}
                 <Link
-                  href="/signup"
+                  href="/create-account"
                   className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[#2879ff] bg-[#2879ff] px-5 py-2.5 !text-[#ffffff] text-base font-normal leading-6 no-underline transition-opacity hover:opacity-90"
                 >
                   Create Account
@@ -86,7 +86,7 @@ export default function BillingSchedulesNextStep() {
 
                 {/* Book Demo */}
                 <Link
-                  href="/book-a-demo"
+                  href="/book-demo"
                   className="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/25 bg-transparent px-5 py-2.5 !text-[#ffffff] text-base font-normal leading-6 no-underline transition-colors hover:bg-white/10"
                 >
                   Book a Demo

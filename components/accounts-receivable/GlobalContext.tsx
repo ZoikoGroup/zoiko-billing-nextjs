@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const contextItems = [
   {
@@ -47,97 +48,297 @@ const contextItems = [
 
 export default function GlobalContext() {
   return (
-    <section className="w-full bg-slate-950">
-      <div className="mx-auto w-full max-w-[1440px] px-4 py-12 sm:px-6 md:px-8 lg:px-12 lg:py-24 xl:px-28">
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-9 lg:px-12">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-          {/* Header */}
-          <div className="flex w-full flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16">
-            <div className="flex w-full flex-1 flex-col items-start gap-5 pb-6">
+          sm:px-8
+          sm:py-16
 
-              {/* Section label */}
-              <div className="flex h-4 items-center">
-                <div className="h-0.5 w-5 rounded-sm bg-gradient-to-r from-cyan-400 to-blue-500" />
+          md:px-10
+          md:py-20
 
-                <span className="ml-[10px] text-xs font-medium uppercase leading-4 tracking-wider text-cyan-300">
-                  Global context
-                </span>
-              </div>
+          lg:px-14
 
-              {/* Heading */}
-              <h2 className="max-w-[638px] text-3xl font-medium leading-[1.12] text-white sm:text-4xl lg:text-5xl">
-                Receivables work
-                <br className="hidden sm:block" />
-                differs by entity,
-                <br className="hidden sm:block" />
-                currency and
-                <br className="hidden sm:block" />
-                market.
-              </h2>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-12
+
+            md:gap-14
+          "
+        >
+          {/* HEADER */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Global context
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Description */}
-            <div className="w-full max-w-[529px]">
-              <p className="text-sm font-normal leading-7 text-slate-300 sm:text-base">
-                Due-date conventions, communication rules and business hours
-                are all local. None of them are assumed from a locale setting.
-              </p>
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Receivables work differs by entity, currency and market.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Due-date conventions, communication rules and business hours
+              are all local. None of them are assumed from a locale setting.
+            </p>
           </div>
 
-          {/* Context cards */}
-          <div className="grid w-full grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* CONTEXT CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
 
+              sm:grid-cols-2
+
+              lg:grid-cols-4
+            "
+          >
             {contextItems.map((item) => (
               <div
                 key={item.title}
-                className="flex min-h-[190px] flex-col items-start bg-sky-950 px-5 py-5"
+                className="
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  items-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-6
+                  shadow-[0_4px_14px_rgba(15,23,42,0.025)]
+                "
               >
-                <div className="w-full pb-1">
-                  <h3 className="text-sm font-semibold leading-5 text-white">
+                {/* TITLE */}
+                <div className="w-full pb-2">
+                  <h3
+                    className="
+                      !m-0
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
                     {item.title}
                   </h3>
                 </div>
 
-                <p className="text-sm font-normal leading-5 text-slate-300">
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Jurisdiction boundary */}
-          <div className="w-full rounded-r-2xl border-l-[3px] border-cyan-400 bg-white/[0.06] px-5 py-7 sm:px-7 sm:py-9">
-            <div>
-              <span className="text-[10px] font-normal uppercase leading-4 tracking-wide text-cyan-300">
-                Jurisdiction boundary
-              </span>
-            </div>
+          {/* JURISDICTION BOUNDARY */}
+          <div
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-7
 
-            <p className="mt-2 max-w-[850px] text-sm font-normal leading-7 text-slate-200 sm:text-base">
+              sm:px-7
+              sm:py-8
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.14em]
+                text-[#7890b2]
+              "
+            >
+              Jurisdiction boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[850px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
               Locale does not determine legal collection rights, and
               country-specific collection compliance is never claimed without
               current evidence.
             </p>
           </div>
 
-          {/* Buttons */}
-          <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
-            <button
-              type="button"
-              className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-white bg-white px-5 py-2.5 text-sm font-normal leading-6 text-sky-950 transition hover:bg-slate-100 sm:w-auto sm:text-base"
+          {/* ACTIONS */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-3
+
+              sm:flex-row
+            "
+          >
+            {/* PRIMARY */}
+            <Link
+              href="/global-billing"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-[#091127]
+                bg-[#091127]
+                px-5
+                py-2.5
+                text-sm
+                font-normal
+                leading-6
+                !text-white
+                transition
+                hover:bg-[#17213a]
+
+                sm:w-auto
+                sm:text-base
+              "
             >
               Explore global billing
-            </button>
+            </Link>
 
-            <button
-              type="button"
-              className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-white/35 bg-transparent px-5 py-2.5 text-sm font-normal leading-6 text-white transition hover:bg-white/10 sm:w-auto sm:text-base"
+            {/* SECONDARY */}
+            <Link
+              href="/integration-availability"
+              className="
+                inline-flex
+                min-h-11
+                w-full
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-[#d0d8e5]
+                bg-white
+                px-5
+                py-2.5
+                text-sm
+                font-normal
+                leading-6
+                text-[#091127]
+                transition
+                hover:bg-[#f7f8fa]
+
+                sm:w-auto
+                sm:text-base
+              "
             >
               Check availability
-            </button>
+            </Link>
           </div>
-
         </div>
       </div>
     </section>

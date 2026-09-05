@@ -47,331 +47,362 @@ const contextItems = [
 
 export default function GlobalTaxContext() {
   return (
-    <>
-      <style jsx global>{`
-        .global-tax-context,
-        .global-tax-context * {
-          box-sizing: border-box;
-        }
+    <section className="w-full bg-[#062f49]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        .global-tax-context .gtc-white {
-          color: #ffffff !important;
-        }
+          sm:px-8
+          sm:py-16
 
-        .global-tax-context .gtc-light {
-          color: #b8cad5 !important;
-        }
+          md:px-10
+          md:py-20
 
-        .global-tax-context .gtc-lighter {
-          color: #d7e3e9 !important;
-        }
+          lg:px-14
 
-        .global-tax-context .gtc-cyan {
-          color: #48dce8 !important;
-        }
-
-        .global-tax-context .gtc-blue {
-          color: #8db6cc !important;
-        }
-
-        .global-tax-context .gtc-card-title {
-          color: #ffffff !important;
-        }
-
-        .global-tax-context .gtc-card-description {
-          color: #8db6cc !important;
-        }
-
-        .global-tax-context a.gtc-primary {
-          color: #062c43 !important;
-          background-color: #ffffff !important;
-        }
-
-        .global-tax-context a.gtc-secondary {
-          color: #ffffff !important;
-          background-color: transparent !important;
-        }
-
-        .global-tax-context a.gtc-secondary:hover {
-          color: #ffffff !important;
-          background-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        @media (max-width: 1023px) {
-          .global-tax-context .gtc-heading {
-            font-size: 42px !important;
-            line-height: 1.12 !important;
-          }
-        }
-
-        @media (max-width: 639px) {
-          .global-tax-context {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-top: 64px !important;
-            padding-bottom: 64px !important;
-          }
-
-          .global-tax-context .gtc-heading {
-            font-size: 36px !important;
-            line-height: 1.12 !important;
-          }
-
-          .global-tax-context .gtc-intro {
-            font-size: 15px !important;
-            line-height: 1.8 !important;
-          }
-
-          .global-tax-context .gtc-boundary-text {
-            font-size: 15px !important;
-            line-height: 1.7 !important;
-          }
-
-          .global-tax-context .gtc-actions {
-            flex-direction: column !important;
-          }
-
-          .global-tax-context .gtc-action {
-            width: 100% !important;
-          }
-        }
-      `}</style>
-
-      <section
-        className="global-tax-context w-full"
-        style={{
-          backgroundColor: "#062f49",
-          paddingLeft: "clamp(24px, 7.78vw, 112px)",
-          paddingRight: "clamp(24px, 7.78vw, 112px)",
-          paddingTop: "96px",
-          paddingBottom: "96px",
-        }}
+          xl:px-20
+        "
       >
         <div
-          className="mx-auto flex w-full flex-col"
-          style={{
-            maxWidth: "1220px",
-            paddingLeft: "48px",
-            paddingRight: "48px",
-            gap: "36px",
-          }}
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
         >
           {/* =========================================================
-              HEADER
+              SECTION INTRO
           ========================================================= */}
           <div
-            className="flex w-full flex-col lg:flex-row"
-            style={{
-              alignItems: "flex-end",
-              gap: "64px",
-            }}
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
           >
-            {/* LEFT */}
-            <div
-              className="flex flex-1 flex-col"
-              style={{
-                paddingTop: "10px",
-                paddingBottom: "20px",
-                gap: "20px",
-              }}
-            >
-              {/* Eyebrow */}
-              <div
-                className="flex items-center"
-                style={{
-                  height: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "20px",
-                    height: "2px",
-                    borderRadius: "2px",
-                    background:
-                      "linear-gradient(to right, #35d9e5, #4b91ff)",
-                    flexShrink: 0,
-                  }}
-                />
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#35d9e5]
+                  to-[#4b91ff]
+                "
+              />
 
-                <span
-                  className="gtc-cyan"
-                  style={{
-                    marginLeft: "10px",
-                    fontFamily: "IBM Plex Mono, monospace",
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    lineHeight: "16px",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Global and tax context
-                </span>
-              </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#48dce8]
 
-              {/* Heading */}
-              <h2
-                className="gtc-heading gtc-white"
-                style={{
-                  margin: 0,
-                  maxWidth: "638px",
-                  fontSize: "48px",
-                  fontWeight: 500,
-                  lineHeight: "53.82px",
-                  letterSpacing: "-0.02em",
-                }}
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                Amounts are
-                <br />
-                market-specific by
-                <br />
-                configuration.
-              </h2>
+                Global and tax context
+              </span>
+
+              <span
+                className="
+                  h-px
+                  w-4
+                  shrink-0
+                  bg-gradient-to-r
+                  from-[#35d9e5]
+                  to-[#4b91ff]
+                "
+              />
             </div>
 
-            {/* RIGHT */}
-            <div
-              style={{
-                width: "100%",
-                maxWidth: "528.77px",
-                paddingBottom: "0",
-              }}
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-white
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
             >
-              <p
-                className="gtc-light gtc-intro"
-                style={{
-                  margin: 0,
-                  fontFamily: "Segoe UI, sans-serif",
-                  fontSize: "16px",
-                  fontWeight: 400,
-                  lineHeight: "32px",
-                }}
-              >
-                Entity, currency, precision, conversion and tax source are all
-                configurable — within verified availability for that market.
-              </p>
-            </div>
+              Amounts are market-specific
+              <br className="hidden sm:block" />
+              by configuration.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                !text-[#b8cad5]
+
+                sm:text-base
+              "
+            >
+              Entity, currency, precision, conversion and tax source are all
+              configurable — within verified availability for that market.
+            </p>
           </div>
 
           {/* =========================================================
-              CONTEXT CARDS
+              CONTEXT TABLE
           ========================================================= */}
           <div
-            style={{
-              width: "100%",
-              height: "320px",
-              paddingTop: "20px",
-              overflow: "hidden",
-              borderRadius: "16px",
-              border: "1px solid rgba(255,255,255,0.14)",
-              backgroundColor: "rgba(255,255,255,0.06)",
-              display: "flex",
-              flexDirection: "column",
-            }}
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-white/15
+              bg-[#062f49]
+              shadow-[0_8px_24px_rgba(0,0,0,0.12)]
+            "
           >
-            {contextItems.map((item, index) => (
+            {/* DESKTOP */}
+            <div className="hidden md:block">
+              {/* HEADER */}
               <div
-                key={item.title}
-                style={{
-                  width: "100%",
-                  minHeight: index === 7 ? "76px" : "76px",
-                  paddingLeft: "20px",
-                  paddingRight: "20px",
-                  paddingTop: "20px",
-                  paddingBottom: index === 7 ? "20px" : "20px",
-                  backgroundColor: "#062f49",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  gap: "6px",
-                  borderBottom:
-                    index !== contextItems.length - 1
-                      ? "1px solid rgba(255,255,255,0.08)"
-                      : "none",
-                }}
+                className="
+                  grid
+                  grid-cols-[300px_minmax(0,1fr)]
+                  bg-white/[0.06]
+                "
               >
-                {/* Title */}
-                <h3
-                  className="gtc-card-title"
-                  style={{
-                    width: "100%",
-                    margin: 0,
-                    paddingBottom: "4px",
-                    fontFamily: "Segoe UI, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    lineHeight: "20px",
-                  }}
-                >
-                  {item.title}
-                </h3>
+                <div className="border-b border-white/10 px-5 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#8db6cc]
+                    "
+                  >
+                    Context
+                  </span>
+                </div>
 
-                {/* Description */}
-                <p
-                  className="gtc-card-description"
-                  style={{
-                    margin: 0,
-                    fontFamily: "Segoe UI, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: 400,
-                    lineHeight: "20px",
-                  }}
-                >
-                  {item.description}
-                </p>
+                <div className="border-b border-white/10 px-5 py-3.5">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#8db6cc]
+                    "
+                  >
+                    Description
+                  </span>
+                </div>
               </div>
-            ))}
+
+              {/* ROWS */}
+              {contextItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`
+                    grid
+                    grid-cols-[300px_minmax(0,1fr)]
+                    ${
+                      index !== contextItems.length - 1
+                        ? "border-b border-white/10"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* TITLE */}
+                  <div className="px-5 py-4">
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-5
+                        !text-white
+                      "
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+
+                  {/* DESCRIPTION */}
+                  <div className="px-5 py-4">
+                    <span
+                      className="
+                        text-sm
+                        font-normal
+                        leading-6
+                        !text-[#8db6cc]
+                      "
+                    >
+                      {item.description}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE */}
+            <div className="flex flex-col md:hidden">
+              {contextItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`
+                    p-5
+                    ${
+                      index !== contextItems.length - 1
+                        ? "border-b border-white/10"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* CONTEXT */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        !text-[#8db6cc]
+                      "
+                    >
+                      Context
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        !text-white
+                      "
+                    >
+                      {item.title}
+                    </p>
+                  </div>
+
+                  {/* DESCRIPTION */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        !text-[#8db6cc]
+                      "
+                    >
+                      Description
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        !text-[#8db6cc]
+                      "
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* =========================================================
               JURISDICTION BOUNDARY
           ========================================================= */}
           <div
-            style={{
-              width: "100%",
-              minHeight: "162px",
-              paddingLeft: "25px",
-              paddingRight: "28px",
-              paddingTop: "36px",
-              paddingBottom: "32px",
-              backgroundColor: "rgba(255,255,255,0.06)",
-              borderLeft: "3px solid #35d9e5",
-              borderTopRightRadius: "16px",
-              borderBottomRightRadius: "16px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "8px",
-            }}
+            className="
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#35d9e5]
+              bg-white/[0.06]
+              px-5
+              py-7
+
+              sm:px-6
+              sm:py-8
+            "
           >
-            {/* Label */}
+            {/* LABEL */}
             <span
-              className="gtc-cyan"
-              style={{
-                fontFamily: "IBM Plex Mono, monospace",
-                fontSize: "9.9px",
-                fontWeight: 400,
-                lineHeight: "16px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-              }}
+              className="
+                text-[10px]
+                font-medium
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                !text-[#48dce8]
+              "
             >
               Jurisdiction boundary
             </span>
 
-            {/* Text */}
+            {/* DESCRIPTION */}
             <p
-              className="gtc-lighter gtc-boundary-text"
-              style={{
-                width: "100%",
-                maxWidth: "761px",
-                margin: 0,
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "28px",
-              }}
+              className="
+                !m-0
+                mt-2
+                w-full
+                max-w-[850px]
+                text-[15px]
+                font-normal
+                leading-7
+                !text-[#d7e3e9]
+
+                sm:text-base
+              "
             >
               Language and currency do not determine the legal entity or the
               tax treatment. Tax calculation and price support for a specific
@@ -381,69 +412,77 @@ export default function GlobalTaxContext() {
           </div>
 
           {/* =========================================================
-              CTA BUTTONS
+              CTA
           ========================================================= */}
           <div
-            className="gtc-actions flex w-full items-center justify-center"
-            style={{
-              gap: "12px",
-              minHeight: "44px",
-            }}
+            className="
+              flex
+              w-full
+              items-center
+              justify-center
+              gap-3
+
+              max-sm:flex-col
+            "
           >
-            {/* Primary */}
+            {/* PRIMARY CTA */}
             <Link
               href="/global-billing"
-              className="gtc-action gtc-primary"
-              style={{
-                minHeight: "44px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                paddingTop: "8px",
-                paddingBottom: "10px",
-                borderRadius: "8px",
-                border: "1px solid #ffffff",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-white
+                bg-white
+                px-5
+                py-2
+                text-base
+                font-normal
+                leading-6
+                !text-[#062f49]
+                no-underline
+                transition-opacity
+                hover:opacity-90
+
+                max-sm:w-full
+              "
             >
               Explore global billing
             </Link>
 
-            {/* Secondary */}
+            {/* SECONDARY CTA */}
             <Link
               href="/jurisdiction-availability"
-              className="gtc-action gtc-secondary"
-              style={{
-                minHeight: "44px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                paddingTop: "8px",
-                paddingBottom: "10px",
-                borderRadius: "8px",
-                border: "1px solid rgba(255,255,255,0.36)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Segoe UI, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-white/35
+                bg-transparent
+                px-5
+                py-2
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                transition-colors
+                hover:bg-white/10
+
+                max-sm:w-full
+              "
             >
               Check jurisdiction availability
             </Link>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

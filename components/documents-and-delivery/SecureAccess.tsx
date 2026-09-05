@@ -71,38 +71,137 @@ const securityItems = [
 
 export default function SecureAccess() {
   return (
-    <section className="w-full bg-color-grey-97-2">
-      <div className="mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-10 sm:py-20 lg:px-28 lg:py-24">
-        <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-9 lg:px-12">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-10
+
+            sm:gap-11
+
+            md:gap-12
+          "
+        >
           {/* ================= HEADER ================= */}
-          <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
-            <div className="flex w-full flex-1 flex-col items-start gap-5 pt-2.5 pb-6">
 
-              {/* Eyebrow */}
-              <div className="relative h-4 w-36">
-                <div className="absolute left-0 top-[7.94px] h-0.5 w-5 rounded-sm bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-7
+              text-center
 
-                <span className="absolute left-[30px] top-[-1px] whitespace-nowrap font-mono text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
+              lg:flex-row
+              lg:items-end
+              lg:gap-16
+              lg:text-left
+            "
+          >
+            {/* LEFT */}
+
+            <div
+              className="
+                flex
+                w-full
+                flex-1
+                flex-col
+                items-center
+                gap-4
+
+                lg:items-start
+              "
+            >
+              {/* EYEBROW */}
+
+              <div className="flex items-center justify-center gap-3 lg:justify-start">
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
                   Secure access
                 </span>
+
+                <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
               </div>
 
-              {/* Heading */}
-              <div className="w-full max-w-[638px]">
-                <h2 className="text-4xl font-medium leading-[1.12] tracking-tight text-sky-950 sm:text-5xl lg:text-[48px] lg:leading-[53.82px]">
-                  Protect sensitive billing
-                  <br className="hidden sm:block" />
-                  content from render to
-                  <br className="hidden sm:block" />
-                  access.
-                </h2>
-              </div>
+              {/* HEADING */}
+
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[650px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-[#091127]
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
+                Protect sensitive billing content from render to access.
+              </h2>
             </div>
 
-            {/* Header description */}
-            <div className="w-full max-w-[529px]">
-              <p className="text-base font-normal leading-8 text-color-azure-35">
+            {/* DESCRIPTION */}
+
+            <div className="w-full max-w-[530px] flex-1">
+              <p
+                className="
+                  !m-0
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+
+                  sm:text-base
+                "
+              >
                 Where a document is reached by link or portal rather than
                 attached, the access model is part of the delivery design.
               </p>
@@ -110,32 +209,96 @@ export default function SecureAccess() {
           </div>
 
           {/* ================= ACCESS CONTROLS ================= */}
-          <div className="flex w-full flex-col gap-10 pt-6 pb-10 lg:flex-row lg:justify-center lg:gap-16">
 
-            {/* LEFT */}
-            <div className="w-full max-w-[526px]">
-              <h3 className="mb-1.5 text-lg font-semibold leading-6 text-sky-950">
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-10
+
+              lg:grid-cols-2
+              lg:items-start
+              lg:gap-12
+
+              xl:gap-16
+            "
+          >
+            {/* LEFT - ACCESS CONTROLS */}
+
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-5
+                py-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                sm:px-6
+                sm:py-6
+              "
+            >
+              <h3
+                className="
+                  !m-0
+                  mb-2
+                  text-lg
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+                "
+              >
                 Access controls
               </h3>
 
-              <div className="flex flex-col">
+              <div className="flex w-full flex-col">
                 {accessControls.map((item, index) => (
                   <div
                     key={item.title}
-                    className={`flex flex-col gap-4 py-3.5 sm:flex-row sm:items-center ${
-                      index !== accessControls.length - 1
-                        ? "border-b border-color-grey-93-4"
-                        : ""
-                    }`}
+                    className={`
+                      grid
+                      w-full
+                      grid-cols-1
+                      gap-1.5
+                      py-4
+
+                      sm:grid-cols-[145px_minmax(0,1fr)]
+                      sm:gap-5
+
+                      ${
+                        index !== accessControls.length - 1
+                          ? "border-b border-[#edf0f4]"
+                          : ""
+                      }
+                    `}
                   >
-                    <div className="w-full shrink-0 sm:w-36">
-                      <h4 className="text-sm font-semibold leading-6 text-sky-950">
+                    <div>
+                      <h4
+                        className="
+                          !m-0
+                          text-sm
+                          font-semibold
+                          leading-6
+                          text-[#091127]
+                        "
+                      >
                         {item.title}
                       </h4>
                     </div>
 
-                    <div className="flex-1">
-                      <p className="text-sm font-normal leading-6 text-color-azure-35">
+                    <div className="min-w-0">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
                         {item.description}
                       </p>
                     </div>
@@ -145,10 +308,26 @@ export default function SecureAccess() {
             </div>
 
             {/* RIGHT */}
-            <div className="flex w-full max-w-[526px] flex-col gap-3">
 
-              {/* Image */}
-              <div className="relative h-[280px] w-full overflow-hidden rounded-2xl border border-zinc-200 sm:h-[320px] lg:h-[351px]">
+            <div className="flex w-full flex-col gap-4">
+              {/* IMAGE */}
+
+              <div
+                className="
+                  relative
+                  h-[280px]
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+
+                  sm:h-[320px]
+
+                  lg:h-[351px]
+                "
+              >
                 <Image
                   src="/images/documents-and-delivery/secure-access.png"
                   alt="Secure access"
@@ -159,62 +338,226 @@ export default function SecureAccess() {
                 />
               </div>
 
-              {/* Boundary */}
-              <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 py-7">
-                <span className="font-mono text-[9.9px] font-normal uppercase leading-4 tracking-wide text-color-azure-44">
+              {/* ACCESS BOUNDARY */}
+
+              <div
+                className="
+                  flex
+                  w-full
+                  flex-col
+                  items-start
+                  gap-2
+                  rounded-r-2xl
+                  border-l-[3px]
+                  border-[#7890b2]
+                  bg-white
+                  px-5
+                  py-5
+
+                  sm:px-6
+                  sm:py-6
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                  "
+                >
                   Access boundary
                 </span>
 
-                <p className="text-base font-normal leading-7 text-sky-950">
-                  A view or download event is not necessarily legal acceptance,
-                  and no link is described as fully secure or unbreakable.
-                  Security behaviour is stated only from approved architecture
-                  and evidence.
+                <p
+                  className="
+                    !m-0
+                    w-full
+                    text-sm
+                    font-normal
+                    leading-7
+                    text-[#091127]
+
+                    sm:text-base
+                  "
+                >
+                  A view or download event is not necessarily legal
+                  acceptance, and no link is described as fully secure or
+                  unbreakable. Security behaviour is stated only from approved
+                  architecture and evidence.
                 </p>
               </div>
             </div>
           </div>
 
           {/* ================= TRUST HEADER ================= */}
-          <div className="flex w-full flex-col items-start gap-3.5 border-t border-zinc-200 pt-12">
-            <h3 className="text-3xl font-medium leading-8 text-sky-950">
+
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              border-t
+              border-[#dfe5ee]
+              pt-10
+              text-center
+
+              sm:pt-12
+
+              lg:items-start
+              lg:text-left
+            "
+          >
+            <h3
+              className="
+                !m-0
+                w-full
+                max-w-[650px]
+                !text-[26px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.03em]
+                !text-[#091127]
+
+                sm:!text-[30px]
+
+                md:!text-[32px]
+              "
+            >
               Trust, privacy and security
             </h3>
 
-            <p className="max-w-[555px] text-base font-normal leading-7 text-color-azure-35">
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Billing documents carry customer, address, tax and
               payment-reference data, so handling is controlled from render
               through to retention.
             </p>
           </div>
 
-          {/* ================= 6 SECURITY BOXES ================= */}
-          <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2">
+          {/* ================= SECURITY BOXES ================= */}
 
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
             {securityItems.map((item) => (
               <div
                 key={item.title}
-                className="flex min-h-[150px] w-full flex-col items-start rounded-2xl border border-zinc-200 bg-white px-6 py-6"
+                className="
+                  flex
+                  min-h-[180px]
+                  w-full
+                  flex-col
+                  items-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-5
+                  py-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.04),0_1px_2px_rgba(15,23,42,0.03)]
+
+                  sm:px-6
+                  sm:py-6
+                "
               >
-                <h4 className="mb-2 text-base font-semibold leading-6 text-sky-950">
+                <h4
+                  className="
+                    !m-0
+                    mb-2
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
                   {item.title}
                 </h4>
 
-                <p className="text-sm font-normal leading-6 text-color-azure-35">
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
                   {item.description}
                 </p>
               </div>
             ))}
-
           </div>
 
           {/* ================= PUBLICATION BOUNDARY ================= */}
-          <div className="flex w-full flex-col items-start gap-2 rounded-r-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 pt-9 pb-7">
-            <span className="font-mono text-[9.9px] font-normal uppercase leading-4 tracking-wide text-color-azure-44">
+
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-5
+              py-6
+
+              sm:px-6
+              sm:py-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
               Publication boundary
             </span>
 
-            <p className="text-base font-normal leading-7 text-sky-950">
+            <p
+              className="
+                !m-0
+                w-full
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
               Internal provider, queue and security details are never
               published, and no document contents, recipients, links or
               secrets appear in ordinary analytics. Product controls do not
@@ -223,36 +566,99 @@ export default function SecureAccess() {
           </div>
 
           {/* ================= CTA ================= */}
-          <div className="flex w-full items-center justify-center pt-2">
-            <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
 
+          <div
+            className="
+              flex
+              w-full
+              items-center
+              justify-start
+              pt-1
+            "
+          >
+            <div
+              className="
+                flex
+                w-full
+                flex-col
+                items-start
+                gap-3
+
+                sm:flex-row
+                sm:items-center
+              "
+            >
               {/* PRIMARY CTA */}
+
               <Link
-                href="/security"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-sky-950 px-5 py-2.5 no-underline"
+                href="/security-overview"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-[#091127]
+                  bg-[#091127]
+                  px-5
+                  py-2
+                  text-center
+                  text-base
+                  font-normal
+                  leading-6
+                  !text-white
+                  no-underline
+                  transition-opacity
+                  hover:opacity-90
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#091127]
+                  focus:ring-offset-2
+                "
               >
-                <span className="text-[16px] font-normal leading-6 text-white">
+                <span className="!text-white">
                   Review security and trust
                 </span>
               </Link>
 
               {/* SECONDARY CTA */}
+
               <Link
-                href="/privacy"
-                className="inline-flex min-h-[44px] items-center justify-center gap-2 px-3 py-2.5 no-underline"
+                href="/privacy-policy"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  gap-2
+                  px-3
+                  py-2
+                  text-base
+                  font-normal
+                  leading-6
+                  !text-[#0077B6]
+                  no-underline
+                "
               >
-                <span className="text-[16px] font-normal leading-6 text-[#0077B6]">
+                <span className="!text-[#0077B6]">
                   Read the privacy notice
                 </span>
 
-                <span className="text-[16px] font-bold leading-6 text-[#0077B6]">
+                <span
+                  aria-hidden="true"
+                  className="
+                    text-base
+                    font-bold
+                    leading-6
+                    !text-[#0077B6]
+                  "
+                >
                   →
                 </span>
               </Link>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

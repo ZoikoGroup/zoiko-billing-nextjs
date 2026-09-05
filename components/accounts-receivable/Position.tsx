@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const positionItems = [
   {
@@ -36,7 +37,8 @@ const positionItems = [
 const calculationRows = [
   {
     element: "Issued amount",
-    treatment: "Current issued documents and supported debit relationships.",
+    treatment:
+      "Current issued documents and supported debit relationships.",
     boundary: "No draft amounts.",
   },
   {
@@ -56,7 +58,8 @@ const calculationRows = [
   },
   {
     element: "Remaining amount",
-    treatment: "Derived from current approved relationships, as of a timestamp.",
+    treatment:
+      "Derived from current approved relationships, as of a timestamp.",
     boundary: "Currencies are not combined without an explicit method.",
   },
   {
@@ -66,7 +69,8 @@ const calculationRows = [
   },
   {
     element: "Customer total",
-    treatment: "Aggregate by entity and currency, keeping document drill-down.",
+    treatment:
+      "Aggregate by entity and currency, keeping document drill-down.",
     boundary: "Disputes, holds and stale data are never hidden.",
   },
 ];
@@ -101,7 +105,7 @@ const agingBands = [
 
 export default function Position() {
   return (
-    <section className="w-full bg-[#f5f7f6] dark:bg-slate-950">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -109,92 +113,113 @@ export default function Position() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
-          px-4
-          py-12
-          sm:px-6
-          md:px-8
-          lg:px-12
-          lg:py-24
-          xl:px-28
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
         "
       >
         <div
           className="
+            mx-auto
             flex
             w-full
-            max-w-[1220px]
+            max-w-[1240px]
             flex-col
-            gap-9
-            lg:px-12
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
           {/* =====================================================
-              HEADER
+              SECTION INTRO
           ====================================================== */}
           <div
             className="
               flex
               w-full
+              max-w-[760px]
               flex-col
-              items-start
-              gap-8
-              lg:flex-row
-              lg:items-end
-              lg:gap-16
+              items-center
+              gap-3
+              pt-2
+              text-center
             "
           >
-            {/* LEFT HEADER */}
-            <div
-              className="
-                flex
-                w-full
-                flex-1
-                flex-col
-                items-start
-                gap-5
-                lg:pb-6
-              "
-            >
-              {/* Label */}
-              <div className="flex h-4 items-center">
-                <div className="h-0.5 w-5 rounded-sm bg-gradient-to-r from-cyan-500 to-sky-600" />
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                <span className="ml-[10px] text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
-                  Current position
-                </span>
-              </div>
-
-              {/* Heading */}
-              <h2
+              <span
                 className="
-                  max-w-[638px]
-                  text-3xl
-                  font-medium
-                  leading-[1.12]
-                  text-sky-950
-                  sm:text-4xl
-                  lg:text-5xl
-                  dark:text-white
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
                 "
               >
-                See the current
-                <br />
-                receivable position
-                <br />
-                behind every next
-                <br />
-                action.
-              </h2>
+                Current position
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* RIGHT HEADER */}
-            <div className="w-full max-w-[529px]">
-              <p className="text-sm font-normal leading-7 text-slate-600 sm:text-base dark:text-slate-300">
-                A remaining amount is a derivation, not a stored number. Every
-                element of it can be opened and checked.
-              </p>
-            </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              See the current receivable position behind every next action.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A remaining amount is a derivation, not a stored number. Every
+              element of it can be opened and checked.
+            </p>
           </div>
 
           {/* =====================================================
@@ -206,9 +231,10 @@ export default function Position() {
               w-full
               flex-col
               gap-10
-              pt-2
-              lg:gap-16
-              lg:pt-6
+
+              lg:gap-14
+              lg:pt-2
+
               xl:flex-row
               xl:items-start
             "
@@ -217,7 +243,7 @@ export default function Position() {
                 LEFT — PRODUCT VIEW
             ==================================================== */}
             <div className="flex w-full flex-col gap-3 xl:w-1/2">
-              {/* Product View Label */}
+              {/* PRODUCT VIEW LABEL */}
               <div className="flex items-center">
                 <div
                   className="
@@ -226,36 +252,41 @@ export default function Position() {
                     items-center
                     rounded-full
                     border
-                    border-emerald-200
-                    bg-white/70
+                    border-[#dfe5ee]
+                    bg-white
                     px-3
-                    dark:border-emerald-800
-                    dark:bg-slate-900/70
                   "
                 >
-                  <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-sky-600 dark:bg-sky-400" />
+                  <span className="mr-2 h-[5px] w-[5px] rounded-sm bg-[#7890b2]" />
 
-                  <span className="text-[10px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+                  <span
+                    className="
+                      text-[10px]
+                      font-medium
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#7890b2]
+                    "
+                  >
                     Illustrative product view
                   </span>
                 </div>
               </div>
 
-              {/* Product Card */}
+              {/* PRODUCT CARD */}
               <div
                 className="
                   w-full
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-zinc-200
+                  border-[#dfe5ee]
                   bg-white
-                  shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04)]
-                  dark:border-slate-700
-                  dark:bg-slate-900
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {/* Product Top Bar */}
+                {/* TOP BAR */}
                 <div
                   className="
                     flex
@@ -263,20 +294,28 @@ export default function Position() {
                     flex-col
                     gap-3
                     border-b
-                    border-zinc-200
-                    bg-[#f5f7f6]
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
                     px-4
                     py-3.5
+
                     sm:flex-row
                     sm:flex-wrap
                     sm:items-center
-                    dark:border-slate-700
-                    dark:bg-slate-800
                   "
                 >
-                  <div className="h-2 w-2 shrink-0 rounded-sm bg-sky-600 dark:bg-sky-400" />
+                  <div className="h-2 w-2 shrink-0 rounded-sm bg-[#7890b2]" />
 
-                  <span className="text-[11px] font-normal uppercase leading-4 tracking-wide text-slate-600 dark:text-slate-300">
+                  <span
+                    className="
+                      text-[11px]
+                      font-normal
+                      uppercase
+                      leading-4
+                      tracking-wide
+                      text-[#5d7192]
+                    "
+                  >
                     Position · Northlane Consulting · GBP
                   </span>
 
@@ -288,25 +327,30 @@ export default function Position() {
                         items-center
                         rounded-full
                         border
-                        border-orange-200
-                        bg-orange-50
+                        border-[#e6d7bd]
+                        bg-[#fbf7ef]
                         px-3
-                        dark:border-orange-800
-                        dark:bg-orange-950/30
                       "
                     >
-                      <span className="mr-2 text-xs text-orange-600 dark:text-orange-400">
-                        •
-                      </span>
+                      <span className="mr-2 text-xs text-[#a17a3e]">•</span>
 
-                      <span className="text-[10px] font-medium uppercase leading-4 tracking-wide text-orange-600 dark:text-orange-400">
+                      <span
+                        className="
+                          text-[10px]
+                          font-medium
+                          uppercase
+                          leading-4
+                          tracking-wide
+                          text-[#a17a3e]
+                        "
+                      >
                         Partially paid
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Position Items */}
+                {/* POSITION ITEMS */}
                 {positionItems.map((item) => (
                   <div
                     key={item.title}
@@ -316,13 +360,12 @@ export default function Position() {
                       items-center
                       gap-3
                       border-b
-                      border-gray-200
+                      border-[#edf0f4]
                       px-4
                       py-3
-                      dark:border-slate-700
                     "
                   >
-                    {/* Icon */}
+                    {/* ICON */}
                     <div
                       className={`
                         flex
@@ -333,10 +376,13 @@ export default function Position() {
                         justify-center
                         rounded-md
                         border
+
                         ${
                           item.type === "minus"
-                            ? "border-cyan-200 bg-cyan-50 dark:border-cyan-800 dark:bg-cyan-950/30"
-                            : "border-slate-300 bg-[#f5f7f6] dark:border-slate-600 dark:bg-slate-800"
+                            ? "border-[#d5e6eb] bg-[#f3fafb]"
+                            : item.type === "warning"
+                              ? "border-[#e6d7bd] bg-[#fbf7ef]"
+                              : "border-[#dfe5ee] bg-[#f7f8fa]"
                         }
                       `}
                     >
@@ -344,10 +390,13 @@ export default function Position() {
                         className={`
                           text-xs
                           font-semibold
+
                           ${
                             item.type === "minus"
-                              ? "text-cyan-600 dark:text-cyan-400"
-                              : "text-sky-600 dark:text-sky-400"
+                              ? "text-[#5f96a5]"
+                              : item.type === "warning"
+                                ? "text-[#a17a3e]"
+                                : "text-[#7890b2]"
                           }
                         `}
                       >
@@ -355,25 +404,52 @@ export default function Position() {
                       </span>
                     </div>
 
-                    {/* Text */}
+                    {/* TEXT */}
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-normal leading-6 text-sky-950 dark:text-white">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#091127]
+                        "
+                      >
                         {item.title}
                       </p>
 
-                      <p className="truncate text-[10px] font-normal leading-4 text-sky-600 dark:text-sky-400">
+                      <p
+                        className="
+                          !m-0
+                          truncate
+                          text-[10px]
+                          font-normal
+                          leading-4
+                          text-[#7890b2]
+                        "
+                      >
                         {item.detail}
                       </p>
                     </div>
 
-                    {/* Amount */}
-                    <span className="shrink-0 text-xs font-normal leading-6 text-sky-950 sm:text-sm dark:text-white">
+                    {/* AMOUNT */}
+                    <span
+                      className="
+                        shrink-0
+                        text-xs
+                        font-normal
+                        leading-6
+                        text-[#091127]
+
+                        sm:text-sm
+                      "
+                    >
                       {item.amount}
                     </span>
                   </div>
                 ))}
 
-                {/* Remaining Amount */}
+                {/* REMAINING AMOUNT */}
                 <div
                   className="
                     flex
@@ -381,46 +457,107 @@ export default function Position() {
                     items-center
                     gap-3
                     border-t-2
-                    border-sky-950
-                    bg-[#f9faf9]
+                    border-[#091127]
+                    bg-[#fafbfc]
                     px-4
                     py-3
-                    dark:border-sky-400
-                    dark:bg-slate-800
                   "
                 >
-                  <div className="flex h-6 w-5 shrink-0 items-center justify-center rounded-md border border-slate-300 bg-[#f5f7f6] dark:border-slate-600 dark:bg-slate-700">
-                    <span className="text-xs font-semibold text-sky-600 dark:text-sky-400">
+                  <div
+                    className="
+                      flex
+                      h-6
+                      w-5
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-md
+                      border
+                      border-[#dfe5ee]
+                      bg-[#f7f8fa]
+                    "
+                  >
+                    <span className="text-xs font-semibold text-[#7890b2]">
                       =
                     </span>
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-normal leading-6 text-sky-950 dark:text-white">
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#091127]
+                      "
+                    >
                       Remaining amount
                     </p>
 
-                    <p className="text-[10px] font-normal leading-4 text-sky-600 dark:text-sky-400">
+                    <p
+                      className="
+                        !m-0
+                        text-[10px]
+                        font-normal
+                        leading-4
+                        text-[#7890b2]
+                      "
+                    >
                       Zoiko Ltd (UK) · GBP only
                     </p>
                   </div>
 
-                  <span className="shrink-0 text-sm font-semibold leading-6 text-sky-950 dark:text-white">
+                  <span
+                    className="
+                      shrink-0
+                      text-sm
+                      font-semibold
+                      leading-6
+                      text-[#091127]
+                    "
+                  >
                     £10,072.00
                   </span>
                 </div>
 
-                {/* Footer */}
-                <div className="border-t border-zinc-200 bg-[#f5f7f6] px-4 py-3.5 dark:border-slate-700 dark:bg-slate-800">
-                  <p className="text-[9px] font-normal leading-4 text-slate-600 dark:text-slate-300">
+                {/* FOOTER */}
+                <div
+                  className="
+                    border-t
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+                    px-4
+                    py-3.5
+                  "
+                >
+                  <p
+                    className="
+                      !m-0
+                      text-[9px]
+                      font-normal
+                      leading-4
+                      text-[#5d7192]
+                    "
+                  >
                     As of 02 Aug 2026 11:40 UTC · sources current · 1
                     reconciliation exception open
                   </p>
                 </div>
               </div>
 
-              {/* Product Note */}
-              <p className="text-[9px] font-normal uppercase leading-5 tracking-wide text-sky-600 dark:text-sky-400">
+              {/* PRODUCT NOTE */}
+              <p
+                className="
+                  !m-0
+                  text-[9px]
+                  font-normal
+                  uppercase
+                  leading-5
+                  tracking-wide
+                  text-[#7890b2]
+                "
+              >
                 An unmatched payment never closes an invoice, and an initiated
                 or failed payment is never treated as settled.
               </p>
@@ -430,16 +567,33 @@ export default function Position() {
                 RIGHT — CALCULATION
             ==================================================== */}
             <div className="flex w-full flex-col gap-1.5 xl:w-1/2">
-              <h3 className="text-lg font-semibold leading-6 text-sky-950 dark:text-white">
+              <h3
+                className="
+                  !m-0
+                  text-lg
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+                "
+              >
                 What goes into the calculation
               </h3>
 
-              <p className="max-w-[480px] text-sm font-normal leading-7 text-slate-600 dark:text-slate-300">
-                Seven elements, each with a boundary on what it may and may not
-                do.
+              <p
+                className="
+                  !m-0
+                  max-w-[480px]
+                  text-sm
+                  font-normal
+                  leading-7
+                  text-[#5d7192]
+                "
+              >
+                Seven elements, each with a boundary on what it may and may
+                not do.
               </p>
 
-              {/* Table */}
+              {/* CALCULATION TABLE */}
               <div
                 className="
                   mt-3.5
@@ -447,86 +601,204 @@ export default function Position() {
                   overflow-hidden
                   rounded-2xl
                   border
-                  border-zinc-200
+                  border-[#dfe5ee]
                   bg-white
-                  dark:border-slate-700
-                  dark:bg-slate-900
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {/* Table Header */}
-                <div className="hidden grid-cols-[112px_minmax(0,1fr)_192px] border-b border-zinc-200 bg-[#fafbfa] md:grid dark:border-slate-700 dark:bg-slate-800">
-                  <div className="px-3.5 py-2">
-                    <span className="text-[9px] font-medium uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+                {/* TABLE HEADER */}
+                <div
+                  className="
+                    hidden
+                    grid-cols-[112px_minmax(0,1fr)_192px]
+                    border-b
+                    border-[#dfe5ee]
+                    bg-[#fafbfc]
+
+                    md:grid
+                  "
+                >
+                  <div className="px-3.5 py-2.5">
+                    <span
+                      className="
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Element
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-2">
-                    <span className="text-[9px] font-medium uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+                  <div className="px-3.5 py-2.5">
+                    <span
+                      className="
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Required treatment
                     </span>
                   </div>
 
-                  <div className="px-3.5 py-2">
-                    <span className="text-[9px] font-medium uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+                  <div className="px-3.5 py-2.5">
+                    <span
+                      className="
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-wide
+                        text-[#7890b2]
+                      "
+                    >
                       Boundary
                     </span>
                   </div>
                 </div>
 
-                {/* Table Rows */}
+                {/* TABLE ROWS */}
                 {calculationRows.map((row, index) => (
                   <div
                     key={row.element}
                     className={`
                       grid
                       grid-cols-1
+
                       md:grid-cols-[112px_minmax(0,1fr)_192px]
+
                       ${
                         index !== calculationRows.length - 1
-                          ? "border-b border-gray-200 dark:border-slate-700"
+                          ? "border-b border-[#edf0f4]"
                           : ""
                       }
                     `}
                   >
-                    {/* Mobile Label */}
-                    <div className="bg-[#fafbfa] px-3.5 pb-1 pt-3 md:hidden dark:bg-slate-800">
-                      <span className="text-[9px] font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400">
+                    {/* MOBILE ELEMENT LABEL */}
+                    <div
+                      className="
+                        bg-[#fafbfc]
+                        px-3.5
+                        pb-1
+                        pt-3
+
+                        md:hidden
+                      "
+                    >
+                      <span
+                        className="
+                          text-[9px]
+                          font-bold
+                          uppercase
+                          tracking-wide
+                          text-[#7890b2]
+                        "
+                      >
                         Element
                       </span>
                     </div>
 
-                    {/* Element */}
+                    {/* ELEMENT */}
                     <div className="px-3.5 py-2.5 md:py-4">
-                      <span className="text-sm font-normal leading-5 text-sky-950 dark:text-white">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
                         {row.element}
                       </span>
                     </div>
 
-                    {/* Mobile Label */}
-                    <div className="bg-[#fafbfa] px-3.5 pb-1 pt-2 md:hidden dark:bg-slate-800">
-                      <span className="text-[9px] font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400">
+                    {/* MOBILE TREATMENT LABEL */}
+                    <div
+                      className="
+                        bg-[#fafbfc]
+                        px-3.5
+                        pb-1
+                        pt-2
+
+                        md:hidden
+                      "
+                    >
+                      <span
+                        className="
+                          text-[9px]
+                          font-bold
+                          uppercase
+                          tracking-wide
+                          text-[#7890b2]
+                        "
+                      >
                         Required treatment
                       </span>
                     </div>
 
-                    {/* Treatment */}
+                    {/* TREATMENT */}
                     <div className="px-3.5 py-2.5 md:py-4">
-                      <span className="text-sm font-normal leading-5 text-sky-950 dark:text-white">
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
                         {row.treatment}
                       </span>
                     </div>
 
-                    {/* Mobile Label */}
-                    <div className="bg-[#fafbfa] px-3.5 pb-1 pt-2 md:hidden dark:bg-slate-800">
-                      <span className="text-[9px] font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400">
+                    {/* MOBILE BOUNDARY LABEL */}
+                    <div
+                      className="
+                        bg-[#fafbfc]
+                        px-3.5
+                        pb-1
+                        pt-2
+
+                        md:hidden
+                      "
+                    >
+                      <span
+                        className="
+                          text-[9px]
+                          font-bold
+                          uppercase
+                          tracking-wide
+                          text-[#7890b2]
+                        "
+                      >
                         Boundary
                       </span>
                     </div>
 
-                    {/* Boundary */}
-                    <div className="bg-[#f8f9f8] px-3.5 py-2.5 md:py-4 dark:bg-slate-800">
-                      <span className="text-sm font-normal leading-5 text-orange-600 dark:text-orange-400">
+                    {/* BOUNDARY */}
+                    <div
+                      className="
+                        bg-[#f7f8fa]
+                        px-3.5
+                        py-2.5
+
+                        md:py-4
+                      "
+                    >
+                      <span
+                        className="
+                          text-sm
+                          font-normal
+                          leading-5
+                          text-[#5d7192]
+                        "
+                      >
                         {row.boundary}
                       </span>
                     </div>
@@ -539,10 +811,22 @@ export default function Position() {
           {/* =====================================================
               AGING LABEL
           ====================================================== */}
-          <div className="flex h-9 items-center">
-            <div className="h-0.5 w-5 rounded-sm bg-gradient-to-r from-cyan-500 to-sky-600" />
+          <div className="flex items-center gap-3 self-start">
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span className="ml-[10px] text-xs font-medium uppercase leading-4 tracking-wider text-sky-600 dark:text-sky-400">
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+
+                sm:text-xs
+                sm:tracking-[0.18em]
+              "
+            >
               Aging bands · GBP · Zoiko Ltd (UK)
             </span>
           </div>
@@ -559,13 +843,15 @@ export default function Position() {
               overflow-hidden
               rounded-2xl
               border
-              border-zinc-200
-              bg-zinc-200
+              border-[#dfe5ee]
+              bg-[#dfe5ee]
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
               sm:grid-cols-2
+
               lg:grid-cols-3
+
               xl:grid-cols-5
-              dark:border-slate-700
-              dark:bg-slate-700
             "
           >
             {agingBands.map((band) => (
@@ -579,18 +865,43 @@ export default function Position() {
                   bg-white
                   px-5
                   py-5
-                  dark:bg-slate-900
                 "
               >
-                <span className="text-[9px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+                <span
+                  className="
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-wide
+                    text-[#7890b2]
+                  "
+                >
                   {band.title}
                 </span>
 
-                <span className="mt-1 text-base font-semibold leading-7 text-sky-950 dark:text-white">
+                <span
+                  className="
+                    mt-1
+                    text-base
+                    font-semibold
+                    leading-7
+                    text-[#091127]
+                  "
+                >
                   {band.amount}
                 </span>
 
-                <p className="mt-1.5 text-xs font-normal leading-5 text-slate-600 dark:text-slate-300">
+                <p
+                  className="
+                    !m-0
+                    mt-1.5
+                    text-xs
+                    font-normal
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
                   {band.description}
                 </p>
               </div>
@@ -605,20 +916,41 @@ export default function Position() {
               w-full
               rounded-r-2xl
               border-l-[3px]
-              border-sky-500
-              bg-[#eef1ef]
+              border-[#7890b2]
+              bg-white
               px-5
               py-7
+
               sm:px-7
               sm:py-9
-              dark:bg-slate-800
             "
           >
-            <span className="text-[9px] font-normal uppercase leading-4 tracking-wide text-sky-600 dark:text-sky-400">
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.14em]
+                text-[#7890b2]
+              "
+            >
               Aging boundary
             </span>
 
-            <p className="mt-2 max-w-[800px] text-sm font-normal leading-7 text-sky-950 sm:text-base dark:text-slate-100">
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[800px]
+                text-sm
+                font-normal
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
               Aging bands support workflow prioritisation. They do not
               determine legal status, collectibility or customer intent, and
               currencies are never aggregated without explicit conversion
@@ -630,8 +962,8 @@ export default function Position() {
               CTA
           ====================================================== */}
           <div className="flex w-full justify-center">
-            <button
-              type="button"
+            <Link
+              href="/outstanding-balances"
               className="
                 inline-flex
                 min-h-11
@@ -639,25 +971,23 @@ export default function Position() {
                 justify-center
                 rounded-lg
                 border
-                border-sky-950
-                bg-sky-950
+                border-[#091127]
+                bg-[#091127]
                 px-5
                 py-2.5
                 text-center
                 text-sm
                 font-normal
                 leading-6
-                text-white
+                !text-white
                 transition
-                hover:bg-sky-900
-                dark:border-sky-400
-                dark:bg-sky-400
-                dark:text-slate-950
-                dark:hover:bg-sky-300
+                hover:bg-[#17213a]
+
+                sm:text-base
               "
             >
               Explore Outstanding Balances
-            </button>
+            </Link>
           </div>
         </div>
       </div>

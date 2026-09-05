@@ -68,16 +68,14 @@ const scheduleStates = [
   {
     state: "Paused",
     tone: "neutral",
-    meaning:
-      "New due occurrences do not proceed, according to policy.",
+    meaning: "New due occurrences do not proceed, according to policy.",
     treatment:
       "Show reason, actor and treatment of pending or in-flight runs.",
   },
   {
     state: "Blocked / degraded",
     tone: "orange",
-    meaning:
-      "A dependency or configuration prevents normal operation.",
+    meaning: "A dependency or configuration prevents normal operation.",
     treatment: "Show affected schedules and the recovery route.",
   },
   {
@@ -89,10 +87,8 @@ const scheduleStates = [
   {
     state: "Retired",
     tone: "neutral",
-    meaning:
-      "Administratively ended; cannot create new runs.",
-    treatment:
-      "Preserve definitions, occurrences and evidence.",
+    meaning: "Administratively ended; cannot create new runs.",
+    treatment: "Preserve definitions, occurrences and evidence.",
   },
 ];
 
@@ -107,15 +103,15 @@ function StateBadge({
 }) {
   const styles: Record<StateTone, string> = {
     neutral:
-      "bg-color-grey-97-2 text-color-azure-35 outline-zinc-200",
+      "bg-[#f7f8fa] text-[#5d7192] outline-[#dfe5ee]",
     red:
-      "bg-color-grey-95-7 text-color-red-40 outline-color-red-87",
+      "bg-[#faf5f5] text-[#a34b4b] outline-[#eadada]",
     orange:
-      "bg-color-grey-94-3 text-color-orange-37 outline-color-orange-81-2",
+      "bg-[#fbf8f3] text-[#a46b2d] outline-[#eadfcd]",
     blue:
-      "bg-color-grey-97-2 text-color-azure-44 outline-color-azure-86",
+      "bg-[#f7f8fa] text-[#4d709d] outline-[#d9e3ef]",
     info:
-      "bg-color-grey-97-3 text-color-blue-50 outline-color-grey-92-2",
+      "bg-[#f7f8fa] text-[#466b9b] outline-[#dfe5ee]",
   };
 
   const symbols: Record<StateTone, string> = {
@@ -128,13 +124,24 @@ function StateBadge({
 
   return (
     <span
-      className={`inline-flex min-h-7 items-center gap-2 rounded-full px-2.5 outline outline-1 outline-offset-[-1px] ${styles[tone]}`}
+      className={`
+        inline-flex
+        min-h-7
+        items-center
+        gap-2
+        rounded-full
+        px-2.5
+        outline
+        outline-1
+        outline-offset-[-1px]
+        ${styles[tone]}
+      `}
     >
       <span className="text-xs font-medium leading-3">
         {symbols[tone]}
       </span>
 
-      <span className="text-[10.2px] font-medium uppercase leading-4 tracking-wide">
+      <span className="text-[10px] font-medium uppercase leading-4 tracking-wide">
         {state}
       </span>
     </span>
@@ -143,7 +150,7 @@ function StateBadge({
 
 function TableHeader({ children }: { children: ReactNode }) {
   return (
-    <span className="text-[9.8px] font-medium uppercase leading-4 tracking-wide text-color-azure-55">
+    <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
       {children}
     </span>
   );
@@ -151,157 +158,409 @@ function TableHeader({ children }: { children: ReactNode }) {
 
 export default function ChangeAndPause() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto w-full max-w-[1220px] px-6 py-16 sm:px-8 lg:px-12 lg:pt-24">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-        {/* HERO */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:gap-16">
-          <div className="flex-1">
-            <div className="mb-5 flex items-center gap-2.5">
-              <div className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-color-cyan-42 to-color-azure-51" />
+          sm:px-8
+          sm:py-16
 
-              <span className="text-xs font-medium uppercase leading-4 tracking-wider text-color-azure-44">
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Change and pause
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="max-w-[638px] text-4xl font-medium leading-tight text-sky-950 sm:text-5xl sm:leading-[53.82px]">
-              Pause and revise
-              <br />
-              schedules without
-              <br />
-              rewriting history.
-            </h2>
-          </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-          <div className="flex-1 lg:max-w-[529px]">
-            <p className="text-base font-normal leading-8 text-color-azure-35">
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Pause and revise schedules without rewriting history.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Changing a live schedule is a versioned, attributable act.
               Pausing is not cancelling, and retiring is not deleting.
             </p>
           </div>
-        </div>
 
-        {/* PROCESS */}
-        <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {steps.map((step) => (
-            <div
-              key={step.number}
-              className="rounded-2xl bg-color-white-solid px-6 py-6 outline outline-1 outline-offset-[-1px] outline-zinc-200"
-            >
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-color-cyan-42 to-color-azure-51">
-                <span className="text-[9.9px] font-semibold leading-4 text-white">
-                  {step.number}
-                </span>
-              </div>
-
-              <h3 className="pt-3 text-base font-semibold leading-5 text-sky-950">
-                {step.title}
-              </h3>
-
-              <p className="mt-2 text-sm leading-5 text-color-azure-35">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* SCHEDULE STATES */}
-        <div className="mt-12 overflow-hidden rounded-2xl bg-color-white-solid outline outline-1 outline-offset-[-1px] outline-zinc-200">
-
-          <div className="border-b border-zinc-200 bg-color-grey-97-2 px-5 py-4">
-            <span className="text-[10.1px] uppercase leading-4 tracking-wide text-color-azure-35">
-              Schedule states and required treatment
-            </span>
-          </div>
-
-          {/* TABLE HEADER */}
-          <div className="hidden grid-cols-[224px_minmax(0,1fr)_minmax(0,1.15fr)] bg-color-grey-99 md:grid">
-            <div className="border-b border-zinc-200 px-3.5 py-2">
-              <TableHeader>State</TableHeader>
-            </div>
-
-            <div className="border-b border-zinc-200 px-3.5 py-2">
-              <TableHeader>Meaning</TableHeader>
-            </div>
-
-            <div className="border-b border-zinc-200 px-3.5 py-2">
-              <TableHeader>Required treatment</TableHeader>
-            </div>
-          </div>
-
-          {/* TABLE ROWS */}
-          {scheduleStates.map((item) => (
-            <div
-              key={item.state}
-              className="grid grid-cols-1 border-b border-color-grey-93-4 last:border-b-0 md:grid-cols-[224px_minmax(0,1fr)_minmax(0,1.15fr)]"
-            >
-              <div className="px-3.5 py-3">
-                <StateBadge
-                  state={item.state}
-                  tone={item.tone as StateTone}
-                />
-              </div>
-
-              <div className="px-3.5 py-3">
-                <p className="text-sm leading-5 text-sky-950">
-                  {item.meaning}
-                </p>
-              </div>
-
-              <div className="px-3.5 py-3">
-                <p className="text-sm leading-5 text-sky-950">
-                  {item.treatment}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CHANGE BOUNDARY */}
-        <div className="mt-12 rounded-tr-2xl rounded-br-2xl border-l-[3px] border-color-azure-51 bg-color-grey-97-2 px-7 py-8">
-          <div className="text-[9.9px] uppercase leading-4 tracking-wide text-color-azure-44">
-            Change boundary
-          </div>
-
-          <p className="mt-2 max-w-[761px] text-base leading-7 text-sky-950">
-            Pause is not cancellation of issued documents or completed runs,
-            and the two are never conflated. Retroactive changes require
-            explicit correction or backfill treatment with its own approval.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-8 flex justify-center">
-          <Link
-            href="#roles-and-approvals"
+          {/* PROCESS */}
+          <div
             className="
-              inline-flex
-              min-h-11
-              items-center
-              justify-center
-              rounded-lg
-              !bg-sky-950
-              px-5
-              py-2.5
-              text-base
-              font-normal
-              leading-6
-              !text-white
-              no-underline
-              outline-none
-              transition-opacity
-              hover:!bg-sky-950
-              hover:!text-white
-              hover:opacity-90
-              focus:!bg-sky-950
-              focus:!text-white
+              mt-10
+              grid
+              w-full
+              grid-cols-1
+              gap-3
+
+              sm:mt-12
+              sm:grid-cols-2
+
+              lg:grid-cols-3
             "
           >
-            Explore Roles &amp; Approvals
-          </Link>
-        </div>
+            {steps.map((step) => (
+              <div
+                key={step.number}
+                className="
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-6
+                  py-6
+                  shadow-[0_4px_14px_rgba(15,23,42,0.035)]
+                "
+              >
+                {/* NUMBER */}
+                <div
+                  className="
+                    flex
+                    h-7
+                    w-7
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-[#091127]
+                  "
+                >
+                  <span className="text-[10px] font-semibold leading-4 text-white">
+                    {step.number}
+                  </span>
+                </div>
 
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    pt-3
+                    text-base
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
+                  {step.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* SCHEDULE STATES */}
+          <div
+            className="
+              mt-10
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              sm:mt-12
+            "
+          >
+            {/* TABLE TITLE */}
+            <div
+              className="
+                border-b
+                border-[#dfe5ee]
+                bg-[#fafbfc]
+                px-5
+                py-4
+              "
+            >
+              <span className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                Schedule states and required treatment
+              </span>
+            </div>
+
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[224px_minmax(0,1fr)_minmax(0,1.15fr)]
+                  bg-[#fafbfc]
+                "
+              >
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <TableHeader>State</TableHeader>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <TableHeader>Meaning</TableHeader>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                  <TableHeader>Required treatment</TableHeader>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {scheduleStates.map((item, index) => (
+                <div
+                  key={item.state}
+                  className={`
+                    grid
+                    grid-cols-[224px_minmax(0,1fr)_minmax(0,1.15fr)]
+                    ${
+                      index !== scheduleStates.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* STATE */}
+                  <div className="px-4 py-3.5">
+                    <StateBadge
+                      state={item.state}
+                      tone={item.tone as StateTone}
+                    />
+                  </div>
+
+                  {/* MEANING */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {item.meaning}
+                    </span>
+                  </div>
+
+                  {/* TREATMENT */}
+                  <div className="px-4 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {item.treatment}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {scheduleStates.map((item, index) => (
+                <div
+                  key={item.state}
+                  className={`
+                    p-5
+                    ${
+                      index !== scheduleStates.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* STATE */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      State
+                    </p>
+
+                    <div className="mt-2">
+                      <StateBadge
+                        state={item.state}
+                        tone={item.tone as StateTone}
+                      />
+                    </div>
+                  </div>
+
+                  {/* MEANING */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Meaning
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {item.meaning}
+                    </p>
+                  </div>
+
+                  {/* REQUIRED TREATMENT */}
+                  <div>
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Required treatment
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {item.treatment}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CHANGE BOUNDARY */}
+          <div
+            className="
+              mt-10
+              w-full
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              px-6
+              py-7
+              shadow-[0_4px_14px_rgba(15,23,42,0.035)]
+
+              sm:mt-12
+              sm:px-7
+              sm:py-8
+            "
+          >
+            <div className="text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+              Change boundary
+            </div>
+
+            <p
+              className="
+                !m-0
+                mt-2
+                max-w-[761px]
+                text-[15px]
+                leading-7
+                text-[#091127]
+
+                sm:text-base
+              "
+            >
+              Pause is not cancellation of issued documents or completed
+              runs, and the two are never conflated. Retroactive changes
+              require explicit correction or backfill treatment with its own
+              approval.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/roles-and-approvals"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-lg
+                !bg-[#091127]
+                px-5
+                py-2.5
+                text-base
+                font-normal
+                leading-6
+                !text-white
+                no-underline
+                outline-none
+                transition-opacity
+                hover:!bg-[#091127]
+                hover:!text-white
+                hover:opacity-90
+                focus:!bg-[#091127]
+                focus:!text-white
+              "
+            >
+              Explore Roles &amp; Approvals
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
