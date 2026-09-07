@@ -50,57 +50,205 @@ const runtimeFeatures: FeatureCard[] = [
 
 export default function RuntimeReliabilitySection() {
   return (
-    <section className="w-full bg-white px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[28px] bg-sky-950 px-5 py-6 text-white shadow-[0_22px_60px_rgba(2,6,23,0.14)] sm:px-8 sm:py-8 lg:px-10 lg:py-10">
-          <div className="space-y-10 lg:space-y-12">
-            <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-16">
-              <div className="flex flex-col items-start gap-4 lg:col-span-7">
-                <div className="inline-flex items-center gap-2.5">
-                  <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-500" />
-                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-cyan-400">
-                    Runtime
-                  </span>
-                </div>
-                <h2 className="text-3xl font-medium leading-tight font-sans text-white sm:text-4xl lg:text-5xl">
-                  Execution that stays safe, attributable and observable.
-                </h2>
-              </div>
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <div className="lg:col-span-5">
-                <p className="text-base font-normal leading-relaxed text-sky-200/80 sm:text-lg">
-                  How runs behave under duplication, failure, load and revision -
-                  and what evidence each one leaves.
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Runtime
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Execution that stays safe, attributable and observable.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              How runs behave under duplication, failure, load and revision —
+              and what evidence each one leaves.
+            </p>
+          </div>
+
+          {/* RUNTIME FEATURES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+
+              sm:grid-cols-2
+
+              md:grid-cols-3
+
+              lg:grid-cols-4
+            "
+          >
+            {runtimeFeatures.map((feature) => (
+              <div
+                key={feature.title}
+                className="
+                  flex
+                  min-h-[170px]
+                  flex-col
+                  justify-start
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  transition-colors
+                  hover:bg-[#f7f8fa]
+
+                  sm:p-6
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {feature.title}
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {feature.description}
                 </p>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {runtimeFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex flex-col justify-start space-y-2.5 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xs transition-all hover:border-white/20 hover:bg-white/10"
-                >
-                  <h3 className="text-sm font-semibold leading-snug font-sans text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-xs font-normal leading-relaxed text-sky-200/80">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="w-full pt-4">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-sky-900/30 shadow-md">
-                <Image
-                  src={encodeURI('/images/automation/div.vocab (1).png')}
-                  alt="Runtime Execution Model & Observability"
-                  width={955}
-                  height={571}
-                  className="h-auto w-full rounded-2xl object-cover"
-                />
-              </div>
+          {/* RUNTIME BLUEPRINT */}
+          <div className="w-full">
+            <div
+              className="
+                relative
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              <Image
+                src={encodeURI('/images/automation/div.vocab (1).png')}
+                alt="Runtime Execution Model & Observability"
+                width={955}
+                height={571}
+                className="h-auto w-full object-cover"
+              />
             </div>
           </div>
         </div>

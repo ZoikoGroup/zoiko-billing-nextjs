@@ -61,77 +61,269 @@ const ACCESS_STAGES: AccessStage[] = [
 
 export default function AccessLifecycleSection() {
   return (
-    <section className="w-full bg-slate-100 px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-          {/* Eyebrow & Title */}
-          <div className="flex max-w-2xl flex-col gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
-              <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-blue-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Access lifecycle
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Review and remove access as responsibilities change.
             </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Granting access is the easy half. These are the eight stages
+              that keep it correct over time and remove it cleanly.
+            </p>
           </div>
 
-          {/* Subtitle */}
-          <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            Granting access is the easy half. These are the eight stages that keep it correct over time and remove it cleanly.
-          </p>
-        </div>
+          {/* ACCESS STAGES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
 
-        {/* 8-Stage Responsive Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {ACCESS_STAGES.map((stage) => (
-            <div
-              key={stage.step}
-              className="flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md"
-            >
-              {/* Badge Number */}
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 font-['IBM_Plex_Mono'] text-[10px] font-semibold text-white">
-                {stage.step}
-              </div>
+              sm:grid-cols-2
 
-              {/* Title & Description */}
-              <div className="flex flex-col gap-1.5 pt-1">
-                <h3 className="font-['Plus_Jakarta_Sans'] text-sm font-semibold text-sky-950">
-                  {stage.title}
-                </h3>
-                <p className="font-['Segoe_UI'] text-xs font-normal leading-relaxed text-slate-600">
-                  {stage.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Revocation Boundary Callout */}
-        <div className="flex flex-col gap-2 rounded-r-2xl border-l-[3px] border-blue-600 bg-slate-100 p-6 sm:p-7">
-          <span className="font-['IBM_Plex_Mono'] text-[10px] font-normal uppercase tracking-wide text-blue-600">
-            Revocation boundary
-          </span>
-          <p className="max-w-4xl font-['Segoe_UI'] text-base font-normal leading-relaxed text-sky-950">
-            Account deletion, membership revocation and evidence retention are three distinct processes. Revocation behaviour across external identity providers and connectors depends on each integration, so no promise of instant revocation everywhere is made here.
-          </p>
-        </div>
-
-        {/* Bottom Navigation CTA */}
-        <div className="flex justify-center pt-2">
-          <Link
-            href="/security-and-trust"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-sky-950 px-6 py-2.5 font-['Segoe_UI'] "
-            style={{ color: 'white' }}
+              lg:grid-cols-4
+            "
           >
-            Review security and trust
-          </Link>
-        </div>
+            {ACCESS_STAGES.map((stage) => (
+              <div
+                key={stage.step}
+                className="
+                  flex
+                  min-h-[174px]
+                  flex-col
+                  gap-3
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* STEP */}
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
+                  "
+                >
+                  {stage.step}
+                </span>
 
+                {/* TITLE & DESCRIPTION */}
+                <div className="flex flex-col gap-1.5">
+                  <h3
+                    className="
+                      !m-0
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    {stage.title}
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {stage.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* REVOCATION BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              p-5
+
+              sm:p-6
+
+              md:p-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Revocation boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-4xl
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+
+                sm:text-base
+                sm:leading-7
+              "
+            >
+              Account deletion, membership revocation and evidence retention
+              are three distinct processes. Revocation behaviour across
+              external identity providers and connectors depends on each
+              integration, so no promise of instant revocation everywhere is
+              made here.
+            </p>
+          </div>
+
+          {/* BOTTOM NAVIGATION CTA */}
+          <div className="flex justify-center pt-1">
+            <Link
+              href="/security-overview"
+              className="
+                inline-flex
+                min-h-[44px]
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-2.5
+                text-sm
+                font-semibold
+                !text-white
+                transition-opacity
+                hover:opacity-90
+              "
+            >
+              Review security and trust
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

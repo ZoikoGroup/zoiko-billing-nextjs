@@ -26,7 +26,7 @@ const faqData: FaqItem[] = [
   {
     question: 'Which actions require approval?',
     answer:
-      'High-severity actions-such as overrides, manual refunds, rate changes, or bulk data exports-can be configured to require explicit multi-step authorization.',
+      'High-severity actions — such as overrides, manual refunds, rate changes, or bulk data exports — can be configured to require explicit multi-step authorization.',
   },
   {
     question: 'What happens when a workflow fails?',
@@ -58,64 +58,224 @@ export default function AutomationFaqSection() {
   };
 
   return (
-    <section className="w-full bg-white px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col items-start gap-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-sky-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Questions
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight font-sans text-sky-950 sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Direct answers about automation.
             </h2>
-          </div>
 
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Every answer is rendered on the page and works without JavaScript.
             </p>
           </div>
-        </div>
 
-        <div className="max-w-4xl divide-y divide-slate-200 border-y border-slate-200">
-          {faqData.map((item, index) => {
-            const isOpen = openIndex === index;
+          {/* FAQ */}
+          <div
+            className="
+              w-full
+              max-w-[900px]
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {faqData.map((item, index) => {
+              const isOpen = openIndex === index;
 
-            return (
-              <div key={item.question} className="py-2">
-                <button
-                  type="button"
-                  onClick={() => toggleAccordion(index)}
-                  className="flex w-full items-center justify-between gap-4 py-4 text-left focus:outline-hidden group"
-                  aria-expanded={isOpen}
+              return (
+                <div
+                  key={item.question}
+                  className={
+                    index !== faqData.length - 1
+                      ? 'border-b border-[#edf0f4]'
+                      : ''
+                  }
                 >
-                  <span className="text-base font-semibold leading-snug font-sans text-sky-950 transition-colors group-hover:text-sky-700 sm:text-lg">
-                    {item.question}
-                  </span>
-                  <span
-                    className={`flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-sm font-semibold transition-colors ${
-                      isOpen
-                        ? 'border border-sky-500 bg-sky-500 text-white'
-                        : 'border border-slate-300 text-slate-600 group-hover:border-slate-400'
-                    }`}
+                  <button
+                    type="button"
+                    onClick={() => toggleAccordion(index)}
+                    className="
+                      group
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-4
+                      px-5
+                      py-5
+                      text-left
+                      focus:outline-none
+                      sm:px-6
+                    "
+                    aria-expanded={isOpen}
                   >
-                    {isOpen ? '−' : '+'}
-                  </span>
-                </button>
+                    <span
+                      className="
+                        text-base
+                        font-semibold
+                        leading-6
+                        text-[#091127]
+                        transition-colors
+                        group-hover:text-[#7890b2]
 
-                {isOpen && (
-                  <div className="pb-5 pr-8">
-                    <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                        sm:text-lg
+                      "
+                    >
+                      {item.question}
+                    </span>
+
+                    <span
+                      className={`
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        text-sm
+                        font-semibold
+                        transition-colors
+
+                        ${
+                          isOpen
+                            ? 'border border-[#7890b2] bg-[#7890b2] text-white'
+                            : 'border border-[#cbd5e1] bg-white text-[#7890b2] group-hover:border-[#7890b2]'
+                        }
+                      `}
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-5 pb-5 pr-12 sm:px-6 sm:pb-6 sm:pr-16">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+
+                          sm:text-base
+                          sm:leading-7
+                        "
+                      >
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

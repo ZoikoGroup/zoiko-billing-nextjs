@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface SecurityFeature {
   title: string;
@@ -50,64 +51,217 @@ const securityFeatures: SecurityFeature[] = [
 
 export default function TrustSecuritySection() {
   return (
-    <section className="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-12 bg-slate-100 text-slate-800">
-      <div className="max-w-7xl mx-auto space-y-10 lg:space-y-12">
-        
-        {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-end">
-          <div className="lg:col-span-7 flex flex-col items-start gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="w-5 h-0.5 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-xs shrink-0" />
-              <span className="text-sky-600 text-xs font-mono font-medium uppercase tracking-wider">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Trust, privacy and security
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-sky-950 text-3xl sm:text-4xl lg:text-5xl font-medium font-sans leading-tight">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Automation handles less data, not more.
             </h2>
-          </div>
 
-          <div className="lg:col-span-5">
-            <p className="text-slate-600 text-base sm:text-lg font-normal leading-relaxed">
-              Workflow inputs, logs and notifications are deliberately minimal, and every service identity runs on least privilege.
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Workflow inputs, logs and notifications are deliberately minimal,
+              and every service identity runs on least privilege.
             </p>
           </div>
-        </div>
 
-        {/* Security Features Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-          {securityFeatures.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 bg-white border border-slate-200 rounded-2xl flex flex-col justify-start space-y-2 hover:border-slate-300 transition-colors shadow-xs"
+          {/* SECURITY FEATURES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+
+              sm:grid-cols-2
+            "
+          >
+            {securityFeatures.map((feature) => (
+              <div
+                key={feature.title}
+                className="
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                  sm:p-6
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {feature.title}
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* ACTIONS */}
+          <div className="flex w-full flex-wrap items-center gap-4 pt-1">
+            {/* Destination not confirmed — kept as anchor */}
+            <a
+              href="/security-overview"
+              className="
+                inline-flex
+                rounded-lg
+                bg-[#091127]
+                px-5
+                py-2.5
+                text-sm
+                font-semibold
+                !text-white
+                shadow-sm
+                transition-colors
+                hover:bg-[#17213b]
+                hover:!text-white
+              "
             >
-              <h3 className="text-sky-950 text-base font-semibold font-sans leading-snug">
-                {feature.title}
-              </h3>
-              <p className="text-slate-600 text-sm font-normal leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
+              Review security and trust
+            </a>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-4 flex-wrap pt-2">
-          <a
-            href="#review-security"
-            className="px-5 py-2.5 bg-sky-950 !text-white text-base font-normal rounded-lg hover:bg-sky-900 hover:!text-white transition-colors shadow-xs"
-          >
-            Review security and trust
-          </a>
-          <a
-            href="#privacy-notice"
-            className="inline-flex items-center gap-2 text-sky-600 text-base font-normal hover:text-sky-700 transition-colors px-2 py-2.5"
-          >
-            <span>Read the privacy notice</span>
-            <span className="font-mono font-bold">→</span>
-          </a>
+            <Link
+              href="/privacy-notice"
+              className="
+                inline-flex
+                items-center
+                gap-2
+                px-2
+                py-2.5
+                text-sm
+                font-semibold
+                !text-[#7890b2]
+                transition-colors
+                hover:!text-[#091127]
+              "
+            >
+              <span>Read the privacy notice</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
-
       </div>
     </section>
   );

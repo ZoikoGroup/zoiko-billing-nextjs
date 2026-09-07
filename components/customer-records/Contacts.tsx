@@ -40,56 +40,157 @@ const contacts = [
 
 export default function Contacts() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 lg:px-14 lg:py-20">
-      <div className="mx-auto w-full max-w-[1240px] px-0 sm:px-4 lg:px-7">
-        <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          {/* Left Content */}
-          <div className="flex w-full flex-col items-start">
-            {/* Eyebrow */}
-            <div className="flex h-4 items-center gap-2">
-              <div className="h-px w-6 bg-blue-600 opacity-75" />
+    <section className="w-full bg-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-              <span className="text-xs font-bold uppercase leading-4 tracking-widest text-blue-600">
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            grid
+            w-full
+            max-w-[1240px]
+            grid-cols-1
+            items-center
+            gap-10
+
+            lg:grid-cols-2
+            lg:gap-14
+          "
+        >
+          {/* LEFT CONTENT */}
+          <div className="flex w-full flex-col items-start">
+            {/* EYEBROW */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Contacts &amp; responsibilities
               </span>
             </div>
 
-            {/* Heading */}
-            <h2 className="mt-4 text-3xl font-extrabold leading-9 tracking-tight text-slate-900 sm:text-4xl">
-              One email field cannot carry six
-              <br className="hidden sm:block" />
-              purposes.
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                mt-4
+                w-full
+                max-w-[600px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              One email field cannot carry six purposes.
             </h2>
 
-            {/* Description */}
-            <p className="mt-4 w-full max-w-[687px] text-sm font-normal leading-6 text-slate-600 sm:text-base sm:leading-7">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                mt-4
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               Billing questions, document delivery, finance coordination,
               administrative change, procurement and support are different
               jobs, often different people. Each contact role is purpose-bound
               and separately stated.
             </p>
 
-            {/* Contact List */}
+            {/* CONTACT LIST */}
             <div className="mt-6 flex w-full flex-col">
               {contacts.map((contact) => (
                 <div
                   key={contact.title}
-                  className="flex w-full flex-col gap-1 py-2.5 sm:flex-row sm:items-start sm:gap-4"
+                  className="
+                    flex
+                    w-full
+                    flex-col
+                    gap-1
+                    py-2.5
+
+                    sm:flex-row
+                    sm:items-start
+                    sm:gap-4
+                  "
                 >
-                  {/* Bullet */}
+                  {/* BULLET */}
                   <div className="mt-2 shrink-0">
-                    <div className="h-1.5 w-1.5 rounded-sm bg-blue-600" />
+                    <div className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                   </div>
 
-                  {/* Title */}
+                  {/* TITLE */}
                   <div className="w-full shrink-0 sm:w-[190px]">
-                    <p className="text-sm font-bold leading-6 text-slate-600">
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-[#091127]
+                      "
+                    >
                       {contact.title}
                     </p>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-sm font-normal leading-6 text-slate-600">
+                  {/* DESCRIPTION */}
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
                     {contact.description}
                   </p>
                 </div>
@@ -97,8 +198,21 @@ export default function Contacts() {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="w-full rounded-3xl bg-gray-100 p-3 sm:p-4">
+          {/* RIGHT IMAGE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-3xl
+              border
+              border-[#dfe5ee]
+              bg-[#f7f8fa]
+              p-3
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+              sm:p-4
+            "
+          >
             <div className="relative w-full overflow-hidden rounded-2xl">
               <Image
                 src="/images/customer-records/contacts.png"
@@ -106,6 +220,7 @@ export default function Contacts() {
                 width={548}
                 height={554}
                 className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 548px"
               />
             </div>
           </div>

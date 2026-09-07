@@ -1,41 +1,144 @@
-import React from 'react';
 import Image from 'next/image';
 
 export default function BuildingBlocksSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col items-start gap-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-sky-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Building blocks
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="max-w-xl text-3xl font-medium leading-tight font-sans text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Build workflows from explicit, reviewable parts.
             </h2>
-          </div>
 
-          <div className="max-w-lg lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              Six concepts are shared by every supported workflow. Select one to
-              see what it covers.
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Six concepts are shared by every supported workflow. Select one
+              to see what it covers.
             </p>
           </div>
-        </div>
 
-        <div className="w-full pt-4">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
-            <Image
-              src={encodeURI('/images/automation/div.anat.png')}
-              alt="Interactive workflow building blocks diagram"
-              width={1116}
-              height={467}
-              className="h-auto w-full rounded-3xl object-cover"
-            />
+          {/* DIAGRAM */}
+          <div className="w-full">
+            <div
+              className="
+                relative
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              <Image
+                src={encodeURI('/images/automation/div.anat.png')}
+                alt="Interactive workflow building blocks diagram"
+                width={1116}
+                height={467}
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
