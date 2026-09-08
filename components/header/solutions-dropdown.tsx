@@ -29,9 +29,9 @@ type MenuItem = {
 };
 
 const BUSINESS_NEED_ITEMS: MenuItem[] = [
-  { title: 'Create invoices faster', href: '#', icon: Zap },
-  { title: 'Improve payment visibility', href: '#', icon: Eye },
-  { title: 'Reduce outstanding balances', href: '#', icon: BarChart3 },
+  { title: 'Create invoices faster', href: '/invoices', icon: Zap },
+  { title: 'Improve payment visibility', href: '/payments-and-reconcilliation', icon: Eye },
+  { title: 'Reduce outstanding balances', href: '/outstanding-balances', icon: BarChart3 },
   { title: 'Standardise billing control', href: '#', icon: ShieldCheck },
   { title: 'Consolidate multiple entities', href: '/multi-entity-billing', icon: Building2 },
   { title: 'Strengthen auditability', href: '#', icon: FileText },
