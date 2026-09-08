@@ -62,87 +62,309 @@ const RESPONSIBILITIES: ResponsibilityCard[] = [
 
 export default function ResponsibilitiesSection() {
   return (
-    <section className="w-full bg-slate-100 px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-          {/* Eyebrow & Title */}
-          <div className="flex max-w-2xl flex-col gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
-              <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-blue-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Responsibilities
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Six responsibilities, each with its own ceiling.
             </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              A conceptual model. Exact role names and the permissions
+              available to them are configured in the product, not fixed by
+              this page.
+            </p>
           </div>
 
-          {/* Subtitle */}
-          <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            A conceptual model. Exact role names and the permissions available to them are configured in the product, not fixed by this page.
-          </p>
-        </div>
+          {/* RESPONSIBILITIES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
 
-        {/* Responsibilities 6-Card Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {RESPONSIBILITIES.map((card) => (
-            <div
-              key={card.number}
-              className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
-            >
-              {/* Badge Number */}
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-100 bg-slate-50 font-['IBM_Plex_Mono'] text-xs font-semibold text-blue-600">
-                {card.number}
-              </div>
+              sm:grid-cols-2
 
-              {/* Title & Description */}
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-['Plus_Jakarta_Sans'] text-base font-semibold text-sky-950">
-                  {card.title}
-                </h3>
-                <p className="font-['Segoe_UI'] text-sm font-normal leading-relaxed text-slate-600">
-                  {card.description}
-                </p>
-              </div>
-
-              {/* Ceiling Boundary Sub-block */}
-              <div className="mt-auto flex flex-col gap-1 border-t border-zinc-100 pt-3">
-                <span className="font-['IBM_Plex_Mono'] text-[10px] font-medium uppercase tracking-wide text-slate-400">
-                  Ceiling
-                </span>
-                <p className="font-['Segoe_UI'] text-xs font-normal leading-normal text-slate-500">
-                  {card.ceiling}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Model Boundary Callout */}
-        <div className="flex flex-col gap-2 rounded-r-2xl border-l-[3px] border-blue-600 bg-slate-100 p-6 sm:p-7">
-          <span className="font-['IBM_Plex_Mono'] text-xs font-normal uppercase tracking-wide text-blue-600">
-            Model boundary
-          </span>
-          <p className="max-w-3xl font-['Segoe_UI'] text-base font-normal leading-relaxed text-sky-950">
-            Owner status does not bypass legal, contractual, security or policy controls, and a role title alone establishes no authority outside the platform.
-          </p>
-        </div>
-
-        {/* Bottom CTA Button */}
-        <div className="flex justify-center pt-2">
-          <Link
-            href="/workflows"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-sky-950 px-6 py-2.5 font-['Segoe_UI']  font-normal text-white"
-             style={{ color: 'white' }}
+              lg:grid-cols-3
+            "
           >
-            See how workflows use these roles
-          </Link>
-        </div>
+            {RESPONSIBILITIES.map((card) => (
+              <div
+                key={card.number}
+                className="
+                  flex
+                  min-h-[245px]
+                  flex-col
+                  gap-4
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                {/* NUMBER */}
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
+                  "
+                >
+                  {card.number}
+                </span>
 
+                {/* TITLE & DESCRIPTION */}
+                <div className="flex flex-col gap-1.5">
+                  <h3
+                    className="
+                      !m-0
+                      text-sm
+                      font-semibold
+                      leading-5
+                      text-[#091127]
+                    "
+                  >
+                    {card.title}
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {card.description}
+                  </p>
+                </div>
+
+                {/* CEILING */}
+                <div
+                  className="
+                    mt-auto
+                    flex
+                    flex-col
+                    gap-1
+                    border-t
+                    border-[#edf0f4]
+                    pt-3
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Ceiling
+                  </span>
+
+                  <p
+                    className="
+                      !m-0
+                      text-xs
+                      font-normal
+                      leading-5
+                      text-[#5d7192]
+                    "
+                  >
+                    {card.ceiling}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MODEL BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              p-5
+
+              sm:p-6
+
+              md:p-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Model boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-3xl
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+
+                sm:text-base
+                sm:leading-7
+              "
+            >
+              Owner status does not bypass legal, contractual, security or
+              policy controls, and a role title alone establishes no authority
+              outside the platform.
+            </p>
+          </div>
+
+          {/* BOTTOM CTA */}
+          <div className="flex justify-center pt-1">
+            <Link
+              href="/automation"
+              className="
+                inline-flex
+                min-h-[44px]
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-2.5
+                text-sm
+                font-semibold
+                !text-white
+                transition-opacity
+                hover:opacity-90
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#091127]
+                focus:ring-offset-2
+              "
+            >
+              See how workflows use these roles
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

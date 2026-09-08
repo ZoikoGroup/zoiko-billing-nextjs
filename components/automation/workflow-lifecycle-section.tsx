@@ -47,63 +47,231 @@ const steps: LifecycleStep[] = [
 
 export default function WorkflowLifecycleSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col items-start gap-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-sky-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Lifecycle
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight font-sans text-sky-950 sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Approve, activate and revise workflows without losing history.
             </h2>
-          </div>
 
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               A definition moves through the same governed path every time, and
-              editing an active definition never silently changes work already in
-              flight.
+              editing an active definition never silently changes work already
+              in flight.
             </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-          {steps.map((item) => (
-            <div
-              key={item.step}
-              className="flex flex-col justify-between space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs transition-all hover:border-sky-500/40 hover:shadow-sm"
-            >
-              <div className="flex items-center justify-between">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-sky-500 text-[11px] font-mono font-semibold text-white shadow-xs">
+          {/* LIFECYCLE STEPS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+
+              sm:grid-cols-2
+
+              md:grid-cols-4
+
+              lg:grid-cols-4
+            "
+          >
+            {steps.map((item) => (
+              <div
+                key={item.step}
+                className="
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  justify-between
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  transition-colors
+                  hover:bg-[#f7f8fa]
+
+                  sm:p-6
+                "
+              >
+                {/* NUMBER */}
+                <span
+                  className="
+                    flex
+                    h-8
+                    w-8
+                    items-center
+                    justify-center
+                    rounded-lg
+                    border
+                    border-[#dfe5ee]
+                    bg-[#f7f8fa]
+                    text-[11px]
+                    font-bold
+                    leading-none
+                    text-[#7890b2]
+                  "
+                >
                   {item.step}
                 </span>
-              </div>
 
-              <div className="space-y-1.5">
-                <h3 className="text-base font-semibold leading-snug font-sans text-sky-950">
-                  {item.title}
-                </h3>
-                <p className="text-xs font-normal leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
+                {/* CONTENT */}
+                <div>
+                  <h3
+                    className="
+                      !m-0
+                      text-base
+                      font-semibold
+                      leading-6
+                      text-[#091127]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  <p
+                    className="
+                      !m-0
+                      mt-1.5
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {item.description}
+                  </p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* BLUEPRINT */}
+          <div className="w-full">
+            <div
+              className="
+                relative
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              <Image
+                src={encodeURI('/images/automation/div.vocab.png')}
+                alt="Workflow Lifecycle Visual Blueprint"
+                width={1116}
+                height={558}
+                className="h-auto w-full object-cover"
+              />
             </div>
-          ))}
-        </div>
-
-        <div className="w-full pt-4">
-          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-xs">
-            <Image
-              src={encodeURI('/images/automation/div.vocab.png')}
-              alt="Workflow Lifecycle Visual Blueprint"
-              width={1116}
-              height={558}
-              className="h-auto w-full rounded-2xl object-cover"
-            />
           </div>
         </div>
       </div>

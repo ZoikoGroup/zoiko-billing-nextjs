@@ -23,10 +23,10 @@ const navItems: NavItem[] = [
   { label: 'Product', href: '/product', dropdown: 'product' },
   { label: 'Solutions', href: '/solutions', dropdown: 'solutions' },
   { label: 'Global Billing', href: '/global-billing-header', dropdown: 'global-billing' },
-  { label: 'Integrations', href: '#integrations', dropdown: 'integrations' },
+  { label: 'Integrations', href: '/integrations', dropdown: 'integrations' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'Resources', href: '#resources', dropdown: 'resources' },
-  { label: 'Company', href: '#company', dropdown: 'company' },
+  { label: 'Resources', href: '/resources', dropdown: 'resources' },
+  { label: 'Company', href: '/company', dropdown: 'company' },
 ];
 
 interface HeaderNavigationProps {

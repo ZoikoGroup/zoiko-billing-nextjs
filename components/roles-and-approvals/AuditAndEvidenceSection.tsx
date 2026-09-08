@@ -57,105 +57,374 @@ const EMERGENCY_TAGS = [
 
 export default function AuditAndEvidenceSection() {
   return (
-    <section className="w-full bg-slate-100 px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-          {/* Eyebrow & Title */}
-          <div className="flex max-w-2xl flex-col gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
-              <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-blue-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Audit and evidence
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[800px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Preserve who requested, approved and executed each action.
             </h2>
-          </div>
 
-          {/* Subtitle */}
-          <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            Evidence exists so a decision can be reconstructed later — by your own team, an auditor or a customer in dispute.
-          </p>
-        </div>
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
 
-        {/* Audit Categories Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {AUDIT_ITEMS.map((item) => (
-            <div
-              key={item.id}
-              className="flex flex-col gap-2 rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-shadow hover:shadow-md"
+                sm:text-base
+              "
             >
-              <h3 className="font-['Plus_Jakarta_Sans'] text-base font-semibold text-sky-950">
-                {item.title}
-              </h3>
-              <p className="font-['Segoe_UI'] text-sm font-normal leading-relaxed text-slate-600">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Emergency Access Special Callout */}
-        <div className="flex flex-col gap-4 rounded-2xl border border-amber-300 bg-amber-50/50 p-6 sm:p-8">
-          <span className="font-['IBM_Plex_Mono'] text-[10px] font-medium uppercase tracking-wide text-amber-700">
-            Emergency access
-          </span>
-
-          <div className="flex flex-col gap-2">
-            <h3 className="font-['Plus_Jakarta_Sans'] text-lg font-semibold text-sky-950">
-              Exceptional, time-limited and reviewed afterwards
-            </h3>
-            <p className="max-w-4xl font-['Segoe_UI'] text-sm font-normal leading-relaxed text-amber-950/80 sm:text-base">
-              Where emergency access exists, it is requested with a reason, granted for a limited duration, monitored while active and reviewed retrospectively. It is an exception path with a paper trail — not a standing master key, and not a backdoor.
+              Evidence exists so a decision can be reconstructed later — by
+              your own team, an auditor or a customer in dispute.
             </p>
           </div>
 
-          {/* Emergency Process Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {EMERGENCY_TAGS.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-amber-300 bg-white px-3.5 py-1.5 font-['IBM_Plex_Mono'] text-xs font-normal text-amber-900"
+          {/* AUDIT CATEGORIES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+
+              sm:grid-cols-2
+
+              lg:grid-cols-3
+            "
+          >
+            {AUDIT_ITEMS.map((item) => (
+              <div
+                key={item.id}
+                className="
+                  flex
+                  min-h-[150px]
+                  flex-col
+                  gap-2
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
               >
-                {tag}
-              </span>
+                <h3
+                  className="
+                    !m-0
+                    text-sm
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
             ))}
           </div>
-        </div>
 
-        {/* Evidence Boundary Callout */}
-        <div className="flex flex-col gap-2 rounded-r-2xl border-l-[3px] border-blue-600 bg-slate-100 p-6 sm:p-7">
-          <span className="font-['IBM_Plex_Mono'] text-[10px] font-normal uppercase tracking-wide text-blue-600">
-            Evidence boundary
-          </span>
-          <p className="max-w-4xl font-['Segoe_UI'] text-base font-normal leading-relaxed text-sky-950">
-            Audit records are evidence, not proof that every action was appropriate or compliant. They show what happened and who authorized it; judging whether it was correct remains a human responsibility.
-          </p>
-        </div>
+          {/* EMERGENCY ACCESS */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-4
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              p-5
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
 
-        {/* Bottom CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Link
-            href="/security-overview"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-sky-950 px-6 py-2.5 font-['Segoe_UI'] text-base font-normal text-white transition-colors hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-950 focus:ring-offset-2"
-            style={{ color: 'white' }}
+              sm:p-7
+            "
           >
-            Security overview
-          </Link>
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Emergency access
+            </span>
 
-          <Link
-            href="/privacy-notice"
-            className="inline-flex items-center gap-1.5 px-3 py-2.5 font-['Segoe_UI'] text-base font-normal text-blue-600 transition-colors hover:text-blue-700 focus:outline-none"
+            <div className="flex flex-col gap-2">
+              <h3
+                className="
+                  !m-0
+                  text-base
+                  font-semibold
+                  leading-6
+                  text-[#091127]
+
+                  sm:text-lg
+                "
+              >
+                Exceptional, time-limited and reviewed afterwards
+              </h3>
+
+              <p
+                className="
+                  !m-0
+                  w-full
+                  max-w-4xl
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+
+                  sm:text-base
+                  sm:leading-7
+                "
+              >
+                Where emergency access exists, it is requested with a reason,
+                granted for a limited duration, monitored while active and
+                reviewed retrospectively. It is an exception path with a paper
+                trail — not a standing master key, and not a backdoor.
+              </p>
+            </div>
+
+            {/* EMERGENCY PROCESS TAGS */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {EMERGENCY_TAGS.map((tag) => (
+                <span
+                  key={tag}
+                  className="
+                    rounded-full
+                    border
+                    border-[#dfe5ee]
+                    bg-[#f7f8fa]
+                    px-3.5
+                    py-1.5
+                    text-xs
+                    font-medium
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* EVIDENCE BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              p-5
+
+              sm:p-6
+
+              md:p-7
+            "
           >
-            Read the privacy notice
-            <span className="font-['IBM_Plex_Mono'] font-bold">→</span>
-          </Link>
-        </div>
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Evidence boundary
+            </span>
 
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-4xl
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+
+                sm:text-base
+                sm:leading-7
+              "
+            >
+              Audit records are evidence, not proof that every action was
+              appropriate or compliant. They show what happened and who
+              authorized it; judging whether it was correct remains a human
+              responsibility.
+            </p>
+          </div>
+
+          {/* BOTTOM CTAs */}
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-4
+              pt-1
+            "
+          >
+            <Link
+              href="/security-overview"
+              className="
+                inline-flex
+                min-h-[44px]
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-2.5
+                text-sm
+                font-semibold
+                !text-white
+                transition-opacity
+                hover:opacity-90
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#091127]
+                focus:ring-offset-2
+              "
+            >
+              Security overview
+            </Link>
+
+            <Link
+              href="/privacy-notice"
+              className="
+                inline-flex
+                min-h-[44px]
+                items-center
+                justify-center
+                rounded-lg
+                px-3
+                py-2.5
+                text-sm
+                font-semibold
+                text-[#5d7192]
+                transition-colors
+                hover:text-[#091127]
+              "
+            >
+              Read the privacy notice
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

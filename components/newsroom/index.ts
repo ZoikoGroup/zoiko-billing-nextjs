@@ -1,0 +1,9 @@
+export { default as CorrectionsAndSupersession } from "./CorrectionsAndSupersession";
+export { default as MediaResources } from "./MediaResources";
+export { default as Newsroom } from "./Newsroom";
+export { default as NewsroomFAQ } from "./NewsroomFAQ";
+export { default as NewsroomPublications } from "./NewsroomPublications";
+export { default as PublicationDetailTemplate } from "./PublicationDetailTemplate";
+export { default as PublicationLifecycle } from "./PublicationLifecycle";
+export { default as QuoteReferenceGovernance } from "./QuoteReferenceGovernance";
+export { default as WhereCompanyNewsLives } from "./WhereCompanyNewsLives";

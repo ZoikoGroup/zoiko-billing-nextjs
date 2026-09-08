@@ -60,84 +60,243 @@ const FAQ_DATA: FAQItem[] = [
 ];
 
 export default function FAQSection() {
-  // First item open by default
-  const [openId, setOpenId] = useState<string | null>('role-vs-permission');
+  const [openId, setOpenId] = useState<string | null>(
+    'role-vs-permission',
+  );
 
   const toggleFAQ = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <section className="w-full bg-slate-50 px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:gap-14">
-        
-        {/* Section Header */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-          {/* Eyebrow & Main Heading */}
-          <div className="flex max-w-2xl flex-col gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
-              <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-blue-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Questions
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Direct answers about roles and approvals.
             </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Every answer is rendered on the page and works without
+              JavaScript.
+            </p>
           </div>
 
-          {/* Subtitle */}
-          <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            Every answer is rendered on the page and works without JavaScript.
-          </p>
-        </div>
+          {/* FAQ LIST */}
+          <div
+            className="
+              mx-auto
+              flex
+              w-full
+              max-w-[900px]
+              flex-col
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {FAQ_DATA.map((item, index) => {
+              const isOpen = openId === item.id;
 
-        {/* Accordion FAQ List Container */}
-        <div className="flex w-full max-w-4xl flex-col">
-          {FAQ_DATA.map((item) => {
-            const isOpen = openId === item.id;
-
-            return (
-              <div
-                key={item.id}
-                className="border-b border-zinc-200 transition-colors"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFAQ(item.id)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-start justify-between gap-4 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              return (
+                <div
+                  key={item.id}
+                  className={
+                    index !== FAQ_DATA.length - 1
+                      ? 'border-b border-[#edf0f4]'
+                      : ''
+                  }
                 >
-                  <span className="font-['Plus_Jakarta_Sans'] text-base font-semibold text-sky-950 sm:text-lg">
-                    {item.question}
-                  </span>
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(item.id)}
+                    aria-expanded={isOpen}
+                    aria-controls={`${item.id}-answer`}
+                    className="
+                      flex
+                      w-full
+                      items-start
+                      justify-between
+                      gap-4
+                      px-5
+                      py-5
+                      text-left
+                      focus:outline-none
+                      focus-visible:ring-2
+                      focus-visible:ring-[#7890b2]
+                      focus-visible:ring-inset
 
-                  {/* Toggle Indicator (- / +) */}
-                  <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-['IBM_Plex_Mono'] text-sm font-semibold transition-colors ${
-                      isOpen
-                        ? 'bg-blue-600 text-white'
-                        : 'border border-zinc-300 text-slate-600 hover:border-zinc-400'
-                    }`}
+                      sm:px-6
+                    "
                   >
-                    {isOpen ? '−' : '+'}
-                  </span>
-                </button>
+                    <span
+                      className="
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-[#091127]
 
-                {/* Collapsible Answer Content */}
-                {isOpen && (
-                  <div className="pb-6 pr-10">
-                    <p className="font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                        sm:text-base
+                      "
+                    >
+                      {item.question}
+                    </span>
+
+                    {/* TOGGLE */}
+                    <span
+                      aria-hidden="true"
+                      className={`
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        text-sm
+                        font-semibold
+                        transition-colors
+                        ${
+                          isOpen
+                            ? 'bg-[#091127] text-white'
+                            : 'border border-[#dfe5ee] bg-[#f7f8fa] text-[#5d7192]'
+                        }
+                      `}
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {/* ANSWER */}
+                  {isOpen && (
+                    <div
+                      id={`${item.id}-answer`}
+                      className="px-5 pb-6 pr-12 sm:px-6 sm:pr-16"
+                    >
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+
+                          sm:text-base
+                          sm:leading-7
+                        "
+                      >
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
-
       </div>
     </section>
   );
