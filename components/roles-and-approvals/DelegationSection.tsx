@@ -49,85 +49,282 @@ const DELEGATION_RULES: DelegationRule[] = [
 
 export default function DelegationSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-14">
-        
-        {/* Section Header */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-          {/* Eyebrow & Title */}
-          <div className="flex max-w-2xl flex-col gap-4">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
-              <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-blue-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Delegation
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-sky-950 sm:text-4xl lg:text-5xl">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[800px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Maintain continuity without transferring unlimited authority.
             </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              People take leave and workloads shift. Delegation covers that
+              without anyone sharing a password or inheriting powers they were
+              never granted.
+            </p>
           </div>
 
-          {/* Subtitle */}
-          <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-            People take leave and workloads shift. Delegation covers that without anyone sharing a password or inheriting powers they were never granted.
-          </p>
-        </div>
+          {/* MAIN CONTENT */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-8
 
-        {/* Main Content 2-Column Grid */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          
-          {/* Column 1: Numbered Rules List */}
-          <div className="flex flex-col divide-y divide-zinc-200">
-            {DELEGATION_RULES.map((rule) => (
+              lg:grid-cols-2
+              lg:gap-11
+            "
+          >
+            {/* DELEGATION RULES */}
+            <div
+              className="
+                flex
+                w-full
+                flex-col
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {DELEGATION_RULES.map((rule, index) => (
+                <div
+                  key={rule.step}
+                  className={`
+                    flex
+                    items-start
+                    gap-4
+                    p-5
+                    ${index !== DELEGATION_RULES.length - 1 ? 'border-b border-[#edf0f4]' : ''}
+                  `}
+                >
+                  {/* STEP */}
+                  <span
+                    className="
+                      shrink-0
+                      pt-0.5
+                      text-[10px]
+                      font-bold
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    {rule.step}
+                  </span>
+
+                  {/* TITLE & DESCRIPTION */}
+                  <div className="flex flex-col gap-1.5">
+                    <h3
+                      className="
+                        !m-0
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {rule.title}
+                    </h3>
+
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {rule.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* VISUAL + BOUNDARY */}
+            <div className="flex w-full flex-col gap-8">
+              {/* IMAGE */}
               <div
-                key={rule.step}
-                className="flex items-start gap-4 py-3.5 first:pt-0 last:pb-0"
+                className="
+                  relative
+                  aspect-[11/10]
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                  sm:aspect-[4/3]
+
+                  lg:aspect-[11/10]
+                "
               >
-                {/* Step Number */}
-                <span className="shrink-0 font-['IBM_Plex_Mono'] text-xs font-semibold text-blue-600 pt-0.5">
-                  {rule.step}
+                <Image
+                  src="/images/roles-and-approvals/div.revcard (2).png"
+                  alt="Delegation workflow and authority ceiling diagram"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              {/* DELEGATION BOUNDARY */}
+              <div
+                className="
+                  flex
+                  w-full
+                  flex-col
+                  gap-2
+                  rounded-r-2xl
+                  border-l-[3px]
+                  border-[#7890b2]
+                  bg-white
+                  p-5
+
+                  sm:p-6
+
+                  md:p-7
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    text-[#7890b2]
+                  "
+                >
+                  Delegation boundary
                 </span>
 
-                {/* Title & Description */}
-                <div className="flex flex-col gap-1">
-                  <h3 className="font-['Plus_Jakarta_Sans'] text-sm font-semibold text-sky-950">
-                    {rule.title}
-                  </h3>
-                  <p className="font-['Segoe_UI'] text-sm font-normal leading-relaxed text-slate-600">
-                    {rule.description}
-                  </p>
-                </div>
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+
+                    sm:text-base
+                    sm:leading-7
+                  "
+                >
+                  Delegation is a transfer of authority, never of credentials.
+                  Passwords and tokens are not shared, and delegation does not
+                  silently include restricted roles or emergency powers.
+                </p>
               </div>
-            ))}
-          </div>
-
-          {/* Column 2: Visual Preview & Boundary Callout */}
-          <div className="flex flex-col gap-10">
-            {/* Image Diagram Container */}
-            <div className="relative aspect-[11/10] w-full overflow-hidden rounded-2xl border border-zinc-200 bg-slate-50 shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04),0px_1px_2px_0px_rgba(14,33,27,0.05)] sm:aspect-[4/3] lg:aspect-[11/10]">
-              <Image
-                src="/images/roles-and-approvals/div.revcard (2).png"
-                alt="Delegation workflow and authority ceiling diagram"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-
-            {/* Delegation Boundary Callout */}
-            <div className="flex flex-col gap-2 rounded-r-2xl border-l-[3px] border-blue-600 bg-slate-100 p-6">
-              <span className="font-['IBM_Plex_Mono'] text-[10px] font-normal uppercase tracking-wide text-blue-600">
-                Delegation boundary
-              </span>
-              <p className="font-['Segoe_UI'] text-base font-normal leading-relaxed text-sky-950">
-                Delegation is a transfer of authority, never of credentials. Passwords and tokens are not shared, and delegation does not silently include restricted roles or emergency powers.
-              </p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

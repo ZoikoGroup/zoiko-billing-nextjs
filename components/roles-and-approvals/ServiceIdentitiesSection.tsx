@@ -69,111 +69,378 @@ const CONNECTOR_TAGS = [
 
 export default function ServiceIdentitiesSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[28px] bg-slate-950 px-6 py-8 text-white shadow-[0_24px_80px_rgba(15,23,42,0.22)] sm:px-8 lg:px-10 lg:py-10">
-          <div className="flex flex-col gap-11">
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:gap-16">
-              <div className="flex max-w-2xl flex-col gap-4">
-                <div className="inline-flex items-center gap-2.5">
-                  <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-500" />
-                  <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-cyan-300">
-                    Service identities
-                  </span>
-                </div>
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-                <h2 className="font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
-                  Machines get accountability too.
-                </h2>
-              </div>
+          sm:px-8
+          sm:py-16
 
-              <p className="max-w-md font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
-                Integrations and workflows act under dedicated service
-                identities with their own scopes, limits and evidence - never a
-                shared human login.
-              </p>
-            </div>
+          md:px-10
+          md:py-20
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {SERVICE_FEATURES.map((feature) => (
-                <div
-                  key={feature.id}
-                  className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition-colors hover:border-cyan-400/40 hover:bg-white/[0.07]"
-                >
-                  <h3 className="font-['Plus_Jakarta_Sans'] text-sm font-semibold text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="font-['Segoe_UI'] text-xs font-normal leading-relaxed text-slate-300">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          lg:px-14
 
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-['Plus_Jakarta_Sans'] text-lg font-semibold text-white">
-                    Where service identities operate
-                  </h3>
-                  <p className="font-['Segoe_UI'] text-sm font-normal leading-relaxed text-slate-300">
-                    Each connector declares the scopes it needs, and each action
-                    it takes is attributable back to the service identity and
-                    the context that triggered it.
-                  </p>
-                </div>
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            gap-8
 
-                <div className="flex flex-wrap gap-2.5 pt-2">
-                  {CONNECTOR_TAGS.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/15 bg-white/5 px-4 py-2 font-['IBM_Plex_Mono'] text-xs font-normal text-slate-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            sm:gap-10
 
-                <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <Link
-                    href="/integrations"
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-white px-5 py-2.5 font-['Segoe_UI'] text-slate-900 transition-colors hover:bg-slate-100"
-                  >
-                    Explore integrations
-                  </Link>
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-                  <Link
-                    href="/zoiko-one"
-                    className="inline-flex items-center gap-1.5 font-['Segoe_UI'] text-base font-normal text-cyan-300 transition-colors hover:text-cyan-200 focus:outline-none"
-                  >
-                    Zoiko One
-                    <span className="font-['IBM_Plex_Mono'] font-bold">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
 
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0px_4px_14px_0px_rgba(14,33,27,0.04),0px_1px_2px_0px_rgba(14,33,27,0.05)]">
-                <Image
-                  src="/images/roles-and-approvals/div.revcard (3).png"
-                  alt="Service identities architecture and scope diagram"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2 rounded-r-2xl border-l-[3px] border-cyan-400 bg-white/5 p-6 sm:p-7">
-              <span className="font-['IBM_Plex_Mono'] text-[10px] font-normal uppercase tracking-wide text-cyan-300">
-                Machine-access boundary
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Service identities
               </span>
-              <p className="max-w-4xl font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-200">
-                Secrets are never exposed and machine access is never
-                unrestricted. Connector and identity-provider behaviour varies
-                by integration and is stated in the governed integration
-                registry.
-              </p>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[760px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Machines get accountability too.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Integrations and workflows act under dedicated service
+              identities with their own scopes, limits and evidence — never a
+              shared human login.
+            </p>
+          </div>
+
+          {/* SERVICE FEATURES */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-4
+
+              sm:grid-cols-2
+
+              lg:grid-cols-4
+            "
+          >
+            {SERVICE_FEATURES.map((feature) => (
+              <div
+                key={feature.id}
+                className="
+                  flex
+                  min-h-[160px]
+                  flex-col
+                  gap-2
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                "
+              >
+                <h3
+                  className="
+                    !m-0
+                    text-sm
+                    font-semibold
+                    leading-5
+                    text-[#091127]
+                  "
+                >
+                  {feature.title}
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CONNECTOR INFORMATION */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-8
+
+              lg:grid-cols-2
+              lg:items-center
+              lg:gap-11
+            "
+          >
+            {/* CONTENT */}
+            <div className="flex w-full flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+
+                    sm:text-lg
+                  "
+                >
+                  Where service identities operate
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+
+                    sm:text-base
+                    sm:leading-7
+                  "
+                >
+                  Each connector declares the scopes it needs, and each action
+                  it takes is attributable back to the service identity and the
+                  context that triggered it.
+                </p>
+              </div>
+
+              {/* CONNECTOR TAGS */}
+              <div className="flex flex-wrap gap-2">
+                {CONNECTOR_TAGS.map((tag) => (
+                  <span
+                    key={tag}
+                    className="
+                      rounded-full
+                      border
+                      border-[#dfe5ee]
+                      bg-white
+                      px-3.5
+                      py-1.5
+                      text-xs
+                      font-medium
+                      leading-5
+                      text-[#5d7192]
+                    "
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  items-center
+                  gap-4
+                  pt-1
+                "
+              >
+                <Link
+                  href="/integration-availability"
+                  className="
+                    inline-flex
+                    min-h-[44px]
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-[#091127]
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    !text-white
+                    transition-opacity
+                    hover:opacity-90
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-[#091127]
+                    focus:ring-offset-2
+                  "
+                >
+                  Explore integrations
+                </Link>
+
+                <Link
+                  href="/zoiko-billing-plus-zoiko-one"
+                  className="
+                    inline-flex
+                    min-h-[44px]
+                    items-center
+                    justify-center
+                    rounded-lg
+                    px-3
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    text-[#5d7192]
+                    transition-colors
+                    hover:text-[#091127]
+                  "
+                >
+                  Zoiko One
+                </Link>
+              </div>
+            </div>
+
+            {/* IMAGE */}
+            <div
+              className="
+                relative
+                aspect-[4/3]
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              <Image
+                src="/images/roles-and-approvals/div.revcard (3).png"
+                alt="Service identities architecture and scope diagram"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+
+          {/* MACHINE ACCESS BOUNDARY */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-2
+              rounded-r-2xl
+              border-l-[3px]
+              border-[#7890b2]
+              bg-white
+              p-5
+
+              sm:p-6
+
+              md:p-7
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                font-bold
+                uppercase
+                leading-4
+                tracking-[0.16em]
+                text-[#7890b2]
+              "
+            >
+              Machine-access boundary
+            </span>
+
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-4xl
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+
+                sm:text-base
+                sm:leading-7
+              "
+            >
+              Secrets are never exposed and machine access is never
+              unrestricted. Connector and identity-provider behaviour varies
+              by integration and is stated in the governed integration
+              registry.
+            </p>
           </div>
         </div>
       </div>

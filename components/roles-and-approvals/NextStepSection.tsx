@@ -43,81 +43,285 @@ const STEPS: StepItem[] = [
 
 export default function NextStepSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 md:px-12 lg:px-20 lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[28px] bg-slate-950 px-6 py-8 text-white shadow-[0_24px_80px_rgba(15,23,42,0.22)] sm:px-8 lg:px-10 lg:py-10">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
-            <div className="flex flex-col gap-6">
+    <section className="w-full !bg-white px-4 py-14 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-14 xl:px-20">
+      <div className="mx-auto w-full max-w-[1440px]">
+        <div
+          className="
+            mx-auto
+            w-full
+            max-w-[1240px]
+            overflow-hidden
+            rounded-[28px]
+            !bg-slate-950
+            px-5
+            py-8
+            !text-white
+            shadow-[0_24px_80px_rgba(15,23,42,0.22)]
+
+            sm:px-8
+            sm:py-10
+
+            lg:px-10
+            lg:py-10
+          "
+        >
+          <div
+            className="
+              grid
+              gap-8
+
+              sm:gap-10
+
+              md:gap-11
+
+              lg:grid-cols-[1.05fr_0.95fr]
+              lg:items-center
+              lg:gap-12
+            "
+          >
+            {/* LEFT CONTENT */}
+            <div className="flex h-full flex-col justify-center gap-6">
+              {/* Eyebrow */}
               <div className="inline-flex items-center gap-2.5">
-                <span className="h-0.5 w-5 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-500" />
-                <span className="font-['IBM_Plex_Mono'] text-xs font-medium uppercase tracking-wider text-cyan-300">
+                <span className="h-px w-4 bg-cyan-400 opacity-60" />
+
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.16em]
+                    !text-cyan-300
+
+                    sm:text-xs
+                    sm:tracking-[0.18em]
+                  "
+                >
                   Next step
                 </span>
               </div>
 
-              <h2 className="max-w-xl font-['Plus_Jakarta_Sans'] text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
+              {/* Heading */}
+              <h2
+                className="
+                  !m-0
+                  w-full
+                  max-w-[760px]
+                  !text-[30px]
+                  !font-extrabold
+                  !leading-[1.2]
+                  !tracking-[-0.035em]
+                  !text-white
+
+                  sm:!text-[34px]
+
+                  md:!text-[36px]
+
+                  lg:!text-[40px]
+                "
+              >
                 Start with the controls your billing operation requires.
               </h2>
 
-              <p className="max-w-xl font-['Segoe_UI'] text-base font-normal leading-relaxed text-slate-300 sm:text-lg">
+              {/* Description */}
+              <p
+                className="
+                  !m-0
+                  w-full
+                  max-w-[687px]
+                  text-[15px]
+                  font-normal
+                  leading-7
+                  !text-slate-300
+
+                  sm:text-base
+                "
+              >
                 Decide which actions deserve a second pair of eyes, who holds
                 that authority, and how far it reaches - then let the evidence
                 do the rest.
               </p>
 
-              <div className="flex flex-col gap-4 pt-2">
+              {/* CTA AREA */}
+              <div className="flex flex-col gap-4 pt-1">
+                {/* Primary + Secondary CTA */}
                 <div className="flex flex-wrap items-center gap-3">
+                  {/* CREATE ACCOUNT */}
                   <Link
-                    href="/signup"
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-blue-500 px-6 py-2.5 font-['Segoe_UI'] text-base font-medium text-white transition-colors hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                    href="/create-account"
+                    className="
+                      inline-flex
+                      min-h-[44px]
+                      items-center
+                      justify-center
+                      rounded-lg
+                      !border-0
+                      !bg-blue-500
+                      px-6
+                      py-2.5
+                      text-sm
+                      font-semibold
+                      !text-white
+                      opacity-100
+                      transition-colors
+                      hover:!bg-blue-400
+                      hover:!text-white
+                      focus:outline-none
+                      focus:ring-2
+                      focus:ring-blue-300
+                      focus:ring-offset-2
+                      focus:ring-offset-slate-950
+                    "
                   >
                     Create Account
                   </Link>
 
+                  {/* BOOK A DEMO */}
                   <Link
-                    href="/demo"
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-2.5 font-['Segoe_UI'] text-base font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/25"
+                    href="/book-demo"
+                    className="
+                      inline-flex
+                      min-h-[44px]
+                      items-center
+                      justify-center
+                      rounded-lg
+                      !border
+                      !border-white/15
+                      !bg-white/5
+                      px-6
+                      py-2.5
+                      text-sm
+                      font-semibold
+                      !text-white
+                      opacity-100
+                      transition-colors
+                      hover:!bg-white/10
+                      hover:!text-white
+                      focus:outline-none
+                      focus:ring-2
+                      focus:ring-white/25
+                    "
                   >
                     Book a Demo
                   </Link>
                 </div>
 
+                {/* SECURITY OVERVIEW */}
                 <div>
                   <Link
-                    href="/security"
-                    className="inline-flex items-center gap-1.5 font-['Segoe_UI'] text-base font-normal text-cyan-300 transition-colors hover:text-cyan-200 focus:outline-none"
+                    href="/security-overview"
+                    className="
+                      inline-flex
+                      min-h-[44px]
+                      items-center
+                      justify-center
+                      text-sm
+                      font-semibold
+                      !text-cyan-300
+                      transition-colors
+                      hover:!text-cyan-200
+                      focus:outline-none
+                    "
                   >
                     Security overview
-                    <span className="font-['IBM_Plex_Mono'] font-bold">&rarr;</span>
                   </Link>
                 </div>
               </div>
 
-              <div className="pt-4 text-xs font-normal leading-relaxed text-slate-400 font-['Segoe_UI'] sm:text-sm">
-                Scoped access and meaningful review, not a compliance guarantee.
+              {/* Note */}
+              <div
+                className="
+                  pt-2
+                  text-xs
+                  font-normal
+                  leading-6
+                  !text-slate-400
+
+                  sm:text-sm
+                "
+              >
+                Scoped access and meaningful review, not a compliance
+                guarantee.
                 <br />
                 Availability varies by plan, action, integration and
                 jurisdiction.
               </div>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-col rounded-2xl border border-white/10 bg-slate-900/80 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:p-8">
+            {/* RIGHT CONTENT */}
+            <div className="flex flex-col gap-4">
+              {/* STEPS CARD */}
+              <div
+                className="
+                  flex
+                  flex-col
+                  rounded-2xl
+                  !border
+                  !border-white/10
+                  !bg-slate-900/80
+                  p-5
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
+
+                  sm:p-6
+
+                  md:p-8
+                "
+              >
                 <div className="flex flex-col divide-y divide-white/10">
                   {STEPS.map((step) => (
                     <div
                       key={step.number}
-                      className="flex items-center gap-4 py-4 first:pt-0 last:pb-4"
+                      className="
+                        flex
+                        items-center
+                        gap-4
+                        py-4
+                        first:pt-0
+                        last:pb-4
+                      "
                     >
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 font-['IBM_Plex_Mono'] text-xs font-medium text-white">
+                      {/* NUMBER */}
+                      <div
+                        className="
+                          flex
+                          h-7
+                          w-7
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-lg
+                          bg-gradient-to-br
+                          from-cyan-500
+                          to-blue-600
+                          text-[10px]
+                          font-bold
+                          !text-white
+                        "
+                      >
                         {step.number}
                       </div>
 
+                      {/* STEP TEXT */}
                       <div className="flex flex-col gap-0.5">
-                        <span className="font-['Segoe_UI'] text-sm font-semibold text-white">
+                        <span
+                          className="
+                            text-sm
+                            font-semibold
+                            leading-5
+                            !text-white
+                          "
+                        >
                           {step.title}
                         </span>
-                        <span className="font-['IBM_Plex_Mono'] text-xs text-slate-400">
+
+                        <span
+                          className="
+                            text-xs
+                            leading-5
+                            !text-slate-400
+                          "
+                        >
                           {step.subtitle}
                         </span>
                       </div>
@@ -125,17 +329,50 @@ export default function NextStepSection() {
                   ))}
                 </div>
 
+                {/* Bottom statement */}
                 <div className="mt-4 border-t border-white/10 pt-5">
-                  <p className="font-['Plus_Jakarta_Sans'] text-sm font-semibold text-white sm:text-base">
+                  <p
+                    className="
+                      !m-0
+                      text-sm
+                      font-semibold
+                      leading-6
+                      !text-white
+
+                      sm:text-base
+                    "
+                  >
                     Billing clarity from invoice to payment.
                   </p>
                 </div>
               </div>
 
+              {/* EXPLORE INVOICES CTA */}
               <div>
                 <Link
                   href="/invoices"
-                  className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-white/15 bg-white px-5 py-2.5 font-['Segoe_UI'] text-base font-normal text-slate-900 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-white/40"
+                  className="
+                    inline-flex
+                    min-h-[44px]
+                    items-center
+                    justify-center
+                    rounded-lg
+                    !border
+                    !border-white/15
+                    !bg-white
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    !text-slate-900
+                    opacity-100
+                    transition-colors
+                    hover:!bg-slate-100
+                    hover:!text-slate-900
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-white/40
+                  "
                 >
                   Explore Invoices &amp; Credit Notes
                 </Link>

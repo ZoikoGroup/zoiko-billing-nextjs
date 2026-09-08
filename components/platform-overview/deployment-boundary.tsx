@@ -303,7 +303,7 @@ export default function DeploymentBoundarySection() {
           {/* CTA */}
           <div className="flex w-full justify-center pt-1">
             <a
-              href="#compare-deployment"
+              href="#"
               className="
                 inline-flex
                 min-h-11

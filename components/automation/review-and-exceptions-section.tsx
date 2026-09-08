@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ExceptionClass {
   title: string;
@@ -25,7 +26,7 @@ const exceptionClasses: ExceptionClass[] = [
   {
     title: 'Condition unknown',
     description:
-      'Required context is missing, restricted or unresolved. Configured false, wait or review behaviour applies - never a guess.',
+      'Required context is missing, restricted or unresolved. Configured false, wait or review behaviour applies — never a guess.',
   },
   {
     title: 'Integration unavailable',
@@ -51,96 +52,324 @@ const exceptionClasses: ExceptionClass[] = [
 
 export default function ReviewAndExceptionsSection() {
   return (
-    <section className="w-full bg-slate-100 px-4 py-16 text-slate-800 sm:px-6 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col items-start gap-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-500 to-sky-500" />
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-sky-600">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
+
+          sm:px-8
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[780px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Review and exceptions
               </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
-            <h2 className="text-3xl font-medium leading-tight font-sans text-sky-950 sm:text-4xl lg:text-5xl">
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[780px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
               Make failure and recovery part of the workflow.
             </h2>
-          </div>
 
-          <div className="lg:col-span-5">
-            <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg">
-              Oversight only works if the reviewer has enough context to disagree.
-              Exceptions carry a class, an owner and a route back to a working
-              state.
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Oversight only works if the reviewer has enough context to
+              disagree. Exceptions carry a class, an owner and a route back to
+              a working state.
             </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 gap-10 pt-4 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold leading-snug font-sans text-sky-950 sm:text-xl">
-                What a reviewer actually sees
-              </h3>
-              <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-                Trigger, affected record, proposed action, reason, source evidence
-                and deadline - then the decisions their permission allows.
-              </p>
+          {/* REVIEW + EXCEPTIONS */}
+          <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
+            {/* REVIEWER */}
+            <div
+              className="
+                flex
+                flex-col
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                p-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                sm:p-6
+              "
+            >
+              <div>
+                <h3
+                  className="
+                    !m-0
+                    text-lg
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+
+                    sm:text-xl
+                  "
+                >
+                  What a reviewer actually sees
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+
+                    sm:text-base
+                    sm:leading-7
+                  "
+                >
+                  Trigger, affected record, proposed action, reason, source
+                  evidence and deadline — then the decisions their permission
+                  allows.
+                </p>
+              </div>
+
+              {/* REVIEWER IMAGE */}
+              <div className="mt-6">
+                <div
+                  className="
+                    relative
+                    overflow-hidden
+                    rounded-xl
+                    border
+                    border-[#dfe5ee]
+                    bg-[#f7f8fa]
+                  "
+                >
+                  <Image
+                    src={encodeURI('/images/automation/div.revcard.png')}
+                    alt="Reviewer Interface Preview"
+                    width={526}
+                    height={459}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="pt-2">
-              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs">
-                <Image
-                  src={encodeURI('/images/automation/div.revcard.png')}
-                  alt="Reviewer Interface Preview"
-                  width={526}
-                  height={459}
-                  className="h-auto w-full rounded-2xl object-cover"
-                />
+            {/* EXCEPTIONS */}
+            <div
+              className="
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                p-5
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                sm:p-6
+              "
+            >
+              <div>
+                <h3
+                  className="
+                    !m-0
+                    text-lg
+                    font-semibold
+                    leading-6
+                    text-[#091127]
+
+                    sm:text-xl
+                  "
+                >
+                  Exception classes and recovery
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+
+                    sm:text-base
+                    sm:leading-7
+                  "
+                >
+                  Each failure is classified so the right recovery applies,
+                  and so escalation carries an owner, severity and elapsed
+                  time.
+                </p>
+              </div>
+
+              {/* EXCEPTION LIST */}
+              <div
+                className="
+                  mt-6
+                  divide-y
+                  divide-[#edf0f4]
+                  border-y
+                  border-[#dfe5ee]
+                "
+              >
+                {exceptionClasses.map((item) => (
+                  <div
+                    key={item.title}
+                    className="
+                      grid
+                      grid-cols-1
+                      items-start
+                      gap-2
+                      py-4
+
+                      sm:grid-cols-12
+                      sm:gap-4
+                    "
+                  >
+                    <div className="sm:col-span-4">
+                      <h4
+                        className="
+                          !m-0
+                          text-sm
+                          font-semibold
+                          leading-5
+                          text-[#091127]
+                        "
+                      >
+                        {item.title}
+                      </h4>
+                    </div>
+
+                    <div className="sm:col-span-8">
+                      <p
+                        className="
+                          !m-0
+                          text-sm
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                        "
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold leading-snug font-sans text-sky-950 sm:text-xl">
-                Exception classes and recovery
-              </h3>
-              <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-                Each failure is classified so the right recovery applies, and so
-                escalation carries an owner, severity and elapsed time.
-              </p>
-            </div>
-
-            <div className="divide-y divide-slate-200 border-y border-slate-200 pt-1">
-              {exceptionClasses.map((item) => (
-                <div
-                  key={item.title}
-                  className="grid grid-cols-1 items-start gap-2 py-4 sm:grid-cols-12 sm:gap-4"
-                >
-                  <div className="sm:col-span-4">
-                    <h4 className="text-sm font-semibold leading-snug font-sans text-sky-950">
-                      {item.title}
-                    </h4>
-                  </div>
-                  <div className="sm:col-span-8">
-                    <p className="text-sm font-normal leading-relaxed text-slate-600">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* CTA */}
+          <div className="flex w-full justify-center pt-1">
+            <Link
+              href="/roles-and-approvals"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#091127]
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                !text-white
+                shadow-sm
+                transition-colors
+                hover:bg-[#17213b]
+                hover:!text-white
+              "
+            >
+              Explore Roles &amp; Approvals
+            </Link>
           </div>
-        </div>
-
-        <div className="flex justify-center pt-6">
-          <a
-            href="#explore-roles"
-            className="inline-flex items-center justify-center rounded-lg bg-sky-950 px-6 py-3 !text-white shadow-xs transition-colors hover:bg-sky-900 hover:!text-white"
-            style={{ color: '#fff' }}
-          >
-            Explore Roles &amp; Approvals
-          </a>
         </div>
       </div>
     </section>

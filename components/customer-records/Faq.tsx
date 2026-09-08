@@ -70,23 +70,52 @@ function FaqItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={onClick}
         aria-expanded={isOpen}
-        className="flex min-h-20 w-full items-center justify-between gap-4 px-5 py-5 text-left"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-5
+          text-left
+        "
       >
-        <span className="text-sm font-semibold leading-6 text-slate-900">
+        <span
+          className="
+            text-sm
+            font-semibold
+            leading-6
+            text-[#091127]
+          "
+        >
           {question}
         </span>
 
         <span
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-sm font-semibold transition ${
-            isOpen
-              ? "bg-blue-600 text-white"
-              : "bg-gray-100 text-slate-600"
-          }`}
+          className={`
+            flex
+            h-5
+            w-5
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            text-sm
+            font-semibold
+            transition
+            ${
+              isOpen
+                ? "bg-[#7890b2] text-white"
+                : "bg-[#f1f4f8] text-[#5d7192]"
+            }
+          `}
         >
           {isOpen ? "−" : "+"}
         </span>
@@ -94,7 +123,17 @@ function FaqItem({
 
       {isOpen && (
         <div className="px-5 pb-5">
-          <p className="text-sm leading-5 text-slate-600">{answer}</p>
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
+            {answer}
+          </p>
         </div>
       )}
     </div>
@@ -111,62 +150,181 @@ export default function Faq() {
   };
 
   return (
-    <section className="w-full bg-gray-50 px-4 py-12 sm:px-6 lg:px-14 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 px-0 sm:px-4 lg:gap-5 lg:px-7">
-        {/* Header */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3">
-            <div className="h-px w-4 bg-blue-600 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
+          py-14
 
-            <span className="text-xs font-bold uppercase leading-4 tracking-widest text-blue-600">
-              Evaluation &amp; FAQ
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <div className="h-px w-4 bg-blue-600 opacity-40" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[1000px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Evaluation &amp; FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[1000px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about
+             
+              Customer Records.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              No visitor needs to upload or paste real customer records,
+              contact lists, tax identifiers, invoices, payment data or
+              credentials to evaluate this.
+            </p>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl sm:leading-10">
-  Direct answers about
-  <br />
-  Customer Records.
-</h2>
+          {/* FAQ CARDS */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              gap-5
+              pt-2
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] text-sm font-normal leading-6 text-slate-600 sm:text-base sm:leading-7">
-            No visitor needs to upload or paste real customer records, contact
-            lists, tax identifiers, invoices, payment data or credentials to
-            evaluate this.
-          </p>
-        </div>
+              lg:grid-cols-2
+            "
+          >
+            {/* LEFT FAQ */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {leftFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openFaq === faq.question}
+                  onClick={() => toggleFaq(faq.question)}
+                />
+              ))}
+            </div>
 
-        {/* FAQ Cards */}
-        <div className="grid w-full grid-cols-1 gap-5 pt-2 lg:grid-cols-2">
-          {/* Left FAQ */}
-          <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-            {leftFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openFaq === faq.question}
-                onClick={() => toggleFaq(faq.question)}
-              />
-            ))}
-          </div>
-
-          {/* Right FAQ */}
-          <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-            {rightFaqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openFaq === faq.question}
-                onClick={() => toggleFaq(faq.question)}
-              />
-            ))}
+            {/* RIGHT FAQ */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {rightFaqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openFaq === faq.question}
+                  onClick={() => toggleFaq(faq.question)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

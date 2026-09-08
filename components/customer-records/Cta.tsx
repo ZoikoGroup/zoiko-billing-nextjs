@@ -28,21 +28,21 @@ export default function Cta() {
             {/* Buttons */}
             <div className="flex w-full flex-col gap-3 pt-3 sm:w-auto sm:flex-row sm:flex-wrap">
               <Link
-                href="#"
+                href="create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold leading-6 !text-slate-900 shadow-none transition hover:bg-gray-100"
               >
                 Create account
               </Link>
 
               <Link
-                href="#"
+                href="pricing-and-plans"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-6 py-2.5 text-sm font-semibold leading-6 !text-white transition hover:bg-white/10"
               >
                 View pricing
               </Link>
 
               <Link
-                href="#"
+                href="book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 bg-transparent px-6 py-2.5 text-sm font-semibold leading-6 !text-white transition hover:bg-white/10"
               >
                 Book a demo
