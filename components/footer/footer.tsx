@@ -152,7 +152,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
     title: 'Legal Corporate',
     links: [
       { label: 'Terms of User', href: '/terms-of-user' },
-      { label: 'Privacy Policy', href: '#' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
       { label: 'Acceptable Use Policy', href: '#' },
       { label: 'Data Processing Addendum', href: '/data-processing-addendum' },
