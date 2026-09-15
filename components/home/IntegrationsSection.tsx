@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 export default function IntegrationsSection() {
   return (
@@ -39,18 +40,18 @@ export default function IntegrationsSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <button
-              type="button"
+            <Link
+              href ="integrations"
               className="px-5 py-2.5 bg-white text-sky-950 font-medium text-base rounded-md hover:bg-slate-100 transition-colors shadow-sm"
             >
               Explore Integrations
-            </button>
-            <button
-              type="button"
-              className="px-5 py-2.5 bg-transparent text-white font-normal text-base rounded-md border border-white/30 hover:bg-white/10 transition-colors"
+            </Link>
+            <Link
+              href="/documentation"
+              className="px-5 py-2.5 bg-transparent !text-white font-normal text-base rounded-md border border-white/30 hover:bg-white/10 transition-colors"
             >
               Read API Documentation
-            </button>
+            </Link>
           </div>
         </div>
       </div>

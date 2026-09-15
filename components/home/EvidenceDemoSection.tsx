@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
 
 interface Chapter {
   id: string;
@@ -23,7 +24,9 @@ export default function EvidenceWorkflowSection() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   return (
-    <section className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-12 font-sans">
+    <section 
+    id = "see-it-in-action"
+    className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-12 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header Block */}
         <div className="flex flex-col space-y-4 max-w-4xl">
@@ -141,7 +144,7 @@ export default function EvidenceWorkflowSection() {
             {/* External Link Section */}
             <div className="pt-6 border-t border-zinc-200/80 mt-4">
               <a
-                href="#stories"
+                href="/customer-stories"
                 className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-base font-normal transition-colors group"
               >
                 <span>View Customer Stories</span>
