@@ -192,17 +192,17 @@ export default function DirectoryFaq() {
   const [openId, setOpenId] = useState<string | null>("left-0");
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-white">
       <div
         className="
           mx-auto
           flex
           w-full
-          max-w-[1240px]
+          max-w-[1440px]
           flex-col
-          items-center
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
           sm:py-16
@@ -215,109 +215,128 @@ export default function DirectoryFaq() {
           xl:px-20
         "
       >
-        {/* HEADING */}
         <div
           className="
+            mx-auto
             flex
             w-full
-            max-w-[662px]
+            max-w-[1240px]
             flex-col
             items-center
-            gap-3
-            pt-2
-            text-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* EYEBROW */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+          {/* =========================================================
+              SECTION INTRO
+          ========================================================= */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Decision guide &amp; FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
               className="
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.16em]
-                text-[#7890b2]
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-xs
-                sm:tracking-[0.18em]
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              Decision guide &amp; FAQ
-            </span>
+              Direct answers about the directory.
+            </h2>
 
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Understanding integration fit never requires real credentials,
+              customer records, provider exports, bank data, invoice payloads
+              or secrets.
+            </p>
           </div>
 
-          {/* TITLE */}
-          <h2
+          {/* =========================================================
+              FAQ COLUMNS
+          ========================================================= */}
+          <div
             className="
-              !m-0
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.025em]
-              text-[#091127]
-
-              sm:text-[34px]
-
-              md:text-[36px]
-            "
-          >
-            Direct answers about the directory.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
+              grid
               w-full
-              max-w-[687px]
-              pt-1
-              text-center
-              text-[15px]
-              font-normal
-              leading-7
-              text-[#5d7192]
+              grid-cols-1
+              gap-5
 
-              sm:text-base
+              lg:grid-cols-2
             "
           >
-            Understanding integration fit never requires real credentials,
-            customer records, provider exports, bank data, invoice payloads
-            or secrets.
-          </p>
-        </div>
+            <FaqColumn
+              items={leftFaqs}
+              openId={openId}
+              setOpenId={setOpenId}
+              column="left"
+            />
 
-        {/* FAQ COLUMNS */}
-        <div
-          className="
-            mt-8
-            grid
-            w-full
-            grid-cols-1
-            gap-5
-
-            sm:mt-10
-
-            lg:grid-cols-2
-          "
-        >
-          <FaqColumn
-            items={leftFaqs}
-            openId={openId}
-            setOpenId={setOpenId}
-            column="left"
-          />
-
-          <FaqColumn
-            items={rightFaqs}
-            openId={openId}
-            setOpenId={setOpenId}
-            column="right"
-          />
+            <FaqColumn
+              items={rightFaqs}
+              openId={openId}
+              setOpenId={setOpenId}
+              column="right"
+            />
+          </div>
         </div>
       </div>
     </section>

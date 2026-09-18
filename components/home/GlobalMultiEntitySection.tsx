@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 interface FeatureListItem {
   id: string;
@@ -56,18 +57,18 @@ export default function GlobalBillingSection() {
 
           {/* Call-to-action Buttons */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button
-              type="button"
+            <Link
+              href = "/global-billing"
               className="px-5 py-2.5 bg-blue-600 text-white font-normal text-base rounded-md hover:bg-blue-700 transition-colors shadow-xs"
             >
               Explore Global Billing
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href = "/contact-support"
               className="px-5 py-2.5 bg-white text-zinc-900 font-normal text-base rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors"
             >
               Contact Global Sales
-            </button>
+            </Link>
           </div>
         </div>
 

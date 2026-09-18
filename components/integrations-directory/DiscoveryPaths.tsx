@@ -48,7 +48,7 @@ export default function DiscoveryPaths() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-[#f8f9fb]">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -56,9 +56,9 @@ export default function DiscoveryPaths() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
           sm:py-16
@@ -71,154 +71,176 @@ export default function DiscoveryPaths() {
           xl:px-20
         "
       >
-        {/* HEADING */}
         <div
           className="
+            mx-auto
             flex
             w-full
-            max-w-[662px]
+            max-w-[1240px]
             flex-col
             items-center
-            gap-3
-            pt-2
-            text-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* EYEBROW */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+          {/* =========================================================
+              SECTION INTRO
+          ========================================================= */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Categories &amp; discovery paths
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
               className="
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.16em]
-                text-[#7890b2]
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-xs
-                sm:tracking-[0.18em]
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              Categories &amp; discovery paths
-            </span>
+              Eight routes, each with its own boundary.
+            </h2>
 
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              The directory aggregates. Each category page remains the
+              authority for its own domain.
+            </p>
           </div>
 
-          {/* TITLE */}
-          <h2
+          {/* =========================================================
+              DISCOVERY CARDS
+          ========================================================= */}
+          <div
             className="
-              !m-0
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.025em]
-              text-[#091127]
-
-              sm:text-[34px]
-
-              md:text-[36px]
-            "
-          >
-            Eight routes, each with its own boundary.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
+              grid
               w-full
-              max-w-[687px]
-              pt-1
-              text-[15px]
-              font-normal
-              leading-7
-              text-[#5d7192]
+              grid-cols-1
+              gap-4
 
-              sm:text-base
+              sm:grid-cols-2
+
+              md:gap-5
+
+              lg:grid-cols-4
             "
           >
-            The directory aggregates. Each category page remains the
-            authority for its own domain.
-          </p>
-        </div>
-
-        {/* DISCOVERY CARDS */}
-        <div
-          className="
-            mt-8
-            grid
-            w-full
-            grid-cols-1
-            gap-4
-
-            sm:mt-10
-            sm:grid-cols-2
-
-            md:gap-5
-
-            lg:mt-12
-            lg:grid-cols-4
-          "
-        >
-          {paths.map((item) => (
-            <div
-              key={item.title}
-              className="
-                min-h-[190px]
-                rounded-2xl
-                border
-                border-[#dfe5ee]
-                bg-white
-                p-5
-                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-              "
-            >
-              {/* TITLE */}
-              <h3
+            {paths.map((item) => (
+              <div
+                key={item.title}
                 className="
-                  !m-0
-                  text-base
-                  font-bold
-                  leading-6
-                  text-[#091127]
+                  flex
+                  min-h-[190px]
+                  flex-col
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
                 "
               >
-                {item.title}
-              </h3>
+                {/* TITLE */}
+                <h3
+                  className="
+                    !m-0
+                    text-base
+                    font-bold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  {item.title}
+                </h3>
 
-              {/* PATH */}
-              <p
-                className="
-                  !m-0
-                  mt-1
-                  break-words
-                  text-xs
-                  font-normal
-                  leading-5
-                  text-[#7890b2]
-                "
-              >
-                {item.path}
-              </p>
+                {/* PATH */}
+                <p
+                  className="
+                    !m-0
+                    mt-1
+                    break-words
+                    text-xs
+                    font-normal
+                    leading-5
+                    text-[#7890b2]
+                  "
+                >
+                  {item.path}
+                </p>
 
-              {/* DESCRIPTION */}
-              <p
-                className="
-                  !m-0
-                  mt-2
-                  text-xs
-                  font-normal
-                  leading-5
-                  text-[#5d7192]
-                "
-              >
-                {item.description}
-              </p>
-            </div>
-          ))}
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-xs
+                    font-normal
+                    leading-5
+                    text-[#5d7192]
+                  "
+                >
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
