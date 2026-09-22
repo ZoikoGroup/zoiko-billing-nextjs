@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import HeaderNavigation from "@/components/header/header";
 import FooterSection from "@/components/footer/footer";
+import PublicAssistantWidget from "@/components/assistant/PublicAssistantWidget";
 
 export const metadata: Metadata = {
   title: "Zoiko Billing | Clarity from invoice to payment",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <HeaderNavigation />
         <main className="flex-1">{children}</main>
         <FooterSection />
+        <PublicAssistantWidget />
       </body>
     </html>
   );

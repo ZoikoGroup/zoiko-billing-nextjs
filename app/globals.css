@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -4722,4 +4723,120 @@ footer {
 
 .site-footer {
   --footer-bg: #08233f;
+}
+
+/* ── Billing Assistant widget (matches platform AssistantPanel) ────────────── */
+
+.ab-typing-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--ab-accent-text);
+  opacity: 0.25;
+  animation: ab-typing-blink 2.4s ease-in-out infinite;
+}
+.ab-typing-dot--2 { animation-delay: 0.2s; }
+.ab-typing-dot--3 { animation-delay: 0.4s; }
+@keyframes ab-typing-blink {
+  0%, 70%, 100% { opacity: 0.25; transform: translateY(0); }
+  35% { opacity: 1; transform: translateY(-1px); }
+}
+
+.ab-typing-caret {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--ab-accent-text);
+  animation: ab-caret-blink 1.8s steps(2, start) infinite;
+  vertical-align: text-bottom;
+}
+@keyframes ab-caret-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.ab-financial {
+  color: var(--ab-accent, #f5841f);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* Circular header controls of the Billing Assistant widget. */
+.ab-icon-btn {
+  background: var(--ab-icon-btn-bg);
+  color: var(--ab-icon-btn-text);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.ab-icon-btn:hover {
+  background: var(--ab-icon-btn-hover-bg);
+  color: var(--ab-icon-btn-hover-text);
+}
+.ab-icon-btn--active {
+  background: var(--ab-accent-15);
+  color: var(--ab-accent-text);
+}
+.ab-icon-btn:focus-visible {
+  outline: 2px solid var(--ab-focus-ring);
+  outline-offset: 1px;
+}
+
+/* /!\ The marketing site's globals.css declares unlayered h1-h4/p element
+ *     rules (see h1/h2/h3/p near the top of this file). Unlayered CSS always
+ *     wins over Tailwind's layered utilities, so without this scoped reset the
+ *     widget's headings/paragraphs would inherit the site's huge heading sizes
+ *     (e.g. header h2 rendered at clamp(2.1rem,4vw,3.5rem) = 51px+), inflating
+ *     the header and pushing the quick-action menu out of view.
+ *
+ *     There is also an unlayered `footer { padding-top: 70px; ... }` rule
+ *     (site page footer) which, without this reset, injects a ~70px empty gap
+ *     above the assistant's chat composer. Keeping footer/header/main inside a
+ *     :where() list (zero specificity) makes the widget's own Tailwind
+ *     utilities win for all of these structural elements too.
+ *
+ *     revert-layer (inside :where for zero specificity) discards those
+ *     unlayered element rules for the widget subtree and lets the widget's own
+ *     Tailwind utility classes style these elements instead.
+ */
+.ab-widget :where(h1, h2, h3, h4, p, footer, header, main, nav, section, article, aside) {
+  all: revert-layer;
+}
+
+/* Blog article body (components/blog/BlogArticle.tsx). Scoped to beat the global h1/h2/p rules above. */
+.blog-prose { color: var(--ink); font-size: 1.0625rem; line-height: 1.8; }
+.blog-prose p { margin: 1.1em 0 0; color: #3d5263; line-height: 1.8; }
+.blog-prose > :first-child { margin-top: 0; }
+.blog-prose .blog-lead { font-size: 1.1875rem; color: var(--ink); }
+.blog-prose h2 { margin: 2.6em 0 0.7em; scroll-margin-top: 110px; font-size: clamp(1.6rem, 3vw, 2.05rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; color: #0f172a; }
+.blog-prose h3 { margin: 1.9em 0 0.6em; font-size: 1.25rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.015em; color: #0f172a; }
+.blog-prose a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.blog-prose a:hover { color: var(--navy); }
+.blog-prose strong { color: #0f172a; }
+.blog-prose ul { margin: 1em 0 0; padding-left: 1.3em; list-style: disc; color: #3d5263; }
+.blog-prose li + li { margin-top: 0.45em; }
+.blog-prose li::marker { color: var(--blue); }
+.blog-prose .blog-list-columns { columns: 2; column-gap: 2.5rem; }
+.blog-prose .blog-list-columns li { break-inside: avoid; }
+.blog-prose figure { margin: 2em 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; }
+.blog-prose .blog-callout { margin-top: 2.2em; padding: 28px 30px; scroll-margin-top: 110px; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 18px; background: var(--soft); }
+.blog-prose .blog-callout h2 { margin-top: 0; font-size: 1.35rem; }
+.blog-prose .blog-table-wrap { margin: 1.4em 0 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+.blog-prose table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.9375rem; line-height: 1.55; }
+.blog-prose thead th { background: var(--navy); color: #fff; font-weight: 700; text-align: left; padding: 14px 18px; }
+.blog-prose tbody th, .blog-prose tbody td { padding: 13px 18px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); color: #3d5263; }
+.blog-prose tbody th { font-weight: 600; color: var(--ink); }
+.blog-prose tbody tr:nth-child(even) { background: #f8fafc; }
+.blog-prose .blog-faq { margin-top: 1.2em; border-top: 1px solid var(--line); }
+.blog-prose details { border-bottom: 1px solid var(--line); }
+.blog-prose summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; }
+.blog-prose summary::-webkit-details-marker { display: none; }
+.blog-prose summary::after { content: "+"; flex-shrink: 0; font-size: 1.4rem; line-height: 1; color: var(--blue); }
+.blog-prose details[open] summary::after { content: "\2212"; }
+.blog-prose summary h3 { margin: 0; font-size: 1.0625rem; }
+.blog-prose details p { margin: 0; padding-bottom: 18px; }
+
+@media (max-width: 640px) {
+  .blog-prose { font-size: 1rem; }
+  .blog-prose .blog-lead { font-size: 1.0625rem; }
+  .blog-prose .blog-list-columns { columns: 1; }
+  .blog-prose .blog-callout { padding: 22px 20px; }
 }
