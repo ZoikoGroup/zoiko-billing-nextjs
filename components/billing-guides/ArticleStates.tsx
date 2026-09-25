@@ -2,15 +2,15 @@ const states = [
   {
     name: "Current",
     style:
-      "bg-color-grey-93-8 text-color-spring-green-29 outline-color-spring-green-86-3",
-    dot: "bg-color-spring-green-29",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment: "Normal guide, visible in finder and index",
   },
   {
     name: "Recently updated",
     style:
-      "bg-color-grey-95-13 text-color-azure-43 outline-color-grey-91-5",
-    dot: "bg-color-azure-43",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment: (
       <>
         Optional &quot;Updated&quot; text with date —{" "}
@@ -21,31 +21,32 @@ const states = [
   {
     name: "Review due",
     style:
-      "bg-color-grey-94-7 text-color-orange-35 outline-color-orange-86",
-    dot: "bg-color-orange-35",
-    treatment: "Still readable, but not newly featured; internal warning raised",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
+    treatment:
+      "Still readable, but not newly featured; internal warning raised",
   },
   {
     name: "Review overdue",
     style:
-      "bg-color-grey-95-15 text-color-azure-34 outline-color-grey-90-3",
-    dot: "bg-color-azure-34",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment:
       "De-prioritized, with owner escalation; a public review notice only if it aids clarity",
   },
   {
     name: "Replaced",
     style:
-      "bg-color-grey-94-8 text-color-orange-38 outline-color-orange-86-2",
-    dot: "bg-color-orange-38",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment:
       "Banner stating the guide has been replaced, with a primary link to the current guide",
   },
   {
     name: "Archived",
     style:
-      "bg-color-grey-96-3 text-color-azure-60 outline-color-grey-92-4",
-    dot: "bg-color-azure-60",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment: (
       <>
         Historical banner, excluded from default browse,{" "}
@@ -56,15 +57,15 @@ const states = [
   {
     name: "Withdrawn",
     style:
-      "bg-color-grey-95-12 text-color-red-46-2 outline-color-red-89",
-    dot: "bg-color-red-46-2",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment: "Removed from finder and index, with safe route explanation",
   },
   {
     name: "Error",
     style:
-      "bg-color-grey-95-11 text-color-blue-50-3 outline-color-grey-91-4",
-    dot: "bg-color-blue-50-3",
+      "bg-[#f7f8fa] text-[#5d7192] border-[#dfe5ee]",
+    dot: "bg-[#7890b2]",
     treatment:
       "Persistent error with retry plus Resource Center, Help and Documentation alternatives",
   },
@@ -72,88 +73,360 @@ const states = [
 
 export default function ArticleStates() {
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-24 py-16 lg:py-20">
-      <div className="w-full max-w-[1240px] mx-auto px-0 sm:px-4 lg:px-7 flex flex-col items-center gap-11">
-        
-        {/* Heading */}
-        <div className="w-full max-w-[1000px] pt-2 flex flex-col items-center gap-3">
-          <div className="flex items-center justify-center gap-3 h-4">
-            <div className="w-4 h-px opacity-40 bg-color-azure-60" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
 
-            <span className="text-color-azure-60 text-xs font-bold font-['Inter'] uppercase leading-4 tracking-widest whitespace-nowrap">
-              Article states
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <div className="w-4 h-px opacity-40 bg-color-azure-60" />
-          </div>
+          md:px-10
+          md:py-20
 
-          <div className="w-full flex flex-col items-center">
-            <h2 className="text-center text-color-azure-11-2 text-3xl sm:text-4xl font-extrabold leading-10">
-              Eight states, and a replaced guide
-              says so.
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Article states
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Eight states, and a replaced guide says so.
             </h2>
-          </div>
 
-          <div className="w-full max-w-[687px] pt-1 flex justify-center">
-            <p className="text-center text-color-azure-44-3 text-sm sm:text-base font-normal font-['Inter'] leading-6 sm:leading-7">
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
               An archived guide carries no conversion action that implies
               current operation.
             </p>
           </div>
-        </div>
 
-        {/* Table */}
-        <div className="w-full overflow-x-auto rounded-2xl">
-          <div className="min-w-[900px] bg-color-white-solid rounded-2xl shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4 overflow-hidden">
+          {/* TABLE */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[256px_minmax(0,1fr)]
+                  bg-[#f7f8fa]
+                "
+              >
+                <div
+                  className="
+                    border-b
+                    border-[#dfe5ee]
+                    px-4
+                    py-3.5
+                  "
+                >
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      text-[#7890b2]
+                    "
+                  >
+                    State
+                  </span>
+                </div>
 
-            {/* Header */}
-            <div className="flex">
-              <div className="w-64 shrink-0 px-4 py-3.5 bg-color-grey-99-2 border-b border-color-grey-92-4">
-                <span className="text-color-azure-60 text-xs font-bold font-['Inter'] uppercase leading-4 tracking-wide">
-                  State
-                </span>
+                <div
+                  className="
+                    border-b
+                    border-[#dfe5ee]
+                    px-4
+                    py-3.5
+                  "
+                >
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Treatment
+                  </span>
+                </div>
               </div>
 
-              <div className="flex-1 px-4 py-3.5 bg-color-grey-99-2 border-b border-color-grey-92-4">
-                <span className="text-color-azure-60 text-xs font-bold font-['Inter'] uppercase leading-4 tracking-wide">
-                  Treatment
-                </span>
-              </div>
+              {/* ROWS */}
+              {states.map((state, index) => (
+                <div
+                  key={state.name}
+                  className={`
+                    grid
+                    grid-cols-[256px_minmax(0,1fr)]
+                    transition-colors
+                    duration-150
+                    hover:bg-[#f7f8fa]/70
+                    ${
+                      index !== states.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* STATE */}
+                  <div className="flex items-center px-4 py-4">
+                    <div
+                      className={`
+                        relative
+                        inline-flex
+                        min-h-7
+                        items-center
+                        rounded-md
+                        border
+                        px-2.5
+                        pl-6
+                        ${state.style}
+                      `}
+                    >
+                      <span
+                        className={`
+                          absolute
+                          left-2.5
+                          h-1.5
+                          w-1.5
+                          rounded-sm
+                          ${state.dot}
+                        `}
+                      />
+
+                      <span
+                        className="
+                          text-xs
+                          font-semibold
+                          leading-5
+                          whitespace-nowrap
+                        "
+                      >
+                        {state.name}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* TREATMENT */}
+                  <div className="flex items-center px-4 py-4">
+                    <p
+                      className="
+                        !m-0
+                        text-sm
+                        font-normal
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {state.treatment}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Rows */}
-            {states.map((state, index) => (
-              <div
-                key={state.name}
-                className={`flex ${
-                  index !== states.length - 1
-                    ? "border-b border-color-grey-95-10"
-                    : ""
-                }`}
-              >
-                {/* State */}
-                <div className="w-64 shrink-0 px-4 py-3.5 flex items-center">
+            {/* MOBILE / TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {states.map((state, index) => (
+                <div
+                  key={state.name}
+                  className={`
+                    p-5
+                    transition-colors
+                    duration-150
+                    hover:bg-[#f7f8fa]/70
+                    ${
+                      index !== states.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* STATE LABEL */}
+                  <p
+                    className="
+                      !m-0
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    State
+                  </p>
+
+                  {/* STATE BADGE */}
                   <div
-                    className={`relative h-6 min-h-6 rounded-md outline outline-1 outline-offset-[-1px] px-3 pl-6 flex items-center ${state.style}`}
+                    className={`
+                      relative
+                      mt-2
+                      inline-flex
+                      min-h-7
+                      items-center
+                      rounded-md
+                      border
+                      px-2.5
+                      pl-6
+                      ${state.style}
+                    `}
                   >
                     <span
-                      className={`absolute left-2.5 w-1.5 h-1.5 rounded-sm opacity-80 ${state.dot}`}
+                      className={`
+                        absolute
+                        left-2.5
+                        h-1.5
+                        w-1.5
+                        rounded-sm
+                        ${state.dot}
+                      `}
                     />
 
-                    <span className="text-xs font-semibold font-['Inter'] leading-4 whitespace-nowrap">
+                    <span
+                      className="
+                        text-xs
+                        font-semibold
+                        leading-5
+                      "
+                    >
                       {state.name}
                     </span>
                   </div>
-                </div>
 
-                {/* Treatment */}
-                <div className="flex-1 px-4 py-3.5 flex items-center">
-                  <p className="text-color-azure-44-3 text-sm font-normal font-['Inter'] leading-5">
+                  {/* TREATMENT LABEL */}
+                  <p
+                    className="
+                      !m-0
+                      mt-5
+                      text-[11px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Treatment
+                  </p>
+
+                  {/* TREATMENT */}
+                  <p
+                    className="
+                      !m-0
+                      mt-1.5
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
                     {state.treatment}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

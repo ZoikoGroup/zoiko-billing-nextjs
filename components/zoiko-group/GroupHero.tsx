@@ -30,7 +30,7 @@ export default function GroupHero() {
             {/* No group destination is wired yet — this stays inert rather than
                 pointing at a page that only sounds right. */}
             <Link
-              href="#"
+              href="#zoiko-group"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#1F6FEB] px-6 py-2.5 text-sm font-semibold !leading-6 !text-white shadow-[0px_8px_20px_0px_rgba(31,111,235,0.26)] transition-colors hover:bg-[#1A5FCC]"
             >
               Visit Zoiko Group
