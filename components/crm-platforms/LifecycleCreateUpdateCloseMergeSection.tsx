@@ -1,118 +1,266 @@
 interface CrmLifecycleRow {
   crmEvent: string;
-  billingTreatment: React.ReactNode;
+  billingTreatment: string;
 }
 
 const crmLifecycleRows: CrmLifecycleRow[] = [
   {
     crmEvent: "Account created",
-    billingTreatment: "May create or link a Billing draft or reference only if configured and validated",
+    billingTreatment:
+      "May create or link a Billing draft or reference only if configured and validated",
   },
   {
     crmEvent: "Account updated",
-    billingTreatment: "Apply only mapped fields according to field authority and version",
+    billingTreatment:
+      "Apply only mapped fields according to field authority and version",
   },
   {
     crmEvent: "Account closed or lost",
-    billingTreatment: (
-      <>
-        <span className="font-bold text-slate-900">
-          Does not automatically close the Billing account
-        </span>{" "}
-        — creates context or review per mapping
-      </>
-    ),
+    billingTreatment:
+      "Does not automatically close the Billing account — creates context or review per mapping",
   },
   {
     crmEvent: "Account reactivated",
-    billingTreatment: "Does not automatically reactivate the Billing account",
+    billingTreatment:
+      "Does not automatically reactivate the Billing account",
   },
   {
     crmEvent: "Account merged",
-    billingTreatment: "Review and remap external IDs; Billing customer records are not silently merged",
+    billingTreatment:
+      "Review and remap external IDs; Billing customer records are not silently merged",
   },
   {
     crmEvent: "Account deleted",
-    billingTreatment: (
-      <>
-        Unlink, restrict or reference per Billing retention —{" "}
-        <span className="font-bold text-slate-900">
-          no automatic financial-record deletion
-        </span>
-      </>
-    ),
+    billingTreatment:
+      "Unlink, restrict or reference per Billing retention — no automatic financial-record deletion",
   },
   {
     crmEvent: "Parent changed",
-    billingTreatment: "Relationship mapping review; no automatic permission, balance or tax inheritance",
+    billingTreatment:
+      "Relationship mapping review; no automatic permission, balance or tax inheritance",
   },
   {
     crmEvent: "Contact removed",
-    billingTreatment: "Update the mapped relation only if purpose and retention allow; issued-document evidence remains",
+    billingTreatment:
+      "Update the mapped relation only if purpose and retention allow; issued-document evidence remains",
   },
   {
     crmEvent: "Opportunity closed",
-    billingTreatment: "A sales context update only; no automatic financial finality",
+    billingTreatment:
+      "A sales context update only; no automatic financial finality",
   },
   {
     crmEvent: "Billing customer archived",
-    billingTreatment: "Outbound CRM status may update if configured; the CRM record can remain for sales purposes",
+    billingTreatment:
+      "Outbound CRM status may update if configured; the CRM record can remain for sales purposes",
   },
 ];
 
 export default function LifecycleCreateUpdateCloseMergeSection() {
   return (
-    <section className="w-full bg-white py-16 lg:py-24 border-t border-slate-100" id="lifecycle-events">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-5 bg-slate-300" />
-          LIFECYCLE: CREATE, UPDATE, CLOSE, MERGE, DELETE &amp; REPARENT
-          <span className="h-px w-5 bg-slate-300" />
-        </div>
+    <section
+      id="lifecycle-events"
+      className="w-full bg-[#f7f8fa]"
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
-          One system&apos;s close state is not authoritative everywhere.
-        </h2>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Lifecycle: Create, Update, Close, Merge, Delete &amp; Reparent
+              </span>
 
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
-          Sales lifecycle, CRM data lifecycle and financial-record lifecycle are different things.
-          Integration coordinates them without pretending otherwise.
-        </p>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
 
-        {/* Table Container Card */}
-        <div className="mt-10 lg:mt-14 w-full max-w-[1240px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm text-left">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[620px]">
-              <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200/80">
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/3">
-                    CRM EVENT
-                  </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-2/3">
-                    BILLING TREATMENT
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {crmLifecycleRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/40 transition">
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-bold text-slate-900 align-top">
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              One system&apos;s close state is not authoritative everywhere.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Sales lifecycle, CRM data lifecycle and financial-record
+              lifecycle are different things. Integration coordinates them
+              without pretending otherwise.
+            </p>
+          </div>
+
+          {/* LIFECYCLE CARD */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* DESKTOP */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-[280px_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
+                    CRM Event
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
+                    Billing Treatment
+                  </span>
+                </div>
+              </div>
+
+              {crmLifecycleRows.map((row, index) => (
+                <div
+                  key={row.crmEvent}
+                  className={`grid grid-cols-[280px_minmax(0,1fr)] ${
+                    index !== crmLifecycleRows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }`}
+                >
+                  <div className="px-5 py-4">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
                       {row.crmEvent}
-                    </td>
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed align-top">
+                    </span>
+                  </div>
+
+                  <div className="px-5 py-4">
+                    <span
+                      className={`text-sm leading-6 ${
+                        row.crmEvent === "Account closed or lost" ||
+                        row.crmEvent === "Account deleted"
+                          ? "font-semibold text-[#091127]"
+                          : "text-[#5d7192]"
+                      }`}
+                    >
                       {row.billingTreatment}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE */}
+            <div className="flex flex-col md:hidden">
+              {crmLifecycleRows.map((row, index) => (
+                <div
+                  key={row.crmEvent}
+                  className={`p-5 ${
+                    index !== crmLifecycleRows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }`}
+                >
+                  <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                    CRM Event
+                  </p>
+
+                  <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                    {row.crmEvent}
+                  </p>
+
+                  <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                    Billing Treatment
+                  </p>
+
+                  <p
+                    className={`!m-0 mt-1.5 text-sm leading-6 ${
+                      row.crmEvent === "Account closed or lost" ||
+                      row.crmEvent === "Account deleted"
+                        ? "font-semibold text-[#091127]"
+                        : "text-[#5d7192]"
+                    }`}
+                  >
+                    {row.billingTreatment}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

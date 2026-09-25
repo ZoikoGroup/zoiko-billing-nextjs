@@ -48,7 +48,9 @@ export default function ExamplesCatalog() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id = "examples"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

@@ -1,10 +1,11 @@
+import Link from "next/link";
+
 export default function BankReconModel() {
   const rows = [
     {
       layer: "Bank / financial institution",
       role: "Source account and transaction records per its own services.",
-      authority:
-        "Zoiko does not create or verify bank ownership by implication",
+      authority: "Zoiko does not create or verify bank ownership by implication",
     },
     {
       layer: "Banking / feed provider",
@@ -19,8 +20,7 @@ export default function BankReconModel() {
     {
       layer: "Bank transaction evidence",
       role: "An external source transaction record and its provenance.",
-      authority:
-        "Not automatically a Billing payment or a reconciled item",
+      authority: "Not automatically a Billing payment or a reconciled item",
     },
     {
       layer: "Billing payment / allocation",
@@ -35,20 +35,12 @@ export default function BankReconModel() {
     {
       layer: "Reconciliation decision",
       role: "An authorized reviewed relationship and evidence state.",
-      authority:
-        "Does not itself create an accounting journal or posting",
+      authority: "Does not itself create an accounting journal or posting",
     },
     {
       layer: "Accounting handoff",
       role: "An optional external accounting process.",
-      authority: (
-        <>
-          <span className="font-semibold text-blue-600">
-            Accounting &amp; ERP
-          </span>{" "}
-          owns target posting evidence
-        </>
-      ),
+      authority: "Accounting & ERP owns target posting evidence",
     },
   ];
 
@@ -64,15 +56,11 @@ export default function BankReconModel() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -84,9 +72,7 @@ export default function BankReconModel() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             lg:gap-11
           "
         >
@@ -115,7 +101,6 @@ export default function BankReconModel() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -136,14 +121,12 @@ export default function BankReconModel() {
                 !leading-[1.2]
                 !tracking-[-0.03em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
               "
             >
-              The integration coordinates evidence
-              without collapsing authority.
+              The integration coordinates evidence without collapsing
+              authority.
             </h2>
 
             {/* DESCRIPTION */}
@@ -156,7 +139,6 @@ export default function BankReconModel() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -178,13 +160,8 @@ export default function BankReconModel() {
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            {/* RESPONSIVE TABLE */}
             <div className="w-full overflow-x-auto">
-              <div
-                className="
-                  min-w-[1040px]
-                "
-              >
+              <div className="min-w-[1040px]">
                 {/* TABLE HEADER */}
                 <div className="grid grid-cols-[224px_1fr_1fr]">
                   <div
@@ -297,7 +274,19 @@ export default function BankReconModel() {
                           text-[#5d7192]
                         "
                       >
-                        {row.authority}
+                        {row.layer === "Accounting handoff" ? (
+                          <>
+                            <Link
+                              href="/accounting-and-erp"
+                              className="font-semibold !text-blue-600 hover:text-blue-700 hover:underline"
+                            >
+                              Accounting &amp; ERP
+                            </Link>{" "}
+                            owns target posting evidence
+                          </>
+                        ) : (
+                          row.authority
+                        )}
                       </p>
                     </div>
                   </div>
@@ -313,7 +302,6 @@ export default function BankReconModel() {
               text-xs
               font-normal
               text-[#7890b2]
-
               sm:hidden
             "
           >

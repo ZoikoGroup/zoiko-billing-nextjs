@@ -72,7 +72,7 @@ export default function CompanyDropdown() {
             Zoiko Billing operates independently and can also connect with the Zoiko One suite.
           </p>
           <div><Link
-          href="/zoiko-one"
+          href="/ecosystem"
           className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >

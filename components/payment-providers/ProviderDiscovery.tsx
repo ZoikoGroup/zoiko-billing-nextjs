@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function ProviderDiscovery() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id = "browse-providers"
+     className="w-full overflow-hidden bg-white">
       <div
         className="
           mx-auto

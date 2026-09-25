@@ -46,7 +46,9 @@ const rows = [
 
 export default function ResourceFinderContract() {
   return (
-    <section className="w-full bg-white">
+    <section
+    id = "browse-resources"
+     className="w-full bg-white">
       <div
         className="
           mx-auto

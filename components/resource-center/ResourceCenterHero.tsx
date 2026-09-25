@@ -154,7 +154,7 @@ export default function ResourceCenterHero() {
               "
             >
               <Link
-                href="/resources"
+                href="#browse-resources"
                 className="
                   inline-flex
                   min-h-11
@@ -180,7 +180,7 @@ export default function ResourceCenterHero() {
               </Link>
 
               <Link
-                href="/resources/topics"
+                href="#topics"
                 className="
                   inline-flex
                   min-h-11

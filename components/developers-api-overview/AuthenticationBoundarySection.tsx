@@ -78,14 +78,14 @@ export default function AuthenticationBoundarySection() {
           {/* Action CTAs */}
           <div className="flex w-full flex-wrap items-center gap-3 pt-2 sm:w-auto">
             <Link
-              href="#authentication-docs"
+              href="developers-authentication"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-6 text-center text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:bg-blue-700"
             >
               Authentication
             </Link>
 
             <Link
-              href="#api-docs"
+              href="developers-api-documentation"
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
             >
               API Documentation

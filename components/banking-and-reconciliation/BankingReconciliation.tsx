@@ -108,7 +108,7 @@ export default function BankingReconciliation() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -149,7 +149,7 @@ export default function BankingReconciliation() {
             "
           >
             <Link
-              href="/integrations"
+              href="#connection"
               className="
                 inline-flex
                 min-h-11
