@@ -134,7 +134,7 @@ export default function SandboxCTA() {
             >
               {/* Primary Button */}
               <Link
-                href="/request-sandbox-access"
+                href="#request-sandbox"
                 className="
                   inline-flex
                   min-h-11
@@ -161,7 +161,7 @@ export default function SandboxCTA() {
 
               {/* Secondary Button */}
               <Link
-                href="/sandbox-fidelity"
+                href="#fidelity"
                 className="
                   inline-flex
                   min-h-11

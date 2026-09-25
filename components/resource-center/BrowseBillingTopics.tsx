@@ -67,7 +67,9 @@ const topics = [
 
 export default function BrowseBillingTopics() {
   return (
-    <section className="w-full bg-white">
+    <section
+    id ="topics"
+     className="w-full bg-white">
       <div
         className="
           mx-auto

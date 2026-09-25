@@ -17,7 +17,7 @@ export default function ObjectActions() {
         "Export or create target object and reference; read status.",
       boundary:
         "Does not imply journal posting or revenue recognition",
-        emphasized: true,
+      emphasized: true,
     },
     {
       object: "Credit notes / corrections",
@@ -49,8 +49,7 @@ export default function ObjectActions() {
     },
     {
       object: "Tax values / codes",
-      actions:
-        "Pass approved computed values and mapped target codes.",
+      actions: "Pass approved computed values and mapped target codes.",
       boundary: "No tax determination or filing claim",
     },
     {
@@ -75,243 +74,143 @@ export default function ObjectActions() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-[#f7f8fa]">
-      <div
-        className="
-          mx-auto
-          flex
-          w-full
-          max-w-[1440px]
-          flex-col
-          items-center
-          px-5
-          py-12
+    <section className="w-full bg-[#f7f8fa]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start px-5 py-14 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-14 xl:px-20">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 sm:gap-10 md:gap-11">
+          {/* INTRO */}
+          <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2 text-center">
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-          sm:px-8
-          sm:py-16
+              <span className="text-[10px] font-bold uppercase leading-4 tracking-[0.16em] text-[#7890b2] sm:text-xs sm:tracking-[0.18em]">
+                Supported objects, actions &amp; direction
+              </span>
 
-          md:px-10
-          md:py-20
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
 
-          lg:px-14
+            {/* HEADING */}
+            <h2 className="!m-0 w-full max-w-[1000px] !text-[30px] !font-extrabold !leading-[1.2] !tracking-[-0.035em] !text-[#091127] sm:!text-[34px] md:!text-[36px] lg:!text-[40px]">
+              There is no generic bidirectional sync.
+            </h2>
 
-          xl:px-20
-        "
-      >
-        {/* INTRO */}
-        <div
-          className="
-            flex
-            w-full
-            max-w-[662px]
-            flex-col
-            items-center
-            gap-3
-            pt-2
-            text-center
-          "
-        >
-          {/* EYEBROW */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
-
-            <span
-              className="
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.16em]
-                text-[#7890b2]
-
-                sm:text-xs
-                sm:tracking-[0.18em]
-              "
-            >
-              Supported objects, actions &amp; direction
-            </span>
-
-            <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            {/* DESCRIPTION */}
+            <p className="!m-0 w-full max-w-[687px] text-[15px] font-normal leading-7 text-[#5d7192] sm:text-base">
+              Nine object areas, each with registered actions and an explicit
+              boundary. Direction is declared per object and action, never as
+              a single arrow.
+            </p>
           </div>
 
-          {/* HEADING */}
-          <h2
-            className="
-              !m-0
-              w-full
-              max-w-[760px]
-              text-center
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.03em]
-              text-[#091127]
-
-              sm:text-[34px]
-
-              md:text-[36px]
-              md:leading-10
-            "
-          >
-            There is no generic bidirectional sync.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
-              w-full
-              max-w-[687px]
-              text-center
-              text-sm
-              font-normal
-              leading-6
-              text-[#5d7192]
-
-              sm:text-base
-              sm:leading-7
-            "
-          >
-            Nine object areas, each with registered actions and an explicit
-            boundary. Direction is declared per object and action, never as a
-            single arrow.
-          </p>
-        </div>
-
-        {/* TABLE */}
-        <div
-          className="
-            mt-9
-            w-full
-            overflow-hidden
-            rounded-2xl
-            border
-            border-[#dfe5ee]
-            bg-white
-            shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-
-            sm:mt-11
-          "
-        >
-          {/* MOBILE HORIZONTAL SCROLL */}
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[1040px]">
-              {/* HEADER */}
-              <div
-                className="
-                  grid
-                  grid-cols-[208px_470px_1fr]
-                  bg-[#fafbfc]
-                "
-              >
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      leading-4
-                      tracking-wide
-                      text-[#7890b2]
-                    "
-                  >
-                    Object area
-                  </span>
-                </div>
-
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      leading-4
-                      tracking-wide
-                      text-[#7890b2]
-                    "
-                  >
-                    Possible registered actions
-                  </span>
-                </div>
-
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      leading-4
-                      tracking-wide
-                      text-[#7890b2]
-                    "
-                  >
-                    Boundary
-                  </span>
-                </div>
+          {/* DESKTOP TABLE */}
+          <div className="hidden w-full overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] md:block">
+            {/* HEADER */}
+            <div className="grid grid-cols-[208px_minmax(0,1.05fr)_minmax(0,1fr)] bg-[#fafbfc]">
+              <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  Object area
+                </span>
               </div>
 
-              {/* ROWS */}
-              {rows.map((row, index) => (
-                <div
-                  key={index}
-                  className={`
-                    grid
-                    grid-cols-[208px_470px_1fr]
-                    ${
-                      index !== rows.length - 1
-                        ? "border-b border-[#eef1f5]"
-                        : ""
-                    }
-                  `}
-                >
-                  {/* OBJECT */}
-                  <div className="px-4 py-3.5">
-                    <div
-                      className="
-                        whitespace-pre-line
-                        text-sm
-                        font-semibold
-                        leading-5
-                        text-[#091127]
-                      "
-                    >
-                      {row.object}
-                    </div>
-                  </div>
+              <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  Possible registered actions
+                </span>
+              </div>
 
-                  {/* ACTIONS */}
-                  <div className="px-4 py-3.5">
-                    <div
-                      className="
-                        text-sm
-                        font-normal
-                        leading-5
-                        text-[#5d7192]
-                      "
-                    >
-                      {row.actions}
-                    </div>
-                  </div>
+              <div className="border-b border-[#dfe5ee] px-4 py-3.5">
+                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  Boundary
+                </span>
+              </div>
+            </div>
 
-                  {/* BOUNDARY */}
-                  <div className="px-4 py-3.5">
-                    <div
-                      className={`
-                        text-sm
-                        leading-5
-                        ${
-                          row.emphasized
-                            ? "font-bold text-[#091127]"
-                            : "font-normal text-[#5d7192]"
-                        }
-                      `}
-                    >
-                      {row.boundary}
-                    </div>
+            {/* ROWS */}
+            {rows.map((row, index) => (
+              <div
+                key={index}
+                className={`grid grid-cols-[208px_minmax(0,1.05fr)_minmax(0,1fr)] ${
+                  index !== rows.length - 1
+                    ? "border-b border-[#edf0f4]"
+                    : ""
+                }`}
+              >
+                {/* OBJECT */}
+                <div className="px-4 py-3.5">
+                  <div className="text-sm font-semibold leading-5 text-[#091127]">
+                    {row.object}
                   </div>
                 </div>
-              ))}
-            </div>
+
+                {/* ACTIONS */}
+                <div className="px-4 py-3.5">
+                  <div className="text-sm font-normal leading-5 text-[#5d7192]">
+                    {row.actions}
+                  </div>
+                </div>
+
+                {/* BOUNDARY */}
+                <div className="px-4 py-3.5">
+                  <div
+                    className={`text-sm leading-5 ${
+                      row.emphasized
+                        ? "font-bold text-[#091127]"
+                        : "font-normal text-[#5d7192]"
+                    }`}
+                  >
+                    {row.boundary}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MOBILE CARDS */}
+          <div className="flex w-full flex-col overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)] md:hidden">
+            {rows.map((row, index) => (
+              <div
+                key={index}
+                className={`p-5 ${
+                  index !== rows.length - 1
+                    ? "border-b border-[#edf0f4]"
+                    : ""
+                }`}
+              >
+                {/* OBJECT */}
+                <div className="mb-2 text-[11px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                  Object area
+                </div>
+
+                <div className="text-sm font-semibold leading-5 text-[#091127]">
+                  {row.object}
+                </div>
+
+                {/* ACTIONS */}
+                <div className="mb-2 mt-4 text-[11px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                  Possible registered actions
+                </div>
+
+                <div className="text-sm font-normal leading-6 text-[#5d7192]">
+                  {row.actions}
+                </div>
+
+                {/* BOUNDARY */}
+                <div className="mb-2 mt-4 text-[11px] font-bold uppercase leading-4 tracking-[0.12em] text-[#7890b2]">
+                  Boundary
+                </div>
+
+                <div
+                  className={`text-sm leading-6 ${
+                    row.emphasized
+                      ? "font-bold text-[#091127]"
+                      : "font-normal text-[#5d7192]"
+                  }`}
+                >
+                  {row.boundary}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

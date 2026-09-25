@@ -54,7 +54,9 @@ export default function CorrectionRecovery() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section
+    id ="correction"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -62,14 +64,12 @@ export default function CorrectionRecovery() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
-          gap-8
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
           sm:py-16
-          sm:gap-10
 
           md:px-10
           md:py-20
@@ -79,111 +79,123 @@ export default function CorrectionRecovery() {
           xl:px-20
         "
       >
-        {/* INTRO */}
         <div
           className="
+            mx-auto
             flex
             w-full
+            max-w-[1240px]
             flex-col
             items-center
-            gap-3
-            pt-2
-            text-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* EYEBROW */}
-          <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Corrections, reversals, reposting &amp; historical integrity
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
               className="
-                whitespace-nowrap
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.1em]
-                text-[#7890b2]
+                !m-0
+                w-full
+                max-w-[1000px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-xs
-                sm:tracking-[0.15em]
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              Corrections, reversals, reposting &amp; historical integrity
-            </span>
+              Correction links; it does not erase.
+            </h2>
 
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Historical issued documents and target acknowledgments remain
+              evidence. A correction produces linked new events rather than
+              rewriting what was previously sent.
+            </p>
           </div>
 
-          {/* HEADING */}
-          <h2
+          {/* TABLE */}
+          <div
             className="
-              !m-0
               w-full
-              max-w-[900px]
-              text-center
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.03em]
-              text-[#091127]
-
-              sm:text-[34px]
-
-              md:text-[36px]
-              md:leading-10
-              md:whitespace-nowrap
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            Correction links; it does not erase.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
-              w-full
-              max-w-[687px]
-              text-center
-              text-sm
-              font-normal
-              leading-6
-              text-[#5d7192]
-
-              sm:text-base
-              sm:leading-7
-            "
-          >
-            Historical issued documents and target acknowledgments remain
-            evidence. A correction produces linked new events rather than
-            rewriting what was previously sent.
-          </p>
-        </div>
-
-        {/* TABLE */}
-        <div
-          className="
-            w-full
-            overflow-hidden
-            rounded-2xl
-            border
-            border-[#dfe5ee]
-            bg-white
-            shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-          "
-        >
-          {/* HORIZONTAL SCROLL ON SMALL SCREENS */}
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[900px]">
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
               {/* TABLE HEADER */}
               <div
                 className="
                   grid
-                  grid-cols-[288px_minmax(612px,1fr)]
+                  grid-cols-[288px_minmax(0,1fr)]
                   bg-[#fafbfc]
                 "
               >
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -198,7 +210,7 @@ export default function CorrectionRecovery() {
                   </span>
                 </div>
 
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -220,17 +232,17 @@ export default function CorrectionRecovery() {
                   key={row.scenario}
                   className={`
                     grid
-                    grid-cols-[288px_minmax(612px,1fr)]
+                    grid-cols-[288px_minmax(0,1fr)]
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#eef1f5]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
                 >
                   {/* SCENARIO */}
                   <div className="px-4 py-3.5">
-                    <div
+                    <span
                       className="
                         text-sm
                         font-semibold
@@ -239,12 +251,12 @@ export default function CorrectionRecovery() {
                       "
                     >
                       {row.scenario}
-                    </div>
+                    </span>
                   </div>
 
                   {/* REQUIRED RECOVERY */}
                   <div className="px-4 py-3.5">
-                    <div
+                    <span
                       className="
                         text-sm
                         font-normal
@@ -253,7 +265,81 @@ export default function CorrectionRecovery() {
                       "
                     >
                       {row.recovery}
-                    </div>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {rows.map((row, index) => (
+                <div
+                  key={row.scenario}
+                  className={`
+                    p-5
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* SCENARIO */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Scenario
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.scenario}
+                    </p>
+                  </div>
+
+                  {/* REQUIRED RECOVERY */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Required recovery
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.recovery}
+                    </p>
                   </div>
                 </div>
               ))}

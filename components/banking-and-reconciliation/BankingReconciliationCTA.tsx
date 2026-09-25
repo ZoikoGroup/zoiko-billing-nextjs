@@ -122,7 +122,7 @@ export default function BankingReconciliationCTA() {
             >
               {/* Primary */}
               <Link
-                href="/integrations"
+                href="#connection"
                 className="
                   inline-flex
                   min-h-11
