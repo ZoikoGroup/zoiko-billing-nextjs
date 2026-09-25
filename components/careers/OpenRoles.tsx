@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function OpenRoles() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id ="open-roles" 
+    className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

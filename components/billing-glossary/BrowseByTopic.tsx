@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+
 export default function BrowseByTopic() {
   const topics = [
     {
@@ -5,6 +9,7 @@ export default function BrowseByTopic() {
       scope:
         "Billing identity, contacts, terms, record states, ownership concepts.",
       authority: "Customer Records",
+      href: "/customer-records",
     },
     {
       topic: "Invoices & credit notes",
@@ -28,6 +33,7 @@ export default function BrowseByTopic() {
       scope:
         "Receivables, reminders, disputes, exceptions, ownership, aging concepts.",
       authority: "Accounts Receivable · Guides",
+      href: "/accounts-receivable",
     },
     {
       topic: "Payments & reconciliation",
@@ -39,6 +45,7 @@ export default function BrowseByTopic() {
       topic: "Outstanding balances",
       scope: "Balance, aging, status and prioritization concepts.",
       authority: "Outstanding Balances",
+      href: "/outstanding-balances",
     },
     {
       topic: "Reporting & analytics",
@@ -51,6 +58,7 @@ export default function BrowseByTopic() {
       scope:
         "Integration, webhook, authentication, sandbox and SDK business meanings.",
       authority: "Integrations · Developers",
+      href: "/integrations",
     },
   ];
 
@@ -66,15 +74,11 @@ export default function BrowseByTopic() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -87,9 +91,7 @@ export default function BrowseByTopic() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
@@ -118,7 +120,6 @@ export default function BrowseByTopic() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -140,11 +141,8 @@ export default function BrowseByTopic() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -161,7 +159,6 @@ export default function BrowseByTopic() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -187,19 +184,19 @@ export default function BrowseByTopic() {
               {/* HEADER */}
               <div className="grid grid-cols-[240px_minmax(0,1fr)_320px] bg-[#fafbfc]">
                 <div className="border-b border-[#dfe5ee] px-4 py-3.5">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-[0.14em] text-[#7890b2]">
                     Topic
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-4 py-3.5">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-[0.14em] text-[#7890b2]">
                     Glossary scope
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-4 py-3.5">
-                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-[0.14em] text-[#7890b2]">
                     Authority
                   </span>
                 </div>
@@ -209,11 +206,17 @@ export default function BrowseByTopic() {
               {topics.map((item, index) => (
                 <div
                   key={item.topic}
-                  className={`grid grid-cols-[240px_minmax(0,1fr)_320px] ${
-                    index !== topics.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
+                  className={`
+                    grid
+                    grid-cols-[240px_minmax(0,1fr)_320px]
+                    transition-colors
+                    hover:bg-[#f7f8fa]/70
+                    ${
+                      index !== topics.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
                 >
                   {/* TOPIC */}
                   <div className="px-4 py-3.5">
@@ -231,18 +234,26 @@ export default function BrowseByTopic() {
 
                   {/* AUTHORITY */}
                   <div className="px-4 py-3.5">
-                    <span
-                      className={
-                        item.authority.includes("Customer Records") ||
-                        item.authority.includes("Accounts Receivable") ||
-                        item.authority.includes("Outstanding Balances") ||
-                        item.authority.includes("Integrations")
-                          ? "text-sm font-semibold leading-6 text-[#4c83c3]"
-                          : "text-sm font-normal leading-5 text-[#5d7192]"
-                      }
-                    >
-                      {item.authority}
-                    </span>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="
+                          text-sm
+                          font-semibold
+                          leading-6
+                          !text-blue-600
+                          transition-colors
+                          hover:text-[#091127]
+                          hover:underline
+                        "
+                      >
+                        {item.authority}
+                      </Link>
+                    ) : (
+                      <span className="text-sm font-normal leading-5 !text-[#5d7192]">
+                        {item.authority}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -253,11 +264,14 @@ export default function BrowseByTopic() {
               {topics.map((item, index) => (
                 <div
                   key={item.topic}
-                  className={`p-5 ${
-                    index !== topics.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
+                  className={`
+                    p-5
+                    ${
+                      index !== topics.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
                 >
                   {/* TOPIC */}
                   <div className="mb-4">
@@ -287,17 +301,25 @@ export default function BrowseByTopic() {
                       Authority
                     </p>
 
-                    <p
-                      className={`!m-0 mt-1.5 text-sm leading-6 ${
-                        item.authority.includes("Customer Records") ||
-                        item.authority.includes("Accounts Receivable") ||
-                        item.authority.includes("Outstanding Balances") ||
-                        item.authority.includes("Integrations")
-                          ? "font-semibold text-[#4c83c3]"
-                          : "text-[#5d7192]"
-                      }`}
-                    >
-                      {item.authority}
+                    <p className="!m-0 mt-1.5 text-sm leading-6">
+                      {item.href ? (
+                        <Link
+                          href={item.href}
+                          className="
+                            font-semibold
+                            text-blue-600
+                            transition-colors
+                            hover:text-[#091127]
+                            hover:underline
+                          "
+                        >
+                          {item.authority}
+                        </Link>
+                      ) : (
+                        <span className="text-[#5d7192]">
+                          {item.authority}
+                        </span>
+                      )}
                     </p>
                   </div>
                 </div>

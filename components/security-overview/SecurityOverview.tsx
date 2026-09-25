@@ -146,7 +146,7 @@ export default function SecurityOverview() {
             "
           >
             <Link
-              href="/security-controls"
+              href="/security-advisories"
               className="
                 inline-flex
                 min-h-11
@@ -172,7 +172,7 @@ export default function SecurityOverview() {
             </Link>
 
             <Link
-              href="/trust"
+              href="/trust-center"
               className="
                 inline-flex
                 min-h-11

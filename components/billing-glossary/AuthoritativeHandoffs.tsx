@@ -12,7 +12,9 @@ export default function AuthoritativeHandoffs() {
       behavior: (
         <>
           Business meaning only —{" "}
-          <strong>the technical contract stays in Developers</strong>
+          <strong className="font-bold text-[#091127]">
+            the technical contract stays in Developers
+          </strong>
         </>
       ),
     },
@@ -20,7 +22,11 @@ export default function AuthoritativeHandoffs() {
       question: "What does it cost, or which plan includes it?",
       authority: "Pricing",
       authorityHighlight: true,
-      behavior: <strong>No duplicated price or entitlement values</strong>,
+      behavior: (
+        <strong className="font-bold text-[#091127]">
+          No duplicated price or entitlement values
+        </strong>
+      ),
     },
     {
       question: "Is this compliant, secure or private?",
@@ -30,7 +36,11 @@ export default function AuthoritativeHandoffs() {
     {
       question: "How do I solve this account-specific issue?",
       authority: "Help Center · Support",
-      behavior: <strong>No account diagnosis in a glossary</strong>,
+      behavior: (
+        <strong className="font-bold text-[#091127]">
+          No account diagnosis in a glossary
+        </strong>
+      ),
     },
     {
       question: "Is this a legal, accounting or tax obligation?",
@@ -41,59 +51,165 @@ export default function AuthoritativeHandoffs() {
   ];
 
   return (
-    <section className="w-full px-4 py-12 sm:px-6 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 sm:gap-10 lg:gap-11">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* Intro */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* Eyebrow */}
+            <div className="flex h-4 items-center justify-center gap-3">
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <div className="flex w-full max-w-[662px] flex-col items-center gap-3 pt-2">
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Authoritative handoffs
+              </span>
 
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center gap-3">
-            <span className="h-px w-4 bg-color-azure-60 opacity-40" />
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            </div>
 
-            <span className="whitespace-nowrap text-center text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Authoritative handoffs
-            </span>
-
-            <span className="h-px w-4 bg-color-azure-60 opacity-40" />
-          </div>
-
-          {/* Title */}
-          <div className="w-full pb-1 text-center">
-            <h2 className="text-3xl font-extrabold leading-9 text-color-azure-11-2 sm:text-4xl sm:leading-10">
+            {/* Heading */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               Six questions hiding behind a term.
             </h2>
-          </div>
 
-          {/* Description */}
-          <div className="w-full max-w-[687px] pt-1 text-center">
-            <p className="text-sm font-normal leading-6 text-color-azure-44-3 sm:text-base sm:leading-7">
+            {/* Description */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
               Someone searching a term usually has a question the glossary is
               not allowed to answer.
             </p>
           </div>
-        </div>
 
-        {/* Table */}
-        <div className="w-full overflow-x-auto rounded-2xl border border-color-grey-92-4 bg-color-white-solid shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)]">
-          <div className="min-w-[1040px]">
-
+          {/* Desktop Table */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              md:block
+            "
+          >
             {/* Header */}
-            <div className="grid grid-cols-[384px_240px_1fr]">
-              <div className="border-b border-color-grey-92-4 bg-color-grey-99-2 px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+            <div className="grid grid-cols-[384px_240px_minmax(0,1fr)]">
+              <div className="border-b border-[#dfe5ee] bg-[#f7f8fa] px-5 py-4">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Question behind the term
                 </span>
               </div>
 
-              <div className="border-b border-color-grey-92-4 bg-color-grey-99-2 px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+              <div className="border-b border-[#dfe5ee] bg-[#f7f8fa] px-5 py-4">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Authority
                 </span>
               </div>
 
-              <div className="border-b border-color-grey-92-4 bg-color-grey-99-2 px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+              <div className="border-b border-[#dfe5ee] bg-[#f7f8fa] px-5 py-4">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Glossary behavior
                 </span>
               </div>
@@ -103,26 +219,32 @@ export default function AuthoritativeHandoffs() {
             {rows.map((row, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-[384px_240px_1fr] ${
-                  index !== rows.length - 1
-                    ? "border-b border-color-grey-95-10"
-                    : ""
-                }`}
+                className={`
+                  grid
+                  grid-cols-[384px_240px_minmax(0,1fr)]
+                  transition-colors
+                  hover:bg-[#f7f8fa]/70
+                  ${
+                    index !== rows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }
+                `}
               >
                 {/* Question */}
-                <div className="px-4 py-3.5">
-                  <p className="text-sm font-semibold leading-5 text-color-azure-11-2">
+                <div className="px-5 py-4">
+                  <p className="m-0 text-sm font-semibold leading-6 text-[#091127]">
                     {row.question}
                   </p>
                 </div>
 
                 {/* Authority */}
-                <div className="px-4 py-3.5">
+                <div className="px-5 py-4">
                   <p
                     className={
                       row.authorityHighlight
-                        ? "text-sm font-semibold leading-6 text-color-azure-52"
-                        : "text-sm font-normal leading-5 text-color-azure-44-3"
+                        ? "m-0 text-sm font-semibold leading-6 text-blue-600"
+                        : "m-0 text-sm font-normal leading-6 text-[#5d7192]"
                     }
                   >
                     {row.authority}
@@ -130,10 +252,98 @@ export default function AuthoritativeHandoffs() {
                 </div>
 
                 {/* Behavior */}
-                <div className="px-4 py-3.5">
-                  <p className="text-sm font-normal leading-5 text-color-azure-44-3">
+                <div className="px-5 py-4">
+                  <p className="m-0 text-sm font-normal leading-6 text-[#5d7192]">
                     {row.behavior}
                   </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="flex w-full flex-col gap-3 md:hidden">
+            {rows.map((row, index) => (
+              <div
+                key={index}
+                className="
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                "
+              >
+                <div className="flex flex-col gap-4 p-5">
+                  {/* Question */}
+                  <div>
+                    <p
+                      className="
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Question behind the term
+                    </p>
+
+                    <p className="m-0 text-sm font-semibold leading-6 text-[#091127]">
+                      {row.question}
+                    </p>
+                  </div>
+
+                  {/* Authority */}
+                  <div>
+                    <p
+                      className="
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Authority
+                    </p>
+
+                    <p
+                      className={
+                        row.authorityHighlight
+                          ? "m-0 text-sm font-semibold leading-6 text-blue-600"
+                          : "m-0 text-sm font-normal leading-6 text-[#5d7192]"
+                      }
+                    >
+                      {row.authority}
+                    </p>
+                  </div>
+
+                  {/* Glossary Behavior */}
+                  <div>
+                    <p
+                      className="
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Glossary behavior
+                    </p>
+
+                    <p className="m-0 text-sm font-normal leading-6 text-[#5d7192]">
+                      {row.behavior}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
