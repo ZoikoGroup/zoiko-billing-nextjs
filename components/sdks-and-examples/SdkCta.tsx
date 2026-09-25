@@ -126,7 +126,7 @@ export default function SdkCta() {
           >
             {/* Browse SDKs */}
             <Link
-              href="/sdks"
+              href="#sdks"
               className="
                 inline-flex
                 min-h-11
@@ -153,7 +153,7 @@ export default function SdkCta() {
 
             {/* Browse Examples */}
             <Link
-              href="/examples"
+              href="#examples"
               className="
                 inline-flex
                 min-h-11
@@ -182,7 +182,7 @@ export default function SdkCta() {
 
             {/* API Documentation */}
             <Link
-              href="/api-documentation"
+              href="/developers-api-documentation"
               className="
                 inline-flex
                 min-h-11

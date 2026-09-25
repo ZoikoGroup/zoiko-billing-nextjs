@@ -34,7 +34,7 @@ const MULTI_CURRENCY_ITEMS: MenuItem[] = [
 
 const MULTI_ENTITY_ITEMS: MenuItem[] = [
   { title: 'Multi-Entity', description: 'Manage multiple legal entities, subsidiaries and business units.', href: '/multi-entity-billing', icon: Building2 },
-  { title: 'Entity Configuration', description: 'Separate branding, tax profiles, bank accounts and documents.', href: '#', icon: Settings },
+  { title: 'Entity Configuration', description: 'Separate branding, tax profiles, bank accounts and documents.', href: '/entity-level-controls', icon: Settings },
   { title: 'Inter-Entity Billing', description: 'Bill between entities with automated intercompany workflows.', href: '#', icon: ArrowLeftRight },
 ];
 
@@ -62,7 +62,7 @@ const RELATED_RESOURCES = [
   { label: 'Global Billing Guide', href: '/resources/global-billing-guide', icon: FileText },
   { label: 'Multi-Entity Guide', href: '/resources/multi-entity-guide', icon: Building2 },
   { label: 'Tax Compliance Guide', href: '/resources/tax-compliance-guide', icon: ShieldCheck },
-  { label: 'Customer Stories', href: '/resources/customer-stories', icon: Users },
+  { label: 'Customer Stories', href: '/customer-stories', icon: Users },
 ];
 
 export default function GlobalBillingDropdown() {

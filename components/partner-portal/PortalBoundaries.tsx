@@ -1,6 +1,8 @@
 export default function PortalBoundaries() {
   return (
-    <section className="w-full bg-[#091127]">
+    <section
+    id ="portal"
+     className="w-full bg-[#091127]">
       <div
         className="
           mx-auto

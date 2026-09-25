@@ -146,7 +146,7 @@ export default function BecomeAPartner() {
               </Link>
 
               <Link
-                href="/partner-program"
+                href="/partner-programme"
                 className="
                   inline-flex
                   min-h-11

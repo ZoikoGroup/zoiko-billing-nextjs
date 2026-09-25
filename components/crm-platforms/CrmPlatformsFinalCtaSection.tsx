@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 
@@ -9,170 +9,401 @@ interface RouteByEvaluationItem {
 }
 
 const routeByEvaluationItems: RouteByEvaluationItem[] = [
-  { evaluator: "CRM evaluator", route: "Browse integrations · Availability", href: "#crm-catalog" },
-  { evaluator: "RevOps evaluator", route: "Revenue operations · Customer records", href: "#operating-model" },
-  { evaluator: "Developer", route: "API docs · Webhooks", href: "/developers-api-documentation" },
-  { evaluator: "Commercial evaluator", route: "Governed CTA · Pricing", href: "/pricing-and-plans" },
-  { evaluator: "Existing customer incident", route: "Integration support · Status", href: "#migration-status" },
+  {
+    evaluator: "CRM evaluator",
+    route: "Browse integrations · Availability",
+    href: "/integrations",
+  },
+  {
+    evaluator: "RevOps evaluator",
+    route: "Revenue operations · Customer records",
+    href: "/customer-stories",
+  },
+  {
+    evaluator: "Developer",
+    route: "API docs · Webhooks",
+    href: "/developers-api-documentation",
+  },
+  {
+    evaluator: "Commercial evaluator",
+    route: "Governed CTA · Pricing",
+    href: "/pricing-and-plans",
+  },
+  {
+    evaluator: "Existing customer incident",
+    route: "Integration support · Status",
+    href: "/integration-support",
+  },
 ];
 
 export default function CrmPlatformsFinalCtaSection() {
   return (
-    <section className="w-full bg-white py-10 lg:py-24" id="final-cta">
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-8 lg:px-12 flex flex-col gap-10">
-        
-        {/* ========================================================================= */}
-        {/* DESKTOP VERSION (UNTOUCHED - hidden lg:flex)                              */}
-        {/* ========================================================================= */}
-        <div className="hidden lg:flex relative overflow-hidden rounded-[32px] bg-[#071126] p-12 lg:p-14 shadow-2xl border border-slate-800/70 flex-row items-center justify-between gap-10">
-          
-          {/* Ambient Top Glow */}
-          <div className="absolute -top-16 -right-16 w-[480px] h-[480px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none" />
+    <section
+      id="final-cta"
+      className="w-full bg-white"
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          px-5
+          py-12
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            relative
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            overflow-hidden
+            rounded-[24px]
+            border
+            border-[#1d2a42]
+            bg-[#071126]
+            p-6
+            sm:rounded-[28px]
+            sm:p-8
+            md:p-10
+            lg:flex-row
+            lg:items-center
+            lg:justify-between
+            lg:gap-12
+            lg:rounded-[32px]
+            lg:p-12
+            xl:p-14
+          "
+        >
+          {/* Background Glow */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -right-20
+              -top-20
+              h-72
+              w-72
+              rounded-full
+              bg-blue-600/15
+              blur-[100px]
+              sm:h-96
+              sm:w-96
+            "
+          />
 
-          {/* Left Text Content & Actions */}
-          <div className="relative z-10 flex flex-col items-start gap-4 max-w-xl text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.15] tracking-tight text-white">
-              Know which system <br />
-              owns which field.
+          {/* CONTENT */}
+          <div
+            className="
+              relative
+              z-10
+              flex
+              w-full
+              max-w-[600px]
+              flex-col
+              items-start
+              text-left
+            "
+          >
+            <h2
+              className="
+                !m-0
+                !text-[28px]
+                !font-extrabold
+                !leading-[1.15]
+                !tracking-[-0.03em]
+                !text-white
+                sm:!text-[34px]
+                md:!text-[38px]
+                lg:!text-[42px]
+              "
+            >
+              Know which system owns which field.
             </h2>
 
-            <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-400 max-w-[460px] mt-1">
-              Check direction, authority, freshness and conflict behavior per field before sales
-              context starts touching billing truth.
+            <p
+              className="
+                !m-0
+                mt-3
+                max-w-[500px]
+                text-sm
+                font-normal
+                leading-6
+                text-slate-400
+                sm:text-base
+              "
+            >
+              Check direction, authority, freshness and conflict behavior per
+              field before sales context starts touching billing truth.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-3">
+            {/* CTA BUTTONS */}
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
-                href="#crm-catalog"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 shadow-md hover:bg-slate-100 transition"
+                href="/integrations"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  px-5
+                  text-sm
+                  font-semibold
+                  !text-slate-900
+                  shadow-md
+                  transition
+                  hover:bg-slate-100
+                "
               >
-                <span className="text-slate-900 font-semibold">Browse CRM integrations</span>
+                Browse CRM integrations
               </Link>
 
               <Link
-                href="#availability"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-700/80 bg-transparent px-6 text-center text-xs sm:text-sm font-semibold !text-white shadow-sm transition hover:bg-white/10"
+                href="/integration-availability"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-slate-700
+                  px-5
+                  text-sm
+                  font-semibold
+                  !text-white
+                  transition
+                  hover:bg-white/10
+                "
               >
-                <span className="text-white font-semibold">Integration availability</span>
+                Integration availability
               </Link>
+
+              <Link
+                href="/pricing-and-plans"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-slate-700
+                  px-5
+                  text-sm
+                  font-semibold
+                  !text-white
+                  transition
+                  hover:bg-white/10
+                  lg:hidden
+                "
+              >
+                View pricing
+              </Link>
+            </div>
+
+            {/* ROUTE BY EVALUATION */}
+            <div
+              className="
+                mt-7
+                w-full
+                rounded-2xl
+                border
+                border-slate-800
+                bg-[#070D1E]/70
+                p-4
+                sm:p-5
+                lg:max-w-[600px]
+              "
+            >
+              <p className="!m-0 text-xs font-bold text-slate-200">
+                Route by evaluation
+              </p>
+
+              <div className="mt-2 divide-y divide-slate-800/80">
+                {routeByEvaluationItems.map((item) => (
+                  <div
+                    key={item.evaluator}
+                    className="
+                      flex
+                      items-center
+                      justify-between
+                      gap-4
+                      py-3
+                    "
+                  >
+                    <span className="text-xs text-slate-400 sm:text-sm">
+                      {item.evaluator}
+                    </span>
+
+                    <Link
+                      href={item.href}
+                      className="
+                        text-right
+                        text-xs
+                        font-semibold
+                        !text-white
+                        transition
+                        hover:text-blue-400
+                        sm:text-sm
+                      "
+                    >
+                      {item.route}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right Side Image Container crm7.png */}
-          <div className="relative z-10 w-full max-w-[540px] shrink-0">
+          {/* IMAGE */}
+          <div
+            className="
+              relative
+              z-10
+              mt-7
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-slate-800
+              shadow-xl
+              lg:mt-0
+              lg:max-w-[520px]
+              xl:max-w-[540px]
+            "
+          >
             <img
               src="/images/crm-platforms/crm7.png"
               alt="Know which system owns which field"
-              className="w-full h-auto object-cover rounded-2xl block border border-slate-800/80 shadow-xl"
+              className="block h-auto w-full object-cover"
             />
           </div>
-
         </div>
 
-        {/* ========================================================================= */}
-        {/* MOBILE VERSION (MATCHING REFERENCE media_1787711465261.png - block lg:hidden) */}
-        {/* ========================================================================= */}
-        <div className="block lg:hidden relative overflow-hidden rounded-[24px] bg-[#0A132C] p-6 sm:p-8 shadow-xl border border-slate-800 text-left">
-          
-          {/* Ambient Top Glow */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
-
-          {/* Headline */}
-          <h2 className="text-xl sm:text-2xl font-extrabold leading-snug text-white mb-2 relative z-10">
-            Know which system<br />
-            owns which field.
-          </h2>
-
-          {/* Subtitle */}
-          <p className="text-xs font-normal leading-relaxed text-slate-400 mb-5 relative z-10">
-            Check direction, authority, freshness and conflict behavior per field before sales context starts touching billing truth.
-          </p>
-
-          {/* 3 Buttons Row */}
-          <div className="flex flex-wrap items-center gap-2 mb-6 relative z-10">
-            <Link
-              href="#crm-catalog"
-              className="inline-flex min-h-9 items-center justify-center rounded-full bg-white px-4 text-center text-xs font-semibold !text-slate-900 shadow-sm"
-            >
-              <span className="text-slate-900 font-semibold">Browse CRM integrations</span>
-            </Link>
-
-            <Link
-              href="#availability"
-              className="inline-flex min-h-9 items-center justify-center rounded-full border border-white/80 bg-transparent px-4 text-center text-xs font-semibold !text-white"
-            >
-              <span className="text-white font-semibold">Integration availability</span>
-            </Link>
-
-            <Link
-              href="/pricing-and-plans"
-              className="inline-flex min-h-9 items-center justify-center rounded-full border border-white/80 bg-transparent px-4 text-center text-xs font-semibold !text-white"
-            >
-              <span className="text-white font-semibold">View pricing</span>
-            </Link>
-          </div>
-
-          {/* Route by evaluation Box */}
-          <div className="rounded-2xl bg-[#070D1E]/70 border border-slate-800 p-4 sm:p-5 relative z-10 text-xs text-slate-300">
-            <div className="text-xs font-bold text-slate-200 mb-3">
-              Route by evaluation
-            </div>
-
-            <div className="divide-y divide-slate-800/80">
-              {routeByEvaluationItems.map((item, idx) => (
-                <div key={idx} className="py-2.5 flex items-center justify-between gap-3">
-                  <span className="text-slate-400 text-xs font-normal">{item.evaluator}</span>
-                  <Link href={item.href} className="font-bold text-white text-xs text-right hover:text-blue-400 transition">
-                    {item.route}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-
-        {/* ========================================================================= */}
-        {/* MOBILE-ONLY VIBRANT BLUE BANNER (block lg:hidden - HIDDEN ON DESKTOP)       */}
-        {/* ========================================================================= */}
-        <div className="block lg:hidden relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-7 sm:p-12 text-left text-white shadow-xl">
-          
-          <h2 className="text-xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+        {/* DEPLOYMENT STATEMENT */}
+        <div
+          className="
+            mx-auto
+            mt-6
+            w-full
+            max-w-[1240px]
+            rounded-2xl
+            border
+            border-[#dfe5ee]
+            bg-[#f7f8fa]
+            px-5
+            py-6
+            sm:px-7
+            sm:py-7
+          "
+        >
+          <h3
+            className="
+              !m-0
+              text-xl
+              font-extrabold
+              leading-tight
+              tracking-tight
+              text-[#091127]
+              sm:text-2xl
+            "
+          >
             Sales context in. Billing truth intact.
-          </h2>
+          </h3>
 
-          <p className="text-xs sm:text-sm text-blue-100/90 font-normal leading-relaxed max-w-lg mb-6 sm:mb-8">
-            Field authority, external IDs, versions, effective dates and conflict history traceable on every mapped value.
+          <p
+            className="
+              !m-0
+              mt-2
+              max-w-[760px]
+              text-sm
+              leading-6
+              text-[#5d7192]
+              sm:text-base
+            "
+          >
+            Field authority, external IDs, versions, effective dates and
+            conflict history remain traceable on every mapped value.
           </p>
 
-          {/* Buttons Row */}
-          <div className="flex flex-wrap items-center gap-3.5 mb-6 sm:mb-8">
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
               href="#crm-catalog"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-full
+                bg-[#1D60EB]
+                px-5
+                text-sm
+                font-semibold
+                text-white
+                transition
+                hover:bg-[#1754d1]
+              "
             >
-              <span className="text-[#1D60EB] font-semibold">Browse CRM integrations</span>
+              Browse CRM integrations
             </Link>
 
             <Link
               href="/integrations-directory"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-blue-200/60 bg-transparent px-6 text-center text-sm font-semibold !text-white hover:bg-white/10 transition"
+              className="
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#dfe5ee]
+                bg-white
+                px-5
+                text-sm
+                font-semibold
+                text-[#091127]
+                transition
+                hover:bg-[#f7f8fa]
+              "
             >
-              <span className="text-white font-semibold">Integrations directory</span>
+              Integrations directory
             </Link>
           </div>
 
-          {/* Bottom Statement / Deployment Link */}
-          <p className="text-xs sm:text-sm text-blue-100/80 font-normal leading-relaxed max-w-xl">
-            Available as standalone software, and as an integrated component of Zoiko One where that deployment is evaluated separately.{" "}
-            <Link href="/pricing-and-plans" className="underline font-normal text-white hover:text-blue-100 transition">
+          <p
+            className="
+              !m-0
+              !mt-5
+              max-w-[850px]
+              text-xs
+              leading-6
+              text-[#7890b2]
+              sm:text-sm
+            "
+          >
+            Available as standalone software, and as an integrated component
+            of Zoiko One where that deployment is evaluated separately.{" "}
+            <Link
+              href="/pricing-and-plans"
+              className="font-semibold text-[#091127] underline"
+            >
               Compare deployment options
             </Link>
           </p>
-
         </div>
-
       </div>
     </section>
   );

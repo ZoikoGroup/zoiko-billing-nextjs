@@ -83,7 +83,7 @@ export default function IntegrationsDropdown() {
         
         <div className="flex shrink-0 mt-4 items-center gap-4 sm:border-l sm:border-slate-200 sm:pl-5 dark:sm:border-gray-700">
           <Link
-            href="/integration-availability"
+            href="/integrations"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             style={{ color: '#2563EB' }}
           >

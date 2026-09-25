@@ -58,25 +58,70 @@ function FaqItem({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-color-grey-95-10 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full px-5 py-5 flex items-center justify-between gap-4 text-left"
+        className="
+          flex
+          w-full
+          items-center
+          justify-between
+          gap-4
+          px-5
+          py-5
+          text-left
+          transition-colors
+          duration-150
+          hover:bg-[#f7f8fa]
+        "
         aria-expanded={open}
       >
-        <span className="text-color-azure-11-2 text-sm font-semibold font-['Inter'] leading-6">
+        <span
+          className="
+            text-sm
+            font-bold
+            leading-6
+            text-[#091127]
+          "
+        >
           {question}
         </span>
 
-        <span className="shrink-0 size-5 bg-color-grey-97-4 rounded-md flex items-center justify-center text-color-azure-44-3 text-sm font-semibold leading-5">
+        <span
+          className="
+            flex
+            h-6
+            w-6
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            border
+            border-[#dfe5ee]
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-5
+            text-[#5d7192]
+          "
+          aria-hidden="true"
+        >
           {open ? "−" : "+"}
         </span>
       </button>
 
       {open && (
         <div className="px-5 pb-5">
-          <p className="text-color-azure-44-3 text-sm font-normal font-['Inter'] leading-5">
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {answer}
           </p>
         </div>
@@ -87,42 +132,163 @@ function FaqItem({
 
 const GuidesFAQ = () => {
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-24 py-12 sm:py-16 lg:py-20 bg-color-grey-97-4">
-      <div className="w-full max-w-[1240px] mx-auto px-0 sm:px-4 lg:px-7 flex flex-col items-center gap-8 sm:gap-10 lg:gap-11">
-        {/* Heading */}
-        <div className="w-full max-w-[662px] pt-2 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-px opacity-40 bg-color-azure-60" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
 
-            <span className="text-color-azure-60 text-xs font-bold font-['Inter'] uppercase leading-4 tracking-widest whitespace-nowrap">
-              Billing Guides FAQ
-            </span>
+          sm:px-8
+          sm:py-16
 
-            <div className="w-4 h-px opacity-40 bg-color-azure-60" />
+          md:px-10
+          md:py-20
+
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Billing Guides FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about what a guide is for.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Guides are never gated behind a lead form.
+            </p>
           </div>
 
-          <h2 className="text-center text-color-azure-11-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-8 sm:leading-9 lg:leading-10">
-            Direct answers about what a guide is
-            for.
-          </h2>
+          {/* FAQ GRID */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              items-start
+              gap-5
 
-          <p className="w-full max-w-[687px] pt-1 text-center text-color-azure-44-3 text-sm sm:text-base font-normal font-['Inter'] leading-6 sm:leading-7">
-            Guides are never gated behind a lead form.
-          </p>
-        </div>
+              lg:grid-cols-2
+              lg:gap-6
+            "
+          >
+            {/* LEFT FAQ CARD */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              "
+            >
+              {leftFaqs.map((faq) => (
+                <FaqItem key={faq.question} {...faq} />
+              ))}
+            </div>
 
-        {/* FAQ */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-          <div className="bg-color-white-solid rounded-2xl shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4 overflow-hidden">
-            {leftFaqs.map((faq) => (
-              <FaqItem key={faq.question} {...faq} />
-            ))}
-          </div>
-
-          <div className="bg-color-white-solid rounded-2xl shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05)] shadow-[0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4 overflow-hidden">
-            {rightFaqs.map((faq) => (
-              <FaqItem key={faq.question} {...faq} />
-            ))}
+            {/* RIGHT FAQ CARD */}
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              "
+            >
+              {rightFaqs.map((faq) => (
+                <FaqItem key={faq.question} {...faq} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

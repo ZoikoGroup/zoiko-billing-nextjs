@@ -145,7 +145,7 @@ export default function TrustCenter() {
             "
           >
             <Link
-              href="/trust-evidence"
+              href="#evidence"
               className="
                 inline-flex
                 min-h-11

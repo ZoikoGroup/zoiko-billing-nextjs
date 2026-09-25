@@ -188,7 +188,7 @@ export default function AfterApplying() {
               "
             >
               What happens, and what will never
-              <br className="hidden sm:block" />
+             
               happen.
             </h2>
 

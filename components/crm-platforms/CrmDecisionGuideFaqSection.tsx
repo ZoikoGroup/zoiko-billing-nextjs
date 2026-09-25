@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -14,7 +14,10 @@ const leftFaqs: FaqItem[] = [
     answer: (
       <>
         Use the current registry and the{" "}
-        <Link href="/integrations-directory" className="text-blue-600 font-semibold underline">
+        <Link
+          href="/integrations-directory"
+          className="font-semibold text-blue-600 underline"
+        >
           Integrations Directory
         </Link>
         . No provider names or counts are invented.
@@ -81,108 +84,226 @@ const rightFaqs: FaqItem[] = [
   },
 ];
 
+function FaqColumn({
+  faqs,
+  openIndex,
+  onToggle,
+}: {
+  faqs: FaqItem[];
+  openIndex: number | null;
+  onToggle: (index: number) => void;
+}) {
+  return (
+    <div
+      className="
+        rounded-2xl
+        border
+        border-[#dfe5ee]
+        bg-white
+        p-5
+        shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+        sm:p-6
+      "
+    >
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+
+        return (
+          <div
+            key={faq.question}
+            className={`py-4 first:pt-0 last:pb-0 ${
+              index !== faqs.length - 1
+                ? "border-b border-[#edf0f4]"
+                : ""
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => onToggle(index)}
+              className="
+                flex
+                w-full
+                items-center
+                justify-between
+                gap-4
+                text-left
+                text-sm
+                font-semibold
+                leading-6
+                text-[#091127]
+                transition
+                hover:text-blue-600
+                sm:text-base
+              "
+              aria-expanded={isOpen}
+            >
+              <span>{faq.question}</span>
+
+              <span
+                className={`
+                  flex
+                  h-6
+                  w-6
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-xs
+                  font-bold
+                  ${
+                    isOpen
+                      ? "bg-blue-600 text-white"
+                      : "bg-[#f1f4f8] text-[#5d7192]"
+                  }
+                `}
+              >
+                {isOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            {isOpen && (
+              <div className="mt-3 pr-8 text-sm leading-6 text-[#5d7192]">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function CrmDecisionGuideFaqSection() {
   const [openLeftIdx, setOpenLeftIdx] = useState<number | null>(0);
   const [openRightIdx, setOpenRightIdx] = useState<number | null>(null);
 
-  const toggleLeft = (idx: number) => {
-    setOpenLeftIdx(openLeftIdx === idx ? null : idx);
-  };
-
-  const toggleRight = (idx: number) => {
-    setOpenRightIdx(openRightIdx === idx ? null : idx);
-  };
-
   return (
-    <section className="w-full bg-slate-50/60 py-16 lg:py-24 border-t border-slate-100" id="crm-faq">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-5 bg-slate-300" />
-          DECISION GUIDE &amp; FAQ
-          <span className="h-px w-5 bg-slate-300" />
-        </div>
+    <section
+      id="crm-faq"
+      className="w-full bg-[#f7f8fa]"
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[760px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
-          Direct answers about CRM connections.
-        </h2>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Decision Guide &amp; FAQ
+              </span>
 
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
-          No public form should request CRM credentials, customer lists, account exports,
-          opportunity data, invoice or payment payloads, consent records or production integration
-          secrets just to evaluate compatibility.
-        </p>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
 
-        {/* 2-Column Accordion Layout */}
-        <div className="mt-10 lg:mt-14 w-full max-w-[1240px] grid grid-cols-1 lg:grid-cols-2 gap-6 text-left items-start">
-          
-          {/* Left Column Card */}
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm divide-y divide-slate-100">
-            {leftFaqs.map((faq, idx) => {
-              const isOpen = openLeftIdx === idx;
-              return (
-                <div key={idx} className="py-4 first:pt-0 last:pb-0">
-                  <button
-                    type="button"
-                    onClick={() => toggleLeft(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
-                  >
-                    <span>{faq.question}</span>
-                    <span
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold transition ${
-                        isOpen ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-500"
-                      }`}
-                    >
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about CRM connections.
+            </h2>
 
-                  {isOpen && (
-                    <div className="mt-3 text-xs sm:text-sm font-normal leading-relaxed text-slate-600">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[700px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              No public form should request CRM credentials, customer lists,
+              account exports, opportunity data, invoice or payment payloads,
+              consent records or production integration secrets just to
+              evaluate compatibility.
+            </p>
           </div>
 
-          {/* Right Column Card */}
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm divide-y divide-slate-100">
-            {rightFaqs.map((faq, idx) => {
-              const isOpen = openRightIdx === idx;
-              return (
-                <div key={idx} className="py-4 first:pt-0 last:pb-0">
-                  <button
-                    type="button"
-                    onClick={() => toggleRight(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
-                  >
-                    <span>{faq.question}</span>
-                    <span
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold transition ${
-                        isOpen ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-500"
-                      }`}
-                    >
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
+          {/* FAQ COLUMNS */}
+          <div className="grid w-full grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-6">
+            <FaqColumn
+              faqs={leftFaqs}
+              openIndex={openLeftIdx}
+              onToggle={(index) =>
+                setOpenLeftIdx(openLeftIdx === index ? null : index)
+              }
+            />
 
-                  {isOpen && (
-                    <div className="mt-3 text-xs sm:text-sm font-normal leading-relaxed text-slate-600">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            <FaqColumn
+              faqs={rightFaqs}
+              openIndex={openRightIdx}
+              onToggle={(index) =>
+                setOpenRightIdx(openRightIdx === index ? null : index)
+              }
+            />
           </div>
-
         </div>
-
       </div>
     </section>
   );

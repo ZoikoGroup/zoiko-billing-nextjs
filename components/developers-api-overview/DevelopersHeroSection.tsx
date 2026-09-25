@@ -125,7 +125,7 @@ export default function DevelopersHeroSection() {
             "
           >
             <Link
-              href="#api-docs"
+              href="/developers-api-documentation"
               className="
                 inline-flex
                 min-h-11
@@ -149,7 +149,7 @@ export default function DevelopersHeroSection() {
             </Link>
 
             <Link
-              href="#developer-sandbox"
+              href="/developer-sandbox"
               className="
                 inline-flex
                 min-h-11

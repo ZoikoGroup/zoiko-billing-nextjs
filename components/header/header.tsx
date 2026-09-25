@@ -1,17 +1,24 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState, type MouseEvent } from 'react';
-import ProductDropdown from './product-dropdown';
-import SolutionsDropdown from './solutions-dropdown';
-import GlobalBillingDropdown from './global-billing-dropdown';
-import IntegrationsDropdown from './integrations-dropdown';
-import ResourcesDropdown from './resources-dropdown';
-import CompanyDropdown from './company-dropdown'
+import Link from "next/link";
+import Image from "next/image";
+import Script from "next/script";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
-type DropdownKey = 'product' | 'solutions' | 'global-billing' | 'integrations' | 'resources' | 'company';
+import ProductDropdown from "./product-dropdown";
+import SolutionsDropdown from "./solutions-dropdown";
+import GlobalBillingDropdown from "./global-billing-dropdown";
+import IntegrationsDropdown from "./integrations-dropdown";
+import ResourcesDropdown from "./resources-dropdown";
+import CompanyDropdown from "./company-dropdown";
+
+type DropdownKey =
+  | "product"
+  | "solutions"
+  | "global-billing"
+  | "integrations"
+  | "resources"
+  | "company";
 
 interface NavItem {
   label: string;
@@ -20,13 +27,40 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Product', href: '/product', dropdown: 'product' },
-  { label: 'Solutions', href: '/solutions', dropdown: 'solutions' },
-  { label: 'Global Billing', href: '/global-billing-header', dropdown: 'global-billing' },
-  { label: 'Integrations', href: '/integrations', dropdown: 'integrations' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Resources', href: '/resources', dropdown: 'resources' },
-  { label: 'Company', href: '/company', dropdown: 'company' },
+  {
+    label: "Product",
+    href: "/product",
+    dropdown: "product",
+  },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    dropdown: "solutions",
+  },
+  {
+    label: "Global Billing",
+    href: "/global-billing-header",
+    dropdown: "global-billing",
+  },
+  {
+    label: "Integrations",
+    href: "/integrations",
+    dropdown: "integrations",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+  },
+  {
+    label: "Resources",
+    href: "/resources",
+    dropdown: "resources",
+  },
+  {
+    label: "Company",
+    href: "/company",
+    dropdown: "company",
+  },
 ];
 
 interface HeaderNavigationProps {
@@ -40,11 +74,8 @@ export default function HeaderNavigation({
   onBookDemo,
   onCreateAccount,
 }: HeaderNavigationProps) {
-  const pathname = usePathname();
-
   return (
     <HeaderNavigationInner
-      key={pathname}
       onSignIn={onSignIn}
       onBookDemo={onBookDemo}
       onCreateAccount={onCreateAccount}
@@ -58,21 +89,35 @@ function HeaderNavigationInner({
   onCreateAccount,
 }: HeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileExpandedDropdown, setMobileExpandedDropdown] = useState<DropdownKey | null>(null);
-  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
-  const [mountedDropdown, setMountedDropdown] = useState<DropdownKey | null>(null);
+
+  const [mobileExpandedDropdown, setMobileExpandedDropdown] =
+    useState<DropdownKey | null>(null);
+
+  const [activeDropdown, setActiveDropdown] =
+    useState<DropdownKey | null>(null);
+
+  const [mountedDropdown, setMountedDropdown] =
+    useState<DropdownKey | null>(null);
+
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const dropdownShellWidth =
-    mountedDropdown === 'global-billing'
-      ? 'w-[min(80rem,calc(100vw-24px))]'
-      : 'w-[min(64rem,calc(100vw-24px))]';
+    mountedDropdown === "global-billing"
+      ? "w-[min(80rem,calc(100vw-24px))]"
+      : "w-[min(64rem,calc(100vw-24px))]";
+
+  /* ============================================================= */
+  /* DROPDOWN FUNCTIONS                                            */
+  /* ============================================================= */
 
   const openDropdown = (menu: DropdownKey) => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
     }
+
     if (hideTimerRef.current) {
       clearTimeout(hideTimerRef.current);
       hideTimerRef.current = null;
@@ -110,6 +155,7 @@ function HeaderNavigationInner({
 
   const closeDropdownImmediately = () => {
     clearDropdownTimers();
+
     setActiveDropdown(null);
     setMountedDropdown(null);
   };
@@ -117,7 +163,7 @@ function HeaderNavigationInner({
   const handleLinkSelection = (event: MouseEvent<HTMLElement>) => {
     const target = event.target;
 
-    if (!(target instanceof Element) || !target.closest('a')) {
+    if (!(target instanceof Element) || !target.closest("a")) {
       return;
     }
 
@@ -127,7 +173,9 @@ function HeaderNavigationInner({
   };
 
   const toggleMobileDropdown = (menu: DropdownKey) => {
-    setMobileExpandedDropdown((current) => (current === menu ? null : menu));
+    setMobileExpandedDropdown((current) =>
+      current === menu ? null : menu
+    );
   };
 
   useEffect(() => {
@@ -136,27 +184,153 @@ function HeaderNavigationInner({
     };
   }, []);
 
+  /* ============================================================= */
+  /* DROPDOWN RENDERING                                            */
+  /* ============================================================= */
+
   const renderDropdown = (key: DropdownKey) => {
     switch (key) {
-      case 'product':
+      case "product":
         return <ProductDropdown />;
-      case 'solutions':
+
+      case "solutions":
         return <SolutionsDropdown />;
-      case 'global-billing':
+
+      case "global-billing":
         return <GlobalBillingDropdown />;
-      case 'integrations':
+
+      case "integrations":
         return <IntegrationsDropdown />;
-      case 'resources':
+
+      case "resources":
         return <ResourcesDropdown />;
-      case 'company':
+
+      case "company":
         return <CompanyDropdown />;
+
+      default:
+        return null;
     }
   };
 
+  /* ============================================================= */
+  /* JSON-LD STRUCTURED DATA                                       */
+  /* ============================================================= */
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id":
+          "https://zoikobilling.com/blog/how-billing-software-helps-growing-businesses-manage-invoices-payments/#article",
+        headline:
+          "How Billing Software Helps Growing Businesses Manage Invoices and Payments",
+        description:
+          "An enterprise analysis on replacing fragmented spreadsheets with a governed billing platform, featuring multi-currency support, maker-checker approvals, and attributable automation.",
+        author: {
+          "@type": "Organization",
+          name: "Zoiko Billing Editorial Team",
+          url: "https://zoikobilling.com",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Zoiko Group",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://zoikobilling.com/assets/logo.png",
+          },
+        },
+        datePublished: "2026-09-15",
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "FAQPage",
+        "@id":
+          "https://zoikobilling.com/blog/how-billing-software-helps-growing-businesses-manage-invoices-payments/#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is Zoiko Billing?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Zoiko Billing is a global billing and invoicing platform designed to unify charges, invoices, payments, outstanding balances, and financial records into one controlled platform across customers, currencies, and entities.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does multi-currency billing software support global growth?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Multi-currency billing software allows expanding businesses to invoice customers in localized currencies, apply jurisdiction-aware tax rules, and consolidate accounts receivable reporting across global entities.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  /* ============================================================= */
+  /* HEADER                                                        */
+  /* ============================================================= */
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white text-slate-900 shadow-[0_1px_0_rgba(15,23,42,0.02)] dark:border-gray-800 dark:bg-gray-900 dark:text-white">
-      <div className="relative mx-auto flex h-20 w-full max-w-[1440px] items-center gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="shrink-0" aria-label="Zoiko Billing Home">
+    <header
+      className="
+        sticky
+        top-0
+        z-50
+        w-full
+        border-b
+        border-slate-200
+        bg-white
+        text-slate-900
+        shadow-[0_1px_0_rgba(15,23,42,0.02)]
+        dark:border-gray-800
+        dark:bg-gray-900
+        dark:text-white
+      "
+    >
+      {/* ========================================================= */}
+      {/* JSON-LD STRUCTURED DATA                                   */}
+      {/* ========================================================= */}
+
+      <Script
+        id="zoiko-billing-structured-data"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(structuredData)}
+      </Script>
+
+      {/* ========================================================= */}
+      {/* HEADER MAIN                                               */}
+      {/* ========================================================= */}
+
+      <div
+        className="
+          relative
+          mx-auto
+          flex
+          h-20
+          w-full
+          max-w-[1440px]
+          items-center
+          gap-4
+          px-4
+          sm:px-6
+          lg:px-8
+        "
+      >
+        {/* ======================================================= */}
+        {/* LOGO                                                     */}
+        {/* ======================================================= */}
+
+        <Link
+          href="/"
+          className="shrink-0"
+          aria-label="Zoiko Billing Home"
+        >
           <Image
             src="/images/zoikobilling-logo-svg 1.png"
             alt="Zoiko Billing"
@@ -167,8 +341,19 @@ function HeaderNavigationInner({
           />
         </Link>
 
+        {/* ======================================================= */}
+        {/* DESKTOP NAVIGATION                                      */}
+        {/* ======================================================= */}
+
         <nav
-          className="hidden flex-1 items-center justify-center gap-5 lg:flex"
+          className="
+            hidden
+            flex-1
+            items-center
+            justify-center
+            gap-5
+            lg:flex
+          "
           aria-label="Main Navigation"
           onClickCapture={handleLinkSelection}
         >
@@ -186,15 +371,39 @@ function HeaderNavigationInner({
                   <Link
                     href={item.href}
                     onFocus={() => openDropdown(dropdown)}
-                    className="inline-flex cursor-default items-center gap-1 whitespace-nowrap text-[13px] font-normal text-slate-700 transition-colors hover:text-sky-600 dark:text-gray-300 dark:hover:text-blue-400"
+                    className="
+                      inline-flex
+                      cursor-default
+                      items-center
+                      gap-1
+                      whitespace-nowrap
+                      text-[13px]
+                      font-normal
+                      text-slate-700
+                      transition-colors
+                      hover:text-sky-600
+                      dark:text-gray-300
+                      dark:hover:text-blue-400
+                    "
                     aria-haspopup="menu"
                     aria-expanded={activeDropdown === dropdown}
                   >
                     <span>{item.label}</span>
+
                     <svg
-                      className={`h-4 w-4 text-slate-500 transition-transform duration-200 dark:text-gray-500 ${
-                        activeDropdown === dropdown ? 'rotate-180' : ''
-                      }`}
+                      className={`
+                        h-4
+                        w-4
+                        text-slate-500
+                        transition-transform
+                        duration-200
+                        dark:text-gray-500
+                        ${
+                          activeDropdown === dropdown
+                            ? "rotate-180"
+                            : ""
+                        }
+                      `}
                       viewBox="0 0 16 16"
                       fill="none"
                       aria-hidden="true"
@@ -216,7 +425,19 @@ function HeaderNavigationInner({
               <Link
                 key={item.label}
                 href={item.href}
-                className="inline-flex items-center gap-1 whitespace-nowrap text-[13px] font-normal text-slate-700 transition-colors hover:text-sky-600 dark:text-gray-300 dark:hover:text-blue-400"
+                className="
+                  inline-flex
+                  items-center
+                  gap-1
+                  whitespace-nowrap
+                  text-[13px]
+                  font-normal
+                  text-slate-700
+                  transition-colors
+                  hover:text-sky-600
+                  dark:text-gray-300
+                  dark:hover:text-blue-400
+                "
               >
                 <span>{item.label}</span>
               </Link>
@@ -224,29 +445,85 @@ function HeaderNavigationInner({
           })}
         </nav>
 
+        {/* ======================================================= */}
+        {/* DESKTOP ACTIONS                                         */}
+        {/* ======================================================= */}
+
         <div className="ml-auto hidden items-center gap-2 lg:flex">
           <Link
             href="/sign-in"
             onClick={onSignIn}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-normal !text-slate-700 transition-colors hover:!text-sky-600 dark:!text-gray-300 dark:hover:!text-blue-400"
+            className="
+              min-h-10
+              shrink-0
+              whitespace-nowrap
+              rounded-lg
+              px-2
+              py-2
+              text-[13px]
+              font-normal
+              !text-slate-700
+              transition-colors
+              hover:!text-sky-600
+              dark:!text-gray-300
+              dark:hover:!text-blue-400
+            "
           >
             Sign In
           </Link>
+
           <Link
             href="/book-demo"
             onClick={onBookDemo}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-slate-900 px-3 py-2 text-[13px] font-normal !text-slate-900 transition-colors hover:bg-slate-50 dark:border-gray-300 dark:!text-gray-100 dark:hover:bg-gray-800"
+            className="
+              min-h-10
+              shrink-0
+              whitespace-nowrap
+              rounded-xl
+              border
+              border-slate-900
+              px-3
+              py-2
+              text-[13px]
+              font-normal
+              !text-slate-900
+              transition-colors
+              hover:bg-slate-50
+              dark:border-gray-300
+              dark:!text-gray-100
+              dark:hover:bg-gray-800
+            "
           >
             Book a Demo
           </Link>
+
           <Link
             href="/create-account"
             onClick={onCreateAccount}
-            className="min-h-10 shrink-0 whitespace-nowrap rounded-xl border border-blue-600 bg-blue-600 px-3 py-2 text-[13px] font-normal !text-white transition-colors hover:bg-blue-500"
+            className="
+              min-h-10
+              shrink-0
+              whitespace-nowrap
+              rounded-xl
+              border
+              border-blue-600
+              bg-blue-600
+              px-3
+              py-2
+              text-[13px]
+              font-normal
+              !text-white
+              transition-colors
+              hover:bg-blue-500
+            "
           >
             Create Account
           </Link>
         </div>
+
+        {/* ======================================================= */}
+        {/* MOBILE MENU BUTTON                                      */}
+        {/* ======================================================= */}
 
         <div className="ml-auto flex items-center lg:hidden">
           <button
@@ -256,13 +533,26 @@ function HeaderNavigationInner({
                 if (prev) {
                   setMobileExpandedDropdown(null);
                 }
+
                 return !prev;
               })
             }
             aria-label="Toggle navigation menu"
-            className="rounded-md p-2 text-slate-800 transition-colors hover:text-blue-600 dark:text-gray-200"
+            className="
+              rounded-md
+              p-2
+              text-slate-800
+              transition-colors
+              hover:text-blue-600
+              dark:text-gray-200
+            "
           >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {mobileMenuOpen ? (
                 <path
                   strokeLinecap="round"
@@ -282,31 +572,71 @@ function HeaderNavigationInner({
           </button>
         </div>
 
+        {/* ======================================================= */}
+        {/* DROPDOWN BACKDROP                                       */}
+        {/* ======================================================= */}
+
         {mountedDropdown && (
           <div
-            className={`fixed inset-x-0 top-20 bottom-0 z-40 hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-200 lg:block ${
-              activeDropdown === mountedDropdown ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`
+              fixed
+              inset-x-0
+              top-20
+              bottom-0
+              z-40
+              hidden
+              bg-slate-900/50
+              backdrop-blur-sm
+              transition-opacity
+              duration-200
+              lg:block
+              ${
+                activeDropdown === mountedDropdown
+                  ? "opacity-100"
+                  : "opacity-0"
+              }
+            `}
             onMouseEnter={closeDropdown}
             onClick={closeDropdownImmediately}
             aria-hidden="true"
           />
         )}
 
+        {/* ======================================================= */}
+        {/* DESKTOP DROPDOWN                                        */}
+        {/* ======================================================= */}
+
         {mountedDropdown && (
           <div
-            className={`absolute left-1/2 top-full z-50 hidden ${dropdownShellWidth} -translate-x-1/2 -translate-y-2 px-0 lg:block`}
+            className={`
+              absolute
+              left-1/2
+              top-full
+              z-50
+              hidden
+              ${dropdownShellWidth}
+              -translate-x-1/2
+              -translate-y-2
+              px-0
+              lg:block
+            `}
             onMouseEnter={() => openDropdown(mountedDropdown)}
             onMouseLeave={closeDropdown}
             onClickCapture={handleLinkSelection}
           >
             <div className="pt-2">
               <div
-                className={`origin-top transition-[opacity,transform] duration-200 ease-out ${
-                  activeDropdown === mountedDropdown
-                    ? 'translate-y-0 scale-100 opacity-100'
-                    : '-translate-y-2 scale-[0.985] opacity-0'
-                }`}
+                className={`
+                  origin-top
+                  transition-[opacity,transform]
+                  duration-200
+                  ease-out
+                  ${
+                    activeDropdown === mountedDropdown
+                      ? "translate-y-0 scale-100 opacity-100"
+                      : "-translate-y-2 scale-[0.985] opacity-0"
+                  }
+                `}
               >
                 {renderDropdown(mountedDropdown)}
               </div>
@@ -315,33 +645,83 @@ function HeaderNavigationInner({
         )}
       </div>
 
+      {/* ========================================================= */}
+      {/* MOBILE MENU                                               */}
+      {/* ========================================================= */}
+
       {mobileMenuOpen && (
         <div
-          className="max-h-[calc(100vh-80px)] overflow-y-auto border-t border-slate-200 bg-white px-4 py-6 shadow-xl sm:px-6 dark:border-gray-800 dark:bg-gray-900 lg:hidden"
+          className="
+            max-h-[calc(100vh-80px)]
+            overflow-y-auto
+            border-t
+            border-slate-200
+            bg-white
+            px-4
+            py-6
+            shadow-xl
+            sm:px-6
+            dark:border-gray-800
+            dark:bg-gray-900
+            lg:hidden
+          "
           onClickCapture={handleLinkSelection}
         >
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <div key={item.label} className="border-b border-slate-100 dark:border-gray-800">
+              <div
+                key={item.label}
+                className="
+                  border-b
+                  border-slate-100
+                  dark:border-gray-800
+                "
+              >
                 <div className="flex items-center justify-between py-3">
                   <Link
                     href={item.href}
-                    className="text-[15px] font-medium text-slate-800 transition-colors hover:text-blue-600 dark:text-gray-200"
+                    className="
+                      text-[15px]
+                      font-medium
+                      text-slate-800
+                      transition-colors
+                      hover:text-blue-600
+                      dark:text-gray-200
+                    "
                   >
                     {item.label}
                   </Link>
+
                   {item.dropdown && (
                     <button
                       type="button"
                       aria-label={`Toggle ${item.label} submenu`}
-                      aria-expanded={mobileExpandedDropdown === item.dropdown}
-                      onClick={() => toggleMobileDropdown(item.dropdown as DropdownKey)}
-                      className="p-1 text-gray-500 dark:text-gray-400"
+                      aria-expanded={
+                        mobileExpandedDropdown === item.dropdown
+                      }
+                      onClick={() =>
+                        toggleMobileDropdown(
+                          item.dropdown as DropdownKey
+                        )
+                      }
+                      className="
+                        p-1
+                        text-gray-500
+                        dark:text-gray-400
+                      "
                     >
                       <svg
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          mobileExpandedDropdown === item.dropdown ? 'rotate-180' : ''
-                        }`}
+                        className={`
+                          h-4
+                          w-4
+                          transition-transform
+                          duration-200
+                          ${
+                            mobileExpandedDropdown === item.dropdown
+                              ? "rotate-180"
+                              : ""
+                          }
+                        `}
                         viewBox="0 0 16 16"
                         fill="none"
                         aria-hidden="true"
@@ -357,34 +737,98 @@ function HeaderNavigationInner({
                     </button>
                   )}
                 </div>
-                {item.dropdown && mobileExpandedDropdown === item.dropdown && (
-                  <div className="-mx-4 mb-3 overflow-x-auto pb-3 sm:-mx-6">
-                    <div className="min-w-[640px] px-4 sm:px-6">{renderDropdown(item.dropdown)}</div>
-                  </div>
-                )}
+
+                {item.dropdown &&
+                  mobileExpandedDropdown === item.dropdown && (
+                    <div
+                      className="
+                        -mx-4
+                        mb-3
+                        overflow-x-auto
+                        pb-3
+                        sm:-mx-6
+                      "
+                    >
+                      <div className="min-w-[640px] px-4 sm:px-6">
+                        {renderDropdown(item.dropdown)}
+                      </div>
+                    </div>
+                  )}
               </div>
             ))}
           </nav>
 
-          <div className="mt-4 flex flex-col gap-2.5 border-t border-slate-200 pt-4 dark:border-gray-800">
+          {/* Mobile Actions */}
+
+          <div
+            className="
+              mt-4
+              flex
+              flex-col
+              gap-2.5
+              border-t
+              border-slate-200
+              pt-4
+              dark:border-gray-800
+            "
+          >
             <Link
               href="/sign-in"
               onClick={onSignIn}
-              className="block w-full rounded-md border border-slate-300 py-2.5 text-center font-medium !text-slate-900 transition-colors dark:border-gray-700 dark:!text-gray-100"
+              className="
+                block
+                w-full
+                rounded-md
+                border
+                border-slate-300
+                py-2.5
+                text-center
+                font-medium
+                !text-slate-900
+                transition-colors
+                dark:border-gray-700
+                dark:!text-gray-100
+              "
             >
               Sign In
             </Link>
+
             <Link
               href="/book-demo"
               onClick={onBookDemo}
-              className="block w-full rounded-md border border-slate-900 py-2.5 text-center font-medium !text-slate-900 transition-colors dark:border-gray-300 dark:!text-gray-100"
+              className="
+                block
+                w-full
+                rounded-md
+                border
+                border-slate-900
+                py-2.5
+                text-center
+                font-medium
+                !text-slate-900
+                transition-colors
+                dark:border-gray-300
+                dark:!text-gray-100
+              "
             >
               Book a Demo
             </Link>
+
             <Link
               href="/create-account"
               onClick={onCreateAccount}
-              className="block w-full rounded-md bg-blue-600 py-2.5 text-center font-medium !text-white transition-colors hover:bg-blue-500"
+              className="
+                block
+                w-full
+                rounded-md
+                bg-blue-600
+                py-2.5
+                text-center
+                font-medium
+                !text-white
+                transition-colors
+                hover:bg-blue-500
+              "
             >
               Create Account
             </Link>
