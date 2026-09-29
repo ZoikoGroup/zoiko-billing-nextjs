@@ -144,18 +144,16 @@ export default function LeadershipFAQ() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
-                !text-[#091127]
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
+                !tracking-[-0.02em]
+                !text-slate-900
               "
             >
               Direct answers about who appears here.
@@ -167,12 +165,11 @@ export default function LeadershipFAQ() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-[#5d7192]
-
-                sm:text-base
+                leading-relaxed
+                text-slate-500
               "
             >
               Several answers explain what a listing does not establish, which
@@ -229,7 +226,7 @@ export default function LeadershipFAQ() {
                         text-left
                       "
                     >
-                      <span className="text-sm font-semibold leading-6 text-[#091127]">
+                      <span className="!font-[family-name:var(--font-jakarta)] text-sm font-semibold leading-6 text-[#091127]">
                         {faq.question}
                       </span>
 
@@ -303,7 +300,7 @@ export default function LeadershipFAQ() {
                         text-left
                       "
                     >
-                      <span className="text-sm font-semibold leading-6 text-[#091127]">
+                      <span className="!font-[family-name:var(--font-jakarta)] text-sm font-semibold leading-6 text-[#091127]">
                         {faq.question}
                       </span>
 

@@ -31,7 +31,7 @@ export default function DeveloperFinalCtaSection() {
 
           {/* Left Text Content & 2 Buttons */}
           <div className="relative z-10 flex flex-col items-start gap-4 max-w-xl text-left">
-            <h2 className="text-3xl font-extrabold leading-[1.18] tracking-tight text-white sm:text-4xl lg:text-[38px]">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-white !text-2xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-[1.18] !tracking-tight">
               Start with the API model. <br />
               Test the path. Build with <br className="hidden sm:inline" />
               evidence.
@@ -83,7 +83,7 @@ export default function DeveloperFinalCtaSection() {
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
 
             {/* Headline */}
-            <h2 className="text-xl sm:text-2xl font-extrabold leading-snug text-white mb-2 relative z-10">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-white !text-xl sm:!text-2xl !font-extrabold !leading-snug mb-2 relative z-10">
               Start with the API model.<br />
               Test the path. Build with evidence.
             </h2>
@@ -140,7 +140,7 @@ export default function DeveloperFinalCtaSection() {
           {/* Mobile Governed Records Blue Banner */}
           <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-8 sm:p-12 text-left text-white shadow-xl">
             
-            <h2 className="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-white !text-2xl sm:!text-3xl !font-extrabold !leading-tight !tracking-tight mb-3">
               Governed records, not just endpoints.
             </h2>
 

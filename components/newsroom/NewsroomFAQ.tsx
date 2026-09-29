@@ -143,6 +143,7 @@ function FaqItem({
       >
         <span
           className="
+            !font-[family-name:var(--font-jakarta)]
             text-sm
             font-semibold
             leading-6
@@ -277,6 +278,7 @@ export default function NewsroomFAQ() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]

@@ -59,12 +59,13 @@ export default function SixFirstStepsSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
-          Six first steps, not an alphabetical endpoint list.
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
+          Six first steps, not an alphabetical <br className="hidden sm:inline" />
+          endpoint list.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-2.5 max-w-xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-2.5 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
           The shortest implementation path, without duplicating the destinations that own each topic.
         </p>
 
@@ -76,10 +77,10 @@ export default function SixFirstStepsSection() {
               className="flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-7 shadow-sm transition hover:shadow-md"
             >
               <div>
-                <h3 className="text-xs sm:text-lg font-bold text-slate-900 mb-1 sm:mb-2">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-base font-bold text-slate-900 mb-1.5">
                   {step.title}
                 </h3>
-                <p className="text-[11px] sm:text-sm text-slate-500 leading-relaxed font-normal mb-4 sm:mb-6">
+                <p className="text-[11px] sm:text-[13px] text-slate-500 leading-relaxed font-normal mb-4">
                   {step.description}
                 </p>
               </div>
@@ -88,7 +89,7 @@ export default function SixFirstStepsSection() {
               <div>
                 <Link
                   href={step.linkHref}
-                  className="inline-flex items-center text-[11px] sm:text-sm font-semibold text-[#1D70F5] hover:text-blue-700 hover:underline transition"
+                  className="inline-flex items-center text-xs sm:text-[13px] font-semibold text-[#1D70F5] hover:underline transition"
                 >
                   {step.linkText}
                 </Link>

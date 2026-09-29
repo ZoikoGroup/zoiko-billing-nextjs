@@ -43,12 +43,12 @@ export default function BrowseByOutcomeBillingContextSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Facets that exist only when stories fill them.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           An outcome category with no approved story behind it is not rendered as an empty
           promise.
         </p>
@@ -60,7 +60,7 @@ export default function BrowseByOutcomeBillingContextSection() {
               key={idx}
               className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md transition text-left"
             >
-              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
+              <h3 className="!font-[family-name:var(--font-jakarta)] !text-base sm:!text-lg !font-bold text-slate-900 mb-2">
                 {card.title}
               </h3>
               <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-600">

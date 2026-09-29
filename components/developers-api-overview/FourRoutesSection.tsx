@@ -51,7 +51,7 @@ export default function FourRoutesSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Four routes, and the commercial one comes last.
         </h2>
 
@@ -68,7 +68,7 @@ export default function FourRoutesSection() {
               className="flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-7 shadow-sm transition hover:shadow-md"
             >
               <div>
-                <h3 className="text-xs sm:text-base font-bold text-slate-900 mb-1.5 sm:mb-2">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-base font-bold text-slate-900 mb-1.5 sm:mb-2">
                   {route.title}
                 </h3>
                 <p className="text-[11px] sm:text-sm text-slate-600 leading-relaxed font-normal">

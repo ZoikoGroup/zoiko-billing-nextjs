@@ -74,12 +74,12 @@ export default function QuantitativeClaimCausalityRulesSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-white tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] !text-white max-w-3xl">
           Seven claim patterns, and only one may say &quot;caused.&quot;
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-300">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-300">
           Each pattern carries a wording requirement, because the difference between association
           and cause is where evidence pages most often overreach.
         </p>

@@ -11,12 +11,12 @@ export default function StoryDetailTemplateSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Ten narrative blocks, ending with what the story does not prove.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Rendered with neutral placeholders. No customer, quote, figure or logo is invented — the
           structure is real, the content awaits consent and evidence.
         </p>
@@ -58,7 +58,7 @@ export default function StoryDetailTemplateSection() {
 
             {/* Title & Lead Paragraph */}
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-snug mb-2">
+              <h3 className="!font-[family-name:var(--font-jakarta)] !text-base sm:!text-lg !font-extrabold text-slate-900 leading-snug mb-2">
                 [Context-specific outcome or use–case title]
               </h3>
 
@@ -308,7 +308,7 @@ export default function StoryDetailTemplateSection() {
 
             {/* Anonymous story rules Card */}
             <div className="rounded-xl border border-slate-200/90 bg-white p-4 text-xs">
-              <h4 className="text-xs font-bold text-slate-900 mb-2">
+              <h4 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-2">
                 Anonymous story rules
               </h4>
               <p className="text-[11px] text-slate-600 font-normal leading-relaxed mb-2">

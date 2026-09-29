@@ -64,7 +64,7 @@ export default function GovernanceIntegritySection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           API convenience does not bypass billing truth.
         </h2>
 

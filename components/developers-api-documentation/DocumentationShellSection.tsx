@@ -22,7 +22,7 @@ const shellRows: ShellRegionRow[] = [
   {
     region: "Response block",
     requiredContent:
-      "Success statuses, response schema, field descriptions, reliability behavior if verified, example response",
+      "Success statuses, response schema, field descriptions, nullability behavior if verified, example response",
   },
   {
     region: "Right table of contents",
@@ -32,7 +32,7 @@ const shellRows: ShellRegionRow[] = [
   {
     region: "Bottom next steps",
     requiredContent:
-      "Previous and next reference, plus Authentication, Webhooks, Sandbox or Build an Integration as context requires",
+      "Previous and next reference, plus Authentication, Webhooks, Sandbox or Build an integration as context requires",
   },
 ];
 
@@ -49,8 +49,9 @@ export default function DocumentationShellSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
-          One reference pattern, never relearned.
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-2xl">
+          One reference pattern, never <br className="hidden sm:inline" />
+          relearned.
         </h2>
 
         {/* Subtitle */}

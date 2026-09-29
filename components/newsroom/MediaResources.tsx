@@ -169,6 +169,7 @@ export default function MediaResources() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -182,8 +183,7 @@ export default function MediaResources() {
                 lg:!text-[40px]
               "
             >
-              Six asset classes, each governed by its
-             
+              Six asset classes, each governed by its <br className="hidden sm:inline" />
               rights.
             </h2>
 
@@ -227,6 +227,7 @@ export default function MediaResources() {
                   <h3
                     className="
                       !m-0
+                      !font-[family-name:var(--font-jakarta)]
                       text-sm
                       font-bold
                       leading-6

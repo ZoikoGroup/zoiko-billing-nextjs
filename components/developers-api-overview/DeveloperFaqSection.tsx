@@ -101,7 +101,7 @@ export default function DeveloperFaqSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-4 text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-4 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Direct answers, with the canonical source named.
         </h2>
 
@@ -123,7 +123,7 @@ export default function DeveloperFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleFaq(item.id)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
                   >
                     <span>{item.question}</span>
                     <div
@@ -156,7 +156,7 @@ export default function DeveloperFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleFaq(item.id)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
                   >
                     <span>{item.question}</span>
                     <div

@@ -56,14 +56,14 @@ export default function DevelopersBuildIntegrationHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               Build the billing <br />
               integration <span className="text-[#1D70F5]">around the</span> <br />
               <span className="text-[#1D70F5]">truth of the record.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-500 max-w-[480px]">
+            <p className="text-xs sm:text-sm lg:text-[15px] font-normal leading-relaxed text-slate-500 max-w-[520px]">
               Plan how systems connect to Zoiko Billing across access, object lifecycle, events,
               testing, failures, reconciliation, production rollout and long-term ownership — with
               every implementation fact tied back to its canonical source.
@@ -132,7 +132,7 @@ export default function DevelopersBuildIntegrationHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             Build the billing integration{" "}
             <span className="text-[#1D70F5]">around the truth of the record.</span>
           </h1>
@@ -204,7 +204,7 @@ export default function DevelopersBuildIntegrationHeroSection() {
                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
                   {card.layer}
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">
+                <h3 className="!font-[family-name:var(--font-jakarta)] !text-xs sm:!text-sm !font-bold text-slate-900 mb-1">
                   {card.title}
                 </h3>
                 <p className="text-[11px] sm:text-xs text-slate-600 font-normal leading-relaxed">

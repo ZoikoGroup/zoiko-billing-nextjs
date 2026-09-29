@@ -39,71 +39,57 @@ export default function DevelopersApiDocHeroSection() {
         {/* LEFT CONTENT */}
         <div className="w-full min-w-0 lg:w-[52%]">
           {/* EYEBROW */}
-          <div className="mb-5 flex items-center gap-3 sm:mb-6">
-            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
+          <div className="mb-4 flex items-center gap-2.5 sm:mb-5">
+            <span className="h-px w-5 shrink-0 bg-slate-400" />
 
             <span
               className="
-                text-[10px]
+                text-[11px]
                 font-bold
                 uppercase
-                leading-4
-                tracking-[0.16em]
-                text-[#7890b2]
-
+                tracking-[0.18em]
+                text-slate-500
                 sm:text-xs
-                sm:tracking-[0.18em]
               "
             >
-              Developers · API Documentation
+              DEVELOPERS · API DOCUMENTATION
             </span>
           </div>
 
           {/* HEADING */}
           <h1
-            className="
+            className="!font-[family-name:var(--font-jakarta)] 
               !m-0
               !max-w-[700px]
-              !text-[40px]
+              !text-3xl
               !font-extrabold
-              !leading-[1.08]
+              !leading-[1.12]
               !tracking-[-0.035em]
               !text-slate-900
-
-              sm:!text-[46px]
-
-              md:!text-[50px]
-
-              lg:!text-[44px]
-
-              xl:!text-[50px]
+              sm:!text-4xl
+              lg:!text-[50px]
+              xl:!text-[52px]
             "
           >
-            Build against a billing model{" "}
+            Build against a billing <br className="hidden sm:inline" />
             <span className="text-[#1D70F5]">
-              you can inspect.
+              model you can inspect.
             </span>
           </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              !mt-8
+              !mt-4
               w-full
-              max-w-[687px]
-              text-[15px]
+              max-w-[540px]
+              text-xs
               font-normal
-              leading-7
-              text-[#5d7192]
-
-              sm:mt-9
-              sm:text-base
-
-              md:mt-9
-
-              lg:mt-8
-
-              xl:mt-9
+              leading-relaxed
+              text-slate-500
+              sm:text-sm
+              lg:text-[15px]
+              lg:leading-7
             "
           >
             Find source-governed API reference, resource contracts, field
@@ -182,18 +168,15 @@ export default function DevelopersApiDocHeroSection() {
           <div
             className="
               relative
-              mt-7
-              w-full
-              max-w-[687px]
+              mt-6
+              max-w-[540px]
               overflow-hidden
               rounded-xl
               border
               border-slate-200/90
-              bg-slate-50/70
+              bg-white
               p-4
-
-              sm:mt-8
-              sm:p-5
+              shadow-sm
             "
           >
             <div className="absolute bottom-0 left-0 top-0 w-1 bg-[#1D70F5]" />
@@ -203,14 +186,12 @@ export default function DevelopersApiDocHeroSection() {
                 pl-2
                 text-xs
                 font-normal
-                leading-6
-                text-[#5d7192]
-
-                sm:text-sm
+                leading-relaxed
+                text-slate-500
               "
             >
-              Documentation reflects approved API exposure. Product
-              capability and API availability are governed separately.
+              Documentation reflects approved API exposure. Product capability
+              and API availability are governed separately.
             </p>
           </div>
         </div>

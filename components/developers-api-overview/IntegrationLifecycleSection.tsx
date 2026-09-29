@@ -65,7 +65,7 @@ export default function IntegrationLifecycleSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-4 text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-4 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Eight stages, with responsibility named on both sides.
         </h2>
 

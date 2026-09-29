@@ -36,9 +36,9 @@ export default function AccessibilityHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
-              Our accessibility approach, <br />
-              <span className="text-[#1D70F5]">stated precisely.</span>
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
+              Our accessibility <br />
+              approach, <span className="text-[#1D70F5]">stated precisely.</span>
             </h1>
 
             {/* Subtitle */}
@@ -112,7 +112,7 @@ export default function AccessibilityHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             Our accessibility approach,{" "}
             <span className="text-[#1D70F5]">stated precisely.</span>
           </h1>
@@ -165,7 +165,7 @@ export default function AccessibilityHeroSection() {
           {/* Interactive Conformance Terms Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left mb-6">
             
-            <h2 className="text-xs font-bold text-slate-900 mb-1">
+            <h2 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-1">
               What our conformance words mean
             </h2>
             <p className="text-[10px] text-slate-400 font-normal leading-relaxed mb-3">
