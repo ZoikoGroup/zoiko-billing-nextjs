@@ -79,14 +79,12 @@ const rightFaqs = [
   },
 ];
 
-function FaqCard({
-  items,
-}: {
-  items: {
-    question: string;
-    answer: React.ReactNode;
-  }[];
-}) {
+type FaqItem = {
+  question: string;
+  answer: React.ReactNode;
+};
+
+function FaqCard({ items }: { items: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -109,7 +107,7 @@ function FaqCard({
             key={item.question}
             className={
               index !== items.length - 1
-                ? "border-b border-[#eef1f5]"
+                ? "border-b border-[#edf0f4]"
                 : ""
             }
           >
@@ -125,8 +123,11 @@ function FaqCard({
                 justify-between
                 gap-5
                 px-5
-                py-4
+                py-3.5
                 text-left
+
+                sm:px-6
+                sm:py-4
               "
             >
               <span
@@ -135,8 +136,11 @@ function FaqCard({
                   flex-1
                   text-sm
                   font-semibold
-                  leading-6
+                  leading-5
                   text-[#091127]
+
+                  sm:text-sm
+                  sm:leading-6
                 "
               >
                 {item.question}
@@ -174,6 +178,9 @@ function FaqCard({
                   font-normal
                   leading-6
                   text-[#5d7192]
+
+                  sm:px-6
+                  sm:pb-6
                 "
               >
                 {item.answer}
@@ -188,7 +195,7 @@ function FaqCard({
 
 export default function AccountingFaq() {
   return (
-    <section className="w-full overflow-hidden bg-[#f7f8fa]">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -196,9 +203,9 @@ export default function AccountingFaq() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
+          items-start
           px-5
-          py-12
+          py-14
 
           sm:px-8
           sm:py-16
@@ -208,109 +215,119 @@ export default function AccountingFaq() {
 
           lg:px-14
 
-          xl:px-24
+          xl:px-20
         "
       >
-        {/* INTRO */}
         <div
           className="
+            mx-auto
             flex
             w-full
-            max-w-[1000px]
+            max-w-[1240px]
             flex-col
             items-center
-            gap-3
-            pt-2
-            text-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* EYEBROW */}
-          <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[662px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Decision guide &amp; FAQ
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
               className="
-                whitespace-nowrap
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.1em]
-                text-[#7890b2]
+                !m-0
+                w-full
+                max-w-[1000px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
 
-                sm:text-xs
-                sm:tracking-[0.15em]
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
-              Decision guide &amp; FAQ
-            </span>
+              Direct answers about accounting
+          
+              connections.
+            </h2>
 
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              No public evaluation form should request accounting credentials,
+              chart-of-accounts exports, journals, general-ledger data, tax
+              returns, bank files, customer ledgers, production ERP dumps or
+              confidential financial statements.
+            </p>
           </div>
 
-          {/* HEADING */}
-          <h2
+          {/* FAQ COLUMNS */}
+          <div
             className="
-              !m-0
+              grid
               w-full
-              text-center
-              text-[30px]
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.03em]
-              text-[#091127]
+              grid-cols-1
+              gap-5
 
-              sm:text-[34px]
-
-              md:text-[36px]
-              md:leading-10
+              lg:grid-cols-2
             "
           >
-            Direct answers about accounting
-            <br className="hidden sm:block" />
-            connections.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
-              w-full
-              max-w-[687px]
-              pt-0.5
-              text-center
-              text-sm
-              font-normal
-              leading-6
-              text-[#5d7192]
-
-              sm:text-base
-              sm:leading-7
-            "
-          >
-            No public evaluation form should request accounting credentials,
-            chart-of-accounts exports, journals, general-ledger data, tax
-            returns, bank files, customer ledgers, production ERP dumps or
-            confidential financial statements.
-          </p>
-        </div>
-
-        {/* FAQ COLUMNS */}
-        <div
-          className="
-            mt-8
-            grid
-            w-full
-            grid-cols-1
-            gap-5
-
-            sm:mt-10
-
-            lg:grid-cols-2
-          "
-        >
-          <FaqCard items={leftFaqs} />
-          <FaqCard items={rightFaqs} />
+            <FaqCard items={leftFaqs} />
+            <FaqCard items={rightFaqs} />
+          </div>
         </div>
       </div>
     </section>

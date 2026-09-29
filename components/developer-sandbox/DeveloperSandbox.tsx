@@ -111,7 +111,7 @@ export default function DeveloperSandbox() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-7
+              !mt-7
               w-full
               max-w-[687px]
               text-[15px]
@@ -151,7 +151,7 @@ export default function DeveloperSandbox() {
             "
           >
             <Link
-              href="/request-sandbox-access"
+              href="#request-sandbox"
               className="
                 inline-flex
                 min-h-11
@@ -177,7 +177,7 @@ export default function DeveloperSandbox() {
             </Link>
 
             <Link
-              href="/api-documentation"
+              href="/developers-api-documentation"
               className="
                 inline-flex
                 min-h-11

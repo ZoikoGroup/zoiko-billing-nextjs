@@ -122,7 +122,7 @@ export default function PracticeCTA() {
           >
             {/* PRIMARY */}
             <Link
-              href="/signup"
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -153,7 +153,7 @@ export default function PracticeCTA() {
 
             {/* SECONDARY */}
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

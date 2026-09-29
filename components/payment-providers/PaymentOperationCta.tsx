@@ -133,7 +133,7 @@ export default function PaymentOperationCta() {
               >
                 {/* Primary */}
                 <Link
-                  href="/payment-providers"
+                  href="#browse-providers"
                   className="
                     inline-flex
                     min-h-11

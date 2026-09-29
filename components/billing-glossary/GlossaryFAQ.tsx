@@ -63,21 +63,54 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-color-grey-95-10 last:border-b-0">
+    <div className="border-b border-[#edf0f4] last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
-        className="flex min-h-20 w-full items-center justify-between gap-6 px-5 py-4 text-left"
+        className="
+          flex
+          min-h-20
+          w-full
+          items-center
+          justify-between
+          gap-6
+          px-5
+          py-4
+          text-left
+        "
         aria-expanded={isOpen}
       >
-        <span className="text-sm font-semibold leading-6 text-color-azure-11-2">
+        <span
+          className="
+            text-sm
+            font-bold
+            leading-6
+            text-[#091127]
+          "
+        >
           {faq.question}
         </span>
 
         <span
-          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-color-grey-97-4 text-sm font-semibold leading-6 text-color-azure-44-3 transition-transform duration-200 ${
-            isOpen ? "rotate-45" : ""
-          }`}
+          className={`
+            flex
+            h-6
+            w-6
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            border
+            border-[#dfe5ee]
+            bg-[#f7f8fa]
+            text-sm
+            font-semibold
+            leading-6
+            text-[#5d7192]
+            transition-transform
+            duration-200
+            ${isOpen ? "rotate-45" : ""}
+          `}
         >
           +
         </span>
@@ -85,7 +118,15 @@ function FAQItem({
 
       {isOpen && (
         <div className="px-5 pb-5">
-          <p className="text-sm font-normal leading-5 text-color-azure-44-3">
+          <p
+            className="
+              m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#5d7192]
+            "
+          >
             {faq.answer}
           </p>
         </div>
@@ -104,7 +145,17 @@ function FAQCard({
   setOpenIndex: (index: number | null) => void;
 }) {
   return (
-    <div className="w-full overflow-hidden rounded-2xl bg-color-white-solid shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4">
+    <div
+      className="
+        w-full
+        overflow-hidden
+        rounded-2xl
+        border
+        border-[#dfe5ee]
+        bg-white
+        shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+      "
+    >
       {faqs.map((faq, index) => (
         <FAQItem
           key={faq.question}
@@ -124,47 +175,132 @@ export default function GlossaryFAQ() {
   const [rightOpen, setRightOpen] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-color-grey-97-4 px-4 py-16 sm:px-6 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-11 px-0 sm:px-4 lg:px-7">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center">
-            <span className="mr-3 h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* Intro */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* Eyebrow */}
+            <div className="flex h-4 items-center justify-center gap-3">
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-            <span className="whitespace-nowrap text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Glossary FAQ
-            </span>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Glossary FAQ
+              </span>
 
-            <span className="ml-3 h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* Heading */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              Direct answers about the definitions themselves.
+            </h2>
+
+            {/* Description */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              A public definition never requires an account or a sales
+              conversation.
+            </p>
           </div>
 
-          {/* Title */}
-          <h2 className="text-3xl font-extrabold leading-10 text-color-azure-11-2 sm:text-4xl">
-            Direct answers about the definitions
-            themselves.
-          </h2>
+          {/* FAQ Cards */}
+          <div
+            className="
+              grid
+              w-full
+              grid-cols-1
+              items-start
+              gap-3
+              lg:grid-cols-2
+              lg:gap-5
+            "
+          >
+            <FAQCard
+              faqs={leftFaqs}
+              openIndex={leftOpen}
+              setOpenIndex={setLeftOpen}
+            />
 
-          {/* Description */}
-          <p className="max-w-[687px] pt-[3px] text-base font-normal leading-7 text-color-azure-44-3">
-            A public definition never requires an account or a sales
-            conversation.
-          </p>
-        </div>
-
-        {/* FAQ Cards */}
-        <div className="grid w-full grid-cols-1 items-start gap-5 lg:grid-cols-2">
-          <FAQCard
-            faqs={leftFaqs}
-            openIndex={leftOpen}
-            setOpenIndex={setLeftOpen}
-          />
-
-          <FAQCard
-            faqs={rightFaqs}
-            openIndex={rightOpen}
-            setOpenIndex={setRightOpen}
-          />
+            <FAQCard
+              faqs={rightFaqs}
+              openIndex={rightOpen}
+              setOpenIndex={setRightOpen}
+            />
+          </div>
         </div>
       </div>
     </section>

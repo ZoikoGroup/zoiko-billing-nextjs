@@ -4,10 +4,10 @@ import Link from "next/link";
 interface StageItem {
   stageNumber: number;
   title: string;
-  description: React.ReactNode;
+  description: string;
 }
 
-const mobileStages: StageItem[] = [
+const stages: StageItem[] = [
   {
     stageNumber: 1,
     title: "Producer",
@@ -16,14 +16,7 @@ const mobileStages: StageItem[] = [
   {
     stageNumber: 2,
     title: "Event boundary",
-    description: (
-      <>
-        The event is emitted per{" "}
-        <span className="bg-purple-100/70 text-purple-700 px-1.5 py-0.5 rounded border border-purple-200/60 font-mono text-[10px]">
-          {`{webhooks_spec}`}
-        </span>
-      </>
-    ),
+    description: "The event is emitted per {webhooks_spec}.",
   },
   {
     stageNumber: 3,
@@ -33,145 +26,431 @@ const mobileStages: StageItem[] = [
   {
     stageNumber: 4,
     title: "Acknowledgement",
-    description: (
-      <>
-        Receipt recorded —{" "}
-        <span className="font-semibold text-slate-800">
-          not proof of business finality
-        </span>
-        .
-      </>
-    ),
+    description: "Receipt recorded — not proof of business finality.",
+  },
+  {
+    stageNumber: 5,
+    title: "Retry / exception",
+    description:
+      "Behavior per product policy, shown only once verified.",
   },
 ];
 
 export default function EventsWebhooksSection() {
   return (
-    <section className="w-full bg-white py-12 lg:py-24 border-t border-slate-100" id="sdks-webhooks">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-5 bg-slate-300" />
-          EVENTS &amp; WEBHOOKS BOUNDARY
-          <span className="h-px w-5 bg-slate-300" />
-        </div>
+    <section id="sdks-webhooks" className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
-          React to billing events without polling every record.
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs font-normal leading-relaxed text-slate-600 sm:text-base">
-          Where event delivery is supported, integrations can respond to defined billing
-          lifecycle changes. Exact event types, payloads, delivery guarantees, signatures,
-          retry behavior, ordering and replay behavior come from the Webhooks specification.
-        </p>
-
-        {/* ========================================================================= */}
-        {/* DESKTOP VERSION (UNTOUCHED - hidden lg:block)                            */}
-        {/* ========================================================================= */}
-        <div className="hidden lg:block mt-12 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-sm">
-          <Image
-            src="/images/developers/dao4.png"
-            alt="React to billing events without polling every record"
-            width={1240}
-            height={460}
-            unoptimized
-            priority
-            className="h-auto w-full rounded-3xl object-cover"
-          />
-        </div>
-
-        {/* ========================================================================= */}
-        {/* MOBILE VERSION (MATCHING REFERENCE media_1787568255894.png - block lg:hidden) */}
-        {/* ========================================================================= */}
-        <div className="block lg:hidden mt-8 w-full max-w-[640px] text-left">
-          
-          {/* Top 4 Stage Cards (2x2 Grid) */}
-          <div className="grid grid-cols-2 gap-3 mb-3">
-            {mobileStages.map((st) => (
-              <div
-                key={st.stageNumber}
-                className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm"
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
               >
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
-                  STAGE {st.stageNumber}
-                </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 mb-1">
-                  {st.title}
+                Events &amp; Webhooks Boundary
+              </span>
+
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              React to billing events without polling every record.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Where event delivery is supported, integrations can respond to
+              defined billing lifecycle changes. Exact event types, payloads,
+              delivery guarantees, signatures, retry behavior, ordering and
+              replay behavior come from the Webhooks specification.
+            </p>
+          </div>
+
+          {/* WEBHOOK FLOW */}
+          <div className="grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2 lg:grid-cols-5">
+            {stages.map((stage) => (
+              <div
+                key={stage.stageNumber}
+                className="
+                  flex
+                  min-h-[220px]
+                  flex-col
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-5
+                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                  transition-shadow
+                  duration-200
+                  hover:shadow-[0_8px_24px_rgba(15,23,42,0.07)]
+                  sm:p-6
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.12em]
+                    text-[#7890b2]
+                  "
+                >
+                  Stage {stage.stageNumber}
+                </span>
+
+                <h3
+                  className="
+                    !m-0
+                    mt-2
+                    text-base
+                    font-bold
+                    leading-6
+                    text-[#091127]
+                    sm:text-lg
+                  "
+                >
+                  {stage.title}
                 </h3>
-                <div className="text-[11px] font-normal text-slate-500 leading-relaxed">
-                  {st.description}
-                </div>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2
+                    text-sm
+                    font-normal
+                    leading-6
+                    text-[#5d7192]
+                  "
+                >
+                  {stage.stageNumber === 2 ? (
+                    <>
+                      The event is emitted per{" "}
+                      <code
+                        className="
+                          rounded-md
+                          border
+                          border-[#dfe5ee]
+                          bg-[#f7f8fa]
+                          px-1.5
+                          py-0.5
+                          font-mono
+                          text-[10px]
+                          text-[#7890b2]
+                        "
+                      >
+                        {"{webhooks_spec}"}
+                      </code>
+                    </>
+                  ) : stage.stageNumber === 4 ? (
+                    <>
+                      Receipt recorded —{" "}
+                      <span className="font-bold text-[#091127]">
+                        not proof of business finality
+                      </span>
+                      .
+                    </>
+                  ) : (
+                    stage.description
+                  )}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Stage 5 Full Width Card */}
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm mb-5">
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
-              STAGE 5
-            </div>
-            <h3 className="font-bold text-xs sm:text-sm text-slate-900 mb-1">
-              Retry / exception
-            </h3>
-            <div className="text-[11px] font-normal text-slate-500 leading-relaxed">
-              Behavior per product policy, shown only once verified.
-            </div>
+          {/* DESKTOP REFERENCE IMAGE */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              lg:block
+            "
+          >
+            <Image
+              src="/images/developers/dao4.png"
+              alt="React to billing events without polling every record"
+              width={1240}
+              height={460}
+              priority
+              className="h-auto w-full object-cover"
+              sizes="1240px"
+            />
           </div>
 
-          {/* Failure States Card */}
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm mb-5">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-3">
+          {/* FAILURE STATES */}
+          <div
+            className="
+              w-full
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              p-5
+              text-left
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              sm:p-6
+            "
+          >
+            <h3
+              className="
+                !m-0
+                text-base
+                font-bold
+                leading-6
+                text-[#091127]
+              "
+            >
               Failure states, shown only where policy supports them
             </h3>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 rounded-full bg-red-50 border border-red-200/80 px-2.5 py-1 text-[11px] font-medium text-red-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-md
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-2.5
+                  py-1.5
+                  text-[11px]
+                  font-medium
+                  text-[#5d7192]
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                 Endpoint unavailable
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-red-50 border border-red-200/80 px-2.5 py-1 text-[11px] font-medium text-red-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-md
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-2.5
+                  py-1.5
+                  text-[11px]
+                  font-medium
+                  text-[#5d7192]
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                 Signature failure
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200/80 px-2.5 py-1 text-[11px] font-medium text-amber-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-md
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-2.5
+                  py-1.5
+                  text-[11px]
+                  font-medium
+                  text-[#5d7192]
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                 Retry scheduled
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200/80 px-2.5 py-1 text-[11px] font-medium text-amber-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-md
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-2.5
+                  py-1.5
+                  text-[11px]
+                  font-medium
+                  text-[#5d7192]
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                 Delivery exhausted
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-purple-50 border border-purple-200/80 px-2.5 py-1 text-[11px] font-medium text-purple-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-md
+                  border
+                  border-[#dfe5ee]
+                  bg-[#f7f8fa]
+                  px-2.5
+                  py-1.5
+                  text-[11px]
+                  font-medium
+                  text-[#5d7192]
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
                 Manual review
               </span>
             </div>
           </div>
 
-          {/* Delivery Semantics Light Blue Callout Card */}
-          <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-1.5">
+          {/* DELIVERY SEMANTICS */}
+          <div
+            className="
+              w-full
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              p-5
+              text-left
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              sm:p-6
+            "
+          >
+            <h3
+              className="
+                !m-0
+                text-base
+                font-bold
+                leading-6
+                text-[#091127]
+              "
+            >
               Delivery semantics are not assumed
             </h3>
-            <p className="text-xs font-normal leading-relaxed text-slate-600">
-              Retries, ordering and replay are labeled only after engineering verification.{" "}
-              <span className="font-bold text-slate-900">
+
+            <p
+              className="
+                !m-0
+                mt-2
+                text-sm
+                font-normal
+                leading-6
+                text-[#5d7192]
+              "
+            >
+              Retries, ordering and replay are labeled only after engineering
+              verification.{" "}
+              <span className="font-bold text-[#091127]">
                 Exactly-once delivery is never implied.
               </span>
             </p>
+
             <Link
-              href="#webhooks-spec"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-700 mt-3 hover:underline"
+              href="/developers-webhooks"
+              className="
+                mt-4
+                inline-flex
+                items-center
+                gap-1
+                text-xs
+                font-semibold
+                text-[#5d7192]
+                transition-colors
+                duration-200
+                hover:text-[#091127]
+              "
             >
               Webhooks <span>→</span>
             </Link>
           </div>
-
         </div>
-
       </div>
     </section>
   );

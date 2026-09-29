@@ -3,139 +3,313 @@ import Image from "next/image";
 
 export default function EnterpriseImplementationSection() {
   return (
-    <section className="w-full bg-slate-50/50 py-12 lg:py-24 border-t border-slate-100" id="enterprise">
-      
-      {/* ========================================================================= */}
-      {/* DESKTOP VERSION (UNTOUCHED - hidden lg:flex)                             */}
-      {/* ========================================================================= */}
-      <div className="hidden lg:flex mx-auto max-w-[1320px] flex-col items-center gap-10 px-6 sm:px-8 lg:flex-row lg:items-center lg:gap-14 lg:px-12">
-        
-        {/* Left Column: Text Content & CTAs */}
-        <div className="flex w-full flex-col items-start gap-5 lg:w-1/2 lg:max-w-[580px]">
-          
-          {/* Eyebrow */}
-          <div className="flex items-center gap-2.5">
-            <span className="h-px w-5 bg-slate-400" />
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-              ENTERPRISE IMPLEMENTATION
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl">
-            Need to fit Zoiko Billing into a larger finance architecture?
-          </h2>
-
-          {/* Description */}
-          <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-            For multi-system billing, complex identity models, regulated data flows, migration
-            programs or enterprise rollout planning, a technical implementation conversation is
-            available — without gating documentation behind it.
-          </p>
-
-          {/* Action CTAs */}
-          <div className="flex w-full flex-wrap items-center gap-3 pt-2 sm:w-auto">
-            <Link
-              href="#build-integration"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-6 text-center text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:bg-blue-700"
-            >
-              Build an Integration
-            </Link>
-
-            <Link
-              href="#talk-to-sales"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
-            >
-              Talk to Sales
-            </Link>
-          </div>
-
-        </div>
-
-        {/* Right Column: Image Container */}
-        <div className="relative flex w-full justify-center lg:w-1/2 lg:justify-end">
-          <div className="relative w-full max-w-[540px] overflow-hidden rounded-3xl shadow-xl flex items-center justify-center">
-            <Image
-              src="/images/developers/dao6.png"
-              alt="Need to fit Zoiko Billing into a larger finance architecture?"
-              width={540}
-              height={420}
-              unoptimized
-              priority
-              className="h-auto w-full rounded-3xl object-cover"
-            />
-          </div>
-        </div>
-
-      </div>
-
-      {/* ========================================================================= */}
-      {/* MOBILE VERSION (MATCHING REFERENCE media_1787568469903.png - block lg:hidden) */}
-      {/* ========================================================================= */}
-      <div className="block lg:hidden mx-auto max-w-[640px] px-4 sm:px-6">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center gap-2 mb-3">
-          <span className="h-px w-5 bg-slate-400" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
-            ENTERPRISE IMPLEMENTATION
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h2 className="text-xl sm:text-2xl font-extrabold leading-tight text-slate-900 tracking-tight mb-3">
-          Need to fit Zoiko Billing into a larger finance architecture?
-        </h2>
-
-        {/* Description */}
-        <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-600 mb-4">
-          For multi-system billing, complex identity models, regulated data flows, migration
-          programs or enterprise rollout planning, a technical implementation conversation is
-          available — without gating documentation behind it.
-        </p>
-
-        {/* CTAs Row */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-3">
-          <Link
-            href="#build-integration"
-            className="inline-flex min-h-10 items-center justify-center rounded-full bg-blue-600 px-5 text-center text-xs font-semibold text-white shadow-sm"
+    <section id="enterprise" className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+            lg:flex-row
+            lg:items-center
+          "
+        >
+          {/* LEFT CONTENT */}
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              items-start
+              gap-5
+              lg:w-1/2
+              lg:max-w-[580px]
+            "
           >
-            Build an Integration
-          </Link>
-          <Link
-            href="#talk-to-sales"
-            className="inline-flex min-h-10 items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-center text-xs font-semibold text-slate-800"
-          >
-            Talk to Sales
-          </Link>
-        </div>
+            {/* EYEBROW */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-        {/* Quick Reference Links Row */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] font-semibold text-blue-600 mb-6">
-          <Link href="#api-docs" className="hover:underline">API Documentation</Link>
-          <Link href="#authentication" className="hover:underline">Authentication</Link>
-          <Link href="#webhooks" className="hover:underline">Webhooks</Link>
-          <Link href="#sandbox" className="hover:underline">Developer Sandbox</Link>
-        </div>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Enterprise Implementation
+              </span>
+            </div>
 
-        {/* Mint / Emerald Callout Card */}
-        <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 text-left">
-          <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-2">
-            What the conversation covers
-          </h3>
-          <p className="text-xs font-normal leading-relaxed text-slate-600 mb-3">
-            Architecture fit, object and permission modeling, environment and rollout sequencing, and operational ownership.
-          </p>
-          <p className="text-xs font-normal leading-relaxed text-slate-600 mb-3">
-            <span className="font-bold text-slate-800">What it does not do:</span> promise custom features, delivery timelines or capability that the canonical documentation does not already support.
-          </p>
-          <p className="text-xs font-normal leading-relaxed text-slate-600">
-            No long lead form appears on this page. Where a form exists in the global system, it requests only the minimum needed to route a technical conversation.
-          </p>
-        </div>
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              Need to fit Zoiko Billing into a larger finance architecture?
+            </h2>
 
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              For multi-system billing, complex identity models, regulated data
+              flows, migration programs or enterprise rollout planning, a
+              technical implementation conversation is available — without
+              gating documentation behind it.
+            </p>
+
+            {/* MAIN CTAs */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <Link
+                href="/integrations"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-[#dfe5ee]
+                  bg-[#091127]
+                  px-5
+                  text-center
+                  text-xs
+                  font-semibold
+                  !text-white
+                  transition-colors
+                  duration-200
+                  hover:bg-[#17213a]
+                  sm:px-6
+                "
+              >
+                Build an Integration
+              </Link>
+
+              <Link
+                href="/contact"
+                className="
+                  inline-flex
+                  min-h-11
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  px-5
+                  text-center
+                  text-xs
+                  font-semibold
+                  text-[#5d7192]
+                  transition-colors
+                  duration-200
+                  hover:bg-[#f7f8fa]
+                  hover:text-[#091127]
+                  sm:px-6
+                "
+              >
+                Talk to Sales
+              </Link>
+            </div>
+
+            {/* QUICK REFERENCE LINKS */}
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-x-3
+                gap-y-1.5
+                text-xs
+                font-semibold
+                text-[#5d7192]
+              "
+            >
+              <Link
+                href="/developers-api-documentation"
+                className="transition-colors hover:text-[#091127]"
+              >
+                API Documentation
+              </Link>
+
+              <span className="text-[#dfe5ee]">·</span>
+
+              <Link
+                href="#"
+                className="transition-colors hover:text-[#091127]"
+              >
+                Authentication
+              </Link>
+
+              <span className="text-[#dfe5ee]">·</span>
+
+              <Link
+                href="developers-webhooks"
+                className="transition-colors hover:text-[#091127]"
+              >
+                Webhooks
+              </Link>
+
+              <span className="text-[#dfe5ee]">·</span>
+
+              <Link
+                href="/developer-sandbox"
+                className="transition-colors hover:text-[#091127]"
+              >
+                Developer Sandbox
+              </Link>
+            </div>
+
+            {/* WHAT THE CONVERSATION COVERS */}
+            <div
+              className="
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                p-5
+                text-left
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                sm:p-6
+              "
+            >
+              <h3
+                className="
+                  !m-0
+                  text-base
+                  font-bold
+                  leading-6
+                  text-[#091127]
+                "
+              >
+                What the conversation covers
+              </h3>
+
+              <p
+                className="
+                  !m-0
+                  mt-2
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                Architecture fit, object and permission modeling, environment
+                and rollout sequencing, and operational ownership.
+              </p>
+
+              <p
+                className="
+                  !m-0
+                  mt-3
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                <span className="font-bold text-[#091127]">
+                  What it does not do:
+                </span>{" "}
+                promise custom features, delivery timelines or capability that
+                the canonical documentation does not already support.
+              </p>
+
+              <p
+                className="
+                  !m-0
+                  mt-3
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                No long lead form appears on this page. Where a form exists in
+                the global system, it requests only the minimum needed to route
+                a technical conversation.
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="relative w-full lg:w-1/2">
+            <div
+              className="
+                relative
+                mx-auto
+                w-full
+                max-w-[540px]
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                lg:ml-auto
+              "
+            >
+              <Image
+                src="/images/developers/dao6.png"
+                alt="Need to fit Zoiko Billing into a larger finance architecture?"
+                width={540}
+                height={420}
+                priority
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 540px"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
     </section>
   );
 }

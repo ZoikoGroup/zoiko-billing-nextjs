@@ -11,7 +11,7 @@ interface RouteIntentItem {
 const routeIntents: RouteIntentItem[] = [
   { label: "Understand the model", target: "Capability map", href: "#capability-map" },
   { label: "Review access", target: "Authentication", href: "#authentication" },
-  { label: "Test safely", target: "Developer Sandbox", href: "#sandbox" },
+  { label: "Test safely", target: "Developer Sandbox", href: "/developer-sandbox" },
   { label: "Build and operate", target: "Documentation · Webhooks · SDKs", href: "#sdks-webhooks" },
   { label: "Enterprise rollout", target: "Build an Integration", href: "#enterprise" },
 ];
@@ -45,14 +45,14 @@ export default function DeveloperFinalCtaSection() {
             {/* CTAs (2 Buttons matching media_1787568999056.png) */}
             <div className="flex items-center gap-3.5 pt-3">
               <Link
-                href="#api-docs"
+                href="/developers-api-documentation"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-sm font-semibold !text-slate-900 shadow-sm transition hover:bg-slate-100"
               >
                 <span className="text-slate-900 font-semibold">API Documentation</span>
               </Link>
 
               <Link
-                href="#sandbox"
+                href="/developer-sandbox"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-white/80 bg-transparent px-6 text-center text-sm font-semibold !text-white transition hover:bg-white/10"
               >
                 <span className="text-white font-semibold">Developer Sandbox</span>
@@ -96,21 +96,21 @@ export default function DeveloperFinalCtaSection() {
             {/* 3 Buttons Row */}
             <div className="flex flex-wrap items-center gap-2.5 mb-6 relative z-10">
               <Link
-                href="#api-docs"
+                href="/developers-api-documentation"
                 className="inline-flex min-h-10 items-center justify-center rounded-full bg-white px-5 text-center text-xs font-semibold !text-slate-900 shadow-sm"
               >
                 <span className="text-slate-900 font-semibold">API Documentation</span>
               </Link>
 
               <Link
-                href="#sandbox"
+                href="/developer-sandbox"
                 className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/80 bg-[#0E1A3C] px-5 text-center text-xs font-semibold !text-white"
               >
                 <span className="text-white font-semibold">Developer Sandbox</span>
               </Link>
 
               <Link
-                href="#enterprise"
+                href="/integrations"
                 className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/80 bg-[#0E1A3C] px-5 text-center text-xs font-semibold !text-white"
               >
                 <span className="text-white font-semibold">Build an Integration</span>
@@ -151,7 +151,7 @@ export default function DeveloperFinalCtaSection() {
             {/* Buttons Row */}
             <div className="flex flex-wrap items-center gap-3.5 mb-8">
               <Link
-                href="#api-docs"
+                href="/developers-api-documentation"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
               >
                 <span className="text-[#1D60EB] font-semibold">API Documentation</span>

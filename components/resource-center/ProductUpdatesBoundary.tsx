@@ -128,7 +128,7 @@ export default function ProductUpdatesBoundary() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
+                max-w-[1000px]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -143,7 +143,7 @@ export default function ProductUpdatesBoundary() {
               "
             >
               Shipped changes here. Incidents and
-              <br className="hidden sm:block" /> advisories elsewhere.
+              advisories elsewhere.
             </h2>
 
             {/* DESCRIPTION */}

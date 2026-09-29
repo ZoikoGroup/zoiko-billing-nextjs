@@ -99,38 +99,20 @@ export default function AccountingErp() {
             "
           >
             <span className="block">
-              Connect billing
-            </span>
-
-            <span className="block">
-              operations to approved
-            </span>
-
-            <span className="block">
-              accounting and ERP
-            </span>
-
-            <span className="block">
-              systems —
+              Connect billing operations to approved accounting and ERP systems —
             </span>
 
             <span className="block text-blue-600">
-              without
+              without blurring which system
+               owns the books.
             </span>
 
-            <span className="block text-blue-600">
-              blurring which system
-            </span>
-
-            <span className="block text-blue-600">
-              owns the books.
-            </span>
           </h2>
 
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -170,7 +152,7 @@ export default function AccountingErp() {
             "
           >
             <Link
-              href="/accounting-and-erp"
+              href="#correction"
               className="
                 inline-flex
                 min-h-11

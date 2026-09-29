@@ -34,61 +34,181 @@ const adviceBoundaries = [
 
 export default function ExampleAdviceBoundaries() {
   return (
-    <section className="w-full px-4 py-16 sm:px-6 md:px-10 lg:px-16 xl:px-24 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-11 px-0 sm:px-4 lg:px-7">
-        {/* Heading */}
-        <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2 text-center">
-          {/* Eyebrow */}
-          <div className="flex h-4 items-center justify-center gap-3">
-            <div className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* Intro */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-            <span className="text-xs font-bold uppercase leading-4 tracking-widest text-color-azure-60">
-              Example &amp; advice boundaries
-            </span>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Example &amp; advice boundaries
+              </span>
 
-            <div className="h-px w-4 shrink-0 bg-color-azure-60 opacity-40" />
-          </div>
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+            </div>
 
-          {/* Title */}
-          <h2 className="pb-[0.69px] text-2xl font-extrabold leading-8 text-color-azure-11-2 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
-            Five areas where a template can
-            <br className="hidden sm:block" /> overreach.
-          </h2>
+            {/* Heading */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              Five areas where a template can
+              <br className="hidden sm:block" /> overreach.
+            </h2>
 
-          {/* Description */}
-          <p className="w-full max-w-[687px] pt-[3.1px] text-sm font-normal leading-6 text-color-azure-44-3 sm:text-base sm:leading-7">
-            Each &quot;not allowed&quot; entry describes something a template
-            could plausibly contain and must not.
-          </p>
-        </div>
-
-        {/* Boundary table */}
-        <div className="w-full overflow-hidden rounded-2xl bg-color-white-solid shadow-[0px_8px_24px_0px_rgba(15,23,42,0.05),0px_1px_2px_0px_rgba(15,23,42,0.04)] outline outline-1 outline-offset-[-1px] outline-color-grey-92-4">
-          {/* Table description */}
-          <div className="border-b border-color-grey-92-4 bg-color-grey-99-2 px-5 py-4">
-            <p className="text-sm font-normal leading-5 text-color-azure-44-3">
-              Area, allowed and not allowed.
+            {/* Description */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              Each &quot;not allowed&quot; entry describes something a template
+              could plausibly contain and must not.
             </p>
           </div>
 
-          {/* Desktop table */}
-          <div className="hidden md:block">
+          {/* Desktop Table */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              md:block
+            "
+          >
+            {/* Table Description */}
+            <div
+              className="
+                border-b
+                border-[#dfe5ee]
+                bg-[#f7f8fa]
+                px-5
+                py-4
+              "
+            >
+              <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
+                Area, allowed and not allowed.
+              </p>
+            </div>
+
             {/* Header */}
-            <div className="grid grid-cols-[176px_384px_minmax(0,1fr)] border-b border-color-grey-92-4 bg-color-grey-99-2">
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+            <div className="grid grid-cols-[176px_384px_minmax(0,1fr)] bg-[#f7f8fa]">
+              <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Area
                 </span>
               </div>
 
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+              <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Allowed
                 </span>
               </div>
 
-              <div className="px-4 py-3">
-                <span className="text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+              <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    leading-4
+                    tracking-[0.14em]
+                    text-[#7890b2]
+                  "
+                >
                   Not allowed
                 </span>
               </div>
@@ -98,26 +218,32 @@ export default function ExampleAdviceBoundaries() {
             {adviceBoundaries.map((item, index) => (
               <div
                 key={item.area}
-                className={`grid grid-cols-[176px_384px_minmax(0,1fr)] ${
-                  index !== adviceBoundaries.length - 1
-                    ? "border-b border-color-grey-95-10"
-                    : ""
-                }`}
+                className={`
+                  grid
+                  grid-cols-[176px_384px_minmax(0,1fr)]
+                  transition-colors
+                  hover:bg-[#f7f8fa]/70
+                  ${
+                    index !== adviceBoundaries.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }
+                `}
               >
-                <div className="px-4 py-3.5">
-                  <p className="text-sm font-semibold leading-5 text-color-azure-11-2">
+                <div className="px-5 py-4">
+                  <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
                     {item.area}
                   </p>
                 </div>
 
-                <div className="px-4 py-3.5">
-                  <p className="text-sm font-normal leading-5 text-color-azure-44-3">
+                <div className="px-5 py-4">
+                  <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
                     {item.allowed}
                   </p>
                 </div>
 
-                <div className="px-4 py-3.5">
-                  <p className="text-sm font-normal leading-5 text-color-azure-44-3">
+                <div className="px-5 py-4">
+                  <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
                     {item.notAllowed}
                   </p>
                 </div>
@@ -125,38 +251,69 @@ export default function ExampleAdviceBoundaries() {
             ))}
           </div>
 
-          {/* Mobile */}
-          <div className="md:hidden">
-            {adviceBoundaries.map((item, index) => (
+          {/* Mobile Cards */}
+          <div className="flex w-full flex-col gap-3 md:hidden">
+            {adviceBoundaries.map((item) => (
               <div
                 key={item.area}
-                className={`px-4 py-5 sm:px-5 ${
-                  index !== adviceBoundaries.length - 1
-                    ? "border-b border-color-grey-95-10"
-                    : ""
-                }`}
+                className="
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                "
               >
-                <h3 className="mb-4 text-sm font-semibold leading-5 text-color-azure-11-2">
-                  {item.area}
-                </h3>
+                {/* Area */}
+                <div className="border-b border-[#edf0f4] bg-[#f7f8fa] px-5 py-4">
+                  <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
+                    {item.area}
+                  </p>
+                </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <p className="mb-1 text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+                <div className="flex flex-col">
+                  {/* Allowed */}
+                  <div className="border-b border-[#edf0f4] px-5 py-4">
+                    <p
+                      className="
+                        !m-0
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
                       Allowed
                     </p>
 
-                    <p className="text-sm font-normal leading-6 text-color-azure-44-3">
+                    <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
                       {item.allowed}
                     </p>
                   </div>
 
-                  <div>
-                    <p className="mb-1 text-xs font-bold uppercase leading-4 tracking-wide text-color-azure-60">
+                  {/* Not Allowed */}
+                  <div className="px-5 py-4">
+                    <p
+                      className="
+                        !m-0
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
                       Not allowed
                     </p>
 
-                    <p className="text-sm font-normal leading-6 text-color-azure-44-3">
+                    <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
                       {item.notAllowed}
                     </p>
                   </div>
