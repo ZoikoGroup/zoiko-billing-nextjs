@@ -101,14 +101,17 @@ export default function CrmPlatformsHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               Connect customer and <br />
               sales systems to billing <br />
-              <span className="text-[#1D70F5]">without losing source authority.</span>
+              <span className="text-[#1D70F5]">
+                without losing source <br />
+                authority.
+              </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-500 max-w-[540px]">
+            <p className="text-xs sm:text-sm lg:text-[15px] font-normal leading-relaxed text-slate-500 max-w-[540px]">
               Evaluate approved CRM integrations by supported objects, actions, direction, field
               authority, authentication, customer matching, lifecycle handling, availability,
               currentness, documentation and verification. Keep sales context useful without
@@ -170,7 +173,7 @@ export default function CrmPlatformsHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             Connect customer and sales systems to billing{" "}
             <span className="text-[#1D70F5]">without losing source authority.</span>
           </h1>
@@ -218,7 +221,7 @@ export default function CrmPlatformsHeroSection() {
           {/* Field authority inspector Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left mb-4">
             
-            <h2 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-xs sm:!text-sm !font-bold text-slate-900 mb-1">
               Field authority inspector - synthetic registry fixtures
             </h2>
             <p className="text-[11px] text-slate-500 font-normal leading-relaxed mb-4">

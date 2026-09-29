@@ -62,21 +62,19 @@ export default function Leadership() {
               !m-0
               !block
               !max-w-[700px]
-              !text-[40px]
+              !font-[family-name:var(--font-jakarta)]
+              !text-[36px]
+              sm:!text-[44px]
+              md:!text-[48px]
               !font-extrabold
               !leading-[1.08]
               !tracking-[-0.035em]
               !text-slate-900
-
-              sm:!text-[46px]
-
-              md:!text-[50px]
-
               lg:!hidden
             "
           >
             Who is accountable,{" "}
-            <span className="text-blue-600">
+            <span className="text-[#1D70F5]">
               and for exactly what.
             </span>
           </h1>
@@ -87,26 +85,19 @@ export default function Leadership() {
               !m-0
               !hidden
               !max-w-none
+              !font-[family-name:var(--font-jakarta)]
               !font-extrabold
-              !leading-[1.08]
+              !leading-[1.12]
               !tracking-[-0.035em]
               !text-slate-900
-
               lg:!block
-              lg:!text-[44px]
-
+              lg:!text-[46px]
               xl:!text-[50px]
+              2xl:!text-[52px]
             "
           >
-            <span className="block">
-              Who is accountable,
-            </span>
-
-            <span className="block text-blue-600">
-              and  for exactly what.
-            </span>
-
-           
+            Who is accountable, <span className="text-[#1D70F5]">and</span> <br />
+            <span className="text-[#1D70F5]">for exactly what.</span>
           </h1>
 
           {/* DESCRIPTION */}

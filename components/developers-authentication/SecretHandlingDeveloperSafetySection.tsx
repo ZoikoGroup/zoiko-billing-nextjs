@@ -11,7 +11,7 @@ export default function SecretHandlingDeveloperSafetySection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-white tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-white max-w-3xl">
           A documentation page is not exempt from security rules.
         </h2>
 
@@ -29,7 +29,7 @@ export default function SecretHandlingDeveloperSafetySection() {
           {/* Card 1: Never a destination for credential material */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-6 sm:p-8 shadow-lg flex flex-col justify-between">
             <div>
-              <h3 className="text-base sm:text-lg font-bold text-white mb-3">
+              <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold text-white mb-3">
                 Never a destination for credential material
               </h3>
               <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-300">
@@ -43,7 +43,7 @@ export default function SecretHandlingDeveloperSafetySection() {
           {/* Card 2: Required handling */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-6 sm:p-8 shadow-lg flex flex-col justify-between">
             <div>
-              <h3 className="text-base sm:text-lg font-bold text-white mb-3">
+              <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold text-white mb-3">
                 Required handling
               </h3>
               <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-300">
@@ -67,7 +67,7 @@ export default function SecretHandlingDeveloperSafetySection() {
           
           {/* Card 1 */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-5 shadow-lg mb-4">
-            <h3 className="text-sm font-bold text-white mb-2">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-sm font-bold text-white mb-2">
               Never a destination for credential material
             </h3>
             <p className="text-xs font-normal leading-relaxed text-slate-300">
@@ -79,7 +79,7 @@ export default function SecretHandlingDeveloperSafetySection() {
 
           {/* Card 2 */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-5 shadow-lg mb-4">
-            <h3 className="text-sm font-bold text-white mb-2">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-sm font-bold text-white mb-2">
               Required handling
             </h3>
             <p className="text-xs font-normal leading-relaxed text-slate-300">
@@ -93,7 +93,7 @@ export default function SecretHandlingDeveloperSafetySection() {
 
           {/* Card 3 */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-5 shadow-lg">
-            <h3 className="text-sm font-bold text-white mb-2">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-sm font-bold text-white mb-2">
               Placeholder discipline
             </h3>
             <p className="text-xs font-normal leading-relaxed text-slate-300">

@@ -114,12 +114,12 @@ export default function ProductionReadinessGateSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Thirteen gates, and a checkbox is not approval.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Tick the gates you have genuinely satisfied. The verdict below deliberately refuses
           to congratulate you.
         </p>
@@ -146,7 +146,7 @@ export default function ProductionReadinessGateSection() {
             {/* Card Header */}
             <div className="flex items-center justify-between gap-3 mb-3 pb-2.5 border-b border-slate-100">
               <div>
-                <h3 className="text-sm font-bold text-slate-900">
+                <h3 className="!font-[family-name:var(--font-jakarta)] !text-sm !font-bold text-slate-900">
                   Readiness planning aid
                 </h3>
                 <div className="text-[11px] text-slate-400 font-normal">

@@ -56,12 +56,13 @@ export default function QuickStartSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-2xl">
-          Four steps, in the order that avoids rework.
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
+          Four steps, in the order that avoids <br className="hidden sm:inline" />
+          rework.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-xl text-xs font-normal leading-relaxed text-slate-600 sm:text-base">
+        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
           Understand the model and the access boundary before you build, so permission and
           ownership surprises do not arrive at launch.
         </p>
@@ -75,17 +76,17 @@ export default function QuickStartSection() {
             >
               <div>
                 {/* Number Badge */}
-                <div className="mb-3 sm:mb-4 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-blue-50 text-xs sm:text-sm font-extrabold text-blue-600">
+                <div className="mb-3 sm:mb-4 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-blue-50 text-xs sm:text-sm font-extrabold text-[#1D70F5]">
                   {step.number}
                 </div>
 
                 {/* Card Title */}
-                <h3 className="mb-1.5 text-xs sm:text-base font-bold text-slate-900">
+                <h3 className="!font-[family-name:var(--font-jakarta)] mb-1.5 text-xs sm:text-base font-bold text-slate-900">
                   {step.title}
                 </h3>
 
                 {/* Card Description */}
-                <p className="text-[11px] sm:text-sm font-normal leading-relaxed text-slate-600">
+                <p className="text-[11px] sm:text-[13px] font-normal leading-relaxed text-slate-500">
                   {step.description}
                 </p>
               </div>
@@ -94,7 +95,7 @@ export default function QuickStartSection() {
               <div className="mt-4 sm:mt-6 pt-1 sm:pt-2">
                 <Link
                   href={step.linkHref}
-                  className="inline-flex items-center text-[11px] sm:text-xs font-semibold text-blue-600 hover:text-blue-700 transition"
+                  className="inline-flex items-center text-xs sm:text-[13px] font-semibold text-[#1D70F5] hover:underline transition"
                 >
                   {step.linkText}
                 </Link>

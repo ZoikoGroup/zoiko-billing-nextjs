@@ -63,7 +63,7 @@ export default function AuthenticationBoundarySection() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900">
             Access starts with identity, scope and purpose.
           </h2>
 
@@ -125,7 +125,7 @@ export default function AuthenticationBoundarySection() {
         </div>
 
         {/* Headline */}
-        <h2 className="text-xl sm:text-2xl font-extrabold leading-tight text-slate-900 tracking-tight mb-3">
+        <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl !font-extrabold !leading-tight text-slate-900 !tracking-tight mb-3">
           Access starts with identity, scope and purpose.
         </h2>
 
@@ -163,7 +163,7 @@ export default function AuthenticationBoundarySection() {
         <div className="rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-sm text-left">
           
           {/* Card Header */}
-          <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+          <h3 className="!font-[family-name:var(--font-jakarta)] text-sm sm:text-base font-bold text-slate-900 mb-1">
             The access boundary, layer by layer
           </h3>
           <p className="text-xs text-slate-500 font-normal mb-5">
@@ -178,7 +178,7 @@ export default function AuthenticationBoundarySection() {
                   {layer.number}
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                  <h4 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-sm font-bold text-slate-900">
                     {layer.title}
                   </h4>
                   <div className="text-[11px] sm:text-xs font-normal text-slate-500 mt-0.5 leading-relaxed">

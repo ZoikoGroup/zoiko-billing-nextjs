@@ -60,12 +60,12 @@ export default function EndToEndIntegrationLifecycleSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Eight stages, each with an exit criterion.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           A stage is complete when its exit condition is met — not when the code compiles.
         </p>
 
@@ -78,11 +78,11 @@ export default function EndToEndIntegrationLifecycleSection() {
                   <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/5">
                     STAGE
                   </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-[45%]">
-                    RESPONSIBILITY
+                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-xs font-bold uppercase tracking-wider text-slate-500 w-[45%]">
+                    AUDIT PRODUCT
                   </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-[35%]">
-                    EXIT CRITERIA
+                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-xs font-bold uppercase tracking-wider text-slate-500 w-[35%]">
+                    EXIT CRITERION
                   </th>
                 </tr>
               </thead>

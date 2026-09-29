@@ -27,12 +27,12 @@ export default function CrmAuthenticationPermissionsSetupSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Integration identity is a technical connection, not a Billing permission.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           CRM authentication, single sign-on, owner mapping and group membership never satisfy
           Billing authorization. Those permissions stay governed separately.
         </p>
@@ -87,7 +87,7 @@ export default function CrmAuthenticationPermissionsSetupSection() {
           {/* Mobile Illustrated Step Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm">
             
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-0.5">
+            <h3 className="!font-[family-name:var(--font-jakarta)] !text-xs sm:!text-sm !font-bold text-slate-900 mb-0.5">
               Identity is not permission, illustrated
             </h3>
             <p className="text-[10px] text-slate-400 font-normal mb-4">

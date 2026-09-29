@@ -100,7 +100,7 @@ export default function CredentialManagementUiContractSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           No sensitive value appears in the table. Ever.
         </h2>
 
@@ -132,7 +132,7 @@ export default function CredentialManagementUiContractSection() {
             {/* Header & Create CTA */}
             <div className="flex items-center justify-between gap-3 mb-1">
               <div>
-                <h3 className="text-sm font-bold text-slate-900">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-sm font-bold text-slate-900">
                   Authentication / Credentials
                 </h3>
                 <div className="text-[11px] text-slate-400 font-normal">
@@ -323,7 +323,7 @@ export default function CredentialManagementUiContractSection() {
 
           {/* What "safe-metadata" means Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left text-xs mb-8">
-            <h3 className="text-sm font-bold text-slate-900 mb-1">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-sm font-bold text-slate-900 mb-1">
               What &quot;safe-metadata&quot; means
             </h3>
             <p className="text-xs text-slate-500 font-normal mb-4">

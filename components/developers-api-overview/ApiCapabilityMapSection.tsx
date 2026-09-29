@@ -91,7 +91,7 @@ export default function ApiCapabilityMapSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-4 text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-4 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Ten billing domains, each with its own availability state.
         </h2>
 
@@ -110,7 +110,7 @@ export default function ApiCapabilityMapSection() {
             >
               <div>
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold text-slate-900 mb-2">
                   {card.title}
                 </h3>
 

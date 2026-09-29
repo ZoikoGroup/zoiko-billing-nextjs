@@ -58,7 +58,7 @@ export default function EventsWebhooksSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           React to billing events without polling every record.
         </h2>
 
@@ -99,7 +99,7 @@ export default function EventsWebhooksSection() {
                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
                   STAGE {st.stageNumber}
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 mb-1">
+                <h3 className="!font-[family-name:var(--font-jakarta)] font-bold text-xs sm:text-sm text-slate-900 mb-1">
                   {st.title}
                 </h3>
                 <div className="text-[11px] font-normal text-slate-500 leading-relaxed">
@@ -114,7 +114,7 @@ export default function EventsWebhooksSection() {
             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
               STAGE 5
             </div>
-            <h3 className="font-bold text-xs sm:text-sm text-slate-900 mb-1">
+            <h3 className="!font-[family-name:var(--font-jakarta)] font-bold text-xs sm:text-sm text-slate-900 mb-1">
               Retry / exception
             </h3>
             <div className="text-[11px] font-normal text-slate-500 leading-relaxed">
@@ -124,7 +124,7 @@ export default function EventsWebhooksSection() {
 
           {/* Failure States Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm mb-5">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-3">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-sm font-bold text-slate-900 mb-3">
               Failure states, shown only where policy supports them
             </h3>
             <div className="flex flex-wrap items-center gap-2">
@@ -153,7 +153,7 @@ export default function EventsWebhooksSection() {
 
           {/* Delivery Semantics Light Blue Callout Card */}
           <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5">
-            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-1.5">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-sm font-bold text-slate-900 mb-1.5">
               Delivery semantics are not assumed
             </h3>
             <p className="text-xs font-normal leading-relaxed text-slate-600">

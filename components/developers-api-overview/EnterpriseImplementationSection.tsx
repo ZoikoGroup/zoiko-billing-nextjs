@@ -22,7 +22,7 @@ export default function EnterpriseImplementationSection() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[38px] !font-extrabold !leading-tight !tracking-tight text-slate-900">
             Need to fit Zoiko Billing into a larger finance architecture?
           </h2>
 
@@ -83,7 +83,7 @@ export default function EnterpriseImplementationSection() {
         </div>
 
         {/* Headline */}
-        <h2 className="text-xl sm:text-2xl font-extrabold leading-tight text-slate-900 tracking-tight mb-3">
+        <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl !font-extrabold !leading-tight text-slate-900 !tracking-tight mb-3">
           Need to fit Zoiko Billing into a larger finance architecture?
         </h2>
 
@@ -120,7 +120,7 @@ export default function EnterpriseImplementationSection() {
 
         {/* Mint / Emerald Callout Card */}
         <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 text-left">
-          <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-2">
+          <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-sm font-bold text-slate-900 mb-2">
             What the conversation covers
           </h3>
           <p className="text-xs font-normal leading-relaxed text-slate-600 mb-3">

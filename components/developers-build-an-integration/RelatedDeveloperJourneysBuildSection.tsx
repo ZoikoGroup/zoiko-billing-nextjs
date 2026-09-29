@@ -52,12 +52,12 @@ export default function RelatedDeveloperJourneysBuildSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Seven destinations, one authority each.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           This page composes them. It does not restate or override any of their contracts.
         </p>
 
@@ -70,7 +70,7 @@ export default function RelatedDeveloperJourneysBuildSection() {
               className="group rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-slate-300 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition">
+                <h3 className="!font-[family-name:var(--font-jakarta)] !text-base sm:!text-lg !font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition">
                   {card.title}
                 </h3>
                 <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-600">
