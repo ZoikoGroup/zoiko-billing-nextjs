@@ -41,8 +41,8 @@ const TEAM_ITEMS: MenuItem[] = [
   { title: 'Finance & AR', href: '/finance-and-account-receivable', icon: UserCircle },
   { title: 'Revenue Operations', href: '/revenue-operations', icon: LineChart },
   { title: 'Business Operations', href: '/small-businesses', icon: Users },
-  { title: 'Founders & Owners', href: '#', icon: Award },
-  { title: 'Developers & IT', href: '#', icon: Code2 },
+  { title: 'Founders & Owners', href: '/founders-and-owners', icon: Award },
+  { title: 'Developers & IT', href: '/developers-and-it', icon: Code2 },
 ];
 
 const ORGANISATION_ITEMS: MenuItem[] = [
@@ -82,7 +82,7 @@ export default function SolutionsDropdown() {
           </p>
           <div>
               <Link
-                href="/deployment-options"
+                href="/find-your-solution"
                 className="inline-flex items-center gap-1.5 pt-1 text-sm font-medium hover:text-blue-700"
                 style={{ color: '#2563EB' }}
               >
