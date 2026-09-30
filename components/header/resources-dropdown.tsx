@@ -78,7 +78,7 @@ export default function ResourcesDropdown() {
           </p>
           <div>
              <Link
-          href="/resources/billing-guides"
+          href="/billing-guides"
           className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >
@@ -92,7 +92,7 @@ export default function ResourcesDropdown() {
 
       <div className="border-t border-slate-100 px-5 py-3 sm:px-6 dark:border-gray-800">
         <Link
-          href="/resource-center"
+          href="/resources"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           style={{ color: '#2563EB' }}
         >

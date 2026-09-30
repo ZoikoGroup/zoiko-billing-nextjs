@@ -120,7 +120,7 @@ export default function PartnerPortal() {
               "
             >
               <Link
-                href="/partner-portal"
+                href="#portal"
                 className="
                   inline-flex
                   min-h-11
@@ -145,7 +145,7 @@ export default function PartnerPortal() {
               </Link>
 
               <Link
-                href="/partner-program"
+                href="/partner-programme"
                 className="
                   inline-flex
                   min-h-11

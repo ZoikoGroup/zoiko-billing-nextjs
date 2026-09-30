@@ -106,7 +106,7 @@ export default function BillingGlossaryHero() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -147,7 +147,7 @@ export default function BillingGlossaryHero() {
             "
           >
             <Link
-              href="/request-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

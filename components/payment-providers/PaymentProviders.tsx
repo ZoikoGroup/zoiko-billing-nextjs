@@ -119,7 +119,7 @@ export default function PaymentProviders() {
           {/* DESCRIPTION */}
           <p
             className="
-              mt-8
+              !mt-8
               w-full
               max-w-[687px]
               text-[15px]
@@ -161,7 +161,7 @@ export default function PaymentProviders() {
             "
           >
             <Link
-              href="/payment-providers"
+              href="#browse-providers"
               className="
                 inline-flex
                 min-h-11

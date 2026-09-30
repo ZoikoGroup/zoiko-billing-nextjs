@@ -78,7 +78,7 @@ const rows = [
 
 export default function EntityBoundaries() {
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -86,12 +86,10 @@ export default function EntityBoundaries() {
           w-full
           max-w-[1440px]
           flex-col
-          items-center
-          gap-8
+          items-start
           px-5
-          py-12
+          py-14
 
-          sm:gap-10
           sm:px-8
           sm:py-16
 
@@ -103,122 +101,130 @@ export default function EntityBoundaries() {
           xl:px-20
         "
       >
-        {/* INTRO */}
         <div
           className="
+            mx-auto
             flex
             w-full
+            max-w-[1240px]
             flex-col
             items-center
-            gap-3
-            pt-2
-            text-center
+            gap-8
+
+            sm:gap-10
+
+            md:gap-11
           "
         >
-          {/* EYEBROW */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
-              max-w-full
+              w-full
+              max-w-[662px]
+              flex-col
               items-center
-              justify-center
               gap-3
+              pt-2
+              text-center
             "
           >
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
-
-            <span
+            {/* EYEBROW */}
+            <div
               className="
-                text-center
-                text-[10px]
-                font-bold
-                uppercase
-                leading-4
-                tracking-[0.08em]
-                text-[#7890b2]
-
-                sm:text-xs
-                sm:tracking-[0.12em]
-
-                md:whitespace-nowrap
-                md:tracking-[0.15em]
+                flex
+                max-w-full
+                items-center
+                justify-center
+                gap-3
               "
             >
-              Multi-entity, currency, tax &amp; localization boundaries
-            </span>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+              <span
+                className="
+                  text-center
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#7890b2]
+
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Multi-entity, currency, tax &amp; localization boundaries
+              </span>
+
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
+
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
+              "
+            >
+              Entity mapping is not consolidation.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+
+                sm:text-base
+              "
+            >
+              Eight contexts, each mapped where registered and bounded where it
+              would otherwise bleed into another finance domain.
+            </p>
           </div>
 
-          {/* HEADING */}
-          <h2
+          {/* TABLE */}
+          <div
             className="
-              !m-0
               w-full
-              text-center
-              font-extrabold
-              leading-[1.15]
-              tracking-[-0.03em]
-              text-[#091127]
-
-              text-[30px]
-
-              sm:text-[34px]
-
-              md:text-[36px]
-              md:leading-10
-
-              lg:whitespace-nowrap
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            Entity mapping is not consolidation.
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p
-            className="
-              !m-0
-              w-full
-              max-w-[687px]
-              text-center
-              text-sm
-              font-normal
-              leading-6
-              text-[#5d7192]
-
-              sm:text-base
-              sm:leading-7
-            "
-          >
-            Eight contexts, each mapped where registered and bounded where it
-            would otherwise bleed into another finance domain.
-          </p>
-        </div>
-
-        {/* TABLE */}
-        <div
-          className="
-            w-full
-            overflow-hidden
-            rounded-2xl
-            border
-            border-[#dfe5ee]
-            bg-white
-            shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-          "
-        >
-          {/* RESPONSIVE HORIZONTAL SCROLL */}
-          <div className="w-full overflow-x-auto">
-            <div className="min-w-[1040px]">
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
               {/* TABLE HEADER */}
               <div
                 className="
                   grid
-                  grid-cols-[208px_565px_1fr]
+                  grid-cols-[208px_minmax(0,1.05fr)_minmax(0,1fr)]
                   bg-[#fafbfc]
                 "
               >
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -233,7 +239,7 @@ export default function EntityBoundaries() {
                   </span>
                 </div>
 
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -248,7 +254,7 @@ export default function EntityBoundaries() {
                   </span>
                 </div>
 
-                <div className="border-b border-[#dfe5ee] px-4 py-3">
+                <div className="border-b border-[#dfe5ee] px-4 py-3.5">
                   <span
                     className="
                       text-xs
@@ -270,17 +276,17 @@ export default function EntityBoundaries() {
                   key={row.context}
                   className={`
                     grid
-                    grid-cols-[208px_565px_1fr]
+                    grid-cols-[208px_minmax(0,1.05fr)_minmax(0,1fr)]
                     ${
                       index !== rows.length - 1
-                        ? "border-b border-[#eef1f5]"
+                        ? "border-b border-[#edf0f4]"
                         : ""
                     }
                   `}
                 >
                   {/* CONTEXT */}
                   <div className="px-4 py-3.5">
-                    <div
+                    <span
                       className="
                         text-sm
                         font-semibold
@@ -289,12 +295,12 @@ export default function EntityBoundaries() {
                       "
                     >
                       {row.context}
-                    </div>
+                    </span>
                   </div>
 
                   {/* INTEGRATION RULE */}
                   <div className="px-4 py-3.5">
-                    <div
+                    <span
                       className="
                         text-sm
                         font-normal
@@ -303,12 +309,12 @@ export default function EntityBoundaries() {
                       "
                     >
                       {row.rule}
-                    </div>
+                    </span>
                   </div>
 
                   {/* BOUNDARY */}
                   <div className="px-4 py-3.5">
-                    <div
+                    <span
                       className="
                         text-sm
                         font-normal
@@ -317,7 +323,109 @@ export default function EntityBoundaries() {
                       "
                     >
                       {row.boundary}
-                    </div>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {rows.map((row, index) => (
+                <div
+                  key={row.context}
+                  className={`
+                    p-5
+                    ${
+                      index !== rows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* CONTEXT */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Context
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        font-semibold
+                        leading-5
+                        text-[#091127]
+                      "
+                    >
+                      {row.context}
+                    </p>
+                  </div>
+
+                  {/* INTEGRATION RULE */}
+                  <div className="mb-4">
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Integration rule
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.rule}
+                    </p>
+                  </div>
+
+                  {/* BOUNDARY */}
+                  <div>
+                    <p
+                      className="
+                        !m-0
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Boundary
+                    </p>
+
+                    <p
+                      className="
+                        !m-0
+                        mt-1.5
+                        text-sm
+                        leading-6
+                        text-[#5d7192]
+                      "
+                    >
+                      {row.boundary}
+                    </p>
                   </div>
                 </div>
               ))}

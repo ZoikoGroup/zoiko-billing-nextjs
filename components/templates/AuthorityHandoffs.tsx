@@ -38,97 +38,311 @@ const rows = [
 
 export default function AuthorityHandoffs() {
   return (
-    <section className="w-full py-16 sm:py-20">
-      <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-7">
-        <div className="flex flex-col items-center gap-11">
-
-          {/* Heading */}
-          <div className="flex w-full max-w-[1000px] flex-col items-center gap-3 pt-2">
+    <section className="w-full bg-[#f7f8fa]">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* Intro */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
             <div className="flex items-center gap-3">
-              <span className="h-px w-4 bg-sky-500/40" />
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
 
-              <span className="text-center font-sans text-xs font-bold uppercase tracking-widest text-sky-600">
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
                 Related guides &amp; authority handoffs
               </span>
 
-              <span className="h-px w-4 bg-sky-500/40" />
+              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
             </div>
 
-            <h2 className="text-center font-sans text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl sm:leading-10 dark:text-white">
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
               A template structures work. It does
-              not settle questions.
+              <br className="hidden sm:block" /> not settle questions.
             </h2>
 
-            <p className="max-w-[687px] text-center font-sans text-sm leading-6 text-slate-600 sm:text-base sm:leading-7 dark:text-white/70">
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
               Six needs, each owned by a system that can answer authoritatively.
             </p>
           </div>
 
-          {/* Table */}
-          <div className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-slate-900">
-            <div className="overflow-x-auto">
-              <div className="min-w-[900px]">
+          {/* Desktop Table */}
+          <div
+            className="
+              hidden
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+              md:block
+            "
+          >
+            <div className="grid grid-cols-[320px_288px_minmax(0,1fr)] bg-[#f7f8fa]">
+              {["Need", "Destination", "Template behavior"].map((title) => (
+                <div
+                  key={title}
+                  className="
+                    border-b
+                    border-[#dfe5ee]
+                    px-5
+                    py-4
+                  "
+                >
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.14em]
+                      text-[#7890b2]
+                    "
+                  >
+                    {title}
+                  </span>
+                </div>
+              ))}
+            </div>
 
-                {/* Header */}
-                <div className="grid grid-cols-[320px_288px_1fr] bg-slate-50 dark:bg-white/5">
-                  {["Need", "Destination", "Template behavior"].map((title) => (
-                    <div
-                      key={title}
-                      className="border-b border-slate-200 px-4 py-3.5 dark:border-white/10"
-                    >
-                      <span className="font-sans text-xs font-bold uppercase tracking-wide text-sky-600">
-                        {title}
-                      </span>
-                    </div>
-                  ))}
+            {rows.map((row, index) => (
+              <div
+                key={row.need}
+                className={`
+                  grid
+                  grid-cols-[320px_288px_minmax(0,1fr)]
+                  transition-colors
+                  hover:bg-[#f7f8fa]/70
+                  ${
+                    index !== rows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }
+                `}
+              >
+                <div className="px-5 py-4">
+                  <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
+                    {row.need}
+                  </p>
                 </div>
 
-                {/* Rows */}
-                {rows.map((row, index) => (
-                  <div
-                    key={row.need}
-                    className={`grid grid-cols-[320px_288px_1fr] ${
-                      index !== rows.length - 1
-                        ? "border-b border-slate-200 dark:border-white/10"
-                        : ""
-                    }`}
+                <div className="px-5 py-4">
+                  <p
+                    className={`
+                      !m-0
+                      text-sm
+                      leading-6
+                      ${
+                        row.highlight
+                          ? "font-semibold text-blue-600"
+                          : "font-normal text-[#5d7192]"
+                      }
+                    `}
                   >
-                    <div className="px-4 py-3.5">
-                      <p className="font-sans text-sm font-semibold leading-5 text-slate-900 dark:text-white">
-                        {row.need}
-                      </p>
-                    </div>
+                    {row.destination}
+                  </p>
+                </div>
 
-                    <div className="px-4 py-3.5">
-                      <p
-                        className={`font-sans text-sm leading-6 ${
-                          row.highlight
-                            ? "font-semibold text-blue-600"
-                            : "text-slate-600 dark:text-white/70"
-                        }`}
-                      >
-                        {row.destination}
-                      </p>
-                    </div>
-
-                    <div className="px-4 py-3.5">
-                      <p
-                        className={`font-sans text-sm leading-5 ${
-                          row.bold
-                            ? "font-bold text-slate-600 dark:text-white/75"
-                            : "text-slate-600 dark:text-white/70"
-                        }`}
-                      >
-                        {row.behavior}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-
+                <div className="px-5 py-4">
+                  <p
+                    className={`
+                      !m-0
+                      text-sm
+                      leading-6
+                      ${
+                        row.bold
+                          ? "font-bold text-[#5d7192]"
+                          : "font-normal text-[#5d7192]"
+                      }
+                    `}
+                  >
+                    {row.behavior}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
+          {/* Mobile Cards */}
+          <div className="flex w-full flex-col gap-3 md:hidden">
+            {rows.map((row) => (
+              <div
+                key={row.need}
+                className="
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                "
+              >
+                <div className="flex flex-col">
+                  {/* Need */}
+                  <div className="border-b border-[#edf0f4] px-5 py-4">
+                    <p
+                      className="
+                        !m-0
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Need
+                    </p>
+
+                    <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
+                      {row.need}
+                    </p>
+                  </div>
+
+                  {/* Destination */}
+                  <div className="border-b border-[#edf0f4] px-5 py-4">
+                    <p
+                      className="
+                        !m-0
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Destination
+                    </p>
+
+                    <p
+                      className={`
+                        !m-0
+                        text-sm
+                        leading-6
+                        ${
+                          row.highlight
+                            ? "font-semibold text-blue-600"
+                            : "font-normal text-[#5d7192]"
+                        }
+                      `}
+                    >
+                      {row.destination}
+                    </p>
+                  </div>
+
+                  {/* Template Behavior */}
+                  <div className="px-5 py-4">
+                    <p
+                      className="
+                        !m-0
+                        mb-1.5
+                        text-[11px]
+                        font-bold
+                        uppercase
+                        leading-4
+                        tracking-[0.12em]
+                        text-[#7890b2]
+                      "
+                    >
+                      Template behavior
+                    </p>
+
+                    <p
+                      className={`
+                        !m-0
+                        text-sm
+                        leading-6
+                        ${
+                          row.bold
+                            ? "font-bold text-[#5d7192]"
+                            : "font-normal text-[#5d7192]"
+                        }
+                      `}
+                    >
+                      {row.behavior}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
