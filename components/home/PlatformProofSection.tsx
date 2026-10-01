@@ -106,7 +106,7 @@ export default function PlatformProofSection() {
                 Explore the Platform
               </button>
               <a
-                href="#"
+                href="/trust-center"
                 className="inline-flex items-center gap-2 text-blue-600 font-normal text-base hover:text-blue-700 transition-colors"
               >
                 <span>Visit the Trust Center</span>

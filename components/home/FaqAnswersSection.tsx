@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
 
 interface FaqItem {
   id: string;
@@ -124,12 +125,12 @@ export default function QuestionsSection() {
               >
                 View All FAQs
               </button>
-              <button
-                type="button"
+              <Link
+                href ="/help-center"
                 className="px-5 py-2.5 bg-white text-zinc-900 text-base rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors"
               >
                 Visit the Help Center
-              </button>
+              </Link>
             </div>
           </div>
 

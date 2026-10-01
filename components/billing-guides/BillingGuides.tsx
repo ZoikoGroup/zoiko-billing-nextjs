@@ -177,7 +177,7 @@ export default function BillingGuides() {
             </Link>
 
             <Link
-              href="/billing-topics"
+              href="#billing"
               className="
                 inline-flex
                 min-h-11

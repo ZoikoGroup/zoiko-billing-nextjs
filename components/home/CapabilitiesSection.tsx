@@ -8,7 +8,9 @@ interface FeatureSection {
   description: string;
   bullets: string[];
   primaryButtonText?: string;
+  primaryButtonHref?: string;
   linkText: string;
+  linkHref: string;
   imageSrc: string;
   imageBgColor: string;
   imageHeightClass: string;
@@ -28,7 +30,9 @@ const features: FeatureSection[] = [
       'Credit and correct without overwriting history',
     ],
     primaryButtonText: 'View All Features',
+    primaryButtonHref: '/invoices',
     linkText: 'Create Your Account',
+    linkHref: '/create-account',
     imageSrc: '/images/home/div(1).png',
     imageBgColor: 'bg-blue-100',
     imageHeightClass: 'max-h-[803px]',
@@ -46,6 +50,7 @@ const features: FeatureSection[] = [
       'Versions retained so old invoices stay explainable',
     ],
     linkText: 'See billing models',
+    linkHref: '/billing-guides',
     imageSrc: '/images/home/div(2).png',
     imageBgColor: 'bg-indigo-50',
     imageHeightClass: 'max-h-[361px]',
@@ -63,6 +68,7 @@ const features: FeatureSection[] = [
       'Refunds and reversals kept in sequence',
     ],
     linkText: 'See payment integrations',
+    linkHref: '/payments-and-reconcilliation',
     imageSrc: '/images/home/div(3).png',
     imageBgColor: 'bg-slate-200',
     imageHeightClass: 'max-h-[349px]',
@@ -80,6 +86,7 @@ const features: FeatureSection[] = [
       'Payment plans where formally approved',
     ],
     linkText: 'See reporting',
+    linkHref: '/outstanding-balances',
     imageSrc: '/images/home/div (5).png',
     imageBgColor: 'bg-teal-100',
     imageHeightClass: 'max-h-[361px]',
@@ -97,6 +104,7 @@ const features: FeatureSection[] = [
       'Actor, rule, version, and previous state',
     ],
     linkText: 'Read the control model',
+    linkHref: '/automation',
     imageSrc: '/images/home/div (4).png',
     imageBgColor: 'bg-sky-950',
     imageHeightClass: 'max-h-[334px]',
@@ -106,12 +114,17 @@ const features: FeatureSection[] = [
 
 export default function CapabilitiesSection() {
   return (
-    <section className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-12 font-sans">
+    <section
+      id="capabilities"
+      className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-12 font-sans"
+    >
       <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24">
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-2">
             <span className="w-4 h-0.5 bg-blue-600 rounded-full" />
+
             <span className="text-blue-600 text-xs font-mono font-medium uppercase tracking-wider">
               Capabilities
             </span>
@@ -135,13 +148,16 @@ export default function CapabilitiesSection() {
                 feature.reverseLayout ? 'lg:flex-row-reverse' : ''
               }`}
             >
+
               {/* Text Description Content */}
               <div className="flex-1 space-y-6">
+
                 {/* Badge Category Header */}
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-6 bg-slate-100 border border-emerald-300 rounded-lg flex items-center justify-center text-blue-600 text-[10px] font-mono font-semibold">
                     {feature.number}
                   </span>
+
                   <span className="text-blue-600 text-xs font-mono uppercase tracking-wide">
                     {feature.category}
                   </span>
@@ -152,6 +168,7 @@ export default function CapabilitiesSection() {
                   <h3 className="text-zinc-900 text-2xl sm:text-3xl font-medium leading-snug">
                     {feature.title}
                   </h3>
+
                   <p className="text-gray-600 text-base leading-relaxed">
                     {feature.description}
                   </p>
@@ -160,28 +177,36 @@ export default function CapabilitiesSection() {
                 {/* Bullet Points */}
                 <ul className="space-y-3 pt-1">
                   {feature.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3"
+                    >
                       <Check className="w-4 h-4 text-blue-600 mt-1 shrink-0" />
-                      <span className="text-gray-700 text-sm">{bullet}</span>
+
+                      <span className="text-gray-700 text-sm">
+                        {bullet}
+                      </span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Actions */}
                 <div className="pt-3 flex flex-wrap items-center gap-4">
-                  {feature.primaryButtonText && (
-                    <button
-                      type="button"
-                      className="px-5 py-2.5 bg-blue-600 text-white font-normal text-base rounded-md hover:bg-blue-700 transition-colors shadow-xs"
+                  {feature.primaryButtonText && feature.primaryButtonHref && (
+                    <a
+                      href={feature.primaryButtonHref}
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-blue-600 text-white font-normal text-base rounded-md hover:bg-blue-700 transition-colors shadow-xs"
                     >
                       {feature.primaryButtonText}
-                    </button>
+                    </a>
                   )}
+
                   <a
-                    href="#"
+                    href={feature.linkHref}
                     className="inline-flex items-center gap-2 text-blue-600 font-normal text-base hover:text-blue-700 transition-colors group"
                   >
                     <span>{feature.linkText}</span>
+
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -197,6 +222,7 @@ export default function CapabilitiesSection() {
                   className={`w-full h-auto rounded-2xl object-cover ${feature.imageHeightClass}`}
                 />
               </div>
+
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 interface HeroSectionProps {
   onBookDemo?: () => void;
@@ -48,21 +49,23 @@ export default function HeroSection({
 
           {/* Action Call-to-Actions */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button
+            <Link
+            href= "book-demo"
               onClick={onBookDemo}
               className="min-h-11 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-['Segoe_UI',sans-serif] text-base font-normal leading-6 flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
             >
               <span>Book a Demo</span>
               <span className="font-['IBM_Plex_Mono',monospace] font-bold text-base">→</span>
-            </button>
+            </Link>
 
-            <button
+            <Link
+            href = "#see-it-in-action"
               onClick={onSeeItInAction}
               className="min-h-11 px-5 py-2.5 rounded-xl border border-blue-600 text-blue-600 hover:bg-blue-50 font-['Segoe_UI',sans-serif] text-base font-normal leading-6 flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <span>See It in Action</span>
               <span className="font-['IBM_Plex_Mono',monospace] font-bold text-base">→</span>
-            </button>
+            </Link>
           </div>
 
           {/* Feature Badges Grid */}

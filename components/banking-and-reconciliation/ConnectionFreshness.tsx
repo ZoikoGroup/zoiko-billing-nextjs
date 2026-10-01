@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function ConnectionFreshness() {
   return (
-    <section className="w-full overflow-hidden bg-[#091127]">
+    <section
+    id = "connection"
+     className="w-full overflow-hidden bg-[#091127]">
       <div
         className="
           mx-auto

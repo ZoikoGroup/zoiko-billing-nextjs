@@ -2,7 +2,9 @@ import { Section, SectionHeading, SectionImage } from "./shared";
 
 export default function DestinationStates() {
   return (
-    <Section tone="tint" gap="gap-11">
+    <Section
+    id ="zoiko-group"
+     tone="tint" gap="gap-11">
       <SectionHeading
         eyebrow="Destination state model"
         title="Five states, and two of them remove the link entirely."

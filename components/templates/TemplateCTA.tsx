@@ -29,14 +29,14 @@ export default function TemplateCTA() {
             {/* Buttons */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
-                href="/signup"
+                href="/create-account"
                 className="!inline-flex !h-11 !items-center !justify-center !rounded-full !bg-white !px-6 !text-sm !font-semibold !leading-6 !text-[#0B1B3C] !no-underline transition-opacity hover:opacity-90"
               >
                 Create account
               </Link>
 
               <Link
-                href="/book-a-demo"
+                href="/book-demo"
                 className="!inline-flex !h-11 !items-center !justify-center !rounded-full !border !border-white/35 !bg-transparent !px-6 !text-sm !font-semibold !leading-6 !text-white !no-underline transition-colors hover:!bg-white/10"
               >
                 Book a demo

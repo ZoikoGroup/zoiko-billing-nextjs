@@ -9,15 +9,19 @@ interface FaqItem {
   answer: React.ReactNode;
 }
 
-const faqLeft: FaqItem[] = [
+const faqItems: FaqItem[] = [
   {
     id: "q1",
     question: "What can I build with the Zoiko Billing API?",
     answer: (
       <>
-        See the capability map and integration outcomes above. Not every product feature
-        is exposed by API — each domain carries its own availability state.{" "}
-        <Link href="#capability-map" className="font-semibold text-blue-600 underline hover:text-blue-700">
+        See the capability map and integration outcomes above. Not every
+        product feature is exposed by API — each domain carries its own
+        availability state.{" "}
+        <Link
+          href="#capability-map"
+          className="font-semibold text-[#1D70F5] underline"
+        >
           View the capability map
         </Link>
       </>
@@ -47,9 +51,6 @@ const faqLeft: FaqItem[] = [
     answer:
       "A developer sandbox is available for testing supported flows with nonproduction data where available.",
   },
-];
-
-const faqRight: FaqItem[] = [
   {
     id: "q6",
     question: "Are SDKs available?",
@@ -90,55 +91,65 @@ export default function DeveloperFaqSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 lg:py-24 border-t border-slate-100" id="faq">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-6 bg-slate-300" />
-          DEVELOPER FAQ
-          <span className="h-px w-6 bg-slate-300" />
-        </div>
+    <section
+      id="faq"
+      className="w-full border-t border-[#edf0f4] bg-[#f7f8fa]"
+    >
+      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-14 xl:px-20">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center">
+          {/* Intro */}
+          <div className="flex w-full max-w-[800px] flex-col items-center text-center">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-5 bg-[#7890b2]" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#7890b2] sm:text-xs sm:tracking-[0.18em]">
+                Developer FAQ
+              </span>
+              <span className="h-px w-5 bg-[#7890b2]" />
+            </div>
 
-        {/* Heading */}
-        <h2 className="mt-4 text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
-          Direct answers, with the canonical source named.
-        </h2>
+            <h2 className="!m-0 mt-3 w-full text-[30px] font-extrabold leading-[1.2] tracking-[-0.035em] text-[#091127] sm:text-[34px] md:text-[36px] lg:text-[40px]">
+              Direct answers, with the canonical source named.
+            </h2>
 
-        {/* Subtitle */}
-        <p className="mt-3.5 max-w-xl text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
-          Every answer below points at the authority rather than restating technical facts
-          this page cannot verify.
-        </p>
+            <p className="!m-0 mt-3 max-w-[720px] text-[15px] leading-7 text-[#5d7192] sm:text-base">
+              Every answer below points at the authority rather than restating
+              technical facts this page cannot verify.
+            </p>
+          </div>
 
-        {/* 2-Column Accordions Layout */}
-        <div className="mt-12 grid w-full max-w-[1240px] grid-cols-1 gap-6 md:grid-cols-2 text-left items-start">
-          
-          {/* Left Column Accordions */}
-          <div className="flex flex-col rounded-2xl border border-slate-200/90 bg-white shadow-sm divide-y divide-slate-100 overflow-hidden">
-            {faqLeft.map((item) => {
+          {/* FAQ */}
+          <div className="mt-10 grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2 md:gap-6">
+            {faqItems.map((item) => {
               const isOpen = openId === item.id;
+
               return (
-                <div key={item.id} className="p-5 sm:p-6 transition hover:bg-slate-50/40">
+                <div
+                  key={item.id}
+                  className="rounded-2xl border border-[#dfe5ee] bg-white p-5 shadow-[0_6px_20px_rgba(15,23,42,0.04)] sm:p-6"
+                >
                   <button
                     type="button"
                     onClick={() => toggleFaq(item.id)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-4 text-left"
                   >
-                    <span>{item.question}</span>
-                    <div
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition ${
+                    <span className="text-sm font-bold leading-6 text-[#091127] sm:text-base">
+                      {item.question}
+                    </span>
+
+                    <span
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-base font-medium ${
                         isOpen
-                          ? "bg-blue-600 text-white"
-                          : "bg-slate-100 text-slate-500"
+                          ? "bg-[#1D70F5] text-white"
+                          : "bg-[#f1f4f8] text-[#5d7192]"
                       }`}
                     >
                       {isOpen ? "−" : "+"}
-                    </div>
+                    </span>
                   </button>
 
                   {isOpen && (
-                    <div className="mt-3 text-xs sm:text-sm font-normal leading-relaxed text-slate-600 pt-1">
+                    <div className="mt-3 border-t border-[#edf0f4] pt-3 text-sm leading-6 text-[#5d7192]">
                       {item.answer}
                     </div>
                   )}
@@ -146,42 +157,7 @@ export default function DeveloperFaqSection() {
               );
             })}
           </div>
-
-          {/* Right Column Accordions */}
-          <div className="flex flex-col rounded-2xl border border-slate-200/90 bg-white shadow-sm divide-y divide-slate-100 overflow-hidden">
-            {faqRight.map((item) => {
-              const isOpen = openId === item.id;
-              return (
-                <div key={item.id} className="p-5 sm:p-6 transition hover:bg-slate-50/40">
-                  <button
-                    type="button"
-                    onClick={() => toggleFaq(item.id)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base focus:outline-none"
-                  >
-                    <span>{item.question}</span>
-                    <div
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition ${
-                        isOpen
-                          ? "bg-blue-600 text-white"
-                          : "bg-slate-100 text-slate-500"
-                      }`}
-                    >
-                      {isOpen ? "−" : "+"}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-3 text-xs sm:text-sm font-normal leading-relaxed text-slate-600 pt-1">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
         </div>
-
       </div>
     </section>
   );

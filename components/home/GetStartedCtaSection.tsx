@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
 
 interface WorkflowStep {
   id: string;
@@ -93,18 +94,18 @@ export default function GetStartedSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
-                type="button"
+              <Link
+              href="create-account"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium text-base rounded-md transition-all shadow-md focus:outline-hidden"
               >
                 Create Your Account
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/book-demo"
                 className="px-6 py-3 border border-white/36 hover:border-white text-white font-medium text-base rounded-md transition-all hover:bg-white/10 focus:outline-hidden"
               >
                 Book a Demo
-              </button>
+              </Link>
             </div>
           </div>
 

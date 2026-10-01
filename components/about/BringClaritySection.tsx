@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 
 export default function BringClaritySection() {
@@ -12,100 +13,111 @@ export default function BringClaritySection() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8f9] dark:bg-slate-950 font-['Segoe_UI',sans-serif] py-16 lg:py-20 px-4 sm:px-8 lg:px-12 transition-colors duration-200">
-      <div className="w-full max-w-[1220px] mx-auto bg-[#031528] rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-2xl relative overflow-hidden border border-slate-800 flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-16">
-        
-        
-        {/* Left Column: Headline, Actions & Manifesto */}
-        <div className="flex-1 flex flex-col justify-start items-start gap-4 w-full">
-          
-          {/* Subtitle / Category Label */}
-          <div className="flex items-center gap-2.5 h-4">
-            <div className="w-5 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-xs shrink-0" />
-            <span className="text-cyan-400 text-xs font-medium font-['IBM_Plex_Mono',monospace] uppercase leading-4 tracking-wider">
+    <section className="w-full bg-[#f7f8f9] px-4 py-16 font-['Segoe_UI',sans-serif] transition-colors duration-200 dark:bg-slate-950 sm:px-8 lg:px-12 lg:py-20">
+      <div className="relative mx-auto flex w-full max-w-[1220px] flex-col justify-between gap-12 overflow-hidden rounded-3xl border border-slate-800 bg-[#031528] p-8 text-white shadow-2xl sm:p-12 lg:flex-row lg:gap-16 lg:p-16">
+
+        {/* Left Column */}
+        <div className="flex w-full flex-1 flex-col items-start justify-start gap-4">
+
+          {/* Category Label */}
+          <div className="flex h-4 items-center gap-2.5">
+            <div className="h-0.5 w-5 shrink-0 rounded-xs bg-gradient-to-r from-cyan-400 to-blue-600" />
+
+            <span className="font-['IBM_Plex_Mono',monospace] text-xs font-medium uppercase leading-4 tracking-wider text-cyan-400">
               Next step
             </span>
           </div>
 
-          {/* Main Headline */}
+          {/* Headline */}
           <div className="w-full max-w-[660px] pt-1">
-            <h2 className="text-white text-4xl sm:text-5xl font-medium font-['Plus_Jakarta_Sans',sans-serif] leading-[50px] tracking-tight">
-              Bring clarity and<br />
-              control to every<br />
+            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] text-4xl font-medium leading-[50px] tracking-tight text-white sm:text-5xl">
+              Bring clarity and
+              <br />
+              control to every
+              <br />
               stage of billing.
             </h2>
           </div>
 
-          {/* Body Paragraph */}
+          {/* Description */}
           <div className="w-full max-w-[528px]">
-            <p className="text-slate-300 text-base font-normal leading-8">
-              Manage charges, invoices, payment status, outstanding<br className="hidden sm:inline" />
-              balances, adjustments and financial records through one<br className="hidden sm:inline" />
+            <p className="text-base font-normal leading-8 text-slate-300">
+              Manage charges, invoices, payment status, outstanding
+              <br className="hidden sm:inline" />
+              balances, adjustments and financial records through one
+              <br className="hidden sm:inline" />
               platform designed for global business.
             </p>
           </div>
 
-          {/* Action Buttons & Link */}
-          <div className="w-full flex flex-col justify-start items-start gap-4 pt-2">
+          {/* CTA Buttons */}
+          <div className="flex w-full flex-col items-start justify-start gap-4 pt-2">
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                className="min-h-11 px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-base font-normal rounded-lg border border-blue-600 transition-colors cursor-pointer"
+
+              <Link
+                href="/platform-overview"
+                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-blue-600 bg-blue-600 px-5 py-2 text-base font-normal text-white transition-colors hover:bg-blue-500"
               >
                 Explore Zoiko Billing
-              </button>
+              </Link>
 
-              <button
-                type="button"
-                className="min-h-11 px-5 py-2 bg-transparent hover:bg-white/10 text-white text-base font-normal rounded-lg border border-white/35 transition-colors cursor-pointer"
+              <Link
+                href="/book-demo"
+                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/35 bg-transparent px-5 py-2 text-base font-normal text-white transition-colors hover:bg-white/10"
               >
                 Book a Demo
-              </button>
+              </Link>
+
             </div>
 
-            {/* View Pricing Link */}
-            <a
-              href="#pricing"
-              className="inline-flex items-center gap-2 min-h-11 py-2 text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer"
+            {/* Pricing Link */}
+            <Link
+              href="/pricing"
+              className="group inline-flex min-h-11 cursor-pointer items-center gap-2 py-2 text-cyan-400 transition-colors hover:text-cyan-300"
             >
-              <span className="text-base font-normal">View Pricing</span>
-              <span className="text-base font-bold font-['IBM_Plex_Mono',monospace] leading-6 group-hover:translate-x-1 transition-transform">
+              <span className="text-base font-normal">
+                View Pricing
+              </span>
+
+              <span className="font-['IBM_Plex_Mono',monospace] text-base font-bold leading-6 transition-transform group-hover:translate-x-1">
                 →
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Footer Statement */}
           <div className="w-full pt-2.5">
-            <p className="text-cyan-400 text-xs font-normal font-['IBM_Plex_Mono',monospace] leading-5 tracking-wide">
-              Every charge has a basis. Every invoice has a history.<br />
+            <p className="font-['IBM_Plex_Mono',monospace] text-xs font-normal leading-5 tracking-wide text-cyan-400">
+              Every charge has a basis. Every invoice has a history.
+              <br />
               Every payment has a record. Every balance has a status.
             </p>
           </div>
-
         </div>
 
-        {/* Right Column: Workflow Card & Trust Center */}
-        <div className="flex-1 flex flex-col justify-start items-start gap-5 w-full max-w-[540px]">
-          
-          {/* Card Container */}
-          <div className="w-full min-h-[478px] bg-white/5 rounded-2xl border border-white/15 p-7 flex flex-col justify-between shadow-xl">
-            
-            {/* Steps Workflow List */}
-            <div className="flex flex-col w-full">
+        {/* Right Column */}
+        <div className="flex w-full max-w-[540px] flex-1 flex-col items-start justify-start gap-5">
+
+          {/* Workflow Card */}
+          <div className="flex min-h-[478px] w-full flex-col justify-between rounded-2xl border border-white/15 bg-white/5 p-7 shadow-xl">
+
+            {/* Steps */}
+            <div className="flex w-full flex-col">
               {steps.map((step) => (
                 <div
                   key={step.number}
-                  className="py-3 border-b border-white/10 flex items-start gap-4"
+                  className="flex items-start gap-4 border-b border-white/10 py-3"
                 >
-                  <div className="w-6 h-6 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center text-white text-[9.3px] font-normal font-['IBM_Plex_Mono',monospace] shrink-0">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 font-['IBM_Plex_Mono',monospace] text-[9.3px] font-normal text-white">
                     {step.number}
                   </div>
-                  <div className="flex flex-col justify-start items-start gap-1">
-                    <span className="text-slate-200 text-sm font-normal leading-6">
+
+                  <div className="flex flex-col items-start justify-start gap-1">
+                    <span className="text-sm font-normal leading-6 text-slate-200">
                       {step.title}
                     </span>
-                    <span className="text-cyan-300 text-[9.8px] font-normal font-['IBM_Plex_Mono',monospace] leading-4">
+
+                    <span className="font-['IBM_Plex_Mono',monospace] text-[9.8px] font-normal leading-4 text-cyan-300">
                       {step.subtitle}
                     </span>
                   </div>
@@ -114,26 +126,24 @@ export default function BringClaritySection() {
             </div>
 
             {/* Card Footer */}
-            <div className="pt-3.5 border-t border-white/15 mt-4">
-              <span className="text-white text-sm font-semibold font-['Plus_Jakarta_Sans',sans-serif] leading-6">
+            <div className="mt-4 border-t border-white/15 pt-3.5">
+              <span className="font-['Plus_Jakarta_Sans',sans-serif] text-sm font-semibold leading-6 text-white">
                 Billing clarity from invoice to payment.
               </span>
             </div>
-
           </div>
 
-          {/* Secondary Action */}
-          <div className="w-full flex justify-start items-center">
-            <button
-              type="button"
-              className="min-h-11 px-5 py-2 bg-transparent hover:bg-white/10 text-white text-base font-normal rounded-lg border border-white/35 transition-colors cursor-pointer"
+          {/* Trust Center */}
+          <div className="flex w-full items-center justify-start">
+            <Link
+              href="/trust-center"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/35 bg-transparent px-5 py-2 text-base font-normal text-white transition-colors hover:bg-white/10"
             >
               Review the Trust Center
-            </button>
+            </Link>
           </div>
 
         </div>
-
       </div>
     </section>
   );

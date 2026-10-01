@@ -158,7 +158,7 @@ export default function CommercialModelSection() {
         {/* CTA Link */}
         <div className="text-center pt-2">
           <a
-            href="#pricing"
+            href="/pricing"
             className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 text-base font-semibold transition-colors group"
           >
             <span>View Full Pricing</span>

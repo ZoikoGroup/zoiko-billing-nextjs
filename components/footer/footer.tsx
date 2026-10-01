@@ -133,6 +133,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Leadership', href: '/leadership' },
       { label: 'Careers', href: '/careers' },
       { label: 'Newsroom', href: '/newsroom' },
+      { label: 'Blog', href: '/blog/how-billing-software-helps-growing-businesses-manage-invoices-payments' },
       { label: 'Contact', href: '/contact' },
     ],
   },

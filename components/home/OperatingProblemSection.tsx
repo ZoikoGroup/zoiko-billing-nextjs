@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
 
 interface OperatingProblem {
   id: string;
@@ -203,18 +204,18 @@ export default function OperatingProblemSection() {
 
         {/* Call-to-Action Footer */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <button
-            type="button"
+          <Link
+            href = "#capabilities"
             className="px-6 py-2.5 bg-blue-600 text-white font-normal text-base rounded-md hover:bg-blue-700 transition-colors shadow-xs"
           >
             Take the Product Tour
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href = "/why-zoiko-billing"
             className="px-6 py-2.5 bg-white text-zinc-900 font-normal text-base rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors"
           >
             See Why Zoiko Billing
-          </button>
+          </Link>
         </div>
       </div>
     </section>

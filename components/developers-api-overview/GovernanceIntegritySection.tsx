@@ -1,3 +1,5 @@
+import React from "react";
+
 interface PrincipleRow {
   principle: string;
   requiredTreatment: React.ReactNode;
@@ -9,7 +11,7 @@ const principleRows: PrincipleRow[] = [
     requiredTreatment: (
       <>
         Distinguish draft changes from actions affecting an already issued record —{" "}
-        <span className="font-bold text-slate-900">
+        <span className="font-bold text-[#091127]">
           never imply issued evidence can be silently rewritten
         </span>
       </>
@@ -24,8 +26,9 @@ const principleRows: PrincipleRow[] = [
     principle: "Permissions are contextual",
     requiredTreatment: (
       <>
-        Identity, role or scope, object and action, and workflow state are distinct concerns —{" "}
-        <span className="font-bold text-slate-900">not one admin key</span>
+        Identity, role or scope, object and action, and workflow state are distinct
+        concerns —{" "}
+        <span className="font-bold text-[#091127]">not one admin key</span>
       </>
     ),
   },
@@ -53,63 +56,252 @@ const principleRows: PrincipleRow[] = [
 
 export default function GovernanceIntegritySection() {
   return (
-    <section className="w-full bg-white py-12 lg:py-24 border-t border-slate-100" id="governance">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-5 bg-slate-300" />
-          GOVERNANCE &amp; BILLING INTEGRITY
-          <span className="h-px w-5 bg-slate-300" />
-        </div>
+    <section
+      id="governance"
+      className="w-full bg-[#f7f8fa]"
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              flex-col
+              items-center
+              gap-3
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <h2 className="mt-3.5 text-xl font-extrabold leading-tight text-slate-900 sm:text-3xl lg:text-4xl max-w-3xl">
-          API convenience does not bypass billing truth.
-        </h2>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.14em]
+                  text-[#7890b2]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Governance &amp; Billing Integrity
+              </span>
 
-        {/* Subtitle */}
-        <p className="mt-3 max-w-xl text-xs font-normal leading-relaxed text-slate-600 sm:text-base">
-          The same lifecycle, ownership, approval and evidence rules that govern the product
-          govern the integration.
-        </p>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            </div>
 
-        {/* Table Container (Responsive) */}
-        <div className="mt-8 lg:mt-12 w-full max-w-[1240px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm text-left">
-          
-          {/* Sub-header inside card */}
-          <div className="p-4 bg-slate-50/50 border-b border-slate-100 text-xs font-normal text-slate-500">
-            Seven principles and the page treatment each requires.
+            {/* HEADING */}
+            <h2
+              className="
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              API convenience does not bypass billing truth.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[720px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#5d7192]
+                sm:text-base
+              "
+            >
+              The same lifecycle, ownership, approval and evidence rules that
+              govern the product govern the integration.
+            </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[580px]">
-              <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200/80">
-                  <th scope="col" className="py-3.5 px-4 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/3">
-                    PRINCIPLE
-                  </th>
-                  <th scope="col" className="py-3.5 px-4 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-2/3">
-                    REQUIRED TREATMENT
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {principleRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/40 transition">
-                    <td className="py-3.5 px-4 sm:px-8 text-xs sm:text-sm font-bold text-slate-900 align-top">
-                      {row.principle}
-                    </td>
-                    <td className="py-3.5 px-4 sm:px-8 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed align-top">
-                      {row.requiredTreatment}
-                    </td>
+          {/* GOVERNANCE TABLE CARD */}
+          <div
+            className="
+              w-full
+              overflow-hidden
+              rounded-2xl
+              border
+              border-[#dfe5ee]
+              bg-white
+              text-left
+              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+            "
+          >
+            {/* CARD INTRO */}
+            <div
+              className="
+                border-b
+                border-[#edf0f4]
+                bg-[#f7f8fa]
+                px-5
+                py-4
+                sm:px-6
+                sm:py-5
+                md:px-7
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-xs
+                  font-normal
+                  leading-5
+                  text-[#7890b2]
+                  sm:text-sm
+                "
+              >
+                Seven principles and the page treatment each requires.
+              </p>
+            </div>
+
+            {/* TABLE */}
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[680px] border-collapse">
+                <thead>
+                  <tr className="border-b border-[#dfe5ee] bg-[#f7f8fa]">
+                    <th
+                      scope="col"
+                      className="
+                        w-[34%]
+                        px-5
+                        py-4
+                        text-left
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.14em]
+                        text-[#7890b2]
+                        sm:px-6
+                        md:px-7
+                      "
+                    >
+                      Principle
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        w-[66%]
+                        px-5
+                        py-4
+                        text-left
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.14em]
+                        text-[#7890b2]
+                        sm:px-6
+                        md:px-7
+                      "
+                    >
+                      Required treatment
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+
+                <tbody>
+                  {principleRows.map((row) => (
+                    <tr
+                      key={row.principle}
+                      className="
+                        border-b
+                        border-[#edf0f4]
+                        transition-colors
+                        last:border-b-0
+                        hover:bg-[#f7f8fa]/70
+                      "
+                    >
+                      {/* PRINCIPLE */}
+                      <td
+                        className="
+                          px-5
+                          py-5
+                          align-top
+                          text-xs
+                          font-bold
+                          leading-6
+                          text-[#091127]
+                          sm:px-6
+                          sm:py-6
+                          sm:text-sm
+                          md:px-7
+                        "
+                      >
+                        {row.principle}
+                      </td>
+
+                      {/* TREATMENT */}
+                      <td
+                        className="
+                          px-5
+                          py-5
+                          align-top
+                          text-xs
+                          font-normal
+                          leading-6
+                          text-[#5d7192]
+                          sm:px-6
+                          sm:py-6
+                          sm:text-sm
+                          md:px-7
+                        "
+                      >
+                        {row.requiredTreatment}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );
