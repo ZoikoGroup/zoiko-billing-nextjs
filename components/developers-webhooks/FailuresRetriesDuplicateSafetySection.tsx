@@ -61,7 +61,7 @@ export default function FailuresRetriesDuplicateSafetySection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-white tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-white max-w-3xl">
           &quot;No public guarantee is currently published&quot; is a valid state.
         </h2>
 
@@ -114,7 +114,7 @@ export default function FailuresRetriesDuplicateSafetySection() {
 
           {/* Dark Guidance Card 1 */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-4 text-xs mb-3">
-            <h3 className="text-xs font-bold text-white mb-1.5">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-white mb-1.5">
               Consumer-side safety guidance
             </h3>
             <p className="text-[11px] text-slate-300 font-normal leading-relaxed">
@@ -124,7 +124,7 @@ export default function FailuresRetriesDuplicateSafetySection() {
 
           {/* Dark Guidance Card 2 */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-4 text-xs">
-            <h3 className="text-xs font-bold text-white mb-1.5">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-white mb-1.5">
               Do not treat arrival order as truth
             </h3>
             <p className="text-[11px] text-slate-300 font-normal leading-relaxed">

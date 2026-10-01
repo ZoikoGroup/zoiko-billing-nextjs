@@ -110,8 +110,9 @@ export default function EventCatalogWebhooksSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
-          Grouped by billing domain, never an alphabetical wall.
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
+          Grouped by billing domain, never an <br className="hidden sm:inline" />
+          alphabetical wall.
         </h2>
 
         {/* Subtitle */}

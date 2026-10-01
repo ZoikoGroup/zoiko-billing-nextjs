@@ -87,12 +87,12 @@ export default function IntegrationFaqSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Direct answers about planning and readiness.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Every technical answer routes to the destination that owns the contract.
         </p>
 
@@ -108,7 +108,7 @@ export default function IntegrationFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleLeft(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
                   >
                     <span>{faq.question}</span>
                     <span
@@ -139,7 +139,7 @@ export default function IntegrationFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleRight(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition"
                   >
                     <span>{faq.question}</span>
                     <span

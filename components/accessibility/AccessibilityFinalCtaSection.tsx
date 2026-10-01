@@ -12,7 +12,7 @@ export default function AccessibilityFinalCtaSection() {
         {/* ========================================================================= */}
         <div className="block lg:hidden relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-7 sm:p-12 text-left text-white shadow-xl">
           
-          <h2 className="text-xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+          <h2 className="!font-[family-name:var(--font-jakarta)] text-xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
             If we have not measured it, we say so.
           </h2>
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileCrmHeroInspector from "./MobileCrmHeroInspector";
 
 export default function CrmPlatformsHeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function CrmPlatformsHeroSection() {
           flex-col
           px-5
           pb-14
-          pt-10
+          pt-8
 
           sm:px-8
           sm:pb-16
@@ -35,10 +36,25 @@ export default function CrmPlatformsHeroSection() {
       >
         {/* LEFT CONTENT */}
         <div className="w-full min-w-0 lg:w-[52%]">
-          {/* EYEBROW */}
-          <div className="mb-5 flex items-center gap-3 sm:mb-6">
-            <span className="h-px w-6 shrink-0 bg-blue-600 opacity-75" />
+          {/* MOBILE BREADCRUMB */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-4 flex items-center gap-1.5 text-[11px] font-medium text-slate-500 lg:hidden"
+          >
+            <Link href="/" className="transition hover:text-slate-800">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/integrations" className="transition hover:text-slate-800">
+              Integrations
+            </Link>
+            <span>/</span>
+            <span className="font-semibold text-slate-900">CRM Platforms</span>
+          </nav>
 
+          {/* EYEBROW */}
+          <div className="mb-4 flex items-center gap-2.5 sm:mb-6">
+            <span className="h-0.5 w-5 shrink-0 bg-[#1D70F5]" />
             <span
               className="
                 text-[10px]
@@ -47,7 +63,6 @@ export default function CrmPlatformsHeroSection() {
                 leading-4
                 tracking-[0.16em]
                 text-[#7890b2]
-
                 sm:text-xs
                 sm:tracking-[0.18em]
               "
@@ -56,98 +71,80 @@ export default function CrmPlatformsHeroSection() {
             </span>
           </div>
 
-          {/* MOBILE + TABLET HEADING */}
-          <h2
-            className="
+          {/* DESKTOP HEADING (Unchanged for lg+) */}
+          <h1
+            className="!font-[family-name:var(--font-jakarta)] 
               !m-0
-              !block
-              !max-w-[700px]
-              !text-[40px]
+              hidden
+              lg:block
+              w-full
+              !text-[48px]
+              xl:!text-[52px]
               !font-extrabold
-              !leading-[1.08]
+              !leading-[1.12]
               !tracking-[-0.035em]
               !text-slate-900
-
-              sm:!text-[46px]
-
-              md:!text-[50px]
-
-              lg:!hidden
             "
           >
-            Connect customer and sales systems to billing —{" "}
-            <span className="text-blue-600">
-              without losing source authority.
+            Connect customer and <br />
+            sales systems to billing <br />
+            <span className="text-[#1D70F5]">
+              without losing source <br className="hidden sm:inline" /> authority.
             </span>
-          </h2>
+          </h1>
 
-          {/* DESKTOP HEADING */}
-          <h2
-            className="
+          {/* MOBILE HEADING */}
+          <h1
+            className="!font-[family-name:var(--font-jakarta)] 
               !m-0
-              !hidden
-              !max-w-none
+              block
+              lg:hidden
+              w-full
+              !text-[28px]
+              sm:!text-[36px]
               !font-extrabold
-              !leading-[1.11]
-              !tracking-[-0.035em]
+              !leading-[1.16]
+              !tracking-[-0.03em]
               !text-slate-900
-
-              lg:!block
-              lg:!text-[44px]
-
-              xl:!text-[50px]
             "
           >
-            <span className="block">
-              Connect customer and sales systems to billing —
-            </span>
-
-            <span className="block text-blue-600">
-              without losing source authority.
-            </span>
-          </h2>
+            Connect customer and sales systems<br />
+            to billing <span className="text-[#1D70F5]">without losing source<br />authority.</span>
+          </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
-              !mt-8
+              !mt-5
+              sm:!mt-6
               w-full
-              max-w-[687px]
-              text-[15px]
+              max-w-[620px]
+              text-[14px]
               font-normal
-              leading-7
+              leading-relaxed
               text-[#5d7192]
-
-              sm:mt-9
               sm:text-base
-
-              md:mt-9
-
-              lg:mt-8
-
-              xl:mt-9
+              sm:leading-7
             "
           >
             Evaluate approved CRM integrations by supported objects, actions,
             direction, field authority, authentication, customer matching,
             lifecycle handling, availability, currentness, documentation and
             verification. Keep sales context useful without turning CRM data
-            into financial truth.
+            into financial truth — or billing data into hidden sales scoring.
           </p>
 
           {/* CTA BUTTONS */}
           <div
             className="
-              mt-7
+              mt-6
               flex
               w-full
-              flex-col
+              flex-row
+              flex-wrap
+              items-center
               gap-3
-
               sm:mt-8
-              sm:w-auto
-              sm:flex-row
-              sm:flex-wrap
             "
           >
             <Link
@@ -155,21 +152,18 @@ export default function CrmPlatformsHeroSection() {
               className="
                 inline-flex
                 min-h-11
-                w-full
                 items-center
                 justify-center
                 rounded-full
-                bg-blue-600
-                px-7
-                text-sm
+                bg-[#1D70F5]
+                px-6
+                text-xs
                 font-semibold
-                leading-6
                 text-white
                 shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                 transition
-                hover:bg-blue-700
-
-                sm:w-auto
+                hover:bg-blue-600
+                sm:text-sm
               "
             >
               Browse CRM integrations
@@ -180,68 +174,77 @@ export default function CrmPlatformsHeroSection() {
               className="
                 inline-flex
                 min-h-11
-                w-full
                 items-center
                 justify-center
                 rounded-full
                 border
-                border-[#dfe5ee]
+                border-slate-200
                 bg-white
-                px-7
-                text-sm
+                px-6
+                text-xs
                 font-semibold
-                leading-6
-                text-[#091127]
+                text-slate-900
+                shadow-sm
                 transition
-                hover:bg-[#f8faff]
-
-                sm:w-auto
+                hover:bg-slate-50
+                sm:text-sm
               "
             >
               Check Integration Availability
             </Link>
           </div>
+
+          {/* MOBILE ONLY EXPLORE LINK */}
+          <div className="mt-4 block lg:hidden">
+            <Link
+              href="/customer-records"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-[#1D70F5] hover:underline"
+            >
+              Explore Customer Records &gt;
+            </Link>
+          </div>
+
+          {/* MOBILE ONLY CALLOUT BOX */}
+          <div className="mt-6 block rounded-xl border border-blue-100 border-l-4 border-l-[#1D70F5] bg-white p-4 shadow-sm lg:hidden">
+            <p className="!m-0 text-xs leading-relaxed text-[#5d7192]">
+              A CRM record represents separated accounts or commercial context. Billing debtor accounts, balances, payments and permissions remain under entity/tax rule and manual controls.
+            </p>
+          </div>
+
+          {/* MOBILE ONLY INSPECTOR COMPONENT */}
+          <div className="mt-8 block w-full lg:hidden">
+            <MobileCrmHeroInspector />
+          </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE (DESKTOP ONLY) */}
         <div
           className="
-            mt-10
-            w-full
-
-            sm:mt-12
-
-            md:mt-14
-
-            lg:mt-0
-            lg:w-[44%]
-            xl:w-[43%]
+            hidden
+            lg:block
+            lg:w-[46%]
+            xl:w-[45%]
           "
         >
           <div
             className="
               relative
               mx-auto
-              aspect-[536/562]
               w-full
-              max-w-[536px]
+              max-w-[540px]
               overflow-hidden
               rounded-2xl
+              shadow-xl
             "
           >
             <Image
               src="/images/crm-platforms/crm1.png"
-              alt="CRM platforms connected to billing"
-              fill
+              alt="Connect customer and sales systems to billing without losing source authority"
+              width={540}
+              height={540}
               priority
-              className="object-cover"
-              sizes="
-                (max-width: 639px) 100vw,
-                (max-width: 767px) 90vw,
-                (max-width: 1023px) 85vw,
-                (max-width: 1279px) 44vw,
-                536px
-              "
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1024px) 100vw, 540px"
             />
           </div>
         </div>

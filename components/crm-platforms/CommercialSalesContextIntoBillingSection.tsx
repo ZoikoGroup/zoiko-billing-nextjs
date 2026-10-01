@@ -129,7 +129,7 @@ export default function CommercialSalesContextIntoBillingSection() {
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]

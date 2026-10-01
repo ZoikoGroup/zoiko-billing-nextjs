@@ -11,12 +11,12 @@ export default function EventDetailTemplateSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           A rescheduled event, rendered honestly.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Shown in the rescheduled state so the banner, the re-derived action and the independent
           post-event states are all visible at once. All values are placeholders.
         </p>
@@ -65,7 +65,7 @@ export default function EventDetailTemplateSection() {
 
             {/* Title & Lead Paragraph */}
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-snug mb-2">
+              <h3 className="!font-[family-name:var(--font-jakarta)] !text-base sm:!text-lg !font-extrabold text-slate-900 leading-snug mb-2">
                 [Specific event title]
               </h3>
 
@@ -271,7 +271,7 @@ export default function EventDetailTemplateSection() {
 
             {/* Event access & support Card */}
             <div className="rounded-xl border border-slate-200/90 bg-white p-4 text-xs space-y-2">
-              <h4 className="text-xs font-bold text-slate-900 mb-1">
+              <h4 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-1">
                 Event access &amp; support
               </h4>
               <p className="text-[11px] text-slate-600 font-normal leading-relaxed">

@@ -97,7 +97,7 @@ export default function ApiCapabilityMapSection() {
   return (
     <section
       id="capability-map"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white"
     >
       <div
         className="
@@ -166,7 +166,7 @@ export default function ApiCapabilityMapSection() {
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -234,7 +234,7 @@ export default function ApiCapabilityMapSection() {
                 {/* CONTENT */}
                 <div>
                   <h3
-                    className="
+                    className="!font-[family-name:var(--font-jakarta)] 
                       !m-0
                       text-base
                       font-bold

@@ -13,3 +13,4 @@ export { default as CrmAuthenticationPermissionsSetupSection } from "./CrmAuthen
 export { default as MigrationChangeOperationalStatusSection } from "./MigrationChangeOperationalStatusSection";
 export { default as CrmDecisionGuideFaqSection } from "./CrmDecisionGuideFaqSection";
 export { default as CrmPlatformsFinalCtaSection } from "./CrmPlatformsFinalCtaSection";
+export { default as MobileCrmHeroInspector } from "./MobileCrmHeroInspector";
