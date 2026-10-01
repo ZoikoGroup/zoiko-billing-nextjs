@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function SDKCatalog() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section 
+    id = "sdks"
+    className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

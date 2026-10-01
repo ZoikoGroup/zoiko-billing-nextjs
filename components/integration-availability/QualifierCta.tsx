@@ -127,7 +127,7 @@ export default function QualifierCta() {
             "
           >
             <Link
-              href="#integration-availability"
+              href="/integrations"
               className="
                 inline-flex
                 min-h-11

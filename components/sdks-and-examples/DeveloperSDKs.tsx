@@ -145,7 +145,7 @@ export default function DeveloperSDKs() {
               "
             >
               <Link
-                href="/sdks"
+                href="#sdks"
                 className="
                   inline-flex
                   min-h-11
@@ -171,7 +171,7 @@ export default function DeveloperSDKs() {
               </Link>
 
               <Link
-                href="/examples"
+                href="#examples"
                 className="
                   inline-flex
                   min-h-11

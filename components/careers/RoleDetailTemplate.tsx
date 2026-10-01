@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function RoleDetailTemplate() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id ="hiring-information"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
