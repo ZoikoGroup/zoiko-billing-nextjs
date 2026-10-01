@@ -1,61 +1,51 @@
-import Image from "next/image";
+import Link from "next/link";
 
-interface OutcomeMobileRow {
-  useCase: string;
-  outcomeFraming: string;
-  requiredEvidence: string;
+interface QuickStartStep {
+  number: number;
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
 }
 
-const mobileRows: OutcomeMobileRow[] = [
+const steps: QuickStartStep[] = [
   {
-    useCase: "Connect a billing source",
-    outcomeFraming:
-      "Create or synchronize billing inputs from an approved upstream system.",
-    requiredEvidence:
-      "System identity, record mapping and ownership boundaries.",
+    number: 1,
+    title: "Understand the model",
+    description:
+      "See the billing domains, record boundaries and lifecycle concepts exposed for integration.",
+    linkText: "API capability map",
+    linkHref: "#capability-map",
   },
   {
-    useCase: "Generate downstream finance workflows",
-    outcomeFraming:
-      "Move approved outcomes into accounting, reporting or operational systems without obscuring source identity.",
-    requiredEvidence:
-      "Issued record state, document identity and immutable history links.",
+    number: 2,
+    title: "Review access",
+    description:
+      "Understand authentication and permission boundaries before building.",
+    linkText: "Authentication",
+    linkHref: "/developers-authentication",
   },
   {
-    useCase: "Automate exception-aware operations",
-    outcomeFraming:
-      "Route defined exceptions for review rather than silently overwriting records.",
-    requiredEvidence: "Event → exception mapping and review queue state.",
+    number: 3,
+    title: "Test safely",
+    description:
+      "Validate an integration path in the developer environment where available.",
+    linkText: "Developer Sandbox",
+    linkHref: "/developer-sandbox",
   },
   {
-    useCase: "Reconcile payments to billing records",
-    outcomeFraming:
-      "Connect payment evidence and allocation outcomes while maintaining invoice linkage.",
-    requiredEvidence:
-      "Payment evidence, allocation state and outstanding balance.",
-  },
-  {
-    useCase: "Build customer or partner experiences",
-    outcomeFraming:
-      "Use authorized billing data in a product experience with clear boundaries.",
-    requiredEvidence:
-      "Your app → billing context, permission and status labels.",
-  },
-  {
-    useCase: "Create governed reporting pipelines",
-    outcomeFraming:
-      "Export or query defined billing data for approved reporting purposes.",
-    requiredEvidence:
-      "API or export provenance, dimensions and purpose.",
+    number: 4,
+    title: "Build and operate",
+    description:
+      "Use documentation, events, SDKs and examples, and implementation patterns.",
+    linkText: "Documentation · Webhooks · SDKs",
+    linkHref: "#routes",
   },
 ];
 
-export default function IntegrationOutcomesSection() {
+export default function QuickStartSection() {
   return (
-    <section
-      id="outcomes"
-      className="w-full bg-[#f7f8fa]"
-    >
+    <section id="quick-start" className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -65,11 +55,10 @@ export default function IntegrationOutcomesSection() {
           flex-col
           items-center
           px-5
-          py-14
+          py-16
           sm:px-8
-          sm:py-16
+          sm:py-20
           md:px-10
-          md:py-20
           lg:px-14
           xl:px-20
         "
@@ -82,9 +71,8 @@ export default function IntegrationOutcomesSection() {
             max-w-[1240px]
             flex-col
             items-center
-            gap-8
-            sm:gap-10
-            md:gap-11
+            gap-10
+            sm:gap-12
           "
         >
           {/* INTRO */}
@@ -92,7 +80,7 @@ export default function IntegrationOutcomesSection() {
             className="
               flex
               w-full
-              max-w-[800px]
+              max-w-[760px]
               flex-col
               items-center
               gap-3
@@ -102,22 +90,20 @@ export default function IntegrationOutcomesSection() {
             {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
-
               <span
                 className="
                   text-[10px]
                   font-bold
                   uppercase
                   leading-4
-                  tracking-[0.14em]
+                  tracking-[0.16em]
                   text-[#7890b2]
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
               >
-                What You Can Build
+                Developer Quick-Start
               </span>
-
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
@@ -126,6 +112,7 @@ export default function IntegrationOutcomesSection() {
               className="
                 !m-0
                 w-full
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -136,7 +123,7 @@ export default function IntegrationOutcomesSection() {
                 lg:!text-[40px]
               "
             >
-              Six integration outcomes, each preserving record identity.
+              Four steps, in the order that avoids rework.
             </h2>
 
             {/* DESCRIPTION */}
@@ -144,214 +131,77 @@ export default function IntegrationOutcomesSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[680px]
                 text-[15px]
                 font-normal
-                leading-7
+                leading-relaxed
                 text-[#5d7192]
                 sm:text-base
               "
             >
-              Every pattern keeps the source record inspectable rather than
-              flattening it into a destination system.
+              Understand the model and the access boundary before you build, so permission and
+              ownership surprises do not arrive at launch.
             </p>
           </div>
 
-          {/* DESKTOP VERSION */}
-          <div
-            className="
-              hidden
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-              lg:block
-            "
-          >
-            <Image
-              src="/images/developers/dao2.png"
-              alt="Six integration outcomes, each preserving record identity"
-              width={1240}
-              height={500}
-              unoptimized
-              priority
-              className="h-auto w-full object-cover"
-            />
-          </div>
-
-          {/* MOBILE / TABLET VERSION */}
-          <div
-            className="
-              block
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              text-left
-              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-              lg:hidden
-            "
-          >
-            {/* SUB-HEADER */}
-            <div
-              className="
-                border-b
-                border-[#edf0f4]
-                bg-[#f7f8fa]
-                px-5
-                py-4
-                sm:px-6
-                sm:py-5
-              "
-            >
-              <p
+          {/* 4 CARDS GRID */}
+          <div className="grid w-full grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {steps.map((step) => (
+              <div
+                key={step.number}
                 className="
-                  !m-0
-                  text-xs
-                  font-normal
-                  leading-5
-                  text-[#7890b2]
-                  sm:text-sm
+                  flex
+                  min-h-[220px]
+                  flex-col
+                  justify-between
+                  rounded-2xl
+                  border
+                  border-[#dfe5ee]
+                  bg-white
+                  p-6
+                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                  transition
+                  hover:shadow-md
                 "
               >
-                Use case, outcome framing and the evidence the interface must
-                show.
-              </p>
-            </div>
+                <div>
+                  {/* Number Badge */}
+                  <div className="mb-4 flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-blue-600">
+                    {step.number}
+                  </div>
 
-            {/* TABLE */}
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[680px] border-collapse">
-                <thead>
-                  <tr className="border-b border-[#dfe5ee] bg-[#f7f8fa]">
-                    <th
-                      scope="col"
-                      className="
-                        w-1/3
-                        px-5
-                        py-4
-                        text-left
-                        text-[10px]
-                        font-bold
-                        uppercase
-                        tracking-[0.14em]
-                        text-[#7890b2]
-                        sm:px-6
-                      "
-                    >
-                      Use case
-                    </th>
+                  {/* Title */}
+                  <h3
+                    className="
+                      !m-0
+                      !font-[family-name:var(--font-jakarta)]
+                      text-sm
+                      font-bold
+                      leading-5
+                      text-[#091127]
+                      sm:text-[15px]
+                    "
+                  >
+                    {step.title}
+                  </h3>
 
-                    <th
-                      scope="col"
-                      className="
-                        w-1/3
-                        px-5
-                        py-4
-                        text-left
-                        text-[10px]
-                        font-bold
-                        uppercase
-                        tracking-[0.14em]
-                        text-[#7890b2]
-                        sm:px-6
-                      "
-                    >
-                      Outcome framing
-                    </th>
+                  {/* Description */}
+                  <p className="!m-0 mt-2 text-xs font-normal leading-relaxed text-[#5d7192] sm:text-[13px]">
+                    {step.description}
+                  </p>
+                </div>
 
-                    <th
-                      scope="col"
-                      className="
-                        w-1/3
-                        px-5
-                        py-4
-                        text-left
-                        text-[10px]
-                        font-bold
-                        uppercase
-                        tracking-[0.14em]
-                        text-[#7890b2]
-                        sm:px-6
-                      "
-                    >
-                      Required evidence
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {mobileRows.map((row) => (
-                    <tr
-                      key={row.useCase}
-                      className="
-                        border-b
-                        border-[#edf0f4]
-                        transition-colors
-                        last:border-b-0
-                        hover:bg-[#f7f8fa]/70
-                      "
-                    >
-                      {/* USE CASE */}
-                      <td
-                        className="
-                          px-5
-                          py-5
-                          align-top
-                          text-xs
-                          font-bold
-                          leading-6
-                          text-[#091127]
-                          sm:px-6
-                          sm:py-6
-                        "
-                      >
-                        {row.useCase}
-                      </td>
-
-                      {/* OUTCOME FRAMING */}
-                      <td
-                        className="
-                          px-5
-                          py-5
-                          align-top
-                          text-xs
-                          font-normal
-                          leading-6
-                          text-[#5d7192]
-                          sm:px-6
-                          sm:py-6
-                        "
-                      >
-                        {row.outcomeFraming}
-                      </td>
-
-                      {/* REQUIRED EVIDENCE */}
-                      <td
-                        className="
-                          px-5
-                          py-5
-                          align-top
-                          text-xs
-                          font-normal
-                          leading-6
-                          text-[#5d7192]
-                          sm:px-6
-                          sm:py-6
-                        "
-                      >
-                        {row.requiredEvidence}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                {/* Link */}
+                <div className="mt-5 pt-2">
+                  <Link
+                    href={step.linkHref}
+                    className="inline-flex items-center text-xs font-semibold text-[#1D70F5] transition hover:text-blue-700 hover:underline"
+                  >
+                    {step.linkText}
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

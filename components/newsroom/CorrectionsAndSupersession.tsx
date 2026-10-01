@@ -154,6 +154,7 @@ export default function CorrectionsAndSupersession() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -167,8 +168,7 @@ export default function CorrectionsAndSupersession() {
                 lg:!text-[40px]
               "
             >
-              Seven triggers, and history is never
-              
+              Seven triggers, and history is never <br className="hidden sm:inline" />
               rewritten.
             </h2>
 

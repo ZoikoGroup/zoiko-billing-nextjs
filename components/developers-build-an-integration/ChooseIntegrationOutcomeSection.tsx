@@ -54,17 +54,17 @@ export default function ChooseIntegrationOutcomeSection() {
         {/* Eyebrow */}
         <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
           <span className="h-px w-5 bg-slate-300" />
-          CHOOSE YOUR INTEGRATION OUTCOME
+          CHOOSE / FIND AN INTEGRATION INTENT
           <span className="h-px w-5 bg-slate-300" />
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Begin with intent, not an endpoint list.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Outcome cards render from an approved registry. Seven fields per card — and none of
           them is an arbitrary difficulty rating.
         </p>

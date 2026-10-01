@@ -180,6 +180,7 @@ export default function QuoteReferenceGovernance() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -193,10 +194,8 @@ export default function QuoteReferenceGovernance() {
                 lg:!text-[40px]
               "
             >
-              Seven content types, each with a
-             
-              control that must clear before
-              
+              Seven content types, each with a <br className="hidden sm:inline" />
+              control that must clear before <br className="hidden sm:inline" />
               publication.
             </h2>
 

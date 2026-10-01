@@ -62,21 +62,19 @@ export default function Newsroom() {
               !m-0
               !block
               !max-w-[700px]
-              !text-[40px]
+              !font-[family-name:var(--font-jakarta)]
+              !text-[36px]
+              sm:!text-[44px]
+              md:!text-[48px]
               !font-extrabold
               !leading-[1.08]
               !tracking-[-0.035em]
               !text-slate-900
-
-              sm:!text-[46px]
-
-              md:!text-[50px]
-
               lg:!hidden
             "
           >
             Approved corporate communications,{" "}
-            <span className="text-blue-600">
+            <span className="text-[#1D70F5]">
               and where everything else lives.
             </span>
           </h1>
@@ -87,30 +85,21 @@ export default function Newsroom() {
               !m-0
               !hidden
               !max-w-none
+              !font-[family-name:var(--font-jakarta)]
               !font-extrabold
-              !leading-[1.08]
+              !leading-[1.12]
               !tracking-[-0.035em]
               !text-slate-900
-
               lg:!block
-              lg:!text-[44px]
-
+              lg:!text-[46px]
               xl:!text-[50px]
+              2xl:!text-[52px]
             "
           >
-            <span className="block">
-              Approved corporate
-            </span>
-
-            <span className="block">
-              communications,
-            </span>
-
-            <span className="block text-blue-600">
-              and  where everything else  lives.
-            </span>
-
-        
+            Approved corporate <br />
+            communications, <span className="text-[#1D70F5]">and</span> <br />
+            <span className="text-[#1D70F5]">where everything else</span> <br />
+            <span className="text-[#1D70F5]">lives.</span>
           </h1>
 
           {/* DESCRIPTION */}

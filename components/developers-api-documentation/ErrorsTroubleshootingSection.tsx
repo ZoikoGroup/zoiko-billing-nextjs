@@ -68,7 +68,7 @@ export default function ErrorsTroubleshootingSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Nine fields per error, including what not to do.
         </h2>
 

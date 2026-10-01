@@ -81,21 +81,19 @@ export default function ProfileLifecycle() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
+                !tracking-[-0.02em]
                 !text-white
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
               "
             >
-              Eight states, and one of them keeps the route unpublished.
+              Eight states, and one of them keeps <br className="hidden sm:inline" /> the route unpublished.
             </h2>
 
             {/* DESCRIPTION */}
@@ -104,12 +102,11 @@ export default function ProfileLifecycle() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-white/70
-
-                sm:text-base
+                leading-relaxed
+                text-white/80
               "
             >
               Leadership records describe real people, so the failure modes
