@@ -173,7 +173,7 @@ export default function CustomerStoriesHeroSection() {
             </Link>
           </div>
 
-          {/* Notice Callout Box */}
+
           <div className="relative overflow-hidden rounded-xl border border-slate-200/90 bg-white p-4 text-[11px] text-slate-500 mb-5">
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1D70F5]" />
             <p className="pl-2 font-normal leading-relaxed">

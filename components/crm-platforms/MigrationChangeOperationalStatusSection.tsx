@@ -60,7 +60,7 @@ export default function MigrationChangeOperationalStatusSection() {
   return (
     <section
       id="migration-status"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -109,18 +109,6 @@ export default function MigrationChangeOperationalStatusSection() {
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-<<<<<<< HEAD
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
-          A healthy connection is not healthy data.
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
-          Authentication health, transport health, object sync health, field currentness, conflict
-          count, event backlog and lifecycle state are seven different readings.
-        </p>
-=======
               <span
                 className="
                   text-[10px]
@@ -138,11 +126,10 @@ export default function MigrationChangeOperationalStatusSection() {
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
->>>>>>> b0c820b (Update pages and add navigation links)
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -155,7 +142,8 @@ export default function MigrationChangeOperationalStatusSection() {
                 lg:!text-[40px]
               "
             >
-              A healthy connection is not healthy data.
+              A healthy connection is not healthy <br className="hidden sm:inline" />
+              data.
             </h2>
 
             {/* DESCRIPTION */}
@@ -163,7 +151,7 @@ export default function MigrationChangeOperationalStatusSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -172,8 +160,9 @@ export default function MigrationChangeOperationalStatusSection() {
               "
             >
               Authentication health, transport health, object sync health,
-              field currentness, conflict count, event backlog and lifecycle
-              state are seven different readings.
+              field currentness, conflict{" "}
+              <br className="hidden sm:inline" />
+              count, event backlog and lifecycle state are seven different readings.
             </p>
           </div>
 
@@ -207,16 +196,16 @@ export default function MigrationChangeOperationalStatusSection() {
 
             {/* DESKTOP */}
             <div className="hidden md:block">
-              <div className="grid grid-cols-[280px_minmax(0,1fr)]">
+              <div className="grid grid-cols-[280px_minmax(0,1fr)] bg-[#fafbfc]">
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Scenario
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    SCENARIO
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Required Behavior
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    REQUIRED BEHAVIOR
                   </span>
                 </div>
               </div>
@@ -263,7 +252,7 @@ export default function MigrationChangeOperationalStatusSection() {
                   }`}
                 >
                   <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Scenario
+                    SCENARIO
                   </p>
 
                   <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
@@ -271,7 +260,7 @@ export default function MigrationChangeOperationalStatusSection() {
                   </p>
 
                   <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Required Behavior
+                    REQUIRED BEHAVIOR
                   </p>
 
                   <p

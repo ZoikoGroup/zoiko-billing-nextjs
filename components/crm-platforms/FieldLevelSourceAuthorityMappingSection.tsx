@@ -94,7 +94,7 @@ export default function FieldLevelSourceAuthorityMappingSection() {
   return (
     <section
       id="field-authority"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -143,26 +143,6 @@ export default function FieldLevelSourceAuthorityMappingSection() {
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-<<<<<<< HEAD
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
-          Timestamps alone do not determine truth.
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
-          A newer CRM value must not overwrite an authoritative Billing term, address, contact
-          role or lifecycle state unless the mapping contract explicitly permits it.
-        </p>
-
-        {/* 2-Column Grid Layout */}
-        <div className="mt-10 lg:mt-14 w-full max-w-[1240px] grid grid-cols-1 lg:grid-cols-2 gap-8 text-left items-start">
-          
-          {/* Left Column Card */}
-          <div className="rounded-2xl border border-slate-200/90 bg-white shadow-sm overflow-hidden w-full">
-            <div className="p-3.5 px-6 bg-slate-50/50 border-b border-slate-100 text-xs font-normal text-slate-500">
-              Every material shared field carries eleven contract properties.
-=======
               <span
                 className="
                   text-[10px]
@@ -179,12 +159,11 @@ export default function FieldLevelSourceAuthorityMappingSection() {
               </span>
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
->>>>>>> b0c820b (Update pages and add navigation links)
             </div>
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -197,7 +176,8 @@ export default function FieldLevelSourceAuthorityMappingSection() {
                 lg:!text-[40px]
               "
             >
-              Timestamps alone do not determine truth.
+              Timestamps alone do not determine <br className="hidden sm:inline" />
+              truth.
             </h2>
 
             {/* DESCRIPTION */}
@@ -205,7 +185,7 @@ export default function FieldLevelSourceAuthorityMappingSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[780px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -213,14 +193,12 @@ export default function FieldLevelSourceAuthorityMappingSection() {
                 sm:text-base
               "
             >
-              A newer CRM value must not overwrite an authoritative Billing
-              term, address, contact role or lifecycle state unless the
-              mapping contract explicitly permits it.
+              A recent CRM update cannot overwrite an authoritative Billing state, and vice versa if an account-level field belongs to the opposite platform by agreement.
             </p>
           </div>
 
           {/* TWO CONTROL CARDS */}
-          <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="grid w-full grid-cols-1 items-start gap-6 lg:grid-cols-2 lg:gap-8">
             {/* FIELD PROPERTIES */}
             <div
               className="

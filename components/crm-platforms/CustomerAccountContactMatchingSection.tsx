@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface MatchingControlRow {
   control: string;
   requiredBehavior: string;
@@ -60,7 +62,7 @@ export default function CustomerAccountContactMatchingSection() {
   return (
     <section
       id="customer-matching"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -98,7 +100,7 @@ export default function CustomerAccountContactMatchingSection() {
             className="
               flex
               w-full
-              max-w-[760px]
+              max-w-[820px]
               flex-col
               items-center
               gap-3
@@ -109,65 +111,6 @@ export default function CustomerAccountContactMatchingSection() {
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-<<<<<<< HEAD
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
-          Weak signals suggest review. They never authorize a merge.
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
-          Name, email, domain, phone, address, fuzzy similarity, AI similarity and sales-owner
-          overlap are review signals only — never destructive merge authority.
-        </p>
-
-        {/* ========================================================================= */}
-        {/* DESKTOP VERSION (UNTOUCHED - hidden lg:block)                            */}
-        {/* ========================================================================= */}
-        <div className="hidden lg:block mt-14 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-xl border border-slate-200/80 bg-slate-50">
-          <img
-            src="/images/crm-platforms/crm3.png"
-            alt="Weak signals suggest review. They never authorize a merge"
-            className="w-full h-auto object-cover rounded-3xl block"
-          />
-        </div>
-
-        {/* ========================================================================= */}
-        {/* MOBILE VERSION (MATCHING REFERENCE media_1787711250277.png - block lg:hidden) */}
-        {/* ========================================================================= */}
-        <div className="block lg:hidden mt-8 w-full max-w-[640px] text-left">
-          
-          {/* Mobile Table Card */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm">
-            <div className="p-3 px-4 bg-slate-50/50 border-b border-slate-100 text-xs font-normal text-slate-500">
-              Matching controls and required behavior.
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[460px]">
-                <thead>
-                  <tr className="bg-slate-50/80 border-b border-slate-200/80">
-                    <th scope="col" className="py-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-2/5">
-                      CONTROL
-                    </th>
-                    <th scope="col" className="py-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-3/5">
-                      REQUIRED BEHAVIOR
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {matchingControlRows.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/40 transition">
-                      <td className="py-3 px-4 text-xs font-bold text-slate-900 align-top">
-                        {row.control}
-                      </td>
-                      <td className="py-3 px-4 text-[11px] font-normal text-slate-600 leading-relaxed align-top">
-                        {row.requiredBehavior}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-=======
               <span
                 className="
                   text-[10px]
@@ -180,16 +123,15 @@ export default function CustomerAccountContactMatchingSection() {
                   sm:tracking-[0.18em]
                 "
               >
-                Customer, Account, Contact &amp; Relationship Matching
+                Customer, Account &amp; Contact Matching &amp; Merge Discipline
               </span>
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
->>>>>>> b0c820b (Update pages and add navigation links)
             </div>
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -202,7 +144,8 @@ export default function CustomerAccountContactMatchingSection() {
                 lg:!text-[40px]
               "
             >
-              Weak signals suggest review. They never authorize a merge.
+              Weak signals suggest review. They <br className="hidden sm:inline" />
+              never authorize a merge.
             </h2>
 
             {/* DESCRIPTION */}
@@ -210,7 +153,7 @@ export default function CustomerAccountContactMatchingSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -218,24 +161,36 @@ export default function CustomerAccountContactMatchingSection() {
                 sm:text-base
               "
             >
-              Name, email, domain, phone, address, fuzzy similarity, AI
-              similarity and sales-owner overlap are review signals only —
-              never destructive merge authority.
+              Name, email domain, phone number, fuzzy matching or metadata can suggest that an account in CRM and a customer record in Billing represent the same customer — but only verified identifiers merge them.
             </p>
           </div>
 
-          {/* MATCHING CONTROLS */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
+          {/* DESKTOP ILLUSTRATION (MATCHING REFERENCE media_1790854883783.png) */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/crm-platforms/crm3.png"
+              alt="Weak signals suggest review. They never authorize a merge."
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
+
+          {/* MOBILE CONTENT (MATCHING CONTROLS) */}
+          <div className="flex w-full flex-col block lg:hidden">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
             {/* CARD DESCRIPTION */}
             <div
               className="
@@ -333,6 +288,7 @@ export default function CustomerAccountContactMatchingSection() {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </div>

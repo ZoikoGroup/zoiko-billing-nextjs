@@ -1,166 +1,263 @@
+import Image from "next/image";
+
 interface OutboundSummaryRow {
   summaryItem: string;
-  permittedScope: React.ReactNode;
+  permittedScope: string;
 }
 
 const outboundSummaryRows: OutboundSummaryRow[] = [
   {
     summaryItem: "Billing account link",
-    permittedScope: (
-      <>
-        A deep link or reference for the authorized team.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● no full financial history
-        </span>
-      </>
-    ),
+    permittedScope: "A deep link or reference for the authorized team. No full financial history.",
   },
   {
     summaryItem: "Invoice status summary",
-    permittedScope: (
-      <>
-        Draft, issued, delivered, overdue or paid summary where approved.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● allowlisted fields only
-        </span>
-      </>
-    ),
+    permittedScope:
+      "Draft, issued, delivered, overdue or paid summary where approved. Allowlisted fields only.",
   },
   {
     summaryItem: "Outstanding indicator",
-    permittedScope: (
-      <>
-        A high-level open or overdue state if explicitly approved.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● no line-item ledger sync
-        </span>
-      </>
-    ),
+    permittedScope:
+      "A high-level open or overdue state if explicitly approved. No line-item ledger sync.",
   },
   {
     summaryItem: "Payment status summary",
-    permittedScope: (
-      <>
-        Paid, partial or unpaid only when needed.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● card/bank details omitted
-        </span>
-      </>
-    ),
+    permittedScope:
+      "Paid, partial or unpaid only when needed. Card and bank details omitted.",
   },
   {
     summaryItem: "Billing exception",
-    permittedScope: (
-      <>
-        Needs input, approval or delivery issue if a routing purpose exists.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● routing purpose required
-        </span>
-      </>
-    ),
+    permittedScope:
+      "Needs input, approval or delivery issue if a routing purpose exists. Routing purpose required.",
   },
   {
     summaryItem: "Next billing action",
-    permittedScope: (
-      <>
-        An approved operational callout where useful.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● no automatic sales trigger
-        </span>
-      </>
-    ),
+    permittedScope:
+      "An approved operational callout where useful. No automatic sales trigger.",
   },
   {
     summaryItem: "Last billing activity",
-    permittedScope: (
-      <>
-        A timestamp or event summary.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● event-level only
-        </span>
-      </>
-    ),
+    permittedScope:
+      "A timestamp or event summary. Event-level only.",
   },
   {
     summaryItem: "Renewal / expansion flag",
-    permittedScope: (
-      <>
-        Only if a separately governed source and purpose exists.{" "}
-        <span className="bg-purple-100/70 text-purple-700 font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border border-purple-200/60 inline-block">
-          ● no automatic scoring
-        </span>
-      </>
-    ),
+    permittedScope:
+      "Only if a separately governed source and purpose exists. No automatic scoring.",
   },
 ];
 
 export default function BillingStatusBackToCrmSection() {
   return (
-    <section className="w-full bg-[#0B132B] py-12 lg:py-24 text-white border-t border-slate-800" id="outbound-status">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-          <span className="h-px w-5 bg-slate-600" />
-          BILLING STATUS &amp; OPERATIONAL CONTEXT BACK TO CRM
-          <span className="h-px w-5 bg-slate-600" />
-        </div>
+    <section className="w-full bg-[#091127] font-[family-name:var(--font-inter)] text-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-center
+          px-5
+          py-14
+          sm:px-8
+          sm:py-16
+          md:px-10
+          md:py-20
+          lg:px-14
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            gap-8
+            sm:gap-10
+            md:gap-11
+          "
+        >
+          {/* SECTION INTRO */}
+          <div
+            className="
+              flex
+              w-full
+              max-w-[700px]
+              flex-col
+              items-center
+              gap-3
+              pt-2
+              text-center
+            "
+          >
+            {/* EYEBROW */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] !text-white max-w-3xl">
-          Minimum necessary outbound.
-        </h2>
+              <span
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  leading-4
+                  tracking-[0.16em]
+                  text-[#8fa5c4]
+                  sm:text-xs
+                  sm:tracking-[0.18em]
+                "
+              >
+                Billing status &amp; operational context back to CRM
+              </span>
 
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-300">
-          CRM receives the least billing context needed for the declared workflow. It does not
-          become a shadow finance database.
-        </p>
-
-        {/* ========================================================================= */}
-        {/* DESKTOP VERSION (UNTOUCHED - hidden lg:block)                            */}
-        {/* ========================================================================= */}
-        <div className="hidden lg:block mt-14 w-full max-w-[1240px] overflow-hidden rounded-3xl shadow-xl border border-slate-700/80 bg-[#060D20]">
-          <img
-            src="/images/crm-platforms/crm4.png"
-            alt="Minimum necessary outbound"
-            className="w-full h-auto object-cover rounded-3xl block"
-          />
-        </div>
-
-        {/* ========================================================================= */}
-        {/* MOBILE VERSION (MATCHING REFERENCE media_1787711284254.png - block lg:hidden) */}
-        {/* ========================================================================= */}
-        <div className="block lg:hidden mt-8 w-full max-w-[640px] text-left">
-          
-          {/* Mobile Dark Table Card */}
-          <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C]/90 shadow-lg overflow-hidden w-full">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[460px]">
-                <thead>
-                  <tr className="bg-slate-900/60 border-b border-slate-800 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    <th scope="col" className="py-2.5 px-4 w-2/5">OUTBOUND SUMMARY</th>
-                    <th scope="col" className="py-2.5 px-4 w-3/5">PERMITTED SCOPE</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-800/80">
-                  {outboundSummaryRows.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-slate-800/30 transition">
-                      <td className="py-3 px-4 text-xs font-bold text-white align-top">
-                        {row.summaryItem}
-                      </td>
-                      <td className="py-3 px-4 text-[11px] font-normal text-slate-300 leading-relaxed align-top">
-                        {row.permittedScope}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
+
+            {/* HEADING */}
+            <h2
+              className="!font-[family-name:var(--font-jakarta)] 
+                !m-0
+                w-full
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                text-white
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
+              "
+            >
+              Minimum necessary outbound.
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                !m-0
+                w-full
+                max-w-[687px]
+                text-[15px]
+                font-normal
+                leading-7
+                text-[#94a3b8]
+                sm:text-base
+              "
+            >
+              CRM receives the least billing context needed for the declared
+              workflow. It does not become a shadow finance database.
+            </p>
           </div>
 
-        </div>
+          {/* DESKTOP ILLUSTRATION */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-2xl">
+            <Image
+              src="/images/crm-platforms/crm4.png"
+              alt="Minimum necessary outbound"
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
 
+          {/* MOBILE CONTENT (TABLE) */}
+          <div className="flex w-full flex-col block lg:hidden">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#1e293b]
+                bg-[#0f172a]
+                shadow-[0_8px_24px_rgba(0,0,0,0.3)]
+              "
+            >
+            {/* DESKTOP TABLE */}
+            <div className="hidden md:block">
+              {/* HEADER */}
+              <div className="grid grid-cols-[260px_minmax(0,1fr)] bg-[#fafbfc]">
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Outbound summary
+                  </span>
+                </div>
+
+                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wide text-[#7890b2]">
+                    Permitted scope
+                  </span>
+                </div>
+              </div>
+
+              {/* ROWS */}
+              {outboundSummaryRows.map((row, index) => (
+                <div
+                  key={row.summaryItem}
+                  className={`grid grid-cols-[260px_minmax(0,1fr)] ${
+                    index !== outboundSummaryRows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }`}
+                >
+                  <div className="px-5 py-3.5">
+                    <span className="text-sm font-semibold leading-5 text-[#091127]">
+                      {row.summaryItem}
+                    </span>
+                  </div>
+
+                  <div className="px-5 py-3.5">
+                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                      {row.permittedScope}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE / SMALL TABLET CARDS */}
+            <div className="flex flex-col md:hidden">
+              {outboundSummaryRows.map((row, index) => (
+                <div
+                  key={row.summaryItem}
+                  className={`p-5 ${
+                    index !== outboundSummaryRows.length - 1
+                      ? "border-b border-[#edf0f4]"
+                      : ""
+                  }`}
+                >
+                  {/* OUTBOUND SUMMARY */}
+                  <div className="mb-4">
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Outbound summary
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                      {row.summaryItem}
+                    </p>
+                  </div>
+
+                  {/* PERMITTED SCOPE */}
+                  <div>
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Permitted scope
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {row.permittedScope}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
     </section>
   );

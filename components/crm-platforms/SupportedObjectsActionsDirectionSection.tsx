@@ -68,7 +68,7 @@ export default function SupportedObjectsActionsDirectionSection() {
   return (
     <section
       id="objects-direction"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -117,20 +117,6 @@ export default function SupportedObjectsActionsDirectionSection() {
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
-<<<<<<< HEAD
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
-          Importing accounts and exporting <br className="hidden sm:inline" />
-          invoice status is not two-way <br className="hidden sm:inline" />
-          customer sync.
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
-          Nine object classes, each declaring its direction in words rather than as an unlabeled
-          arrow.
-        </p>
-=======
               <span
                 className="
                   text-[10px]
@@ -148,11 +134,10 @@ export default function SupportedObjectsActionsDirectionSection() {
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
->>>>>>> b0c820b (Update pages and add navigation links)
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -165,7 +150,8 @@ export default function SupportedObjectsActionsDirectionSection() {
                 lg:!text-[40px]
               "
             >
-              Importing accounts and exporting invoice status is not two-way
+              Importing accounts and exporting <br className="hidden sm:inline" />
+              invoice status is not two-way <br className="hidden sm:inline" />
               customer sync.
             </h2>
 
@@ -182,8 +168,9 @@ export default function SupportedObjectsActionsDirectionSection() {
                 sm:text-base
               "
             >
-              Nine object classes, each declaring its direction in words
-              rather than as an unlabeled arrow.
+              Nine distinct actions, each requiring its own direction, lifecycle point of entry, and authority{" "}
+              <br className="hidden sm:inline" />
+              rules.
             </p>
           </div>
 
@@ -199,40 +186,24 @@ export default function SupportedObjectsActionsDirectionSection() {
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            {/* CARD HEADER */}
-            <div
-              className="
-                border-b
-                border-[#edf0f4]
-                bg-[#fafbfc]
-                px-5
-                py-3.5
-                text-sm
-                leading-6
-                text-[#5d7192]
-              "
-            >
-              Object classes, registered actions and boundaries.
-            </div>
-
-            {/* DESKTOP */}
+            {/* DESKTOP TABLE */}
             <div className="hidden lg:block">
-              <div className="grid grid-cols-[240px_minmax(0,1.4fr)_minmax(220px,1fr)]">
+              <div className="grid grid-cols-[240px_minmax(0,1.4fr)_minmax(220px,1fr)] bg-[#fafbfc]">
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Object Class
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    OBJECT / ENTITY
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Potential Registered Actions
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    ACTION &amp; TESTED DIRECTION
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Boundary
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    BOUNDARY
                   </span>
                 </div>
               </div>
@@ -259,13 +230,7 @@ export default function SupportedObjectsActionsDirectionSection() {
                   </div>
 
                   <div className="px-5 py-4">
-                    <span
-                      className={`text-sm leading-6 ${
-                        row.objectClass === "Contact"
-                          ? "font-semibold text-[#091127]"
-                          : "text-[#5d7192]"
-                      }`}
-                    >
+                    <span className="text-sm leading-6 text-[#5d7192]">
                       {row.boundary}
                     </span>
                   </div>
@@ -285,7 +250,7 @@ export default function SupportedObjectsActionsDirectionSection() {
                   }`}
                 >
                   <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Object Class
+                    OBJECT / ENTITY
                   </p>
 
                   <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
@@ -293,7 +258,7 @@ export default function SupportedObjectsActionsDirectionSection() {
                   </p>
 
                   <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Potential Registered Actions
+                    ACTION &amp; TESTED DIRECTION
                   </p>
 
                   <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
@@ -301,16 +266,10 @@ export default function SupportedObjectsActionsDirectionSection() {
                   </p>
 
                   <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Boundary
+                    BOUNDARY
                   </p>
 
-                  <p
-                    className={`!m-0 mt-1.5 text-sm leading-6 ${
-                      row.objectClass === "Contact"
-                        ? "font-semibold text-[#091127]"
-                        : "text-[#5d7192]"
-                    }`}
-                  >
+                  <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
                     {row.boundary}
                   </p>
                 </div>

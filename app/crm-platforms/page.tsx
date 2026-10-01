@@ -7,7 +7,6 @@ import {
   SupportedObjectsActionsDirectionSection,
   FieldLevelSourceAuthorityMappingSection,
   CustomerAccountContactMatchingSection,
-  CommercialSalesContextIntoBillingSection,
   BillingStatusBackToCrmSection,
   LifecycleCreateUpdateCloseMergeSection,
   EventsWebhooksConflictResolutionSection,
@@ -48,7 +47,6 @@ export default function CrmPlatformsPage() {
       <SupportedObjectsActionsDirectionSection />
       <FieldLevelSourceAuthorityMappingSection />
       <CustomerAccountContactMatchingSection />
-      <CommercialSalesContextIntoBillingSection />
       <BillingStatusBackToCrmSection />
       <LifecycleCreateUpdateCloseMergeSection />
       <EventsWebhooksConflictResolutionSection />
