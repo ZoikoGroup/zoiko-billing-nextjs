@@ -43,12 +43,30 @@ import {
  *  - sends the current page slug for retrieval page-context boosting
  */
 
-const API_BASE = (
-  process.env.NEXT_PUBLIC_ZOIKO_BILLING_API_BASE || "/api/assistant/public"
-).replace(/\/$/, "");
+// ── Networking ──────────────────────────────────────────────────────────────
+// Everything the widget sends is same-origin ("/api/assistant/public"), which
+// app/api/assistant/public/[...path]/route.ts forwards to the backend. Keeping
+// the base relative is deliberate: a NEXT_PUBLIC_ absolute URL would inline the
+// backend origin into this bundle, and a loopback value would make every
+// visitor's browser call their own localhost.
+const API_BASE = "/api/assistant/public";
 
 const SESSION_KEY = "zb-public-assistant-session";
 const THEME_KEY = "billingAssistantTheme";
+
+/** Answers can take a while: the backend does retrieval + one LLM call. */
+const REQUEST_TIMEOUT_MS = 15_000;
+const MESSAGE_TIMEOUT_MS = 45_000;
+
+const LOG_PREFIX = "[billing-assistant]";
+
+function logWarn(message: string, extra?: unknown) {
+  console.warn(`${LOG_PREFIX} ${message}`, extra ?? "");
+}
+
+function logError(message: string, extra?: unknown) {
+  console.error(`${LOG_PREFIX} ${message}`, extra ?? "");
+}
 
 type WidgetMessage = {
   id: string;
@@ -822,32 +840,130 @@ function MenuSection({ onSelect }: { onSelect: (cat: Category) => void }) {
 
 // ── Main widget ──────────────────────────────────────────────────────────────
 
+/** Carries a visitor-facing message plus a machine-readable cause for logs. */
+class AssistantError extends Error {
+  readonly cause_code: string;
+  constructor(message: string, causeCode: string) {
+    super(message);
+    this.name = "AssistantError";
+    this.cause_code = causeCode;
+  }
+}
+
 async function fetchAssistant(
   url: string,
   init: RequestInit = {},
-  timeoutMs = 10000
+  timeoutMs = REQUEST_TIMEOUT_MS
 ): Promise<Response> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    return await fetch(url, { ...init, signal: ctrl.signal });
+    return await fetch(url, {
+      cache: "no-store",
+      ...init,
+      signal: ctrl.signal,
+    });
   } finally {
     clearTimeout(timer);
   }
 }
 
+/**
+ * Turn a non-OK response into a copy a visitor can act on. FastAPI puts a
+ * human-readable string in `detail`; the proxy adds `proxy_error`. Falls back
+ * to a status-specific line so the UI is never blank.
+ */
+async function describeFailure(res: Response): Promise<string> {
+  let detail = "";
+  let proxyError = "";
+  try {
+    const text = await res.text();
+    if (text) {
+      try {
+        const parsed = JSON.parse(text) as { detail?: unknown; proxy_error?: unknown };
+        if (typeof parsed.detail === "string") detail = parsed.detail;
+        if (typeof parsed.proxy_error === "string") proxyError = parsed.proxy_error;
+      } catch {
+        // Not JSON. This is what a missing route looks like: Next.js answers
+        // an unmatched /api path with its HTML 404 page. Never surface markup
+        // to a visitor - keep the raw snippet for the console only.
+        logWarn("non-JSON error body (HTML error page?)", text.slice(0, 300));
+        detail = "";
+      }
+    }
+  } catch {
+    /* body already consumed or unreadable - fall through to the status default */
+  }
+
+  logError(`request failed with HTTP ${res.status}`, {
+    url: res.url,
+    proxyError: proxyError || undefined,
+    detail: detail || undefined,
+  });
+
+  // An unmatched route is the single most common cause of a dead chatbot: the
+  // server-side proxy was never deployed, so this path 404s with an HTML page.
+  // Say so precisely instead of guessing at "connection".
+  if (res.status === 404) {
+    return "The assistant is not available on this site right now. Please try again later.";
+  }
+  if (res.status === 405) {
+    return "The assistant is not available on this site right now. Please try again later.";
+  }
+  if (res.status === 429) {
+    return "You're sending messages a bit fast — please wait a moment and try again.";
+  }
+  if (res.status === 502 || proxyError === "upstream_unreachable") {
+    return "The assistant service is unreachable right now. Please try again in a moment.";
+  }
+  if (res.status === 504 || proxyError === "upstream_timeout") {
+    return "The assistant took too long to respond. Please try again.";
+  }
+  if (res.status === 503) {
+    return detail || "The assistant hit a temporary issue. Please try again.";
+  }
+  // Trust a well-formed `detail` from our own backend/proxy; fall back to the
+  // status so an unexpected shape still produces something readable.
+  return detail || `Something went wrong (HTTP ${res.status}). Please try again.`;
+}
+
 async function fetchSessionsList(): Promise<SessionSummary[]> {
   try {
-    const res = await fetchAssistant(`${API_BASE}/sessions`, { cache: "no-store" });
-    if (!res.ok) return [];
+    const res = await fetchAssistant(`${API_BASE}/sessions`);
+    if (!res.ok) {
+      logWarn("session history unavailable; continuing without it", res.status);
+      return [];
+    }
     const data = await res.json();
-    return Array.isArray(data) ? data : [];
-  } catch {
+    if (!Array.isArray(data)) {
+      logWarn("session history was not an array; ignoring it", typeof data);
+      return [];
+    }
+    return data as SessionSummary[];
+  } catch (err) {
+    logWarn("session history request failed; continuing without it", err);
     return [];
   }
 }
 
-async function resumeSession(sessionUid: string, page?: string) {
+/** Shape returned by POST /sessions on the backend (PublicSessionResponse). */
+type SessionResponse = {
+  session_uid: string;
+  status: string;
+  messages?: WireMessage[];
+  created_at?: string;
+};
+
+type WireMessage = {
+  message_uid: string;
+  sender_type: string;
+  message_text: string;
+  mode?: string;
+  risk_class?: string;
+  created_at?: string;
+};
+
+async function resumeSession(sessionUid: string, page?: string): Promise<SessionResponse> {
   const res = await fetchAssistant(
     `${API_BASE}/sessions`,
     {
@@ -855,12 +971,47 @@ async function resumeSession(sessionUid: string, page?: string) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ session_uid: sessionUid, page }),
     },
-    15000
+    REQUEST_TIMEOUT_MS
   );
   if (!res.ok) {
-    throw new Error(`resume failed: ${res.status}`);
+    const reason = await describeFailure(res);
+    throw new AssistantError(reason, `session_create_${res.status}`);
   }
-  return res.json();
+  try {
+    return (await res.json()) as SessionResponse;
+  } catch (err) {
+    logError("session response was not valid JSON", err);
+    throw new AssistantError(
+      "The assistant sent back an unreadable response. Please try again.",
+      "session_bad_json"
+    );
+  }
+}
+
+function toWireMessages(msgs: WireMessage[] | undefined): WidgetMessage[] {
+  if (!Array.isArray(msgs)) return [];
+  return msgs.map((m) => ({
+    id: m.message_uid,
+    role: m.sender_type === "user" ? "user" : "assistant",
+    text: m.message_text,
+    mode: m.mode,
+    risk_class: m.risk_class,
+    created_at: m.created_at,
+  }));
+}
+
+/** Map a thrown value from fetch/json onto a visitor-facing message. */
+function explainThrown(err: unknown, context: string): string {
+  if (err instanceof AssistantError) {
+    logWarn(`${context} failed`, { cause: err.cause_code, message: err.message });
+    return err.message;
+  }
+  if (err instanceof DOMException && err.name === "AbortError") {
+    logError(`${context} timed out`, { timeoutMs: context.includes("message") ? MESSAGE_TIMEOUT_MS : REQUEST_TIMEOUT_MS });
+    return "The assistant took too long to respond. Please try again.";
+  }
+  logError(`${context} could not reach the API`, err);
+  return "Could not reach the assistant. Please check your connection and try again.";
 }
 
 export default function PublicAssistantWidget() {
@@ -882,6 +1033,7 @@ export default function PublicAssistantWidget() {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const recentRef = useRef<HTMLDivElement | null>(null);
   const resumeLoadedRef = useRef(false);
+  const inFlightRef = useRef(false);
 
   const scrollToBottom = (behavior: ScrollBehavior = "smooth") => {
     const el = listRef.current;
@@ -950,23 +1102,13 @@ export default function PublicAssistantWidget() {
         const data = await resumeSession(resumeUid, currentPage());
         if (cancelled) return;
         storeActiveUid(resumeUid);
-        const msgs: WidgetMessage[] = (data.messages || []).map(
-          (m: { message_uid: string; sender_type: string; message_text: string; mode?: string; risk_class?: string; created_at?: string }) => ({
-            id: m.message_uid,
-            role: m.sender_type === "user" ? "user" : "assistant",
-            text: m.message_text,
-            mode: m.mode,
-            risk_class: m.risk_class,
-            created_at: m.created_at,
-          })
-        );
-        setMessages(msgs);
-      } catch {
+        setMessages(toWireMessages(data.messages));
+      } catch (err) {
         // Never get stuck on the loading state: reset the guard so the next
         // open retries, and fall back to the welcome screen + error note.
         resumeLoadedRef.current = false;
         if (!cancelled) {
-          setError("Could not reach the assistant. Please try again in a moment.");
+          setError(explainThrown(err, "resume_session"));
         }
       } finally {
         if (!cancelled) setStarting(false);
@@ -998,7 +1140,9 @@ export default function PublicAssistantWidget() {
 
   async function send(overrideText?: string) {
     const text = (overrideText ?? draft).trim();
-    if (!text || busy || starting) return;
+    // `busy`/`starting` are React state, so two clicks in the same tick would
+    // both read the stale `false`. The ref is the real guard against duplicates.
+    if (!text || busy || starting || inFlightRef.current) return;
 
     setDraft("");
     setError(null);
@@ -1012,6 +1156,7 @@ export default function PublicAssistantWidget() {
     };
 
     let uid = activeUid;
+    inFlightRef.current = true;
     setBusy(true);
     scrollToBottom("auto");
     try {
@@ -1024,29 +1169,55 @@ export default function PublicAssistantWidget() {
         setMessages((prev) => [...prev, userMsg]);
       }
 
-      const res = await fetch(`${API_BASE}/sessions/${uid}/messages`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text, page }),
-      });
+      // `messages` here is the closure captured before the append above, so
+      // seed the topic detection with this turn's text explicitly.
+      const combined = [...messages, userMsg];
+
+      const res = await fetchAssistant(
+        `${API_BASE}/sessions/${encodeURIComponent(uid)}/messages`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text, page }),
+        },
+        MESSAGE_TIMEOUT_MS
+      );
+
       if (!res.ok) {
-        if (res.status === 429) {
-          setError("You're sending messages a bit fast — please wait a moment and try again.");
-        } else if (res.status === 503) {
-          setError("The assistant hit a temporary issue. Please try again.");
-        } else {
-          setError(`Something went wrong (${res.status}). Please try again.`);
-        }
+        setError(await describeFailure(res));
         return;
       }
-      const data = await res.json();
+
+      let data: {
+        message_uid?: string;
+        answer?: string;
+        mode?: string;
+        risk_class?: string;
+        evidence?: { source?: string }[];
+      };
+      try {
+        data = await res.json();
+      } catch (err) {
+        logError("message response was not valid JSON", err);
+        setError("The assistant sent back an unreadable response. Please try again.");
+        return;
+      }
+
+      const answer = typeof data.answer === "string" ? data.answer.trim() : "";
+      if (!answer) {
+        logError("message response contained no answer", data);
+        setError(
+          "The assistant returned an empty answer. Please rephrase your question and try again."
+        );
+        return;
+      }
+
       const respId = data.message_uid || crypto.randomUUID();
-      const combined = [...messages, userMsg];
       const topic = topicForMessages(combined) ?? "general";
       const msg: WidgetMessage = {
         id: respId,
         role: "assistant",
-        text: data.answer || "…",
+        text: answer,
         mode: data.mode || "M0_EXPLAIN",
         risk_class: data.risk_class || "R0",
         source: data.evidence?.[0]?.source,
@@ -1056,9 +1227,10 @@ export default function PublicAssistantWidget() {
       setMessages((prev) => [...prev, msg]);
       setAnimatingUid(respId);
       void fetchSessionsList().then((h) => setSessions(h));
-    } catch {
-      setError("Could not reach the assistant. Please check your connection and try again.");
+    } catch (err) {
+      setError(explainThrown(err, "send_message"));
     } finally {
+      inFlightRef.current = false;
       setBusy(false);
       inputRef.current?.focus();
     }
@@ -1081,21 +1253,11 @@ export default function PublicAssistantWidget() {
     try {
       const data = await resumeSession(sessionUid, currentPage());
       storeActiveUid(sessionUid);
-      const msgs: WidgetMessage[] = (data.messages || []).map(
-        (m: { message_uid: string; sender_type: string; message_text: string; mode?: string; risk_class?: string; created_at?: string }) => ({
-          id: m.message_uid,
-          role: m.sender_type === "user" ? "user" : "assistant",
-          text: m.message_text,
-          mode: m.mode,
-          risk_class: m.risk_class,
-          created_at: m.created_at,
-        })
-      );
-      setMessages(msgs);
+      setMessages(toWireMessages(data.messages));
       setAnimatingUid(null);
       scrollToBottom("auto");
-    } catch {
-      setError("Could not load that conversation. Please try again.");
+    } catch (err) {
+      setError(explainThrown(err, "select_session"));
     } finally {
       setBusy(false);
       inputRef.current?.focus();
