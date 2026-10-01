@@ -53,7 +53,7 @@ export default function CrmBillingOperatingModelSection() {
   return (
     <section
       id="operating-model"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -152,8 +152,9 @@ export default function CrmBillingOperatingModelSection() {
               "
             >
               The same customer may carry CRM-owned sales fields,
-              Billing-owned financial fields, external identity fields and
-              controlled tax fields simultaneously.
+              Billing-owned financial{" "}
+              <br className="hidden sm:inline" />
+              fields, external identity fields and controlled tax fields simultaneously.
             </p>
           </div>
 

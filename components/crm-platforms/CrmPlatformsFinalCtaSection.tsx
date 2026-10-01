@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface RouteByEvaluationItem {
   evaluator: string;
@@ -40,7 +41,7 @@ export default function CrmPlatformsFinalCtaSection() {
   return (
     <section
       id="final-cta"
-      className="w-full bg-white"
+      className="w-full bg-white font-[family-name:var(--font-inter)] lg:bg-[#f7f8fa]"
     >
       <div
         className="
@@ -49,8 +50,8 @@ export default function CrmPlatformsFinalCtaSection() {
           w-full
           max-w-[1440px]
           flex-col
-          px-5
-          py-12
+          px-4
+          py-10
           sm:px-8
           sm:py-16
           md:px-10
@@ -71,7 +72,7 @@ export default function CrmPlatformsFinalCtaSection() {
             rounded-[24px]
             border
             border-[#1d2a42]
-            bg-[#071126]
+            bg-[#091127]
             p-6
             sm:rounded-[28px]
             sm:p-8
@@ -118,9 +119,9 @@ export default function CrmPlatformsFinalCtaSection() {
             <h2
               className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
-                !text-[28px]
+                !text-[24px]
                 !font-extrabold
-                !leading-[1.15]
+                !leading-[1.18]
                 !tracking-[-0.03em]
                 !text-white
                 sm:!text-[34px]
@@ -128,7 +129,8 @@ export default function CrmPlatformsFinalCtaSection() {
                 lg:!text-[42px]
               "
             >
-              Know which system owns which field.
+              Know which system <br />
+              owns which field.
             </h2>
 
             <p
@@ -136,11 +138,13 @@ export default function CrmPlatformsFinalCtaSection() {
                 !m-0
                 mt-3
                 max-w-[500px]
-                text-sm
+                text-xs
                 font-normal
-                leading-6
-                text-slate-400
+                leading-relaxed
+                text-slate-300
                 sm:text-base
+                sm:leading-6
+                sm:text-slate-400
               "
             >
               Check direction, authority, freshness and conflict behavior per
@@ -148,23 +152,25 @@ export default function CrmPlatformsFinalCtaSection() {
             </p>
 
             {/* CTA BUTTONS */}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
               <Link
                 href="/integrations"
                 className="
                   inline-flex
-                  min-h-11
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   bg-white
                   px-5
-                  text-sm
+                  text-xs
                   font-semibold
                   !text-slate-900
                   shadow-md
                   transition
                   hover:bg-slate-100
+                  sm:min-h-11
+                  sm:text-sm
                 "
               >
                 Browse CRM integrations
@@ -174,18 +180,21 @@ export default function CrmPlatformsFinalCtaSection() {
                 href="/integration-availability"
                 className="
                   inline-flex
-                  min-h-11
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   border
                   border-slate-700
+                  bg-white/5
                   px-5
-                  text-sm
+                  text-xs
                   font-semibold
                   !text-white
                   transition
                   hover:bg-white/10
+                  sm:min-h-11
+                  sm:text-sm
                 "
               >
                 Integration availability
@@ -195,18 +204,21 @@ export default function CrmPlatformsFinalCtaSection() {
                 href="/pricing-and-plans"
                 className="
                   inline-flex
-                  min-h-11
+                  min-h-10
                   items-center
                   justify-center
                   rounded-full
                   border
                   border-slate-700
+                  bg-white/5
                   px-5
-                  text-sm
+                  text-xs
                   font-semibold
                   !text-white
                   transition
                   hover:bg-white/10
+                  sm:min-h-11
+                  sm:text-sm
                   lg:hidden
                 "
               >
@@ -214,25 +226,26 @@ export default function CrmPlatformsFinalCtaSection() {
               </Link>
             </div>
 
-            {/* ROUTE BY EVALUATION */}
+            {/* ROUTE BY EVALUATION (MOBILE ONLY) */}
             <div
               className="
-                mt-7
+                mt-6
+                block
                 w-full
                 rounded-2xl
                 border
-                border-slate-800
+                border-slate-800/80
                 bg-[#070D1E]/70
                 p-4
                 sm:p-5
-                lg:max-w-[600px]
+                lg:hidden
               "
             >
               <p className="!m-0 text-xs font-bold text-slate-200">
                 Route by evaluation
               </p>
 
-              <div className="mt-2 divide-y divide-slate-800/80">
+              <div className="mt-3 divide-y divide-slate-800/70">
                 {routeByEvaluationItems.map((item) => (
                   <div
                     key={item.evaluator}
@@ -240,11 +253,11 @@ export default function CrmPlatformsFinalCtaSection() {
                       flex
                       items-center
                       justify-between
-                      gap-4
-                      py-3
+                      gap-3
+                      py-2.5
                     "
                   >
-                    <span className="text-xs text-slate-400 sm:text-sm">
+                    <span className="text-xs text-slate-400">
                       {item.evaluator}
                     </span>
 
@@ -253,11 +266,10 @@ export default function CrmPlatformsFinalCtaSection() {
                       className="
                         text-right
                         text-xs
-                        font-semibold
-                        !text-white
+                        font-normal
+                        !text-slate-200
                         transition
-                        hover:text-blue-400
-                        sm:text-sm
+                        hover:!text-white
                       "
                     >
                       {item.route}
@@ -268,56 +280,46 @@ export default function CrmPlatformsFinalCtaSection() {
             </div>
           </div>
 
-          {/* IMAGE */}
+          {/* IMAGE (DESKTOP ONLY) */}
           <div
             className="
               relative
               z-10
-              mt-7
-              w-full
+              hidden
               overflow-hidden
               rounded-2xl
               border
               border-slate-800
               shadow-xl
-              lg:mt-0
+              lg:block
               lg:max-w-[520px]
               xl:max-w-[540px]
             "
           >
-            <img
+            <Image
               src="/images/crm-platforms/crm7.png"
               alt="Know which system owns which field"
-              className="block h-auto w-full object-cover"
+              width={600}
+              height={400}
+              priority
+              className="block h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1024px) 100vw, 540px"
             />
           </div>
         </div>
+      </div>
 
-        {/* DEPLOYMENT STATEMENT */}
-        <div
-          className="
-            mx-auto
-            mt-6
-            w-full
-            max-w-[1240px]
-            rounded-2xl
-            border
-            border-[#dfe5ee]
-            bg-[#f7f8fa]
-            px-5
-            py-6
-            sm:px-7
-            sm:py-7
-          "
-        >
+      {/* SECOND SECTION: BLUE BANNER (MOBILE ONLY) */}
+      <div className="block w-full bg-gradient-to-r from-[#1d6ce8] via-[#2c53d4] to-[#4a4bc1] px-5 py-10 text-white sm:px-8 sm:py-12 lg:hidden">
+        <div className="mx-auto w-full max-w-[640px]">
           <h3
             className="!font-[family-name:var(--font-jakarta)] 
               !m-0
-              text-xl
+              text-[22px]
               font-extrabold
               leading-tight
               tracking-tight
-              text-[#091127]
+              text-white
               sm:text-2xl
             "
           >
@@ -328,33 +330,36 @@ export default function CrmPlatformsFinalCtaSection() {
             className="
               !m-0
               mt-2
-              max-w-[760px]
-              text-sm
-              leading-6
-              text-[#5d7192]
-              sm:text-base
+              text-xs
+              leading-relaxed
+              text-blue-100
+              sm:text-sm
             "
           >
-            Field authority, external IDs, versions, effective dates and
-            conflict history remain traceable on every mapped value.
+            Field authority, external IDs, versions, effective dates and conflict
+            history traceable on every mapped value.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
-              href="#crm-catalog"
+              href="/integrations"
               className="
                 inline-flex
-                min-h-11
+                min-h-10
                 items-center
                 justify-center
                 rounded-full
-                bg-[#1D60EB]
+                bg-white
                 px-5
-                text-sm
+                text-xs
                 font-semibold
-                text-white
+                text-slate-900
+                shadow-sm
                 transition
-                hover:bg-[#1754d1]
+                hover:bg-slate-50
+                sm:min-h-11
+                sm:px-6
+                sm:text-sm
               "
             >
               Browse CRM integrations
@@ -364,19 +369,22 @@ export default function CrmPlatformsFinalCtaSection() {
               href="/integrations-directory"
               className="
                 inline-flex
-                min-h-11
+                min-h-10
                 items-center
                 justify-center
                 rounded-full
                 border
-                border-[#dfe5ee]
-                bg-white
+                border-white/40
+                bg-white/10
                 px-5
-                text-sm
+                text-xs
                 font-semibold
-                text-[#091127]
+                text-white
                 transition
-                hover:bg-[#f7f8fa]
+                hover:bg-white/20
+                sm:min-h-11
+                sm:px-6
+                sm:text-sm
               "
             >
               Integrations directory
@@ -386,19 +394,18 @@ export default function CrmPlatformsFinalCtaSection() {
           <p
             className="
               !m-0
-              !mt-5
-              max-w-[850px]
-              text-xs
-              leading-6
-              text-[#7890b2]
-              sm:text-sm
+              mt-6
+              text-[11px]
+              leading-relaxed
+              text-white/80
+              sm:text-xs
             "
           >
-            Available as standalone software, and as an integrated component
-            of Zoiko One where that deployment is evaluated separately.{" "}
+            Available as standalone software, and as an integrated component of
+            Zoiko One where that deployment is evaluated separately.{" "}
             <Link
               href="/pricing-and-plans"
-              className="font-semibold text-[#091127] underline"
+              className="font-medium text-white underline hover:text-white/90"
             >
               Compare deployment options
             </Link>

@@ -73,7 +73,7 @@ export default function IntegrationLifecycleSection() {
   return (
     <section
       id="lifecycle"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -155,7 +155,9 @@ export default function IntegrationLifecycleSection() {
                 lg:!text-[40px]
               "
             >
-              Eight stages, with responsibility named on both sides.
+              Eight stages, with responsibility{" "}
+              <br className="hidden sm:inline" />
+              named on both sides.
             </h2>
 
             {/* DESCRIPTION */}
@@ -171,7 +173,7 @@ export default function IntegrationLifecycleSection() {
                 sm:text-base
               "
             >
-              What the developer owns, and what this page owes them at each
+              What this developer owns, and what this page owes them at each
               stage.
             </p>
           </div>
@@ -189,6 +191,33 @@ export default function IntegrationLifecycleSection() {
               shadow-[0_6px_20px_rgba(15,23,42,0.04)]
             "
           >
+            {/* CARD INTRO */}
+            <div
+              className="
+                border-b
+                border-[#edf0f4]
+                bg-[#f7f8fa]
+                px-5
+                py-3.5
+                sm:px-6
+                sm:py-4
+                md:px-7
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-xs
+                  font-normal
+                  leading-5
+                  text-[#7890b2]
+                  sm:text-sm
+                "
+              >
+                Stage, developer responsibility and page responsibility.
+              </p>
+            </div>
+
             <div className="overflow-x-auto">
               <table className="w-full min-w-[760px] border-collapse">
                 <thead>

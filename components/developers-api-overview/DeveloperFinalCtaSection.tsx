@@ -18,7 +18,7 @@ const routeIntents: RouteIntentItem[] = [
 
 export default function DeveloperFinalCtaSection() {
   return (
-    <section className="w-full bg-white py-10 lg:py-16">
+    <section className="w-full bg-white py-10 lg:py-16 font-[family-name:var(--font-inter)]">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-8 lg:px-12">
         
         {/* ========================================================================= */}

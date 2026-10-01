@@ -196,6 +196,32 @@ export default function ReliabilityDisciplineSection() {
               lg:hidden
             "
           >
+            {/* CARD INTRO */}
+            <div
+              className="
+                border-b
+                border-[#263452]
+                bg-white
+                px-5
+                py-3.5
+                sm:px-6
+                sm:py-4
+              "
+            >
+              <p
+                className="
+                  !m-0
+                  text-xs
+                  font-medium
+                  leading-5
+                  text-slate-800
+                  sm:text-sm
+                "
+              >
+                Topic, and requirement &amp; deferral statement.
+              </p>
+            </div>
+
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] border-collapse">
                 <thead>

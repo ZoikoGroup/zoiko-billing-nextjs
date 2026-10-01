@@ -38,7 +38,7 @@ const stages: StageItem[] = [
 
 export default function EventsWebhooksSection() {
   return (
-    <section id="sdks-webhooks" className="w-full bg-[#f7f8fa]">
+    <section id="sdks-webhooks" className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -48,11 +48,10 @@ export default function EventsWebhooksSection() {
           flex-col
           items-center
           px-5
-          py-14
+          py-16
           sm:px-8
-          sm:py-16
+          sm:py-20
           md:px-10
-          md:py-20
           lg:px-14
           xl:px-20
         "
@@ -65,9 +64,8 @@ export default function EventsWebhooksSection() {
             max-w-[1240px]
             flex-col
             items-center
-            gap-8
-            sm:gap-10
-            md:gap-11
+            gap-10
+            sm:gap-12
           "
         >
           {/* INTRO */}
@@ -84,15 +82,14 @@ export default function EventsWebhooksSection() {
           >
             {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
-
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
               <span
                 className="
                   text-[10px]
                   font-bold
                   uppercase
                   leading-4
-                  tracking-[0.14em]
+                  tracking-[0.16em]
                   text-[#7890b2]
                   sm:text-xs
                   sm:tracking-[0.18em]
@@ -100,15 +97,15 @@ export default function EventsWebhooksSection() {
               >
                 Events &amp; Webhooks Boundary
               </span>
-
-              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
             <h2
-              className="!font-[family-name:var(--font-jakarta)] 
+              className="
                 !m-0
                 w-full
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -119,7 +116,8 @@ export default function EventsWebhooksSection() {
                 lg:!text-[40px]
               "
             >
-              React to billing events without polling every record.
+              React to billing events without polling <br className="hidden sm:inline" />
+              every record.
             </h2>
 
             {/* DESCRIPTION */}
@@ -142,100 +140,7 @@ export default function EventsWebhooksSection() {
             </p>
           </div>
 
-          {/* WEBHOOK FLOW */}
-          <div className="grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2 lg:grid-cols-5">
-            {stages.map((stage) => (
-              <div
-                key={stage.stageNumber}
-                className="
-                  flex
-                  min-h-[220px]
-                  flex-col
-                  rounded-2xl
-                  border
-                  border-[#dfe5ee]
-                  bg-white
-                  p-5
-                  shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-                  transition-shadow
-                  duration-200
-                  hover:shadow-[0_8px_24px_rgba(15,23,42,0.07)]
-                  sm:p-6
-                "
-              >
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    leading-4
-                    tracking-[0.12em]
-                    text-[#7890b2]
-                  "
-                >
-                  Stage {stage.stageNumber}
-                </span>
-
-                <h3
-                  className="!font-[family-name:var(--font-jakarta)] 
-                    !m-0
-                    mt-2
-                    text-base
-                    font-bold
-                    leading-6
-                    text-[#091127]
-                    sm:text-lg
-                  "
-                >
-                  {stage.title}
-                </h3>
-
-                <p
-                  className="
-                    !m-0
-                    mt-2
-                    text-sm
-                    font-normal
-                    leading-6
-                    text-[#5d7192]
-                  "
-                >
-                  {stage.stageNumber === 2 ? (
-                    <>
-                      The event is emitted per{" "}
-                      <code
-                        className="
-                          rounded-md
-                          border
-                          border-[#dfe5ee]
-                          bg-[#f7f8fa]
-                          px-1.5
-                          py-0.5
-                          font-mono
-                          text-[10px]
-                          text-[#7890b2]
-                        "
-                      >
-                        {"{webhooks_spec}"}
-                      </code>
-                    </>
-                  ) : stage.stageNumber === 4 ? (
-                    <>
-                      Receipt recorded —{" "}
-                      <span className="font-bold text-[#091127]">
-                        not proof of business finality
-                      </span>
-                      .
-                    </>
-                  ) : (
-                    stage.description
-                  )}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* DESKTOP REFERENCE IMAGE */}
+          {/* DESKTOP REFERENCE IMAGE (MATCHING SCREENSHOT) */}
           <div
             className="
               hidden
@@ -260,195 +165,212 @@ export default function EventsWebhooksSection() {
             />
           </div>
 
-          {/* FAILURE STATES */}
-          <div
-            className="
-              w-full
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              p-5
-              text-left
-              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-              sm:p-6
-            "
-          >
-            <h3
-              className="!font-[family-name:var(--font-jakarta)] 
-                !m-0
-                text-base
-                font-bold
-                leading-6
-                text-[#091127]
-              "
-            >
-              Failure states, shown only where policy supports them
-            </h3>
+          {/* MOBILE / TABLET CONTENT */}
+          <div className="block w-full space-y-6 lg:hidden">
+            {/* WEBHOOK FLOW */}
+            <div className="grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2">
+              {stages.map((stage) => (
+                <div
+                  key={stage.stageNumber}
+                  className="
+                    flex
+                    min-h-[180px]
+                    flex-col
+                    rounded-2xl
+                    border
+                    border-[#dfe5ee]
+                    bg-white
+                    p-5
+                    shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                    sm:p-6
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      leading-4
+                      tracking-[0.12em]
+                      text-[#7890b2]
+                    "
+                  >
+                    Stage {stage.stageNumber}
+                  </span>
 
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-md
-                  border
-                  border-[#dfe5ee]
-                  bg-[#f7f8fa]
-                  px-2.5
-                  py-1.5
-                  text-[11px]
-                  font-medium
-                  text-[#5d7192]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
-                Endpoint unavailable
-              </span>
+                  <h3
+                    className="
+                      !m-0
+                      mt-2
+                      !font-[family-name:var(--font-jakarta)]
+                      text-base
+                      font-bold
+                      leading-6
+                      text-[#091127]
+                    "
+                  >
+                    {stage.title}
+                  </h3>
 
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-md
-                  border
-                  border-[#dfe5ee]
-                  bg-[#f7f8fa]
-                  px-2.5
-                  py-1.5
-                  text-[11px]
-                  font-medium
-                  text-[#5d7192]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
-                Signature failure
-              </span>
-
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-md
-                  border
-                  border-[#dfe5ee]
-                  bg-[#f7f8fa]
-                  px-2.5
-                  py-1.5
-                  text-[11px]
-                  font-medium
-                  text-[#5d7192]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
-                Retry scheduled
-              </span>
-
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-md
-                  border
-                  border-[#dfe5ee]
-                  bg-[#f7f8fa]
-                  px-2.5
-                  py-1.5
-                  text-[11px]
-                  font-medium
-                  text-[#5d7192]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
-                Delivery exhausted
-              </span>
-
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-md
-                  border
-                  border-[#dfe5ee]
-                  bg-[#f7f8fa]
-                  px-2.5
-                  py-1.5
-                  text-[11px]
-                  font-medium
-                  text-[#5d7192]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
-                Manual review
-              </span>
+                  <p
+                    className="
+                      !m-0
+                      mt-2
+                      text-sm
+                      font-normal
+                      leading-6
+                      text-[#5d7192]
+                    "
+                  >
+                    {stage.stageNumber === 2 ? (
+                      <>
+                        The event is emitted per{" "}
+                        <code
+                          className="
+                            rounded-md
+                            border
+                            border-[#dfe5ee]
+                            bg-[#f7f8fa]
+                            px-1.5
+                            py-0.5
+                            font-mono
+                            text-[10px]
+                            text-[#7890b2]
+                          "
+                        >
+                          {"{webhooks_spec}"}
+                        </code>
+                      </>
+                    ) : stage.stageNumber === 4 ? (
+                      <>
+                        Receipt recorded —{" "}
+                        <span className="font-bold text-[#091127]">
+                          not proof of business finality
+                        </span>
+                        .
+                      </>
+                    ) : (
+                      stage.description
+                    )}
+                  </p>
+                </div>
+              ))}
             </div>
-          </div>
 
-          {/* DELIVERY SEMANTICS */}
-          <div
-            className="
-              w-full
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              p-5
-              text-left
-              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-              sm:p-6
-            "
-          >
-            <h3
-              className="!font-[family-name:var(--font-jakarta)] 
-                !m-0
-                text-base
-                font-bold
-                leading-6
-                text-[#091127]
-              "
-            >
-              Delivery semantics are not assumed
-            </h3>
-
-            <p
+            {/* FAILURE STATES */}
+            <div
               className="
-                !m-0
-                mt-2
-                text-sm
-                font-normal
-                leading-6
-                text-[#5d7192]
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                p-5
+                text-left
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                sm:p-6
               "
             >
-              Retries, ordering and replay are labeled only after engineering
-              verification.{" "}
-              <span className="font-bold text-[#091127]">
-                Exactly-once delivery is never implied.
-              </span>
-            </p>
+              <h3
+                className="
+                  !m-0
+                  !font-[family-name:var(--font-jakarta)]
+                  text-base
+                  font-bold
+                  leading-6
+                  text-[#091127]
+                "
+              >
+                Failure states, shown only where policy supports them
+              </h3>
 
-            <Link
-              href="/developers-webhooks"
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Endpoint unavailable", "Signature failure", "Retry scheduled", "Delivery exhausted", "Manual review"].map((label) => (
+                  <span
+                    key={label}
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1.5
+                      rounded-md
+                      border
+                      border-[#dfe5ee]
+                      bg-[#f7f8fa]
+                      px-2.5
+                      py-1.5
+                      text-[11px]
+                      font-medium
+                      text-[#5d7192]
+                    "
+                  >
+                    <span className="h-1.5 w-1.5 rounded-sm bg-[#7890b2]" />
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* DELIVERY SEMANTICS */}
+            <div
               className="
-                mt-4
-                inline-flex
-                items-center
-                gap-1
-                text-xs
-                font-semibold
-                text-[#5d7192]
-                transition-colors
-                duration-200
-                hover:text-[#091127]
+                w-full
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                p-5
+                text-left
+                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                sm:p-6
               "
             >
-              Webhooks <span>→</span>
-            </Link>
+              <h3
+                className="
+                  !m-0
+                  !font-[family-name:var(--font-jakarta)]
+                  text-base
+                  font-bold
+                  leading-6
+                  text-[#091127]
+                "
+              >
+                Delivery semantics are not assumed
+              </h3>
+
+              <p
+                className="
+                  !m-0
+                  mt-2
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                Retries, ordering and replay are labeled only after engineering
+                verification.{" "}
+                <span className="font-bold text-[#091127]">
+                  Exactly-once delivery is never implied.
+                </span>
+              </p>
+
+              <Link
+                href="/developers-webhooks"
+                className="
+                  mt-4
+                  inline-flex
+                  items-center
+                  gap-1
+                  text-xs
+                  font-semibold
+                  text-[#1D70F5]
+                  transition-colors
+                  hover:underline
+                "
+              >
+                Webhooks <span>→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

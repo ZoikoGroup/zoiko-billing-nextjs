@@ -58,7 +58,7 @@ export default function GovernanceIntegritySection() {
   return (
     <section
       id="governance"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -157,7 +157,9 @@ export default function GovernanceIntegritySection() {
               "
             >
               The same lifecycle, ownership, approval and evidence rules that
-              govern the product govern the integration.
+              govern the product{" "}
+              <br className="hidden sm:inline" />
+              govern the integration.
             </p>
           </div>
 

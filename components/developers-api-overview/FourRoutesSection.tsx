@@ -3,7 +3,6 @@ import Link from "next/link";
 interface FourRouteCard {
   title: string;
   description: string;
-  linkText: string;
   linkHref: string;
 }
 
@@ -12,29 +11,25 @@ const fourRoutes: FourRouteCard[] = [
     title: "Developer Sandbox",
     description:
       "A safe place to test supported flows. Environment limitations, test-data rules, reset behavior and production differences are stated only when verified.",
-    linkText: "Developer Sandbox",
     linkHref: "/developer-sandbox",
   },
   {
     title: "SDKs & Examples",
     description:
       "Only languages and libraries that are actually published appear here, with officially supported SDKs distinguished from examples and community code.",
-    linkText: "SDKs & Examples",
-    linkHref: "/sdks-and-example",
+    linkHref: "/sdks-and-examples",
   },
   {
     title: "API Documentation",
     description:
       "The canonical technical source. This overview defers exact schemas and endpoints to it in every case.",
-    linkText: "API Documentation",
-    linkHref: "/developer-api-documentation",
+    linkHref: "/developers-api-documentation",
   },
   {
     title: "Build an Integration",
     description:
       "Guided implementation when complexity or enterprise requirements justify it — offered after technical proof, never before.",
-    linkText: "Build an Integration",
-    linkHref: "/integrations",
+    linkHref: "/developers-build-an-integration",
   },
 ];
 
@@ -50,11 +45,10 @@ export default function FourRoutesSection() {
           flex-col
           items-center
           px-5
-          py-14
+          py-16
           sm:px-8
-          sm:py-16
+          sm:py-20
           md:px-10
-          md:py-20
           lg:px-14
           xl:px-20
         "
@@ -67,9 +61,8 @@ export default function FourRoutesSection() {
             max-w-[1240px]
             flex-col
             items-center
-            gap-8
-            sm:gap-10
-            md:gap-11
+            gap-10
+            sm:gap-12
           "
         >
           {/* INTRO */}
@@ -87,14 +80,13 @@ export default function FourRoutesSection() {
             {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 bg-[#7890b2] opacity-40" />
-
               <span
                 className="
                   text-[10px]
                   font-bold
                   uppercase
                   leading-4
-                  tracking-[0.14em]
+                  tracking-[0.16em]
                   text-[#7890b2]
                   sm:text-xs
                   sm:tracking-[0.18em]
@@ -102,15 +94,15 @@ export default function FourRoutesSection() {
               >
                 Sandbox, SDKs &amp; Examples
               </span>
-
               <span className="h-px w-4 bg-[#7890b2] opacity-40" />
             </div>
 
             {/* HEADING */}
             <h2
-              className="!font-[family-name:var(--font-jakarta)] 
+              className="
                 !m-0
                 w-full
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -121,7 +113,8 @@ export default function FourRoutesSection() {
                 lg:!text-[40px]
               "
             >
-              Four routes, and the commercial one comes last.
+              Four routes, and the commercial one <br className="hidden sm:inline" />
+              comes last.
             </h2>
 
             {/* DESCRIPTION */}
@@ -142,99 +135,57 @@ export default function FourRoutesSection() {
             </p>
           </div>
 
-          {/* ROUTES */}
-          <div className="grid w-full grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4">
+          {/* 4 ROUTES CARDS */}
+          <div className="grid w-full grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {fourRoutes.map((route) => (
-              <div
+              <Link
                 key={route.title}
+                href={route.linkHref}
                 className="
                   flex
-                  min-h-[250px]
+                  min-h-[220px]
                   flex-col
-                  justify-between
                   rounded-2xl
                   border
                   border-[#dfe5ee]
                   bg-white
-                  p-5
+                  p-6
                   shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-                  transition-shadow
+                  transition
                   duration-200
-                  hover:shadow-[0_8px_24px_rgba(15,23,42,0.07)]
-                  sm:p-6
-                  md:p-7
+                  hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)]
+                  hover:border-slate-300
+                  sm:p-7
                 "
               >
-                <div>
-                  <h3
-                    className="!font-[family-name:var(--font-jakarta)] 
-                      !m-0
-                      text-base
-                      font-bold
-                      leading-6
-                      text-[#091127]
-                      sm:text-lg
-                    "
-                  >
-                    {route.title}
-                  </h3>
-
-                  <p
-                    className="
-                      !m-0
-                      mt-2
-                      text-sm
-                      font-normal
-                      leading-6
-                      text-[#5d7192]
-                    "
-                  >
-                    {route.description}
-                  </p>
-                </div>
-
-                <Link
-                  href={route.linkHref}
+                <h3
                   className="
-                    mt-6
-                    inline-flex
-                    items-center
-                    text-xs
-                    font-semibold
-                    text-[#5d7192]
-                    transition-colors
-                    duration-200
-                    hover:text-[#091127]
+                    !m-0
+                    !font-[family-name:var(--font-jakarta)]
+                    text-base
+                    font-bold
+                    leading-6
+                    text-[#091127]
                   "
                 >
-                  {route.linkText}
-                </Link>
-              </div>
-            ))}
-          </div>
+                  {route.title}
+                </h3>
 
-          {/* PUBLISHED SDK NOTICE */}
-          <div
-            className="
-              w-full
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              p-5
-              text-left
-              text-sm
-              leading-6
-              text-[#5d7192]
-              shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-              sm:p-6
-            "
-          >
-            <span className="font-bold text-[#091127]">
-              Published SDKs only.
-            </span>{" "}
-            No language list appears until it is confirmed, and support status
-            is labeled rather than implied by presence.
+                <p
+                  className="
+                    !m-0
+                    mt-3
+                    text-xs
+                    font-normal
+                    leading-relaxed
+                    text-[#5d7192]
+                    sm:text-[13px]
+                  "
+                >
+                  {route.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

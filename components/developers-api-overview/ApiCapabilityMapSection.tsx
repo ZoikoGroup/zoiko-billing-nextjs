@@ -97,7 +97,7 @@ export default function ApiCapabilityMapSection() {
   return (
     <section
       id="capability-map"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white"
     >
       <div
         className="

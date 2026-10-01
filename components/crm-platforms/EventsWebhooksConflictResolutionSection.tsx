@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ConflictControlRow {
   control: string;
   requiredBehavior: string;
@@ -60,7 +62,7 @@ export default function EventsWebhooksConflictResolutionSection() {
   return (
     <section
       id="conflict-resolution"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -150,7 +152,7 @@ export default function EventsWebhooksConflictResolutionSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -159,23 +161,37 @@ export default function EventsWebhooksConflictResolutionSection() {
               "
             >
               If CRM and Billing both changed the same mapped field, the
-              system evaluates current authority, versions, effective dates
-              and workflow state — not whichever event landed last.
+              system evaluates context authority, recency, effective date and
+              workflow state — not whichever event arrived last.
             </p>
           </div>
 
-          {/* CONTROLS CARD */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
+          {/* DESKTOP ILLUSTRATION */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/crm-platforms/crm5.png"
+              alt="Conflict first, arrival order never."
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
+
+          {/* MOBILE CONTENT (TABLE) */}
+          <div className="flex w-full flex-col block lg:hidden">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
             {/* CARD HEADER */}
             <div
               className="
@@ -261,6 +277,7 @@ export default function EventsWebhooksConflictResolutionSection() {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </div>

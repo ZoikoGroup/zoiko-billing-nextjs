@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileHeroInspector from "./MobileHeroInspector";
 
 export default function DevelopersHeroSection() {
   return (
@@ -13,26 +14,42 @@ export default function DevelopersHeroSection() {
           flex-col
           px-5
           pb-14
-          pt-10
-
+          pt-6
           sm:px-8
           sm:pb-16
-          sm:pt-12
-
+          sm:pt-10
           md:px-10
           md:pb-20
-
           lg:flex-row
           lg:items-center
           lg:justify-between
           lg:gap-10
           lg:px-14
           lg:py-20
-
           xl:gap-14
           xl:px-20
         "
       >
+        {/* MOBILE BREADCRUMBS */}
+        <div className="flex lg:hidden w-full items-center justify-between text-xs text-slate-500 mb-6 pb-2 border-b border-slate-100">
+          <div className="flex items-center gap-1.5 font-medium">
+            <Link href="/" className="hover:text-slate-800">HOME</Link>
+            <span>/</span>
+            <Link href="/developers-api-overview" className="hover:text-slate-800">DEVELOPERS</Link>
+            <span>/</span>
+            <span className="font-semibold text-slate-900">API Overview</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Link href="/developers-api-documentation" className="text-[#1D70F5] font-semibold hover:underline">
+              API Documentation
+            </Link>
+            <Link href="/developer-sandbox" className="text-[#1D70F5] font-semibold hover:underline">
+              Developer Sandbox
+            </Link>
+          </div>
+        </div>
+
         {/* LEFT CONTENT */}
         <div className="w-full min-w-0 lg:w-[52%]">
           {/* EYEBROW */}
@@ -107,6 +124,7 @@ export default function DevelopersHeroSection() {
               sm:w-auto
               sm:flex-row
               sm:flex-wrap
+              sm:items-center
             "
           >
             <Link
@@ -155,6 +173,25 @@ export default function DevelopersHeroSection() {
             >
               Developer Sandbox
             </Link>
+
+            {/* Mobile Authentication Link */}
+            <Link
+              href="/developers-authentication"
+              className="
+                inline-flex
+                lg:hidden
+                items-center
+                gap-1
+                text-sm
+                font-semibold
+                text-[#1D70F5]
+                hover:underline
+                pt-1
+                sm:pt-0
+              "
+            >
+              Authentication &rarr;
+            </Link>
           </div>
 
           {/* NOTICE CALLOUT BOX */}
@@ -166,21 +203,47 @@ export default function DevelopersHeroSection() {
               corresponding developer documentation.
             </p>
           </div>
+
+          {/* MOBILE 3 BADGES */}
+          <div className="flex lg:hidden flex-wrap items-center gap-2 pt-3">
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-blue-200/80 bg-blue-50/50 px-2.5 py-1.5 text-xs font-semibold text-[#1D70F5]">
+              <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+              </svg>
+              <span>Billing domain coverage</span>
+            </div>
+
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-blue-200/80 bg-blue-50/50 px-2.5 py-1.5 text-xs font-semibold text-[#1D70F5]">
+              <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+              </svg>
+              <span>Governed access</span>
+            </div>
+
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-blue-200/80 bg-blue-50/50 px-2.5 py-1.5 text-xs font-semibold text-[#1D70F5]">
+              <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+              </svg>
+              <span>Event-driven integration</span>
+            </div>
+          </div>
+
+          {/* MOBILE INSPECTOR MOCKUP */}
+          <div className="block lg:hidden mt-6 w-full">
+            <MobileHeroInspector />
+          </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE (DESKTOP ONLY) */}
         <div
           className="
-            mt-10
-            w-full
-
-            sm:mt-12
-
-            md:mt-14
-
+            hidden
+            lg:block
             lg:mt-0
             lg:w-[44%]
-
             xl:w-[43%]
           "
         >

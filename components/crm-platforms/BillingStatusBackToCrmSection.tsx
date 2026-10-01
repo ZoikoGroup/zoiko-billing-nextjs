@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface OutboundSummaryRow {
   summaryItem: string;
   permittedScope: string;
@@ -47,7 +49,7 @@ const outboundSummaryRows: OutboundSummaryRow[] = [
 
 export default function BillingStatusBackToCrmSection() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section className="w-full bg-[#091127] font-[family-name:var(--font-inter)] text-white">
       <div
         className="
           mx-auto
@@ -55,18 +57,14 @@ export default function BillingStatusBackToCrmSection() {
           w-full
           max-w-[1440px]
           flex-col
-          items-start
+          items-center
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -79,9 +77,7 @@ export default function BillingStatusBackToCrmSection() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
@@ -109,8 +105,7 @@ export default function BillingStatusBackToCrmSection() {
                   uppercase
                   leading-4
                   tracking-[0.16em]
-                  text-[#7890b2]
-
+                  text-[#8fa5c4]
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -130,12 +125,9 @@ export default function BillingStatusBackToCrmSection() {
                 !font-extrabold
                 !leading-[1.2]
                 !tracking-[-0.035em]
-                !text-[#091127]
-
+                text-white
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -151,8 +143,7 @@ export default function BillingStatusBackToCrmSection() {
                 text-[15px]
                 font-normal
                 leading-7
-                text-[#5d7192]
-
+                text-[#94a3b8]
                 sm:text-base
               "
             >
@@ -161,18 +152,32 @@ export default function BillingStatusBackToCrmSection() {
             </p>
           </div>
 
-          {/* TABLE */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
+          {/* DESKTOP ILLUSTRATION */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-2xl">
+            <Image
+              src="/images/crm-platforms/crm4.png"
+              alt="Minimum necessary outbound"
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
+
+          {/* MOBILE CONTENT (TABLE) */}
+          <div className="flex w-full flex-col block lg:hidden">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#1e293b]
+                bg-[#0f172a]
+                shadow-[0_8px_24px_rgba(0,0,0,0.3)]
+              "
+            >
             {/* DESKTOP TABLE */}
             <div className="hidden md:block">
               {/* HEADER */}
@@ -250,6 +255,7 @@ export default function BillingStatusBackToCrmSection() {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </div>

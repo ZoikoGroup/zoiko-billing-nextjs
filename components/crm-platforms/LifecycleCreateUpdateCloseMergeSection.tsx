@@ -60,7 +60,7 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
   return (
     <section
       id="lifecycle-events"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -142,7 +142,8 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
                 lg:!text-[40px]
               "
             >
-              One system&apos;s close state is not authoritative everywhere.
+              One system&apos;s close state is not <br className="hidden sm:inline" />
+              authoritative everywhere.
             </h2>
 
             {/* DESCRIPTION */}
@@ -150,7 +151,7 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -159,8 +160,9 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
               "
             >
               Sales lifecycle, CRM data lifecycle and financial-record
-              lifecycle are different things. Integration coordinates them
-              without pretending otherwise.
+              lifecycle are different things.{" "}
+              <br className="hidden sm:inline" />
+              Integration coordinates them without pretending otherwise.
             </p>
           </div>
 
@@ -180,14 +182,14 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
             <div className="hidden md:block">
               <div className="grid grid-cols-[280px_minmax(0,1fr)] bg-[#fafbfc]">
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    CRM Event
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    CRM EVENT
                   </span>
                 </div>
 
                 <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Billing Treatment
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7890b2]">
+                    BILLING TREATMENT
                   </span>
                 </div>
               </div>
@@ -235,7 +237,7 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
                   }`}
                 >
                   <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    CRM Event
+                    CRM EVENT
                   </p>
 
                   <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
@@ -243,7 +245,7 @@ export default function LifecycleCreateUpdateCloseMergeSection() {
                   </p>
 
                   <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Billing Treatment
+                    BILLING TREATMENT
                   </p>
 
                   <p

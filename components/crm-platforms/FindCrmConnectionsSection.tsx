@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CrmFilterRow {
   filter: string;
   requiredBehavior: string;
@@ -64,7 +66,7 @@ export default function FindCrmConnectionsSection() {
   return (
     <section
       id="crm-catalog"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-white font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -167,126 +169,142 @@ export default function FindCrmConnectionsSection() {
             </p>
           </div>
 
-          {/* FILTER CARD */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
-            {/* CARD HEADER */}
+          {/* DESKTOP ILLUSTRATION (MATCHING REFERENCE media_1790854411616.png) */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/crm-platforms/crm2.png"
+              alt="Eleven filters, all registry-backed"
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
+
+          {/* MOBILE CONTENT (FILTER CARD + DIRECTORY DISCIPLINE) */}
+          <div className="flex w-full flex-col gap-6 block lg:hidden">
+            {/* FILTER CARD */}
             <div
               className="
-                border-b
-                border-[#edf0f4]
-                bg-[#fafbfc]
-                px-5
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
+              {/* CARD HEADER */}
+              <div
+                className="
+                  border-b
+                  border-[#edf0f4]
+                  bg-[#fafbfc]
+                  px-5
+                  py-3.5
+                  text-sm
+                  leading-6
+                  text-[#5d7192]
+                "
+              >
+                Discovery filters and required behavior.
+              </div>
+
+              {/* DESKTOP TABLE */}
+              <div className="hidden md:block">
+                <div className="grid grid-cols-[280px_minmax(0,1fr)]">
+                  <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                    <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
+                      Filter
+                    </span>
+                  </div>
+
+                  <div className="border-b border-[#dfe5ee] px-5 py-3.5">
+                    <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
+                      Required Behavior
+                    </span>
+                  </div>
+                </div>
+
+                {crmFilterRows.map((row, index) => (
+                  <div
+                    key={row.filter}
+                    className={`grid grid-cols-[280px_minmax(0,1fr)] ${
+                      index !== crmFilterRows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }`}
+                  >
+                    <div className="px-5 py-4">
+                      <span className="text-sm font-semibold leading-5 text-[#091127]">
+                        {row.filter}
+                      </span>
+                    </div>
+
+                    <div className="px-5 py-4">
+                      <span className="text-sm leading-6 text-[#5d7192]">
+                        {row.requiredBehavior}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* MOBILE TABLE */}
+              <div className="flex flex-col md:hidden">
+                {crmFilterRows.map((row, index) => (
+                  <div
+                    key={row.filter}
+                    className={`p-5 ${
+                      index !== crmFilterRows.length - 1
+                        ? "border-b border-[#edf0f4]"
+                        : ""
+                    }`}
+                  >
+                    <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Filter
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
+                      {row.filter}
+                    </p>
+
+                    <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+                      Required Behavior
+                    </p>
+
+                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                      {row.requiredBehavior}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* DIRECTORY DISCIPLINE */}
+            <div
+              className="
+                w-full
+                rounded-xl
+                border
+                border-amber-200/80
+                bg-amber-50/70
+                px-4
                 py-3.5
                 text-sm
                 leading-6
-                text-[#5d7192]
+                text-amber-950
               "
             >
-              Discovery filters and required behavior.
+              <span className="font-bold text-amber-900">
+                Directory discipline.
+              </span>{" "}
+              A proposal, sales request, prototype, private script, roadmap
+              item or customer-specific custom work does not equal public
+              support.
             </div>
-
-            {/* DESKTOP */}
-            <div className="hidden md:block">
-              <div className="grid grid-cols-[280px_minmax(0,1fr)]">
-                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Filter
-                  </span>
-                </div>
-
-                <div className="border-b border-[#dfe5ee] px-5 py-3.5">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Required Behavior
-                  </span>
-                </div>
-              </div>
-
-              {crmFilterRows.map((row, index) => (
-                <div
-                  key={row.filter}
-                  className={`grid grid-cols-[280px_minmax(0,1fr)] ${
-                    index !== crmFilterRows.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
-                >
-                  <div className="px-5 py-4">
-                    <span className="text-sm font-semibold leading-5 text-[#091127]">
-                      {row.filter}
-                    </span>
-                  </div>
-
-                  <div className="px-5 py-4">
-                    <span className="text-sm leading-6 text-[#5d7192]">
-                      {row.requiredBehavior}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* MOBILE */}
-            <div className="flex flex-col md:hidden">
-              {crmFilterRows.map((row, index) => (
-                <div
-                  key={row.filter}
-                  className={`p-5 ${
-                    index !== crmFilterRows.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
-                >
-                  <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Filter
-                  </p>
-
-                  <p className="!m-0 mt-1.5 text-sm font-semibold leading-5 text-[#091127]">
-                    {row.filter}
-                  </p>
-
-                  <p className="!m-0 mt-4 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-                    Required Behavior
-                  </p>
-
-                  <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
-                    {row.requiredBehavior}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* DIRECTORY DISCIPLINE */}
-          <div
-            className="
-              w-full
-              rounded-xl
-              border
-              border-amber-200/80
-              bg-amber-50/70
-              px-4
-              py-3.5
-              text-sm
-              leading-6
-              text-amber-950
-            "
-          >
-            <span className="font-bold text-amber-900">
-              Directory discipline.
-            </span>{" "}
-            A proposal, sales request, prototype, private script, roadmap
-            item or customer-specific custom work does not equal public
-            support.
           </div>
         </div>
       </div>

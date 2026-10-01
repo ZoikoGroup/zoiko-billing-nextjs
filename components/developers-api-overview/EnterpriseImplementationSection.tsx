@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function EnterpriseImplementationSection() {
   return (
-    <section id="enterprise" className="w-full bg-[#f7f8fa]">
+    <section id="enterprise" className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]">
       <div
         className="
           mx-auto
@@ -35,6 +35,7 @@ export default function EnterpriseImplementationSection() {
             md:gap-11
             lg:flex-row
             lg:items-center
+            lg:justify-between
           "
         >
           {/* LEFT CONTENT */}
@@ -46,7 +47,7 @@ export default function EnterpriseImplementationSection() {
               items-start
               gap-5
               lg:w-1/2
-              lg:max-w-[580px]
+              lg:max-w-[560px]
             "
           >
             {/* EYEBROW */}
@@ -80,11 +81,13 @@ export default function EnterpriseImplementationSection() {
                 !tracking-[-0.035em]
                 !text-[#091127]
                 sm:!text-[34px]
-                md:!text-[36px]
-                lg:!text-[40px]
+                md:!text-[38px]
+                lg:!text-[32px]
               "
             >
-              Need to fit Zoiko Billing into a larger finance architecture?
+              Need to fit Zoiko Billing into a larger{" "}
+              <br className="hidden sm:inline" />
+              finance architecture?
             </h2>
 
             {/* DESCRIPTION */}
@@ -105,27 +108,25 @@ export default function EnterpriseImplementationSection() {
             </p>
 
             {/* MAIN CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3.5 pt-1">
               <Link
-                href="/integrations"
+                href="/developers-build-an-integration"
                 className="
                   inline-flex
                   min-h-11
                   items-center
                   justify-center
-                  rounded-lg
-                  border
-                  border-[#dfe5ee]
-                  bg-[#091127]
-                  px-5
+                  rounded-full
+                  bg-[#1D70F5]
+                  px-6
                   text-center
-                  text-xs
+                  text-sm
                   font-semibold
                   !text-white
+                  shadow-[0_8px_20px_rgba(31,111,235,0.26)]
                   transition-colors
                   duration-200
-                  hover:bg-[#17213a]
-                  sm:px-6
+                  hover:bg-blue-600
                 "
               >
                 Build an Integration
@@ -138,150 +139,144 @@ export default function EnterpriseImplementationSection() {
                   min-h-11
                   items-center
                   justify-center
-                  rounded-lg
+                  rounded-full
                   border
-                  border-[#dfe5ee]
+                  border-slate-200
                   bg-white
-                  px-5
+                  px-6
                   text-center
-                  text-xs
+                  text-sm
                   font-semibold
-                  text-[#5d7192]
+                  text-slate-800
+                  shadow-sm
                   transition-colors
                   duration-200
-                  hover:bg-[#f7f8fa]
-                  hover:text-[#091127]
-                  sm:px-6
+                  hover:bg-slate-50
                 "
               >
                 Talk to Sales
               </Link>
             </div>
 
-            {/* QUICK REFERENCE LINKS */}
-            <div
-              className="
-                flex
-                flex-wrap
-                items-center
-                gap-x-3
-                gap-y-1.5
-                text-xs
-                font-semibold
-                text-[#5d7192]
-              "
-            >
-              <Link
-                href="/developers-api-documentation"
-                className="transition-colors hover:text-[#091127]"
-              >
-                API Documentation
-              </Link>
-
-              <span className="text-[#dfe5ee]">·</span>
-
-              <Link
-                href="#"
-                className="transition-colors hover:text-[#091127]"
-              >
-                Authentication
-              </Link>
-
-              <span className="text-[#dfe5ee]">·</span>
-
-              <Link
-                href="developers-webhooks"
-                className="transition-colors hover:text-[#091127]"
-              >
-                Webhooks
-              </Link>
-
-              <span className="text-[#dfe5ee]">·</span>
-
-              <Link
-                href="/developer-sandbox"
-                className="transition-colors hover:text-[#091127]"
-              >
-                Developer Sandbox
-              </Link>
-            </div>
-
-            {/* WHAT THE CONVERSATION COVERS */}
-            <div
-              className="
-                w-full
-                rounded-2xl
-                border
-                border-[#dfe5ee]
-                bg-white
-                p-5
-                text-left
-                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
-                sm:p-6
-              "
-            >
-              <h3
-                className="!font-[family-name:var(--font-jakarta)] 
-                  !m-0
-                  text-base
-                  font-bold
-                  leading-6
-                  text-[#091127]
-                "
-              >
-                What the conversation covers
-              </h3>
-
-              <p
+            {/* MOBILE ONLY: QUICK REFERENCE LINKS & CONVERSATION COVERS */}
+            <div className="flex w-full flex-col gap-5 pt-3 block lg:hidden">
+              <div
                 className="
-                  !m-0
-                  mt-2
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-[#5d7192]
+                  flex
+                  flex-wrap
+                  items-center
+                  gap-x-4
+                  gap-y-2
+                  text-xs
+                  font-semibold
+                  text-[#1D70F5]
                 "
               >
-                Architecture fit, object and permission modeling, environment
-                and rollout sequencing, and operational ownership.
-              </p>
+                <Link
+                  href="/developers-api-documentation"
+                  className="hover:underline"
+                >
+                  API Documentation
+                </Link>
 
-              <p
-                className="
-                  !m-0
-                  mt-3
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-[#5d7192]
-                "
-              >
-                <span className="font-bold text-[#091127]">
-                  What it does not do:
-                </span>{" "}
-                promise custom features, delivery timelines or capability that
-                the canonical documentation does not already support.
-              </p>
+                <Link
+                  href="/developers-authentication"
+                  className="hover:underline"
+                >
+                  Authentication
+                </Link>
 
-              <p
+                <Link
+                  href="/developers-webhooks"
+                  className="hover:underline"
+                >
+                  Webhooks
+                </Link>
+
+                <Link
+                  href="/developer-sandbox"
+                  className="hover:underline"
+                >
+                  Developer Sandbox
+                </Link>
+              </div>
+
+              <div
                 className="
-                  !m-0
-                  mt-3
-                  text-sm
-                  font-normal
-                  leading-6
-                  text-[#5d7192]
+                  w-full
+                  rounded-2xl
+                  bg-[#EAF7F1]
+                  p-5
+                  text-left
+                  sm:p-6
                 "
               >
-                No long lead form appears on this page. Where a form exists in
-                the global system, it requests only the minimum needed to route
-                a technical conversation.
-              </p>
+                <h3
+                  className="!font-[family-name:var(--font-jakarta)] 
+                    !m-0
+                    text-base
+                    font-bold
+                    leading-6
+                    text-[#091127]
+                  "
+                >
+                  What the conversation covers
+                </h3>
+
+                <p
+                  className="
+                    !m-0
+                    mt-2.5
+                    text-xs
+                    font-normal
+                    leading-relaxed
+                    text-[#5d7192]
+                    sm:text-sm
+                  "
+                >
+                  Architecture fit, object and permission modeling, environment
+                  and rollout sequencing, and operational ownership.
+                </p>
+
+                <p
+                  className="
+                    !m-0
+                    mt-3
+                    text-xs
+                    font-normal
+                    leading-relaxed
+                    text-[#5d7192]
+                    sm:text-sm
+                  "
+                >
+                  <strong className="font-semibold text-slate-800">
+                    What it does not do:
+                  </strong>{" "}
+                  promise custom features, delivery timelines or capability that
+                  the canonical documentation does not already support.
+                </p>
+
+                <p
+                  className="
+                    !m-0
+                    mt-3
+                    text-xs
+                    font-normal
+                    leading-relaxed
+                    text-[#5d7192]
+                    sm:text-sm
+                  "
+                >
+                  No long lead form appears on this page. Where a form exists in
+                  the global system, it requests only the minimum needed to route
+                  a technical conversation.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="relative w-full lg:w-1/2">
+          {/* RIGHT IMAGE (DESKTOP ONLY) */}
+          <div className="hidden lg:flex relative w-full lg:w-1/2 justify-center lg:justify-end">
             <div
               className="
                 relative
@@ -290,10 +285,7 @@ export default function EnterpriseImplementationSection() {
                 max-w-[540px]
                 overflow-hidden
                 rounded-2xl
-                border
-                border-[#dfe5ee]
-                bg-white
-                shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                shadow-xl
                 lg:ml-auto
               "
             >
@@ -303,7 +295,7 @@ export default function EnterpriseImplementationSection() {
                 width={540}
                 height={420}
                 priority
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-cover rounded-2xl"
                 sizes="(max-width: 1024px) 100vw, 540px"
               />
             </div>

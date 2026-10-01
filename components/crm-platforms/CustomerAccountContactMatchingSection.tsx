@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface MatchingControlRow {
   control: string;
   requiredBehavior: string;
@@ -60,7 +62,7 @@ export default function CustomerAccountContactMatchingSection() {
   return (
     <section
       id="customer-matching"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -98,7 +100,7 @@ export default function CustomerAccountContactMatchingSection() {
             className="
               flex
               w-full
-              max-w-[760px]
+              max-w-[820px]
               flex-col
               items-center
               gap-3
@@ -121,7 +123,7 @@ export default function CustomerAccountContactMatchingSection() {
                   sm:tracking-[0.18em]
                 "
               >
-                Customer, Account, Contact &amp; Relationship Matching
+                Customer, Account &amp; Contact Matching &amp; Merge Discipline
               </span>
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
@@ -142,7 +144,8 @@ export default function CustomerAccountContactMatchingSection() {
                 lg:!text-[40px]
               "
             >
-              Weak signals suggest review. They never authorize a merge.
+              Weak signals suggest review. They <br className="hidden sm:inline" />
+              never authorize a merge.
             </h2>
 
             {/* DESCRIPTION */}
@@ -150,7 +153,7 @@ export default function CustomerAccountContactMatchingSection() {
               className="
                 !m-0
                 w-full
-                max-w-[720px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
@@ -158,24 +161,36 @@ export default function CustomerAccountContactMatchingSection() {
                 sm:text-base
               "
             >
-              Name, email, domain, phone, address, fuzzy similarity, AI
-              similarity and sales-owner overlap are review signals only —
-              never destructive merge authority.
+              Name, email domain, phone number, fuzzy matching or metadata can suggest that an account in CRM and a customer record in Billing represent the same customer — but only verified identifiers merge them.
             </p>
           </div>
 
-          {/* MATCHING CONTROLS */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
+          {/* DESKTOP ILLUSTRATION (MATCHING REFERENCE media_1790854883783.png) */}
+          <div className="hidden lg:block w-full max-w-[1240px] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/crm-platforms/crm3.png"
+              alt="Weak signals suggest review. They never authorize a merge."
+              width={1240}
+              height={620}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+            />
+          </div>
+
+          {/* MOBILE CONTENT (MATCHING CONTROLS) */}
+          <div className="flex w-full flex-col block lg:hidden">
+            <div
+              className="
+                w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#dfe5ee]
+                bg-white
+                shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+              "
+            >
             {/* CARD DESCRIPTION */}
             <div
               className="
@@ -273,6 +288,7 @@ export default function CustomerAccountContactMatchingSection() {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </div>

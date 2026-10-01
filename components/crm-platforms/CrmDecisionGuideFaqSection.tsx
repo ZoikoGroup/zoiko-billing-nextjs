@@ -180,7 +180,7 @@ export default function CrmDecisionGuideFaqSection() {
   return (
     <section
       id="crm-faq"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -262,7 +262,8 @@ export default function CrmDecisionGuideFaqSection() {
                 lg:!text-[40px]
               "
             >
-              Direct answers about CRM connections.
+              Direct answers about CRM <br className="hidden sm:inline" />
+              connections.
             </h2>
 
             {/* DESCRIPTION */}
@@ -270,7 +271,7 @@ export default function CrmDecisionGuideFaqSection() {
               className="
                 !m-0
                 w-full
-                max-w-[700px]
+                max-w-[760px]
                 text-[15px]
                 font-normal
                 leading-7
