@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"Frame 30.png\" hero-currency-policy.png)",
+      "Bash(mv div.png policy-workspace.png)",
+      "Bash(mv div.hier.png scope-layers.png)",
+      "Bash(mv div.gtable.png authority-review.png)",
+      "Bash(mv \"div.picker \\(1\\).png\" policy-states.png)"
+    ]
+  }
+}
