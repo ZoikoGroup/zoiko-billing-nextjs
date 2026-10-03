@@ -59,6 +59,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Entity-Level Controls', href: '/entity-level-controls' },
       { label: 'Jurisdiction Availability', href: '/jurisdiction-availability' },
       { label: 'Supported Languages', href: '/supported-languages' },
+      { label: 'Local Payment', href: '/local-payment' },
     ],
   },
   {
