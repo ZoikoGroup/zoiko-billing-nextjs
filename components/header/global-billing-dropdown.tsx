@@ -28,7 +28,7 @@ type MenuItem = {
 
 const MULTI_CURRENCY_ITEMS: MenuItem[] = [
   { title: 'Multi-Currency', description: 'Price, bill and collect in multiple currencies with real-time exchange rates.', href: '/multi-currency', icon: DollarSign },
-  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/multi-currency#fx-management', icon: RefreshCw },
+  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/fx-management', icon: RefreshCw },
   { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '#', icon: Sliders },
 ];
 
