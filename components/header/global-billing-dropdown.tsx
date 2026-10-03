@@ -28,19 +28,19 @@ type MenuItem = {
 
 const MULTI_CURRENCY_ITEMS: MenuItem[] = [
   { title: 'Multi-Currency', description: 'Price, bill and collect in multiple currencies with real-time exchange rates.', href: '/multi-currency', icon: DollarSign },
-  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/fx-management', icon: RefreshCw },
-  { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '#', icon: Sliders },
+  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/multi-currency#fx-management', icon: RefreshCw },
+  { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '/currency-control', icon: Sliders },
 ];
 
 const MULTI_ENTITY_ITEMS: MenuItem[] = [
   { title: 'Multi-Entity', description: 'Manage multiple legal entities, subsidiaries and business units.', href: '/multi-entity-billing', icon: Building2 },
   { title: 'Entity Configuration', description: 'Separate branding, tax profiles, bank accounts and documents.', href: '/entity-level-controls', icon: Settings },
-  { title: 'Inter-Entity Billing', description: 'Bill between entities with automated intercompany workflows.', href: '#', icon: ArrowLeftRight },
+  { title: 'Inter-Entity Billing', description: 'Bill between entities with automated intercompany workflows.', href: '/inter-entity-billing', icon: ArrowLeftRight },
 ];
 
 const LOCALISATION_ITEMS: MenuItem[] = [
   { title: 'Localised Invoicing', description: 'Generate invoices in local languages with region-specific formats.', href: '/localized-documents', icon: FileText },
-  { title: 'Local Payment Methods', description: 'Offer preferred payment methods for each region to improve conversion.', href: '#', icon: CreditCard },
+  { title: 'Local Payment Methods', description: 'Offer preferred payment methods for each region to improve conversion.', href: '/local-payment', icon: CreditCard },
   { title: 'Local Compliance', description: 'Adhere to local invoicing rules, legal requirements and business practices.', href: '#', icon: ShieldCheck },
 ];
 
