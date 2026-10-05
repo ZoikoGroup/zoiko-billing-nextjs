@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AdjacentAnswers() {
   return (
     <section className="w-full bg-white">
@@ -11,15 +13,11 @@ export default function AdjacentAnswers() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -59,7 +57,6 @@ export default function AdjacentAnswers() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -81,17 +78,12 @@ export default function AdjacentAnswers() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
-              Six destinations, and two are still
-        
-              pending routes.
+              Six destinations, and two are still pending routes.
             </h2>
 
             {/* DESCRIPTION */}
@@ -105,7 +97,6 @@ export default function AdjacentAnswers() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -155,8 +146,13 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <strong>Strengthen Auditability</strong> owns attribution,
-                evidence linkage and correction semantics.{" "}
+                <Link
+                  href="/strengthen-auditability"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  Strengthen Auditability
+                </Link>{" "}
+                owns attribution, evidence linkage and correction semantics.{" "}
                 <strong>Route pending — no link asserted.</strong>
               </p>
             </div>
@@ -200,8 +196,14 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <strong>Founders and Owners</strong> covers what to monitor as
-                complexity grows. <strong>Route pending.</strong>
+                <Link
+                  href="/founders-and-owners"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  Founders and Owners
+                </Link>{" "}
+                covers what to monitor as complexity grows.{" "}
+                <strong>Route pending.</strong>
               </p>
             </div>
 
@@ -244,9 +246,12 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <span className="font-semibold text-blue-600">
+                <Link
+                  href="/roles-and-approvals"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
                   Roles &amp; Approvals
-                </span>{" "}
+                </Link>{" "}
                 owns permission and approval behavior —{" "}
                 <strong>
                   this page describes the operating model, not the feature
@@ -294,7 +299,12 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <span className="font-semibold text-blue-600">Product</span>{" "}
+                <Link
+                  href="/product"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  Product
+                </Link>{" "}
                 owns how corrections and states actually work.
               </p>
             </div>
@@ -338,12 +348,17 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <span className="font-semibold text-blue-600">
+                <Link
+                  href="/trust-center"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
                   Trust Center
-                </span>
+                </Link>
                 .{" "}
-                <strong>Operational reviewability is not compliance</strong>,
-                and this page draws no such conclusion.
+                <strong>
+                  Operational reviewability is not compliance
+                </strong>
+                , and this page draws no such conclusion.
               </p>
             </div>
 
@@ -386,8 +401,14 @@ export default function AdjacentAnswers() {
                   text-[#5d7192]
                 "
               >
-                <span className="font-semibold text-blue-600">Pricing</span>.
-                <strong> No entitlement is inferred</strong> from any control
+                <Link
+                  href="/pricing"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  Pricing
+                </Link>
+                .{" "}
+                <strong>No entitlement is inferred</strong> from any control
                 capability described here.
               </p>
             </div>

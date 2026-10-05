@@ -159,7 +159,7 @@ export default function StandardiseBillingControl() {
             "
           >
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

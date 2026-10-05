@@ -51,14 +51,14 @@ export default function ReportsInsightsHeroSection() {
             {/* CTAs */}
             <div className="flex w-full flex-wrap items-center gap-3 pt-1 sm:w-auto">
               <Link
-                href="#book-demo"
+                href="/book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#1D70F5] px-6 text-center text-xs sm:text-sm font-semibold !text-white shadow-md shadow-blue-500/25 transition hover:bg-blue-600"
               >
                 <span className="text-white font-semibold">Book Demo</span>
               </Link>
 
               <Link
-                href="#create-account"
+                href="/create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 transition hover:bg-slate-50"
               >
                 <span className="text-slate-900 font-semibold">Create Account</span>

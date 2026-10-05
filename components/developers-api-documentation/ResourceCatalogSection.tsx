@@ -65,7 +65,9 @@ const catalogRows: CatalogRow[] = [
 
 export default function ResourceCatalogSection() {
   return (
-    <section className="w-full bg-slate-50/60 py-16 lg:py-24 border-t border-slate-100" id="catalog">
+    <section
+    id ="browse-resources"
+     className="w-full bg-slate-50/60 py-16 lg:py-24 border-t border-slate-100" >
       <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
         
         {/* Eyebrow */}

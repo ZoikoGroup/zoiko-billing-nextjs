@@ -40,7 +40,9 @@ const evidenceClassRows: EvidenceClassRow[] = [
 
 export default function EvidenceTrustPostureSection() {
   return (
-    <section className="w-full bg-white py-12 lg:py-24 border-t border-slate-100" id="trust-posture">
+    <section
+    id = "evidence"
+     className="w-full bg-white py-12 lg:py-24 border-t border-slate-100" >
       <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 sm:px-8 lg:px-12 text-center">
         
         {/* Eyebrow */}

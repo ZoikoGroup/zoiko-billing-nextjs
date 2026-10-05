@@ -1,47 +1,54 @@
+import Link from "next/link";
+
 const handoffs = [
   {
     question: "How does the product behave?",
     authority: "Documentation and approved product pages",
     behavior: "Summarize only; link to authority",
+    href: "/documentation",
   },
   {
     question: "I have a problem and need help.",
     authority: "Help Center · Contact Support",
     behavior: "Do not turn education content into support intake",
+    href: "/help-center",
+    contactHref: "/contact-support",
     emphasis: true,
   },
   {
     question: "Is the service operational?",
     authority: "System Status",
     behavior: "Never hard-code a green operational claim",
+    href: "/system-status",
     emphasis: true,
   },
   {
     question: "Security, privacy or assurance?",
     authority: "Security Overview · Trust Center · Privacy",
     behavior: "Route to current evidence",
+    href: "/security-overview",
+    trustHref: "/trust-center",
+    privacyHref: "/privacy",
   },
   {
     question: "What does it cost?",
     authority: "Pricing",
     behavior: "Do not duplicate commercial values",
-    authorityLink: true,
+    href: "/pricing",
     emphasis: true,
   },
   {
     question: "How do I integrate?",
-    authority: (
-      <>
-        <span className="font-semibold text-[#5279b4]">Integrations</span>
-        <span> · Developers</span>
-      </>
-    ),
+    authority: "Integrations · Developers",
     behavior: "Route to approved technical destinations",
+    href: "/integrations",
+    developersHref: "/developers",
   },
   {
     question: "What changed?",
     authority: "Product Updates",
     behavior: "Avoid roadmap and incident overlap",
+    href: "/product-updates",
   },
 ];
 
@@ -58,15 +65,11 @@ export default function AuthoritativeHandoffs() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -79,9 +82,7 @@ export default function AuthoritativeHandoffs() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
@@ -110,7 +111,6 @@ export default function AuthoritativeHandoffs() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -132,16 +132,13 @@ export default function AuthoritativeHandoffs() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
               Seven questions this page answers by
-             pointing elsewhere.
+              pointing elsewhere.
             </h2>
 
             {/* DESCRIPTION */}
@@ -154,7 +151,6 @@ export default function AuthoritativeHandoffs() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -248,19 +244,77 @@ export default function AuthoritativeHandoffs() {
 
                   {/* AUTHORITY */}
                   <div className="px-4 py-3.5">
-                    <span
-                      className={`
-                        text-sm
-                        leading-5
-                        ${
-                          item.authorityLink
-                            ? "font-semibold text-[#5279b4]"
-                            : "font-normal text-[#5d7192]"
-                        }
-                      `}
-                    >
-                      {item.authority}
-                    </span>
+                    {item.question === "I have a problem and need help." ? (
+                      <div className="flex flex-wrap items-center gap-1">
+                        <Link
+                          href={item.href}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] !hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Help Center
+                        </Link>
+
+                        <span className="text-sm text-[#5d7192]">·</span>
+
+                        <Link
+                          href={item.contactHref!}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] !hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Contact Support
+                        </Link>
+                      </div>
+                    ) : item.question === "Security, privacy or assurance?" ? (
+                      <div className="flex flex-wrap items-center gap-1">
+                        <Link
+                          href={item.href}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] !hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Security Overview
+                        </Link>
+
+                        <span className="text-sm text-[#5d7192]">·</span>
+
+                        <Link
+                          href={item.trustHref!}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Trust Center
+                        </Link>
+
+                        <span className="text-sm text-[#5d7192]">·</span>
+
+                        <Link
+                          href={item.privacyHref!}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Privacy
+                        </Link>
+                      </div>
+                    ) : item.question === "How do I integrate?" ? (
+                      <div className="flex flex-wrap items-center gap-1">
+                        <Link
+                          href={item.href}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Integrations
+                        </Link>
+
+                        <span className="text-sm text-[#5d7192]">·</span>
+
+                        <Link
+                          href={item.developersHref!}
+                          className="text-sm font-semibold leading-5 !text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                        >
+                          Developers
+                        </Link>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-sm font-semibold leading-5 !text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        {item.authority}
+                      </Link>
+                    )}
                   </div>
 
                   {/* BEHAVIOR */}
@@ -339,21 +393,87 @@ export default function AuthoritativeHandoffs() {
                     Authority
                   </p>
 
-                  <p
-                    className={`
-                      !m-0
-                      mt-1.5
-                      text-sm
-                      leading-6
-                      ${
-                        item.authorityLink
-                          ? "font-semibold text-[#5279b4]"
-                          : "text-[#5d7192]"
-                      }
-                    `}
-                  >
-                    {item.authority}
-                  </p>
+                  {item.question === "I have a problem and need help." ? (
+                    <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                      <Link
+                        href={item.href}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Help Center
+                      </Link>
+
+                      <span className="text-sm text-[#5d7192]">·</span>
+
+                      <Link
+                        href={item.contactHref!}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Contact Support
+                      </Link>
+                    </div>
+                  ) : item.question === "Security, privacy or assurance?" ? (
+                    <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                      <Link
+                        href={item.href}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Security Overview
+                      </Link>
+
+                      <span className="text-sm text-[#5d7192]">·</span>
+
+                      <Link
+                        href={item.trustHref!}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Trust Center
+                      </Link>
+
+                      <span className="text-sm text-[#5d7192]">·</span>
+
+                      <Link
+                        href={item.privacyHref!}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Privacy
+                      </Link>
+                    </div>
+                  ) : item.question === "How do I integrate?" ? (
+                    <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                      <Link
+                        href={item.href}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Integrations
+                      </Link>
+
+                      <span className="text-sm text-[#5d7192]">·</span>
+
+                      <Link
+                        href={item.developersHref!}
+                        className="text-sm font-semibold leading-6 text-[#5279b4] hover:text-[#091127] hover:underline underline-offset-4"
+                      >
+                        Developers
+                      </Link>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="
+                        mt-1.5
+                        inline-flex
+                        text-sm
+                        font-semibold
+                        leading-6
+                        text-[#5279b4]
+                        hover:text-[#091127]
+                        hover:underline
+                        underline-offset-4
+                      "
+                    >
+                      {item.authority}
+                    </Link>
+                  )}
 
                   {/* BEHAVIOR */}
                   <p
@@ -379,7 +499,7 @@ export default function AuthoritativeHandoffs() {
                       ${
                         item.emphasis
                           ? "font-bold text-[#5d7192]"
-                          : "text-[#5d7192]"
+                          : "font-normal text-[#5d7192]"
                       }
                     `}
                   >

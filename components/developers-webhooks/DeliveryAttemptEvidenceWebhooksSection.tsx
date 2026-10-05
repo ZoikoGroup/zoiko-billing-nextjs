@@ -107,7 +107,9 @@ export default function DeliveryAttemptEvidenceWebhooksSection() {
   const activeItem = deliveryFixtures[selectedIdx];
 
   return (
-    <section className="w-full bg-white py-12 lg:py-24 border-t border-slate-100" id="attempt-evidence">
+    <section 
+    id = "delivery-model"
+    className="w-full bg-white py-12 lg:py-24 border-t border-slate-100">
       <div className="mx-auto flex max-w-[1320px] flex-col items-center px-4 sm:px-8 lg:px-12 text-center">
         
         {/* Eyebrow */}

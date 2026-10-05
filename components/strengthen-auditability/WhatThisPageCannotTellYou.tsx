@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 export default function WhatThisPageCannotTellYou() {
   const questions = [
     {
       question: "Does this satisfy our auditors?",
       answer: (
         <>
-          <strong>No compliance conclusion is drawn anywhere on this page.</strong>{" "}
+          <strong>
+            No compliance conclusion is drawn anywhere on this page.
+          </strong>{" "}
           That judgement belongs to your auditors and advisors against a
           standard this page does not know.
         </>
@@ -15,14 +19,15 @@ export default function WhatThisPageCannotTellYou() {
       answer: (
         <>
           Retention is owned by{" "}
-          <span className="font-semibold text-blue-600">
+          <Link
+            href="/privacy-and-data-governance"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             Privacy &amp; Data Governance
-          </span>{" "}
+          </Link>{" "}
           and commercial terms.{" "}
-          <strong>
-            No retention period is invented here
-          </strong>
-          , and retention is not recoverability.
+          <strong>No retention period is invented here</strong>, and retention
+          is not recoverability.
         </>
       ),
     },
@@ -30,8 +35,13 @@ export default function WhatThisPageCannotTellYou() {
       question: "What does the product actually record?",
       answer: (
         <>
-          <span className="font-semibold text-blue-600">Product</span> owns
-          the record model. These principles are recommended architecture,{" "}
+          <Link
+            href="/product"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Product
+          </Link>{" "}
+          owns the record model. These principles are recommended architecture,{" "}
           <strong>not verified fields</strong>.
         </>
       ),
@@ -43,8 +53,13 @@ export default function WhatThisPageCannotTellYou() {
           <strong>
             No signature, hash or tamper-evidence mechanism is claimed.
           </strong>{" "}
-          <span className="font-semibold text-blue-600">Security</span> owns
-          control detail at the level it publishes.
+          <Link
+            href="/security-overview"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Security
+          </Link>{" "}
+          owns control detail at the level it publishes.
         </>
       ),
     },
@@ -61,8 +76,13 @@ export default function WhatThisPageCannotTellYou() {
       question: "Who owns the decision itself?",
       answer: (
         <>
-          <strong>Standardise Billing Control</strong> covers ownership and
-          approval design.{" "}
+          <Link
+            href="/standardise-billing-control"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Standardise Billing Control
+          </Link>{" "}
+          covers ownership and approval design.{" "}
           <strong>Route pending — no link asserted.</strong>
         </>
       ),
@@ -81,15 +101,11 @@ export default function WhatThisPageCannotTellYou() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -102,7 +118,6 @@ export default function WhatThisPageCannotTellYou() {
             flex-col
             items-center
             gap-5
-
             sm:gap-6
           "
         >
@@ -131,7 +146,6 @@ export default function WhatThisPageCannotTellYou() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -153,17 +167,12 @@ export default function WhatThisPageCannotTellYou() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
-              Six questions with authorities
-        
-              elsewhere.
+              Six questions with authorities elsewhere.
             </h2>
 
             {/* DESCRIPTION */}
@@ -176,7 +185,6 @@ export default function WhatThisPageCannotTellYou() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -202,7 +210,6 @@ export default function WhatThisPageCannotTellYou() {
                   px-5
                   py-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-
                   sm:px-6
                   sm:py-5
                 "
@@ -216,7 +223,6 @@ export default function WhatThisPageCannotTellYou() {
                     font-bold
                     leading-6
                     text-[#091127]
-
                     sm:text-[15px]
                   "
                 >
@@ -233,7 +239,6 @@ export default function WhatThisPageCannotTellYou() {
                     font-normal
                     leading-5
                     text-[#5d7192]
-
                     sm:text-sm
                     sm:leading-6
                   "

@@ -1,75 +1,83 @@
+import Link from "next/link";
+
 const topics = [
   {
     topic: "Customer records",
     intent:
       "Billing identity, contacts, terms, delivery preferences, record governance.",
     authority: "Customer Records",
-    linked: true,
+    href: "/customer-records",
   },
   {
     topic: "Invoices & credit notes",
     intent: "Issue, review and correct billing documents.",
     authority: "Invoices",
+    href: "/invoices",
   },
   {
     topic: "Charges & adjustments",
     intent: "Line items, fees, discounts, controlled corrections.",
     authority: "Charges & Adjustments",
+    href: "/charges-and-adjustments",
   },
   {
     topic: "Billing schedules",
     intent: "Repeat and scheduled billing activity and review.",
     authority: "Billing Schedules",
+    href: "/billing-schedules",
   },
   {
     topic: "Documents & delivery",
     intent: "Generation, sending, delivery evidence and exceptions.",
     authority: "Documents & Delivery",
+    href: "/documents-and-delivery",
   },
   {
     topic: "Accounts receivable",
     intent:
       "Open receivables, ownership, reminders, disputes, exceptions.",
     authority: "Accounts Receivable",
+    href: "/accounts-receivable",
   },
   {
     topic: "Payments & reconciliation",
     intent:
       "Payment records, allocation, reconciliation, unknown outcomes.",
     authority: "Payments & Reconciliation",
+    href: "/payments-and-reconcilliation",
   },
   {
     topic: "Outstanding balances",
     intent: "Aging, priority, collection visibility, status context.",
     authority: "Outstanding Balances",
-    linked: true,
+    href: "/outstanding-balances",
   },
   {
     topic: "Reporting & analytics",
     intent:
       "Metrics, filters, trends, drill-through, exports, definitions.",
     authority: "Reporting & Analytics",
+    href: "/reporting-and-analytics",
   },
   {
     topic: "Integrations",
     intent:
       "Payment providers, accounting and ERP, CRM, banking, Zoiko ecosystem.",
     authority: "Integrations",
-    linked: true,
+    href: "/integrations",
   },
   {
     topic: "Developer implementation",
     intent:
       "APIs, auth, webhooks, sandbox, SDKs and examples, integration lifecycle.",
     authority: "Developers",
+    href: "/implementation-guidance",
   },
 ];
 
 export default function BrowseBillingTopics() {
   return (
-    <section
-    id ="topics"
-     className="w-full bg-white">
+    <section id="topics" className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -80,15 +88,11 @@ export default function BrowseBillingTopics() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -101,13 +105,10 @@ export default function BrowseBillingTopics() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
-          {/* SECTION INTRO */}
           <div
             className="
               flex
@@ -120,7 +121,6 @@ export default function BrowseBillingTopics() {
               text-center
             "
           >
-            {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
@@ -132,7 +132,6 @@ export default function BrowseBillingTopics() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -143,7 +142,6 @@ export default function BrowseBillingTopics() {
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* HEADING */}
             <h2
               className="
                 !m-0
@@ -154,11 +152,8 @@ export default function BrowseBillingTopics() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -166,7 +161,6 @@ export default function BrowseBillingTopics() {
               <br className="hidden sm:block" /> authoritative product handoff.
             </h2>
 
-            {/* DESCRIPTION */}
             <p
               className="
                 !m-0
@@ -176,7 +170,6 @@ export default function BrowseBillingTopics() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -185,7 +178,6 @@ export default function BrowseBillingTopics() {
             </p>
           </div>
 
-          {/* TABLE */}
           <div
             className="
               w-full
@@ -197,9 +189,7 @@ export default function BrowseBillingTopics() {
               shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
             "
           >
-            {/* DESKTOP TABLE */}
             <div className="hidden md:block">
-              {/* HEADER */}
               <div
                 className="
                   grid
@@ -253,7 +243,6 @@ export default function BrowseBillingTopics() {
                 </div>
               </div>
 
-              {/* ROWS */}
               {topics.map((item, index) => (
                 <div
                   key={item.topic}
@@ -267,7 +256,6 @@ export default function BrowseBillingTopics() {
                     }
                   `}
                 >
-                  {/* TOPIC */}
                   <div className="px-4 py-3.5">
                     <span
                       className="
@@ -281,7 +269,6 @@ export default function BrowseBillingTopics() {
                     </span>
                   </div>
 
-                  {/* INTENT */}
                   <div className="px-4 py-3.5">
                     <span
                       className="
@@ -295,27 +282,28 @@ export default function BrowseBillingTopics() {
                     </span>
                   </div>
 
-                  {/* AUTHORITY */}
                   <div className="px-4 py-3.5">
-                    <span
-                      className={`
+                    <Link
+                      href={item.href}
+                      className="
+                        inline-flex
                         text-sm
+                        font-semibold
                         leading-6
-                        ${
-                          item.linked
-                            ? "font-semibold text-[#5279b4]"
-                            : "font-normal text-[#5d7192]"
-                        }
-                      `}
+                        text-[#5279b4]
+                        transition-colors
+                        hover:text-[#091127]
+                        hover:underline
+                        underline-offset-4
+                      "
                     >
                       {item.authority}
-                    </span>
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* MOBILE CARDS */}
             <div className="flex flex-col md:hidden">
               {topics.map((item, index) => (
                 <div
@@ -329,7 +317,6 @@ export default function BrowseBillingTopics() {
                     }
                   `}
                 >
-                  {/* TOPIC */}
                   <div className="mb-4">
                     <p
                       className="
@@ -358,7 +345,6 @@ export default function BrowseBillingTopics() {
                     </p>
                   </div>
 
-                  {/* RESOURCE INTENT */}
                   <div className="mb-4">
                     <p
                       className="
@@ -386,7 +372,6 @@ export default function BrowseBillingTopics() {
                     </p>
                   </div>
 
-                  {/* PRODUCT AUTHORITY */}
                   <div>
                     <p
                       className="
@@ -401,21 +386,23 @@ export default function BrowseBillingTopics() {
                       Product authority
                     </p>
 
-                    <p
-                      className={`
-                        !m-0
+                    <Link
+                      href={item.href}
+                      className="
                         mt-1.5
+                        inline-flex
                         text-sm
+                        font-semibold
                         leading-6
-                        ${
-                          item.linked
-                            ? "font-semibold text-[#5279b4]"
-                            : "text-[#5d7192]"
-                        }
-                      `}
+                        text-[#5279b4]
+                        transition-colors
+                        hover:text-[#091127]
+                        hover:underline
+                        underline-offset-4
+                      "
                     >
                       {item.authority}
-                    </p>
+                    </Link>
                   </div>
                 </div>
               ))}

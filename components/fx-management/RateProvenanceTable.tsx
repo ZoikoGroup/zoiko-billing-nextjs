@@ -67,7 +67,9 @@ export default function RateProvenanceTable() {
   ];
 
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section 
+    id = "rate-provenance"
+    className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
