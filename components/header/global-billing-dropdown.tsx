@@ -53,7 +53,7 @@ const TAX_COMPLIANCE_ITEMS: MenuItem[] = [
 const QUICK_LINKS = [
   { label: 'Supported Countries', href: '/supported-countries' },
   { label: 'Tax & Compliance', href: '/global-billing' },
-  { label: 'Multi-Currency Pricing', href: '/global-billing' },
+  { label: 'Multi-Currency Pricing', href: '/multi-currency-pricing' },
   { label: 'Local Payment Methods', href: '/global-billing' },
   { label: 'Global Capabilities Overview', href: '/global-billing' },
 ];

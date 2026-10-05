@@ -30,12 +30,12 @@ const journeyCards: JourneyCard[] = [
   {
     title: "Developer Sandbox",
     description: "Non-production fidelity and test evidence.",
-    href: "/developers-sandbox",
+    href: "/developer-sandbox",
   },
   {
     title: "SDKs & Examples",
     description: "Supported SDK guidance and compatibility.",
-    href: "/developers-sdks-and-examples",
+    href: "/sdks-and-examples",
   },
 ];
 

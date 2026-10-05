@@ -44,14 +44,14 @@ export default function DeveloperDocFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#build-integration"
+                href="/developers-build-integration"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-sm font-semibold !text-slate-900 shadow-sm transition hover:bg-slate-100"
               >
                 <span className="text-slate-900 font-semibold">Build an Integration</span>
               </Link>
 
               <Link
-                href="#authentication"
+                href="/developers-authentication"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-white/80 bg-transparent px-6 text-center text-sm font-semibold !text-white shadow-sm transition hover:bg-white/10 hover:border-white"
               >
                 <span className="text-white font-semibold">Authentication</span>
@@ -92,14 +92,14 @@ export default function DeveloperDocFinalCtaSection() {
           {/* 3 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2 mb-6 relative z-10">
             <Link
-              href="#build-integration"
+              href="/developers-build-integration"
               className="inline-flex min-h-9 items-center justify-center rounded-full bg-white px-4 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Build an Integration</span>
             </Link>
 
             <Link
-              href="#authentication"
+              href="/developers-authentication"
               className="inline-flex min-h-9 items-center justify-center rounded-full border border-white/80 bg-transparent px-4 text-center text-xs font-semibold !text-white"
             >
               <span className="text-white font-semibold">Authentication</span>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function StartByGoal() {
   const goals = [
     {
@@ -5,24 +7,28 @@ export default function StartByGoal() {
       description:
         "Understand product fit, invoice-to-payment scope, global and integration options, pricing, customer evidence, and trust.",
       action: "Explore evaluation resources",
+      href: "/product",
     },
     {
       title: "Improve billing operations",
       description:
         "Find guidance for invoicing, receivables, payment and reconciliation, outstanding balances, and reporting.",
       action: "Browse operational topics",
+      href: "/help-center",
     },
     {
       title: "Implement or integrate",
       description:
         "Route to implementation guidance, the Integrations Directory, Developers, API documentation, sandbox, SDKs and examples, and Build an Integration.",
       action: "Go to Integrations",
+      href: "/integrations",
     },
     {
       title: "Get help or stay current",
       description:
         "Route to Help Center, Documentation, Product Updates, System Status, and Contact Support.",
       action: "See authoritative handoffs",
+      href: "/contact-support",
     },
   ];
 
@@ -203,11 +209,14 @@ export default function StartByGoal() {
                 </p>
 
                 {/* ACTION */}
-                <button
-                  type="button"
+                <Link
+                  href={goal.href}
                   className="
                     mt-auto
+                    inline-flex
                     min-h-9
+                    items-center
+                    justify-center
                     rounded-full
                     border
                     border-[#dfe5ee]
@@ -224,7 +233,7 @@ export default function StartByGoal() {
                   "
                 >
                   {goal.action}
-                </button>
+                </Link>
               </div>
             ))}
           </div>

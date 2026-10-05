@@ -25,17 +25,17 @@ const journeyCards: JourneyCard[] = [
   {
     title: "Developer Sandbox",
     description: "Test approved integration behavior in a safe environment when available.",
-    href: "#sandbox",
+    href: "/developer-sandbox",
   },
   {
     title: "SDKs & Examples",
     description: "Use source-approved consumer and verification examples.",
-    href: "#sdks",
+    href: "sdks-and-examples",
   },
   {
     title: "Build an Integration",
     description: "Move from reference knowledge to a governed implementation journey.",
-    href: "#build",
+    href: "/developers-build-an-integration",
   },
 ];
 
