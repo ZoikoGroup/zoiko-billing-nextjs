@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AuthorityBoundary() {
   const rows = [
     {
@@ -5,7 +7,7 @@ export default function AuthorityBoundary() {
       authority: "Contact Support",
       behavior:
         "Collect minimum necessary context and create or route a request",
-      authorityLink: true,
+      href: "/contact-support",
     },
     {
       need: "Cannot sign in or recover an account",
@@ -16,7 +18,7 @@ export default function AuthorityBoundary() {
           <strong>recovery secrets are never requested here</strong>
         </>
       ),
-      authorityLink: true,
+      href: "/account-access",
     },
     {
       need: "Subscription or account charge issue",
@@ -24,10 +26,12 @@ export default function AuthorityBoundary() {
       behavior: (
         <>
           Routed to secure billing intake;{" "}
-          <strong>no unnecessary financial evidence on the general form</strong>
+          <strong>
+            no unnecessary financial evidence on the general form
+          </strong>
         </>
       ),
-      authorityLink: true,
+      href: "/billing-support",
     },
     {
       need: "API, webhook or integration diagnostics",
@@ -38,12 +42,14 @@ export default function AuthorityBoundary() {
           <strong>secrets are never requested in a general form</strong>
         </>
       ),
+      href: "/integration-support",
     },
     {
       need: "Implementation or migration planning",
       authority: "Implementation Guidance",
       behavior:
         "Structured needs routed there before generic case creation",
+      href: "/implementation-guidance",
     },
     {
       need: "Service outage or degradation",
@@ -54,16 +60,25 @@ export default function AuthorityBoundary() {
           <strong>no incident state published here</strong>
         </>
       ),
+      href: "/system-status",
     },
     {
       need: "Security vulnerability",
       authority: "Responsible Disclosure",
-      behavior: <strong>Ordinary support intake is not vulnerability intake</strong>,
+      behavior: (
+        <strong>
+          Ordinary support intake is not vulnerability intake
+        </strong>
+      ),
+      href: "/responsible-disclosure",
     },
     {
       need: "Support coverage or commitment",
       authority: "Support Policy",
-      behavior: <strong>No copied SLA, channel or response commitment</strong>,
+      behavior: (
+        <strong>No copied SLA, channel or response commitment</strong>
+      ),
+      href: "/support-policy",
     },
   ];
 
@@ -237,15 +252,12 @@ export default function AuthorityBoundary() {
 
                   {/* AUTHORITY */}
                   <div className="px-4 py-3.5">
-                    <span
-                      className={`text-sm leading-5 ${
-                        row.authorityLink
-                          ? "font-semibold text-[#2563eb]"
-                          : "font-normal text-[#5d7192]"
-                      }`}
+                    <Link
+                      href={row.href}
+                      className="text-sm font-semibold leading-5 text-[#2563eb] hover:underline"
                     >
                       {row.authority}
-                    </span>
+                    </Link>
                   </div>
 
                   {/* BEHAVIOR */}
@@ -286,14 +298,13 @@ export default function AuthorityBoundary() {
                       Authority
                     </p>
 
-                    <p
-                      className={`!m-0 mt-1.5 text-sm leading-5 ${
-                        row.authorityLink
-                          ? "font-semibold text-[#2563eb]"
-                          : "font-normal text-[#5d7192]"
-                      }`}
-                    >
-                      {row.authority}
+                    <p className="!m-0 mt-1.5 text-sm leading-5">
+                      <Link
+                        href={row.href}
+                        className="font-semibold text-[#2563eb] hover:underline"
+                      >
+                        {row.authority}
+                      </Link>
                     </p>
                   </div>
 

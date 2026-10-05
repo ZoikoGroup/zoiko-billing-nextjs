@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FoundersAndOwnersHero() {
   return (
@@ -152,8 +153,8 @@ export default function FoundersAndOwnersHero() {
               sm:flex-wrap
             "
           >
-            <button
-              type="button"
+            <Link
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -175,10 +176,10 @@ export default function FoundersAndOwnersHero() {
               "
             >
               Create Account
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11
@@ -201,7 +202,7 @@ export default function FoundersAndOwnersHero() {
               "
             >
               Book Demo
-            </button>
+            </Link>
           </div>
         </div>
 

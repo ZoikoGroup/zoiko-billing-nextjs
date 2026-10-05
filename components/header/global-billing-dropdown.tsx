@@ -28,7 +28,7 @@ type MenuItem = {
 
 const MULTI_CURRENCY_ITEMS: MenuItem[] = [
   { title: 'Multi-Currency', description: 'Price, bill and collect in multiple currencies with real-time exchange rates.', href: '/multi-currency', icon: DollarSign },
-  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/multi-currency#fx-management', icon: RefreshCw },
+  { title: 'FX Management', description: 'Automated FX rate updates, markups, rounding and revaluation.', href: '/fx-management', icon: RefreshCw },
   { title: 'Currency Controls', description: 'Define primary, billing and settlement currencies per entity or customer.', href: '/currency-control', icon: Sliders },
 ];
 
@@ -41,17 +41,17 @@ const MULTI_ENTITY_ITEMS: MenuItem[] = [
 const LOCALISATION_ITEMS: MenuItem[] = [
   { title: 'Localised Invoicing', description: 'Generate invoices in local languages with region-specific formats.', href: '/localized-documents', icon: FileText },
   { title: 'Local Payment Methods', description: 'Offer preferred payment methods for each region to improve conversion.', href: '/local-payment', icon: CreditCard },
-  { title: 'Local Compliance', description: 'Adhere to local invoicing rules, legal requirements and business practices.', href: '#', icon: ShieldCheck },
+  { title: 'Local Compliance', description: 'Adhere to local invoicing rules, legal requirements and business practices.', href: '/local-compliance', icon: ShieldCheck },
 ];
 
 const TAX_COMPLIANCE_ITEMS: MenuItem[] = [
-  { title: 'Tax Configuration', description: 'Configure tax rules, rates and exemptions by country or region.', href: '#', icon: FileText },
-  { title: 'Indirect Tax', description: 'Handle VAT, GST, sales tax and other indirect taxes with accuracy.', href: '#', icon: Landmark },
+  { title: 'Tax Configuration', description: 'Configure tax rules, rates and exemptions by country or region.', href: '/tax-configuration', icon: FileText },
+  { title: 'Indirect Tax', description: 'Handle VAT, GST, sales tax and other indirect taxes with accuracy.', href: '/indirect-tax', icon: Landmark },
   { title: 'Jurisdiction Availability', description: 'View supported countries, coverage status and compliance readiness.', href: '/jurisdiction-availability', icon: Globe2 },
 ];
 
 const QUICK_LINKS = [
-  { label: 'Supported Countries', href: '/global-billing' },
+  { label: 'Supported Countries', href: '/supported-countries' },
   { label: 'Tax & Compliance', href: '/global-billing' },
   { label: 'Multi-Currency Pricing', href: '/global-billing' },
   { label: 'Local Payment Methods', href: '/global-billing' },

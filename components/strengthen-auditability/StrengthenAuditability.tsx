@@ -153,7 +153,7 @@ export default function StrengthenAuditability() {
             "
           >
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

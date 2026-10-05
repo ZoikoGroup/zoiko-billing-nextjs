@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function TrustSecurityDestinations() {
   const destinations = [
     {
@@ -5,6 +7,7 @@ export default function TrustSecurityDestinations() {
       title: "Security Overview",
       description:
         "Control domains, public-safe governance and evidence routing.",
+      href: "/security-overview",
     },
     {
       number: "02",
@@ -18,36 +21,42 @@ export default function TrustSecurityDestinations() {
       title: "Privacy & Data Governance",
       description:
         "Data lifecycle, retention boundaries and privacy rights.",
+      href: "/privacy-and-data-governance",
     },
     {
       number: "04",
       title: "Business Continuity",
       description:
         "Preparedness governance and recovery objective semantics.",
+      href: "/business-continuity",
     },
     {
       number: "05",
       title: "Responsible Disclosure",
       description:
         "Testing rules, evidence limits and reporting route.",
+      href: "/responsible-disclosure",
     },
     {
       number: "06",
       title: "Security Advisories",
       description:
         "Published advisories, affected scope and action guidance.",
+      href: "/security-advisories",
     },
     {
       number: "07",
       title: "Accessibility",
       description:
         "Conformance semantics, known limitations and reporting.",
+      href: "/accessibility",
     },
     {
       number: "08",
       title: "System Status",
       description:
         "Current service state, incidents and maintenance.",
+      href: "/system-status",
     },
   ];
 
@@ -213,7 +222,16 @@ export default function TrustSecurityDestinations() {
                       }
                     `}
                   >
-                    {destination.title}
+                    {destination.href ? (
+                      <Link
+                        href={destination.href}
+                        className="hover:underline"
+                      >
+                        {destination.title}
+                      </Link>
+                    ) : (
+                      destination.title
+                    )}
                   </h3>
                 </div>
 

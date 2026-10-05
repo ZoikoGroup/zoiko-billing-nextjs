@@ -4,7 +4,7 @@ export default function TechnicalResourcesCrossNavigation() {
       need: "Interface specifics and technical contracts",
       authority: (
         <>
-          <a href="#" className="font-semibold text-blue-600">
+          <a href="/documentation" className="font-semibold !text-blue-600">
             Documentation
           </a>{" "}
           · Developers
@@ -15,7 +15,7 @@ export default function TechnicalResourcesCrossNavigation() {
     {
       need: "What Zoiko Billing connects to today",
       authority: (
-        <a href="#" className="font-semibold text-blue-600">
+        <a href="/integrations" className="font-semibold !text-blue-600">
           Integrations
         </a>
       ),
@@ -25,7 +25,7 @@ export default function TechnicalResourcesCrossNavigation() {
     {
       need: "Whether an integration applies in your market",
       authority: (
-        <a href="#" className="font-semibold text-blue-600">
+        <a href="/integration-availability" className="font-semibold !text-blue-600">
           Integration availability
         </a>
       ),
@@ -41,7 +41,7 @@ export default function TechnicalResourcesCrossNavigation() {
     {
       need: "An account-specific integration failure",
       authority: (
-        <a href="#" className="font-semibold text-blue-600">
+        <a href="/integration-support" className="font-semibold !text-blue-600">
           Integration Support
         </a>
       ),
@@ -54,7 +54,7 @@ export default function TechnicalResourcesCrossNavigation() {
     {
       need: "Submitting an integration you built",
       authority: (
-        <a href="#" className="font-semibold text-blue-600">
+        <a href="/integrations" className="font-semibold !text-blue-600">
           Submit an Integration
         </a>
       ),
@@ -64,7 +64,7 @@ export default function TechnicalResourcesCrossNavigation() {
     {
       need: "Commercial terms and entitlement",
       authority: (
-        <a href="#" className="font-semibold text-blue-600">
+        <a href="/pricing" className="font-semibold !text-blue-600">
           Pricing
         </a>
       ),
