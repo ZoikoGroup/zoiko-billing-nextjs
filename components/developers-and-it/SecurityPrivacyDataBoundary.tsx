@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SecurityPrivacyDataBoundary() {
   const cards = [
     {
@@ -5,7 +7,9 @@ export default function SecurityPrivacyDataBoundary() {
       content: (
         <>
           A mapping decision you own.{" "}
-          <strong>The categories that cross are determined by your configuration</strong>
+          <strong>
+            The categories that cross are determined by your configuration
+          </strong>
           , not by the platform default.
         </>
       ),
@@ -14,13 +18,19 @@ export default function SecurityPrivacyDataBoundary() {
       title: "Security posture & evidence",
       content: (
         <>
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/security-overview"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             Security Overview
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/trust-center"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             Trust Center
-          </a>{" "}
+          </Link>{" "}
           own posture and assurance artifacts with scope attached.{" "}
           <strong>No certification is claimed here.</strong>
         </>
@@ -30,9 +40,12 @@ export default function SecurityPrivacyDataBoundary() {
       title: "Processing terms",
       content: (
         <>
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/data-processing-addendum"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             DPA
-          </a>{" "}
+          </Link>{" "}
           governs processing performed on your instruction.
         </>
       ),
@@ -41,11 +54,17 @@ export default function SecurityPrivacyDataBoundary() {
       title: "Onward providers",
       content: (
         <>
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/subprocessors"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             Subprocessors
-          </a>{" "}
+          </Link>{" "}
           holds the register.{" "}
-          <strong>A connected integration you choose is your arrangement, not a subprocessor relationship.</strong>
+          <strong>
+            A connected integration you choose is your arrangement, not a
+            subprocessor relationship.
+          </strong>
         </>
       ),
     },
@@ -66,13 +85,19 @@ export default function SecurityPrivacyDataBoundary() {
       content: (
         <>
           Retention and recoverability are separate authorities —{" "}
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/privacy-and-data-governance"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
             Privacy &amp; Data Governance
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a href="#" className="font-semibold text-blue-600">
+          <Link
+            href="/business-continuity"
+            className="font-semibold text-blue-600 hover:underline"
+          >
             Business Continuity
-          </a>
+          </Link>
           .
         </>
       ),
@@ -91,15 +116,11 @@ export default function SecurityPrivacyDataBoundary() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -112,7 +133,6 @@ export default function SecurityPrivacyDataBoundary() {
             flex-col
             items-center
             gap-5
-
             sm:gap-6
           "
         >
@@ -142,7 +162,6 @@ export default function SecurityPrivacyDataBoundary() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -164,11 +183,8 @@ export default function SecurityPrivacyDataBoundary() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -189,7 +205,6 @@ export default function SecurityPrivacyDataBoundary() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -206,7 +221,6 @@ export default function SecurityPrivacyDataBoundary() {
               flex-col
               gap-4
               pt-5
-
               sm:gap-5
             "
           >
@@ -222,7 +236,6 @@ export default function SecurityPrivacyDataBoundary() {
                   px-5
                   py-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-
                   sm:px-6
                   sm:py-5
                 "
@@ -249,7 +262,6 @@ export default function SecurityPrivacyDataBoundary() {
                     font-normal
                     leading-5
                     text-[#5d7192]
-
                     sm:text-[13px]
                   "
                 >

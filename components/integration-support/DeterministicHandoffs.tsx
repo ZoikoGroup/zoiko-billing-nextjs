@@ -4,8 +4,9 @@ export default function DeterministicHandoffs() {
       title: "Public technical question",
       description: (
         <>
-          Developers owns the contract. A case would deliver a
-          <br className="hidden sm:block" /> slower copy of a published answer.
+          Developers owns the contract. A case would deliver a{" "}
+          <br className="hidden sm:block" />
+          slower copy of a published answer.
         </>
       ),
     },
@@ -28,12 +29,13 @@ export default function DeterministicHandoffs() {
         <>
           <a
             href="#"
-            className="font-semibold text-[#526f98] underline-offset-2"
+            className="font-semibold text-[#526f98] underline underline-offset-2"
           >
             Account Access
           </a>
-          . Support does not define or bypass
-          <br className="hidden sm:block" /> identity methods.
+          . Support does not define or bypass{" "}
+          <br className="hidden sm:block" />
+          identity methods.
         </>
       ),
     },
@@ -41,8 +43,9 @@ export default function DeterministicHandoffs() {
       title: "Suspected outage",
       description: (
         <>
-          System Status. Live operational state is never asserted in
-          <br className="hidden sm:block" /> support content.
+          System Status. Live operational state is never asserted in{" "}
+          <br className="hidden sm:block" />
+          support content.
         </>
       ),
     },
@@ -50,9 +53,9 @@ export default function DeterministicHandoffs() {
       title: "Provider capability",
       description: (
         <>
-          The approved provider authority. Coverage and
-          <br className="hidden sm:block" /> contractual commitments are not
-          invented here.
+          The approved provider authority. Coverage and{" "}
+          <br className="hidden sm:block" />
+          contractual commitments are not invented here.
         </>
       ),
     },
@@ -62,19 +65,20 @@ export default function DeterministicHandoffs() {
         <>
           <a
             href="#"
-            className="font-semibold text-[#526f98] underline-offset-2"
+            className="font-semibold text-[#526f98] underline underline-offset-2"
           >
             Billing Support
           </a>{" "}
-          for commercial matters on your own
-          <br className="hidden sm:block" /> subscription.
+          for commercial matters on your own{" "}
+          <br className="hidden sm:block" />
+          subscription.
         </>
       ),
     },
   ];
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -94,7 +98,7 @@ export default function DeterministicHandoffs() {
 
           lg:px-14
 
-          xl:px-24
+          xl:px-20
         "
       >
         <div
@@ -121,8 +125,10 @@ export default function DeterministicHandoffs() {
               flex-col
               items-center
               gap-3
-              pt-2
+              pt-1
               text-center
+
+              sm:pt-2
             "
           >
             {/* EYEBROW */}
@@ -177,7 +183,7 @@ export default function DeterministicHandoffs() {
                 !m-0
                 w-full
                 max-w-[687px]
-                pt-[3px]
+                pt-0.5
                 text-[15px]
                 font-normal
                 leading-7
@@ -203,7 +209,7 @@ export default function DeterministicHandoffs() {
 
               lg:grid-cols-2
               lg:gap-4
-          "
+            "
           >
             {routes.map((route) => (
               <div
@@ -222,6 +228,9 @@ export default function DeterministicHandoffs() {
                   px-5
                   py-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                  sm:px-6
+                  sm:py-5
                 "
               >
                 {/* TITLE */}
@@ -229,7 +238,6 @@ export default function DeterministicHandoffs() {
                   className="
                     !m-0
                     w-full
-                    font-['Plus_Jakarta_Sans']
                     text-sm
                     font-bold
                     leading-6
@@ -244,10 +252,13 @@ export default function DeterministicHandoffs() {
                   className="
                     !m-0
                     w-full
-                    text-xs
+                    text-[13px]
                     font-normal
-                    leading-5
+                    leading-6
                     text-[#5d7192]
+
+                    sm:text-sm
+                    sm:leading-5
                   "
                 >
                   {route.description}

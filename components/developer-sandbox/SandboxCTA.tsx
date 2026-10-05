@@ -8,9 +8,13 @@ export default function SandboxCTA() {
         w-full
         overflow-hidden
         bg-white
+        pt-14
         pb-10
+        sm:pt-16
         sm:pb-12
+        md:pt-20
         md:pb-16
+        lg:pt-24
         lg:pb-20
       "
     >
@@ -80,14 +84,14 @@ export default function SandboxCTA() {
                 !m-0
                 w-full
                 max-w-[600px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
                 !text-white
-                text-[30px]
-                font-extrabold
-                leading-[1.2]
-                tracking-[-0.03em]
-                sm:text-[34px]
-                md:text-[38px]
-                lg:text-[40px]
+                sm:!text-[34px]
+                md:!text-[36px]
+                lg:!text-[40px]
               "
             >
               Test what is testable.
@@ -99,16 +103,15 @@ export default function SandboxCTA() {
             <p
               className="
                 !m-0
-                mt-4
+                !mt-4
                 w-full
                 max-w-[511px]
+                !text-[15px]
+                !font-normal
+                !leading-7
                 !text-white/70
-                text-[15px]
-                font-normal
-                leading-6
-                sm:mt-5
-                sm:text-base
-                sm:leading-7
+                sm:!mt-5
+                sm:!text-base
               "
             >
               Per-dimension fidelity, explicit side-effect status, and an

@@ -66,12 +66,11 @@ const rightFaqs: Faq[] = [
 ];
 
 function FaqItem({
-  question,
-  answer,
-  link,
+  faq,
   isOpen,
   onClick,
-}: Faq & {
+}: {
+  faq: Faq;
   isOpen: boolean;
   onClick: () => void;
 }) {
@@ -100,7 +99,7 @@ function FaqItem({
             text-[#091127]
           "
         >
-          {question}
+          {faq.question}
         </span>
 
         <span
@@ -130,15 +129,31 @@ function FaqItem({
 
       {isOpen && (
         <div className="px-5 pb-5">
-          <p className="!m-0 text-sm font-normal leading-5 text-[#64748b]">
-            {answer}{" "}
-            {link && (
-              <a
-                href="#example-blueprint"
-                className="font-semibold text-[#2563eb] hover:underline"
-              >
-                {link}
-              </a>
+          <p
+            className="
+              !m-0
+              text-sm
+              font-normal
+              leading-6
+              text-[#64748b]
+            "
+          >
+            {faq.answer}
+
+            {faq.link && (
+              <>
+                {" "}
+                <a
+                  href="#example-blueprint"
+                  className="
+                    font-semibold
+                    text-[#2563eb]
+                    hover:underline
+                  "
+                >
+                  {faq.link}
+                </a>
+              </>
             )}
           </p>
         </div>
@@ -170,12 +185,16 @@ export default function SdkFaq() {
           items-start
           px-5
           py-14
+
           sm:px-8
           sm:py-16
+
           md:px-10
           md:py-20
+
           lg:px-14
-          xl:px-24
+
+          xl:px-20
         "
       >
         <div
@@ -187,11 +206,13 @@ export default function SdkFaq() {
             flex-col
             items-center
             gap-8
+
             sm:gap-10
-            lg:gap-11
+
+            md:gap-11
           "
         >
-          {/* Heading */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
@@ -204,9 +225,9 @@ export default function SdkFaq() {
               text-center
             "
           >
-            {/* Eyebrow */}
+            {/* EYEBROW */}
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
 
               <span
                 className="
@@ -216,6 +237,7 @@ export default function SdkFaq() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
+
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -223,27 +245,32 @@ export default function SdkFaq() {
                 SDKs &amp; Examples FAQ
               </span>
 
-              <span className="h-px w-4 bg-[#7890b2] opacity-40" />
+              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* Title */}
+            {/* HEADING */}
             <h2
               className="
                 !m-0
                 w-full
-                text-[30px]
-                font-extrabold
-                leading-[1.2]
-                tracking-[-0.035em]
-                text-[#091127]
-                sm:text-[34px]
-                md:text-[36px]
+                max-w-[662px]
+                !text-[30px]
+                !font-extrabold
+                !leading-[1.2]
+                !tracking-[-0.035em]
+                !text-[#091127]
+
+                sm:!text-[34px]
+
+                md:!text-[36px]
+
+                lg:!text-[40px]
               "
             >
               Direct answers about code you can trust.
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
             <p
               className="
                 !m-0
@@ -253,6 +280,7 @@ export default function SdkFaq() {
                 font-normal
                 leading-7
                 text-[#5d7192]
+
                 sm:text-base
               "
             >
@@ -261,19 +289,21 @@ export default function SdkFaq() {
             </p>
           </div>
 
-          {/* FAQ */}
+          {/* FAQ GRID */}
           <div
             className="
               grid
               w-full
               grid-cols-1
               gap-5
+
               lg:grid-cols-2
             "
           >
-            {/* Left */}
+            {/* LEFT COLUMN */}
             <div
               className="
+                w-full
                 overflow-hidden
                 rounded-2xl
                 border
@@ -285,18 +315,17 @@ export default function SdkFaq() {
               {leftFaqs.map((faq) => (
                 <FaqItem
                   key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                  link={faq.link}
+                  faq={faq}
                   isOpen={openFaq === faq.question}
                   onClick={() => toggleFaq(faq.question)}
                 />
               ))}
             </div>
 
-            {/* Right */}
+            {/* RIGHT COLUMN */}
             <div
               className="
+                w-full
                 overflow-hidden
                 rounded-2xl
                 border
@@ -308,9 +337,7 @@ export default function SdkFaq() {
               {rightFaqs.map((faq) => (
                 <FaqItem
                   key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                  link={faq.link}
+                  faq={faq}
                   isOpen={openFaq === faq.question}
                   onClick={() => toggleFaq(faq.question)}
                 />

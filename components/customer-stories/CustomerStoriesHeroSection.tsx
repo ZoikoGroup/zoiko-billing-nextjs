@@ -82,7 +82,7 @@ export default function CustomerStoriesHeroSection() {
               </Link>
 
               <Link
-                href="#book-demo"
+                href="/book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 transition hover:bg-slate-50"
               >
                 <span className="text-slate-900 font-semibold">Book a demo</span>

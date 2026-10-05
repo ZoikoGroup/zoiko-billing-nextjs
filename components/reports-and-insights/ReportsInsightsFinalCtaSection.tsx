@@ -44,14 +44,14 @@ export default function ReportsInsightsFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#create-account"
+                href="/create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 shadow-md hover:bg-slate-100 transition"
               >
                 <span className="text-slate-900 font-semibold">Create account</span>
               </Link>
 
               <Link
-                href="#book-demo"
+                href="/book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-700/80 bg-transparent px-6 text-center text-xs sm:text-sm font-semibold !text-white shadow-sm transition hover:bg-white/10"
               >
                 <span className="text-white font-semibold">Book a demo</span>
@@ -92,14 +92,14 @@ export default function ReportsInsightsFinalCtaSection() {
           {/* 2 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4 relative z-10">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-10 items-center justify-center rounded-full bg-white px-5 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Create account</span>
             </Link>
 
             <Link
-              href="#book-demo"
+              href="/book-demo"
               className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/80 bg-transparent px-5 text-center text-xs font-semibold !text-white"
             >
               <span className="text-white font-semibold">Book a demo</span>
@@ -151,14 +151,14 @@ export default function ReportsInsightsFinalCtaSection() {
           {/* Buttons Row */}
           <div className="flex flex-wrap items-center gap-3.5 mb-6 sm:mb-8">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
             >
               <span className="text-[#1D60EB] font-semibold">Create account</span>
             </Link>
 
             <Link
-              href="#book-demo"
+              href="/book-demo"
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-blue-200/60 bg-transparent px-6 text-center text-sm font-semibold !text-white hover:bg-white/10 transition"
             >
               <span className="text-white font-semibold">Book a demo</span>

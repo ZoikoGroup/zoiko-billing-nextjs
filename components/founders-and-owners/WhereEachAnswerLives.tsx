@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function WhereEachAnswerLives() {
   const destinations = [
     {
@@ -33,7 +35,12 @@ export default function WhereEachAnswerLives() {
       title: "What the platform actually does",
       description: (
         <>
-          <span className="font-semibold text-blue-600">Product</span>{" "}
+          <Link
+            href="/product"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Product
+          </Link>{" "}
           owns the connected-record model and state semantics.
         </>
       ),
@@ -42,7 +49,12 @@ export default function WhereEachAnswerLives() {
       title: "Scope and terms",
       description: (
         <>
-          <span className="font-semibold text-blue-600">Pricing</span>{" "}
+          <Link
+            href="/pricing"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Pricing
+          </Link>{" "}
           owns commercial fit.{" "}
           <span className="font-bold">
             No entitlement is inferred from anything on this page.
@@ -54,10 +66,20 @@ export default function WhereEachAnswerLives() {
       title: "Security and assurance evidence",
       description: (
         <>
-          <span className="font-semibold text-blue-600">Trust Center</span>{" "}
+          <Link
+            href="/trust-center"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Trust Center
+          </Link>{" "}
           and{" "}
-          <span className="font-semibold text-blue-600">Security</span>, with
-          scope attached.
+          <Link
+            href="/security-overview"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Security
+          </Link>
+          , with scope attached.
         </>
       ),
     },
@@ -75,15 +97,11 @@ export default function WhereEachAnswerLives() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -131,7 +149,6 @@ export default function WhereEachAnswerLives() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -162,17 +179,13 @@ export default function WhereEachAnswerLives() {
                   !leading-[1.2]
                   !tracking-[-0.035em]
                   !text-[#091127]
-
                   sm:!text-[34px]
-
                   md:!text-[36px]
-
                   lg:!text-[40px]
                 "
               >
-                This page frames the questions. Six
-              
-                destinations hold the answers.
+                This page frames the questions. Six destinations hold the
+                answers.
               </h2>
             </div>
 
@@ -192,7 +205,6 @@ export default function WhereEachAnswerLives() {
                   font-normal
                   leading-7
                   text-[#5d7192]
-
                   sm:text-base
                 "
               >
@@ -210,10 +222,8 @@ export default function WhereEachAnswerLives() {
               grid-cols-1
               gap-4
               pt-5
-
               md:grid-cols-2
               md:gap-5
-
               lg:grid-cols-3
             "
           >

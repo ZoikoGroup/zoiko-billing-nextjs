@@ -5,7 +5,7 @@ export default function RelatedGlobalBillingNavigation() {
       content: (
         <>
           <a
-            href="#"
+            href="/multi-currency"
             className="text-sm font-semibold leading-6 text-blue-600"
           >
             Multi-Currency Billing
@@ -28,7 +28,7 @@ export default function RelatedGlobalBillingNavigation() {
       content: (
         <>
           <a
-            href="#"
+            href="/jurisdiction-availability"
             className="text-sm font-semibold leading-6 text-blue-600"
           >
             Jurisdiction Availability
@@ -51,7 +51,7 @@ export default function RelatedGlobalBillingNavigation() {
       content: (
         <>
           <a
-            href="#"
+            href="/entity-level-controls"
             className="text-sm font-semibold leading-6 text-blue-600"
           >
             Entity-Level Controls
@@ -60,7 +60,7 @@ export default function RelatedGlobalBillingNavigation() {
             {" "}and{" "}
           </span>
           <a
-            href="#"
+            href="/multi-entity-billing"
             className="text-sm font-semibold leading-6 text-blue-600"
           >
             Multi-Entity Billing
@@ -110,7 +110,7 @@ export default function RelatedGlobalBillingNavigation() {
       content: (
         <>
           <a
-            href="#"
+            href="/payment-providers"
             className="text-sm font-semibold leading-6 text-blue-600"
           >
             Payment Providers

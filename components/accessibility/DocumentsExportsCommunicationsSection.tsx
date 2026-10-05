@@ -13,7 +13,7 @@ const artifactRows: ArtifactRow[] = [
     authority: (
       <>
         Product ·{" "}
-        <Link href="/documentation" className="text-blue-600 font-bold hover:underline">
+        <Link href="/documentation" className="!text-blue-600 font-bold hover:underline">
           Documentation
         </Link>
       </>
@@ -39,11 +39,11 @@ const artifactRows: ArtifactRow[] = [
     consideration: "Heading structure, alt text and keyboard-navigable examples.",
     authority: (
       <>
-        <Link href="/resource-center" className="text-blue-600 font-bold hover:underline">
+        <Link href="/help-center" className="!text-blue-600 font-bold hover:underline">
           Help
         </Link>{" "}
         ·{" "}
-        <Link href="/documentation" className="text-blue-600 font-bold hover:underline">
+        <Link href="/documentation" className="!text-blue-600 font-bold hover:underline">
           Documentation
         </Link>
       </>

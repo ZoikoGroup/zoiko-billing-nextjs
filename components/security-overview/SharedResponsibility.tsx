@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SharedResponsibility() {
   const areas = [
     {
@@ -5,7 +7,11 @@ export default function SharedResponsibility() {
       description: (
         <>
           Platform controls exist;{" "}
-          <strong>who holds an account, which role they have, and when access is removed are yours</strong>.
+          <strong>
+            who holds an account, which role they have, and when access is
+            removed are yours
+          </strong>
+          .
           <br />
           A departed employee&apos;s active account is not a platform failure.
         </>
@@ -16,8 +22,13 @@ export default function SharedResponsibility() {
       description: (
         <>
           Available authentication options are product truth in{" "}
-          <span className="font-semibold text-[#52749f]">Documentation</span>.
-          Which you enable, and for whom, is your decision.
+          <Link
+            href="/documentation"
+            className="font-semibold text-[#52749f] hover:underline"
+          >
+            Documentation
+          </Link>
+          . Which you enable, and for whom, is your decision.
         </>
       ),
     },
@@ -47,9 +58,12 @@ export default function SharedResponsibility() {
         <>
           Once data leaves through an export you configured, its protection is
           yours — the same boundary{" "}
-          <span className="font-semibold text-[#52749f]">
+          <Link
+            href="/privacy-and-data-governance"
+            className="font-semibold text-[#52749f] hover:underline"
+          >
             Privacy &amp; Data Governance
-          </span>{" "}
+          </Link>{" "}
           draws for downstream copies.
         </>
       ),
@@ -120,9 +134,7 @@ export default function SharedResponsibility() {
                 lg:!text-[40px]
               "
             >
-              Six areas where security depends on
-             
-              both sides.
+              Six areas where security depends on both sides.
             </h2>
 
             {/* DESCRIPTION */}

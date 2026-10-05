@@ -39,7 +39,7 @@ const steps: QuickStartStep[] = [
     description:
       "Use documentation, events, SDKs and examples, and implementation patterns.",
     linkText: "Documentation · Webhooks · SDKs",
-    linkHref: "#routes",
+    linkHref: "/developers-webhooks",
   },
 ];
 

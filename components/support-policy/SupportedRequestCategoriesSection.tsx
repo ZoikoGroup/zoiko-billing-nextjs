@@ -9,14 +9,21 @@ interface CategoryRow {
 const categoryRows: CategoryRow[] = [
   {
     category: "General product usage",
-    policyTreatment: "Covered per approved scope; self-service expected first",
+    policyTreatment:
+      "Covered per approved scope; self-service expected first",
     route: (
       <>
-        <Link href="/resource-center" className="text-blue-600 font-semibold hover:underline">
+        <Link
+          href="/resource-center"
+          className="font-semibold !text-blue-600 hover:underline"
+        >
           Help Center
         </Link>{" "}
         ·{" "}
-        <Link href="/documentation" className="text-blue-600 font-semibold hover:underline">
+        <Link
+          href="/documentation"
+          className="font-semibold !text-blue-600 hover:underline"
+        >
           Documentation
         </Link>
       </>
@@ -24,104 +31,327 @@ const categoryRows: CategoryRow[] = [
   },
   {
     category: "Account-specific behavior",
-    policyTreatment: "Covered where behavior differs from documented behavior",
-    route: <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Contact Support</span>,
+    policyTreatment:
+      "Covered where behavior differs from documented behavior",
+    route: (
+      <Link
+        href="/contact-support"
+        className="font-semibold !text-blue-600 hover:underline"
+      >
+        Contact Support
+      </Link>
+    ),
   },
   {
     category: "Account & subscription billing",
     policyTreatment: (
       <>
         Coverage stated here;{" "}
-        <span className="font-bold text-slate-900">evidence is not collected on this page</span>
+        <span className="font-bold text-slate-900">
+          evidence is not collected on this page
+        </span>
       </>
     ),
-    route: <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Billing Support</span>,
+    route: (
+      <Link
+        href="/billing-support"
+        className="font-semibold !text-blue-600 hover:underline"
+      >
+        Billing Support
+      </Link>
+    ),
   },
   {
     category: "Integration diagnostics",
-    policyTreatment: "Coverage boundaries defined here; technical detail stays elsewhere",
-    route: <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Integration Support</span>,
+    policyTreatment:
+      "Coverage boundaries defined here; technical detail stays elsewhere",
+    route: (
+      <Link
+        href="/integration-support"
+        className="font-semibold !text-blue-600 hover:underline"
+      >
+        Integration Support
+      </Link>
+    ),
   },
   {
     category: "Access & identity",
     policyTreatment: (
       <>
         Covered, with{" "}
-        <span className="font-bold text-slate-900">no support bypass of identity controls</span>
+        <span className="font-bold text-slate-900">
+          no support bypass of identity controls
+        </span>
       </>
     ),
-    route: <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Account Access</span>,
+    route: (
+      <Link
+        href="/account-access"
+        className="font-semibold !text-blue-600 hover:underline"
+      >
+        Account Access
+      </Link>
+    ),
   },
   {
     category: "Implementation questions",
-    policyTreatment: "Guidance scope, not a professional-services commitment",
-    route: <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Implementation Guidance</span>,
+    policyTreatment:
+      "Guidance scope, not a professional-services commitment",
+    route: (
+      <Link
+        href="/implementation-guidance"
+        className="font-semibold !text-blue-600 hover:underline"
+      >
+        Implementation Guidance
+      </Link>
+    ),
   },
   {
     category: "Security vulnerability",
-    policyTreatment: "Not routed through ordinary support channels",
-    route: <span className="text-slate-600 font-medium">Responsible Disclosure</span>,
+    policyTreatment:
+      "Not routed through ordinary support channels",
+    route: (
+      <Link
+        href="/responsible-disclosure"
+        className="font-medium !text-blue-600 hover:underline"
+      >
+        Responsible Disclosure
+      </Link>
+    ),
   },
 ];
 
 export default function SupportedRequestCategoriesSection() {
   return (
-    <section className="w-full bg-slate-50/60 py-16 lg:py-24 border-t border-slate-100" id="request-categories">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-          <span className="h-px w-5 bg-slate-300" />
-          SUPPORTED REQUEST CATEGORIES
-          <span className="h-px w-5 bg-slate-300" />
-        </div>
+    <section
+      className="w-full border-t border-slate-100 bg-slate-50/60 py-14 sm:py-16 lg:py-24"
+      id="request-categories"
+    >
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1440px]
+          flex-col
+          items-start
+          px-5
 
-        {/* Heading */}
-        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
-          Seven categories, each with a route <br className="hidden sm:inline" /> rather than a queue.
-        </h2>
+          sm:px-8
 
-        {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
-          Policy describes whether a category is covered. It does not perform intake — that belongs to the destination.
-        </p>
+          md:px-10
 
-        {/* Table Container Card */}
-        <div className="mt-10 lg:mt-14 w-full max-w-[1240px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm text-left">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[640px]">
-              <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200/80">
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/4">
-                    CATEGORY
-                  </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/2">
-                    POLICY TREATMENT
-                  </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/4">
-                    ROUTE
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {categoryRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/40 transition">
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-bold text-slate-900 align-top">
-                      {row.category}
-                    </td>
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed align-top">
-                      {row.policyTreatment}
-                    </td>
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed align-top">
-                      {row.route}
-                    </td>
+          lg:px-14
+
+          xl:px-20
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[1240px]
+            flex-col
+            items-center
+            text-center
+          "
+        >
+          {/* EYEBROW */}
+          <div className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase leading-4 tracking-[0.16em] text-[#7890b2] sm:text-xs sm:tracking-[0.18em]">
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            SUPPORTED REQUEST CATEGORIES
+            <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+          </div>
+
+          {/* HEADING */}
+          <h2
+            className="
+              !m-0
+              mt-3.5
+              w-full
+              max-w-[662px]
+              !text-[30px]
+              !font-extrabold
+              !leading-[1.2]
+              !tracking-[-0.035em]
+              !text-[#091127]
+
+              sm:!text-[34px]
+
+              md:!text-[36px]
+
+              lg:!text-[40px]
+            "
+          >
+            Seven categories, each with a route
+            <br className="hidden sm:block" /> rather than a queue.
+          </h2>
+
+          {/* SUBTITLE */}
+          <p
+            className="
+              !m-0
+              mt-3
+              w-full
+              max-w-[687px]
+              text-[15px]
+              font-normal
+              leading-7
+              text-[#5d7192]
+
+              sm:text-base
+            "
+          >
+            Policy describes whether a category is covered. It does not
+            perform intake — that belongs to the destination.
+          </p>
+
+          {/* TABLE */}
+          <div
+            className="
+              mt-8
+              w-full
+              max-w-[1240px]
+              overflow-hidden
+              rounded-2xl
+              border
+              border-slate-200/90
+              bg-white
+              text-left
+              shadow-sm
+
+              sm:mt-10
+
+              lg:mt-14
+            "
+          >
+            <div className="w-full overflow-x-auto">
+              <table className="w-full min-w-[680px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-slate-200/80 bg-slate-50/80">
+                    <th
+                      scope="col"
+                      className="
+                        w-1/4
+                        px-5
+                        py-3.5
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-slate-500
+
+                        sm:px-8
+                        sm:text-[11px]
+                      "
+                    >
+                      CATEGORY
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        w-1/2
+                        px-5
+                        py-3.5
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-slate-500
+
+                        sm:px-8
+                        sm:text-[11px]
+                      "
+                    >
+                      POLICY TREATMENT
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="
+                        w-1/4
+                        px-5
+                        py-3.5
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+                        text-slate-500
+
+                        sm:px-8
+                        sm:text-[11px]
+                      "
+                    >
+                      ROUTE
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+
+                <tbody className="divide-y divide-slate-100">
+                  {categoryRows.map((row) => (
+                    <tr
+                      key={row.category}
+                      className="transition hover:bg-slate-50/40"
+                    >
+                      <td
+                        className="
+                          px-5
+                          py-4
+                          align-top
+                          text-[13px]
+                          font-bold
+                          leading-6
+                          text-slate-900
+
+                          sm:px-8
+                          sm:text-sm
+                        "
+                      >
+                        {row.category}
+                      </td>
+
+                      <td
+                        className="
+                          px-5
+                          py-4
+                          align-top
+                          text-[13px]
+                          font-normal
+                          leading-6
+                          text-slate-600
+
+                          sm:px-8
+                          sm:text-sm
+                        "
+                      >
+                        {row.policyTreatment}
+                      </td>
+
+                      <td
+                        className="
+                          px-5
+                          py-4
+                          align-top
+                          text-[13px]
+                          font-normal
+                          leading-6
+                          text-slate-600
+
+                          sm:px-8
+                          sm:text-sm
+                        "
+                      >
+                        {row.route}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

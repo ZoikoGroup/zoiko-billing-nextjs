@@ -175,7 +175,7 @@ export default function DevelopersAuthHeroSection() {
             API Documentation
           </Link>
           <Link
-            href="#sandbox"
+            href="/developer-sandbox"
             className="inline-flex items-center gap-1 text-xs font-semibold text-[#1D70F5] hover:underline pl-1"
           >
             Developer Sandbox <span>→</span>

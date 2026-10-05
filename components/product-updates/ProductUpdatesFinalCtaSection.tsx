@@ -44,7 +44,7 @@ export default function ProductUpdatesFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#create-account"
+                href="/create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 shadow-md hover:bg-slate-100 transition"
               >
                 <span className="text-slate-900 font-semibold">Create account</span>
@@ -92,7 +92,7 @@ export default function ProductUpdatesFinalCtaSection() {
           {/* 2 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4 relative z-10">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-10 items-center justify-center rounded-full bg-white px-5 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Create account</span>
@@ -151,7 +151,7 @@ export default function ProductUpdatesFinalCtaSection() {
           {/* Buttons Row */}
           <div className="flex flex-wrap items-center gap-3.5 mb-6 sm:mb-8">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
             >
               <span className="text-[#1D60EB] font-semibold">Create account</span>

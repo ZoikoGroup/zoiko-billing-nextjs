@@ -1,8 +1,20 @@
+import Link from "next/link";
+
 export default function AuthorityBoundary() {
   const rows = [
     {
       intent: "What endpoints, schemas or API behavior exist?",
-      authority: "Developers · API Documentation",
+      authority: (
+        <>
+          Developers ·{" "}
+          <Link
+            href="/developers-api-documentation"
+            className="hover:underline"
+          >
+            API Documentation
+          </Link>
+        </>
+      ),
       behavior: (
         <>
           Linked as the current contract —{" "}
@@ -12,7 +24,17 @@ export default function AuthorityBoundary() {
     },
     {
       intent: "How is authentication supposed to work?",
-      authority: "Developers · Authentication",
+      authority: (
+        <>
+          Developers ·{" "}
+          <Link
+            href="/developers-authentication"
+            className="hover:underline"
+          >
+            Authentication
+          </Link>
+        </>
+      ),
       behavior: (
         <>
           Symptom and context collected only;{" "}
@@ -22,7 +44,17 @@ export default function AuthorityBoundary() {
     },
     {
       intent: "How are webhooks delivered, retried or verified?",
-      authority: "Developers · Webhooks",
+      authority: (
+        <>
+          Developers ·{" "}
+          <Link
+            href="/developers-webhooks"
+            className="hover:underline"
+          >
+            Webhooks
+          </Link>
+        </>
+      ),
       behavior:
         "Public contract used as diagnostic reference; case evidence stays account-specific",
     },
@@ -30,14 +62,27 @@ export default function AuthorityBoundary() {
       intent: "How do I build or test an integration?",
       authority: (
         <>
-          Developers · Build an Integration ·
+          Developers ·{" "}
+          <Link
+            href="/developers-build-an-integration"
+            className="hover:underline"
+          >
+            Build an Integration
+          </Link>{" "}
+          ·
           <br />
-          Sandbox
+          <Link
+            href="/developer-sandbox"
+            className="hover:underline"
+          >
+            Sandbox
+          </Link>
         </>
       ),
       behavior: (
         <>
-          Routed there <strong>unless a real account-specific issue exists</strong>
+          Routed there{" "}
+          <strong>unless a real account-specific issue exists</strong>
         </>
       ),
     },
@@ -45,15 +90,27 @@ export default function AuthorityBoundary() {
       intent: "Why is my integration failing?",
       authority: (
         <>
-          <strong className="text-blue-600">Help Center</strong> first, then
-          here
+          <Link
+            href="/help-center"
+            className="font-semibold !text-blue-600 hover:underline"
+          >
+            Help Center
+          </Link>{" "}
+          first, then here
         </>
       ),
       behavior: "Safe checks first, then secure intake if unresolved",
     },
     {
       intent: "Is there a current outage?",
-      authority: "System Status",
+      authority: (
+        <Link
+          href="/system-status"
+          className="hover:underline"
+        >
+          System Status
+        </Link>
+      ),
       behavior: (
         <strong>
           Live operational state is never inferred in support content
