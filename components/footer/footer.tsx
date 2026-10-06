@@ -202,12 +202,12 @@ export default function ZoikoBillingPage() {
               >
                 Book Demo
               </a>
-              <button
-                type="button"
+            <a
+                href="pricing"
                 className="px-6 py-3.5 border border-white/50 hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 View Pricing
-              </button>
+            </a>  
             </div>
           </div>
 
