@@ -38,7 +38,9 @@ const featureData: FeatureCardProps[] = [
 
 export default function DeploymentOptionsSection() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+   
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto

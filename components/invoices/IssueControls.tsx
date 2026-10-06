@@ -467,7 +467,7 @@ export default function IssueControls() {
 
           {/* CTA */}
           <div className="flex w-full justify-center">
-            <a
+            {/*<a
               href="#"
               className="
                 inline-flex
@@ -490,7 +490,7 @@ export default function IssueControls() {
               "
             >
               See how approvals are governed
-            </a>
+            </a>*/}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 type Term = {
   number: string;
@@ -174,12 +175,12 @@ export default function BillingTerms() {
               <div className="mt-2 flex flex-wrap items-center gap-1 text-xs leading-5 text-slate-500">
                 <span>Effective date: not published ·</span>
 
-                <button
-                  type="button"
-                  className="text-sm font-semibold leading-6 text-blue-600 hover:underline"
+                <Link
+                  href="/terms-of-user"
+                  className="text-sm font-semibold leading-6 !text-blue-600 hover:underline"
                 >
                   View authoritative terms
-                </button>
+                </Link>
               </div>
             </div>
 
