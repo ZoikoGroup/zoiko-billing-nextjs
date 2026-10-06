@@ -226,7 +226,7 @@ export default function SignInCard({
 
           <p className="m-0 pt-4 text-center text-sm font-normal !leading-5 !text-[#64748B]">
             New to Zoiko Billing?{" "}
-            <Link href="/book-demo" className="!text-[#1F6FEB] hover:underline">
+            <Link href="/create-account" className="!text-[#1F6FEB] hover:underline">
               Create an account
             </Link>
           </p>

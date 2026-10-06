@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 const FOOTER_LINKS = [
-  { label: "Privacy", href: "/privacy-and-data-governance" },
-  { label: "Terms", href: "#" },
-  { label: "Security", href: "/security-advisories" },
+  { label: "Privacy", href: "/privacy-policy" },
+  { label: "Terms", href: "terms-of-user" },
+  { label: "Security", href: "/security-overview" },
   { label: "Help", href: "/help-center" },
 ];
 

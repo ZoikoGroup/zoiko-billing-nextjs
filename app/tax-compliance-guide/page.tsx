@@ -8,7 +8,7 @@ import {
   WhatTriggersReReviewSection,
   SpecialistDestinationsSection,
   TaxComplianceFaqSection,
-  TaxComplianceFinalCtaSection,
+
 } from "@/components/tax-compliance-guide";
 
 const inter = Inter({
@@ -42,7 +42,7 @@ export default function TaxComplianceGuidePage() {
       <WhatTriggersReReviewSection />
       <SpecialistDestinationsSection />
       <TaxComplianceFaqSection />
-      <TaxComplianceFinalCtaSection />
+    
     </main>
   );
 }

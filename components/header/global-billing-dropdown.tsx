@@ -61,7 +61,7 @@ const QUICK_LINKS = [
 const RELATED_RESOURCES = [
   { label: 'Global Billing Guide', href: '/resources/global-billing-guide', icon: FileText },
   { label: 'Multi-Entity Guide', href: '/resources/multi-entity-guide', icon: Building2 },
-  { label: 'Tax Compliance Guide', href: '/resources/tax-compliance-guide', icon: ShieldCheck },
+  { label: 'Tax Compliance Guide', href: '/tax-compliance-guide', icon: ShieldCheck },
   { label: 'Customer Stories', href: '/customer-stories', icon: Users },
 ];
 
