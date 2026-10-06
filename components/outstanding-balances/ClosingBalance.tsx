@@ -230,7 +230,7 @@ export default function ClosingBalance() {
                   </Link>
 
                   <Link
-                    href="#"
+                    href="/contact"
                     className="
                       inline-flex
                       min-h-11

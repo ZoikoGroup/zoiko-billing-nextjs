@@ -1,75 +1,104 @@
-import React from 'react'
+import Link from "next/link";
 
 const destinations = [
   {
-    title: 'Apply',
+    title: "Apply",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">
+        <Link
+          href="/become-a-partner"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
           Become a Partner
-        </span>{' '}
-        is the canonical application.{' '}
+        </Link>{" "}
+        is the canonical application.{" "}
         <strong>Submitting does not create a relationship</strong>, and no
         timeline is promised.
       </>
     ),
   },
   {
-    title: 'Already a partner',
+    title: "Already a partner",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">Partner Portal</span>{' '}
+        <Link
+          href="/partner-portal"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
+          Partner Portal
+        </Link>{" "}
         where launched and authorized. Access requires a current approved
         relationship and your role.
       </>
     ),
   },
   {
-    title: 'Build an integration',
+    title: "Build an integration",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">
+        <Link
+          href="/integrations"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
           Submit an Integration
-        </span>
+        </Link>
         . Independent of program status in both directions.
       </>
     ),
   },
   {
-    title: 'Find an existing partner',
+    title: "Find an existing partner",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">
+        <Link
+          href="/technology-partners"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
           Technology Partners
-        </span>{' '}
-        lists approved public relationships —{' '}
+        </Link>{" "}
+        lists approved public relationships —{" "}
         <strong>a directory, not an application route</strong>.
       </>
     ),
   },
   {
-    title: 'Buying Zoiko Billing',
+    title: "Buying Zoiko Billing",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">Contact</span> for
-        commercial enquiries. <strong>Buyer intent is not partner intent</strong>,
-        and this route is slower for it.
+        <Link
+          href="/contact"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
+          Contact
+        </Link>{" "}
+        for commercial enquiries.{" "}
+        <strong>Buyer intent is not partner intent</strong>, and this route is
+        slower for it.
       </>
     ),
   },
   {
-    title: 'Product support',
+    title: "Product support",
     content: (
       <>
-        <span className="font-semibold text-[#2563eb]">Help Center</span> and{' '}
-        <span className="font-semibold text-[#2563eb]">
+        <Link
+          href="/help-center"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
+          Help Center
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/contact-support"
+          className="font-semibold !text-[#2563eb] hover:underline"
+        >
           Contact Support
-        </span>
+        </Link>
         . Never collected through a partner route.
       </>
     ),
   },
-]
+];
 
 export default function WhereToGoNext() {
   return (
@@ -233,5 +262,5 @@ export default function WhereToGoNext() {
         </div>
       </div>
     </section>
-  )
+  );
 }

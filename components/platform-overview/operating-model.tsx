@@ -230,7 +230,7 @@ export default function BringClaritySection() {
                   </Link>
 
                   <Link
-                    href="/pricing-and-plans"
+                    href="/pricing"
                     className="
                       group
                       inline-flex

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const reportingQuestions = [
   {
     question: "What is ready to bill?",
@@ -31,16 +33,19 @@ const linkedQuestions = [
     question: "How do external systems connect?",
     description: "Approved Integration Registry methods and direction.",
     link: "Integrations",
+    href: "/integrations",
   },
   {
     question: "Can we grow to multiple entities or currencies?",
     description: "Availability stays explicit.",
     link: "Global Billing",
+    href: "/global-billing",
   },
   {
     question: "Can Zoiko One connect?",
     description: "Evaluated separately, with no forced migration.",
     link: "Zoiko Billing + Zoiko One",
+    href: "/zoiko-billing-plus-zoiko-one",
   },
 ];
 
@@ -105,9 +110,12 @@ export default function BillingReporting() {
 
                     <td className="border-b border-gray-200 px-4 py-4 text-sm leading-5 text-slate-600">
                       {item.description}{" "}
-                      <span className="font-semibold text-blue-600">
+                      <Link
+                        href={item.href}
+                        className="font-semibold !text-blue-600 hover:underline"
+                      >
                         {item.link}
-                      </span>
+                      </Link>
                     </td>
                   </tr>
                 ))}
