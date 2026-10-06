@@ -156,7 +156,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Terms of User', href: '/terms-of-user' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
-      { label: 'Acceptable Use Policy', href: '#' },
+      { label: 'Acceptable Use Policy', href: 'acceptable-use-policy' },
       { label: 'Data Processing Addendum', href: '/data-processing-addendum' },
       { label: 'Subprocessors', href: '/subprocessors' },
       { label: 'Legal Notices', href: '/legal-notices' },

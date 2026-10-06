@@ -1,51 +1,62 @@
 "use client";
 
+import Link from "next/link";
+
 const capabilities = [
   {
     capability: "Core billing & customer records",
     scopedBy: "Entity, plan, jurisdiction, configuration",
     authority: "Customer Records",
+    href: "/customer-records",
   },
   {
     capability: "Invoices & credit notes",
     scopedBy: "Entity, document configuration, currency, jurisdiction",
     authority: "Invoices & Credit Notes",
+    href: "/invoices",
   },
   {
     capability: "Multi-currency billing",
     scopedBy: "Currency, operation, entity, provider, jurisdiction",
     authority: "Multi-Currency Billing",
+    href: "/multi-currency-pricing",
   },
   {
     capability: "Multi-entity billing",
     scopedBy: "Entity capability, jurisdiction, commercial state",
     authority: "Multi-Entity Billing",
+    href: "/multi-entity-billing",
   },
   {
     capability: "Localized documents",
     scopedBy:
       "Language, locale, surface, template, entity and jurisdiction",
     authority: "Localized Documents",
+    href: "/localized-documents",
   },
   {
     capability: "Entity-level controls",
     scopedBy: "Entity capability plus role and action policy",
     authority: "Entity-Level Controls",
+    href: "/entity-level-controls",
   },
   {
     capability: "Payment provider operations",
     scopedBy: "Provider, operation, currency, entity, market",
     authority: "Payments & Reconciliation",
+    href: "/payments-and-reconcilliation",
   },
   {
     capability: "Accounting, ERP & CRM integrations",
     scopedBy: "Connector, plan, region and operational state",
     authority: "Integration Availability",
+    href: "/integration-availability",
   },
   {
     capability: "Supported languages",
     scopedBy: "Language, surface, current state",
     authority: "Supported Languages",
+    href: "/supported-languages",
   },
 ];
 
@@ -291,19 +302,22 @@ export default function CapabilityMatrix() {
 
                     {/* AUTHORITY */}
                     <div className="px-4 py-3.5">
-                      <span
+                      <Link
+                        href={item.href}
                         className={`
                           text-sm
                           leading-5
+                          transition-colors
+                          hover:underline
                           ${
                             isHighlighted
                               ? "font-semibold text-sky-600"
-                              : "font-normal text-[#5d7192]"
+                              : "font-normal text-[#5d7192] hover:text-sky-600"
                           }
                         `}
                       >
                         {item.authority}
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -401,21 +415,25 @@ export default function CapabilityMatrix() {
                         Detail authority
                       </p>
 
-                      <p
+                      <Link
+                        href={item.href}
                         className={`
                           !m-0
                           mt-1.5
+                          inline-block
                           text-sm
                           leading-6
+                          transition-colors
+                          hover:underline
                           ${
                             isHighlighted
                               ? "font-semibold text-sky-600"
-                              : "font-normal text-[#5d7192]"
+                              : "font-normal text-[#5d7192] hover:text-sky-600"
                           }
                         `}
                       >
                         {item.authority}
-                      </p>
+                      </Link>
                     </div>
                   </div>
                 );

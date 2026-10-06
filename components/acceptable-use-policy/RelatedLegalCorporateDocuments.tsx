@@ -1,106 +1,49 @@
 import Link from "next/link";
 
-const destinations = [
+const legalDocuments = [
   {
-    title: "Apply",
-    content: (
-      <>
-        <Link
-          href="/become-a-partner"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Become a Partner
-        </Link>{" "}
-        is the canonical application.{" "}
-        <strong>Submitting does not create a relationship</strong>, and no
-        timeline is promised.
-      </>
-    ),
+    title: "Terms of Use",
+    linkLabel: "Terms of Use",
+    href: "/terms-of-user",
+    description: " — the agreement this policy sits under.",
+    note: "Precedence between them is Legal's to state.",
   },
   {
-    title: "Already a partner",
-    content: (
-      <>
-        <Link
-          href="/partner-portal"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Partner Portal
-        </Link>{" "}
-        where launched and authorized. Access requires a current approved
-        relationship and your role.
-      </>
-    ),
+    title: "Privacy policy",
+    linkLabel: "Privacy policy",
+    href: "/privacy-policy",
+    description: " — how personal data is handled,",
+    note: "including in a report.",
   },
   {
-    title: "Build an integration",
-    content: (
-      <>
-        <Link
-          href="/integrations"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Submit an Integration
-        </Link>
-        . Independent of program status in both directions.
-      </>
-    ),
+    title: "Data processing addendum",
+    linkLabel: "DPA",
+    href: "/data-processing-addendum",
+    description: " — processing obligations where applicable.",
   },
   {
-    title: "Find an existing partner",
-    content: (
-      <>
-        <Link
-          href="/technology-partners"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Technology Partners
-        </Link>{" "}
-        lists approved public relationships —{" "}
-        <strong>a directory, not an application route</strong>.
-      </>
-    ),
+    title: "Support policy",
+    linkLabel: "Support policy",
+    href: "/support-policy",
+    description: " — what support covers, separate from",
+    note: "enforcement.",
   },
   {
-    title: "Buying Zoiko Billing",
-    content: (
-      <>
-        <Link
-          href="/contact"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Contact
-        </Link>{" "}
-        for commercial enquiries.{" "}
-        <strong>Buyer intent is not partner intent</strong>, and this route is
-        slower for it.
-      </>
-    ),
+    title: "Subprocessors",
+    linkLabel: "Subprocessors",
+    href: "/subprocessors",
+    description: " — third parties in the processing chain.",
   },
   {
-    title: "Product support",
-    content: (
-      <>
-        <Link
-          href="/help-center"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Help Center
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/contact-support"
-          className="font-semibold !text-[#2563eb] hover:underline"
-        >
-          Contact Support
-        </Link>
-        . Never collected through a partner route.
-      </>
-    ),
+    title: "Legal notices",
+    linkLabel: "Legal notices",
+    href: "/legal-notices",
+    description: " — corporate identity and the wider notice",
+    note: "set.",
   },
 ];
 
-export default function WhereToGoNext() {
+export default function RelatedLegalCorporateDocuments() {
   return (
     <section className="w-full bg-[#f7f8fa]">
       <div
@@ -113,16 +56,12 @@ export default function WhereToGoNext() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
-          xl:px-24
+          xl:px-20
         "
       >
         <div
@@ -133,10 +72,9 @@ export default function WhereToGoNext() {
             max-w-[1240px]
             flex-col
             items-center
-            gap-11
-            px-0
-
-            md:px-7
+            gap-8
+            sm:gap-10
+            md:gap-11
           "
         >
           {/* SECTION INTRO */}
@@ -164,12 +102,11 @@ export default function WhereToGoNext() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
               >
-                Where to go next
+                Related legal & corporate documents
               </span>
 
               <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
@@ -186,15 +123,12 @@ export default function WhereToGoNext() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
-              Six destinations, by what you are actually trying to do.
+              Where the surrounding obligations live.
             </h2>
 
             {/* DESCRIPTION */}
@@ -207,22 +141,24 @@ export default function WhereToGoNext() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
-              This page explains the model. Every action it describes happens
-              somewhere else.
+              An acceptable use policy sits inside a document set and does not
+              restate it.
             </p>
           </div>
 
-          {/* DESTINATIONS */}
-          <div className="w-full space-y-3">
-            {destinations.map((destination) => (
-              <div
-                key={destination.title}
+          {/* DOCUMENT LIST */}
+          <div className="flex w-full flex-col gap-4">
+            {legalDocuments.map((document) => (
+              <article
+                key={document.title}
                 className="
+                  flex
                   w-full
+                  flex-col
+                  gap-1.5
                   rounded-2xl
                   border
                   border-[#dfe5ee]
@@ -230,8 +166,10 @@ export default function WhereToGoNext() {
                   px-5
                   py-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  sm:px-6
                 "
               >
+                {/* DOCUMENT TITLE */}
                 <h3
                   className="
                     !m-0
@@ -241,22 +179,58 @@ export default function WhereToGoNext() {
                     text-[#091127]
                   "
                 >
-                  {destination.title}
+                  {document.title}
                 </h3>
 
+                {/* DOCUMENT DESCRIPTION */}
                 <div
                   className="
-                    mt-1.5
-                    max-w-[900px]
-                    text-xs
-                    font-normal
-                    leading-5
-                    text-[#5d7192]
+                    flex
+                    flex-wrap
+                    items-baseline
+                    gap-0
                   "
                 >
-                  {destination.content}
+                  <Link
+                    href={document.href}
+                    className="
+                      text-sm
+                      font-semibold
+                      leading-6
+                      !text-blue-600
+                      hover:underline
+                    "
+                  >
+                    {document.linkLabel}
+                  </Link>
+
+                  <span
+                    className="
+                      text-xs
+                      font-normal
+                      leading-5
+                      text-[#5d7192]
+                    "
+                  >
+                    {document.description}
+                  </span>
+
+                  {document.note && (
+                    <span
+                      className="
+                        w-full
+                        text-xs
+                        font-normal
+                        leading-5
+                        text-[#5d7192]
+                        sm:w-auto
+                      "
+                    >
+                      {document.note}
+                    </span>
+                  )}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
