@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const integrations = [
   {
     need: "Accounting or ERP handoff",
@@ -7,6 +9,7 @@ const integrations = [
       "Approved Accounting and ERP integrations where available.",
     boundary: "No built-in accounting or general-ledger claim.",
     link: "Integrations",
+    href: "/integrations",
   },
   {
     need: "Customer context from a CRM",
@@ -38,6 +41,7 @@ const integrations = [
       "Standalone or connected deployment can be evaluated as complexity grows.",
     boundary: "No automatic inclusion or data merge.",
     link: "Zoiko Billing + Zoiko One",
+    href: "/zoiko-billing-plus-zoiko-one",
   },
 ];
 
@@ -133,10 +137,13 @@ export default function Integrations() {
                           {item.boundary}
                         </span>
 
-                        {item.link && (
-                          <span className="text-sm font-semibold leading-6 text-blue-600">
+                        {item.link && item.href && (
+                          <Link
+                            href={item.href}
+                            className="text-sm font-semibold leading-6 text-blue-600 hover:underline"
+                          >
                             {item.link}
-                          </span>
+                          </Link>
                         )}
                       </div>
                     </td>
@@ -190,10 +197,13 @@ export default function Integrations() {
                       {item.boundary}
                     </p>
 
-                    {item.link && (
-                      <span className="text-sm font-semibold leading-6 text-blue-600">
+                    {item.link && item.href && (
+                      <Link
+                        href={item.href}
+                        className="text-sm font-semibold leading-6 !text-blue-600 hover:underline"
+                      >
                         {item.link}
-                      </span>
+                      </Link>
                     )}
                   </div>
                 </div>

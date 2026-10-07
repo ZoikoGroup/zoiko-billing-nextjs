@@ -145,7 +145,7 @@ export default function TaxComplianceHeroSection() {
             "
           >
             <Link
-              href="/signup"
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -168,7 +168,7 @@ export default function TaxComplianceHeroSection() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

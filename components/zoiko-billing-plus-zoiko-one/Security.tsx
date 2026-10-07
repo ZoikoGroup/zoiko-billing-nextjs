@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const rows = [
   {
     domain: "Authentication",
@@ -57,10 +59,22 @@ const defaults = [
 ];
 
 const routes = [
-  "Trust & security",
-  "Privacy",
-  "Accessibility",
-  "System status",
+  {
+    label: "Trust & security",
+    href: "/trust-center",
+  },
+  {
+    label: "Privacy",
+    href: "/privacy-policy",
+  },
+  {
+    label: "Accessibility",
+    href: "/accessibility",
+  },
+  {
+    label: "System status",
+    href: "/system-status",
+  },
 ];
 
 export default function Security() {
@@ -212,12 +226,34 @@ export default function Security() {
 
             <div className="mt-5 flex flex-wrap gap-2">
               {routes.map((route) => (
-                <span
-                  key={route}
-                  className="inline-flex min-h-9 items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm font-semibold leading-5 text-slate-900"
+                <Link
+                  key={route.label}
+                  href={route.href}
+                  className="
+                    inline-flex
+                    min-h-9
+                    items-center
+                    rounded-full
+                    border
+                    border-gray-200
+                    bg-white
+                    px-4
+                    py-1.5
+                    text-sm
+                    font-semibold
+                    leading-5
+                    text-slate-900
+                    transition-colors
+                    hover:border-blue-200
+                    hover:text-blue-600
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-blue-600
+                    focus:ring-offset-2
+                  "
                 >
-                  {route}
-                </span>
+                  {route.label}
+                </Link>
               ))}
             </div>
           </div>

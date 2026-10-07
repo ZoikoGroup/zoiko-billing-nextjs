@@ -54,14 +54,14 @@ const QUICK_LINKS = [
   { label: 'Supported Countries', href: '/supported-countries' },
   { label: 'Tax & Compliance', href: '/global-billing' },
   { label: 'Multi-Currency Pricing', href: '/multi-currency-pricing' },
-  { label: 'Local Payment Methods', href: '/global-billing' },
+  { label: 'Local Payment Methods', href: '/local-payment-methods' },
   { label: 'Global Capabilities Overview', href: '/global-billing' },
 ];
 
 const RELATED_RESOURCES = [
   { label: 'Global Billing Guide', href: '/resources/global-billing-guide', icon: FileText },
   { label: 'Multi-Entity Guide', href: '/resources/multi-entity-guide', icon: Building2 },
-  { label: 'Tax Compliance Guide', href: '/resources/tax-compliance-guide', icon: ShieldCheck },
+  { label: 'Tax Compliance Guide', href: '/tax-compliance-guide', icon: ShieldCheck },
   { label: 'Customer Stories', href: '/customer-stories', icon: Users },
 ];
 
