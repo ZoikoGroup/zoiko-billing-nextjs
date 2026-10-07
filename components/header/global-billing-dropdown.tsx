@@ -54,7 +54,7 @@ const QUICK_LINKS = [
   { label: 'Supported Countries', href: '/supported-countries' },
   { label: 'Tax & Compliance', href: '/global-billing' },
   { label: 'Multi-Currency Pricing', href: '/multi-currency-pricing' },
-  { label: 'Local Payment Methods', href: '/global-billing' },
+  { label: 'Local Payment Methods', href: '/local-payment-methods' },
   { label: 'Global Capabilities Overview', href: '/global-billing' },
 ];
 
