@@ -82,6 +82,7 @@ export default function PublicationLifecycle() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -95,8 +96,8 @@ export default function PublicationLifecycle() {
                 lg:!text-[40px]
               "
             >
-              Nine states, and embargo is the one
-             with security consequences.
+              Nine states, and embargo is the one <br className="hidden sm:inline" />
+              with security consequences.
             </h2>
 
             {/* DESCRIPTION */}

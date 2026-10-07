@@ -1,47 +1,57 @@
-export default function SupportHandoff() {
-  const rows = [
-    {
-      need: "General sign-in guidance",
-      destination: "Help Center",
-      behavior: "Explain public safe steps only",
-    },
-    {
-      need: "Unresolved access issue",
-      destination: "Contact Support",
-      behavior: "Pass only safe flow context, where approved",
-    },
-    {
-      need: "Identity setup question",
-      destination: "Documentation · Implementation guidance",
-      behavior: "Public product and admin guidance only",
-    },
-    {
-      need: "Current outage",
-      destination: "System Status",
-      behavior: "No copied incident state",
-    },
-    {
-      need: "Suspected compromised account",
-      destination: "Help · Contact Support per routing",
-      behavior: "No public account-security diagnostics or bypass",
-    },
-    {
-      need: "Security vulnerability in sign-in",
-      destination: "Responsible Disclosure",
-      behavior: "General support is not vulnerability intake",
-    },
-    {
-      need: "Privacy or data rights",
-      destination: "Privacy · Legal authority",
-      behavior: "No identity or legal adjudication on a login page",
-    },
-    {
-      need: "Support commitment",
-      destination: "Support Policy",
-      behavior: "No service-level or response-time copy",
-    },
-  ];
+import Link from "next/link";
 
+const rows = [
+  {
+    need: "General sign-in guidance",
+    destination: "Help Center",
+    href: "/help-center",
+    behavior: "Explain public safe steps only",
+  },
+  {
+    need: "Unresolved access issue",
+    destination: "Contact Support",
+    href: "/contact-support",
+    behavior: "Pass only safe flow context, where approved",
+  },
+  {
+    need: "Identity setup question",
+    destination: "Documentation · Implementation guidance",
+    href: "/documentation",
+    behavior: "Public product and admin guidance only",
+  },
+  {
+    need: "Current outage",
+    destination: "System Status",
+    href: "/system-status",
+    behavior: "No copied incident state",
+  },
+  {
+    need: "Suspected compromised account",
+    destination: "Help · Contact Support per routing",
+    href: "/contact-support",
+    behavior: "No public account-security diagnostics or bypass",
+  },
+  {
+    need: "Security vulnerability in sign-in",
+    destination: "Responsible Disclosure",
+    href: "/responsible-disclosure",
+    behavior: "General support is not vulnerability intake",
+  },
+  {
+    need: "Privacy or data rights",
+    destination: "Privacy · Legal authority",
+    href: "/privacy-policy",
+    behavior: "No identity or legal adjudication on a login page",
+  },
+  {
+    need: "Support commitment",
+    destination: "Support Policy",
+    href: "/support-policy",
+    behavior: "No service-level or response-time copy",
+  },
+];
+
+export default function SupportHandoff() {
   return (
     <section className="w-full bg-[#f7f8fa]">
       <div
@@ -170,9 +180,17 @@ export default function SupportHandoff() {
                   </div>
 
                   <div className="px-4 py-3.5">
-                    <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                    <Link
+                      href={row.href}
+                      className="
+                        text-sm font-normal leading-5 text-[#5d7192]
+                        transition-colors
+                        hover:text-[#5279b4]
+                        hover:underline
+                      "
+                    >
                       {row.destination}
-                    </span>
+                    </Link>
                   </div>
 
                   <div className="px-4 py-3.5">
@@ -221,9 +239,18 @@ export default function SupportHandoff() {
                       Destination
                     </p>
 
-                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+                    <Link
+                      href={row.href}
+                      className="
+                        mt-1.5 block
+                        text-sm leading-6 text-[#5d7192]
+                        transition-colors
+                        hover:text-[#5279b4]
+                        hover:underline
+                      "
+                    >
                       {row.destination}
-                    </p>
+                    </Link>
                   </div>
 
                   {/* BEHAVIOR */}

@@ -11,12 +11,12 @@ export default function ReportDetailTemplateSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           The shell an approved analysis fills.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Rendered with placeholder values throughout. The chart carries axes, units and a source
           line but <span className="font-bold text-slate-900">no plotted figures</span>, because
           inventing one would breach the doctrine this page exists to enforce.
@@ -51,7 +51,7 @@ export default function ReportDetailTemplateSection() {
               REPORT
             </span>
 
-            <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-snug mb-2">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-extrabold text-slate-900 leading-snug mb-2">
               [One primary research question or evidence–led finding]
             </h3>
 

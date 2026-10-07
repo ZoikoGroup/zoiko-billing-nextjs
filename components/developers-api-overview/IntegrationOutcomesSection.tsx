@@ -123,7 +123,7 @@ export default function IntegrationOutcomesSection() {
 
             {/* HEADING */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
                 w-full
                 !text-[30px]
@@ -136,7 +136,8 @@ export default function IntegrationOutcomesSection() {
                 lg:!text-[40px]
               "
             >
-              Six integration outcomes, each preserving record identity.
+              Six integration outcomes, each <br className="hidden sm:inline" />
+              preserving record identity.
             </h2>
 
             {/* DESCRIPTION */}

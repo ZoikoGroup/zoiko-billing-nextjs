@@ -31,7 +31,7 @@ export default function DeveloperDocFinalCtaSection() {
 
           {/* Left Text Content & Buttons */}
           <div className="relative z-10 flex flex-col items-start gap-4 max-w-xl text-left">
-            <h2 className="text-3xl font-extrabold leading-[1.18] tracking-tight text-white sm:text-4xl lg:text-[38px]">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[38px] !font-extrabold !leading-[1.18] tracking-tight text-white">
               Ready to turn the reference <br />
               into an integration?
             </h2>
@@ -44,14 +44,14 @@ export default function DeveloperDocFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#build-integration"
+                href="/developers-build-integration"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-sm font-semibold !text-slate-900 shadow-sm transition hover:bg-slate-100"
               >
                 <span className="text-slate-900 font-semibold">Build an Integration</span>
               </Link>
 
               <Link
-                href="#authentication"
+                href="/developers-authentication"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-white/80 bg-transparent px-6 text-center text-sm font-semibold !text-white shadow-sm transition hover:bg-white/10 hover:border-white"
               >
                 <span className="text-white font-semibold">Authentication</span>
@@ -79,7 +79,7 @@ export default function DeveloperDocFinalCtaSection() {
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
 
           {/* Headline */}
-          <h2 className="text-xl sm:text-2xl font-extrabold leading-snug text-white mb-2 relative z-10">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl !font-extrabold !leading-snug text-white mb-2 relative z-10">
             Ready to turn the reference<br />
             into an integration?
           </h2>
@@ -92,14 +92,14 @@ export default function DeveloperDocFinalCtaSection() {
           {/* 3 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2 mb-6 relative z-10">
             <Link
-              href="#build-integration"
+              href="/developers-build-integration"
               className="inline-flex min-h-9 items-center justify-center rounded-full bg-white px-4 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Build an Integration</span>
             </Link>
 
             <Link
-              href="#authentication"
+              href="/developers-authentication"
               className="inline-flex min-h-9 items-center justify-center rounded-full border border-white/80 bg-transparent px-4 text-center text-xs font-semibold !text-white"
             >
               <span className="text-white font-semibold">Authentication</span>
@@ -138,7 +138,7 @@ export default function DeveloperDocFinalCtaSection() {
         {/* ========================================================================= */}
         <div className="block lg:hidden relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-7 sm:p-12 text-left text-white shadow-xl">
           
-          <h2 className="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight tracking-tight text-white mb-3">
             Inspectable contracts, not implied behavior.
           </h2>
 

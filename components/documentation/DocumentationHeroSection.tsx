@@ -36,7 +36,7 @@ export default function DocumentationHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               How Zoiko Billing works, <br />
               <span className="text-[#1D70F5]">as it works today.</span>
             </h1>
@@ -112,7 +112,7 @@ export default function DocumentationHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             How Zoiko Billing works,{" "}
             <span className="text-[#1D70F5]">as it works today.</span>
           </h1>
@@ -160,7 +160,7 @@ export default function DocumentationHeroSection() {
           {/* Interactive Search and Article Type Registry Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left mb-4">
             
-            <h2 className="text-xs font-bold text-slate-900 mb-1.5">
+            <h2 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-1.5">
               Search Zoiko Billing Documentation
             </h2>
 

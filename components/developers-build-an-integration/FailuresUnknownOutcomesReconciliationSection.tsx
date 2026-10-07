@@ -105,12 +105,12 @@ export default function FailuresUnknownOutcomesReconciliationSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-white tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] !text-white max-w-3xl">
           Reason from evidence, not instinct.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-300">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-300">
           Eleven ambiguity classes. Exact codes, retryability and idempotency remain API-owned;
           the response pattern is what this page fixes.
         </p>
@@ -159,7 +159,7 @@ export default function FailuresUnknownOutcomesReconciliationSection() {
 
           {/* Dark Guidance Card: Reconciliation runbook contract */}
           <div className="rounded-2xl border border-slate-800 bg-[#0E1A3C] p-4 text-xs text-slate-300">
-            <h3 className="text-xs font-bold text-white mb-2">
+            <h3 className="!font-[family-name:var(--font-jakarta)] !text-xs sm:!text-sm !font-bold !text-white mb-2">
               Reconciliation runbook contract
             </h3>
             <p className="text-[11px] font-normal leading-relaxed text-slate-300">

@@ -185,21 +185,19 @@ export default function AccountabilityByDomain() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
-                !text-[#091127]
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
+                !tracking-[-0.02em]
+                !text-slate-900
               "
             >
-              Six domains, each with a destination that shows the work.
+              Six domains, each with a destination <br className="hidden sm:inline" /> that shows the work.
             </h2>
 
             {/* DESCRIPTION */}
@@ -208,12 +206,11 @@ export default function AccountabilityByDomain() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-[#5d7192]
-
-                sm:text-base
+                leading-relaxed
+                text-slate-500
               "
             >
               Accountability is more legible from what a domain publishes than
@@ -255,6 +252,7 @@ export default function AccountabilityByDomain() {
                 <h3
                   className="
                     !m-0
+                    !font-[family-name:var(--font-jakarta)]
                     text-sm
                     font-bold
                     leading-6

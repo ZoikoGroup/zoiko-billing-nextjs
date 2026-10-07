@@ -1,8 +1,26 @@
+import Link from "next/link";
+
 export default function Authority() {
   const rows = [
     {
       intent: "How do I create or correct an invoice for my customer?",
-      authority: "Documentation · Help Center",
+      authority: (
+        <>
+          <Link
+            href="/documentation"
+            className="hover:underline"
+          >
+            Documentation
+          </Link>{" "}
+          ·{" "}
+          <Link
+            href="/help-center"
+            className="hover:underline"
+          >
+            Help Center
+          </Link>
+        </>
+      ),
       treatment: (
         <>
           Not routed here{" "}
@@ -14,7 +32,23 @@ export default function Authority() {
     },
     {
       intent: "Why is my customer payment unreconciled?",
-      authority: "Help Center · Documentation",
+      authority: (
+        <>
+          <Link
+            href="/help-center"
+            className="hover:underline"
+          >
+            Help Center
+          </Link>{" "}
+          ·{" "}
+          <Link
+            href="/documentation"
+            className="hover:underline"
+          >
+            Documentation
+          </Link>
+        </>
+      ),
       treatment: "Product-use support, not account billing",
     },
     {
@@ -23,6 +57,7 @@ export default function Authority() {
       treatment:
         "Secure specialized intake where account-specific evidence is needed",
       authorityStrong: true,
+      href: "/billing-support",
     },
     {
       intent:
@@ -37,6 +72,7 @@ export default function Authority() {
         </>
       ),
       authorityStrong: true,
+      href: "/pricing",
     },
     {
       intent: "I cannot sign in to view billing information",
@@ -50,12 +86,14 @@ export default function Authority() {
         </>
       ),
       authorityStrong: true,
+      href: "/account-access",
     },
     {
       intent: "I need general assisted support",
       authority: "Contact Support",
       treatment:
         "Routed here only when commercial account billing is the real intent",
+      href: "/contact-support",
     },
     {
       intent: "What support response do I receive?",
@@ -67,10 +105,27 @@ export default function Authority() {
           </strong>
         </>
       ),
+      href: "/support-policy",
     },
     {
       intent: "I suspect an outage affected a transaction",
-      authority: "System Status · Help",
+      authority: (
+        <>
+          <Link
+            href="/system-status"
+            className="hover:underline"
+          >
+            System Status
+          </Link>{" "}
+          ·{" "}
+          <Link
+            href="/help-center"
+            className="hover:underline"
+          >
+            Help
+          </Link>
+        </>
+      ),
       treatment:
         "Current service state stays in Status; charge review may follow only if applicable",
     },
@@ -197,15 +252,28 @@ export default function Authority() {
                   </div>
 
                   <div className="px-4 py-3.5">
-                    <span
-                      className={`text-sm leading-5 ${
-                        row.authorityStrong
-                          ? "font-semibold text-[#527aa8]"
-                          : "font-normal text-[#5d7192]"
-                      }`}
-                    >
-                      {row.authority}
-                    </span>
+                    {row.href ? (
+                      <Link
+                        href={row.href}
+                        className={`text-sm leading-5 hover:underline ${
+                          row.authorityStrong
+                            ? "font-semibold text-[#527aa8]"
+                            : "font-normal text-[#5d7192]"
+                        }`}
+                      >
+                        {row.authority}
+                      </Link>
+                    ) : (
+                      <span
+                        className={`text-sm leading-5 ${
+                          row.authorityStrong
+                            ? "font-semibold text-[#527aa8]"
+                            : "font-normal text-[#5d7192]"
+                        }`}
+                      >
+                        {row.authority}
+                      </span>
+                    )}
                   </div>
 
                   <div className="px-4 py-3.5">
@@ -253,7 +321,16 @@ export default function Authority() {
                           : "text-[#5d7192]"
                       }`}
                     >
-                      {row.authority}
+                      {row.href ? (
+                        <Link
+                          href={row.href}
+                          className="hover:underline"
+                        >
+                          {row.authority}
+                        </Link>
+                      ) : (
+                        row.authority
+                      )}
                     </p>
                   </div>
 

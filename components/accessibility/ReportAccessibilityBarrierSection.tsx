@@ -117,19 +117,19 @@ export default function ReportAccessibilityBarrierSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
-          Six steps, and none of them asks about you.
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
+          Six steps, and none of them <br className="hidden sm:inline" /> asks about you.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Reproduction context only. No diagnosis, no disability category, and no medical or identity document.
         </p>
 
         {/* Accessibility Feedback Form Card */}
         <div className="mt-8 lg:mt-14 w-full max-w-[800px] rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-8 shadow-sm text-left">
           
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
+          <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold text-slate-900 mb-1">
             Accessibility feedback
           </h3>
           <p className="text-xs text-slate-400 font-normal mb-4 sm:mb-6 pb-3 border-b border-slate-100">

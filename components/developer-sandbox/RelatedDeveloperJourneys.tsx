@@ -1,34 +1,42 @@
+import Link from "next/link";
+
 export default function RelatedDeveloperJourneys() {
   const journeys = [
     {
       title: "API Overview",
       description:
         "Capability orientation and the exposure distinction.",
+      href: "/developers-api-overview",
     },
     {
       title: "API Documentation",
       description:
         "Exact operations, schemas, states and errors.",
+      href: "/documentation",
     },
     {
       title: "Authentication",
       description:
         "Credential lifecycle and permission boundaries.",
+      href: "/developers-authentication",
     },
     {
       title: "Webhooks",
       description:
         "Delivery, verification and replay governance.",
+      href: "/developers-webhooks",
     },
     {
       title: "SDKs & Examples",
       description:
         "Verified SDK availability and compatibility.",
+      href: "/sdks-and-examples",
     },
     {
       title: "Build an Integration",
       description:
         "Architecture, readiness and operational ownership.",
+      href: "/developers-build-an-integration",
     },
   ];
 
@@ -147,9 +155,11 @@ export default function RelatedDeveloperJourneys() {
           {/* JOURNEY CARDS */}
           <div className="flex w-full flex-col gap-0">
             {journeys.map((journey) => (
-              <div
+              <Link
                 key={journey.title}
+                href={journey.href}
                 className="
+                  group
                   flex
                   w-full
                   flex-col
@@ -161,6 +171,15 @@ export default function RelatedDeveloperJourneys() {
                   px-5
                   py-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-0.5
+                  hover:border-[#c8d4e4]
+                  hover:shadow-[0_10px_28px_rgba(15,23,42,0.08),0_2px_4px_rgba(15,23,42,0.05)]
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#5279b4]
+                  focus:ring-offset-2
 
                   [&+&]:mt-3
                 "
@@ -172,6 +191,8 @@ export default function RelatedDeveloperJourneys() {
                     font-bold
                     leading-6
                     text-[#091127]
+                    transition-colors
+                    group-hover:text-[#5279b4]
                   "
                 >
                   {journey.title}
@@ -188,7 +209,7 @@ export default function RelatedDeveloperJourneys() {
                 >
                   {journey.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

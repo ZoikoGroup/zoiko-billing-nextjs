@@ -1,47 +1,49 @@
+import Link from "next/link";
+
 export default function DiscoveryPaths() {
   const paths = [
     {
       title: "Payment providers",
-      path: "/integrations/payment-providers",
+      path: "/payment-providers",
       description: "No universal payment-processing claim.",
     },
     {
       title: "Accounting & ERP",
-      path: "/integrations/accounting-and-erp",
+      path: "/accounting-and-erp",
       description:
         "No built-in general-ledger or accounting-suite claim.",
     },
     {
       title: "CRM platforms",
-      path: "/integrations/crm",
+      path: "/crm-platforms",
       description: "No universal CRM sync or ownership claim.",
     },
     {
       title: "Banking & reconciliation",
-      path: "/integrations/banking-and-reconciliation",
+      path: "/banking-and-reconciliation",
       description: "No open-banking assumption.",
     },
     {
       title: "Zoiko ecosystem",
-      path: "/integrations/zoiko",
+      path: "/ecosystem",
       description:
         "No automatic Zoiko One inclusion or shared-data authority.",
     },
     {
       title: "Integration availability",
-      path: "/integrations/availability",
+      path: "/integration-availability",
       description:
         "Region, plan, certification and operational qualifiers.",
     },
     {
       title: "Build an integration",
-      path: "/developers/build",
+      path: "/developers-build-an-integration",
       description:
         "Only where public developer surfaces are available.",
     },
     {
       title: "Submit an integration",
-      path: "/integrations/submit",
+      path: "/integrations",
       description:
         "Submission does not publish or approve a listing.",
     },
@@ -59,15 +61,11 @@ export default function DiscoveryPaths() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -80,15 +78,11 @@ export default function DiscoveryPaths() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
-          {/* =========================================================
-              SECTION INTRO
-          ========================================================= */}
+          {/* SECTION INTRO */}
           <div
             className="
               flex
@@ -113,7 +107,6 @@ export default function DiscoveryPaths() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -135,11 +128,8 @@ export default function DiscoveryPaths() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -156,7 +146,6 @@ export default function DiscoveryPaths() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -165,27 +154,24 @@ export default function DiscoveryPaths() {
             </p>
           </div>
 
-          {/* =========================================================
-              DISCOVERY CARDS
-          ========================================================= */}
+          {/* DISCOVERY CARDS */}
           <div
             className="
               grid
               w-full
               grid-cols-1
               gap-4
-
               sm:grid-cols-2
-
               md:gap-5
-
               lg:grid-cols-4
             "
           >
             {paths.map((item) => (
-              <div
+              <Link
                 key={item.title}
+                href={item.path}
                 className="
+                  group
                   flex
                   min-h-[190px]
                   flex-col
@@ -195,6 +181,15 @@ export default function DiscoveryPaths() {
                   bg-white
                   p-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-0.5
+                  hover:border-[#c8d4e4]
+                  hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)]
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#5279b4]
+                  focus:ring-offset-2
                 "
               >
                 {/* TITLE */}
@@ -205,6 +200,8 @@ export default function DiscoveryPaths() {
                     font-bold
                     leading-6
                     text-[#091127]
+                    transition-colors
+                    group-hover:text-[#5279b4]
                   "
                 >
                   {item.title}
@@ -220,6 +217,7 @@ export default function DiscoveryPaths() {
                     font-normal
                     leading-5
                     text-[#7890b2]
+                    group-hover:text-[#5279b4]
                   "
                 >
                   {item.path}
@@ -238,7 +236,7 @@ export default function DiscoveryPaths() {
                 >
                   {item.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

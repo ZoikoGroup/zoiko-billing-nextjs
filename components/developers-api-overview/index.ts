@@ -12,3 +12,4 @@ export { default as GovernanceIntegritySection } from "./GovernanceIntegritySect
 export { default as EnterpriseImplementationSection } from "./EnterpriseImplementationSection";
 export { default as DeveloperFaqSection } from "./DeveloperFaqSection";
 export { default as DeveloperFinalCtaSection } from "./DeveloperFinalCtaSection";
+export { default as MobileHeroInspector } from "./MobileHeroInspector";

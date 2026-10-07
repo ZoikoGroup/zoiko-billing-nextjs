@@ -36,9 +36,10 @@ export default function ProductUpdatesHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               See what changed in <br />
-              Zoiko Billing — <span className="text-[#1D70F5]">and what it means for your work.</span>
+              Zoiko Billing — <span className="text-[#1D70F5]">and what</span> <br />
+              <span className="text-[#1D70F5]">it means for your work.</span>
             </h1>
 
             {/* Subtitle */}
@@ -112,7 +113,7 @@ export default function ProductUpdatesHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             See what changed in Zoiko Billing —{" "}
             <span className="text-[#1D70F5]">and what it means for your work.</span>
           </h1>
@@ -160,7 +161,7 @@ export default function ProductUpdatesHeroSection() {
           {/* Interactive Search and Feed State Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left mb-4">
             
-            <h2 className="text-xs font-bold text-slate-900 mb-1.5">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-xs !font-bold text-slate-900 mb-1.5">
               Search product updates
             </h2>
 

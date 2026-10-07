@@ -81,21 +81,19 @@ export default function LeaderProfileTemplate() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
-                !text-[#091127]
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
+                !tracking-[-0.02em]
+                !text-slate-900
               "
             >
-              What a profile states, and what it will never contain.
+              What a profile states, and what it will <br className="hidden sm:inline" /> never contain.
             </h2>
 
             {/* DESCRIPTION */}
@@ -104,12 +102,11 @@ export default function LeaderProfileTemplate() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-[#5d7192]
-
-                sm:text-base
+                leading-relaxed
+                text-slate-500
               "
             >
               Rendered with placeholders. The right-hand panel is the

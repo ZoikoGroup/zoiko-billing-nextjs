@@ -48,6 +48,7 @@ export default function NewsroomPublications() {
             <h2
               className="
                 !m-0 w-full max-w-[662px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px] !font-extrabold
                 !leading-[1.2] !tracking-[-0.035em]
                 !text-[#091127]
@@ -56,8 +57,7 @@ export default function NewsroomPublications() {
                 lg:!text-[40px]
               "
             >
-              Publications come from the registry,
-              
+              Publications come from the registry, <br className="hidden sm:inline" />
               or the feed stays empty.
             </h2>
 

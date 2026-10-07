@@ -31,7 +31,7 @@ export default function ProductUpdatesFinalCtaSection() {
 
           {/* Left Text Content & Actions */}
           <div className="relative z-10 flex flex-col items-start gap-4 max-w-xl text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.15] tracking-tight text-white">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[38px] xl:!text-[42px] !font-extrabold !leading-[1.15] !tracking-tight !text-white">
               Know what changed. <br />
               Then check the source.
             </h2>
@@ -44,7 +44,7 @@ export default function ProductUpdatesFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#create-account"
+                href="/create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 shadow-md hover:bg-slate-100 transition"
               >
                 <span className="text-slate-900 font-semibold">Create account</span>
@@ -79,7 +79,7 @@ export default function ProductUpdatesFinalCtaSection() {
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
 
           {/* Headline */}
-          <h2 className="text-xl sm:text-2xl font-extrabold leading-snug text-white mb-2 relative z-10">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl !font-extrabold !leading-snug !text-white mb-2 relative z-10">
             Know what changed.<br />
             Then check the source.
           </h2>
@@ -92,7 +92,7 @@ export default function ProductUpdatesFinalCtaSection() {
           {/* 2 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4 relative z-10">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-10 items-center justify-center rounded-full bg-white px-5 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Create account</span>
@@ -140,7 +140,7 @@ export default function ProductUpdatesFinalCtaSection() {
         {/* ========================================================================= */}
         <div className="block lg:hidden relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-7 sm:p-12 text-left text-white shadow-xl">
           
-          <h2 className="text-xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl lg:!text-3xl !font-extrabold !leading-tight !tracking-tight !text-white mb-3">
             Shipped changes, clearly scoped and documented.
           </h2>
 
@@ -151,7 +151,7 @@ export default function ProductUpdatesFinalCtaSection() {
           {/* Buttons Row */}
           <div className="flex flex-wrap items-center gap-3.5 mb-6 sm:mb-8">
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
             >
               <span className="text-[#1D60EB] font-semibold">Create account</span>

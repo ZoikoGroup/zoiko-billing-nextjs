@@ -86,7 +86,7 @@ export default function AuthenticationFaqSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Direct answers, without speculation.
         </h2>
 
@@ -108,7 +108,7 @@ export default function AuthenticationFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleLeft(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-xs sm:text-sm text-slate-900 transition hover:text-[#1D70F5]"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-xs sm:text-sm text-slate-900 transition hover:text-[#1D70F5]"
                   >
                     <span>{faq.question}</span>
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#1D70F5] text-xs font-bold">
@@ -135,7 +135,7 @@ export default function AuthenticationFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleRight(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left font-bold text-xs sm:text-sm text-slate-900 transition hover:text-[#1D70F5]"
+                    className="flex w-full items-center justify-between gap-4 text-left !font-[family-name:var(--font-jakarta)] font-bold text-xs sm:text-sm text-slate-900 transition hover:text-[#1D70F5]"
                   >
                     <span>{faq.question}</span>
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#1D70F5] text-xs font-bold">

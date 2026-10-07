@@ -84,8 +84,10 @@ export default function SpecialistHandoffs() {
               flex-col
               items-center
               gap-3
-              pt-2
+              pt-1
               text-center
+
+              sm:pt-2
             "
           >
             {/* EYEBROW */}
@@ -170,16 +172,22 @@ export default function SpecialistHandoffs() {
                 key={handoff.title}
                 className="
                   flex
-                  min-h-[240px]
+                  min-h-[220px]
+                  w-full
                   flex-col
                   items-start
-                  gap-1.5
+                  gap-2
                   rounded-2xl
                   border
                   border-[#dfe5ee]
                   bg-white
                   p-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
+
+                  sm:min-h-[230px]
+                  sm:p-6
+
+                  lg:min-h-[240px]
                 "
               >
                 {/* TITLE */}
@@ -187,7 +195,6 @@ export default function SpecialistHandoffs() {
                   className="
                     !m-0
                     w-full
-                    font-['Plus_Jakarta_Sans']
                     text-sm
                     font-bold
                     leading-6
@@ -202,10 +209,13 @@ export default function SpecialistHandoffs() {
                   className="
                     !m-0
                     w-full
-                    text-xs
+                    text-[13px]
                     font-normal
-                    leading-5
+                    leading-6
                     text-[#5d7192]
+
+                    sm:text-sm
+                    sm:leading-6
                   "
                 >
                   {handoff.description}

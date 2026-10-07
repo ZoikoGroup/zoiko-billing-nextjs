@@ -24,7 +24,7 @@ export default function SupportPolicyHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               What support covers, <br />
               <span className="text-[#1D70F5]">and what it commits to.</span>
             </h1>
@@ -46,7 +46,7 @@ export default function SupportPolicyHeroSection() {
               </Link>
 
               <Link
-                href="#contact-support"
+                href="/contact-support"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 transition hover:bg-slate-50"
               >
                 <span className="text-slate-900 font-semibold">Contact Support</span>
@@ -100,7 +100,7 @@ export default function SupportPolicyHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             What support covers,{" "}
             <span className="text-[#1D70F5]">and what it commits to.</span>
           </h1>

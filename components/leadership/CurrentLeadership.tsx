@@ -83,21 +83,19 @@ export default function CurrentLeadership() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
-                !text-[#091127]
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
+                !tracking-[-0.02em]
+                !text-slate-900
               "
             >
-              Profiles come from the registry, or the roster stays empty.
+              Profiles come from the registry, or the <br className="hidden sm:inline" /> roster stays empty.
             </h2>
 
             {/* DESCRIPTION */}
@@ -106,12 +104,11 @@ export default function CurrentLeadership() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-[#5d7192]
-
-                sm:text-base
+                leading-relaxed
+                text-slate-500
               "
             >
               Select a registry state to see how each renders. No person is

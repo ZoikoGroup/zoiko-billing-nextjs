@@ -154,21 +154,19 @@ export default function AuthorityBoundaries() {
               className="
                 !m-0
                 w-full
-                max-w-[662px]
-                !text-[30px]
-                !font-extrabold
+                max-w-[700px]
+                !font-[family-name:var(--font-jakarta)]
+                !text-2xl
+                sm:!text-3xl
+                lg:!text-[36px]
+                xl:!text-[38px]
+                !font-bold
                 !leading-[1.2]
-                !tracking-[-0.035em]
-                !text-[#091127]
-
-                sm:!text-[34px]
-
-                md:!text-[36px]
-
-                lg:!text-[40px]
+                !tracking-[-0.02em]
+                !text-slate-900
               "
             >
-              Six questions a leadership page attracts and must not answer.
+              Six questions a leadership page attracts <br className="hidden sm:inline" /> and must not answer.
             </h2>
 
             {/* DESCRIPTION */}
@@ -177,12 +175,11 @@ export default function AuthorityBoundaries() {
                 !m-0
                 w-full
                 max-w-[687px]
-                text-[15px]
+                text-sm
+                sm:text-[15px]
                 font-normal
-                leading-7
-                text-[#5d7192]
-
-                sm:text-base
+                leading-relaxed
+                text-slate-500
               "
             >
               Each has an owner, and inferring any of them from a job title is
