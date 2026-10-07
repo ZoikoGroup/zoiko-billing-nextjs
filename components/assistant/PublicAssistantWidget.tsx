@@ -185,7 +185,7 @@ function useAssistantTheme() {
   return { isDark, toggle, themeVars: THEMES[isDark ? "dark" : "light"] };
 }
 
-// ── Mode / risk badges (port of AssistantPanel MODE_CONFIG / RISK_COLORS) ────
+// ── Mode badge (port of AssistantPanel MODE_CONFIG) ──────────────────────────
 
 const MODE_CONFIG: Record<
   string,
@@ -197,15 +197,6 @@ const MODE_CONFIG: Record<
   M3_PREVIEW: { label: "Preview", icon: CheckCircle2, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-200" },
   M4_EXECUTE: { label: "Execute", icon: Shield, color: "text-red-600", bg: "bg-red-50", border: "border-red-200" },
   M5_ESCALATE: { label: "Escalate", icon: AlertTriangle, color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-200" },
-};
-
-const RISK_COLORS: Record<string, string> = {
-  R0: "bg-[var(--ab-surface-raised)] text-[var(--ab-text-secondary)]",
-  R1: "bg-emerald-100 text-emerald-700",
-  R2: "bg-amber-100 text-amber-700",
-  R3: "bg-orange-100 text-orange-700",
-  R4: "bg-red-100 text-red-700",
-  RX: "bg-red-200 text-red-800",
 };
 
 // ── Welcome message (port of platform WELCOME_MESSAGE) ───────────────────────
@@ -712,7 +703,6 @@ function MessageBubble({
 }) {
   const isUser = message.role === "user";
   const mode = message.mode ? MODE_CONFIG[message.mode] : null;
-  const riskClass = message.risk_class || "R0";
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} gap-2`}>
@@ -723,7 +713,10 @@ function MessageBubble({
           <div className={`inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full mb-1 ${mode.bg} ${mode.color} ${mode.border} border`}>
             <mode.icon size={10} />
             {mode.label}
-            <span className={`ml-1 px-1 rounded text-[9px] ${RISK_COLORS[riskClass] || RISK_COLORS.R0}`}>{riskClass}</span>
+            {/* risk_class stays in the wire contract and on the message object
+                for internal auditing, but it is NOT customer-facing copy. R0 is
+                the default for every public answer, so rendering it just showed
+                visitors an "Explain R0" badge that means nothing to them. */}
           </div>
         )}
 

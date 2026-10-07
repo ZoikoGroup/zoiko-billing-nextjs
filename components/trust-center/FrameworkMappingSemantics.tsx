@@ -18,7 +18,7 @@ export default function FrameworkMappingSemantics() {
       implication: (
         <>
           <strong>Independent validation or certification.</strong> A mapping
-          is our own analysis, not someone else's verdict.
+          is our own analysis, not someone else&apos;s verdict.
         </>
       ),
     },

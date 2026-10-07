@@ -62,7 +62,7 @@ export default function AuditabilityPrinciples() {
         <>
           <strong>Timeline relationship. No</strong>
           <br className="hidden sm:block" />
-          <strong>"immutable" claim.</strong>
+          <strong>&quot;immutable&quot; claim.</strong>
         </>
       ),
     },
