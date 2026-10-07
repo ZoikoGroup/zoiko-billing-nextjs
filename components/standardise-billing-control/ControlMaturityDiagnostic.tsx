@@ -195,7 +195,7 @@ export default function ControlMaturityDiagnostic() {
                   text-[#7890b2]
                 "
               >
-                Neutral language throughout. Most teams answer "varies" to at
+                Neutral language throughout. Most teams answer &quot;varies&quot; to at
                 least one of these.
               </p>
             </div>

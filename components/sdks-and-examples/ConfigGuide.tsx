@@ -28,7 +28,7 @@ export default function ConfigGuide() {
       area: "Production examples",
       behavior: (
         <>
-          <strong>Do not imply "change one URL and go live"</strong> —
+          <strong>Do not imply &quot;change one URL and go live&quot;</strong> —
           require readiness checks
         </>
       ),
@@ -140,7 +140,7 @@ export default function ConfigGuide() {
                 lg:!text-[40px]
               "
             >
-              "Change one URL and go live" is not a supported story.
+              &quot;Change one URL and go live&quot; is not a supported story.
             </h2>
 
             {/* DESCRIPTION */}

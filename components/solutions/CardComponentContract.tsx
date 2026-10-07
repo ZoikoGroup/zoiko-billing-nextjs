@@ -19,8 +19,8 @@ export default function CardComponentContract() {
           <strong className="font-bold">
             Recognizable context, not an outcome guarantee.
           </strong>{" "}
-          "You are chasing payments across spreadsheets" is a context; "you
-          will get paid faster" is a claim.
+           &quot;You are chasing payments across spreadsheets&quot; is a context; &quot;you
+          will get paid faster&quot; is a claim.
         </>
       ),
     },
@@ -54,7 +54,7 @@ export default function CardComponentContract() {
       element: "CTA",
       content: (
         <>
-          "Explore [solution]" — a standard anchor to{" "}
+          &quot;Explore [solution]&quot; — a standard anchor to{" "}
           <strong className="font-bold">
             one current canonical route
           </strong>
@@ -85,7 +85,7 @@ export default function CardComponentContract() {
       content: (
         <>
           <strong className="font-bold">
-            No "best match", percentage fit, stars, rankings, badges or ROI
+            No &quot;best match&quot;, percentage fit, stars, rankings, badges or ROI
             labels without explicit source.
           </strong>
         </>

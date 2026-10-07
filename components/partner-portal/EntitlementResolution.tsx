@@ -19,7 +19,7 @@ const rows = [
     rule: "The exact current partner organization must be selected.",
     doesNotGrant: (
       <>
-        <strong>Access to one organization's workspace</strong> where a user
+        <strong>Access to one organization&apos;s workspace</strong> where a user
         belongs to several
       </>
     ),
