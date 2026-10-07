@@ -664,10 +664,10 @@ export default function LegalNotices() {
                 label="Why there are no blank rows"
                 variant="orange"
               >
-                An empty cell or a dash in a provider table reads as "none" or
-                "not applicable", and that is a factual claim nobody approved.
+                An empty cell or a dash in a provider table reads as &quot;none&quot; or
+                &quot;not applicable&quot;, and that is a factual claim nobody approved.
                 Where a field is unknown or withheld, a published record will say
-                "not published" in words instead.
+                &quot;not published&quot; in words instead.
               </Callout>
             </Section>
 

@@ -1,3 +1,75 @@
+type GlossaryRow = {
+  label: string;
+  value: string;
+  boldPart?: string;
+};
+
+const renderValue = (value: string, boldPart?: string) => {
+  if (!boldPart) return value;
+
+  const parts = value.split(boldPart);
+
+  return (
+    <>
+      {parts[0]}
+      <strong className="font-bold">{boldPart}</strong>
+      {parts[1]}
+    </>
+  );
+};
+
+const TableRows = ({ rows }: { rows: GlossaryRow[] }) => (
+  <>
+    {/* DESKTOP */}
+    <div className="hidden md:block">
+      {rows.map((row, index) => (
+        <div
+          key={row.label}
+          className={`grid grid-cols-[128px_minmax(0,1fr)] ${
+            index !== rows.length - 1
+              ? "border-b border-[#edf0f4]"
+              : ""
+          }`}
+        >
+          <div className="px-4 py-3.5">
+            <span className="text-sm font-semibold leading-5 text-[#091127]">
+              {row.label}
+            </span>
+          </div>
+
+          <div className="px-4 py-3.5">
+            <span className="text-sm font-normal leading-5 text-[#5d7192]">
+              {renderValue(row.value, row.boldPart)}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* MOBILE */}
+    <div className="flex flex-col md:hidden">
+      {rows.map((row, index) => (
+        <div
+          key={row.label}
+          className={`p-5 ${
+            index !== rows.length - 1
+              ? "border-b border-[#edf0f4]"
+              : ""
+          }`}
+        >
+          <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
+            {row.label}
+          </p>
+
+          <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
+            {renderValue(row.value, row.boldPart)}
+          </p>
+        </div>
+      ))}
+    </div>
+  </>
+);
+
 export default function CanonicalTermEntry() {
   const aboveTheFold = [
     {
@@ -81,80 +153,6 @@ export default function CanonicalTermEntry() {
         "Guide, template, product, docs, help, developers, trust or pricing per need",
     },
   ];
-
-  const renderValue = (value: string, boldPart?: string) => {
-    if (!boldPart) return value;
-
-    const parts = value.split(boldPart);
-
-    return (
-      <>
-        {parts[0]}
-        <strong className="font-bold">{boldPart}</strong>
-        {parts[1]}
-      </>
-    );
-  };
-
-  const TableRows = ({
-    rows,
-  }: {
-    rows: {
-      label: string;
-      value: string;
-      boldPart?: string;
-    }[];
-  }) => (
-    <>
-      {/* DESKTOP */}
-      <div className="hidden md:block">
-        {rows.map((row, index) => (
-          <div
-            key={row.label}
-            className={`grid grid-cols-[128px_minmax(0,1fr)] ${
-              index !== rows.length - 1
-                ? "border-b border-[#edf0f4]"
-                : ""
-            }`}
-          >
-            <div className="px-4 py-3.5">
-              <span className="text-sm font-semibold leading-5 text-[#091127]">
-                {row.label}
-              </span>
-            </div>
-
-            <div className="px-4 py-3.5">
-              <span className="text-sm font-normal leading-5 text-[#5d7192]">
-                {renderValue(row.value, row.boldPart)}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* MOBILE */}
-      <div className="flex flex-col md:hidden">
-        {rows.map((row, index) => (
-          <div
-            key={row.label}
-            className={`p-5 ${
-              index !== rows.length - 1
-                ? "border-b border-[#edf0f4]"
-                : ""
-            }`}
-          >
-            <p className="!m-0 text-[11px] font-bold uppercase tracking-[0.12em] text-[#7890b2]">
-              {row.label}
-            </p>
-
-            <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
-              {renderValue(row.value, row.boldPart)}
-            </p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
 
   return (
     <section className="w-full bg-[#f7f8fa]">

@@ -18,7 +18,7 @@ const evidenceRows = [
     field: "Scope qualifier",
     requirement: (
       <>
-        <strong>Do not generalize one customer's result to all customers</strong>
+        <strong>Do not generalize one customer&apos;s result to all customers</strong>
       </>
     ),
   },
@@ -138,7 +138,7 @@ export default function CustomerStories() {
                 lg:!text-[40px]
               "
             >
-              One customer's result is not
+              One customer&apos;s result is not
               <br className="hidden sm:block" /> everyone&apos;s result.
             </h2>
 

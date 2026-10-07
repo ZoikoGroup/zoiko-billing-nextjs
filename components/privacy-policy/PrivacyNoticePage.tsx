@@ -544,7 +544,7 @@ export default function PrivacyNoticePage() {
 
           <div className="px-3.5 py-3">
             <span className="text-sm font-normal leading-6 text-color-azure-10-2">
-              The registry version identifier. No "latest" label appears
+              The registry version identifier. No &quot;latest&quot; label appears
               without a source-current check.
             </span>
           </div>
@@ -660,7 +660,7 @@ export default function PrivacyNoticePage() {
             </p>
 
             <p className="!m-0 mt-1 text-sm leading-6 text-color-azure-10-2">
-              The registry version identifier. No "latest" label appears
+              The registry version identifier. No &quot;latest&quot; label appears
               without a source-current check.
             </p>
           </div>

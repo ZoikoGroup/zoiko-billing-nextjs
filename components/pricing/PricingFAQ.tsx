@@ -7,6 +7,76 @@ type FAQ = {
   answer: string;
 };
 
+function FAQItem({
+  faq,
+  isOpen,
+  onClick,
+}: {
+  faq: FAQ;
+  isOpen: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div className="w-full border-b border-[#edf0f4] last:border-b-0">
+      <button
+        type="button"
+        onClick={onClick}
+        aria-expanded={isOpen}
+        className="flex min-h-20 w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left"
+      >
+        <span className="text-sm font-semibold leading-6 text-[#091127]">
+          {faq.question}
+        </span>
+
+        <span
+          className={`flex size-5 shrink-0 items-center justify-center rounded-md bg-[#f1f3f6] text-sm font-semibold leading-5 text-[#5d7192] transition-transform duration-200 ${
+            isOpen ? "rotate-0" : ""
+          }`}
+        >
+          {isOpen ? "−" : "+"}
+        </span>
+      </button>
+
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-5 pb-5">
+            <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
+              {faq.answer}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FAQCard({ faqs }: { faqs: FAQ[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setOpenIndex((current) => (current === index ? null : index));
+  };
+
+  return (
+    <div className="w-full overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]">
+      {faqs.map((faq, index) => (
+        <FAQItem
+          key={faq.question}
+          faq={faq}
+          isOpen={openIndex === index}
+          onClick={() => handleClick(index)}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function PricingFAQ() {
   const leftFaqs: FAQ[] = [
     {
@@ -53,76 +123,6 @@ export default function PricingFAQ() {
         "You can request a downgrade to a lower plan. Your existing data is not silently deleted as part of the downgrade. Any feature or usage differences will follow the limits and capabilities of the new plan.",
     },
   ];
-
-  const FAQItem = ({
-    faq,
-    isOpen,
-    onClick,
-  }: {
-    faq: FAQ;
-    isOpen: boolean;
-    onClick: () => void;
-  }) => {
-    return (
-      <div className="w-full border-b border-[#edf0f4] last:border-b-0">
-        <button
-          type="button"
-          onClick={onClick}
-          aria-expanded={isOpen}
-          className="flex min-h-20 w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left"
-        >
-          <span className="text-sm font-semibold leading-6 text-[#091127]">
-            {faq.question}
-          </span>
-
-          <span
-            className={`flex size-5 shrink-0 items-center justify-center rounded-md bg-[#f1f3f6] text-sm font-semibold leading-5 text-[#5d7192] transition-transform duration-200 ${
-              isOpen ? "rotate-0" : ""
-            }`}
-          >
-            {isOpen ? "−" : "+"}
-          </span>
-        </button>
-
-        <div
-          className={`grid transition-all duration-300 ease-in-out ${
-            isOpen
-              ? "grid-rows-[1fr] opacity-100"
-              : "grid-rows-[0fr] opacity-0"
-          }`}
-        >
-          <div className="overflow-hidden">
-            <div className="px-5 pb-5">
-              <p className="!m-0 text-sm font-normal leading-6 text-[#5d7192]">
-                {faq.answer}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const FAQCard = ({ faqs }: { faqs: FAQ[] }) => {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const handleClick = (index: number) => {
-      setOpenIndex((current) => (current === index ? null : index));
-    };
-
-    return (
-      <div className="w-full overflow-hidden rounded-2xl border border-[#dfe5ee] bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]">
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={faq.question}
-            faq={faq}
-            isOpen={openIndex === index}
-            onClick={() => handleClick(index)}
-          />
-        ))}
-      </div>
-    );
-  };
 
   return (
     <section className="w-full bg-[#f7f8fa]">

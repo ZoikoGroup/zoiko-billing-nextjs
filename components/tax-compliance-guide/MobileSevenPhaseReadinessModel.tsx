@@ -426,7 +426,7 @@ export default function MobileSevenPhaseReadinessModel() {
         {/* SET THIS PHASE'S STATE */}
         <div className="mt-5 border-t border-[#edf0f4] pt-4">
           <p className="!m-0 text-[10px] font-bold uppercase tracking-wider text-[#7890b2]">
-            Set this phase's state
+            Set this phase&apos;s state
           </p>
 
           <div className="mt-2.5 flex flex-wrap gap-1.5">

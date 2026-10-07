@@ -171,7 +171,7 @@ export default function CandidateTrust() {
                 sm:text-base
               "
             >
-              Hiring is where a company's stated standards are easiest to
+              Hiring is where a company&apos;s stated standards are easiest to
               abandon quietly, so these are stated as commitments a candidate
               can check.
             </p>
