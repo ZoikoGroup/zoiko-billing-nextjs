@@ -9,7 +9,7 @@ export default function InstallGuide() {
       treatment: (
         <>
           Recommended or current supported state from registry —{" "}
-          <strong>avoid "latest" without governance</strong>
+          <strong>avoid &quot;latest&quot; without governance</strong>
         </>
       ),
     },
@@ -145,7 +145,7 @@ export default function InstallGuide() {
                 lg:!text-[40px]
               "
             >
-              Ten concerns, and "latest" is not a version.
+              Ten concerns, and &quot;latest&quot; is not a version.
             </h2>
 
             {/* DESCRIPTION */}

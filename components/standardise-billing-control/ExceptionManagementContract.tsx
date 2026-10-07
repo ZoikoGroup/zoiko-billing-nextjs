@@ -115,7 +115,7 @@ export default function ExceptionManagementContract() {
                 a controlled deviation from the standard operating rule, for a
                 bounded reason and scope
               </span>{" "}
-              — the words "controlled" and "bounded" carry the whole
+              — the words &quot;controlled&quot; and &quot;bounded&quot; carry the whole
               definition.
             </p>
           </div>
@@ -254,7 +254,7 @@ export default function ExceptionManagementContract() {
                 "
               >
                 <strong>Recommended only.</strong> These are not verified
-                product statuses, and "Approved exception" deliberately keeps
+                product statuses, and &quot;Approved exception&quot; deliberately keeps
                 the word exception rather than becoming a second kind of
                 normal.
               </p>
