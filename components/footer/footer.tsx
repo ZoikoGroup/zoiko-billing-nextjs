@@ -59,6 +59,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Entity-Level Controls', href: '/entity-level-controls' },
       { label: 'Jurisdiction Availability', href: '/jurisdiction-availability' },
       { label: 'Supported Languages', href: '/supported-languages' },
+      { label: 'Local Payment', href: '/local-payment' },
     ],
   },
   {
@@ -155,7 +156,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { label: 'Terms of User', href: '/terms-of-user' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
-      { label: 'Acceptable Use Policy', href: '#' },
+      { label: 'Acceptable Use Policy', href: 'acceptable-use-policy' },
       { label: 'Data Processing Addendum', href: '/data-processing-addendum' },
       { label: 'Subprocessors', href: '/subprocessors' },
       { label: 'Legal Notices', href: '/legal-notices' },
@@ -201,12 +202,12 @@ export default function ZoikoBillingPage() {
               >
                 Book Demo
               </a>
-              <button
-                type="button"
+            <a
+                href="pricing"
                 className="px-6 py-3.5 border border-white/50 hover:bg-white/10 text-white font-medium text-lg rounded-xl shadow-md transition-all focus:outline-none"
               >
                 View Pricing
-              </button>
+            </a>  
             </div>
           </div>
 

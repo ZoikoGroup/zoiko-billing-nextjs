@@ -1,34 +1,42 @@
+import Link from "next/link";
+
 export default function DevJourneys() {
   const journeys = [
     {
       title: "API Overview",
       description:
         "Capability orientation and the product-domain versus API-exposure distinction.",
+      href: "/developers-api-overview",
     },
     {
       title: "API Documentation",
       description:
         "Authoritative request, response, permission, lifecycle and error behavior.",
+      href: "/documentation",
     },
     {
       title: "Authentication",
       description:
         "Methods, credential lifecycle, scopes and environment binding.",
+      href: "/developers-authentication",
     },
     {
       title: "Webhooks",
       description:
         "Event identity, delivery, verification and replay governance.",
+      href: "developers-webhooks",
     },
     {
       title: "Developer Sandbox",
       description:
         "Non-production fidelity, test data and safe validation evidence.",
+      href: "/developer-sandbox",
     },
     {
       title: "Build an Integration",
       description:
         "Architecture, readiness sequencing and operational ownership.",
+      href: "/developers-build-an-integration",
     },
   ];
 
@@ -150,9 +158,11 @@ export default function DevJourneys() {
             "
           >
             {journeys.map((journey) => (
-              <div
+              <Link
                 key={journey.title}
+                href={journey.href}
                 className="
+                  group
                   flex
                   min-h-[192px]
                   flex-col
@@ -163,9 +173,15 @@ export default function DevJourneys() {
                   bg-white
                   p-5
                   shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-                  transition-shadow
+                  transition-all
                   duration-200
+                  hover:-translate-y-0.5
+                  hover:border-[#c8d4e4]
                   hover:shadow-[0_10px_28px_rgba(15,23,42,0.08),0_2px_4px_rgba(15,23,42,0.05)]
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#5279b4]
+                  focus:ring-offset-2
                   sm:min-h-[192px]
                   sm:p-5
                 "
@@ -177,6 +193,8 @@ export default function DevJourneys() {
                     font-bold
                     leading-6
                     text-[#091127]
+                    transition-colors
+                    group-hover:text-[#5279b4]
                   "
                 >
                   {journey.title}
@@ -194,7 +212,7 @@ export default function DevJourneys() {
                 >
                   {journey.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

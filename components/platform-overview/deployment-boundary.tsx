@@ -34,7 +34,9 @@ const deploymentOptions: DeploymentOption[] = [
 
 export default function DeploymentBoundarySection() {
   return (
-    <section className="w-full bg-[#f7f8fa]">
+    <section
+    id = "deployment-options"
+     className="w-full bg-[#f7f8fa]">
       <div
         className="
           mx-auto
@@ -302,7 +304,7 @@ export default function DeploymentBoundarySection() {
 
           {/* CTA */}
           <div className="flex w-full justify-center pt-1">
-            <a
+            {/*<a
               href="#"
               className="
                 inline-flex
@@ -330,7 +332,7 @@ export default function DeploymentBoundarySection() {
               "
             >
               Compare deployment options
-            </a>
+            </a>*/}
           </div>
         </div>
       </div>

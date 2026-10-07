@@ -1,26 +1,32 @@
+import Link from "next/link";
+
 export default function SpecialistHandoffs() {
   const handoffs = [
     {
       question: "How is security governed?",
       destination: "Security Overview",
+      href: "/security-overview",
       description: "owns the program explanation.",
       note: "Trust Center does not duplicate its narrative.",
     },
     {
       question: "How is my data handled?",
       destination: "Privacy & Data Governance",
+      href: "/privacy-and-data-governance",
       description: "owns lifecycle, retention",
       note: "and rights. Trust Center may catalog related evidence.",
     },
     {
       question: "What are your recovery objectives?",
       destination: "Business Continuity",
+      href: null,
       description: "owns recovery doctrine.",
       note: "Trust Center catalogs evidence, not operational commitments.",
     },
     {
       question: "Is there an active issue?",
       destination: "System Status.",
+      href: "/system-status",
       description: "",
       note: "Trust Center is never treated as live status and publishes no availability figure.",
       inline: true,
@@ -28,12 +34,14 @@ export default function SpecialistHandoffs() {
     {
       question: "Is there a published advisory?",
       destination: "Security Advisories",
+      href: "/security-advisories",
       description: ".",
       note: "No copied stale feed appears here.",
     },
     {
       question: "How accessible is the product?",
       destination: "Accessibility",
+      href: "/accessibility",
       description: "owns conformance semantics.",
       note: "Trust Center catalogs approved conformance evidence if present.",
     },
@@ -51,15 +59,11 @@ export default function SpecialistHandoffs() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -100,7 +104,6 @@ export default function SpecialistHandoffs() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -122,11 +125,8 @@ export default function SpecialistHandoffs() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
@@ -143,7 +143,6 @@ export default function SpecialistHandoffs() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -195,9 +194,18 @@ export default function SpecialistHandoffs() {
                         text-[#5d7192]
                       "
                     >
-                      <span className="font-semibold text-[#5276a0]">
-                        {handoff.destination}
-                      </span>{" "}
+                      {handoff.href ? (
+                        <Link
+                          href={handoff.href}
+                          className="font-semibold text-[#5276a0] hover:underline"
+                        >
+                          {handoff.destination}
+                        </Link>
+                      ) : (
+                        <span className="font-semibold text-[#5276a0]">
+                          {handoff.destination}
+                        </span>
+                      )}{" "}
                       <strong className="font-bold">
                         Trust Center is never treated as live status
                       </strong>{" "}
@@ -213,9 +221,18 @@ export default function SpecialistHandoffs() {
                           text-[#5d7192]
                         "
                       >
-                        <span className="font-semibold text-[#5276a0]">
-                          {handoff.destination}
-                        </span>{" "}
+                        {handoff.href ? (
+                          <Link
+                            href={handoff.href}
+                            className="font-semibold text-[#5276a0] hover:underline"
+                          >
+                            {handoff.destination}
+                          </Link>
+                        ) : (
+                          <span className="font-semibold text-[#5276a0]">
+                            {handoff.destination}
+                          </span>
+                        )}{" "}
                         {handoff.description}
                       </p>
 

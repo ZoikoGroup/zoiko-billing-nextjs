@@ -25,17 +25,17 @@ const journeyCards: JourneyCard[] = [
   {
     title: "Developer Sandbox",
     description: "Test approved integration behavior in a safe environment when available.",
-    href: "#sandbox",
+    href: "/developer-sandbox",
   },
   {
     title: "SDKs & Examples",
     description: "Use source-approved consumer and verification examples.",
-    href: "#sdks",
+    href: "sdks-and-examples",
   },
   {
     title: "Build an Integration",
     description: "Move from reference knowledge to a governed implementation journey.",
-    href: "#build",
+    href: "/developers-build-an-integration",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function RelatedDeveloperJourneysSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           Six destinations, each with a contextual reason.
         </h2>
 
@@ -71,7 +71,7 @@ export default function RelatedDeveloperJourneysSection() {
               className="group rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-slate-300 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#1D70F5] transition mb-2">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#1D70F5] transition mb-2">
                   {card.title}
                 </h3>
                 <p className="text-xs sm:text-sm font-normal leading-relaxed text-slate-600">

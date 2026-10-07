@@ -31,7 +31,7 @@ export default function WebinarEventsFinalCtaSection() {
 
           {/* Left Text Content & Actions */}
           <div className="relative z-10 flex flex-col items-start gap-4 max-w-xl text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.15] tracking-tight text-white">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[38px] xl:!text-[42px] !font-extrabold !leading-[1.15] !tracking-tight !text-white">
               Learn the practice, <br />
               then see the product.
             </h2>
@@ -44,14 +44,14 @@ export default function WebinarEventsFinalCtaSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-3">
               <Link
-                href="#book-demo"
+                href="/book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 shadow-md hover:bg-slate-100 transition"
               >
                 <span className="text-slate-900 font-semibold">Book a demo</span>
               </Link>
 
               <Link
-                href="#create-account"
+                href="/create-account"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-700/80 bg-transparent px-6 text-center text-xs sm:text-sm font-semibold !text-white shadow-sm transition hover:bg-white/10"
               >
                 <span className="text-white font-semibold">Create account</span>
@@ -79,7 +79,7 @@ export default function WebinarEventsFinalCtaSection() {
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
 
           {/* Headline */}
-          <h2 className="text-xl sm:text-2xl font-extrabold leading-snug text-white mb-2 relative z-10">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl !font-extrabold !leading-snug !text-white mb-2 relative z-10">
             Learn the practice,<br />
             then see the product.
           </h2>
@@ -92,14 +92,14 @@ export default function WebinarEventsFinalCtaSection() {
           {/* 2 Buttons Row */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4 relative z-10">
             <Link
-              href="#book-demo"
+              href="/book-demo"
               className="inline-flex min-h-10 items-center justify-center rounded-full bg-white px-5 text-center text-xs font-semibold !text-slate-900 shadow-sm"
             >
               <span className="text-slate-900 font-semibold">Book a demo</span>
             </Link>
 
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/80 bg-transparent px-5 text-center text-xs font-semibold !text-white"
             >
               <span className="text-white font-semibold">Create account</span>
@@ -140,7 +140,7 @@ export default function WebinarEventsFinalCtaSection() {
         {/* ========================================================================= */}
         <div className="block lg:hidden relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#1D60EB] via-[#2A52D8] to-[#4339C7] p-7 sm:p-12 text-left text-white shadow-xl">
           
-          <h2 className="text-xl sm:text-3xl font-extrabold leading-tight tracking-tight text-white mb-3">
+          <h2 className="!font-[family-name:var(--font-jakarta)] !text-xl sm:!text-2xl lg:!text-3xl !font-extrabold !leading-tight !tracking-tight !text-white mb-3">
             Live operational learning, zero unverified promises.
           </h2>
 
@@ -151,14 +151,14 @@ export default function WebinarEventsFinalCtaSection() {
           {/* Buttons Row */}
           <div className="flex flex-wrap items-center gap-3.5 mb-6 sm:mb-8">
             <Link
-              href="#book-demo"
+              href="/book-demo"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-[#1D60EB] shadow-md hover:bg-slate-50 transition"
             >
               <span className="text-[#1D60EB] font-semibold">Book a demo</span>
             </Link>
 
             <Link
-              href="#create-account"
+              href="/create-account"
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-blue-200/60 bg-transparent px-6 text-center text-sm font-semibold !text-white hover:bg-white/10 transition"
             >
               <span className="text-white font-semibold">Create account</span>

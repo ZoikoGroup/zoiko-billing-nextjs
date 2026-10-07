@@ -1,9 +1,12 @@
+import Link from "next/link";
+
 interface CapabilityCardData {
   title: string;
   summary: string;
   tags: string;
   badgeText: string;
   extraText?: string;
+  href: string;
 }
 
 const capabilityCards: CapabilityCardData[] = [
@@ -15,6 +18,7 @@ const capabilityCards: CapabilityCardData[] = [
       "Customer and account records · identifiers · contact and billing attributes · lifecycle metadata",
     badgeText: "State pending canonical source",
     extraText: "Per object and action",
+    href: "/customer-records",
   },
   {
     title: "Invoices & credit notes",
@@ -24,6 +28,7 @@ const capabilityCards: CapabilityCardData[] = [
       "Draft and issued documents · line items · credit notes · status and evidence links",
     badgeText: "State pending canonical source",
     extraText: "Per object and action",
+    href: "/invoices",
   },
   {
     title: "Charges & adjustments",
@@ -33,6 +38,7 @@ const capabilityCards: CapabilityCardData[] = [
       "Charges · adjustments · reason and context · approval and evidence references",
     badgeText: "State pending canonical source",
     extraText: "Per action",
+    href: "/charges-and-adjustments",
   },
   {
     title: "Billing schedules",
@@ -41,6 +47,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Schedules · effective periods · lifecycle state · next-action metadata",
     badgeText: "State pending canonical source",
+    href: "/billing-schedules",
   },
   {
     title: "Documents & delivery",
@@ -49,6 +56,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Documents · delivery state · channels · evidence and status",
     badgeText: "State pending canonical source",
+    href: "/documents-and-delivery",
   },
   {
     title: "Accounts receivable",
@@ -57,6 +65,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Balances · aging context · collections and workflow references",
     badgeText: "State pending canonical source",
+    href: "/accounts-receivable",
   },
   {
     title: "Payments & reconciliation",
@@ -65,6 +74,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Payments · allocations · reconciliation state · exceptions",
     badgeText: "State pending canonical source",
+    href: "/payments-and-reconcilliation",
   },
   {
     title: "Outstanding balances",
@@ -73,6 +83,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Outstanding amounts · invoice linkage · aging and status",
     badgeText: "State pending canonical source",
+    href: "/outstanding-balances",
   },
   {
     title: "Reporting & analytics",
@@ -81,6 +92,7 @@ const capabilityCards: CapabilityCardData[] = [
     tags:
       "Report dimensions · filters · exports · aggregates where supported",
     badgeText: "State pending canonical source",
+    href: "/reporting-and-analytics",
   },
   {
     title: "Roles, approvals & automation",
@@ -90,15 +102,13 @@ const capabilityCards: CapabilityCardData[] = [
       "Approval state · role context · workflow events · policy outcomes",
     badgeText: "State pending canonical source",
     extraText: "Explicitly permission-aware",
+    href: "/automation",
   },
 ];
 
 export default function ApiCapabilityMapSection() {
   return (
-    <section
-      id="capability-map"
-      className="w-full bg-[#f7f8fa]"
-    >
+    <section id="capability-map" className="w-full bg-white">
       <div
         className="
           mx-auto
@@ -169,6 +179,7 @@ export default function ApiCapabilityMapSection() {
               className="
                 !m-0
                 w-full
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -214,9 +225,11 @@ export default function ApiCapabilityMapSection() {
             "
           >
             {capabilityCards.map((card) => (
-              <div
+              <Link
                 key={card.title}
+                href={card.href}
                 className="
+                  group
                   flex
                   min-h-[250px]
                   flex-col
@@ -227,6 +240,15 @@ export default function ApiCapabilityMapSection() {
                   bg-white
                   p-5
                   shadow-[0_6px_20px_rgba(15,23,42,0.04)]
+                  transition-all
+                  duration-200
+                  hover:-translate-y-0.5
+                  hover:border-[#c9d5e5]
+                  hover:shadow-[0_10px_28px_rgba(15,23,42,0.08)]
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#5279b4]
+                  focus:ring-offset-2
                   sm:p-6
                   md:p-7
                 "
@@ -236,10 +258,13 @@ export default function ApiCapabilityMapSection() {
                   <h3
                     className="
                       !m-0
+                      !font-[family-name:var(--font-jakarta)]
                       text-base
                       font-bold
                       leading-6
                       text-[#091127]
+                      transition-colors
+                      group-hover:text-[#5279b4]
                       sm:text-lg
                     "
                   >
@@ -308,7 +333,7 @@ export default function ApiCapabilityMapSection() {
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

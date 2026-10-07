@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 interface DestinationRuleRow {
   intent: string;
   destination: string;
   rule: React.ReactNode;
+  href: string;
 }
 
 const destinationRows: DestinationRuleRow[] = [
@@ -9,11 +12,13 @@ const destinationRows: DestinationRuleRow[] = [
     intent: "Need exact API contracts",
     destination: "API Documentation",
     rule: "Approved and locked destination",
+    href: "/documentation",
   },
   {
     intent: "Need event delivery",
     destination: "Webhooks",
     rule: "Link only — the detailed page remains a future item",
+    href: "/developers-webhooks",
   },
   {
     intent: "Need a safe test environment",
@@ -26,6 +31,7 @@ const destinationRows: DestinationRuleRow[] = [
         </span>
       </>
     ),
+    href: "/developer-sandbox",
   },
   {
     intent: "Need code accelerators",
@@ -38,19 +44,23 @@ const destinationRows: DestinationRuleRow[] = [
         </span>
       </>
     ),
+    href: "/sdks-and-examples",
   },
   {
     intent: "Need implementation help",
     destination: "Build an Integration",
     rule: "Commercial and support behavior must be approved separately",
+    href: "/developers-build-an-integration",
   },
 ];
 
 export default function FiveDestinationsNextStepsSection() {
   return (
-    <section className="w-full bg-slate-50/60 py-16 lg:py-24 border-t border-slate-100" id="next-steps">
-      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
-        
+    <section
+      className="w-full border-t border-slate-100 bg-slate-50/60 py-16 lg:py-24"
+      id="next-steps"
+    >
+      <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 text-center sm:px-8 lg:px-12">
         {/* Eyebrow */}
         <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
           <span className="h-px w-5 bg-slate-300" />
@@ -59,43 +69,74 @@ export default function FiveDestinationsNextStepsSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 max-w-3xl !font-[family-name:var(--font-jakarta)] !text-xl !font-extrabold !leading-tight !tracking-tight text-slate-900 sm:!text-3xl lg:!text-4xl">
           Five destinations, linked without describing them.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
-          Each link routes to the destination that owns the topic; none of them is characterized
-          here.
+        <p className="mt-3 max-w-2xl text-xs font-normal leading-relaxed text-slate-600 sm:text-base">
+          Each link routes to the destination that owns the topic; none of them
+          is characterized here.
         </p>
 
         {/* Table Container Card */}
-        <div className="mt-10 lg:mt-14 w-full max-w-[1240px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm text-left">
+        <div className="mt-10 w-full max-w-[1240px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white text-left shadow-sm lg:mt-14">
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[620px]">
+            <table className="min-w-[620px] w-full border-collapse text-left">
               <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200/80">
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/4">
+                <tr className="border-b border-slate-200/80 bg-slate-50/80">
+                  <th
+                    scope="col"
+                    className="w-1/4 px-6 py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 sm:px-8"
+                  >
                     DEVELOPER INTENT
                   </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/4">
+
+                  <th
+                    scope="col"
+                    className="w-1/4 px-6 py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 sm:px-8"
+                  >
                     DESTINATION
                   </th>
-                  <th scope="col" className="py-3.5 px-6 sm:px-8 text-[11px] font-bold uppercase tracking-wider text-slate-500 w-1/2">
+
+                  <th
+                    scope="col"
+                    className="w-1/2 px-6 py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 sm:px-8"
+                  >
                     RULE
                   </th>
                 </tr>
               </thead>
+
               <tbody className="divide-y divide-slate-100">
-                {destinationRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/40 transition">
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-bold text-slate-900 align-top">
+                {destinationRows.map((row) => (
+                  <tr
+                    key={row.intent}
+                    className="transition hover:bg-slate-50/40"
+                  >
+                    <td className="px-6 py-4 align-top text-xs font-bold text-slate-900 sm:px-8 sm:text-sm">
                       {row.intent}
                     </td>
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-bold text-blue-600 align-top">
-                      {row.destination}
+
+                    <td className="px-6 py-4 align-top sm:px-8">
+                      <Link
+                        href={row.href}
+                        className="
+                          text-xs
+                          font-bold
+                          !text-blue-600
+                          underline-offset-4
+                          transition
+                          !hover:text-blue-800
+                          hover:underline
+                          sm:text-sm
+                        "
+                      >
+                        {row.destination}
+                      </Link>
                     </td>
-                    <td className="py-4 px-6 sm:px-8 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed align-top">
+
+                    <td className="px-6 py-4 align-top text-xs font-normal leading-relaxed text-slate-600 sm:px-8 sm:text-sm">
                       {row.rule}
                     </td>
                   </tr>
@@ -104,7 +145,6 @@ export default function FiveDestinationsNextStepsSection() {
             </table>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -8,9 +8,13 @@ export default function SdkCta() {
         w-full
         overflow-hidden
         bg-white
+        pt-14
         pb-10
+        sm:pt-16
         sm:pb-12
+        md:pt-20
         md:pb-16
+        lg:pt-24
         lg:pb-20
       "
     >
@@ -74,12 +78,14 @@ export default function SdkCta() {
               !m-0
               w-full
               max-w-[600px]
+              !text-[30px]
+              !font-extrabold
+              !leading-[1.2]
+              !tracking-[-0.035em]
               !text-white
-              text-3xl
-              font-extrabold
-              leading-10
-              tracking-[-0.035em]
-              sm:text-4xl
+              sm:!text-[34px]
+              md:!text-[36px]
+              lg:!text-[40px]
             "
           >
             Copy code that
@@ -91,16 +97,15 @@ export default function SdkCta() {
           <p
             className="
               !m-0
-              mt-4
+              !mt-4
               w-full
               max-w-[511px]
+              !text-[15px]
+              !font-normal
+              !leading-7
               !text-white/70
-              text-sm
-              font-normal
-              leading-6
-              sm:mt-5
-              sm:text-base
-              sm:leading-7
+              sm:!mt-5
+              sm:!text-base
             "
           >
             Provenance, version scope, prerequisites, expected evidence,

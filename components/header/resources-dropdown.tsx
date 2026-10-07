@@ -37,7 +37,7 @@ const LEARN_ITEMS: MenuItem[] = [
 const EVALUATE_ITEMS: MenuItem[] = [
   { title: 'Customer Stories', href: '/customer-stories', icon: Users },
   { title: 'Product Tour', href: '#', icon: PlaySquare },
-  { title: 'Demo Library',  href: '#', icon: Video },
+  { title: 'Demo Library',  href: '/demo-library', icon: Video },
   { title: 'Webinars & Events',  href: '/webinar-and-events', icon: Calendar },
   { title: 'Security Overview',  href: '/security-overview', icon: ShieldCheck },
 ];

@@ -355,12 +355,12 @@ export default function CreateAccountForm({
 
             <p className="m-0 pt-2.5 text-center text-xs font-normal !leading-5 !text-[#64748B]">
               By continuing, you agree to the{" "}
-              <Link href="#" className="!text-[#1F6FEB] hover:underline">
+              <Link href="/terms-of-user" className="!text-[#1F6FEB] hover:underline">
                 Terms of Service
               </Link>{" "}
               and acknowledge the{" "}
               <Link
-                href="/privacy-and-data-governance"
+                href="/privacy-policy"
                 className="!text-[#1F6FEB] hover:underline"
               >
                 Privacy Notice

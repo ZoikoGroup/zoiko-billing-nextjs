@@ -52,7 +52,9 @@ const notDuplicatedRows: BoundaryRow[] = [
 
 export default function AuthPermissionBoundaryDocSection() {
   return (
-    <section className="w-full bg-white py-16 lg:py-24 border-t border-slate-100" id="auth-boundary">
+    <section
+    id = "authentication"
+     className="w-full bg-white py-16 lg:py-24 border-t border-slate-100">
       <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 sm:px-8 lg:px-12 text-center">
         
         {/* Eyebrow */}
@@ -63,7 +65,7 @@ export default function AuthPermissionBoundaryDocSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           State the access requirement. Do not become the setup guide.
         </h2>
 

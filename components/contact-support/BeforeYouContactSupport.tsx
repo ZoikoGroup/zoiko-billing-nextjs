@@ -1,29 +1,36 @@
+import Link from "next/link";
+
 export default function BeforeYouContactSupport() {
   const options = [
     {
       title: "Help Center",
       description:
         "Searchable guidance for common questions, often faster than waiting for a case.",
+      href: "/help-center",
     },
     {
       title: "Documentation",
       description:
         "Authoritative product behavior, configuration and reference material.",
+      href: "/documentation",
     },
     {
       title: "System Status",
       description:
         "Current service state — worth checking before reporting something that may already be known.",
+      href: "/system-status",
     },
     {
       title: "Billing Guides",
       description:
         "Practical operational guidance for receivables, reconciliation and reporting workflows.",
+      href: "/billing-guides",
     },
     {
       title: "Product Updates",
       description:
         "Whether a behavior you noticed was a shipped change rather than a fault.",
+      href: "/product-updates",
     },
     {
       title: "Still need help?",
@@ -35,6 +42,7 @@ export default function BeforeYouContactSupport() {
           Self-service never blocks the path to a case.
         </>
       ),
+      href: "/help-center",
     },
   ];
 
@@ -197,7 +205,12 @@ export default function BeforeYouContactSupport() {
                     text-[#091127]
                   "
                 >
-                  {option.title}
+                  <Link
+                    href={option.href}
+                    className="hover:underline"
+                  >
+                    {option.title}
+                  </Link>
                 </h3>
 
                 {/* DESCRIPTION */}

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface SecurityRequirementItem {
   title: string;
   detail: string;
@@ -43,11 +45,58 @@ const securityRequirementItems: SecurityRequirementItem[] = [
   },
 ];
 
+interface ScenarioItem {
+  id: number;
+  title: string;
+  badge?: {
+    text: string;
+    variant: "permitted" | "blocked" | "no-effect";
+  };
+  note?: string;
+  description?: string;
+}
+
+const scenarioItems: ScenarioItem[] = [
+  {
+    id: 1,
+    title: "CRM account owner opens the linked billing account",
+    badge: {
+      text: "Permitted",
+      variant: "permitted",
+    },
+    note: "— read access granted by a mapped Billing role",
+  },
+  {
+    id: 2,
+    title: "Same owner edits payment terms",
+    badge: {
+      text: "Blocked",
+      variant: "blocked",
+    },
+    note: "— CRM ownership grants no Billing permission",
+  },
+  {
+    id: 3,
+    title: "CRM admin group is added",
+    badge: {
+      text: "No effect",
+      variant: "no-effect",
+    },
+    note: "— group membership does not union with Billing rights",
+  },
+  {
+    id: 4,
+    title: "Outbound payload assembled",
+    description:
+      "A server-side allowlist filters fields before anything leaves Billing",
+  },
+];
+
 export default function CrmAuthenticationPermissionsSetupSection() {
   return (
     <section
       id="security-setup"
-      className="w-full bg-[#f7f8fa]"
+      className="w-full bg-[#f7f8fa] font-[family-name:var(--font-inter)]"
     >
       <div
         className="
@@ -70,31 +119,22 @@ export default function CrmAuthenticationPermissionsSetupSection() {
         <div
           className="
             mx-auto
-            flex
+            grid
             w-full
             max-w-[1240px]
-            flex-col
+            grid-cols-1
             items-center
-            gap-8
-            sm:gap-10
-            md:gap-11
+            gap-10
+            lg:grid-cols-2
+            lg:gap-12
+            xl:gap-16
           "
         >
-          {/* INTRO */}
-          <div
-            className="
-              flex
-              w-full
-              max-w-[760px]
-              flex-col
-              items-center
-              gap-3
-              text-center
-            "
-          >
+          {/* LEFT COLUMN: INTRO, LIST, AND MOBILE CARD */}
+          <div className="flex flex-col items-start gap-4">
             {/* EYEBROW */}
-            <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
+            <div className="flex items-center gap-3">
+              <span className="h-[2px] w-6 shrink-0 rounded-full bg-[#1D70F5]" />
 
               <span
                 className="
@@ -110,38 +150,52 @@ export default function CrmAuthenticationPermissionsSetupSection() {
               >
                 Authentication, Permissions, Setup &amp; Security
               </span>
-
-              <span className="h-px w-4 shrink-0 bg-[#7890b2] opacity-40" />
             </div>
 
-            {/* HEADING */}
+            {/* DESKTOP HEADING (Unchanged for lg+) */}
             <h2
-              className="
+              className="!font-[family-name:var(--font-jakarta)] 
                 !m-0
-                w-full
-                !text-[30px]
+                hidden
+                lg:block
+                !text-[38px]
+                xl:!text-[40px]
                 !font-extrabold
-                !leading-[1.2]
+                !leading-[1.18]
                 !tracking-[-0.035em]
                 !text-[#091127]
-                sm:!text-[34px]
-                md:!text-[36px]
-                lg:!text-[40px]
               "
             >
-              Integration identity is a technical connection, not a Billing
+              Integration identity is a technical<br />
+              connection, not a Billing<br />
               permission.
+            </h2>
+
+            {/* MOBILE HEADING */}
+            <h2
+              className="!font-[family-name:var(--font-jakarta)] 
+                !m-0
+                block
+                lg:hidden
+                !text-[24px]
+                sm:!text-[30px]
+                !font-extrabold
+                !leading-[1.22]
+                !tracking-[-0.03em]
+                !text-[#091127]
+              "
+            >
+              Integration identity is a technical connection, not a Billing permission.
             </h2>
 
             {/* DESCRIPTION */}
             <p
               className="
                 !m-0
-                w-full
-                max-w-[700px]
-                text-[15px]
+                max-w-[500px]
+                text-[14px]
                 font-normal
-                leading-7
+                leading-[1.65]
                 text-[#5d7192]
                 sm:text-base
               "
@@ -150,113 +204,88 @@ export default function CrmAuthenticationPermissionsSetupSection() {
               membership never satisfy Billing authorization. Those
               permissions stay governed separately.
             </p>
-          </div>
 
-          {/* CONTENT CARD */}
-          <div
-            className="
-              w-full
-              overflow-hidden
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              shadow-[0_8px_24px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]
-            "
-          >
-            {/* DESKTOP */}
-            <div className="hidden md:block">
-              <div className="grid grid-cols-[220px_minmax(0,1fr)] bg-[#fafbfc]">
-                <div className="border-b border-[#dfe5ee] px-5 py-4">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Requirement
+            {/* BULLETED REQUIREMENTS LIST */}
+            <ul className="!m-0 !mt-2 flex w-full flex-col gap-2.5 !p-0 list-none">
+              {securityRequirementItems.map((item) => (
+                <li
+                  key={item.title}
+                  className="flex items-start gap-2.5 text-[13px] leading-6 text-[#5d7192] sm:text-sm"
+                >
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-[#1D70F5]" />
+                  <span>
+                    <strong className="font-semibold text-[#091127]">
+                      {item.title}
+                    </strong>{" "}
+                    {item.detail}
                   </span>
-                </div>
+                </li>
+              ))}
+            </ul>
 
-                <div className="border-b border-[#dfe5ee] px-5 py-4">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#7890b2]">
-                    Security Detail
-                  </span>
-                </div>
+            {/* MOBILE ONLY: Identity is not permission, illustrated Card */}
+            <div className="mt-4 block w-full rounded-2xl border border-[#dfe5ee] bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.06)] lg:hidden">
+              <h3 className="!m-0 text-sm sm:text-base font-bold text-[#091127] !font-[family-name:var(--font-jakarta)]">
+                Identity is not permission, illustrated
+              </h3>
+              <p className="!m-0 mt-1 text-xs text-[#7890b2]">
+                Synthetic scenario on Example CRM A.
+              </p>
+
+              <div className="mt-4 space-y-4 divide-y divide-[#edf0f4]">
+                {scenarioItems.map((item, idx) => (
+                  <div
+                    key={item.id}
+                    className={`flex items-start gap-3.5 ${
+                      idx > 0 ? "pt-4" : ""
+                    }`}
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[#dfe5ee] bg-white text-xs font-bold text-[#091127] shadow-sm">
+                      {item.id}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="!m-0 text-xs sm:text-[13px] font-bold text-[#091127]">
+                        {item.title}
+                      </h4>
+                      {item.badge && (
+                        <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                          <span
+                            className={`rounded px-1.5 py-0.5 text-[10px] font-semibold border ${
+                              item.badge.variant === "permitted"
+                                ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                                : "border-rose-200 bg-rose-50 text-rose-700"
+                            }`}
+                          >
+                            {item.badge.text}
+                          </span>
+                          <span className="text-xs text-[#5d7192]">
+                            {item.note}
+                          </span>
+                        </div>
+                      )}
+                      {item.description && (
+                        <p className="!m-0 mt-1 text-xs text-[#5d7192]">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              {securityRequirementItems.map((item, index) => (
-                <div
-                  key={item.title}
-                  className={`grid grid-cols-[220px_minmax(0,1fr)] ${
-                    index !== securityRequirementItems.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
-                >
-                  <div className="flex items-start gap-2.5 px-5 py-4">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
-
-                    <span className="text-sm font-semibold leading-5 text-[#091127]">
-                      {item.title}
-                    </span>
-                  </div>
-
-                  <div className="px-5 py-4">
-                    <span className="text-sm leading-6 text-[#5d7192]">
-                      {item.detail}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* MOBILE */}
-            <div className="flex flex-col md:hidden">
-              {securityRequirementItems.map((item, index) => (
-                <div
-                  key={item.title}
-                  className={`flex items-start gap-3 p-5 ${
-                    index !== securityRequirementItems.length - 1
-                      ? "border-b border-[#edf0f4]"
-                      : ""
-                  }`}
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
-
-                  <div className="min-w-0">
-                    <p className="!m-0 text-sm font-semibold leading-5 text-[#091127]">
-                      {item.title}
-                    </p>
-
-                    <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
-                      {item.detail}
-                    </p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* SECURITY PRINCIPLE */}
-          <div
-            className="
-              w-full
-              max-w-[1240px]
-              rounded-2xl
-              border
-              border-[#dfe5ee]
-              bg-white
-              px-5
-              py-5
-              sm:px-6
-              sm:py-6
-            "
-          >
-            <p className="!m-0 text-sm font-semibold leading-6 text-[#091127]">
-              Security principle
-            </p>
-
-            <p className="!m-0 mt-1.5 text-sm leading-6 text-[#5d7192]">
-              A CRM integration establishes technical connectivity. Billing
-              permissions remain independently controlled through Billing
-              roles, scopes, entity mapping and server-side authorization.
-            </p>
+          {/* RIGHT COLUMN: ILLUSTRATION (DESKTOP ONLY) */}
+          <div className="hidden w-full overflow-hidden rounded-2xl shadow-xl lg:block">
+            <Image
+              src="/images/crm-platforms/crm6.png"
+              alt="Integration identity is a technical connection, not a Billing permission"
+              width={700}
+              height={580}
+              priority
+              className="h-auto w-full object-cover rounded-2xl"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>

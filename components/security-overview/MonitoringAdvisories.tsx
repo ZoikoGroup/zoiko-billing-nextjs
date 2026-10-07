@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 export default function MonitoringAdvisories() {
   const rows = [
     {
       question: "Is something wrong right now?",
       authority: "System Status",
+      href: "/system-status",
       behavior: (
         <>
           <span className="font-bold">Never answered here.</span>{" "}
@@ -13,18 +16,26 @@ export default function MonitoringAdvisories() {
     {
       question: "Has a vulnerability been published?",
       authority: "Security Advisories",
+      href: "/security-advisories",
       behavior: (
         <>
-          Linked; <span className="font-bold">no advisory content duplicated</span>
+          Linked;{" "}
+          <span className="font-bold">
+            no advisory content duplicated
+          </span>
         </>
       ),
     },
     {
       question: "How do I report something?",
       authority: "Responsible Disclosure",
+      href: "/responsible-disclosure",
       behavior: (
         <>
-          Routed — <span className="font-bold">no report intake on this page</span>
+          Routed —{" "}
+          <span className="font-bold">
+            no report intake on this page
+          </span>
         </>
       ),
     },
@@ -40,10 +51,11 @@ export default function MonitoringAdvisories() {
     {
       question: "What is your incident history?",
       authority: "System Status event history",
+      href: "/system-status",
       behavior: (
         <>
-          <span className="font-bold">No incident history asserted</span> on this
-          page
+          <span className="font-bold">No incident history asserted</span> on
+          this page
         </>
       ),
     },
@@ -87,10 +99,10 @@ export default function MonitoringAdvisories() {
             flex-col
             items-center
             gap-8
-            sm:gap-10
-            md:gap-11
             px-0
+            sm:gap-10
             sm:px-4
+            md:gap-11
             md:px-7
           "
         >
@@ -145,9 +157,7 @@ export default function MonitoringAdvisories() {
                 lg:!text-[40px]
               "
             >
-              Where security ends and operations
-             
-              begins.
+              Where security ends and operations begins.
             </h2>
 
             {/* DESCRIPTION */}
@@ -181,7 +191,7 @@ export default function MonitoringAdvisories() {
             "
           >
             {/* DESKTOP TABLE */}
-            <div className="hidden md:block overflow-x-auto">
+            <div className="hidden overflow-x-auto md:block">
               <div className="min-w-[1040px]">
                 {/* HEADER */}
                 <div className="grid grid-cols-[320px_288px_minmax(0,1fr)]">
@@ -221,16 +231,23 @@ export default function MonitoringAdvisories() {
                     </div>
 
                     <div className="px-4 py-3.5">
-                      <span
-                        className={`text-sm leading-5 ${
-                          row.authority === "Security Advisories" ||
-                          row.authority === "Responsible Disclosure"
-                            ? "font-semibold text-[#52749f]"
-                            : "font-normal text-[#5d7192]"
-                        }`}
-                      >
-                        {row.authority}
-                      </span>
+                      {row.href ? (
+                        <Link
+                          href={row.href}
+                          className={
+                            row.authority === "Security Advisories" ||
+                            row.authority === "Responsible Disclosure"
+                              ? "text-sm font-semibold leading-5 text-[#52749f] hover:underline"
+                              : "text-sm font-normal leading-5 text-[#5d7192] hover:underline"
+                          }
+                        >
+                          {row.authority}
+                        </Link>
+                      ) : (
+                        <span className="text-sm font-normal leading-5 text-[#5d7192]">
+                          {row.authority}
+                        </span>
+                      )}
                     </div>
 
                     <div className="px-4 py-3.5">
@@ -279,7 +296,16 @@ export default function MonitoringAdvisories() {
                           : "font-normal text-[#5d7192]"
                       }`}
                     >
-                      {row.authority}
+                      {row.href ? (
+                        <Link
+                          href={row.href}
+                          className="hover:underline"
+                        >
+                          {row.authority}
+                        </Link>
+                      ) : (
+                        row.authority
+                      )}
                     </p>
                   </div>
 

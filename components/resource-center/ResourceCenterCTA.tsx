@@ -90,7 +90,7 @@ export default function ResourceCenterCTA() {
             "
           >
             Ready to put better billing
-            <br className="hidden sm:block" />
+           
             operations into practice?
           </h2>
 
@@ -98,7 +98,7 @@ export default function ResourceCenterCTA() {
           <p
             className="
               !m-0
-              mt-4
+              !mt-4
               w-full
               max-w-[511px]
               !text-white/70
@@ -131,7 +131,7 @@ export default function ResourceCenterCTA() {
           >
             {/* Primary */}
             <Link
-              href="/signup"
+              href="/create-account"
               className="
                 inline-flex
                 min-h-11
@@ -160,7 +160,7 @@ export default function ResourceCenterCTA() {
 
             {/* Secondary */}
             <Link
-              href="/book-a-demo"
+              href="/book-demo"
               className="
                 inline-flex
                 min-h-11

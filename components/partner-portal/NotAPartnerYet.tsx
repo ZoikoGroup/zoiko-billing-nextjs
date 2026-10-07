@@ -1,11 +1,16 @@
+import Link from "next/link";
+
 const routes = [
   {
     title: "Understand the program",
     content: (
       <>
-        <span className="font-semibold text-[#5279ad]">
+        <Link
+          href="/partner-programme"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
           Partner Program
-        </span>{" "}
+        </Link>{" "}
         owns paths, participation model and requirements.
       </>
     ),
@@ -14,9 +19,12 @@ const routes = [
     title: "Apply",
     content: (
       <>
-        <span className="font-semibold text-[#5279ad]">
+        <Link
+          href="/become-a-partner"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
           Become a Partner
-        </span>{" "}
+        </Link>{" "}
         is the canonical application.
         <br />
         <strong>Submitting does not grant portal access</strong> — approval is
@@ -28,9 +36,12 @@ const routes = [
     title: "Submit an integration",
     content: (
       <>
-        <span className="font-semibold text-[#5279ad]">
+        <Link
+          href="/integrations"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
           Submit an Integration
-        </span>{" "}
+        </Link>{" "}
         for technical review.
         <br />
         Independent of partner status in both directions.
@@ -41,8 +52,13 @@ const routes = [
     title: "Buying instead?",
     content: (
       <>
-        <span className="font-semibold text-[#5279ad]">Contact</span> routes
-        commercial enquiries. Prospective-customer intent is not partner
+        <Link
+          href="/contact"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
+          Contact
+        </Link>{" "}
+        routes commercial enquiries. Prospective-customer intent is not partner
         intent.
       </>
     ),
@@ -60,10 +76,19 @@ const routes = [
     title: "Product support?",
     content: (
       <>
-        <span className="font-semibold text-[#5279ad]">Help Center</span> and{" "}
-        <span className="font-semibold text-[#5279ad]">
+        <Link
+          href="/help-center"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
+          Help Center
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/contact-support"
+          className="font-semibold !text-[#5279ad] hover:underline"
+        >
           Contact Support
-        </span>
+        </Link>
         . Never collected through a partner route.
       </>
     ),

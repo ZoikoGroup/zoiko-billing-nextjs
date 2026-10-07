@@ -82,6 +82,7 @@ export default function PublicationDetailTemplate() {
                 !m-0
                 w-full
                 max-w-[1000px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px]
                 !font-extrabold
                 !leading-[1.2]
@@ -95,8 +96,7 @@ export default function PublicationDetailTemplate() {
                 lg:!text-[40px]
               "
             >
-              A dated statement with its corrections
-            
+              A dated statement with its corrections <br className="hidden sm:inline" />
               visible.
             </h2>
 

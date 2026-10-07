@@ -13,7 +13,7 @@ const artifactRows: ArtifactRow[] = [
     authority: (
       <>
         Product ·{" "}
-        <Link href="/documentation" className="text-blue-600 font-bold hover:underline">
+        <Link href="/documentation" className="!text-blue-600 font-bold hover:underline">
           Documentation
         </Link>
       </>
@@ -39,11 +39,11 @@ const artifactRows: ArtifactRow[] = [
     consideration: "Heading structure, alt text and keyboard-navigable examples.",
     authority: (
       <>
-        <Link href="/resource-center" className="text-blue-600 font-bold hover:underline">
+        <Link href="/help-center" className="!text-blue-600 font-bold hover:underline">
           Help
         </Link>{" "}
         ·{" "}
-        <Link href="/documentation" className="text-blue-600 font-bold hover:underline">
+        <Link href="/documentation" className="!text-blue-600 font-bold hover:underline">
           Documentation
         </Link>
       </>
@@ -69,12 +69,12 @@ export default function DocumentsExportsCommunicationsSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-[42px] tracking-tight max-w-3xl">
+        <h2 className="mt-3.5 !font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl lg:!text-[36px] xl:!text-[38px] !font-bold !leading-[1.2] !tracking-[-0.02em] text-slate-900 max-w-3xl">
           Accessibility does not stop at the screen.
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-3 max-w-2xl text-xs sm:text-base font-normal leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-2xl text-sm sm:text-[15px] font-normal leading-relaxed text-slate-500">
           Billing produces artifacts that leave the product — and each has its own accessibility question.
         </p>
 

@@ -1,14 +1,19 @@
+import Link from "next/link";
+
 const items = [
   {
     title: "Not a support queue",
     link: "Contact Support",
+    href: "/contact-support",
     before: "",
     after: "has its own path chooser and intake.",
-    description: "A duplicate here would drift from it and answer more slowly.",
+    description:
+      "A duplicate here would drift from it and answer more slowly.",
   },
   {
     title: "Not a vulnerability intake",
     link: "Responsible Disclosure",
+    href: "/responsible-disclosure",
     before: "",
     after: "handles reports with appropriate confidentiality.",
     bold: "Exploit details are never collected here.",
@@ -21,6 +26,7 @@ const items = [
   {
     title: "Not an application route",
     link: "Careers",
+    href: "/careers",
     after: "routes to the approved application system.",
     bold: "No résumé or identity document is accepted here.",
   },
@@ -33,6 +39,7 @@ const items = [
     title: "Not a commitment surface",
     before: "Support commitments live in",
     link: "Support Policy",
+    href: "/support-policy",
     after: ".",
     bold: "No response time or channel promise appears here.",
   },
@@ -51,15 +58,11 @@ export default function WhatThisPageIsNot() {
           items-start
           px-5
           py-14
-
           sm:px-8
           sm:py-16
-
           md:px-10
           md:py-20
-
           lg:px-14
-
           xl:px-20
         "
       >
@@ -72,9 +75,7 @@ export default function WhatThisPageIsNot() {
             flex-col
             items-center
             gap-8
-
             sm:gap-10
-
             md:gap-11
           "
         >
@@ -103,7 +104,6 @@ export default function WhatThisPageIsNot() {
                   leading-4
                   tracking-[0.16em]
                   text-[#7890b2]
-
                   sm:text-xs
                   sm:tracking-[0.18em]
                 "
@@ -125,16 +125,13 @@ export default function WhatThisPageIsNot() {
                 !leading-[1.2]
                 !tracking-[-0.035em]
                 !text-[#091127]
-
                 sm:!text-[34px]
-
                 md:!text-[36px]
-
                 lg:!text-[40px]
               "
             >
               Six things a corporate contact page
-            
+          
               must not become.
             </h2>
 
@@ -148,7 +145,6 @@ export default function WhatThisPageIsNot() {
                 font-normal
                 leading-7
                 text-[#5d7192]
-
                 sm:text-base
               "
             >
@@ -164,9 +160,7 @@ export default function WhatThisPageIsNot() {
               w-full
               grid-cols-1
               gap-4
-
               sm:gap-5
-
               md:grid-cols-2
             "
           >
@@ -207,20 +201,22 @@ export default function WhatThisPageIsNot() {
                 <div className="w-full text-xs leading-5 text-[#5d7192]">
                   {item.link ? (
                     <p className="!m-0">
-                      {item.before && (
-                        <span>{item.before} </span>
-                      )}
+                      {item.before && <span>{item.before} </span>}
 
-                      <span
+                      <Link
+                        href={item.href}
                         className="
                           text-sm
                           font-semibold
                           leading-6
                           text-[#7890b2]
+                          transition-colors
+                          hover:text-[#5279b4]
+                          hover:underline
                         "
                       >
                         {item.link}
-                      </span>
+                      </Link>
 
                       {item.after && <span> {item.after}</span>}
 
@@ -234,9 +230,7 @@ export default function WhatThisPageIsNot() {
                       )}
                     </p>
                   ) : (
-                    <p className="!m-0">
-                      {item.description}
-                    </p>
+                    <p className="!m-0">{item.description}</p>
                   )}
 
                   {/* BOLD FOLLOW-UP */}

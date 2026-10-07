@@ -135,6 +135,7 @@ export default function WhereCompanyNewsLives() {
             <h2
               className="
                 !m-0 w-full max-w-[662px]
+                !font-[family-name:var(--font-jakarta)]
                 !text-[30px] !font-extrabold
                 !leading-[1.2] !tracking-[-0.035em]
                 !text-[#091127]
@@ -143,7 +144,7 @@ export default function WhereCompanyNewsLives() {
                 lg:!text-[40px]
               "
             >
-              Seven kinds of news, and only one belongs here.
+              Seven kinds of news, and only one <br className="hidden sm:inline" /> belongs here.
             </h2>
 
             {/* DESCRIPTION */}

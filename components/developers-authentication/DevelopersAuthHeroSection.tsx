@@ -70,13 +70,17 @@ export default function DevelopersAuthHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-extrabold leading-[1.12] tracking-tight text-slate-900">
-            Authenticate integrations{" "}
-            <span className="text-[#1D70F5]">without losing control of access.</span>
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[50px] xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
+            Authenticate <br className="hidden sm:inline" />
+            integrations{" "}
+            <span className="text-[#1D70F5]">
+              without <br className="hidden sm:inline" />
+              losing control of access .
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base font-normal leading-relaxed text-slate-600 sm:text-lg max-w-[580px]">
+          <p className="text-xs sm:text-sm lg:text-[15px] font-normal leading-relaxed text-slate-500 max-w-[540px]">
             Set up verified access, keep credentials protected, separate authentication from
             permissions, and understand how access changes are reviewed across the Zoiko Billing
             developer experience.
@@ -86,24 +90,24 @@ export default function DevelopersAuthHeroSection() {
           <div className="flex w-full flex-wrap items-center gap-3.5 pt-1 sm:w-auto">
             <Link
               href="#access-requirements"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#1D70F5] px-7 text-center text-sm font-semibold text-white shadow-md shadow-blue-500/25 transition hover:bg-blue-600"
+              className="inline-flex min-h-11 sm:min-h-12 items-center justify-center rounded-full bg-[#1D70F5] px-6 sm:px-7 text-center text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-500/25 transition hover:bg-blue-600"
             >
               View access requirements
             </Link>
 
             <Link
               href="/developers-api-documentation"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-200/90 bg-white px-7 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+              className="inline-flex min-h-11 sm:min-h-12 items-center justify-center rounded-full border border-slate-200/90 bg-white px-6 sm:px-7 text-center text-xs sm:text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
             >
               API Documentation
             </Link>
           </div>
 
           {/* Notice Callout Box */}
-          <div className="relative mt-2 w-full overflow-hidden rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 sm:p-5 max-w-[540px]">
+          <div className="relative mt-2 w-full overflow-hidden rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5 max-w-[540px] shadow-sm">
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1D70F5]" />
-            <p className="pl-2 text-xs font-normal leading-relaxed text-slate-600 sm:text-sm">
-              <span className="font-bold text-slate-900">Never paste production secrets into examples, search, feedback or support forms.</span> Supported methods and credential behavior shown on this page must come from canonical product and security sources.
+            <p className="pl-2 text-xs font-normal leading-relaxed text-slate-500">
+              <span className="font-bold text-slate-800">Never paste production secrets into examples, search, feedback or support forms.</span> Supported methods and credential behavior shown on this page must come from canonical product and security sources.
             </p>
           </div>
 
@@ -145,7 +149,7 @@ export default function DevelopersAuthHeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-2xl sm:text-3xl font-extrabold leading-[1.16] text-slate-900 tracking-tight mb-3">
+        <h1 className="!font-[family-name:var(--font-jakarta)] text-2xl sm:text-3xl font-extrabold leading-[1.16] text-slate-900 tracking-tight mb-3">
           Authenticate integrations{" "}
           <span className="text-[#1D70F5]">without <br />losing control of access.</span>
         </h1>
@@ -171,7 +175,7 @@ export default function DevelopersAuthHeroSection() {
             API Documentation
           </Link>
           <Link
-            href="#sandbox"
+            href="/developer-sandbox"
             className="inline-flex items-center gap-1 text-xs font-semibold text-[#1D70F5] hover:underline pl-1"
           >
             Developer Sandbox <span>→</span>
@@ -197,7 +201,7 @@ export default function DevelopersAuthHeroSection() {
                 <div className="w-6 h-6 rounded-full bg-blue-50 text-[#1D70F5] font-bold text-xs flex items-center justify-center mb-2">
                   {card.num}
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-0.5">
+                <h3 className="!font-[family-name:var(--font-jakarta)] text-xs sm:text-sm font-bold text-slate-900 mb-0.5">
                   {card.title}
                 </h3>
                 <div className="text-[11px] text-slate-400 italic font-normal mb-1.5 leading-snug">

@@ -87,7 +87,7 @@ export default function VerificationSecurityWebhooksSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="mt-3.5 text-xl sm:text-3xl lg:text-[42px] font-extrabold leading-tight text-slate-900 tracking-tight max-w-3xl">
+        <h2 className="!font-[family-name:var(--font-jakarta)] mt-3.5 !text-xl sm:!text-3xl lg:!text-4xl !font-extrabold !leading-tight !tracking-tight text-slate-900 max-w-3xl">
           No verification code sample ships without security sign-off.
         </h2>
 
@@ -143,7 +143,7 @@ export default function VerificationSecurityWebhooksSection() {
 
             {/* Card 2: Verification steps */}
             <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm text-xs">
-              <h3 className="text-xs font-bold text-slate-900 mb-1.5">
+              <h3 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-1.5">
                 Verification steps
               </h3>
               <p className="text-[11px] text-slate-600 font-normal leading-relaxed">
@@ -155,7 +155,7 @@ export default function VerificationSecurityWebhooksSection() {
 
           {/* Card 3: Rotation & failure (Full-width card) */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm text-xs mb-4">
-            <h3 className="text-xs font-bold text-slate-900 mb-1.5">
+            <h3 className="!font-[family-name:var(--font-jakarta)] text-xs font-bold text-slate-900 mb-1.5">
               Rotation &amp; failure
             </h3>
             <div className="text-[11px] text-slate-600 mb-1">

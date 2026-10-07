@@ -60,9 +60,10 @@ export default function CustomerStoriesHeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.14] tracking-tight text-slate-900">
+            <h1 className="!font-[family-name:var(--font-jakarta)] !text-3xl sm:!text-4xl lg:!text-[46px] xl:!text-[50px] 2xl:!text-[52px] !font-extrabold !leading-[1.12] !tracking-[-0.035em] text-slate-900">
               See how better billing <br />
-              operations <span className="text-[#1D70F5]">take shape in practice.</span>
+              operations <span className="text-[#1D70F5]">take shape in</span> <br />
+              <span className="text-[#1D70F5]">practice.</span>
             </h1>
 
             {/* Subtitle */}
@@ -81,7 +82,7 @@ export default function CustomerStoriesHeroSection() {
               </Link>
 
               <Link
-                href="#book-demo"
+                href="/book-demo"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-center text-xs sm:text-sm font-semibold !text-slate-900 transition hover:bg-slate-50"
               >
                 <span className="text-slate-900 font-semibold">Book a demo</span>
@@ -135,7 +136,7 @@ export default function CustomerStoriesHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900 mb-3">
+          <h1 className="!font-[family-name:var(--font-jakarta)] !text-2xl sm:!text-3xl !font-extrabold !leading-tight text-slate-900 mb-3">
             See how better billing operations{" "}
             <span className="text-[#1D70F5]">take shape in practice.</span>
           </h1>
@@ -172,7 +173,7 @@ export default function CustomerStoriesHeroSection() {
             </Link>
           </div>
 
-          {/* Notice Callout Box */}
+
           <div className="relative overflow-hidden rounded-xl border border-slate-200/90 bg-white p-4 text-[11px] text-slate-500 mb-5">
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1D70F5]" />
             <p className="pl-2 font-normal leading-relaxed">
@@ -187,7 +188,7 @@ export default function CustomerStoriesHeroSection() {
                 key={idx}
                 className="rounded-xl border border-slate-200/90 bg-white p-4 text-left shadow-sm"
               >
-                <h3 className="text-xs font-bold text-slate-900 mb-1">
+                <h3 className="!font-[family-name:var(--font-jakarta)] !text-xs !font-bold text-slate-900 mb-1">
                   {card.title}
                 </h3>
                 <p className="text-[11px] font-normal leading-relaxed text-slate-600">
@@ -200,7 +201,7 @@ export default function CustomerStoriesHeroSection() {
           {/* Interactive Search and Library Card */}
           <div className="rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm text-left mb-4">
             
-            <h2 className="text-xs font-bold text-slate-900 mb-1.5">
+            <h2 className="!font-[family-name:var(--font-jakarta)] !text-xs !font-bold text-slate-900 mb-1.5">
               Search customer stories
             </h2>
 
@@ -242,7 +243,7 @@ export default function CustomerStoriesHeroSection() {
 
             {/* Empty State Content */}
             <div className="pt-1">
-              <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-1.5">
+              <h3 className="!font-[family-name:var(--font-jakarta)] !text-xs sm:!text-sm !font-bold text-slate-900 mb-1.5">
                 No approved customer stories are published yet.
               </h3>
               <p className="text-[11px] text-slate-500 font-normal leading-relaxed mb-4">
