@@ -1,9 +1,0 @@
-export { default as ProductTourHeroSection } from "./ProductTourHeroSection";
-export { default as ProductTourScenesSection } from "./ProductTourScenesSection";
-export { default as ProductTourFieldsSection } from "./ProductTourFieldsSection";
-export { default as RoleBasedTourVariantsSection } from "./RoleBasedTourVariantsSection";
-export { default as TourProgressVocabularySection } from "./TourProgressVocabularySection";
-export { default as ProductTourRecapSection } from "./ProductTourRecapSection";
-export { default as ProductTourFaqSection } from "./ProductTourFaqSection";
-export { default as ProductTourFinalCtaSection } from "./ProductTourFinalCtaSection";
-export { default as MobileProductTourDashboard } from "./MobileProductTourDashboard";
