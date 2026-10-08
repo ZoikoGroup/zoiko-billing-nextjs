@@ -7,6 +7,9 @@ import PublicAssistantWidget from "@/components/assistant/PublicAssistantWidget"
 export const metadata: Metadata = {
   title: "Zoiko Billing | Clarity from invoice to payment",
   description: "Connected invoicing, payments, reconciliation, and reporting for modern finance teams.",
+  verification: {
+    google: "z3GMNYMY9S7HkZe3LE7cMKEGmdsbX1gaUzhQlK3uPBc",
+  },
 };
 
 export default function RootLayout({
