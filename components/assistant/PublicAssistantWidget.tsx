@@ -669,15 +669,15 @@ function MarkdownTypewriter({ text, config, onDone }: { text: string; config: Pu
 
 function zoikoMark(size: number, rounded: string, showAccentDot = false) {
   return (
-    <span className={`ab-mark ${rounded}`} style={{ width: size, height: size }} aria-hidden="true">
+    <span className={`ab-mark ${rounded}`} style={{ width: size, height: size }}>
       <Image
         src="/zoiko-icon.png"
-        alt=""
+        alt="Zoiko Billing"
         width={size}
         height={size}
         draggable={false}
         unoptimized
-        style={{ width: size, height: size, display: "block", pointerEvents: "none" }}
+        style={{ width: size, height: size, display: "block", objectFit: "contain", pointerEvents: "none" }}
       />
       {showAccentDot && <span className="ab-mark-dot" />}
     </span>
@@ -891,8 +891,10 @@ function MessageBubble({
         <div className={`ab-bubble ${isUser ? "ab-bubble--user" : "ab-bubble--assistant"}`}>
           {isUser ? (
             <div className="ab-user-text">{message.text}</div>
-          ) : (
+          ) : animating ? (
             <MarkdownTypewriter text={message.text} config={config} onDone={onDone} />
+          ) : (
+            <MarkdownContent text={message.text} config={config} />
           )}
         </div>
 
@@ -1253,6 +1255,11 @@ export default function PublicAssistantWidget() {
   // Stick-to-bottom: only auto-scroll while the reader is already at the
   // bottom, so streaming answers never yank them away from earlier messages.
   const stickToBottomRef = useRef(true);
+  // Latest message list + whether a restore request has already been
+  // initiated, so reopening a panel whose conversation is already on screen
+  // issues NO network request at all.
+  const messagesRef = useRef<WidgetMessage[]>(messages);
+  const restoreAttemptedRef = useRef(false);
 
   const scrollToBottom = useCallback((force = false) => {
     const el = bodyRef.current;
@@ -1361,9 +1368,33 @@ export default function PublicAssistantWidget() {
     setActiveUid(null);
   }, []);
 
+  // Keep messagesRef in sync for the restore guard below.
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
+
   // Restore an active session when the panel opens for the first time.
   useEffect(() => {
-    if (!open) return;
+    // Opening/closing the panel is a VISIBILITY change, never a new turn. The
+    // reveal marks the newest answer as "animating" (`animatingId`); if the
+    // panel is closed while it is still typing, that marker would otherwise
+    // survive the close and reopening would remount the typewriter and replay
+    // the whole answer — looking like the question was re-sent and the answer
+    // regenerated. Clearing it on every transition means a reopen renders
+    // completed answers in full, while a new answer that arrives while the
+    // panel is open still animates normally.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAnimatingId(null);
+    if (!open) {
+      // Allow a fresh restore attempt the next time the panel is opened.
+      restoreAttemptedRef.current = false;
+      return;
+    }
+    // Reopening a conversation that is ALREADY on screen is a pure visibility
+    // change: do not re-fetch history (no network request on reopen). Only the
+    // first open of a mount, or an open with no messages yet, restores.
+    if (restoreAttemptedRef.current || messagesRef.current.length > 0) return;
+    restoreAttemptedRef.current = true;
     let stored: string | null = null;
     try {
       stored = window.localStorage.getItem(SESSION_KEY);
@@ -1641,16 +1672,27 @@ export default function PublicAssistantWidget() {
               header never shows a duplicate mark or duplicate brand text. */}
           <header className="ab-panel__header">
             <div className="ab-brand">
-              <Image
-                src="/zoiko-billing-log.png"
-                alt="Zoiko Billing"
-                width={3263}
-                height={1163}
-                priority
-                draggable={false}
-                className="ab-logo"
-              />
+              <span className="ab-brand__logo">
+                <Image
+                  src="/zoiko-icon.png"
+                  alt=""
+                  width={40}
+                  height={40}
+                  priority
+                  draggable={false}
+                  className="ab-brand__mark"
+                />
+              </span>
               <div className="ab-brand__text">
+                <Image
+                  src="/zoiko-billing-logo.png"
+                  alt="Zoiko Billing"
+                  width={3263}
+                  height={1163}
+                  priority
+                  draggable={false}
+                  className="ab-logo"
+                />
                 <h2 id="ab-panel-title" className="ab-title" tabIndex={-1} ref={headingRef}>
                   Billing Assistant
                 </h2>
@@ -1919,7 +1961,17 @@ export default function PublicAssistantWidget() {
             setOpen(true);
           }}
         >
-          {zoikoMark(56, "ab-mark--launcher", true)}
+          <Image
+            src="/zoiko-icon.png"
+            alt=""
+            aria-hidden
+            width={56}
+            height={56}
+            priority
+            draggable={false}
+            unoptimized
+            className="ab-launcher__img"
+          />
           <span className="ab-sr-only">Billing Assistant</span>
         </button>
       )}
