@@ -451,7 +451,7 @@ function HeaderNavigationInner({
 
         <div className="ml-auto hidden items-center gap-2 lg:flex">
           <Link
-            href="/sign-in"
+            href="https://app.zoikobilling.com"
             onClick={onSignIn}
             className="
               min-h-10
@@ -773,7 +773,7 @@ function HeaderNavigationInner({
             "
           >
             <Link
-              href="/sign-in"
+              href="https://app.zoikobilling.com"
               onClick={onSignIn}
               className="
                 block
