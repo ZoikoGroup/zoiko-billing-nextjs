@@ -28,9 +28,9 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata = {
-  title: "Black Friday 2026 | Zoiko Billing",
+  title: "Zoiko Billing Black Friday Sale Save 20%  | Zoiko Billing",
   description:
-    "Black Friday through Cyber Monday, 27–30 Nov 2026: 25% off Essentials, Professional and Business plans. Eligibility and offer terms are confirmed before you commit.",
+  "Save 20% on annual billing plans with Zoiko Billing. Simplify invoicing, automate recurring billing, track payments, and manage finances with ease."
 };
 
 export default function BlackFridayPage() {
