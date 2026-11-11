@@ -8,3 +8,4 @@ export { default as EligibilitySection } from "./EligibilitySection";
 export { default as OfferTerms } from "./OfferTerms";
 export { default as FinalCta } from "./FinalCta";
 export { default as OfferDisclaimer } from "./OfferDisclaimer";
+export { default as BlackFridayPopup } from "./BlackFridayPopup";
