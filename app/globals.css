@@ -5459,3 +5459,43 @@ a.ab-source--link:focus-visible { outline: 2px solid var(--ab-focus-ring); outli
   .blog-prose .blog-list-columns { columns: 1; }
   .blog-prose .blog-callout { padding: 22px 20px; }
 }
+
+/* ---------- Black Friday site-wide popup ---------- */
+@keyframes bf-popup-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bf-popup-rise {
+  from { opacity: 0; transform: translateY(28px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes bf-popup-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+@keyframes bf-popup-pop {
+  0% { opacity: 0; transform: rotate(-30deg) scale(0.4); }
+  70% { opacity: 1; transform: rotate(-6deg) scale(1.08); }
+  100% { opacity: 1; transform: rotate(-10deg) scale(1); }
+}
+@keyframes bf-popup-spin { to { transform: rotate(360deg); } }
+@keyframes bf-popup-shine {
+  0%, 60% { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%) skewX(-20deg); }
+}
+
+.bf-popup-backdrop { animation: bf-popup-fade 0.3s ease-out both; }
+.bf-popup-panel { animation: bf-popup-rise 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) both; }
+.bf-popup-zoom { animation: bf-popup-zoom 6s ease-out both; }
+.bf-popup-badge { animation: bf-popup-pop 0.7s 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; }
+.bf-popup-ring { animation: bf-popup-spin 14s linear infinite; }
+.bf-popup-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: bf-popup-shine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.bf-popup-out { animation: bf-popup-fade 0.22s ease-in reverse both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bf-popup-backdrop, .bf-popup-panel, .bf-popup-zoom, .bf-popup-badge,
+  .bf-popup-ring, .bf-popup-cta::after, .bf-popup-out { animation: none; }
+  .bf-popup-badge { transform: rotate(-10deg); }
+}

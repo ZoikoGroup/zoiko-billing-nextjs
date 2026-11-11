@@ -3,6 +3,7 @@ import "./globals.css";
 import HeaderNavigation from "@/components/header/header";
 import FooterSection from "@/components/footer/footer";
 import PublicAssistantWidget from "@/components/assistant/PublicAssistantWidget";
+import BlackFridayPopup from "@/components/black-friday/BlackFridayPopup";
 
 export const metadata: Metadata = {
   title: "Zoiko Billing | Clarity from invoice to payment",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <FooterSection />
         <PublicAssistantWidget />
+        <BlackFridayPopup />
       </body>
     </html>
   );

@@ -2,9 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 
-/** Offer window: 27–30 Nov 2026 (UTC). */
-const OFFER_START = Date.UTC(2026, 10, 27);
-const OFFER_END = Date.UTC(2026, 11, 1);
+import { OFFER_END, OFFER_START } from "./shared";
 
 function subscribe(onTick: () => void) {
   const id = window.setInterval(onTick, 1000);
