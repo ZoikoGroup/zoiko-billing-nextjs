@@ -4,9 +4,15 @@ on:
   push:
     branches: [main]
 
+# Never run two deploys on the VM at the same time.
+concurrency:
+  group: deploy-vm
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -14,9 +20,13 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
+          # Default is 10m; npm install + next build on the VM takes longer.
+          command_timeout: 40m
+          # Stop on the first failing command so a failed build is never restarted.
+          script_stop: true
           script: |
             cd /var/www/zoiko-billing/app
             git pull origin main
-            npm install
+            npm install --no-audit --no-fund
             npm run build
             pm2 restart zoiko-billing
