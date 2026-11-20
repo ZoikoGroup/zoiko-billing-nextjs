@@ -5,8 +5,8 @@ export const DISPLAY = "font-[family-name:var(--font-barlow)]";
 
 export const EXPLORE_HREF = "/platform-overview";
 
-/** Offer window: 27–30 Nov 2026 (UTC). */
-export const OFFER_START = Date.UTC(2026, 10, 27);
+/** Offer window: 20–30 Nov 2026 (UTC). */
+export const OFFER_START = Date.UTC(2026, 10, 20);
 export const OFFER_END = Date.UTC(2026, 11, 1);
 
 type Tone = "cyan" | "navy";

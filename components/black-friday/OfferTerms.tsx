@@ -8,7 +8,7 @@ const terms = [
   { label: "Auto-renew conditions", value: "Confirmed in offer terms, if applicable" },
   { label: "Tax and fees", value: "Confirmed in offer terms" },
   { label: "Limitations", value: "Confirmed in offer terms" },
-  { label: "Offer dates and time zone", value: "27–30 Nov 2026" },
+  { label: "Offer dates and time zone", value: "20–30 Nov 2026" },
   { label: "Supported markets", value: "Confirmed in offer terms" },
   { label: "Customer support route", value: "Confirmed in offer terms" },
 ];
