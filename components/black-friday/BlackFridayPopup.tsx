@@ -1,6 +1,6 @@
 "use client";
 
-import { Barlow_Condensed } from "next/font/google";
+import { barlowCondensed } from "@/styles/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,13 +8,6 @@ import { ArrowRight, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import { DISPLAY, OFFER_END, OFFER_START } from "./shared";
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700"],
-  variable: "--font-barlow",
-});
 
 const OFFER_HREF = "/black-friday";
 const OPEN_DELAY_MS = 1200;
