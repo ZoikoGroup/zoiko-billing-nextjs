@@ -1,20 +1,7 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { inter, plusJakartaSans } from "@/styles/fonts";
 
 import { BookDemoForm, DemoAside, TrustBar } from "@/components/book-demo";
 import type { DemoStep } from "@/components/book-demo/types";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700", "800"],
-  variable: "--font-jakarta",
-});
 
 function parseStep(value?: string): DemoStep {
   return value === "2" ? 2 : value === "3" ? 3 : 1;

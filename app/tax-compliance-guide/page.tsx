@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { inter, plusJakartaSans } from "@/styles/fonts";
 
 import {
   TaxComplianceHeroSection,
@@ -10,19 +10,6 @@ import {
   TaxComplianceFaqSection,
 
 } from "@/components/tax-compliance-guide";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-jakarta",
-});
 
 export const metadata = {
   title: "Tax & Compliance Guide | Zoiko Billing",

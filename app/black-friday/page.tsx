@@ -1,4 +1,4 @@
-import { Barlow_Condensed, Jost } from "next/font/google";
+import { barlowCondensed, jost } from "@/styles/fonts";
 
 import {
   AudienceSection,
@@ -12,20 +12,6 @@ import {
   SavingsBanner,
   WorkflowSection,
 } from "@/components/black-friday";
-
-const jost = Jost({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-jost",
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700"],
-  variable: "--font-barlow",
-});
 
 export const metadata = {
   title: "Zoiko Billing Black Friday Sale Save 20%  | Zoiko Billing",

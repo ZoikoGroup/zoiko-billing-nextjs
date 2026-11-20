@@ -1,13 +1,7 @@
-import { Inter } from "next/font/google";
+import { inter } from "@/styles/fonts";
 import Link from "next/link";
 
 import { SignInAside, SignInCard, TrustBar } from "@/components/sign-in";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 const FOOTER_LINKS = [
   { label: "Privacy", href: "/privacy-policy" },
