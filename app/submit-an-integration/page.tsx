@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { inter, plusJakartaSans } from "@/styles/fonts";
 
 import {
   AfterSubmitting,
@@ -11,19 +11,6 @@ import {
   WhatAReviewNeeds,
   WrongRoute,
 } from "@/components/submit-an-integration";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700", "800"],
-  variable: "--font-jakarta",
-});
 
 export const metadata = {
   title: "Submit an Integration | Zoiko Billing",

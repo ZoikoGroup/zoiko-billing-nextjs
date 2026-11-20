@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { inter, plusJakartaSans } from "@/styles/fonts";
 import {
   DevelopersApiDocHeroSection,
   SixFirstStepsSection,
@@ -18,19 +18,6 @@ import {
   DocumentationFaqDocSection,
   DeveloperDocFinalCtaSection,
 } from "@/components/developers-api-documentation";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-jakarta",
-});
 
 export const metadata = {
   title: "Developers API Documentation | Zoiko Billing",

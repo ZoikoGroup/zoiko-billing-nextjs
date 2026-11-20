@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { inter } from "@/styles/fonts";
 import Link from "next/link";
 
 import {
@@ -7,12 +7,6 @@ import {
   TrustBar,
 } from "@/components/create-account";
 import { ArrowLeftIcon } from "@/components/create-account/icons";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 const SCREENS = ["account", "verify", "workspace", "checkout", "success"] as const;
 
