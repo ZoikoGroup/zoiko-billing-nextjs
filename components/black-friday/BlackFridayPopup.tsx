@@ -277,7 +277,7 @@ export default function BlackFridayPopup() {
           </div>
 
           <p className="!mb-0 text-xs !leading-5 !text-[#8aa3c4]">
-            Offer runs 27–30 Nov 2026 on Essentials, Professional and Business. Offer details subject to confirmation.
+            Offer runs 20–30 Nov 2026 on Essentials, Professional and Business. Offer details subject to confirmation.
           </p>
         </div>
       </div>
